@@ -95,6 +95,8 @@ func formatAtom(v reflect.Value) string {
 	case reflect.Chan, reflect.Func, reflect.Ptr, reflect.Slice, reflect.Map:
 		return v.Type().String() + " 0x" +
 			strconv.FormatUint(uint64(v.Pointer()), 16)
+	case reflect.Float64, reflect.Float32:
+		return fmt.Sprintf("%+v", v.Float())
 	default: // reflect.Array, reflect.Struct, reflect.Interface
 		return v.Type().String() + " value"
 	}
