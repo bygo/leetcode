@@ -24,7 +24,10 @@ func End() {
 
 func D(callback func() interface{}) {
 	Start()
-	result := callback()
+	var result interface{}
+	for i:=0;i<1000;i++{
+		result = callback()
+	}
 	End()
 	println()
 	display("", reflect.ValueOf(result))

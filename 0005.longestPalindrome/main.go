@@ -19,25 +19,24 @@ import (
  */
 
 func longestPalindrome(s string) string {
-	m := "^#"
+	m := []rune{'^', '#'}
 	for _, v := range s {
-		m += string(v) + "#"
+		m = append(m, v, '#')
 	}
-	m += "$"
-	l := len(m)
-	p := make([]int, l)
+	m = append(m, '$')
+	p := make([]int, len(m))
 	var maxCenter int
 	var maxRight int
 	var center int
 	var right int
 	for k, _ := range m {
-		if k == 0 || k == l-1 {
+		if k == 0 || k == len(m)-1 {
 			continue
 		}
-		if maxRight > l-k { //不够长，直接break
+		if maxRight >= len(m)-k { //不够长，break
 			break
 		}
-		p[k] = 1
+
 		if k < right { //镜像
 			mirror := p[center*2-k]
 			if mirror+k > right {
@@ -45,6 +44,8 @@ func longestPalindrome(s string) string {
 			} else {
 				p[k] = p[center*2-k]
 			}
+		} else {
+			p[k] = 1
 		}
 
 		for m[k-p[k]] == m[k+p[k]] { //扩散
@@ -70,7 +71,7 @@ func longestPalindrome(s string) string {
 
 func main() {
 	leetcode.D(func() interface{} {
-		return longestPalindrome("babad")
+		return longestPalindrome("bbasdfasdfabbabasdfasdfasbasdfafasdfaskasdfjkasjdfaksdjfkasjdfkajsdkfjaskdjfadsf")
 	})
 }
 
