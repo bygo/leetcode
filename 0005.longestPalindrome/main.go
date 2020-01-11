@@ -33,6 +33,7 @@ func longestPalindrome(s string) string {
 		if k == 0 || k == len(m)-1 {
 			continue
 		}
+
 		if maxRight >= len(m)-k { //不够长，break
 			break
 		}
@@ -60,13 +61,13 @@ func longestPalindrome(s string) string {
 		}
 	}
 
-	var result string
+	result := make([]rune,0)
 	for _, v := range m[maxCenter-maxRight+1 : maxCenter+maxRight] {
 		if v != '#' {
-			result += string(v)
+			result = append(m, v)
 		}
 	}
-	return result
+	return string(result)
 }
 
 func main() {
