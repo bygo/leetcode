@@ -51,7 +51,11 @@ func main() {
 }
 
 /**
-思路：
+思路1：
+1.HashMap 存储 Index
+2.尝试从 HashMap 获取 Index 设为Left
+
+思路2：
 1.Left 存储当前子串左边界
-2.出现重复时，找出子串里重复的值的索引，设为Left
+2.出现重复时，找出子串里重复值的Index，设为Left
  */
