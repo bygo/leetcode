@@ -26,9 +26,28 @@ import (
 
  */
 
-func lengthOfLongestSubstring(s string) int {
+func lengthOfLongestSubstring1(s string) int {
+	var left int
+	var leftMap = map[rune]int{}
+	var length int
+	var currentLength int
+	for right, v := range s {
+		if leftMap[v] > left {
+			left = leftMap[v]
+		}
+		leftMap[v] = right + 1
+		currentLength = leftMap[v] - left
+		if currentLength > length {
+			length = currentLength
+		}
+	}
+	return length
+}
+
+func lengthOfLongestSubstring2(s string) int {
 	var left int
 	var length int
+	var currentLength int
 	for right, v := range s {
 		for i := left; i < right; i++ {
 			if rune(s[i]) == v {
@@ -36,9 +55,9 @@ func lengthOfLongestSubstring(s string) int {
 				break
 			}
 		}
-
-		if right-left+1 > length {
-			length = right - left + 1
+		currentLength = right - left + 1
+		if currentLength > length {
+			length = currentLength
 		}
 	}
 	return length
@@ -46,7 +65,11 @@ func lengthOfLongestSubstring(s string) int {
 
 func main() {
 	leetcode.D(func() interface{} {
-		return lengthOfLongestSubstring("aabb")
+		return lengthOfLongestSubstring1("abc")
+	})
+
+	leetcode.D(func() interface{} {
+		return lengthOfLongestSubstring2("abc")
 	})
 }
 
