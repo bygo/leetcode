@@ -1,8 +1,6 @@
 package main
 
-import (
-	"leetcode"
-)
+import "leetcode"
 
 /**
 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
@@ -19,38 +17,29 @@ import (
  */
 
 func longestPalindrome(s string) string {
-	m := []rune{'^', '#'}
-	for _, v := range s {
-		m = append(m, v, '#')
+	m := make([]byte, len(s)*2+3)
+	m[0] = '^'
+	for k, v := range s {
+		m[k*2+1] = '#'
+		m[k*2+2] = byte(v)
 	}
-	m = append(m, '$')
+	m[len(s)*2+1] = '#'
+	m[len(s)*2+2] = '$'
 	p := make([]int, len(m))
-	var maxCenter int
-	var maxRight int
-	var center int
-	var right int
-	for k, _ := range m {
-		if k == 0 || k == len(m)-1 {
-			continue
-		}
-
-		if maxRight >= len(m)-k { //不够长，break
-			break
-		}
-
-		if k < right { //镜像
-			mirror := p[center*2-k]
-			if mirror+k > right {
-				p[k] = right - k
-			} else {
-				p[k] = p[center*2-k]
+	var maxCenter, maxRight, center, right int
+	for k := 1; k < len(m)-1 && maxRight < len(m)-k; k++ {
+		if k < right {
+			if p[center*2-k]+k < right { //镜像跳过
+				continue
 			}
-		} else {
-			p[k] = 1
+			p[k] = right - k
 		}
 
-		for m[k-p[k]] == m[k+p[k]] { //扩散
+		for { //扩散
 			p[k]++
+			if m[k-p[k]] != m[k+p[k]] {
+				break
+			}
 			center = k
 			right = k + p[k]
 		}
@@ -60,19 +49,12 @@ func longestPalindrome(s string) string {
 			maxRight = p[k]
 		}
 	}
-
-	result := make([]rune,0)
-	for _, v := range m[maxCenter-maxRight+1 : maxCenter+maxRight] {
-		if v != '#' {
-			result = append(m, v)
-		}
-	}
-	return string(result)
+	return s[(maxCenter-maxRight)/2 : (maxCenter+maxRight)/2-1]
 }
 
 func main() {
 	leetcode.D(func() interface{} {
-		return longestPalindrome("bbasdfasdfabbabasdfasdfasbasdfafasdfaskasdfjkasjdfaksdjfkasjdfkajsdkfjaskdjfadsf")
+		return longestPalindrome("anugnxshgonmqydttcvmtanugnxshgonmqydttcvmtsoaprxnhpmpovdolbidqiyqubirkvhwppcdyeouvgedccipsvnobrccbndzjdbgxkzdbcjsjjovnhpnbkurxqfupiprpbiwqdnwaqvjbqoaqzkqgdxkfczdkznqxvupdmnyiidqpnbvgjraszbvvztpapxmomnghfaywkzlrupvjpcvascgvstqmvuveiiixjmdofdwyvhgkydrnfuojhzulhobyhtsxmcovwmamjwljioevhafdlpjpmqstguqhrhvsdvinphejfbdvrvabthpyyphyqharjvzriosrdnwmaxtgriivdqlmugtagvsoylqfwhjpmjxcysfujdvcqovxabjdbvyvembfpahvyoybdhweikcgnzrdqlzusgoobysfmlzifwjzlazuepimhbgkrfimmemhayxeqxynewcnynmgyjcwrpqnayvxoebgyjusppfpsfeonfwnbsdonucaipoafavmlrrlplnnbsaghbawooabsjndqnvruuwvllpvvhuepmqtprgktnwxmflmmbifbbsfthbeafseqrgwnwjxkkcqgbucwusjdipxuekanzwimuizqynaxrvicyzjhulqjshtsqswehnozehmbsdmacciflcgsrlyhjukpvosptmsjfteoimtewkrivdllqiotvtrubgkfcacvgqzxjmhmmqlikrtfrurltgtcreafcgisjpvasiwmhcofqkcteudgjoqqmtucnwcocsoiqtfuoazxdayricnmwcgsoaprxnhpmpovdolbidqiyqubirkvhwppcdyeouvgedccipsvnobrccbndzjdbgxkzdbcjsjjovnhpnbkurxqfupiprpbiwqdnwaqvjbqoaqzkqgdxkfczdkznqxvupdmnyiidqpnbvgjraszbvvztpapxmomnghfaywkzlrupvjpcvascgvstqmvuveiiixjmdofdwyvhgkydrnfuojhzulhobyhtsxmcovwmamjwljioevhafdlpjpmqstguqhrhvsdvinphejfbdvrvabthpyyphyqharjvzriosrdnwmaxtgriivdqlmugtagvsoylqfwhjpmjxcysfujdvcqovxabjdbvyvembfpahvyoybdhweikcgnzrdqlzusgoobysfmlzifwjzlazuepimhbgkrfimmemhayxeqxynewcnynmgyjcwrpqnayvxoebgyjusppfpsfeonfwnbsdonucaipoafavmlrrlplnnbsaghbawooabsjndqnvruuwvllpvvhuepmqtprgktnwxmflmmbifbbsfthbeafseqrgwnwjxkkcqgbucwusjdipxuekanzwimuizqynaxrvicyzjhulqjshtsqswehnozehmbsdmacciflcgsrlyhjukpvosptmsjfteoimtewkrivdllqiotvtrubgkfcacvgqzxjmhmmqlikrtfrurltgtcreafcgisjpvasiwmhcofqkcteudgjoqqmtucnwcocsoiqtfuoazxdayricnmwcg")
 	})
 }
 
