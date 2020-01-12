@@ -25,7 +25,7 @@ func End() {
 func D(callback func() interface{}) {
 	Start()
 	var result interface{}
-	for i:=0;i<1000;i++{
+	for i:=0;i<10000;i++{
 		result = callback()
 	}
 	End()
