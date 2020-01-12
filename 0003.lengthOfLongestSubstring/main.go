@@ -1,6 +1,8 @@
 package main
 
-import "leetcode"
+import (
+	"leetcode"
+)
 
 /**
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
@@ -25,17 +27,18 @@ import "leetcode"
  */
 
 func lengthOfLongestSubstring(s string) int {
-	var hashMap = map[rune]bool{}
+	var left int
 	var length int
-	var sor int
-	for _, v := range s {
-		for hashMap[v] {
-			delete(hashMap, rune(s[sor]))
-			sor++
+	for right, v := range s {
+		for i := left; i < right; i++ {
+			if rune(s[i]) == v {
+				left = i + 1
+				break
+			}
 		}
-		hashMap[v] = true
-		if len(hashMap) > length {
-			length = len(hashMap)
+
+		if right-left+1 > length {
+			length = right - left + 1
 		}
 	}
 	return length
@@ -43,12 +46,12 @@ func lengthOfLongestSubstring(s string) int {
 
 func main() {
 	leetcode.D(func() interface{} {
-		return lengthOfLongestSubstring("aabaab!bb")
+		return lengthOfLongestSubstring("aabb")
 	})
 }
 
 /**
 思路：
-1.HashMap 存储当前子串
-2.出现重复时，不断去除最左字符，直至HashMap不再重复
+1.Left 存储当前子串左边界
+2.出现重复时，找出子串里重复的值的索引，设为Left
  */
