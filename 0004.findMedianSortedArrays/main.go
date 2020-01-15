@@ -103,5 +103,5 @@ func main() {
 
 备注：
 left1  + right1 = num1
-left2  + right2 = num1
+left2  + right2 = num2
  */
