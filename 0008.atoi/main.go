@@ -1,7 +1,5 @@
 package main
 
-import "leetcode"
-
 /**
 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 
@@ -107,12 +105,6 @@ F:
 		}
 	}
 	return i * symbol
-}
-
-func main() {
-	leetcode.D(func() interface{} {
-		return myAtoi("  -42")
-	})
 }
 
 /**

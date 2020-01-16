@@ -1,7 +1,5 @@
 package main
 
-import "leetcode"
-
 /**
 将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。
 
@@ -50,12 +48,6 @@ func convert(s string, numRows int) string {
 		z = append(z, stack...)
 	}
 	return string(z)
-}
-
-func main() {
-	leetcode.D(func() interface{} {
-		return convert("LEETCODEISHIRING", 4)
-	})
 }
 
 /**
