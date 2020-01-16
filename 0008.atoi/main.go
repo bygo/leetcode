@@ -94,7 +94,7 @@ F:
 		}
 	}
 	var i int
-	const Min int = -1 << 31
+	const Min int = 1 << 31
 	const Max int = 1<<31 - 1
 	for _, u := range n {
 		i = i*10 + int(u-48)
