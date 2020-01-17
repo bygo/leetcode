@@ -4,12 +4,6 @@ import (
 	"testing"
 )
 
-var inputs = map[int]bool{
-	123:   false,
-	12321: true,
-	-123:  false,
-}
-
 var s = "LVIII"
 
 func Benchmark(b *testing.B) {
