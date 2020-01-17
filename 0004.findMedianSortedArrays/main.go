@@ -80,21 +80,6 @@ func minInt(a, b int) int {
 	return b
 }
 
-func main() {
-	println(findMedianSortedArrays([]int{1000001}, []int{1000000}))                                                      //1000000.5
-	println(findMedianSortedArrays([]int{1, 3}, []int{2}))                                                               //2
-	println(findMedianSortedArrays([]int{1, 2}, []int{}))                                                                //1.5
-	println(findMedianSortedArrays([]int{1}, []int{2, 3}))                                                               //2
-	println(findMedianSortedArrays([]int{}, []int{3}))                                                                   //3
-	println(findMedianSortedArrays([]int{1, 2}, []int{3, 4, 5, 6, 7, 8, 9}))                                             //5
-	println(findMedianSortedArrays([]int{1, 2}, []int{-1, 3}))                                                           //1.5
-	println(findMedianSortedArrays([]int{1}, []int{2, 3, 4, 5, 6}))                                                      //3.5
-	println(findMedianSortedArrays([]int{1, 5}, []int{2, 3, 4, 6}))                                                      //3.5
-	println(findMedianSortedArrays([]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13, 14, 15, 16}, []int{11, 12, 17, 18, 19, 20})) //10.5
-	println(findMedianSortedArrays([]int{1}, []int{2, 3, 4, 5, 6}))                                                      //3.5
-	println(findMedianSortedArrays([]int{1, 2, 2}, []int{1, 2, 3}))                                                      //2
-}
-
 /**
 思路：
 1.计算出两个数组中位数切口half，并且保证 left1+left2 = right1+right2 (+1)
