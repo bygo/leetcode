@@ -60,7 +60,7 @@ func isMatch(s string, p string) bool {
 }
 
 func dp(i int, j int, s string, p string) bool {
-	if  memory[i][j] {
+	if memory[i][j] {
 		return memory[i][j]
 	}
 	if len(p) == 0 {
@@ -85,6 +85,7 @@ func dp(i int, j int, s string, p string) bool {
 思路：
 1.遇到星号，递归匹配所有情况
 2.缓存匹配到的串
+
+
+todo:leetcode的测试用例没有缓存更快。可能大数组操作和变量赋值消耗更大，以后正则写多了,再来写这个的最佳实现
  */
-
-
