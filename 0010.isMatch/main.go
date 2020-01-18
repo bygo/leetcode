@@ -39,9 +39,6 @@ s = "aab"
 p = "c*a*b"
 输出: true
 解释: 因为 '*' 表示零个或多个，这里 'c' 为 0 个, 'a' 被重复一次。因此可以匹配字符串 "aab"。
-示例 5:
-p:   a  abb
-s:   a  sdfsdf    . ==a && dp(abb, sdfsdf)
 
 输入:
 s = "mississippi"
