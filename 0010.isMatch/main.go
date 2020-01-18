@@ -40,13 +40,51 @@ p = "c*a*b"
 输出: true
 解释: 因为 '*' 表示零个或多个，这里 'c' 为 0 个, 'a' 被重复一次。因此可以匹配字符串 "aab"。
 示例 5:
+p:   a  abb
+s:   a  sdfsdf    . ==a && dp(abb, sdfsdf)
 
 输入:
 s = "mississippi"
 p = "mis*is*p*."
 输出: false
+
  */
+var memory [][]bool
 
 func isMatch(s string, p string) bool {
-	return true
+	memory = make([][]bool, len(s)+1)
+	for i := 0; i < len(memory); i++ {
+		memory[i] = make([]bool, len(p)+1)
+	}
+	return dp(0, 0, s, p)
 }
+
+func dp(i int, j int, s string, p string) bool {
+	if  memory[i][j] {
+		return memory[i][j]
+	}
+	if len(p) == 0 {
+		return len(s) == 0
+	}
+
+	ok := len(s) != 0 && (s[0] == p[0] || p[0] == '.') //如果相等，或者为. 匹配成功
+	var res bool
+	if len(p) >= 2 && p[1] == '*' { //长度大于2，获取下一个元素且为*
+		//1.去除x*（p[2:]）,继续递归匹配
+		//2.去除字符(s[1:]),继续递归匹配
+		res = dp(i, j+2, s, p[2:]) || (ok && dp(i+1, j, s[1:], p)) //只要一种情况成功，计算匹配成功
+	} else {
+		//普通匹配
+		res = ok && dp(i+1, j+1, s[1:], p[1:])
+	}
+	memory[i][j] = res
+	return res
+}
+
+/**
+思路：
+1.遇到星号，递归匹配所有情况
+2.缓存匹配到的串
+ */
+
+
