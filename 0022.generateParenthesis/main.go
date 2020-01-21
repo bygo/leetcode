@@ -48,17 +48,17 @@ func generateParenthesis2(n int) []string {
 
 //闭合数
 func generateParenthesis3(n int) []string {
-	return dp(n)
+	return closed(n)
 }
 
-func dp(n int) []string {
+func closed(n int) []string {
 	res := make([]string, 0)
 	if n == 0 {
 		res = append(res, "")
 	} else {
 		for i := 0; i < n; i++ {
-			for _, left := range dp(i) {
-				for _, right := range dp(n - 1 - i) {
+			for _, left := range closed(i) {
+				for _, right := range closed(n - 1 - i) {
 					res = append(res, "("+left+")"+right)
 				}
 			}
