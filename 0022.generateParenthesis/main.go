@@ -46,7 +46,7 @@ func generateParenthesis2(n int) []string {
 	return nil
 }
 
-//动态规划
+//闭合数
 func generateParenthesis3(n int) []string {
 	return dp(n)
 }
