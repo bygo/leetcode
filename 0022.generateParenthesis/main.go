@@ -57,12 +57,24 @@ func closed(n int) []string {
 		res = append(res, "")
 	} else {
 		for i := 0; i < n; i++ {
-			for _, left := range closed(i) {
-				for _, right := range closed(n - 1 - i) {
+			leftCombination := closed(i)
+			rightCombination := closed(n - 1 - i)
+			for _, left := range leftCombination {
+				for _, right := range rightCombination {
 					res = append(res, "("+left+")"+right)
 				}
 			}
+			// （）
+			//  0 = ""
+			//  1 = "" ()
+			//  2 = "" ()()  (())
+			//  3 = "" (()())  ()(())  (())() ((()))
 		}
 	}
 	return res
 }
+
+/**
+思路1：深度优先搜索
+思路2：类似17题
+ */
