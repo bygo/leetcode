@@ -27,29 +27,27 @@ func search(nums []int, target int) int {
 	for left < right {
 		mid = (left + right) / 2
 		ok = 0
-		if target < nums[0] {
+		if target < nums[0] { // point < target 旋转点在答案左边
 			ok++
 		}
-		if nums[mid] < nums[0] {
+		if nums[mid] < nums[0] { //point < mid 旋转点在二分点左边
 			ok++
 		}
-		if nums[mid] < target {
+		if nums[mid] < target { //mid < target 二分点在答案左边
 			ok++
 		}
-		if ok == 1 || ok == 3 {
+		if ok == 1 || ok == 3 { //其中1个或者3个都满足条件时，删除左边
 			left = mid + 1
-		} else {
+		} else { //其中0个或者2个都满足条件时，删除右边
 			right = mid
 		}
 	}
 	if left == right && nums[left] == target {
 		return left
-	} else {
-		return -1
 	}
+	return -1
 }
 
-func main() {
-	r := search([]int{4, 5, 6, 7, 0, 1, 2,}, 3)
-	println(r)
-}
+/**
+思路：三指针，left,right,mid
+ */
