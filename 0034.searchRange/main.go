@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 /**
 给定一个按照升序排列的整数数组 nums，和一个目标值 target。找出给定目标值在数组中的开始位置和结束位置。
 
@@ -60,18 +58,4 @@ func searchMax(nums []int, target int) int {
 		return left - 1
 	}
 	return -1
-}
-
-func main() {
-
-	r1 := searchRange([]int{5, 7, 7, 8, 8, 10,}, 5) //5
-	//fmt.Printf("%+v", r1)
-	r2 := searchRange([]int{5, 7, 7, 8, 8, 10,}, 7) //2
-	//fmt.Printf("%+v", r2)
-
-	r3 := searchRange([]int{5, 7, 7, 8, 8, 10,}, 8)  // 4
-	r4 := searchRange([]int{5, 7, 7, 8, 8, 10,}, 10) //5
-	r5 := searchRange([]int{5, 7, 7, 8, 8, 10,}, 6)  //-1 -1
-
-	fmt.Printf("%+v %+v %+v %+v %+v", r1, r2, r3, r4, r5)
 }
