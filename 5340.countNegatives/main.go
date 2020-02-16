@@ -3,10 +3,7 @@ package main
 func countNegatives(grid [][]int) int {
 	var res int
 	for _, nums := range grid {
-		num := binary(nums)
-		if num > -1 {
-			res += num
-		}
+		res += binary(nums)
 	}
 	return res
 }
@@ -24,7 +21,7 @@ func binary(nums []int) int {
 			right--
 		}
 	}
-	return -1
+	return 0
 }
 
 /*
