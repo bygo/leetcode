@@ -25,7 +25,3 @@ func addStrings(num1 string, num2 string) string {
 
 	return string(res)
 }
-
-func main() {
-	println(addStrings("1", "9"))
-}
