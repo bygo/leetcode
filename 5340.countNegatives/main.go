@@ -42,12 +42,3 @@ func countNegatives2(grid [][]int) int {
 	}
 	return res
 }
-
-func main() {
-	r := countNegatives([][]int{
-		{4, 3, 2, 1, -1},
-		{5, 3, -1, -2},
-	})
-
-	println(r)
-}
