@@ -55,7 +55,7 @@ func output() {
 		check(err)
 		class := strings.Replace(string(stubClass), "@DummyClass", normalizeClassTitle(index), 1)
 		for _, problem := range problems {
-			class += fmt.Sprintf("\n| %s | [%s](https://leetcode-cn.com/problems/%s) | [Go](%s)|",
+			class += fmt.Sprintf("\n| %s | [%-32s](https://leetcode-cn.com/problems/%s) | [Go](%s)|",
 				problem.No, normalizeProblemTitle(problem.Title), normalizeProblemUri(problem.Title), problem.File)
 		}
 		readme += class
