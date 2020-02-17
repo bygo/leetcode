@@ -1,9 +1,5 @@
 package main
 
-import (
-	"leetcode"
-)
-
 /**
 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
 
@@ -61,16 +57,6 @@ func lengthOfLongestSubstring2(s string) int {
 		}
 	}
 	return length
-}
-
-func main() {
-	leetcode.D(func() interface{} {
-		return lengthOfLongestSubstring1("abc")
-	})
-
-	leetcode.D(func() interface{} {
-		return lengthOfLongestSubstring2("abc")
-	})
 }
 
 /**
