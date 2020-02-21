@@ -13,15 +13,15 @@ var wrong []*TreeNode
 func recoverTree(root *TreeNode) {
 	last = nil
 	wrong = make([]*TreeNode, 0)
-	inorder(root)
+	dfs(root)
 	wrong[0].Val, wrong[1].Val = wrong[1].Val, wrong[0].Val
 }
 
-func inorder(root *TreeNode) {
+func dfs(root *TreeNode) {
 	if root == nil {
 		return
 	}
-	inorder(root.Left)
+	dfs(root.Left)
 	if last != nil && root.Val <= last.Val {
 		if len(wrong) == 0 {
 			wrong = append(wrong, last)
@@ -31,5 +31,5 @@ func inorder(root *TreeNode) {
 		}
 	}
 	last = root
-	inorder(root.Right)
+	dfs(root.Right)
 }

@@ -1,7 +1,5 @@
 package main
 
-import "leetcode"
-
 /**
 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
 
@@ -47,26 +45,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	return l
 }
 
-func main() {
-	l1 := fake([]int{5, 6, 7})
-	l2 := fake([]int{5, 5, 5})
-	leetcode.D(func() interface{} {
-		return addTwoNumbers(l1, l2)
-	})
-}
 
-func fake(list []int) *ListNode {
-	l := &ListNode{}
-	o := l
-	for k, v := range list {
-		o.Val = v
-		if len(list) > k+1 {
-			o.Next = &ListNode{}
-			o = o.Next
-		}
-	}
-	return l
-}
 
 /**
 思路：

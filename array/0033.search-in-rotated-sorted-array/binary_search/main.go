@@ -48,6 +48,3 @@ func search(nums []int, target int) int {
 	return -1
 }
 
-/**
-思路：三指针，left,right,mid
- */
