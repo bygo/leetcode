@@ -2,54 +2,14 @@
 
 
 
-# Linked List
-|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
-| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0002 | [Add Two Numbers                 ](https://leetcode-cn.com/problems/add-two-numbers) | 36.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0002.add-two-numbers/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0002.add-two-numbers/main_test.go)| 
-| 0019 | [Remove Nth Node From End of List](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list) | 37.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0019.remove-nth-node-from-end-of-list/two_pointer/main.go)| two pointer
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0019.remove-nth-node-from-end-of-list/two_pointer/main_test.go)| two pointer
-| 0021 | [Merge Two Sorted Lists          ](https://leetcode-cn.com/problems/merge-two-sorted-lists) | 59.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0021.merge-two-sorted-lists/main.go)| 
-| 0023 | [Merge k Sorted Lists            ](https://leetcode-cn.com/problems/merge-k-sorted-lists) | 48.8% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0023.merge-k-sorted-lists/main.go)| 
-| 0024 | [Swap Nodes in Pairs             ](https://leetcode-cn.com/problems/swap-nodes-in-pairs) | 64.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0024.swap-nodes-in-pairs/main.go)| 
-| 0025 | [Reverse Nodes in k-Group        ](https://leetcode-cn.com/problems/reverse-nodes-in-k-group) | 56.2% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0025.reverse-nodes-in-k-group/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0025.reverse-nodes-in-k-group/main_test.go)| 
-
-# Math
-|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
-| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0007 | [Reverse Integer                 ](https://leetcode-cn.com/problems/reverse-integer) | 33.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0007.reverse-integer/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/math/0007.reverse-integer/main_test.go)| 
-| 0008 | [String to Integer (atoi)        ](https://leetcode-cn.com/problems/string-to-integer-atoi) | 19.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0008.string-to-integer-atoi/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/math/0008.string-to-integer-atoi/main_test.go)| 
-| 0009 | [Palindrome Number               ](https://leetcode-cn.com/problems/palindrome-number) | 57.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0009.palindrome-number/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/math/0009.palindrome-number/main_test.go)| 
-| 0012 | [Integer to Roman                ](https://leetcode-cn.com/problems/integer-to-roman) | 62.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0012.integer-to-roman/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/math/0012.integer-to-roman/main_test.go)| 
-| 0013 | [Roman to Integer                ](https://leetcode-cn.com/problems/roman-to-integer) | 60.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main_test.go)| 
-| 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
-| 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 32.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
-
-# Stack
-|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
-| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0020 | [Valid Parentheses               ](https://leetcode-cn.com/problems/valid-parentheses) | 40.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0020.valid-parentheses/main.go)| 
-| 0032 | [Longest Valid Parentheses       ](https://leetcode-cn.com/problems/longest-valid-parentheses) | 29.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0032.longest-valid-parentheses/main.go)| 
-
 # String
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0003 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) | 32.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0003.longest-substring-without-repeating-characters/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/string/0003.longest-substring-without-repeating-characters/main_test.go)| 
 | 0005 | [Longest Palindromic Substring   ](https://leetcode-cn.com/problems/longest-palindromic-substring) | 28.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0005.longest-palindromic-substring/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/string/0005.longest-palindromic-substring/main_test.go)| 
 | 0006 | [ZigZag Conversion               ](https://leetcode-cn.com/problems/zigzag-conversion) | 46.7% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0006.zigzag-conversion/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/string/0006.zigzag-conversion/main_test.go)| 
 | 0010 | [Regular Expression Matching     ](https://leetcode-cn.com/problems/regular-expression-matching) | 26.0% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/string/0010.regular-expression-matching/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/string/0010.regular-expression-matching/main_test.go)| 
 | 0014 | [Longest Common Prefix           ](https://leetcode-cn.com/problems/longest-common-prefix) | 36.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0014.longest-common-prefix/main.go)| 
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/string/0014.longest-common-prefix/main_test.go)| 
 | 0017 | [Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number) | 52.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0017.letter-combinations-of-a-phone-number/main.go)| 
 | 0028 | [Implement strStr()              ](https://leetcode-cn.com/problems/implement-strstr) | 39.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0028.implement-strstr/main.go)| 
 | 0038 | [Count and Say                   ](https://leetcode-cn.com/problems/count-and-say) | 54.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0038.count-and-say/main.go)| 
@@ -76,15 +36,10 @@
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0001 | [Two Sum                         ](https://leetcode-cn.com/problems/two-sum) | 47.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0001.two-sum/hash_table/main.go)| hash table
 | 0004 | [Median of Two Sorted Arrays     ](https://leetcode-cn.com/problems/median-of-two-sorted-arrays) | 36.8% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0004.median-of-two-sorted-arrays/binary_search/main.go)| binary search
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/array/0004.median-of-two-sorted-arrays/binary_search/main_test.go)| binary search
 | 0011 | [Container With Most Water       ](https://leetcode-cn.com/problems/container-with-most-water) | 61.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/array/0011.container-with-most-water/two_pointer/main.go)| two pointer
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/array/0011.container-with-most-water/two_pointer/main_test.go)| two pointer
 | 0015 | [3Sum                            ](https://leetcode-cn.com/problems/3sum) | 25.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/array/0015.3sum/two_pointer/main.go)| two pointer
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/array/0015.3sum/two_pointer/main_test.go)| two pointer
 | 0016 | [3Sum Closest                    ](https://leetcode-cn.com/problems/3sum-closest) | 43.0% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/array/0016.3sum-closest/two_pointer/main.go)| two pointer
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/array/0016.3sum-closest/two_pointer/main_test.go)| two pointer
 | 0018 | [4Sum                            ](https://leetcode-cn.com/problems/4sum) | 37.2% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/array/0018.4sum/two_pointer/main.go)| two pointer
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/array/0018.4sum/two_pointer/main_test.go)| two pointer
 | 0026 | [Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 48.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0026.remove-duplicates-from-sorted-array/two_pointer/main.go)| two pointer
 | 0027 | [Remove Element                  ](https://leetcode-cn.com/problems/remove-element) | 57.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0027.remove-element/two_pointer/main.go)| two pointer
 | 0030 | [Substring with Concatenation of All Words](https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words) | 29.2% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0030.substring-with-concatenation-of-all-words/two_pointer/main.go)| two pointer
@@ -95,3 +50,30 @@
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 59.5% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0037.sudoku-solver/dfs/main.go)| dfs
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 48.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
+
+# Linked List
+|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
+| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
+| 0002 | [Add Two Numbers                 ](https://leetcode-cn.com/problems/add-two-numbers) | 36.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0002.add-two-numbers/main.go)| 
+| 0019 | [Remove Nth Node From End of List](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list) | 37.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0019.remove-nth-node-from-end-of-list/two_pointer/main.go)| two pointer
+| 0021 | [Merge Two Sorted Lists          ](https://leetcode-cn.com/problems/merge-two-sorted-lists) | 59.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0021.merge-two-sorted-lists/main.go)| 
+| 0023 | [Merge k Sorted Lists            ](https://leetcode-cn.com/problems/merge-k-sorted-lists) | 48.8% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0023.merge-k-sorted-lists/main.go)| 
+| 0024 | [Swap Nodes in Pairs             ](https://leetcode-cn.com/problems/swap-nodes-in-pairs) | 64.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0024.swap-nodes-in-pairs/main.go)| 
+| 0025 | [Reverse Nodes in k-Group        ](https://leetcode-cn.com/problems/reverse-nodes-in-k-group) | 56.2% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0025.reverse-nodes-in-k-group/main.go)| 
+
+# Math
+|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
+| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
+| 0007 | [Reverse Integer                 ](https://leetcode-cn.com/problems/reverse-integer) | 33.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0007.reverse-integer/main.go)| 
+| 0008 | [String to Integer (atoi)        ](https://leetcode-cn.com/problems/string-to-integer-atoi) | 19.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0008.string-to-integer-atoi/main.go)| 
+| 0009 | [Palindrome Number               ](https://leetcode-cn.com/problems/palindrome-number) | 57.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0009.palindrome-number/main.go)| 
+| 0012 | [Integer to Roman                ](https://leetcode-cn.com/problems/integer-to-roman) | 62.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0012.integer-to-roman/main.go)| 
+| 0013 | [Roman to Integer                ](https://leetcode-cn.com/problems/roman-to-integer) | 60.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main.go)| 
+| 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
+| 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 32.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
+
+# Stack
+|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
+| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
+| 0020 | [Valid Parentheses               ](https://leetcode-cn.com/problems/valid-parentheses) | 40.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0020.valid-parentheses/main.go)| 
+| 0032 | [Longest Valid Parentheses       ](https://leetcode-cn.com/problems/longest-valid-parentheses) | 29.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0032.longest-valid-parentheses/main.go)| 
