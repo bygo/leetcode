@@ -1,9 +1,9 @@
-* [Array](#Array)
-* [Linked List](#Linked List)
-* [Math](#Math)
-* [Stack](#Stack)
-* [String](#String)
-* [Tree](#Tree)
+- [Array](#Array)
+- [LinkedList](#LinkedList)
+- [Math](#Math)
+- [Stack](#Stack)
+- [String](#String)
+- [Tree](#Tree)
 
 
 
@@ -28,7 +28,7 @@
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 48.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
 
-# Linked List
+# LinkedList
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0002 | [Add Two Numbers                 ](https://leetcode-cn.com/problems/add-two-numbers) | 36.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0002.add-two-numbers/main.go)| 
