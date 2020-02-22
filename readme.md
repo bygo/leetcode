@@ -1,9 +1,9 @@
-* [Array](Array)
-* [Linked List](Linked List)
-* [Math](Math)
-* [Stack](Stack)
-* [String](String)
-* [Tree](Tree)
+* [Array](#Array)
+* [Linked List](#Linked List)
+* [Math](#Math)
+* [Stack](#Stack)
+* [String](#String)
+* [Tree](#Tree)
 
 
 
