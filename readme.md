@@ -1,35 +1,12 @@
-🦴
+* [Array](Array)
+* [Linked List](Linked List)
+* [Math](Math)
+* [Stack](Stack)
+* [String](String)
+* [Tree](Tree)
 
 
 
-# String
-|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
-| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0003 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) | 32.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0003.longest-substring-without-repeating-characters/main.go)| 
-| 0005 | [Longest Palindromic Substring   ](https://leetcode-cn.com/problems/longest-palindromic-substring) | 28.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0005.longest-palindromic-substring/main.go)| 
-| 0006 | [ZigZag Conversion               ](https://leetcode-cn.com/problems/zigzag-conversion) | 46.7% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0006.zigzag-conversion/main.go)| 
-| 0010 | [Regular Expression Matching     ](https://leetcode-cn.com/problems/regular-expression-matching) | 26.0% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/string/0010.regular-expression-matching/main.go)| 
-| 0014 | [Longest Common Prefix           ](https://leetcode-cn.com/problems/longest-common-prefix) | 36.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0014.longest-common-prefix/main.go)| 
-| 0017 | [Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number) | 52.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0017.letter-combinations-of-a-phone-number/main.go)| 
-| 0028 | [Implement strStr()              ](https://leetcode-cn.com/problems/implement-strstr) | 39.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0028.implement-strstr/main.go)| 
-| 0038 | [Count and Say                   ](https://leetcode-cn.com/problems/count-and-say) | 54.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0038.count-and-say/main.go)| 
-| 0043 | [Multiply Strings                ](https://leetcode-cn.com/problems/multiply-strings) | 41.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0043.multiply-strings/main.go)| 
-| 0415 | [Add Strings                     ](https://leetcode-cn.com/problems/add-strings) | 49.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0415.add-strings/main.go)| 
-
-# Tree
-|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
-| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0022 | [Generate Parentheses            ](https://leetcode-cn.com/problems/generate-parentheses) | 73.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0022.generate-parentheses/dfs/iterative/main.go)| dfs @iterative
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0022.generate-parentheses/dfs/recursive/main.go)| dfs @recursive
-| 0039 | [Combination Sum                 ](https://leetcode-cn.com/problems/combination-sum) | 68.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0039.combination-sum/dfs/recursive/main.go)| dfs @recursive
-| 0040 | [Combination Sum II              ](https://leetcode-cn.com/problems/combination-sum-ii) | 60.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0040.combination-sum-ii/dfs/recursive/main.go)| dfs @recursive
-| 0094 | [Binary Tree Inorder Traversal   ](https://leetcode-cn.com/problems/binary-tree-inorder-traversal) | 70.2% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0094.binary-tree-inorder-traversal/dfs/recursive/main.go)| dfs @recursive
-| 0098 | [Validate Binary Search Tree     ](https://leetcode-cn.com/problems/validate-binary-search-tree) | 28.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/dfs/recursive/main.go)| dfs @recursive
-| 0099 | [Recover Binary Search Tree      ](https://leetcode-cn.com/problems/recover-binary-search-tree) | 54.9% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0099.recover-binary-search-tree/dfs/recursive/main.go)| dfs @recursive
-| 0100 | [Same Tree                       ](https://leetcode-cn.com/problems/same-tree) | 56.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0100.same-tree/dfs/recursive/main.go)| dfs @recursive
-| 0101 | [Symmetric Tree                  ](https://leetcode-cn.com/problems/symmetric-tree) | 50.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0101.symmetric-tree/dfs/recursive/main.go)| dfs @recursive
-| 0102 | [Binary Tree Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal) | 60.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0102.binary-tree-level-order-traversal/dfs/recursive/main.go)| dfs @recursive
-| 0103 | [Binary Tree Zigzag Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal) | 53.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0103.binary-tree-zigzag-level-order-traversal/dfs/recursive/main.go)| dfs @recursive
 
 # Array
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -77,3 +54,32 @@
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0020 | [Valid Parentheses               ](https://leetcode-cn.com/problems/valid-parentheses) | 40.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0020.valid-parentheses/main.go)| 
 | 0032 | [Longest Valid Parentheses       ](https://leetcode-cn.com/problems/longest-valid-parentheses) | 29.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0032.longest-valid-parentheses/main.go)| 
+
+# String
+|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
+| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
+| 0003 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) | 32.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0003.longest-substring-without-repeating-characters/main.go)| 
+| 0005 | [Longest Palindromic Substring   ](https://leetcode-cn.com/problems/longest-palindromic-substring) | 28.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0005.longest-palindromic-substring/main.go)| 
+| 0006 | [ZigZag Conversion               ](https://leetcode-cn.com/problems/zigzag-conversion) | 46.7% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0006.zigzag-conversion/main.go)| 
+| 0010 | [Regular Expression Matching     ](https://leetcode-cn.com/problems/regular-expression-matching) | 26.0% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/string/0010.regular-expression-matching/main.go)| 
+| 0014 | [Longest Common Prefix           ](https://leetcode-cn.com/problems/longest-common-prefix) | 36.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0014.longest-common-prefix/main.go)| 
+| 0017 | [Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number) | 52.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0017.letter-combinations-of-a-phone-number/main.go)| 
+| 0028 | [Implement strStr()              ](https://leetcode-cn.com/problems/implement-strstr) | 39.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0028.implement-strstr/main.go)| 
+| 0038 | [Count and Say                   ](https://leetcode-cn.com/problems/count-and-say) | 54.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0038.count-and-say/main.go)| 
+| 0043 | [Multiply Strings                ](https://leetcode-cn.com/problems/multiply-strings) | 41.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0043.multiply-strings/main.go)| 
+| 0415 | [Add Strings                     ](https://leetcode-cn.com/problems/add-strings) | 49.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0415.add-strings/main.go)| 
+
+# Tree
+|  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
+| ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
+| 0022 | [Generate Parentheses            ](https://leetcode-cn.com/problems/generate-parentheses) | 73.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0022.generate-parentheses/dfs/iterative/main.go)| dfs @iterative
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0022.generate-parentheses/dfs/recursive/main.go)| dfs @recursive
+| 0039 | [Combination Sum                 ](https://leetcode-cn.com/problems/combination-sum) | 68.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0039.combination-sum/dfs/recursive/main.go)| dfs @recursive
+| 0040 | [Combination Sum II              ](https://leetcode-cn.com/problems/combination-sum-ii) | 60.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0040.combination-sum-ii/dfs/recursive/main.go)| dfs @recursive
+| 0094 | [Binary Tree Inorder Traversal   ](https://leetcode-cn.com/problems/binary-tree-inorder-traversal) | 70.2% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0094.binary-tree-inorder-traversal/dfs/recursive/main.go)| dfs @recursive
+| 0098 | [Validate Binary Search Tree     ](https://leetcode-cn.com/problems/validate-binary-search-tree) | 28.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/dfs/recursive/main.go)| dfs @recursive
+| 0099 | [Recover Binary Search Tree      ](https://leetcode-cn.com/problems/recover-binary-search-tree) | 54.9% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0099.recover-binary-search-tree/dfs/recursive/main.go)| dfs @recursive
+| 0100 | [Same Tree                       ](https://leetcode-cn.com/problems/same-tree) | 56.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0100.same-tree/dfs/recursive/main.go)| dfs @recursive
+| 0101 | [Symmetric Tree                  ](https://leetcode-cn.com/problems/symmetric-tree) | 50.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0101.symmetric-tree/dfs/recursive/main.go)| dfs @recursive
+| 0102 | [Binary Tree Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal) | 60.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0102.binary-tree-level-order-traversal/dfs/recursive/main.go)| dfs @recursive
+| 0103 | [Binary Tree Zigzag Level Order Traversal](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal) | 53.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0103.binary-tree-zigzag-level-order-traversal/dfs/recursive/main.go)| dfs @recursive
