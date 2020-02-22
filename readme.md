@@ -1,3 +1,6 @@
+#Data Structure
+
+---
 - [Array](#Array)
 - [LinkedList](#LinkedList)
 - [Math](#Math)
@@ -5,10 +8,11 @@
 - [String](#String)
 - [Tree](#Tree)
 
+---
 
 
 
-# Array
+## Array
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0001 | [Two Sum                         ](https://leetcode-cn.com/problems/two-sum) | 47.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0001.two-sum/hash_table/main.go)| hash table
@@ -28,7 +32,7 @@
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 48.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
 
-# LinkedList
+## LinkedList
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0002 | [Add Two Numbers                 ](https://leetcode-cn.com/problems/add-two-numbers) | 36.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0002.add-two-numbers/main.go)| 
@@ -38,7 +42,7 @@
 | 0024 | [Swap Nodes in Pairs             ](https://leetcode-cn.com/problems/swap-nodes-in-pairs) | 64.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0024.swap-nodes-in-pairs/main.go)| 
 | 0025 | [Reverse Nodes in k-Group        ](https://leetcode-cn.com/problems/reverse-nodes-in-k-group) | 56.2% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0025.reverse-nodes-in-k-group/main.go)| 
 
-# Math
+## Math
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0007 | [Reverse Integer                 ](https://leetcode-cn.com/problems/reverse-integer) | 33.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0007.reverse-integer/main.go)| 
@@ -49,13 +53,13 @@
 | 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
 | 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 32.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
 
-# Stack
+## Stack
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0020 | [Valid Parentheses               ](https://leetcode-cn.com/problems/valid-parentheses) | 40.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0020.valid-parentheses/main.go)| 
 | 0032 | [Longest Valid Parentheses       ](https://leetcode-cn.com/problems/longest-valid-parentheses) | 29.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0032.longest-valid-parentheses/main.go)| 
 
-# String
+## String
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0003 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) | 32.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0003.longest-substring-without-repeating-characters/main.go)| 
@@ -69,7 +73,7 @@
 | 0043 | [Multiply Strings                ](https://leetcode-cn.com/problems/multiply-strings) | 41.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0043.multiply-strings/main.go)| 
 | 0415 | [Add Strings                     ](https://leetcode-cn.com/problems/add-strings) | 49.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0415.add-strings/main.go)| 
 
-# Tree
+## Tree
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0022 | [Generate Parentheses            ](https://leetcode-cn.com/problems/generate-parentheses) | 73.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0022.generate-parentheses/dfs/iterative/main.go)| dfs @iterative
