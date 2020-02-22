@@ -19,7 +19,8 @@ func inorderTraversal(root *TreeNode) []int {
 			for last.Right != nil {
 				last = last.Right
 			}
-			last.Right, root, root.Left = root, root.Left, nil
+			last.Right = root
+			root, root.Left =  root.Left, nil
 		}
 	}
 	return res

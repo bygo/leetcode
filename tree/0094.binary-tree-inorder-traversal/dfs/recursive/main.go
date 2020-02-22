@@ -6,7 +6,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-//递归
 var res []int
 
 func inorderTraversal(root *TreeNode) []int {
