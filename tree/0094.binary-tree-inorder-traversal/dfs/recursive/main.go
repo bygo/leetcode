@@ -22,5 +22,3 @@ func dfs(root *TreeNode) {
 		dfs(root.Right)
 	}
 }
-
-//迭代
