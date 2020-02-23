@@ -16,21 +16,6 @@ dfs
 （因为 根节点的右节点下的所有值，必须全部大于根节点）
  */
 
-//func isValidBST(root *TreeNode) bool {
-//	return dfs(root, nil, nil)
-//}
-//
-//func dfs(root *TreeNode, min, max *int) bool {
-//	if root == nil {
-//		return true
-//	}
-//	if min != nil && root.Val <= *min || max != nil && *max <= root.Val {
-//		return false
-//	}
-//	return dfs(root.Left, min, &root.Val) && dfs(root.Right, &root.Val, max)
-//}
-
-//中序遍历
 var last *TreeNode
 
 func isValidBST(root *TreeNode) bool {

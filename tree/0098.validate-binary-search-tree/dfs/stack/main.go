@@ -6,18 +6,23 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func inorderTraversal(root *TreeNode) []int {
-	var res []int
+func isValidBST(root *TreeNode) bool {
+	var last *TreeNode
 	var stack []*TreeNode
 	for root != nil || len(stack) > 0 {
 		for root != nil {
 			stack = append(stack, root)
 			root = root.Left
 		}
+
 		pre := len(stack) - 1
-		res = append(res, stack[pre].Val)
+		if last != nil && last.Val >= stack[pre].Val {
+			return false
+		}
+		last = stack[pre]
 		root = stack[pre].Right
 		stack = stack[:pre]
 	}
-	return res
+
+	return true
 }
