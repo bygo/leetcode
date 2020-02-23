@@ -88,7 +88,6 @@
 | 0096 | [Unique Binary Search Trees      ](https://leetcode-cn.com/problems/unique-binary-search-trees) | 64.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0096.unique-binary-search-trees/catalan/main.go)| catalan
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0096.unique-binary-search-trees/dp/main.go)| dp
 | 0098 | [Validate Binary Search Tree     ](https://leetcode-cn.com/problems/validate-binary-search-tree) | 28.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/bfs/queue/main.go)| bfs.queue
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/bfs/queue/queue)| bfs.queue
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/bfs/recursive/main.go)| bfs.recursive
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/dfs/recursive/main.go)| dfs.recursive
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0098.validate-binary-search-tree/dfs/stack/main.go)| dfs.stack
