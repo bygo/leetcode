@@ -8,20 +8,21 @@ type TreeNode struct {
 
 func inorderTraversal(root *TreeNode) []int {
 	var res []int
-	var last *TreeNode
+	var pre *TreeNode
 
 	for root != nil {
 		if root.Left == nil {
 			res = append(res, root.Val)
 			root = root.Right
 		} else {
-			last = root.Left
-			for last.Right != nil {
-				last = last.Right
+			pre = root.Left
+			for pre.Right != nil {
+				pre = pre.Right
 			}
-			last.Right = root
-			root, root.Left =  root.Left, nil
+			pre.Right = root
+			root, root.Left = root.Left, nil
 		}
 	}
+
 	return res
 }
