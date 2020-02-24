@@ -19,7 +19,7 @@ dfs
 var last *TreeNode
 
 func isValidBST(root *TreeNode) bool {
-	last = nil
+	last = &TreeNode{Val: -1 << 63}
 	return dfs(root)
 }
 
@@ -27,7 +27,7 @@ func dfs(root *TreeNode) bool {
 	if root == nil {
 		return true
 	}
-	if !dfs(root.Left) || last != nil && root.Val <= last.Val {
+	if !dfs(root.Left) || root.Val <= last.Val {
 		return false
 	}
 	last = root
