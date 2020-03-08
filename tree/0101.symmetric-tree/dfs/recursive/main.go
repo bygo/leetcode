@@ -7,10 +7,7 @@ type TreeNode struct {
 }
 
 func isSymmetric(root *TreeNode) bool {
-	if root == nil {
-		return true
-	}
-	return dfs(root.Left, root.Right)
+	return dfs(root, root)
 }
 
 func dfs(p *TreeNode, q *TreeNode) bool {
