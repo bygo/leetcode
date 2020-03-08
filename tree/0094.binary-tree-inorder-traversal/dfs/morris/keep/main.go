@@ -8,30 +8,29 @@ type TreeNode struct {
 
 func inorderTraversal(root *TreeNode) []int {
 	var res []int
-	var pre *TreeNode
+	var max *TreeNode
 
-	for root != nil{
-		if root.Left == nil{
-			res = append(res,root.Val)
+	for root != nil {
+		if root.Left == nil {
+			res = append(res, root.Val)
 			root = root.Right
-		}else{
-			pre = root.Left
-			for pre.Right != nil && pre.Right != root{
-				pre = pre.Right
+		} else {
+			max = root.Left
+			for max.Right != nil && max.Right != root {
+				max = max.Right
 			}
 
-			if pre.Right == nil {
-				pre.Right = root
+			if max.Right == nil {
+				// 未连接,连接到root
+				max.Right = root
 				root = root.Left
-			}else{
-				root = pre.Right
-				pre.Right = nil
-				res = append(res,root.Val)
+			} else {
+				// 已连接,断开连接
+				max.Right = nil
+				res = append(res, root.Val)
 				root = root.Right
 			}
 		}
 	}
 	return res
 }
-
-

@@ -6,20 +6,26 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func inorderTraversal(root *TreeNode) []int {
-	var res []int
+func recoverTree(root *TreeNode) {
+	var last, first, second *TreeNode
 	var stack []*TreeNode
-
 	for root != nil || len(stack) > 0 {
 		for root != nil {
 			stack = append(stack, root)
 			root = root.Left
 		}
-
 		pre := len(stack) - 1
-		res = append(res, stack[pre].Val)
+		if last != nil && stack[pre].Val <= last.Val {
+			if first != nil {
+				second = stack[pre]
+				break //剪枝
+			}
+			first, second = last, stack[pre]
+		}
+
+		last = stack[pre]
 		root = stack[pre].Right
 		stack = stack[:pre]
 	}
-	return res
+	first.Val, second.Val = second.Val, first.Val
 }

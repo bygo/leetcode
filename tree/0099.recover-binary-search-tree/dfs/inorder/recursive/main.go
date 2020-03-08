@@ -6,15 +6,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-//中序遍历 o(1)
-var last *TreeNode
-var wrong []*TreeNode
+var last,first, second *TreeNode
 
 func recoverTree(root *TreeNode) {
-	last = nil
-	wrong = make([]*TreeNode, 0)
+	last, first, second = nil, nil, nil
 	dfs(root)
-	wrong[0].Val, wrong[1].Val = wrong[1].Val, wrong[0].Val
+	first.Val, second.Val = second.Val, first.Val
 }
 
 func dfs(root *TreeNode) {
@@ -23,12 +20,11 @@ func dfs(root *TreeNode) {
 	}
 	dfs(root.Left)
 	if last != nil && root.Val <= last.Val {
-		if len(wrong) == 0 {
-			wrong = append(wrong, last)
-			wrong = append(wrong, root)
-		} else {
-			wrong[1] = root
+		if first != nil {
+			second = root
+			return //剪枝
 		}
+		first, second = last, root
 	}
 	last = root
 	dfs(root.Right)

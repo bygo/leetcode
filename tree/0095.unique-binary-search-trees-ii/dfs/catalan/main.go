@@ -21,6 +21,7 @@ func dfs(start, end int) []*TreeNode {
 	}
 
 	for i := start; i <= end; i++ {
+		//0,2
 		for _, l := range dfs(start, i-1) {
 			for _, r := range dfs(i+1, end) {
 				cur := &TreeNode{
