@@ -8,20 +8,25 @@ type TreeNode struct {
 
 func levelOrder(root *TreeNode) [][]int {
 	res := [][]int{}
+	if root == nil {
+		return res
+	}
 	var queue = []*TreeNode{root}
+
 	var level int
 	for len(queue) > 0 {
 		counter := len(queue)
-		res[level] = make([]int, 0)
+		res = append(res, []int{})
 		for 0 < counter {
 			counter--
-			if queue[counter].Left != nil {
-				queue = append(queue, queue[counter].Left)
+			if queue[0].Left != nil {
+				queue = append(queue, queue[0].Left)
 			}
-			if queue[counter].Right != nil {
-				queue = append(queue, queue[counter].Right)
+			if queue[0].Right != nil {
+				queue = append(queue, queue[0].Right)
 			}
-			res[level] = append(res[level], queue[counter].Val)
+			res[level] = append(res[level], queue[0].Val)
+			queue = queue[1:]
 		}
 		level++
 	}

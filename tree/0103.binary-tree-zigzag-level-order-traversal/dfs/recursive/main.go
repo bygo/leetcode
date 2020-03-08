@@ -19,16 +19,12 @@ func dfs(root *TreeNode, level int) {
 		if len(res) == level {
 			res = append(res, []int{})
 		}
-		res[level] = append(res[level], root.Val)
-
 		if level%2 == 0 {
-			dfs(root.Left, level+1)
-			dfs(root.Right, level+1)
-			//res[level] = append(res[level], root.Val)
+			res[level] = append(res[level], root.Val)
 		} else {
-			dfs(root.Right, level+1)
-			dfs(root.Left, level+1)
-			//res[level] = append([]int{root.Val}, res[level]...)
+			res[level] = append([]int{root.Val}, res[level]...)
 		}
+		dfs(root.Left, level+1)
+		dfs(root.Right, level+1)
 	}
 }
