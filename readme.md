@@ -5,9 +5,11 @@
 
 ## 新建刷题目录
 比如第 `1` 题 two-sum
+
 `go run main.go -a=1`
 
 比如第 `100` 题 same-tree
+
 `go run main.go -a=100`
 
 ## `目录约定`  `生成 readme.md`
