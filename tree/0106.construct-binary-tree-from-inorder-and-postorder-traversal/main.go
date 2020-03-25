@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 func buildTree(inorder []int, postorder []int) *TreeNode {
-	l := len(postorder)-1
+	l := len(postorder) - 1
 	for k := range inorder {
 		if inorder[k] == postorder[l] {
 			return &TreeNode{
