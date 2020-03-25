@@ -1,44 +1,14 @@
 # `Go版本的一题多解（所有解）`
 
-# 我的刷题步骤
-
-## 新建刷题目录
-比如第 `1` 题 two-sum
-
-`go run main.go -a=1`
-
-比如第 `100` 题 same-tree
-
-`go run main.go -a=100`
-
-## `目录约定`  `生成 readme.md`
-
-`分类` : `1 级目录`
-
-`题名` : `2 级目录`
-
-`算法` : `3-N 级目录`
-
-执行 `go run main.go` 自动生成 `readme.md`
-
-## 即将增加的命令
-`根据题解自动分类`
-`根据算法自动分类`
-
 # Data Structure
 
 ---
 - [Array](#Array)
-
-- [LinkedList](#LinkedList)
-
-- [Math](#Math)
-
-- [Stack](#Stack)
-
-- [String](#String)
-
-- [Tree](#Tree)
+- [LinkedList](#LinkedList)
+- [Math](#Math)
+- [Stack](#Stack)
+- [String](#String)
+- [Tree](#Tree)
 
 ---
 
@@ -142,3 +112,5 @@
 | 0109 | [Convert Sorted List to Binary Search Tree](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree) | 70.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/array/main.go)| array
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/inorder/main.go)| inorder
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/recursive/main.go)| recursive
+| 0110 | [Balanced Binary Tree            ](https://leetcode-cn.com/problems/balanced-binary-tree) | 50.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0110.balanced-binary-tree/buttom/main.go)| buttom
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0110.balanced-binary-tree/top/main.go)| top
