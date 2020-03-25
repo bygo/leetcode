@@ -1,14 +1,40 @@
 # `Go版本的一题多解（所有解）`
 
+# 我的刷题步骤
+新建刷题目录->拖入分类（1级目录）-> 一题多解->生成readme.md
+
+## 新建刷题目录
+比如第 `1` 题 two-sum
+`go run main.go -a=1`
+
+比如第 `100` 题 same-tree
+`go run main.go -a=100`
+
+## `目录约定`  `生成 readme.md`
+1 级目录分类
+2 级目录题名
+3-N 级目录为算法名
+
+执行 `go run main.go` 自动生成 `readme.md`
+
+## 即将增加的命令
+`根据题解自动分类`
+`根据算法自动分类`
+
 # Data Structure
 
 ---
 - [Array](#Array)
-- [LinkedList](#LinkedList)
-- [Math](#Math)
-- [Stack](#Stack)
-- [String](#String)
-- [Tree](#Tree)
+
+- [LinkedList](#LinkedList)
+
+- [Math](#Math)
+
+- [Stack](#Stack)
+
+- [String](#String)
+
+- [Tree](#Tree)
 
 ---
 
