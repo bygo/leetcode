@@ -35,6 +35,7 @@
     - [前序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/preorder.go)
     - [中序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/inorder.go)
     - [后序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/postorder.go)
+    - [前序遍历-Morris-链表](https://github.com/temporaries/leetcode/blob/master/templates/tree/postorder_morris_break.go)
 
 # 数据结构
 
