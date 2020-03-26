@@ -31,7 +31,7 @@
 执行 `go run main.go` 自动生成 `readme.md`
 
 # 模板
-- Tree
+- [Tree](https://github.com/temporaries/leetcode/tree/master/templates/tree)
     - [前序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/preorder.go)
     - [中序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/inorder.go)
     - [后序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/postorder.go)
