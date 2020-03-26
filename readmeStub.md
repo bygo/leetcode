@@ -21,9 +21,11 @@
 
 执行 `go run main.go` 自动生成 `readme.md`
 
-## 即将增加的命令
-`根据题解自动分类`
-`根据算法自动分类`
+# 模板
+- Tree
+    - [前序遍历](https://github.com/temporaries/leetcode/templates/tree/preorder.go)
+    - [中序遍历](https://github.com/temporaries/leetcode/templates/tree/inorder.go)
+    - [后序遍历](https://github.com/temporaries/leetcode/templates/tree/postorder.go)
 
 # Data Structure
 

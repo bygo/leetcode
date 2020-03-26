@@ -45,16 +45,17 @@ type Profile struct {
 	StatStatusPairs []Problem `json:"stat_status_pairs"`
 }
 
-var container = map[string][]Problem{}
+var problems = map[string][]Problem{}
+
+//数据结构 排序，并且存在时生成
+var SolutionOrder = []string{
+	"array", "linked_list", "math", "stack", "string", "tree",
+}
 var readme string
 var profile Profile
 var currentClassName string
 
-func r() interface{} {
-	return Problem{}
-}
 func main() {
-
 	will()
 
 	a := flag.String("a", "r", "generate readme.md | start a new problem")
@@ -92,9 +93,9 @@ func read() {
 	class, err := ioutil.ReadDir("./")
 	check(err)
 	for _, c := range class {
-		if c.IsDir() && c.Name()[0] != '.' {
+		if c.IsDir() && c.Name()[0] != '.' && valueOf(SolutionOrder, c.Name()) {
 			currentClassName = c.Name()
-			container[currentClassName] = []Problem{}
+			problems[currentClassName] = []Problem{}
 			getSolutions(c, currentClassName)
 		}
 	}
@@ -112,6 +113,7 @@ func getSolutions(dir os.FileInfo, path string) {
 		}
 		return
 	}
+
 	desc := strings.Split(path, "/")
 	l := len(desc)
 	//fmt.Printf("%+v", desc)
@@ -121,7 +123,21 @@ func getSolutions(dir os.FileInfo, path string) {
 	p := find(id)
 	p.File = "https://github.com/temporaries/leetcode/tree/master/" + path
 	p.Algorithm = algorithm
-	container[currentClassName] = append(container[currentClassName], p, )
+	problems[currentClassName] = append(problems[currentClassName], p, )
+}
+
+func getTemplates(dir os.FileInfo, path string) {
+	if strings.Contains(dir.Name(), "_test") {
+		return
+	}
+	if dir.IsDir() {
+		dirs, err := ioutil.ReadDir(path)
+		check(err)
+		for _, d := range dirs {
+			getTemplates(d, path+"/"+d.Name())
+		}
+		return
+	}
 }
 
 func find(id int) Problem {
@@ -140,20 +156,17 @@ func find(id int) Problem {
 }
 
 func output() {
-	stubReadme, err := ioutil.ReadFile("./readme.stub")
+	stubReadme, err := ioutil.ReadFile("./readmeStub.md")
 	difficulty := []string{
 		"Easy", "Medium", "Hard",
 	}
 	check(err)
-	order := []string{
-		"array", "linked_list", "math", "stack", "string", "tree",
-	}
 
 	var directoryIndex string
-	for _, index := range order {
+	for _, index := range SolutionOrder {
 		className := normalizeClassTitle(index)
 		directoryIndex += fmt.Sprintf("- [%s](#%s)\n\r", className, className)
-		problems := container[index]
+		problems := problems[index]
 		stubClass, err := ioutil.ReadFile("./class.stub")
 		check(err)
 		class := strings.Replace(string(stubClass), "@DummyClass", className, 1)
@@ -218,4 +231,13 @@ func check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
+}
+
+func valueOf(str []string, value string) bool {
+	for _, v := range str {
+		if v == value {
+			return true
+		}
+	}
+	return false
 }
