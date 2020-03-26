@@ -90,6 +90,8 @@
 | 0013 | [Roman to Integer                ](https://leetcode-cn.com/problems/roman-to-integer) | 60.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main.go)| 
 | 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
 | 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 32.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
+| 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0292.nim-game/main.go)| 
+| 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 44.6% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0319.bulb-switcher/main.go)| 
 
 ## Stack
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -148,5 +150,5 @@
 | 0109 | [Convert Sorted List to Binary Search Tree](https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree) | 70.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/array/main.go)| array
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/inorder/main.go)| inorder
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0109.convert-sorted-list-to-binary-search-tree/recursive/main.go)| recursive
-| 0110 | [Balanced Binary Tree            ](https://leetcode-cn.com/problems/balanced-binary-tree) | 50.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0110.balanced-binary-tree/buttom/main.go)| buttom
+| 0110 | [Balanced Binary Tree            ](https://leetcode-cn.com/problems/balanced-binary-tree) | 50.2% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0110.balanced-binary-tree/postorder/main.go)| postorder
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0110.balanced-binary-tree/top/main.go)| top

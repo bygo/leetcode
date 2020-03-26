@@ -22,4 +22,4 @@ func height(node *TreeNode) float64 {
 	return math.Max(height(node.Left), height(node.Right)) + 1
 }
 
-// 计算深度->对比深度
+// 计算左右树深度->对比深度

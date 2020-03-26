@@ -9,7 +9,7 @@ type TreeNode struct {
 }
 
 func isBalanced(node *TreeNode) bool {
-	return find(node) != -1
+	return find(node) > -1
 }
 
 func find(node *TreeNode) float64 {
@@ -18,16 +18,11 @@ func find(node *TreeNode) float64 {
 	}
 
 	l := find(node.Left)
-	if l == -1 { //剪枝，不平衡时直接返回，
+	if l == -1 {
 		return -1
 	}
-
 	r := find(node.Right)
-	if r == -1 { //剪枝，不平衡时直接返回
-		return -1
-	}
-
-	if math.Abs(l-r) > 1 { //剪枝，不平衡时直接返回
+	if r == -1 || math.Abs(l-r) > 1 { //剪枝，不平衡时直接返回
 		return -1
 	}
 
