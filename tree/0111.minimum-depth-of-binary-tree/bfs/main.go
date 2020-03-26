@@ -6,29 +6,30 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func levelOrder(root *TreeNode) [][]int {
-	res := [][]int{}
+func minDepth(root *TreeNode) int {
+	var level int
 	if root == nil {
-		return res
+		return level
 	}
 	var queue = []*TreeNode{root}
 
-	var level int
 	for len(queue) > 0 {
+		level++
 		length := len(queue)
-		res = append(res, []int{})
 		for 0 < length {
 			length--
+			if queue[0].Left == nil && queue[0].Right == nil {
+				return level
+			}
 			if queue[0].Left != nil {
 				queue = append(queue, queue[0].Left)
 			}
 			if queue[0].Right != nil {
 				queue = append(queue, queue[0].Right)
 			}
-			res[level] = append(res[level], queue[0].Val)
+
 			queue = queue[1:]
 		}
-		level++
 	}
-	return res
+	return level
 }

@@ -18,13 +18,14 @@ func find(node *TreeNode) float64 {
 	}
 
 	l := find(node.Left)
-	if l == -1 {
+	if l == -1 { //剪枝，不平衡时直接返回
 		return -1
 	}
 	r := find(node.Right)
-	if r == -1 || math.Abs(l-r) > 1 { //剪枝，不平衡时直接返回
+
+	if l == -1 || r == -1 || math.Abs(l-r) > 1 { //剪枝，不平衡时直接返回
 		return -1
 	}
 
-	return math.Max(l, r) + 1 //计算深度
+	return math.Max(l, r) + 1 //计算左右最大深度，因为是后序遍历，游标会一直走到最底部，再往上冒泡
 }
