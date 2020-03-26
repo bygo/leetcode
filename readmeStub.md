@@ -32,7 +32,7 @@
 
 # 模板
 - Tree
-    - [前序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/preoder.go)
+    - [前序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/preorder.go)
     - [中序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/inorder.go)
     - [后序遍历](https://github.com/temporaries/leetcode/blob/master/templates/tree/postorder.go)
 
