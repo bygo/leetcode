@@ -18,7 +18,7 @@ func minDepth(root *TreeNode) int {
 }
 
 func dfs(node *TreeNode, depth int) {
-	if node.Right == nil && node.Left == nil {
+	if node.Right == nil && node.Left == nil { //虽然这里没有打印根，但我们停在这里（根）判断了一下，勉强当作前序遍历
 		if depth < min {
 			min = depth
 		}
