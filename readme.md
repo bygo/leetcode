@@ -159,3 +159,5 @@
 | 0112 | [Path Sum                        ](https://leetcode-cn.com/problems/path-sum) | 49.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0112.path-sum/dfs/main.go)| dfs
 | 0113 | [Path Sum II                     ](https://leetcode-cn.com/problems/path-sum-ii) | 58.7% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0113.path-sum-ii/dfs/main.go)| dfs
 | 0114 | [Flatten Binary Tree to Linked List](https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list) | 67.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0114.flatten-binary-tree-to-linked-list/preorder.morris/main.go)| preorder.morris
+| 0116 | [Populating Next Right Pointers in Each Node](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node) | 53.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0116.populating-next-right-pointers-in-each-node/bfs/main.go)| bfs
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0116.populating-next-right-pointers-in-each-node/dfs/main.go)| dfs
