@@ -71,6 +71,7 @@
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 59.5% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0037.sudoku-solver/dfs/main.go)| dfs
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 48.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
+| 1389 | [Minimum Moves to Move a Box to Their Target Location](https://leetcode-cn.com/problems/minimum-moves-to-move-a-box-to-their-target-location) | 43.0% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/1389.minimum-moves-to-move-a-box-to-their-target-location/main.go)| 
 
 ## LinkedList
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
