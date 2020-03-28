@@ -31,7 +31,7 @@ type Stat struct {
 	TotalAcs            int    `json:"total_acs"`
 	TotalSubmitted      int    `json:"total_submitted"`
 	TotalColumnArticles int    `json:"total_column_articles"`
-	FrontendQuestionId  int    `json:"frontend_question_id"`
+	FrontendQuestionId  string `json:"frontend_question_id"`
 	IsNewQuestion       int    `json:"is_new_question"`
 }
 
@@ -64,9 +64,9 @@ func main() {
 		read()
 		output()
 	} else {
-		id, err := strconv.Atoi(*a)
-		check(err)
-		start(id)
+		//id, err := strconv.Atoi(*a)
+		//check(err)
+		start(*a)
 	}
 
 	did()
@@ -119,8 +119,8 @@ func getSolutions(dir os.FileInfo, path string) {
 	//fmt.Printf("%+v", desc)
 	algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
 	title := strings.Split(desc[1], ".")
-	id, _ := strconv.Atoi(title[0])
-	p := find(id)
+	//id, _ := strconv.Atoi(title[0])
+	p := find(title[0])
 	p.File = "https://github.com/temporaries/leetcode/tree/master/" + path
 	p.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], p, )
@@ -140,19 +140,29 @@ func getTemplates(dir os.FileInfo, path string) {
 	}
 }
 
-func find(id int) Problem {
+func find(id string) Problem {
+	id = strings.Trim(id,"0")
 	left, right := 0, len(profile.StatStatusPairs)
 	for left < right {
-		mid := (left + right) / 2
-		if id < profile.StatStatusPairs[mid].Stat.QuestionId {
-			left = mid
-		} else if profile.StatStatusPairs[mid].Stat.QuestionId < id {
-			right = mid
-		} else {
-			return profile.StatStatusPairs[mid]
+		//i, _ := strconv.Atoi(profile.StatStatusPairs[left].Stat.FrontendQuestionId)
+		if profile.StatStatusPairs[left].Stat.FrontendQuestionId == id {
+			return profile.StatStatusPairs[left]
 		}
+		left++
 	}
-	panic(strconv.Itoa(id) + " not exists")
+	//for left < right {
+	//	mid := (left + right) / 2
+	//	i, _ := strconv.Atoi(profile.StatStatusPairs[mid].Stat.FrontendQuestionId)
+	//	if id < i {
+	//		left = mid
+	//	} else if i < id {
+	//		right = mid
+	//	} else {
+	//		return profile.StatStatusPairs[mid]
+	//	}
+	//}
+
+	panic(id + " not exists")
 }
 
 func output() {
@@ -205,11 +215,12 @@ func normalizeClassTitle(title string) string {
 	return s
 }
 
-func start(id int) {
+func start(id string) {
 	p := find(id)
 	problemStub, err := ioutil.ReadFile("./problem.stub")
 	check(err)
-	path := fmt.Sprintf("%04d.%s", p.Stat.QuestionId, p.Stat.QuestionTitleSlug)
+	i, _ := strconv.Atoi(p.Stat.FrontendQuestionId)
+	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
 	os.Mkdir(path, os.ModePerm)
 	ioutil.WriteFile(fmt.Sprintf("%s/main.go", path), problemStub, os.ModePerm)
 }
