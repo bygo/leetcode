@@ -164,3 +164,4 @@
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0116.populating-next-right-pointers-in-each-node/dfs/main.go)| dfs
 | 0117 | [Populating Next Right Pointers in Each Node II](https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii) | 46.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0117.populating-next-right-pointers-in-each-node-ii/bfs/main.go)| bfs
 | 0124 | [Binary Tree Maximum Path Sum    ](https://leetcode-cn.com/problems/binary-tree-maximum-path-sum) | 39.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0124.binary-tree-maximum-path-sum/dfs/main.go)| dfs
+| 0129 | [Sum Root to Leaf Numbers        ](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers) | 62.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0129.sum-root-to-leaf-numbers/dfs/main.go)| dfs
