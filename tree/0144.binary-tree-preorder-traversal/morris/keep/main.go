@@ -6,12 +6,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func preorderTraversal(root *TreeNode) []int {
+func preorderTraversal(root *TreeNode) {
 	var max *TreeNode
-	var res []int
 	for root != nil {
 		if root.Left == nil {
-			res = append(res, root.Val)
+			println(root.Val)
 			root = root.Right
 		} else {
 			max = root.Left
@@ -20,7 +19,7 @@ func preorderTraversal(root *TreeNode) []int {
 			}
 
 			if max.Right == nil {
-				res = append(res, root.Val)
+				println(root.Val)
 				max.Right = root.Right
 				root = root.Left
 			} else {
@@ -29,5 +28,4 @@ func preorderTraversal(root *TreeNode) []int {
 			}
 		}
 	}
-	return res
 }

@@ -1,12 +1,6 @@
-package main
+package tree
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
-
-func preorderTraversal(root *TreeNode) {
+func preorderStack(root *TreeNode) {
 	var stack = []*TreeNode{}
 	for root != nil || len(stack) > 0 {
 		for root != nil {
