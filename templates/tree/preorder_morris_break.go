@@ -1,27 +1,22 @@
 package tree
 
-func preorderMorrisBreak(root *TreeNode) []int {
+func preorderMorrisBreak(root *TreeNode) {
 	var max *TreeNode
-	var res []int
+
 	for root != nil {
 		if root.Left == nil {
-			res = append(res, root.Val)
+			println(root.Val)
 			root = root.Right
 		} else {
+			//寻找左树最大节点
 			max = root.Left
-			for max.Right != nil && max.Right != root {
+			for max.Right != nil {
 				max = max.Right
 			}
 
-			if max.Right == nil {
-				res = append(res, root.Val)
-				max.Right = root.Right
-				root = root.Left
-			} else {
-				root = root.Right
-				max.Right = nil
-			}
+			root.Right, max.Right = root.Left, root.Right
+			root.Left = nil
 		}
 	}
-	return res
+
 }

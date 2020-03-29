@@ -6,11 +6,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func preorderTraversal(root *TreeNode) {
+func preorderTraversal(root *TreeNode) []int {
+	var res []int
 	var stack = []*TreeNode{}
 	for root != nil || len(stack) > 0 {
 		for root != nil {
-			println(root.Val)
+			res = append(res, root.Val)
 			stack = append(stack, root)
 			root = root.Left
 		}
@@ -19,4 +20,5 @@ func preorderTraversal(root *TreeNode) {
 		root = stack[pre].Right
 		stack = stack[:pre]
 	}
+	return res
 }
