@@ -5,16 +5,16 @@ func preorderMorrisBreak(root *TreeNode) []int {
 	var max *TreeNode
 	for root != nil {
 		if root.Left == nil {
-			res = append(res, root.Val)
-			root = root.Right //其实只是单向链表了
+			res = append(res, root.Val) //前序输出
+			root = root.Right           //链表移动
 		} else {
-			//寻找左树最大节点
-			max = root.Left
+			max = root.Left //寻找左树最大节点
 			for max.Right != nil {
 				max = max.Right
 			}
 
-			root.Right, max.Right = root.Left, root.Right //即转为以Right为方向的链表
+			//前序指针处理，root将在下一次循环输出
+			root.Right, max.Right = root.Left, root.Right //转为以Right为方向的链表
 			root.Left = nil                               //砍左树
 		}
 	}
