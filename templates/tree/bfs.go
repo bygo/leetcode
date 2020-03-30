@@ -3,7 +3,7 @@ package tree
 func levelOrder(root *TreeNode) {
 	var queue = []*TreeNode{root}
 	var level int
-	for len(queue) > 0 {
+	for 0 < len(queue) {
 		length := len(queue)
 		for 0 < length {
 			length--
