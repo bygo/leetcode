@@ -141,7 +141,7 @@ func getTemplates(dir os.FileInfo, path string) {
 }
 
 func find(id string) Problem {
-	id = strings.Trim(id,"0")
+	id = strings.TrimLeft(id,"0")
 	left, right := 0, len(profile.StatStatusPairs)
 	for left < right {
 		//i, _ := strconv.Atoi(profile.StatStatusPairs[left].Stat.FrontendQuestionId)
