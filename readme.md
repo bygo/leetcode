@@ -183,3 +183,4 @@
 | 0222 | [Count Complete Tree Nodes       ](https://leetcode-cn.com/problems/count-complete-tree-nodes) | 67.9% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0222.count-complete-tree-nodes/dfs/main.go)| dfs
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0222.count-complete-tree-nodes/two_pointer/main.go)| two pointer
 | 0226 | [Invert Binary Tree              ](https://leetcode-cn.com/problems/invert-binary-tree) | 74.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0226.invert-binary-tree/dfs/main.go)| dfs
+| 0230 | [Kth Smallest Element in a BST   ](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst) | 69.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0230.kth-smallest-element-in-a-bst/dfs/main.go)| dfs
