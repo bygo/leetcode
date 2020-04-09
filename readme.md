@@ -198,3 +198,5 @@
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0559.maximum-depth-of-n-ary-tree/dfs/main.go)| dfs
 | 0589 | [N-ary Tree Preorder Traversal   ](https://leetcode-cn.com/problems/n-ary-tree-preorder-traversal) | 72.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0589.n-ary-tree-preorder-traversal/dfs/recursive/main.go)| dfs.recursive
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0589.n-ary-tree-preorder-traversal/dfs/stack/main.go)| dfs.stack
+| 0590 | [N-ary Tree Postorder Traversal  ](https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal) | 72.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0590.n-ary-tree-postorder-traversal/dfs/recursive/main.go)| dfs.recursive
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0590.n-ary-tree-postorder-traversal/dfs/stack/main.go)| dfs.stack
