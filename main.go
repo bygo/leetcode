@@ -181,7 +181,7 @@ func output() {
 		check(err)
 		class := strings.Replace(string(stubClass), "@DummyClass", className, 1)
 		for k, problem := range problems {
-			questionId := fmt.Sprintf("%04d", problem.Stat.QuestionId)
+			questionId := fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
 			questionTitle := problem.Stat.QuestionTitle
 			questionTitleSlug := problem.Stat.QuestionTitleSlug
 			questionAcceptance := fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")

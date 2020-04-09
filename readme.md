@@ -78,7 +78,7 @@
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 60.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0037.sudoku-solver/dfs/main.go)| dfs
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.9% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 50.4% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
-| 1505 | [Create Target Array in the Given Order](https://leetcode-cn.com/problems/create-target-array-in-the-given-order) | 81.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1389.create-target-array-in-the-given-order/main.go)| 
+| 1389 | [Create Target Array in the Given Order](https://leetcode-cn.com/problems/create-target-array-in-the-given-order) | 81.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1389.create-target-array-in-the-given-order/main.go)| 
 
 ## LinkedList
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -102,7 +102,7 @@
 | 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 33.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
 | 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0292.nim-game/main.go)| 
 | 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 45.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0319.bulb-switcher/main.go)| 
-| 1519 | [Minimum Subsequence in Non-Increasing Order](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order) | 71.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/1403.minimum-subsequence-in-non-increasing-order/main.go)| 
+| 1403 | [Minimum Subsequence in Non-Increasing Order](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order) | 71.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/1403.minimum-subsequence-in-non-increasing-order/main.go)| 
 
 ## Stack
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -191,6 +191,8 @@
 | 0297 | [Serialize and Deserialize Binary Tree](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree) | 46.0% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0297.serialize-and-deserialize-binary-tree/bfs/main.go)| bfs
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0297.serialize-and-deserialize-binary-tree/dfs/main.go)| dfs
 | 0404 | [Sum of Left Leaves              ](https://leetcode-cn.com/problems/sum-of-left-leaves) | 54.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0404.sum-of-left-leaves/dfs/main.go)| dfs
-| 0764 | [N-ary Tree Level Order Traversal](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal) | 65.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0429.n-ary-tree-level-order-traversal/bfs/main.go)| bfs
+| 0429 | [N-ary Tree Level Order Traversal](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal) | 65.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0429.n-ary-tree-level-order-traversal/bfs/main.go)| bfs
 | 0437 | [Path Sum III                    ](https://leetcode-cn.com/problems/path-sum-iii) | 54.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0437.path-sum-iii/dfs/main.go)| dfs
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0437.path-sum-iii/hash_table/main.go)| hash table
+| 0559 | [Maximum Depth of N-ary Tree     ](https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree) | 68.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0559.maximum-depth-of-n-ary-tree/bfs/main.go)| bfs
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0559.maximum-depth-of-n-ary-tree/dfs/main.go)| dfs
