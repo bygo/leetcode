@@ -193,4 +193,4 @@
 | 0404 | [Sum of Left Leaves              ](https://leetcode-cn.com/problems/sum-of-left-leaves) | 54.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0404.sum-of-left-leaves/dfs/main.go)| dfs
 | 0764 | [N-ary Tree Level Order Traversal](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal) | 65.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0429.n-ary-tree-level-order-traversal/bfs/main.go)| bfs
 | 0437 | [Path Sum III                    ](https://leetcode-cn.com/problems/path-sum-iii) | 54.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0437.path-sum-iii/dfs/main.go)| dfs
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0437.path-sum-iii/prefix_sum/main.go)| prefix sum
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0437.path-sum-iii/hash_table/main.go)| hash table
