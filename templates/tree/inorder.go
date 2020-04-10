@@ -1,12 +1,9 @@
 package tree
 
-func inorder(root *TreeNode) []int {
-	var res []int
+func inorder(root *TreeNode) {
 	if root != nil {
 		inorder(root.Left)
-		res = append(res, root.Val) //中序输出
+		println(root.Val)
 		inorder(root.Right)
 	}
-
-	return res
 }
