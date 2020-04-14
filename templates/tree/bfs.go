@@ -1,6 +1,9 @@
 package tree
 
 func levelOrder(root *TreeNode) {
+	if root == nil {
+		return
+	}
 	var queue = []*TreeNode{root}
 	var level int
 	for 0 < len(queue) {
