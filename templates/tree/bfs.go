@@ -1,25 +1,27 @@
 package tree
 
-func levelOrder(root *TreeNode) {
+func levelOrder(root *TreeNode) [][]int {
+	res := [][]int{}
 	if root == nil {
-		return
+		return res
 	}
 	var queue = []*TreeNode{root}
 	var level int
-	for 0 < len(queue) {
-		length := len(queue)
-		for 0 < length {
-			length--
+	for len(queue) > 0 {
+		counter := len(queue)
+		res = append(res, []int{})
+		for 0 < counter {
+			counter--
 			if queue[0].Left != nil {
 				queue = append(queue, queue[0].Left)
 			}
 			if queue[0].Right != nil {
 				queue = append(queue, queue[0].Right)
 			}
-			println(queue[0].Val) //当前节点值
-			println(level)        //层级
+			res[level] = append(res[level], queue[0].Val)
 			queue = queue[1:]
 		}
 		level++
 	}
+	return res
 }
