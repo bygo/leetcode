@@ -78,6 +78,8 @@
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 60.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0037.sudoku-solver/dfs/main.go)| dfs
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.9% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 50.4% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
+| 1295 | [Find Numbers with Even Number of Digits](https://leetcode-cn.com/problems/find-numbers-with-even-number-of-digits) | 82.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1295.find-numbers-with-even-number-of-digits/main.go)| 
+| 1365 | [How Many Numbers Are Smaller Than the Current Number](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number) | 82.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1365.how-many-numbers-are-smaller-than-the-current-number/main.go)| 
 | 1389 | [Create Target Array in the Given Order](https://leetcode-cn.com/problems/create-target-array-in-the-given-order) | 81.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1389.create-target-array-in-the-given-order/main.go)| 
 
 ## LinkedList
@@ -100,6 +102,7 @@
 | 0013 | [Roman to Integer                ](https://leetcode-cn.com/problems/roman-to-integer) | 61.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main.go)| 
 | 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
 | 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 33.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
+| 0191 | [Number of 1 Bits                ](https://leetcode-cn.com/problems/number-of-1-bits) | 66.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0191.number-of-1-bits/main.go)| 
 | 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0292.nim-game/main.go)| 
 | 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 45.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0319.bulb-switcher/main.go)| 
 | 1403 | [Minimum Subsequence in Non-Increasing Order](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order) | 71.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/1403.minimum-subsequence-in-non-increasing-order/main.go)| 
@@ -123,6 +126,7 @@
 | 0038 | [Count and Say                   ](https://leetcode-cn.com/problems/count-and-say) | 54.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0038.count-and-say/main.go)| 
 | 0043 | [Multiply Strings                ](https://leetcode-cn.com/problems/multiply-strings) | 42.0% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/string/0043.multiply-strings/main.go)| 
 | 0415 | [Add Strings                     ](https://leetcode-cn.com/problems/add-strings) | 49.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0415.add-strings/main.go)| 
+| 0771 | [Jewels and Stones               ](https://leetcode-cn.com/problems/jewels-and-stones) | 82.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/string/0771.jewels-and-stones/hash_table/main.go)| hash table
 
 ## Tree
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
