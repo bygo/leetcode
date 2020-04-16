@@ -1,9 +1,7 @@
 # LeetCode
 
 ![](https://img.shields.io/badge/Language-Go-%2300ADD8)
-
 [![](https://img.shields.io/badge/LeetCode-Me-orange?style=plastic&logo=LeetCode)](https://leetcode-cn.com/u/linbingyuan/)
-
 [![](https://img.shields.io/badge/Template-语雀-%2325b864)](https://www.yuque.com/daizhuansheng/lc/cfg57t)
 ---
 
