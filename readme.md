@@ -1,24 +1,24 @@
-# `Go版本的一题多解（所有解）`
-
 # 刷题步骤
 
-## `1.新建刷题目录`
-比如第 `1` 题 two-sum
+## `1.新建题目`
+第 `1` 题 two-sum
 
 `go run main.go -a=1`
 
-比如第 `100` 题 same-tree
+第 `100` 题 same-tree
 
 `go run main.go -a=100`
 
 ## `2.模板流`
+[![](https://img.shields.io/badge/解题模板-语雀-brightgreen)](https://www.yuque.com/docs/share/fce1a413-76fa-4557-95c2-0ca3af6ce5da?#)
+
 ## `3.目录约定`  `生成 readme.md`
 
 `分类` : `1 级目录`
 
 `题名` : `2 级目录`
 
-`算法` : `3-N 级目录`
+`算法名` : `3-N 级目录`
 
 执行 `go run main.go` 自动生成 `readme.md`
 
@@ -94,6 +94,7 @@
 | 0013 | [Roman to Integer                ](https://leetcode-cn.com/problems/roman-to-integer) | 61.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0013.roman-to-integer/main.go)| 
 | 0029 | [Divide Two Integers             ](https://leetcode-cn.com/problems/divide-two-integers) | 19.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0029.divide-two-integers/main.go)| 
 | 0031 | [Next Permutation                ](https://leetcode-cn.com/problems/next-permutation) | 33.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0031.next-permutation/main.go)| 
+| 0066 | [Plus One                        ](https://leetcode-cn.com/problems/plus-one) | 43.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0066.plus-one/main.go)| 
 | 0191 | [Number of 1 Bits                ](https://leetcode-cn.com/problems/number-of-1-bits) | 66.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0191.number-of-1-bits/main.go)| 
 | 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0292.nim-game/main.go)| 
 | 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 45.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0319.bulb-switcher/main.go)| 

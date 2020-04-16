@@ -10,7 +10,7 @@ func dfs(n int) []string {
 		res = append(res, "")
 	} else {
 		for i := 0; i < n; i++ {
-			for _, left := range  dfs(i) {
+			for _, left := range dfs(i) {
 				for _, right := range dfs(n - 1 - i) {
 					res = append(res, "("+left+")"+right)
 				}

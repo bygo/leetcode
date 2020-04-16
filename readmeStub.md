@@ -1,24 +1,24 @@
-# `Go版本的一题多解（所有解）`
-
 # 刷题步骤
 
-## `1.新建刷题目录`
-比如第 `1` 题 two-sum
+## `1.新建题目`
+第 `1` 题 two-sum
 
 `go run main.go -a=1`
 
-比如第 `100` 题 same-tree
+第 `100` 题 same-tree
 
 `go run main.go -a=100`
 
 ## `2.模板流`
+[![](https://img.shields.io/badge/解题模板-语雀-brightgreen)](https://www.yuque.com/docs/share/fce1a413-76fa-4557-95c2-0ca3af6ce5da?#)
+
 ## `3.目录约定`  `生成 readme.md`
 
 `分类` : `1 级目录`
 
 `题名` : `2 级目录`
 
-`算法` : `3-N 级目录`
+`算法名` : `3-N 级目录`
 
 执行 `go run main.go` 自动生成 `readme.md`
 
