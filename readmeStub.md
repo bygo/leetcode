@@ -1,3 +1,10 @@
+# LeetCode
+
+![](https://img.shields.io/badge/language-Go-blue.svg)
+[![](https://img.shields.io/badge/link-leetcode-green.svg)](https://leetcode-cn.com/u/linbingyuan/)
+
+---
+
 # 刷题步骤
 
 ## `1.新建题目`
