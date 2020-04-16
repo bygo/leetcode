@@ -2,6 +2,7 @@
 
 ![](https://img.shields.io/badge/language-Go-blue.svg)
 [![](https://img.shields.io/badge/link-leetcode-green.svg)](https://leetcode-cn.com/u/linbingyuan/)
+[![](https://img.shields.io/badge/template-语雀-brightgreen)](https://www.yuque.com/daizhuansheng/lc/cfg57t)
 
 ---
 
