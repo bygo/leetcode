@@ -5,7 +5,7 @@ func inorderMorrisBreak(root *TreeNode) []int {
 	var max *TreeNode
 	for root != nil {
 		if root.Left == nil {
-			res = append(res, root.Val) //中序输出
+			res = append(res, root.Val) //中序遍历
 			root = root.Right           //链表移动
 		} else {
 			max = root.Left //寻找左树最大值

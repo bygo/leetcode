@@ -10,7 +10,7 @@
 `go run main.go -a=100`
 
 ## `2.模板流`
-[![](https://img.shields.io/badge/解题模板-语雀-brightgreen)](https://www.yuque.com/daizhuansheng/lc/epk4hl)
+[![](https://img.shields.io/badge/解题模板-语雀-brightgreen)](https://www.yuque.com/daizhuansheng/lc/cfg57t)
 
 ## `3.目录约定`  `生成 readme.md`
 
