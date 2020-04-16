@@ -1,8 +1,10 @@
 # LeetCode
 
-![](https://img.shields.io/badge/language-Go-#00ADD8)
+![](https://img.shields.io/badge/language-Go-%2300ADD8)
+
 [![](https://img.shields.io/badge/link-leetcode-orange?style=plastic&logo=LeetCode)](https://leetcode-cn.com/u/linbingyuan/)
-[![](https://img.shields.io/badge/template-语雀-#25b864)](https://www.yuque.com/daizhuansheng/lc/cfg57t)
+
+[![](https://img.shields.io/badge/template-语雀-%2325b864)](https://www.yuque.com/daizhuansheng/lc/cfg57t)
 ---
 
 # 刷题步骤
