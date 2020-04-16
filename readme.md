@@ -209,3 +209,4 @@
 | 0590 | [N-ary Tree Postorder Traversal  ](https://leetcode-cn.com/problems/n-ary-tree-postorder-traversal) | 72.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0590.n-ary-tree-postorder-traversal/dfs/recursive/main.go)| dfs.recursive
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0590.n-ary-tree-postorder-traversal/dfs/stack/main.go)| dfs.stack
 | 0617 | [Merge Two Binary Trees          ](https://leetcode-cn.com/problems/merge-two-binary-trees) | 75.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0617.merge-two-binary-trees/dfs/recursive/main.go)| dfs.recursive
+| 0938 | [Range Sum of BST                ](https://leetcode-cn.com/problems/range-sum-of-bst) | 76.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0938.range-sum-of-bst/main.go)| 
