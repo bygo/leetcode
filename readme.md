@@ -77,6 +77,8 @@
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 60.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0037.sudoku-solver/dfs/main.go)| dfs
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 37.9% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0041.first-missing-positive/bit_map/main.go)| bit map
 | 0042 | [Trapping Rain Water             ](https://leetcode-cn.com/problems/trapping-rain-water) | 50.4% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/array/0042.trapping-rain-water/two_pointer/main.go)| two pointer
+| 0121 | [Best Time to Buy and Sell Stock ](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock) | 53.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0121.best-time-to-buy-and-sell-stock/main.go)| 
+| 0122 | [Best Time to Buy and Sell Stock II](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-ii) | 58.6% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/0122.best-time-to-buy-and-sell-stock-ii/main.go)| 
 | 1295 | [Find Numbers with Even Number of Digits](https://leetcode-cn.com/problems/find-numbers-with-even-number-of-digits) | 82.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1295.find-numbers-with-even-number-of-digits/main.go)| 
 | 1365 | [How Many Numbers Are Smaller Than the Current Number](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number) | 82.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1365.how-many-numbers-are-smaller-than-the-current-number/main.go)| 
 | 1389 | [Create Target Array in the Given Order](https://leetcode-cn.com/problems/create-target-array-in-the-given-order) | 81.9% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/array/1389.create-target-array-in-the-given-order/main.go)| 
@@ -90,6 +92,7 @@
 | 0023 | [Merge k Sorted Lists            ](https://leetcode-cn.com/problems/merge-k-sorted-lists) | 49.7% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0023.merge-k-sorted-lists/main.go)| 
 | 0024 | [Swap Nodes in Pairs             ](https://leetcode-cn.com/problems/swap-nodes-in-pairs) | 65.1% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0024.swap-nodes-in-pairs/main.go)| 
 | 0025 | [Reverse Nodes in k-Group        ](https://leetcode-cn.com/problems/reverse-nodes-in-k-group) | 57.6% | Hard | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0025.reverse-nodes-in-k-group/main.go)| 
+| 0206 | [Reverse Linked List             ](https://leetcode-cn.com/problems/reverse-linked-list) | 68.4% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/linked_list/0206.reverse-linked-list/main.go)| 
 
 ## Math
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
