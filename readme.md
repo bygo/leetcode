@@ -210,3 +210,5 @@
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0590.n-ary-tree-postorder-traversal/dfs/stack/main.go)| dfs.stack
 | 0617 | [Merge Two Binary Trees          ](https://leetcode-cn.com/problems/merge-two-binary-trees) | 75.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0617.merge-two-binary-trees/dfs/recursive/main.go)| dfs.recursive
 | 0938 | [Range Sum of BST                ](https://leetcode-cn.com/problems/range-sum-of-bst) | 76.5% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0938.range-sum-of-bst/main.go)| 
+| 0951 | [Flip Equivalent Binary Trees    ](https://leetcode-cn.com/problems/flip-equivalent-binary-trees) | 62.2% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0951.flip-equivalent-binary-trees/dfs/main.go)| dfs
+| 0965 | [Univalued Binary Tree           ](https://leetcode-cn.com/problems/univalued-binary-tree) | 67.3% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/tree/0965.univalued-binary-tree/dfs/main.go)| dfs
