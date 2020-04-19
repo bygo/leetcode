@@ -59,6 +59,7 @@ func main() {
 	will()
 
 	a := flag.String("a", "r", "generate readme.md | start a new problem")
+	t := flag.String("t", "", "type")
 	flag.Parse()
 	if *a == "r" {
 		read()
@@ -66,7 +67,7 @@ func main() {
 	} else {
 		//id, err := strconv.Atoi(*a)
 		//check(err)
-		start(*a)
+		start(*a, *t)
 	}
 
 	did()
@@ -141,7 +142,7 @@ func getTemplates(dir os.FileInfo, path string) {
 }
 
 func find(id string) Problem {
-	id = strings.TrimLeft(id,"0")
+	id = strings.TrimLeft(id, "0")
 	left, right := 0, len(profile.StatStatusPairs)
 	for left < right {
 		//i, _ := strconv.Atoi(profile.StatStatusPairs[left].Stat.FrontendQuestionId)
@@ -215,9 +216,13 @@ func normalizeClassTitle(title string) string {
 	return s
 }
 
-func start(id string) {
+func start(id string, t string) {
 	p := find(id)
+
 	problemStub, err := ioutil.ReadFile("./problem.stub")
+	if t == "t" {
+		problemStub, err = ioutil.ReadFile("./tree.stub")
+	}
 	check(err)
 	i, _ := strconv.Atoi(p.Stat.FrontendQuestionId)
 	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
