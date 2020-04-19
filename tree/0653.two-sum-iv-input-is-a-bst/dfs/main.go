@@ -6,29 +6,26 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var res []int
+var target int
+var h map[int]bool
+var res bool
 
 func findTarget(root *TreeNode, k int) bool {
-	res = []int{}
+	h = map[int]bool{}
+	res = false
+	target = k
 	dfs(root)
-	return twoSum(res,k) != nil
+	return res
 }
 
 func dfs(root *TreeNode) {
 	if root != nil {
 		dfs(root.Left)
-		res = append(res, root.Val)
+		if h[target-root.Val] {
+			res = true
+			return
+		}
+		h[root.Val] = true
 		dfs(root.Right)
 	}
-}
-
-func twoSum(nums []int, target int) []int {
-	hashMap := make(map[int]int, len(nums))
-	for rawK, rawV := range nums {
-		if hashK, ok := hashMap[target-rawV]; ok {
-			return []int{rawK, hashK}
-		}
-		hashMap[rawV] = rawK
-	}
-	return nil
 }
