@@ -107,6 +107,7 @@
 | 0191 | [Number of 1 Bits                ](https://leetcode-cn.com/problems/number-of-1-bits) | 66.1% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0191.number-of-1-bits/main.go)| 
 | 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.7% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/0292.nim-game/main.go)| 
 | 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 45.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/math/0319.bulb-switcher/main.go)| 
+| 1266 | [Minimum Time Visiting All Points](https://leetcode-cn.com/problems/minimum-time-visiting-all-points) | 81.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/1266.minimum-time-visiting-all-points/main.go)| 
 | 1403 | [Minimum Subsequence in Non-Increasing Order](https://leetcode-cn.com/problems/minimum-subsequence-in-non-increasing-order) | 71.0% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/math/1403.minimum-subsequence-in-non-increasing-order/main.go)| 
 
 ## Stack
