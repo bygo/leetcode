@@ -21,7 +21,7 @@ package main
   s = "wordgoodgoodgoodbestword",
   words = ["word","good","best","word"]
 输出：[]
- */
+*/
 
 func findSubstring(s string, words []string) []int {
 	if len(s) == 0 || len(words) == 0 {
@@ -87,4 +87,4 @@ func findSubstring(s string, words []string) []int {
 
 /**
 思路:四指针i left cursor right
- */
+*/

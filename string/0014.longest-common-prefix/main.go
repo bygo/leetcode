@@ -17,7 +17,7 @@ package main
 说明:
 
 所有输入只包含小写字母 a-z 。
- */
+*/
 
 func longestCommonPrefix(strs []string) string {
 	if len(strs) == 0 {
@@ -38,4 +38,4 @@ func longestCommonPrefix(strs []string) string {
 /**
 思路：
 todo 写前缀树再补最佳实现
- */
+*/

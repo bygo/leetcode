@@ -12,7 +12,7 @@ func multiply(num1 string, num2 string) string {
 		n1 := num1[i-1] - '0'
 		for j := l2; j > 0; j-- {
 			n := carry[index] + n1*(num2[j-1]-'0') //计算
-			carry[index] = n % 10 //当前值
+			carry[index] = n % 10                  //当前值
 			index--
 			carry[index] += n / 10 //进位
 		}

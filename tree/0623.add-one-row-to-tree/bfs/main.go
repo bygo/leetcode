@@ -10,8 +10,8 @@ func addOneRow(root *TreeNode, v int, d int) *TreeNode {
 	if root == nil {
 		return &TreeNode{Val: v}
 	}
-	if  d == 1 {
-		return &TreeNode{Left: root,Val:v}
+	if d == 1 {
+		return &TreeNode{Left: root, Val: v}
 	}
 	var queue = []*TreeNode{root}
 	var depth = 1

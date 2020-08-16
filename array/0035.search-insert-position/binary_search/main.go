@@ -21,7 +21,7 @@ package main
 
 输入: [1,3,5,6], 0
 输出: 0
- */
+*/
 
 func searchInsert(nums []int, target int) int {
 	left, right := 0, len(nums)-1

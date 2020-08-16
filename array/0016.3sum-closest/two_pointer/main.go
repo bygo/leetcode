@@ -11,7 +11,7 @@ import (
 例如，给定数组 nums = [-1，2，1，-4], 和 target = 1.
 
 与 target 最接近的三个数的和为 2. (-1 + 2 + 1 = 2).
- */
+*/
 
 func threeSumClosest(nums []int, target int) int {
 	sort.Ints(nums) //排序，保证从小到大
@@ -45,4 +45,4 @@ func threeSumClosest(nums []int, target int) int {
 /**
 思路:
 1.与 threeSum 解法一样
- */
+*/

@@ -13,7 +13,7 @@ package main
 输入: ")()())"
 输出: 4
 解释: 最长有效括号子串为 "()()"
- */
+*/
 
 func longestValidParentheses(s string) int {
 	var left, right, max int
@@ -51,4 +51,4 @@ func longestValidParentheses(s string) int {
 
 /**
 思路：左右遍历，left right类似栈抵消
- */
+*/

@@ -5,7 +5,7 @@ import (
 )
 
 var nums = []int{
-	-1,2,1,-4,
+	-1, 2, 1, -4,
 }
 
 func Benchmark(b *testing.B) {

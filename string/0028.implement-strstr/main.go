@@ -19,7 +19,7 @@ package main
 
 对于本题而言，当 needle 是空字符串时我们应当返回 0 。这与C语言的 strstr() 以及 Java的 indexOf() 定义相符。
 
- */
+*/
 
 func strStr(haystack string, needle string) int {
 	if len(needle) == 0 {
@@ -64,4 +64,4 @@ func getNext(p string) []int {
 思路1:kmp
 
 todo：听说sunday更稳定，二刷再来写sunday
- */
+*/

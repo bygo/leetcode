@@ -29,7 +29,7 @@ package main
 
 输入: "{[]}"
 输出: true
- */
+*/
 
 func isValid(s string) bool {
 	m := map[rune]rune{

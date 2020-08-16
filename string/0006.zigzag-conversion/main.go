@@ -28,7 +28,7 @@ E   O E   I I
 E C   I H   N
 T     S     G
 
- */
+*/
 
 func convert(s string, numRows int) string {
 	if numRows == 1 {
@@ -63,4 +63,4 @@ k=key/(numRows+2)
 1  5  7  11  13 17     k(2*n-2)+1 (k+1)(2*n-2)-1		[1,5] [7,11] [13,1]...
 2  4  8  10  14 16     k(2*n-2)+2 (k+1)(2*n-2)-2		[2,4] [8,10] [14,16]...
 3     9      15        k(2*n-2)+3						3,9,15...
- */
+*/

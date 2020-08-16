@@ -17,7 +17,7 @@ func levelOrder(root *Node) [][]int {
 	var level int
 	if 0 < len(queue) {
 		counter := len(queue)
-		res = append(res,[]int{})
+		res = append(res, []int{})
 		for i := 0; i < counter; i++ {
 			if queue[i] != nil {
 				res[level] = append(res[level], queue[i].Val)

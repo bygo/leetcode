@@ -51,4 +51,4 @@ func removeDuplicates(nums []int) int {
 
 /**
 1.双指针
- */
+*/

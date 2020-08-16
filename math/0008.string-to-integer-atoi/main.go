@@ -45,7 +45,7 @@ package main
 解释: 数字 "-91283472332" 超过 32 位有符号整数范围。
      因此返回 INT_MIN (−231) 。
 
- */
+*/
 func myAtoi(str string) int {
 	var n []byte
 	var symbol int
@@ -110,4 +110,4 @@ F:
 /**
 思路：
 1.这题没啥逻辑，暴力堆码,switch的逻辑也可以改成HashMap,
- */
+*/

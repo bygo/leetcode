@@ -11,7 +11,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-
 func sortedListToBST(head *ListNode) *TreeNode {
 	if head == nil {
 		return nil

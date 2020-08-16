@@ -12,7 +12,7 @@ package main
 
 输入: "cbbd"
 输出: "bb"
- */
+*/
 
 func longestPalindrome(s string) string {
 	m := make([]byte, len(s)*2+3)
@@ -54,4 +54,4 @@ func longestPalindrome(s string) string {
 思路：
 1.每扩散一次，设置中心与半径
 2.每移动一次，判断是否有镜像
- */
+*/

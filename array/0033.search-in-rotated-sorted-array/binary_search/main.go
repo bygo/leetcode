@@ -19,7 +19,7 @@ package main
 
 输入: nums = [4,5,6,7,0,1,2], target = 3
 输出: -1
- */
+*/
 
 func search(nums []int, target int) int {
 	var left, mid, ok int
@@ -47,4 +47,3 @@ func search(nums []int, target int) int {
 	}
 	return -1
 }
-

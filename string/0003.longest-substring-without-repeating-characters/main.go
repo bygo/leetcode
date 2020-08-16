@@ -20,7 +20,7 @@ package main
 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 
- */
+*/
 
 func lengthOfLongestSubstring1(s string) int {
 	var left int
@@ -67,4 +67,4 @@ func lengthOfLongestSubstring2(s string) int {
 思路2：
 1.Left 存储当前子串左边界
 2.出现重复时，找出子串里重复值的Index，设为Left
- */
+*/

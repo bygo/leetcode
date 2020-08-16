@@ -7,7 +7,7 @@ package main
 
 输入：1->2->4, 1->3->4
 输出：1->1->2->3->4->4
- */
+*/
 
 type ListNode struct {
 	Val  int
@@ -38,4 +38,4 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 /**
 思路:
 根据大小，插入链表。
- */
+*/

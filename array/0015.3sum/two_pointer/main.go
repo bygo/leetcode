@@ -19,7 +19,7 @@ import (
   [-1, -1, 2]
 ]
 
- */
+*/
 
 func threeSum(nums []int) [][]int {
 	if len(nums) < 3 {
@@ -65,4 +65,4 @@ func threeSum(nums []int) [][]int {
 /**
 思路:
 1.遍历+双指针
- */
+*/

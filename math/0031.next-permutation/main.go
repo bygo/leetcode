@@ -11,7 +11,7 @@ package main
 1,2,3 → 1,3,2
 3,2,1 → 1,2,3
 1,1,5 → 1,5,1
- */
+*/
 
 func nextPermutation(nums []int) {
 	left := len(nums) - 2
@@ -43,4 +43,4 @@ func nextPermutation(nums []int) {
 例1：123654->124356
 例1：123->132
 
- */
+*/

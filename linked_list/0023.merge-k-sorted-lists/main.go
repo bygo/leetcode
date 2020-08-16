@@ -12,7 +12,7 @@ package main
   2->6
 ]
 输出: 1->1->2->3->4->4->5->6
- */
+*/
 
 type ListNode struct {
 	Val  int
@@ -53,7 +53,8 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	}
 	return res.Next
 }
+
 /**
 思路:
 mergeTwoLists 基础上分治
- */
+*/

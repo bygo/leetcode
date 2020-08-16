@@ -13,7 +13,7 @@ package main
 
 输入: [1,8,6,2,5,4,8,3,7]
 输出: 49
- */
+*/
 
 func maxArea(height []int) int {
 	var cur, max, l int
@@ -37,4 +37,4 @@ func maxArea(height []int) int {
 /**
 思路：
 1.双指针，移动最小值的指针，因为宽度减小，必须除去最短的值,才能获得最大值
- */
+*/

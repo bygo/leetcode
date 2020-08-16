@@ -15,7 +15,7 @@ package main
 进阶：
 
 你能尝试使用一趟扫描实现吗？
- */
+*/
 
 type ListNode struct {
 	Val  int
@@ -43,4 +43,4 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 思路:
 1.双指针
 2.头部加入空节点
- */
+*/

@@ -54,8 +54,15 @@ var SolutionOrder = []string{
 var readme string
 var profile Profile
 var currentClassName string
+var c string
 
 func main() {
+	D(func() interface{} {
+		return 1
+	})
+
+	return
+
 	will()
 
 	a := flag.String("a", "r", "generate readme.md | start a new problem")
@@ -124,7 +131,7 @@ func getSolutions(dir os.FileInfo, path string) {
 	p := find(title[0])
 	p.File = "https://github.com/temporaries/leetcode/tree/master/" + path
 	p.Algorithm = algorithm
-	problems[currentClassName] = append(problems[currentClassName], p, )
+	problems[currentClassName] = append(problems[currentClassName], p)
 }
 
 func getTemplates(dir os.FileInfo, path string) {

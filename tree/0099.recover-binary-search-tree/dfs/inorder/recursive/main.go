@@ -6,7 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var last,first, second *TreeNode
+var last, first, second *TreeNode
 
 func recoverTree(root *TreeNode) {
 	last, first, second = nil, nil, nil

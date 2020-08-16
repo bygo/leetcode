@@ -9,8 +9,8 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	half := (l1 + l2 + 1) / 2 // 向上取整,保证左边数量永大于右边
 	max = l1
 	for min <= max {
-		k1 = (min + max) / 2 // 二分
-		k2 = half - k1       //k2永远等于 half-k1
+		k1 = (min + max) / 2                     // 二分
+		k2 = half - k1                           //k2永远等于 half-k1
 		if k1 < max && nums2[k2-1] > nums1[k1] { //如果 右2 大于 左1，二分范围min为 k1+1
 			min = k1 + 1
 		} else if k1 > min && nums1[k1-1] > nums2[k2] { //如果 右1 大于 左2,二分范围max 为k1-1
@@ -66,4 +66,4 @@ func minInt(a, b int) int {
 备注：
 left1  + right1 = num1
 left2  + right2 = num2
- */
+*/

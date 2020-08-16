@@ -12,7 +12,7 @@ package main
   2->6
 ]
 输出: 1->1->2->3->4->4->5->6
- */
+*/
 
 type ListNode struct {
 	Val  int
@@ -40,4 +40,4 @@ func swapPairs(head *ListNode) *ListNode {
 
 /**
 思路:三指针 prev,one,two
- */
+*/

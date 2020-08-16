@@ -19,7 +19,7 @@ import "sort"
   [-2, -1, 1, 2],
   [-2,  0, 0, 2]
 ]
- */
+*/
 
 func fourSum(nums []int, target int) [][]int {
 	if len(nums) < 4 {
@@ -70,4 +70,4 @@ func fourSum(nums []int, target int) [][]int {
 N数之和=N个指针
 
 todo:如果还有N数之和，再封装函数。
- */
+*/

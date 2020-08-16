@@ -17,7 +17,7 @@ package main
 输入: 10
 输出: false
 解释: 从右向左读, 为 01 。因此它不是一个回文数。
- */
+*/
 
 func isPalindrome(x int) bool {
 	if x < 0 || x%10 == 0 && x != 0 {
@@ -36,4 +36,4 @@ func isPalindrome(x int) bool {
 1.获取长度为 length/2 +1 的反转数字 ，对比两个数字大小
 假设12321=>12  123    12=123/10
 假设1221=>12   12 	 12=12
- */
+*/
