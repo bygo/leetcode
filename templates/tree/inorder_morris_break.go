@@ -14,7 +14,7 @@ func inorderMorrisBreak(root *TreeNode) []int {
 				max = max.Right
 			}
 
-			//root将在下一次输出
+			//中序指针处理
 			max.Right = root                 //左树最大值连接root
 			root, root.Left = root.Left, nil //移动左节点，砍左树
 		}
