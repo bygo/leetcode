@@ -8,7 +8,7 @@ func preorderMorrisBreak(root *TreeNode) []int {
 			res = append(res, root.Val) //前序遍历
 			root = root.Right           //链表移动
 		} else {
-			max = root.Left //寻找左树最大节点
+			max = root.Left //找左树最大节点
 			for max.Right != nil {
 				max = max.Right
 			}
@@ -20,3 +20,4 @@ func preorderMorrisBreak(root *TreeNode) []int {
 	}
 	return res
 }
+

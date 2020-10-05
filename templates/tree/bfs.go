@@ -1,14 +1,19 @@
 package tree
 
+
+//出入列 层
 func levelOrder(root *TreeNode) [][]int {
 	res := [][]int{}
 	if root == nil {
 		return res
 	}
 	var queue = []*TreeNode{root}
-	var level int
-	for len(queue) > 0 {
+	var level int //层级
+	for {
 		counter := len(queue)
+		if counter == 0 {
+			break
+		}
 		res = append(res, []int{})
 		for 0 < counter {
 			counter--

@@ -10,10 +10,11 @@ func inorderStack(root *TreeNode) []int {
 			stack = append(stack, root) //入栈
 			root = root.Left            //移至最左
 		}
-		index := len(stack) - 1             //栈顶
-		res = append(res, stack[index].Val) //中序遍历
-		root = stack[index].Right           //右节点会进入下次循环，如果 =nil，继续出栈
-		stack = stack[:index]               //出栈
+
+		top := len(stack) - 1             //栈顶
+		res = append(res, stack[top].Val) //中序遍历
+		root = stack[top].Right           //右节点会进入for循环，如果=nil，继续出栈
+		stack = stack[:top]               //出栈
 	}
 	return res
 }

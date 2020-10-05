@@ -8,7 +8,7 @@ func preorderMorrisKeep(root *TreeNode) []int {
 			res = append(res, root.Val) //左节点为空 前序遍历
 			root = root.Right           //移动到右节点
 		} else {
-			max = root.Left //找左树最大值
+			max = root.Left //寻找左树最大值
 			for max.Right != nil && max.Right != root {
 				max = max.Right
 			}
