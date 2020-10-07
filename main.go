@@ -57,12 +57,6 @@ var currentClassName string
 var c string
 
 func main() {
-	D(func() interface{} {
-		return 1
-	})
-
-	return
-
 	will()
 
 	a := flag.String("a", "r", "generate readme.md | start a new problem")
