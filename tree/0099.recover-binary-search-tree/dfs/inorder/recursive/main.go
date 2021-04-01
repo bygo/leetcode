@@ -20,11 +20,11 @@ func dfs(root *TreeNode) {
 	}
 	dfs(root.Left)
 	if last != nil && root.Val <= last.Val {
+		second = root
 		if first != nil {
-			second = root
 			return //剪枝
 		}
-		first, second = last, root
+		first = last
 	}
 	last = root
 	dfs(root.Right)

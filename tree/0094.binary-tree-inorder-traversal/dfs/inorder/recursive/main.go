@@ -11,7 +11,7 @@ var res []int
 func inorderTraversal(root *TreeNode) []int {
 	res = make([]int, 0)
 	dfs(root)
-	return res
+	return 	res
 }
 
 func dfs(root *TreeNode) {

@@ -14,25 +14,24 @@ type TreeNode struct {
 var head *ListNode
 
 func sortedListToBST(h *ListNode) *TreeNode {
-	var s int
+	var l int
 	head = h
 	for h != nil {
-		s++
+		l++
 		h = h.Next
 	}
-	return convertListToBST(0, s-1)
+	return convertListToBST(0, l-1)
 }
 
 func convertListToBST(l, r int) *TreeNode {
-	if l > r {
+	if r < l {
 		return nil
 	}
 	mid := (l + r) / 2
-	left := convertListToBST(l, mid-1)
 	node := &TreeNode{
-		Val: head.Val,
+		Val:  head.Val,
+		Left: convertListToBST(l, mid-1),
 	}
-	node.Left = left
 	head = head.Next
 	node.Right = convertListToBST(mid+1, r)
 	return node

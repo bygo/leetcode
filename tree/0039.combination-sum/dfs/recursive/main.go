@@ -5,7 +5,7 @@ import (
 )
 
 func combinationSum(candidates []int, target int) [][]int {
-	sort.Ints(candidates) //快排，懒得写
+	sort.Ints(candidates) //快排
 	res := [][]int{}
 	dfs(candidates, nil, target, 0, &res) //深度优先
 	return res

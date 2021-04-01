@@ -12,17 +12,22 @@ type TreeNode struct {
 }
 
 func sortedListToBST(head *ListNode) *TreeNode {
-	var arr []int
+	var nums []int
 	for head != nil {
-		arr = append(arr, head.Val)
+		nums = append(nums, head.Val)
 		head = head.Next
 	}
-	return sortedArrayToBST(arr)
+	return sortedArrayToBST(nums)
 }
 
 func sortedArrayToBST(nums []int) *TreeNode {
-	if len(nums) == 0 {
+	l := len(nums)
+	if l == 0 {
 		return nil
 	}
-	return &TreeNode{nums[len(nums)/2], sortedArrayToBST(nums[:len(nums)/2]), sortedArrayToBST(nums[len(nums)/2+1:])}
+	return &TreeNode{
+		Val:   nums[l/2],
+		Left:  sortedArrayToBST(nums[:l/2]),
+		Right: sortedArrayToBST(nums[l/2+1:]),
+	}
 }

@@ -10,30 +10,36 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 	if root == nil {
 		return nil
 	}
-	var res = [][]int{}
+	var res [][]int
 	var queue = []*TreeNode{root}
-	var level, counter, knife, cur int
-	for len(queue) > 0 {
+	var level, counter, index, symbol int
+	for {
 		counter = len(queue)
-		knife = counter
-		res = append(res, []int{})
-		for 0 < counter {
-			cur = knife - counter
-			if queue[cur].Left != nil {
-				queue = append(queue, queue[cur].Left)
-			}
-			if queue[cur].Right != nil {
-				queue = append(queue, queue[cur].Right)
-			}
-
-			counter--
-			if level%2 != 0 {
-				cur = counter
-			}
-			res[level] = append(res[level], queue[cur].Val)
+		if counter == 0 {
+			break
 		}
-		queue = queue[knife:]
+		if level%2 == 0 {
+			index = -1
+			symbol = 1
+		} else {
+			index = counter
+			symbol = -1
+		}
+
+		res = append(res, []int{})
+		for _, q := range queue[:counter] {
+			index += symbol
+			res[level] = append(res[level], queue[index].Val)
+			if q.Left != nil {
+				queue = append(queue, q.Left)
+			}
+			if q.Right != nil {
+				queue = append(queue, q.Right)
+			}
+		}
 		level++
+		queue = queue[counter:]
 	}
+
 	return res
 }

@@ -21,7 +21,7 @@ func maxDepth(root *Node) int {
 
 func maxInt(a, b int) int {
 	if a < b {
-		a = b
+		return b
 	}
 	return a
 }

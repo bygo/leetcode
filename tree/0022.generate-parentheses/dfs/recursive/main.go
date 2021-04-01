@@ -1,27 +1,22 @@
 package main
 
 func generateParenthesis(n int) []string {
-	res := make([]string, 0)
-	if n < 1 {
-		return res
-	}
+	var res []string
 	dfs("", n, n, &res)
 	return res
 }
 
-func dfs(str string, left int, right int, res *[]string) {
+func dfs(cur string, left, right int, res *[]string) {
 	if left == 0 && right == 0 {
-		*res = append(*res, str)
+		*res = append(*res, cur)
 	}
 
-	if left > right { //剪枝
-		return
-	}
-	if left > 0 {
-		dfs(str+"(", left-1, right, res) //左树遍历
-	}
-
-	if right > 0 {
-		dfs(str+")", left, right-1, res) //右树遍历
+	if left <= right {
+		if 0 < left {
+			dfs(cur+"(", left-1, right, res)
+		}
+		if 0 < right {
+			dfs(cur+")", left, right-1, res)
+		}
 	}
 }

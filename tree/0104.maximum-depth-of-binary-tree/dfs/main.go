@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//求最大深度
 func maxDepth(root *TreeNode) int {
 	if root == nil {
 		return 0

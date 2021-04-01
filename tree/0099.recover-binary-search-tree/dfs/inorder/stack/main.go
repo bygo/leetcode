@@ -9,23 +9,24 @@ type TreeNode struct {
 func recoverTree(root *TreeNode) {
 	var last, first, second *TreeNode
 	var stack []*TreeNode
-	for root != nil || len(stack) > 0 {
+	for 0 < len(stack) || root != nil {
 		for root != nil {
 			stack = append(stack, root)
 			root = root.Left
 		}
-		pre := len(stack) - 1
-		if last != nil && stack[pre].Val <= last.Val {
-			if first != nil {
-				second = stack[pre]
-				break //剪枝
-			}
-			first, second = last, stack[pre]
-		}
 
-		last = stack[pre]
-		root = stack[pre].Right
-		stack = stack[:pre]
+		top := len(stack) - 1
+		if last != nil && stack[top].Val < last.Val {
+			second = stack[top]
+			if first != nil {
+				first.Val, second.Val = second.Val, first.Val
+				return
+			}
+			first = last
+		}
+		last = stack[top]
+		root = stack[top].Right
+		stack = stack[:top]
 	}
 	first.Val, second.Val = second.Val, first.Val
 }

@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//1.最大最小边界
 func isValidBST(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -13,7 +14,7 @@ func isValidBST(root *TreeNode) bool {
 	var queue = []*TreeNode{root}
 	var minQ = []int{-1 << 63}
 	var maxQ = []int{1<<63 - 1}
-	for len(queue) > 0 {
+	for 0 < len(queue) {
 		root, min, max := queue[0], minQ[0], maxQ[0]
 		if root.Val <= min || max <= root.Val {
 			return false

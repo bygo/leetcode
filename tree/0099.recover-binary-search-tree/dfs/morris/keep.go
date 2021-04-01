@@ -6,6 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+//morris必须遍历到最后，因为修改的节点需要重置
 func recoverTree(root *TreeNode) {
 	var last, first, second, max *TreeNode
 	for root != nil {

@@ -15,7 +15,7 @@ func generateTrees(n int) []*TreeNode {
 
 func dfs(start, end int) []*TreeNode {
 	var res []*TreeNode
-	if start > end {
+	if end < start {
 		res = append(res, nil)
 		return res
 	}
