@@ -9,16 +9,17 @@ func maxDepth(root *Node) int {
 	if root == nil {
 		return 0
 	}
-	var queue = []*Node{root}
+
 	var level int
+	var queue = []*Node{root}
 	for {
 		counter := len(queue)
 		if counter == 0 {
 			break
 		}
-		for _, n := range queue[:counter] {
-			for _, v := range n.Children {
-				queue = append(queue, v)
+		for _, v := range queue[:counter] {
+			for _, c := range v.Children {
+				queue = append(queue, c)
 			}
 		}
 		queue = queue[counter:]

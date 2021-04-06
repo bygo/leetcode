@@ -46,3 +46,39 @@ func recoverTree(root *TreeNode) {
 	}
 	first.Val, second.Val = second.Val, first.Val
 }
+
+func r(root *TreeNode) {
+	var last, first, second, max *TreeNode
+	for root != nil {
+		if root.Left == nil {
+			if last != nil && root.Val <= last.Val {
+				if first == nil {
+					first = last
+				}
+				second = root
+			}
+			last = root
+			root = root.Right
+		} else {
+			max = root.Left
+			for max.Right != nil && max.Right != root {
+				max = max.Right
+			}
+
+			if max.Right == nil {
+				max.Right = root
+				root = root.Left
+			} else {
+				if last != nil && root.Val <= last.Val {
+					if first == nil {
+						first = last
+					}
+					second = root
+				}
+				last = root
+				root = root.Right
+			}
+		}
+	}
+	first.Val, second.Val = second.Val, first.Val
+}

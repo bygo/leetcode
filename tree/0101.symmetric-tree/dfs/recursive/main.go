@@ -7,12 +7,12 @@ type TreeNode struct {
 }
 
 func isSymmetric(root *TreeNode) bool {
-	return dfs(root, root)
+	return root == nil || dfs(root.Left, root.Right)
 }
 
 func dfs(p *TreeNode, q *TreeNode) bool {
 	if p == nil || q == nil {
 		return p == q
 	}
-	return dfs(p.Left, q.Right) && p.Val == q.Val && dfs(p.Right, q.Left)
+	return p.Val == q.Val && dfs(p.Left, q.Right) && dfs(p.Right, q.Left)
 }

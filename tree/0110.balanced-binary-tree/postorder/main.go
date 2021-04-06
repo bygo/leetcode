@@ -23,7 +23,7 @@ func find(node *TreeNode) float64 {
 	}
 	r := find(node.Right)
 
-	if l == -1 || r == -1 || math.Abs(l-r) > 1 { //剪枝，不平衡时直接返回
+	if l == -1 || r == -1 || 1 < math.Abs(l-r) { //剪枝，不平衡时直接返回
 		return -1
 	}
 

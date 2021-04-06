@@ -10,31 +10,39 @@ func addOneRow(root *TreeNode, v int, d int) *TreeNode {
 	if root == nil {
 		return &TreeNode{Val: v}
 	}
+
 	if d == 1 {
 		return &TreeNode{Left: root, Val: v}
 	}
+
 	var queue = []*TreeNode{root}
 	var depth = 1
-	for 0 < len(queue) {
+	for {
+		counter := len(queue)
+		if counter == 0 {
+			break
+		}
 		depth++
-		var l = len(queue)
+
 		if depth == d {
-			for i := 0; i < l; i++ {
-				nL := &TreeNode{Left: queue[i].Left, Val: v}
-				queue[i].Left = nL
-				nR := &TreeNode{Right: queue[i].Right, Val: v}
-				queue[i].Right = nR
+			for _, q := range queue[:counter] {
+				newL := &TreeNode{Left: q.Left, Val: v}
+				q.Left = newL
+				newR := &TreeNode{Right: q.Right, Val: v}
+				q.Right = newR
+			}
+			break
+		}
+		for _, q := range queue[:counter] {
+			if q.Left != nil {
+				queue = append(queue, q.Left)
+			}
+
+			if q.Right != nil {
+				queue = append(queue, q.Right)
 			}
 		}
-		for i := 0; i < l; i++ {
-			if queue[i].Left != nil {
-				queue = append(queue, queue[i].Left)
-			}
-			if queue[i].Right != nil {
-				queue = append(queue, queue[i].Right)
-			}
-		}
-		queue = queue[l:]
+		queue = queue[counter:]
 	}
 	return root
 }

@@ -14,7 +14,7 @@ func connect(root *Node) *Node {
 	}
 	l := root.Left
 	r := root.Right
-	if l != nil {
+	for l != nil {
 		l.Next = r
 		l = l.Right
 		r = r.Left

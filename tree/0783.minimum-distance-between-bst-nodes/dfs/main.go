@@ -6,12 +6,12 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var pre int
+var last *TreeNode
 var res int
 
 func minDiffInBST(root *TreeNode) int {
-	res = 1<<63 - 1
-	pre = 0
+	last = nil
+	res = 0
 	dfs(root)
 	return res
 }
@@ -19,17 +19,13 @@ func minDiffInBST(root *TreeNode) int {
 func dfs(root *TreeNode) {
 	if root != nil {
 		dfs(root.Left)
-		if pre != 0 {
-			res = min(res, root.Val-pre)
+		if last != nil {
+			r := root.Val - last.Val
+			if res == 0 || r < res {
+				res = r
+			}
 		}
-		pre = root.Val
+		last = root
 		dfs(root.Right)
 	}
-}
-
-func min(a, b int) int {
-	if a < b {
-		return a
-	}
-	return b
 }

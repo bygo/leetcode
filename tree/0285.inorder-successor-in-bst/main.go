@@ -34,4 +34,3 @@ func inorderSuccessor(root *TreeNode, p *TreeNode) *TreeNode {
 	}
 	return nil
 }
-

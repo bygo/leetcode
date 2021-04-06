@@ -1,7 +1,5 @@
 package main
 
-import "math"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
@@ -10,16 +8,30 @@ type TreeNode struct {
 
 func isBalanced(node *TreeNode) bool {
 	return node == nil || isBalanced(node.Left) &&
-		math.Abs(height(node.Left)-height(node.Right)) < 2 && //两边最大深度差  大于2
+		abs(height(node.Left)-height(node.Right)) < 2 && //两边最大深度差  大于2
 		isBalanced(node.Right)
 }
 
 //计算节点最大深度
-func height(node *TreeNode) float64 {
+func height(node *TreeNode) int {
 	if node == nil {
 		return 0
 	}
-	return math.Max(height(node.Left), height(node.Right)) + 1
+	return max(height(node.Left), height(node.Right)) + 1
+}
+
+func max(i, j int) int {
+	if i < j {
+		return j
+	}
+	return i
+}
+
+func abs(i int) int {
+	if i < 0 {
+		return -i
+	}
+	return i
 }
 
 // 计算左右树深度->对比深度

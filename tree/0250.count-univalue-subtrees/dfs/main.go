@@ -8,7 +8,7 @@ type TreeNode struct {
 
 func countUnivalSubtrees(root *TreeNode) int {
 	var res int
-	dfs(root, root.Val, &res)
+	dfs(root, 0, &res)
 	return res
 }
 
@@ -20,9 +20,9 @@ func dfs(root *TreeNode, parent int, res *int) bool {
 	l := dfs(root.Left, root.Val, res)
 	r := dfs(root.Right, root.Val, res)
 
-	if l || r {
-		return false
+	if l && r {
+		*res ++
+		return root.Val == parent
 	}
-	*res ++
-	return root.Val == parent
+	return false
 }

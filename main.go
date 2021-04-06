@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"flag"
 	"fmt"
@@ -59,7 +60,7 @@ var c string
 func main() {
 	will()
 
-	a := flag.String("a", "r", "generate readme.md | start a new problem")
+	a := flag.String("p", "r", "generate readme.md | start a new problem")
 	t := flag.String("t", "", "type")
 	flag.Parse()
 	if *a == "r" {
@@ -227,6 +228,10 @@ func start(id string, t string) {
 	check(err)
 	i, _ := strconv.Atoi(p.Stat.FrontendQuestionId)
 	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
+
+	problemStub = bytes.Replace(problemStub, []byte("DumpTitle"), []byte(p.Stat.QuestionTitle), 1)
+	problemStub = bytes.Replace(problemStub, []byte("DumpLink"), []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
+
 	os.Mkdir(path, os.ModePerm)
 	ioutil.WriteFile(fmt.Sprintf("%s/main.go", path), problemStub, os.ModePerm)
 }

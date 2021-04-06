@@ -7,14 +7,20 @@ type TreeNode struct {
 }
 
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
-	if p.Val < root.Val && q.Val < root.Val { // 都在左树
-		return lowestCommonAncestor(root.Left, p, q)
+	if root == nil || p == root || q == root {
+		return root
 	}
 
-	if root.Val < p.Val && root.Val < q.Val { // 都在右树
-		return lowestCommonAncestor(root.Right, p, q)
+	l := lowestCommonAncestor(root.Left, p, q)
+	r := lowestCommonAncestor(root.Right, p, q)
+
+	if l == nil {
+		return r
 	}
 
-	// 左右各一个
+	if r == nil {
+		return l
+	}
+
 	return root
 }

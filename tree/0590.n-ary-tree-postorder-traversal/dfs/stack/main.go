@@ -6,30 +6,24 @@ type Node struct {
 }
 
 func postorder(root *Node) []int {
-	var res = []int{}
+	var res []int
+	if root == nil {
+		return res
+	}
 	var stack = []*Node{root}
 	for 0 < len(stack) {
-		for root != nil {
-			res = append(res, root.Val)
-			if 0 == len(root.Children) {
-				break
-			}
-			for i := len(root.Children) - 1; 0 < i; i-- {
-				stack = append(stack, root.Children[i]) //入栈
-			}
-			root = root.Children[0]
+		res = append(res, root.Val)
+		for _, n := range root.Children {
+			stack = append(stack, n) //入栈
 		}
 
 		root = stack[len(stack)-1]
 		stack = stack[:len(stack)-1]
 	}
 
-	//反转 变成后序遍历 左右根
-	l, r := 0, len(res)-1
-	for l < r {
-		res[l], res[r] = res[r], res[l]
-		l++
-		r--
+	l := len(res) - 1
+	for i := 0; i < l/2+1; i++ {
+		res[i], res[l-i] = res[l-i], res[i]
 	}
 	return res
 }

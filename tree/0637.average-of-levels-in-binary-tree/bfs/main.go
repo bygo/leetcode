@@ -12,20 +12,23 @@ func averageOfLevels(root *TreeNode) []float64 {
 	}
 	var queue = []*TreeNode{root}
 	var res []float64
-	for 0 < len(queue) {
-		var l = len(queue)
-		var counter int
-		for i := 0; i < l; i++ {
-			counter += queue[i].Val
-			if queue[i].Left != nil {
-				queue = append(queue, queue[i].Left)
+	for {
+		var sum int
+		counter := len(queue)
+		if counter == 0 {
+			break
+		}
+		for _, q := range queue[:counter] {
+			sum += q.Val
+			if q.Left != nil {
+				queue = append(queue, q.Left)
 			}
-			if queue[i].Right != nil {
-				queue = append(queue, queue[i].Right)
+			if q.Right != nil {
+				queue = append(queue, q.Right)
 			}
 		}
-		res = append(res, float64(counter)/float64(l))
-		queue = queue[l:]
+		res = append(res, float64(sum)/float64(counter))
+		queue = queue[counter:]
 	}
 	return res
 }

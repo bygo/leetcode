@@ -5,19 +5,18 @@ type Node struct {
 	Children []*Node
 }
 
-var res []int
-
+//https://leetcode-cn.com/problemset/all/
 func preorder(root *Node) []int {
-	res = []int{}
-	dfs(root)
+	var res []int
+	dfs(root, &res)
 	return res
 }
 
-func dfs(root *Node) {
+func dfs(root *Node, res *[]int) {
 	if root != nil {
-		res = append(res, root.Val)
-		for _, n := range root.Children {
-			dfs(n)
+		*res = append(*res, root.Val)
+		for _, v := range root.Children {
+			dfs(v, res)
 		}
 	}
 }

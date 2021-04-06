@@ -16,13 +16,11 @@ func recoverTree(root *TreeNode) {
 		}
 
 		top := len(stack) - 1
-		if last != nil && stack[top].Val < last.Val {
-			second = stack[top]
-			if first != nil {
-				first.Val, second.Val = second.Val, first.Val
-				return
+		if last != nil && stack[top].Val <= last.Val {
+			if first == nil {
+				first = last
 			}
-			first = last
+			second = stack[top]
 		}
 		last = stack[top]
 		root = stack[top].Right

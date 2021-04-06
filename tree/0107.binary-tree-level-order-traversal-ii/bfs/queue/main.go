@@ -31,10 +31,12 @@ func levelOrderBottom(root *TreeNode) [][]int {
 		level++
 	}
 
-	l := len(res)
-	end := l / 2
-	for i := 0; i < end; i++ {
-		res[i], res[l-i-1] = res[l-i-1], res[i]
+	i := 0
+	j := len(res) - 1
+	for i < j {
+		res[i], res[j] = res[j], res[i]
+		i++
+		j--
 	}
 	return res
 }

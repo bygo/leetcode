@@ -11,18 +11,29 @@ func connect(root *Node) *Node {
 	if root == nil {
 		return nil
 	}
-	pre := root
-
-	for pre.Left != nil {
-		parent := pre
-		for parent != nil {
-			parent.Left.Next = parent.Right //左节点连接右节点
-			if parent.Next != nil {
-				parent.Right.Next = parent.Next.Left //右节点 连接 邻居左节点
-			}
-			parent = parent.Next //同层移动
+	var queue = []*Node{root}
+	head := root
+	var last *Node
+	for {
+		counter := len(queue)
+		if counter == 0 {
+			break
 		}
-		pre = pre.Left //移到下层
+		last = nil
+		for _, v := range queue[:counter] {
+			if last != nil {
+				last.Next = v
+			}
+			last = v
+			if v.Left != nil {
+				queue = append(queue, v.Left)
+			}
+
+			if v.Right != nil {
+				queue = append(queue, v.Right)
+			}
+		}
+		queue = queue[counter:]
 	}
-	return root
+	return head
 }

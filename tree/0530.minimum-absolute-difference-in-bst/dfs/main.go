@@ -7,31 +7,25 @@ type TreeNode struct {
 }
 
 var res int
-var pre *TreeNode
+var last *TreeNode
 
 func getMinimumDifference(root *TreeNode) int {
-	res = 1<<63 - 1
-	dfs(root, 0)
+	res = 0
+	last = nil
+	dfs(root)
 	return res
 }
 
-func dfs(root *TreeNode, f int) {
+func dfs(root *TreeNode) {
 	if root != nil {
-		dfs(root.Left, root.Val)
-		if pre != nil {
-			r := abs(root.Val - pre.Val)
-			if r < res {
+		dfs(root.Left)
+		if last != nil {
+			r := root.Val - last.Val
+			if res == 0 || r < res {
 				res = r
 			}
 		}
-		pre = root
-		dfs(root.Right, root.Val)
+		last = root
+		dfs(root.Right)
 	}
-}
-
-func abs(a int) int {
-	if a < 0 {
-		a = -a
-	}
-	return a
 }

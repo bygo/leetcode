@@ -8,19 +8,25 @@ type TreeNode struct {
 
 func findBottomLeftValue(root *TreeNode) int {
 	var res int
+	if root == nil {
+		return res
+	}
 	var queue = []*TreeNode{root}
-	for 0 < len(queue) {
+	for {
+		counter := len(queue)
+		if counter == 0 {
+			break
+		}
 		res = queue[0].Val
-		length := len(queue)
-		for i := 0; i < length; i++ {
-			if queue[i].Left != nil {
-				queue = append(queue, queue[i].Left)
+		for _, v := range queue[:counter] {
+			if v.Left != nil {
+				queue = append(queue, v.Left)
 			}
-			if queue[i].Right != nil {
-				queue = append(queue, queue[i].Right)
+			if v.Right != nil {
+				queue = append(queue, v.Right)
 			}
 		}
-		queue = queue[length:]
+		queue = queue[counter:]
 	}
 	return res
 }

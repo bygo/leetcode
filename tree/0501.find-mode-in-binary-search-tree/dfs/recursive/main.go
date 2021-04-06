@@ -12,7 +12,7 @@ var cur int     //当前
 var counter int //当前计数
 
 func findMode(root *TreeNode) []int {
-	res, max, cur, counter = []int{}, 1, 0, 0
+	res, max, cur, counter = []int{}, 0, 0, 0
 	dfs(root)
 	return res
 }

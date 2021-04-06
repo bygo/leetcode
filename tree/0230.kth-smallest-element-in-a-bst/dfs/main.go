@@ -6,23 +6,20 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-var res int
-var index int
-
 func kthSmallest(root *TreeNode, k int) int {
-	index = k
-	dfs(root)
+	var res int
+	dfs(root, &k, &res)
 	return res
 }
 
-func dfs(root *TreeNode) {
+func dfs(root *TreeNode, k *int, res *int) {
 	if root != nil {
-		dfs(root.Left)
-		index--
-		if index == 0 {
-			res = root.Val
+		dfs(root.Left, k, res)
+		*k--
+		if *k == 0 {
+			*res = root.Val
 			return
 		}
-		dfs(root.Right)
+		dfs(root.Right, k, res)
 	}
 }

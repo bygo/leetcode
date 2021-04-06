@@ -10,24 +10,30 @@ func largestValues(root *TreeNode) []int {
 	if root == nil {
 		return nil
 	}
-	var res = []int{}
+
+	var res []int
 	var queue = []*TreeNode{root}
-	if 0 < len(queue) {
-		var length = len(queue)
+	for {
+		counter := len(queue)
 		var max = -1 << 63
-		for i := 0; i < length; i++ {
-			if max < queue[i].Val {
-				max = queue[i].Val
+		if counter == 0 {
+			break
+		}
+		for _, v := range queue[:counter] {
+			if max < v.Val {
+				max = v.Val
 			}
-			if queue[i].Left != nil {
-				queue = append(queue, queue[i].Left)
+			if v.Left != nil {
+				queue = append(queue, v.Left)
 			}
-			if queue[i].Right != nil {
-				queue = append(queue, queue[i].Right)
+
+			if v.Right != nil {
+				queue = append(queue, v.Right)
 			}
 		}
 		res = append(res, max)
-		queue = queue[length:]
+		queue = queue[counter:]
 	}
+
 	return res
 }

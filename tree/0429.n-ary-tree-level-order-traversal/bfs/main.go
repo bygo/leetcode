@@ -9,25 +9,27 @@ var res [][]int
 
 func levelOrder(root *Node) [][]int {
 	res = [][]int{}
-	if len(root.Children) == 0 {
+	if root == nil {
 		return res
 	}
 
-	queue := []*Node{root}
 	var level int
-	if 0 < len(queue) {
+	var queue = []*Node{root}
+	for {
 		counter := len(queue)
+		if counter == 0 {
+			break
+		}
+
 		res = append(res, []int{})
-		for i := 0; i < counter; i++ {
-			if queue[i] != nil {
-				res[level] = append(res[level], queue[i].Val)
-				for _, n := range queue[i].Children {
-					queue = append(queue, n)
-				}
+		for _, v := range queue[:counter] {
+			res[level] = append(res[level], v.Val)
+			for _, c := range v.Children {
+				queue = append(queue, c)
 			}
 		}
-		queue = queue[counter:]
 		level++
+		queue = queue[counter:]
 	}
 	return res
 }

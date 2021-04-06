@@ -12,31 +12,33 @@ func connect(root *Node) *Node {
 		return nil
 	}
 
-	cur := root //指针
+	var cur *Node
+	cur = root
+
 	for cur != nil {
-		var pre *Node  //前置节点
-		var down *Node //下降节点，节点为下一层的左边第一节点
+		var pre, down *Node
+		down = nil
 		for cur != nil {
-			if cur.Left != nil { //左节点判断
-				if pre != nil {
-					pre.Next = cur.Left //pre不为空 设置Next
+			if cur.Left != nil {
+				if pre == nil {
+					down = cur.Left
 				} else {
-					down = cur.Left //pre为空 设置下降节点
+					pre.Next = cur.Left
 				}
-				pre = cur.Left //设置前置节点
+				pre = cur.Left
 			}
 
-			if cur.Right != nil { //右节点判断，同上
-				if pre != nil {
-					pre.Next = cur.Right
-				} else {
+			if cur.Right != nil {
+				if pre == nil {
 					down = cur.Right
+				} else {
+					pre.Next = cur.Right
 				}
 				pre = cur.Right
 			}
-			cur = cur.Next //同层移动
+			cur = cur.Next
 		}
-		cur = down //下降
+		cur = down
 	}
 	return root
 }

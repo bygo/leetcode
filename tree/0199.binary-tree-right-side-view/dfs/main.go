@@ -15,14 +15,12 @@ func rightSideView(root *TreeNode) []int {
 }
 
 func dfs(root *TreeNode, level int) {
-	if root == nil {
-		return
-	}
+	if root != nil{
+		if len(res) < level {
+			res = append(res, root.Val)
+		}
 
-	if level > len(res) {
-		res = append(res, root.Val)
+		dfs(root.Right, level+1)
+		dfs(root.Left, level+1)
 	}
-
-	dfs(root.Right, level+1)
-	dfs(root.Left, level+1)
 }
