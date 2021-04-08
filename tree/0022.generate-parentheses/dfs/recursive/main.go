@@ -6,7 +6,7 @@ func generateParenthesis(n int) []string {
 	return res
 }
 
-func dfs(cur string, left, right int, res *[]string) {
+func dfs(cur string, left int, right int, res *[]string) {
 	if left == 0 && right == 0 {
 		*res = append(*res, cur)
 	}
@@ -15,6 +15,7 @@ func dfs(cur string, left, right int, res *[]string) {
 		if 0 < left {
 			dfs(cur+"(", left-1, right, res)
 		}
+
 		if 0 < right {
 			dfs(cur+")", left, right-1, res)
 		}

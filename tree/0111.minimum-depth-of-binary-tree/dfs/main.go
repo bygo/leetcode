@@ -18,16 +18,14 @@ func minDepth(root *TreeNode) int {
 }
 
 func dfs(root *TreeNode, depth int) {
-	if root.Left == nil && root.Right == nil {
-		if depth < min {
-			min = depth
+	if root != nil {
+		if root.Left == nil && root.Right == nil {
+			if depth < min {
+				min = depth
+			}
+			return
 		}
-		return
-	}
-	if root.Left != nil {
 		dfs(root.Left, depth+1)
-	}
-	if root.Right != nil {
 		dfs(root.Right, depth+1)
 	}
 }

@@ -6,12 +6,13 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func hasPathSum(root *TreeNode, sum int) bool {
+func hasPathSum(root *TreeNode, targetSum int) bool {
 	if root == nil {
 		return false
 	}
+
 	if root.Left == nil && root.Right == nil {
-		return sum == root.Val
+		return targetSum == root.Val
 	}
-	return hasPathSum(root.Left, sum-root.Val) || hasPathSum(root.Right, sum-root.Val)
+	return hasPathSum(root.Left, targetSum-root.Val) || hasPathSum(root.Right, targetSum-root.Val)
 }

@@ -6,14 +6,14 @@ import (
 
 func combinationSum(candidates []int, target int) [][]int {
 	sort.Ints(candidates) //快排
-	res := [][]int{}
+	var res [][]int
 	dfs(candidates, nil, target, 0, &res) //深度优先
 	return res
 }
 
 func dfs(candidates, nums []int, target, left int, res *[][]int) {
 	if target == 0 { //结算
-		tmp := make([]int, len(nums))
+		var tmp = make([]int, len(nums))
 		copy(tmp, nums)
 		*res = append(*res, tmp)
 		return
