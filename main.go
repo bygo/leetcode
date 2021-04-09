@@ -222,8 +222,11 @@ func start(id string, t string) {
 	p := find(id)
 
 	problemStub, err := ioutil.ReadFile("./problem.stub")
-	if t == "t" {
-		problemStub, err = ioutil.ReadFile("./tree.stub")
+	if v, ok := map[string]string{
+		"t": "./tree.stub",
+		"l": "./link.stub",
+	}[t]; ok {
+		problemStub, err = ioutil.ReadFile(v)
 	}
 	check(err)
 	i, _ := strconv.Atoi(p.Stat.FrontendQuestionId)

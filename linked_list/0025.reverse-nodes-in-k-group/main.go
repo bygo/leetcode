@@ -5,6 +5,9 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//Title: Reverse Nodes in k-Group
+//Link: https://leetcode-cn.com/problems/reverse-nodes-in-k-group
+
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	empty := &ListNode{}
 	empty.Next = head
@@ -43,6 +46,8 @@ func reverse(first *ListNode) *ListNode {
 	first.Next = nil
 	return l
 }
+
+
 
 /**
 

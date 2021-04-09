@@ -14,28 +14,34 @@ type ListNode struct {
 	Next *ListNode
 }
 
+
+//Title: Merge Two Sorted Lists
+//Link: https://leetcode-cn.com/problems/merge-two-sorted-lists
+
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	tmp := &ListNode{}
-	res := tmp
+	prev := &ListNode{}
+	res := prev
 	for l1 != nil && l2 != nil {
 		if l1.Val < l2.Val {
-			tmp.Next = l1
+			prev.Next = l1
 			l1 = l1.Next
 		} else {
-			tmp.Next = l2
+			prev.Next = l2
 			l2 = l2.Next
 		}
-		tmp = tmp.Next
+		prev = prev.Next
 	}
 	if l1 == nil {
-		tmp.Next = l2
-	} else {
-		tmp.Next = l1
+		prev.Next = l2
+	}
+
+	if l2 == nil {
+		prev.Next = l1
 	}
 	return res.Next
 }
 
 /**
 思路:
-根据大小，插入链表。
+根据大小，插入链表
 */

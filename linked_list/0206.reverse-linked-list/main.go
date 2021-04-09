@@ -5,6 +5,9 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//Title: Reverse Linked List
+//Link: https://leetcode-cn.com/problems/reverse-linked-list
+
 func reverse(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head

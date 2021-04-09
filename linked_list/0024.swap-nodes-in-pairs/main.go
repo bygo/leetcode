@@ -19,25 +19,27 @@ type ListNode struct {
 	Next *ListNode
 }
 
+//Title: Swap Nodes in Pairs
+//Link: https://leetcode-cn.com/problems/swap-nodes-in-pairs
+
 func swapPairs(head *ListNode) *ListNode {
-	empty := &ListNode{}
-	empty.Next = head
-	prev := empty
-
+	zero := &ListNode{Next: head}
+	pre := zero
 	for head != nil && head.Next != nil {
-		one := head
-		two := head.Next
+		left := head
+		right := head.Next
 
-		prev.Next = two
-		one.Next = two.Next
-		two.Next = one
+		pre.Next = right
+		left.Next = right.Next
+		right.Next = left
 
-		prev = one
-		head = one.Next
+		pre = left
+		head = pre.Next
 	}
-	return empty.Next
+
+	return zero.Next
 }
 
 /**
-思路:三指针 prev,one,two
+思路:三指针 zero,left,right
 */
