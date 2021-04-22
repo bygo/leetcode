@@ -218,16 +218,26 @@ func normalizeClassTitle(title string) string {
 	return s
 }
 
+type Stub struct {
+	Stub string
+	File string
+}
+
 func start(id string, t string) {
 	p := find(id)
 
 	problemStub, err := ioutil.ReadFile("./problem.stub")
-	if v, ok := map[string]string{
-		"t": "./tree.stub",
-		"l": "./link.stub",
-	}[t]; ok {
-		problemStub, err = ioutil.ReadFile(v)
+	v, ok := map[string]Stub{
+		"t": {"./tree.stub", "main.go"},
+		"l": {"./link.stub", "main.go"},
+		"s": {"./sql.stub", "1.sql"},
+	}[t]
+	if !ok {
+		return
 	}
+
+	problemStub, err = ioutil.ReadFile(v.Stub)
+
 	check(err)
 	i, _ := strconv.Atoi(p.Stat.FrontendQuestionId)
 	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
@@ -236,7 +246,8 @@ func start(id string, t string) {
 	problemStub = bytes.Replace(problemStub, []byte("DumpLink"), []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
 
 	os.Mkdir(path, os.ModePerm)
-	ioutil.WriteFile(fmt.Sprintf("%s/main.go", path), problemStub, os.ModePerm)
+
+	ioutil.WriteFile(fmt.Sprintf("%s/%s", path, v.File), problemStub, os.ModePerm)
 }
 
 //func parse(s []string) map[string]string {
