@@ -27,5 +27,5 @@ func main() {
 		log.Fatal(err)
 	}
 
-	ioutil.WriteFile("sql.md", md.Bytes(), 0777)
+	ioutil.WriteFile("readme.md", md.Bytes(), 0777)
 }
