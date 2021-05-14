@@ -8,8 +8,8 @@ type TreeNode struct {
 
 func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
 	l1, l2 := []int{}, []int{}
-	dfs(root1, l1)
-	dfs(root2, l2)
+	dfs(root1, &l1)
+	dfs(root2, &l2)
 	if len(l1) != len(l2) {
 		return false
 	}
@@ -21,11 +21,11 @@ func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
 	return true
 }
 
-func dfs(root *TreeNode, leafs []int) {
+func dfs(root *TreeNode, leafs *[]int) {
 	if root != nil {
 		dfs(root.Left, leafs)
 		if root.Left == nil && root.Right == nil {
-			leafs = append(leafs, root.Val)
+			*leafs = append(*leafs, root.Val)
 		}
 		dfs(root.Right, leafs)
 	}

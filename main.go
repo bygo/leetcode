@@ -24,6 +24,28 @@ type Difficulty struct {
 	Level int `json:"level"`
 }
 
+func getMinSwaps(num string, k int) int {
+	var arr = []int{}
+	for _, v := range num {
+		arr = append(arr, int(v-48))
+	}
+	tail := len(arr) - 1
+	i := 0
+	j := 0
+	for i < k {
+		for j < tail {
+			if arr[tail-j-1] < arr[tail-j] {
+				arr[tail-j], arr[tail-j-1] = arr[tail-j-1], arr[tail-j]
+				i++
+				break
+			}
+			j++
+		}
+	}
+
+	return i
+}
+
 type Stat struct {
 	QuestionId          int    `json:"question_id"`
 	QuestionTitle       string `json:"question__title"`

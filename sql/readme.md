@@ -155,122 +155,138 @@ FROM (SELECT `d`.`name`                                                         
 WHERE `r` = 1;
 ```
 
-# 0185.department-top-three-salaries 
+# 0185.department-top-three-salaries 部门工资前三高的员工 
 ```sql
-# Title: Department Top Three Salaries
 # Link: https://leetcode-cn.com/problems/department-top-three-salaries
 
-SELECT `Department`.`Name` AS `Department`,
-       `e1`.`Name`         AS `Employee`,
-       `e1`.`Salary`       AS `Salary`
-FROM `Employee` AS `e1`
-         JOIN `Department`
+SELECT `Department`, `Employee`, `Salary`
+FROM (SELECT `d`.`Name`                                                                       `Department`,
+             `e1`.`Name`                                                                      `Employee`,
+             `e1`.`Salary`                                                                    `Salary`,
+             dense_rank() OVER (PARTITION BY `e1`.`DepartmentId` ORDER BY `e1`.`Salary` DESC) `r`
+      FROM `Employee` `e1`
+               JOIN `Department` `d`
+                    ON
+                        `e1`.`DepartmentId` = `d`.`Id`) `t`
+WHERE `r` <= 3;
+
+#
+
+SELECT `d`.`Name`    `Department`,
+       `e1`.`Name`   `Employee`,
+       `e1`.`Salary` `Salary`
+FROM `Employee` `e1`
+         JOIN `Department` `d`
               ON
-                      `e1`.`DepartmentId` = `Department`.`Id`
+                      `e1`.`DepartmentId` = `d`.`Id`
                       AND (SELECT count(DISTINCT `e2`.`Salary`)
                            FROM `Employee` AS `e2`
                            WHERE `e1`.`Salary` < `e2`.`Salary`
                              AND `e1`.`DepartmentId` = `e2`.`DepartmentId`) < 3
 ORDER BY `Salary` DESC;
-
 ```
 
-# 0196.delete-duplicate-emails 
+# 0196.delete-duplicate-emails 删除重复邮箱 
 ```sql
-# Title: Delete Duplicate Emails
 # Link: https://leetcode-cn.com/problems/delete-duplicate-emails
 
-DELETE `p1`
+DELETE `p2`
 FROM `Person` `p1`
          JOIN `Person` `p2`
 WHERE `p1`.`Email` = `p2`.`Email`
-  AND `p1`.`Id` > `p2`.`Id`
+  AND `p1`.`Id` < `p2`.`Id`
 ```
 
-# 0197.rising-temperature 
+# 0197.rising-temperature 温度相比昨天是上升的 
 ```sql
-# Title: Rising Temperature
 # Link: https://leetcode-cn.com/problems/rising-temperature
 
-SELECT `w1`.`Id` AS `Id`
-FROM `Weather` `w1`
-         JOIN `Weather` `w2`
-WHERE DATEDIFF(`w1`.`recordDate`, `w2`.`recordDate`) = 1
-  AND `w1`.`Temperature` > `w2`.`Temperature`
+SELECT `w2`.`Id` `Id`
+FROM `Weather` `w2`
+         JOIN `Weather` `w1`
+              ON DATEDIFF(`w2`.`recordDate`, `w1`.`recordDate`) = 1
+                  AND `w1`.`Temperature` < `w2`.`Temperature`
 ```
 
-# 0262.trips-and-users 
+# 0262.trips-and-users 非禁止用户取消率 
 ```sql
-# Title: Trips and Users
 # Link: https://leetcode-cn.com/problems/trips-and-users
 
-SELECT `t`.`request_at` AS `Day`,
+SELECT `t`.`request_at` `Day`,
        ROUND(
-                   SUM(
-                           IF(`t`.`STATUS` = 'completed', 0, 1)
-                       )
-                   /
-                   COUNT(`t`.`STATUS`),
-                   2
-           )            AS `Cancellation Rate`
-FROM `Trips` `t`,
-     `Users` `u1`,
+               SUM(IF(`t`.`STATUS` = 'completed', 0, 1)) / COUNT(`t`.`STATUS`),
+               2)       `Cancellation Rate`
+FROM `Trips` `t`
+         JOIN
+     `Users` `u1`
+         JOIN
      `Users` `u2`
-WHERE `t`.`client_id` = `u1`.`users_id`
-  AND `u1`.`banned` = 'No'
-  AND `t`.`driver_id` = `u2`.`users_id`
-  AND `u2`.`banned` = 'No'
-  AND `t`.`request_at` BETWEEN '2013-10-01' AND '2013-10-03'
+     ON `t`.`client_id` = `u1`.`users_id`
+         AND `u1`.`banned` = 'No'
+         AND `t`.`driver_id` = `u2`.`users_id`
+         AND `u2`.`banned` = 'No'
+         AND `t`.`request_at` BETWEEN '2013-10-01' AND '2013-10-03'
 GROUP BY `t`.`request_at`
 ```
 
-# 0511.game-play-analysis-i 
+# 0511.game-play-analysis-i 首次登陆的时间 
 ```sql
-# Title: Game Play Analysis I
 # Link: https://leetcode-cn.com/problems/game-play-analysis-i
 
-SELECT `player_id`, `device_id`
+SELECT `player_id`,
+       MIN(`event_date`) `first_login`
 FROM `Activity`
-ORDER BY `event_date` GROUP BY `player_id`
-
+GROUP BY `player_id`
 ```
 
-# 0512.game-play-analysis-ii 
+# 0512.game-play-analysis-ii 首次登陆的设备名称 
 ```sql
-# Title: Game Play Analysis II
 # Link: https://leetcode-cn.com/problems/game-play-analysis-ii
 
 SELECT `player_id`, `device_id`
 FROM `Activity`
 WHERE (`player_id`, `event_date`) IN (SELECT `player_id`, MIN(`event_date`)
                                       FROM `Activity`
-                                      GROUP BY `player_id`)
+                                      GROUP BY `player_id`);
+
+#
+
+SELECT `player_id`, `device_id`
+FROM (SELECT `player_id`,
+             `device_id`,
+             `event_date`,
+             MIN(`event_date`) OVER (PARTITION BY `player_id` ) `m`
+      FROM `Activity`) `t`
+WHERE `m` = `event_date`
+
 ```
 
-# 0534.game-play-analysis-iii 
+# 0534.game-play-analysis-iii 每人每天累积多少时长 
 ```sql
-# Title: Game Play Analysis III
 # Link: https://leetcode-cn.com/problems/game-play-analysis-iii
 
-SELECT `a2`.`player_id`         AS `player_id`,
-       `a2`.`event_date`        AS `event_date`,
-       SUM(`a1`.`games_played`) AS `games_played_so_far`
-FROM `Activity` `a1`,
-     `Activity` `a2`
-WHERE `a1`.`player_id` = `a2`.`player_id`
-  AND `a1`.`event_date` <= `a2`.`event_date`
-GROUP BY `a2`.`player_id`, `a2`.`event_date`
+SELECT `a1`.`player_id`         `player_id`,
+       `a1`.`event_date`        `event_date`,
+       SUM(`a2`.`games_played`) `games_played_so_far`
+FROM `Activity` `a2`
+         JOIN
+     `Activity` `a1`
+     ON `a1`.`player_id` = `a2`.`player_id`
+         AND `a2`.`event_date` <= `a1`.`event_date`
+GROUP BY `a1`.`player_id`, `a1`.`event_date`
 ```
 
-# 0550.game-play-analysis-iv 
+# 0550.game-play-analysis-iv 首日后隔天登录玩家的比率 
 ```sql
-# Title: Game Play Analysis IV
 # Link: https://leetcode-cn.com/problems/game-play-analysis-iv
 
-SELECT ROUND(COUNT(`a2`.`player_id`) / COUNT(`a1`.`player_id`), 2) AS `fraction`
-FROM (SELECT `player_id`, MIN(`event_date`) AS `event_date`
-      FROM `Activity`
-      GROUP BY `player_id`) `a1`
+SELECT ROUND(
+               COUNT(`a2`.`player_id`) / COUNT(`a1`.`player_id`),
+               2) `fraction`
+FROM (
+         SELECT `player_id`, MIN(`event_date`) `event_date`
+         FROM `Activity`
+         GROUP BY `player_id`) `a1`
          LEFT JOIN `Activity` `a2`
                    ON `a1`.`player_id` = `a2`.`player_id`
                        AND DATEDIFF(`a2`.`event_date`, `a1`.`event_date`) = 1;

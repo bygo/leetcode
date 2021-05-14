@@ -5,6 +5,5 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Title: DumpTitle
 //Link: DumpLink
 

@@ -11,23 +11,23 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-func sortedListToBST(head *ListNode) *TreeNode {
-	if head == nil {
+func sortedListToBST(left *ListNode) *TreeNode {
+	if left == nil {
 		return nil
 	}
 	var pre *ListNode
-	mid, fast := head, head
+	slow, fast := left, left
 	for fast != nil && fast.Next != nil {
-		pre = mid
-		mid = mid.Next
+		pre = slow
+		slow = slow.Next
 		fast = fast.Next.Next
 	}
 
 	node := &TreeNode{
-		Val: mid.Val,
+		Val: slow.Val,
 	}
 
-	if mid == head {
+	if slow == left {
 		return node
 	}
 
@@ -35,7 +35,7 @@ func sortedListToBST(head *ListNode) *TreeNode {
 		pre.Next = nil
 	}
 
-	node.Left = sortedListToBST(head)
-	node.Right = sortedListToBST(mid.Next)
+	node.Left = sortedListToBST(left)
+	node.Right = sortedListToBST(slow.Next)
 	return node
 }
