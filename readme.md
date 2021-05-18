@@ -6,6 +6,8 @@
 # 模板
 - [Tree](https://github.com/bygo/leetcode/tree/master/templates/tree)
 - [LinkedList](https://github.com/bygo/leetcode/tree/master/templates/linked_list)
+- [Stack](https://github.com/bygo/leetcode/tree/master/templates/stack)
+
 # 数据结构
 
 ---
@@ -142,6 +144,7 @@
 | 0341 | [Flatten Nested List Iterator    ](https://leetcode-cn.com/problems/flatten-nested-list-iterator) | 72.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0341.flatten-nested-list-iterator+扁平化嵌套列表迭代器/main.go)| 
 | 0385 | [Mini Parser                     ](https://leetcode-cn.com/problems/mini-parser) | 41.2% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0385.mini-parser+迷你语法分析器/main.go)| 
 | 0394 | [Decode String                   ](https://leetcode-cn.com/problems/decode-string) | 54.5% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0394.decode-string+字符串解码/main.go)| 
+| 0402 | [Remove K Digits                 ](https://leetcode-cn.com/problems/remove-k-digits) | 32.8% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0402.remove-k-digits/main.go)| 
 | 0430 | [Flatten a Multilevel Doubly Linked List](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list) | 53.3% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0430.flatten-a-multilevel-doubly-linked-list+扁平化多级双向链表/main.go)| 
 | 0445 | [Add Two Numbers II              ](https://leetcode-cn.com/problems/add-two-numbers-ii) | 58.4% | Medium | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0445.add-two-numbers-ii+两数相加/main.go)| 
 | 0496 | [Next Greater Element I          ](https://leetcode-cn.com/problems/next-greater-element-i) | 67.8% | Easy | [Go](https://github.com/temporaries/leetcode/tree/master/stack/0496.next-greater-element-i+下一个更大元素+I/main.go)| 
