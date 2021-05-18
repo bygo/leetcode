@@ -1,7 +1,7 @@
 # 前驱指针 zero
 
 
-### 加一
+### (加一)[https://leetcode-cn.com/problems/plus-one-linked-list]
 
 ```go
 func plusOne(head *ListNode) *ListNode {
@@ -32,7 +32,7 @@ func plusOne(head *ListNode) *ListNode {
 }
 ```
 
-### 删除重复全部元素
+### (删除重复全部元素)[https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii]
 
 ```go
 func deleteDuplicates(head *ListNode) *ListNode {
@@ -56,7 +56,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 # 快慢指针 slow fast
 
 
-### 环的起点
+### (环的起点)[https://leetcode-cn.com/problems/linked-list-cycle-ii]
 
 ```go
 func detectCycle(head *ListNode) *ListNode {
@@ -77,7 +77,7 @@ func detectCycle(head *ListNode) *ListNode {
 
 ```
 
-### 中间节点
+### (中间节点)[https://leetcode-cn.com/problems/middle-of-the-linked-list]
 
 ```go
 func middleNode(head *ListNode) *ListNode {
@@ -93,7 +93,7 @@ func middleNode(head *ListNode) *ListNode {
 
 # 哨兵指针 prev
 
-### 两两交换节点
+### (两两交换节点)[https://leetcode-cn.com/problems/swap-nodes-in-pairs]
 
 ```go
 func swapPairs(head *ListNode) *ListNode {
@@ -114,7 +114,7 @@ func swapPairs(head *ListNode) *ListNode {
 }
 ```
 
-### 合并两个有序链表
+### (合并两个有序链表)[https://leetcode-cn.com/problems/merge-two-sorted-lists]
 
 ```go
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
