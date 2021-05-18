@@ -5,7 +5,7 @@
 
 # 模板
 - [Tree](https://github.com/bygo/leetcode/tree/master/templates/tree)
-- [LinkedList](https://github.com/bygo/leetcode/tree/master/templates/tree)
+- [LinkedList](https://github.com/bygo/leetcode/tree/master/templates/linked_list)
 # 数据结构
 
 ---
