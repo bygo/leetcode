@@ -30,22 +30,6 @@
 
 # 模板
 - [Tree](https://github.com/bygo/leetcode/tree/master/templates/tree)
-    - [前序遍历](https://github.com/bygo/leetcode/blob/master/templates/tree/preorder.go)
-    - [前序遍历-迭代](https://github.com/bygo/leetcode/blob/master/templates/tree/preorder_stack.go)
-    - [前序遍历-Morris-链表](https://github.com/bygo/leetcode/blob/master/templates/tree/preorder_morris_break.go)
-    - [前序遍历-Morris-保持树结构](https://github.com/bygo/leetcode/blob/master/templates/tree/preorder_morris_keep.go)
-    
-    - [中序遍历](https://github.com/bygo/leetcode/blob/master/templates/tree/inorder.go)
-    - [中序遍历-迭代](https://github.com/bygo/leetcode/blob/master/templates/tree/inorder_stack.go)
-    - [中序遍历-Morris-链表](https://github.com/bygo/leetcode/blob/master/templates/tree/inorder_morris_break.go)
-    - [中序遍历-Morris-保持树结构](https://github.com/bygo/leetcode/blob/master/templates/tree/inorder_morris_keep.go)
-
-    - [后序遍历](https://github.com/bygo/leetcode/blob/master/templates/tree/postorder.go)
-    - [后序遍历-迭代](https://github.com/bygo/leetcode/blob/master/templates/tree/postorder_stack.go)
-    - [后序遍历-Morris-破坏树结构](https://github.com/bygo/leetcode/blob/master/templates/tree/postorder_morris_break.go)
-    - [后序遍历-Morris-保持树结构](https://github.com/bygo/leetcode/blob/master/templates/tree/postorder_morris_keep.go)
-
-    - [层次遍历](https://github.com/bygo/leetcode/blob/master/templates/tree/bfs.go)
 
 # 数据结构
 
