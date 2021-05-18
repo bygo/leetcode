@@ -12,6 +12,7 @@ type TreeNode struct {
 }
 
 //Link: https://leetcode-cn.com/problems/linked-list-in-binary-tree
+
 func isSubPath(head *ListNode, root *TreeNode) bool {
 	if root == nil {
 		return false

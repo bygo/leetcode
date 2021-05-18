@@ -7,19 +7,19 @@ type Node struct {
 
 //Link: https://leetcode-cn.com/problems/insert-into-a-sorted-circular-linked-list
 
-func insert(aNode *Node, x int) *Node {
-	if aNode == nil {
-		aNode := &Node{Val: x}
-		aNode.Next = aNode
-		return aNode
+func insert(root *Node, x int) *Node {
+	if root == nil {
+		root := &Node{Val: x}
+		root.Next = root
+		return root
 	}
 
-	curr := aNode
+	curr := root
 
 	for {
 		if curr.Val <= x && x <= curr.Next.Val || //升序中间 直接插入
 			curr.Next.Val < curr.Val && (curr.Val <= x || x <= curr.Next.Val) || // curr < prev 时 必定 prev = tail & curr = head  ,如果正好可以插入 就插入
-			curr.Next == aNode {
+			curr.Next == root { // 如果都找不到了 所以值相同 随便插了
 			curr.Next = &Node{Val: x, Next: curr.Next}
 			break
 		}
@@ -28,10 +28,10 @@ func insert(aNode *Node, x int) *Node {
 
 	//for !(curr.Val <= x && x <= curr.Next.Val ||
 	//	curr.Next.Val < curr.Val && (curr.Val <= x || x <= curr.Next.Val) ||
-	//	curr.Next == aNode) {
+	//	curr.Next == root) {
 	//	curr = curr.Next
 	//}
 	//curr.Next = &Node{Val: x, Next: curr.Next}
 
-	return aNode
+	return root
 }

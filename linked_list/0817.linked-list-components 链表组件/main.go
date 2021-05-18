@@ -23,7 +23,7 @@ func numComponents(head *ListNode, G []int) int {
 		} else { // 不存在
 			flag = 0
 		}
-		if flag == 1 { // 连续出现2次
+		if flag == 1 { // 出现1次 即算一个组件 之后累计的忽略
 			res++
 		}
 		head = head.Next

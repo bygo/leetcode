@@ -30,16 +30,16 @@ func reverseKGroup(head *ListNode, k int) *ListNode {
 }
 
 //1->2->3
-func reverse(head *ListNode) *ListNode {
-	if head != nil {
-		p := head.Next
-		head.Next = nil
-		for p != nil {
-			next := p.Next // 保存下一个
-			p.Next = head  // 2 指向 1
-			head = p       // 1 移到 2
-			p = next       // 2 移到 3
+func reverse(l *ListNode) *ListNode {
+	if l != nil {
+		r := l.Next
+		l.Next = nil
+		for r != nil {
+			next := r.Next // 保存下一个
+			r.Next = l     // 2 指向 1
+			l = r          // 1 移到 2
+			r = next       // 2 移到 3
 		}
 	}
-	return head
+	return l
 }

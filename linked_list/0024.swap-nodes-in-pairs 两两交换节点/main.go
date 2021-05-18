@@ -11,14 +11,14 @@ func swapPairs(head *ListNode) *ListNode {
 	zero := &ListNode{Next: head}
 	prev := zero
 	for head != nil && head.Next != nil {
-		left := head
-		right := head.Next
+		l := head
+		r := head.Next
 
-		prev.Next = right
-		left.Next = right.Next
-		right.Next = left
+		prev.Next = r
+		l.Next = r.Next
+		r.Next = l
 
-		prev = left
+		prev = l
 		head = prev.Next
 	}
 	return zero.Next

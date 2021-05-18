@@ -8,20 +8,20 @@ type ListNode struct {
 //Link: https://leetcode-cn.com/problems/partition-list
 
 func partition(head *ListNode, x int) *ListNode {
-	left, right := &ListNode{}, &ListNode{}
-	leftZero, rightZero := left, right
+	l, r := &ListNode{}, &ListNode{}
+	leftZero, rightZero := l, r
 	for head != nil {
 		if head.Val < x {
-			left.Next = head
-			left = left.Next
+			l.Next = head
+			l = l.Next
 		} else {
-			right.Next = head
-			right = right.Next
+			r.Next = head
+			r = r.Next
 		}
 		head = head.Next
 	}
 
-	right.Next = nil
-	left.Next = rightZero.Next
+	r.Next = nil
+	l.Next = rightZero.Next
 	return leftZero.Next
 }

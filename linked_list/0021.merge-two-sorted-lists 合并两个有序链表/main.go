@@ -23,11 +23,8 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	if l1 == nil {
 		prev.Next = l2
-	}
-
-	if l2 == nil {
+	} else if l2 == nil {
 		prev.Next = l1
 	}
-
 	return zero.Next
 }

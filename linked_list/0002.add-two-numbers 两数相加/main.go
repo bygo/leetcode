@@ -15,6 +15,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		carry = l1.Val / 10
 		l1.Val %= 10
 
+		// 其一链表Next为空时，尝试链表合并
 		if l1.Next == nil {
 			if carry == 0 {
 				l1.Next = l2.Next
@@ -36,9 +37,3 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 
 	return head
 }
-
-/**
-思路：
-1.避免创建新链表，以 l1 or l2 进行更改
-2.其一链表Next指向为空时，开始尝试链表合并
-*/
