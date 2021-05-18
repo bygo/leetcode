@@ -1,6 +1,6 @@
 # 栈的特性
  
-### (用栈实现队列)[https://leetcode-cn.com/problems/implement-queue-using-stacks]
+### [用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks)
 
 ```go
 type MyQueue struct {
@@ -33,7 +33,7 @@ func (q *MyQueue) Pop() int {
 }
 ```
 
-###  (用队列实现栈)[https://leetcode-cn.com/problems/implement-stack-using-queues]
+###  [用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues)
 
 ```go
 type MyStack struct {
@@ -59,7 +59,7 @@ func (s *MyStack) Pop() int {
 }
 ```
 
-### (从尾到头打印链表)[https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof]
+### [从尾到头打印链表](https://leetcode-cn.com/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof)
 
 ```go
 func reversePrint(head *ListNode) []int {
@@ -86,7 +86,7 @@ func reversePrint(head *ListNode) []int {
 # 单调栈
 
 
-### (接雨水)[https://leetcode-cn.com/problems/trapping-rain-water]
+### [接雨水](https://leetcode-cn.com/problems/trapping-rain-water)
 
 ```go
 func trap(height []int) int {
@@ -118,7 +118,7 @@ func min(a, b int) int {
 }
 ```
 
-### (统计矩形)[https://leetcode-cn.com/problems/largest-rectangle-in-histogram]
+### [统计矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram)
 
 ```go
 func largestRectangleArea(heights []int) int {
