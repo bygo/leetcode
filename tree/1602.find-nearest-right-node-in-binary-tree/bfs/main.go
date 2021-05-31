@@ -7,7 +7,6 @@ type TreeNode struct {
 }
 
 //Title: Find Nearest Right Node in Binary Tree
-//Link: https://leetcode-cn.com/problems/find-nearest-right-node-in-binary-tree
 
 func findNearestRightNode(root *TreeNode, u *TreeNode) *TreeNode {
 	if root == nil {

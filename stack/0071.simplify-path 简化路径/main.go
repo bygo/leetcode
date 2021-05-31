@@ -2,6 +2,7 @@ package main
 
 //Link: https://leetcode-cn.com/problems/simplify-path
 
+// 状态机
 func simplifyPath(path string) string {
 	if path == "" {
 		return "."
@@ -16,7 +17,7 @@ func simplifyPath(path string) string {
 				if 0 < len(stack) {
 					stack = stack[:len(stack)-1]
 				}
-			} else if l == 1 && cur[0] != '.' || 1 < l {
+			} else if 1 == l && cur[0] != '.' || 1 < l {
 				stack = append(stack, string(cur))
 			}
 			cur = []rune{}

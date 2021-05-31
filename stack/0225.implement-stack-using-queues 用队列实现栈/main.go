@@ -10,7 +10,7 @@ func Constructor() (s MyStack) {
 	return MyStack{}
 }
 
-// 每次都是 o(n)
+// 要嘛push o(n)  要嘛pop o(n)
 func (s *MyStack) Push(x int) {
 	n := len(s.queue)
 	s.queue = append(s.queue, x)

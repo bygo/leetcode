@@ -7,7 +7,7 @@ type MinStack struct {
 	stack    []int
 }
 
-/** initialize your data structure here. */
+// 每个栈顶的值的最小值 存起来
 func Constructor() MinStack {
 	return MinStack{
 		minStack: []int{1<<63 - 1},
@@ -17,7 +17,7 @@ func Constructor() MinStack {
 func (this *MinStack) Push(val int) {
 	top := len(this.minStack) - 1
 	this.minStack = append(this.minStack, min(this.minStack[top], val))
-	this.stack = append(this.stack, val)
+	this.stack = append(this.stack, val) //
 }
 
 func (this *MinStack) Pop() {
@@ -39,4 +39,3 @@ func min(a, b int) int {
 	}
 	return b
 }
-

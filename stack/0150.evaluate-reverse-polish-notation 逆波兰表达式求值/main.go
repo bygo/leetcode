@@ -7,18 +7,19 @@ import "strconv"
 func evalRPN(tokens []string) int {
 	var stack []int
 	for _, t := range tokens {
+		l := len(stack)
 		if t == "+" {
-			stack[len(stack)-2] = stack[len(stack)-2] + stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
+			stack[l-2] = stack[l-2] + stack[l-1]
+			stack = stack[:l-1]
 		} else if t == "-" {
-			stack[len(stack)-2] = stack[len(stack)-2] - stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
+			stack[l-2] = stack[l-2] - stack[l-1]
+			stack = stack[:l-1]
 		} else if t == "*" {
-			stack[len(stack)-2] = stack[len(stack)-2] * stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
+			stack[l-2] = stack[l-2] * stack[l-1]
+			stack = stack[:l-1]
 		} else if t == "/" {
-			stack[len(stack)-2] = stack[len(stack)-2] / stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
+			stack[l-2] = stack[l-2] / stack[l-1]
+			stack = stack[:l-1]
 		} else {
 			c, _ := strconv.Atoi(t)
 			stack = append(stack, c)

@@ -3,12 +3,13 @@ package main
 //Link: https://leetcode-cn.com/problems/next-greater-element-i
 
 func nextGreaterElement(nums1 []int, nums2 []int) []int {
-	var stack []int
 	var m = map[int]int{}
+	var stack = []int{}
+
 	for _, v := range nums2 {
 		top := len(stack) - 1
-		for 0 <= top && stack[top] < v { //单调递减
-			m[stack[top]] = v
+		for -1 < top && stack[top] < v {
+			m[stack[top]] = v // 下一个更大的值
 			stack = stack[:top]
 			top--
 		}
@@ -17,13 +18,12 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 
 	var res []int
 	for _, v := range nums1 {
-		v, ok := m[v]
+		_, ok := m[v]
 		if ok {
-			res = append(res, v)
+			res = append(res, m[v])
 		} else {
 			res = append(res, -1)
 		}
 	}
-
 	return res
 }

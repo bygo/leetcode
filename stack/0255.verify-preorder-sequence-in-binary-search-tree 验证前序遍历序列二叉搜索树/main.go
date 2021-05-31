@@ -2,6 +2,8 @@ package main
 
 //Link: https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree
 
+
+
 func verifyPreorder(preorder []int) bool {
 	if len(preorder) < 2 {
 		return true

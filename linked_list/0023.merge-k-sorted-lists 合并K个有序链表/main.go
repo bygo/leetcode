@@ -12,6 +12,7 @@ func mergeKLists(lists []*ListNode) *ListNode {
 	if 0 == l {
 		return nil
 	}
+
 	for 1 < l {
 		for i := 0; i < l/2; i++ {
 			lists[i] = mergeTwoLists(lists[i], lists[l-i-1])

@@ -25,16 +25,15 @@ func reverseBetween(head *ListNode, left, right int) *ListNode {
 	return zero.Next
 }
 
-func reverse(l *ListNode) *ListNode {
-	if l != nil {
-		r := l.Next
-		l.Next = nil
-		for r != nil {
-			next := r.Next
-			r.Next = l
-			l = r
-			r = next
-		}
+func reverse(head *ListNode) *ListNode {
+	var pre *ListNode
+
+	for head != nil {
+		tmp := head.Next
+		head.Next = pre
+		pre = head
+		head = tmp
 	}
-	return l
+
+	return pre
 }
