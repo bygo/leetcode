@@ -24,25 +24,34 @@ func dfs(s string, p string) bool {
 }
 
 // dp
+
+//S = abbbbc
+//P = ab*d*c
 func isMatch(s string, p string) bool {
 	m, n := len(s), len(p)
 	dp := make([][]bool, m+1)
-	for i := 0; i < len(dp); i++ {
+	for i := range dp {
 		dp[i] = make([]bool, n+1)
 	}
+
 	dp[0][0] = true
 	for i := 0; i <= m; i++ {
 		for j := 1; j <= n; j++ {
-			if p[j-1] == '*' { // j-1 实际计算当前
-				if dp[i][j-2] { // 如果前序为真 +x*  肯定也为真
+			if p[j-1] == '*' {
+				if dp[i][j-2] {
 					dp[i][j] = true
-				} else if i != 0 && dp[i-1][j] && (p[j-2] == '.' || s[i-1] == p[j-2]) { // 前置是 . 或者 x=x  并且 dp[i-1][j] 也为真
+				} else if i != 0 && dp[i-1][j] {
+					if s[i-1] == p[j-2] || p[j-2] == '.' {
+						dp[i][j] = true
+					}
+				}
+			} else if i != 0 && dp[i-1][j-1] {
+				if s[i-1] == p[j-1] || p[j-1] == '.' {
 					dp[i][j] = true
 				}
-			} else if i != 0 && (p[j-1] == '.' || s[i-1] == p[j-1]) && dp[i-1][j-1] { // 普通相等
-				dp[i][j] = true
 			}
 		}
 	}
+
 	return dp[m][n]
 }
