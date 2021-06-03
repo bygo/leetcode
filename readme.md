@@ -79,7 +79,7 @@
 | 0072 | [Edit Distance                   ](https://leetcode-cn.com/problems/edit-distance) | 60.8% | Hard | [Go](https://github.com/bygo/leetcode/tree/master/dp/0072.edit-distance+编辑距离/main.go)| 
 | 0509 | [Fibonacci Number                ](https://leetcode-cn.com/problems/fibonacci-number) | 68.2% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/dp/0509.fibonacci-number+斐波那契数/main.go)| 
 | 0523 | [Continuous Subarray Sum         ](https://leetcode-cn.com/problems/continuous-subarray-sum) | 27.0% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/dp/0523.continuous-subarray-sum+连续子数组和=K/main.go)| 
-| 0525 | [Contiguous Array                ](https://leetcode-cn.com/problems/contiguous-array) | 52.0% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/dp/0525.contiguous-array+连续数组/main.go)| 
+| 0525 | [Contiguous Array                ](https://leetcode-cn.com/problems/contiguous-array) | 52.1% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/dp/0525.contiguous-array+连续数组/main.go)| 
 | 1744 | [Can You Eat Your Favorite Candy on Your Favorite Day?](https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day) | 36.5% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/dp/1744.can-you-eat-your-favorite-candy-on-your-favorite-day+你能在你最喜欢的那天吃到你最喜欢的糖果吗？/main.go)| 
 
 ## Hash
@@ -163,7 +163,7 @@
 | 0571 | [Find Median Given Frequency of Numbers](https://leetcode-cn.com/problems/find-median-given-frequency-of-numbers) | 49.2% | Hard | [Go](https://github.com/bygo/leetcode/tree/master/sql/0571.find-median-given-frequency-of-numbers+频率数字的中位数/1.sql)| 
 | 0574 | [Winning Candidate               ](https://leetcode-cn.com/problems/winning-candidate) | 63.7% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/0574.winning-candidate+当选者/1.sql)| 
 | 0577 | [Employee Bonus                  ](https://leetcode-cn.com/problems/employee-bonus) | 70.8% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/0577.employee-bonus+员工奖金/1.sql)| 
-| 0578 | [Get Highest Answer Rate Question](https://leetcode-cn.com/problems/get-highest-answer-rate-question) | 50.1% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/0578.get-highest-answer-rate-question+回答率最高的问题/1.sql)| 
+| 0578 | [Get Highest Answer Rate Question](https://leetcode-cn.com/problems/get-highest-answer-rate-question) | 50.2% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/0578.get-highest-answer-rate-question+回答率最高的问题/1.sql)| 
 | 0579 | [Find Cumulative Salary of an Employee](https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee) | 43.6% | Hard | [Go](https://github.com/bygo/leetcode/tree/master/sql/0579.find-cumulative-salary-of-an-employee+员工累积薪水/1.sql)| 
 | 0580 | [Count Student Number in Departments](https://leetcode-cn.com/problems/count-student-number-in-departments) | 52.6% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/0580.count-student-number-in-departments+各专业学生人数/1.sql)| 
 | 0584 | [Find Customer Referee           ](https://leetcode-cn.com/problems/find-customer-referee) | 77.5% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/0584.find-customer-referee+用户的推荐人/1.sql)| 
@@ -227,7 +227,7 @@
 | 1251 | [Average Selling Price           ](https://leetcode-cn.com/problems/average-selling-price) | 77.7% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1251.average-selling-price/1.sql)| 
 | 1264 | [Page Recommendations            ](https://leetcode-cn.com/problems/page-recommendations) | 58.2% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1264.page-recommendations+推荐朋友喜欢的页面/1.sql)| 
 | 1270 | [All People Report to the Given Manager](https://leetcode-cn.com/problems/all-people-report-to-the-given-manager) | 81.0% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1270.all-people-report-to-the-given-manager+递归查询/1.sql)| 
-| 1280 | [Students and Examinations       ](https://leetcode-cn.com/problems/students-and-examinations) | 51.0% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1280.students-and-examinations+学生各科测试次数/1.sql)| 
+| 1280 | [Students and Examinations       ](https://leetcode-cn.com/problems/students-and-examinations) | 51.1% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1280.students-and-examinations+学生各科测试次数/1.sql)| 
 | 1285 | [Find the Start and End Number of Continuous Ranges](https://leetcode-cn.com/problems/find-the-start-and-end-number-of-continuous-ranges) | 81.5% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1285.find-the-start-and-end-number-of-continuous-ranges+区间次数/1.sql)| 
 | 1294 | [Weather Type in Each Country    ](https://leetcode-cn.com/problems/weather-type-in-each-country) | 66.3% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1294.weather-type-in-each-country+11月份的天气/1.sql)| 
 | 1303 | [Find the Team Size              ](https://leetcode-cn.com/problems/find-the-team-size) | 81.7% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1303.find-the-team-size+团队人数/1.sql)| 
@@ -258,9 +258,9 @@
 | 1485 | [Group Sold Products By The Date ](https://leetcode-cn.com/problems/group-sold-products-by-the-date) | 65.7% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1485.group-sold-products-by-the-date+group聚合/1.sql)| 
 | 1495 | [Friendly Movies Streamed Last Month](https://leetcode-cn.com/problems/friendly-movies-streamed-last-month) | 54.4% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1495.friendly-movies-streamed-last-month+儿童适宜的电影/1.sql)| 
 | 1501 | [Countries You Can Safely Invest In](https://leetcode-cn.com/problems/countries-you-can-safely-invest-in) | 59.7% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1501.countries-you-can-safely-invest-in+通话时长高于平均/1.sql)| 
-| 1511 | [Customer Order Frequency        ](https://leetcode-cn.com/problems/customer-order-frequency) | 68.2% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1511.customer-order-frequency+六七月消费大于等于100/1.sql)| 
+| 1511 | [Customer Order Frequency        ](https://leetcode-cn.com/problems/customer-order-frequency) | 68.1% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1511.customer-order-frequency+六七月消费大于等于100/1.sql)| 
 | 1517 | [Find Users With Valid E-Mails   ](https://leetcode-cn.com/problems/find-users-with-valid-e-mails) | 73.8% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1517.find-users-with-valid-e-mails+邮箱正则/1.sql)| 
-| 1527 | [Patients With a Condition       ](https://leetcode-cn.com/problems/patients-with-a-condition) | 53.4% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1527.patients-with-a-condition+患病患者/1.sql)| 
+| 1527 | [Patients With a Condition       ](https://leetcode-cn.com/problems/patients-with-a-condition) | 53.3% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1527.patients-with-a-condition+患病患者/1.sql)| 
 | 1532 | [The Most Recent Three Orders    ](https://leetcode-cn.com/problems/the-most-recent-three-orders) | 61.5% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1532.the-most-recent-three-orders+最近三笔订单/1.sql)| 
 | 1543 | [Fix Product Name Format         ](https://leetcode-cn.com/problems/fix-product-name-format) | 54.4% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/sql/1543.fix-product-name-format+格式化/1.sql)| 
 | 1549 | [The Most Recent Orders for Each Product](https://leetcode-cn.com/problems/the-most-recent-orders-for-each-product) | 66.4% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/sql/1549.the-most-recent-orders-for-each-product+产品最新订单/1.sql)| 
@@ -348,7 +348,7 @@
 | 0394 | [Decode String                   ](https://leetcode-cn.com/problems/decode-string) | 54.7% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0394.decode-string+字符串解码/main.go)| 
 | 0402 | [Remove K Digits                 ](https://leetcode-cn.com/problems/remove-k-digits) | 32.8% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0402.remove-k-digits+移掉K位数字后最小/main.go)| 
 | 0430 | [Flatten a Multilevel Doubly Linked List](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list) | 53.4% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0430.flatten-a-multilevel-doubly-linked-list+扁平化多级双向链表/main.go)| 
-| 0439 | [Ternary Expression Parser       ](https://leetcode-cn.com/problems/ternary-expression-parser) | 58.3% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0439.ternary-expression-parser+三元表达式解析器/main.go)| 
+| 0439 | [Ternary Expression Parser       ](https://leetcode-cn.com/problems/ternary-expression-parser) | 58.4% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0439.ternary-expression-parser+三元表达式解析器/main.go)| 
 | 0445 | [Add Two Numbers II              ](https://leetcode-cn.com/problems/add-two-numbers-ii) | 58.5% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0445.add-two-numbers-ii+两数相加/main.go)| 
 | 0456 | [132 Pattern                     ](https://leetcode-cn.com/problems/132-pattern) | 36.0% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/stack/0456.132-pattern+132模式/main.go)| 
 | 0496 | [Next Greater Element I          ](https://leetcode-cn.com/problems/next-greater-element-i) | 68.1% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/stack/0496.next-greater-element-i+下一个更大元素+I/main.go)| 
@@ -390,7 +390,7 @@
 | 1119 | [Remove Vowels from a String     ](https://leetcode-cn.com/problems/remove-vowels-from-a-string) | 86.6% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/string/1119.remove-vowels-from-a-string/main.go)| 
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers) | 86.8% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/string/1689.partitioning-into-minimum-number-of-deci-binary-numbers/main.go)| 
 | 1769 | [Minimum Number of Operations to Move All Balls to Each Box](https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box) | 85.7% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/string/1769.minimum-number-of-operations-to-move-all-balls-to-each-box/main.go)| 
-| 1790 | [Check if One String Swap Can Make Strings Equal](https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal) | 66.6% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/string/1790.check-if-one-string-swap-can-make-strings-equal/main.go)| 
+| 1790 | [Check if One String Swap Can Make Strings Equal](https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal) | 66.7% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/string/1790.check-if-one-string-swap-can-make-strings-equal/main.go)| 
 | 1805 | [Number of Different Integers in a String](https://leetcode-cn.com/problems/number-of-different-integers-in-a-string) | 51.2% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/string/1805.number-of-different-integers-in-a-string/main.go)| 
 
 ## Tree
@@ -466,7 +466,7 @@
 | 0297 | [Serialize and Deserialize Binary Tree](https://leetcode-cn.com/problems/serialize-and-deserialize-binary-tree) | 54.9% | Hard | [Go](https://github.com/bygo/leetcode/tree/master/tree/0297.serialize-and-deserialize-binary-tree/bfs/main.go)| bfs
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/tree/master/tree/0297.serialize-and-deserialize-binary-tree/dfs/main.go)| dfs
 | 0298 | [Binary Tree Longest Consecutive Sequence](https://leetcode-cn.com/problems/binary-tree-longest-consecutive-sequence) | 56.8% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/tree/0298.binary-tree-longest-consecutive-sequence/main.go)| 
-| 0366 | [Find Leaves of Binary Tree      ](https://leetcode-cn.com/problems/find-leaves-of-binary-tree) | 76.0% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/tree/0366.find-leaves-of-binary-tree/main.go)| 
+| 0366 | [Find Leaves of Binary Tree      ](https://leetcode-cn.com/problems/find-leaves-of-binary-tree) | 76.1% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/tree/0366.find-leaves-of-binary-tree/main.go)| 
 | 0404 | [Sum of Left Leaves              ](https://leetcode-cn.com/problems/sum-of-left-leaves) | 57.4% | Easy | [Go](https://github.com/bygo/leetcode/tree/master/tree/0404.sum-of-left-leaves/dfs/main.go)| dfs
 | 0426 | [Convert Binary Search Tree to Sorted Doubly Linked List](https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list) | 66.8% | Medium | [Go](https://github.com/bygo/leetcode/tree/master/tree/0426.convert-binary-search-tree-to-sorted-doubly-linked-list/inorder/main.go)| inorder
 | 0428 | [Serialize and Deserialize N-ary Tree](https://leetcode-cn.com/problems/serialize-and-deserialize-n-ary-tree) | 64.6% | Hard | [Go](https://github.com/bygo/leetcode/tree/master/tree/0428.serialize-and-deserialize-n-ary-tree/bfs/main.go)| bfs
