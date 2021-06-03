@@ -62,8 +62,12 @@ var dummyLinkTitle = []byte(DummyTitle)
 var dummyHeadline = []byte(DummyHeadline)
 
 func main() {
+	problemID := flag.String("p", "", "problem id")
+	problemTyp := flag.String("t", "", "problem type")
+	flag.Parse()
+
 	body, err := ioutil.ReadFile(AllJsonFile)
-	if err != nil {
+	if err != nil || *problemID == "" {
 		resp, err := http.Get(ApiProblemsAll)
 		check(err)
 		defer func() {
@@ -79,9 +83,7 @@ func main() {
 	check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
 	check(json.Unmarshal(body, &profile))
-	problemID := flag.String("p", "", "problem id")
-	problemTyp := flag.String("t", "", "problem type")
-	flag.Parse()
+
 	if *problemID == "" {
 		buildReadme()
 		return
