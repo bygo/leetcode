@@ -22,7 +22,6 @@ func calculateTime(keyboard string, word string) int {
 func abs(a, b int) int {
 	if a < b {
 		return b - a
-	} else {
-		return a - b
 	}
+	return a - b
 }

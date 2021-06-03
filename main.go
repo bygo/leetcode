@@ -128,7 +128,7 @@ func getSolutions(dir os.FileInfo, path string) {
 	algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
 	title := strings.Split(desc[1], ".")
 	problem := find(title[0])
-	problem.File = "https://github.com/bygo/leetcode/tree/master/" + strings.Replace(path, " ", "+", -1)
+	problem.File = "https://github.com/bygo/leetcode/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], problem)
 }
