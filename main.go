@@ -43,7 +43,7 @@ var profile Profile
 var currentClassName string
 
 var problems = map[string][]Problem{}
-var ac int
+var ac = 101
 var solutionOrder = []string{
 	"array", "bit", "dp", "hash", "linked_list", "sql", "math", "stack", "string", "tree",
 }
