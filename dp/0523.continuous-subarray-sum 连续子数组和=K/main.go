@@ -2,8 +2,7 @@ package main
 
 //Link: https://leetcode-cn.com/problems/continuous-subarray-sum
 
-// 余数相同
-
+// 前缀余数
 func checkSubarraySum(nums []int, k int) bool {
 	l := len(nums)
 	if l < 2 {

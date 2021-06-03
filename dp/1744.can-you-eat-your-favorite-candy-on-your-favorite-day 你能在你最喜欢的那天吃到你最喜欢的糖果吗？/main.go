@@ -2,8 +2,10 @@ package main
 
 //Link: https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 
+// 前缀和
 func canEat(candiesCount []int, queries [][]int) []bool {
 	var res []bool
+
 	for i := 1; i < len(candiesCount); i++ {
 		candiesCount[i] += candiesCount[i-1]
 	}

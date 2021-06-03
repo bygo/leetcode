@@ -2,12 +2,11 @@ package main
 
 //Link: https://leetcode-cn.com/problems/trapping-rain-water
 
-// 前缀树
+// 前缀max 后缀max
 func trap(height []int) int {
-	var res int
 	n := len(height)
 	if n == 0 {
-		return res
+		return 0
 	}
 
 	leftMax := make([]int, n)
@@ -22,8 +21,9 @@ func trap(height []int) int {
 		rightMax[i] = max(rightMax[i+1], height[i])
 	}
 
+	var res int
 	for i, h := range height {
-		res += min(leftMax[i], rightMax[i]) - h
+		res += min(leftMax[i], rightMax[i]) - h // 水
 	}
 	return res
 }

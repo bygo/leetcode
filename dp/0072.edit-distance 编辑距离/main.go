@@ -23,8 +23,22 @@ func minDistance(word1 string, word2 string) int {
 		}
 	}
 
+	// 	  #  h  o  r
+	// #  0  1  2  3
+	// h  1  0  1  2
+	// o  2  1  0  1
+
+	//    #   s   i   t   t  e  n
+	// #  0   1   2   3   4  5  6
+	// k  1   1   2   3   4  5  6
+	// i  2   2   1   2   3  4  5
+	// t  3   3
+	// t  4
+	// e  5
+	// n  6
 	return dp[m]
 }
+
 
 func min(nums ...int) int {
 	for i := 0; i < len(nums); i++ {

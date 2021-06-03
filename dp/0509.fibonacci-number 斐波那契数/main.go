@@ -2,18 +2,25 @@ package main
 
 //Link: https://leetcode-cn.com/problems/fibonacci-number
 
+// 0 1 1
 func fib(n int) int {
-	var a, b, c = 0, 0, 1
-	for 0 < n {
-		a = b
-		b = c
-		c = (a + b) % 1000000007
-		n--
+	var dp = make([]int, n+2)
+	dp[0] = 0
+	dp[1] = 1
+	var i = 2
+	for i <= n {
+		dp[i] = dp[i-1] + dp[i-2]
+		i++
 	}
-	return b
+	return dp[n]
 }
 
-// 0->1
-// 0->2
-
-// 0 1 2 3 5 8 13
+// 压缩
+func fib(n int) int {
+	var a, b = 0, 1
+	for 0 < n {
+		b, a = (a+b)%1000000007, b
+		n--
+	}
+	return a
+}
