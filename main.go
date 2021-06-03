@@ -25,11 +25,12 @@ const (
 	ReadmeMdStub    = "readmeStub.md"
 	ReadmeName      = "readme.md"
 
-	DummyClass = "@DummyClass"
-	DummyTable = "@DummyTable"
-	DummyIndex = "@DummyIndex"
-	DummyLink  = "@DummyLink"
-	DummyTitle = "@DummyTitle"
+	DummyHeadline = "@DummyHeadline"
+	DummyClass    = "@DummyClass"
+	DummyTable    = "@DummyTable"
+	DummyIndex    = "@DummyIndex"
+	DummyLink     = "@DummyLink"
+	DummyTitle    = "@DummyTitle"
 
 	Easy   = "Easy"
 	Medium = "Medium"
@@ -42,7 +43,7 @@ var profile Profile
 var currentClassName string
 
 var problems = map[string][]Problem{}
-
+var ac int
 var solutionOrder = []string{
 	"array", "bit", "dp", "hash", "linked_list", "sql", "math", "stack", "string", "tree",
 }
@@ -58,6 +59,7 @@ var dummyTableBuf = []byte(DummyTable)
 var dummyIndexBuf = []byte(DummyIndex)
 var dummyLinkBuf = []byte(DummyLink)
 var dummyLinkTitle = []byte(DummyTitle)
+var dummyHeadline = []byte(DummyHeadline)
 
 func main() {
 	body, err := ioutil.ReadFile(AllJsonFile)
@@ -77,7 +79,6 @@ func main() {
 	check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
 	check(json.Unmarshal(body, &profile))
-
 	problemID := flag.String("p", "", "problem id")
 	problemTyp := flag.String("t", "", "problem type")
 	flag.Parse()
@@ -172,6 +173,7 @@ func buildReadme() {
 		for k, problem := range problems {
 			var questionId, questionTitle, questionDifficulty, questionAcceptance, questionTitleSlug string
 			if k == 0 || problem.Stat.QuestionId != problems[k-1].Stat.QuestionId {
+				ac += 1
 				questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
 				questionTitle = problem.Stat.QuestionTitle
 				questionTitleSlug = problem.Stat.QuestionTitleSlug
@@ -191,8 +193,8 @@ func buildReadme() {
 		}
 		readmeBuf = append(readmeBuf, class...)
 	}
-
-	readme := bytes.Replace(stubReadme, dummyTableBuf, readmeBuf, 1)
+	readme := bytes.Replace(stubReadme, dummyHeadline, []byte(fmt.Sprintf("%d/%d", ac, profile.NumTotal)), 1)
+	readme = bytes.Replace(readme, dummyTableBuf, readmeBuf, 1)
 	readme = bytes.Replace(readme, dummyIndexBuf, directoryIndex, 1)
 	check(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
 }
