@@ -63,7 +63,7 @@ var dummyHeadline = []byte(DummyHeadline)
 
 func main() {
 	body, err := ioutil.ReadFile(AllJsonFile)
-	if err == os.ErrNotExist {
+	if err != nil {
 		resp, err := http.Get(ApiProblemsAll)
 		check(err)
 		defer func() {
@@ -73,8 +73,8 @@ func main() {
 		}()
 
 		body, err = ioutil.ReadAll(resp.Body)
+		check(err)
 	}
-	check(err)
 
 	check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
