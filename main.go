@@ -14,6 +14,8 @@ import (
 )
 
 const (
+	Repository = "https://github.com/bygo/leetcode"
+
 	ApiProblemsAll     = "https://leetcode-cn.com/api/problems/all/"
 	AllJsonFile        = "all.json"
 	ALlJsonUpdatedText = "update all.json"
@@ -24,13 +26,6 @@ const (
 	ReadmeClassStub = "class.stub"
 	ReadmeMdStub    = "readmeStub.md"
 	ReadmeName      = "readme.md"
-
-	DummyHeadline = "@DummyHeadline"
-	DummyClass    = "@DummyClass"
-	DummyTable    = "@DummyTable"
-	DummyIndex    = "@DummyIndex"
-	DummyLink     = "@DummyLink"
-	DummyTitle    = "@DummyTitle"
 
 	Easy   = "Easy"
 	Medium = "Medium"
@@ -54,12 +49,12 @@ var problemStubs = map[string]*Stub{
 	"link":    {"link.stub", "main.go"},
 	"sql":     {"sql.stub", "1.sql"},
 }
-var dummyClassBuf = []byte(DummyClass)
-var dummyTableBuf = []byte(DummyTable)
-var dummyIndexBuf = []byte(DummyIndex)
-var dummyLinkBuf = []byte(DummyLink)
-var dummyLinkTitle = []byte(DummyTitle)
-var dummyHeadline = []byte(DummyHeadline)
+var dummyClassBuf = []byte("@DummyClass")
+var dummyTableBuf = []byte("@DummyTable")
+var dummyIndexBuf = []byte("@DummyIndex")
+var dummyLinkBuf = []byte("@DummyLink")
+var dummyLinkTitle = []byte("@DummyTitle")
+var dummyHeadline = []byte("@DummyHeadline")
 
 func main() {
 	problemID := flag.String("p", "", "problem id")
@@ -128,7 +123,7 @@ func getSolutions(dir os.FileInfo, path string) {
 	algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
 	title := strings.Split(desc[1], ".")
 	problem := find(title[0])
-	problem.File = "https://github.com/bygo/leetcode/blob/master/" + strings.Replace(path, " ", "%20", -1)
+	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], problem)
 }
@@ -156,10 +151,11 @@ func buildReadme() {
 	}
 
 	stubReadme, err := ioutil.ReadFile(StubPrefix + ReadmeMdStub)
+	check(err)
+
 	difficulty := []string{
 		Easy, Medium, Hard,
 	}
-	check(err)
 
 	var readmeBuf []byte
 	var directoryIndex []byte
