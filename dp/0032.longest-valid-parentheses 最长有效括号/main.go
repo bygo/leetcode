@@ -9,8 +9,8 @@ func longestValidParentheses(s string) int {
 	var dp = make([]int, len(s))
 	var n = len(s)
 	for i := 1; i < n; i++ {
-		if s[i] == ')' { // 1. 当前 = )
-			if s[i-1] == '(' { // 2.前置 = (
+		if s[i] == ')' { // 1. 当前  )
+			if s[i-1] == '(' { // 2.前置  (
 				if 2 <= i { // 3.子状态 dp[i-2]
 					dp[i] = dp[i-2] + 2
 				} else {

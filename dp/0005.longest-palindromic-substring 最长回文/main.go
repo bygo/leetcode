@@ -25,7 +25,7 @@ func longestPalindrome(s string) string {
 	return s[left : right+1]
 }
 
-// 压缩
+// 压缩  区间扩散
 func longestPalindrome(s string) string {
 	n := len(s)
 	dp := make([]bool, n)
