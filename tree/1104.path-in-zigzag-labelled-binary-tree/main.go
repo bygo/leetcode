@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 //Title: Path In Zigzag Labelled Binary Tree
-//Link: https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree
+// Link: https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree
 
 func pathInZigZagTree(label int) []int {
 	var res []int

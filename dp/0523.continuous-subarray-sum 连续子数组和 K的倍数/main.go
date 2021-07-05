@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/continuous-subarray-sum
+// Link: https://leetcode-cn.com/problems/continuous-subarray-sum
 
 // 前缀余数
 func checkSubarraySum(nums []int, k int) bool {

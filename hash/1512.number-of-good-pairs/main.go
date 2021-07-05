@@ -1,7 +1,7 @@
 package main
 
 //Title: Number of Good Pairs
-//Link: https://leetcode-cn.com/problems/number-of-good-pairs
+// Link: https://leetcode-cn.com/problems/number-of-good-pairs
 
 func numIdenticalPairs(nums []int) int {
 	var m = map[int]int{}

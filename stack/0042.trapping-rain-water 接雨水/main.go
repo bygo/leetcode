@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/trapping-rain-water
+// Link: https://leetcode-cn.com/problems/trapping-rain-water
 
 // 单调递减栈，出栈时 统计当前柱子  横向最大水量
 func trap(height []int) int {

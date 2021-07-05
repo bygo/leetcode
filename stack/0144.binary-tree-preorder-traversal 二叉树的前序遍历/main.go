@@ -6,7 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-//Link: https://leetcode-cn.com/problems/binary-tree-preorder-traversal
+// Link: https://leetcode-cn.com/problems/binary-tree-preorder-traversal
 
 func preorderTraversal(root *TreeNode) []int {
 	var stack = []*TreeNode{root}

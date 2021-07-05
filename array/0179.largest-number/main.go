@@ -6,7 +6,7 @@ import (
 )
 
 //Title: Largest Number
-//Link: https://leetcode-cn.com/problems/largest-number
+// Link: https://leetcode-cn.com/problems/largest-number
 
 func largestNumber(nums []int) string {
 	sort.Slice(nums, func(i, j int) bool {

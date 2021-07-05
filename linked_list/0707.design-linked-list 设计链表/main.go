@@ -6,7 +6,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/design-linked-list
+// Link: https://leetcode-cn.com/problems/design-linked-list
 
 type MyLinkedList struct {
 	Head *ListNode

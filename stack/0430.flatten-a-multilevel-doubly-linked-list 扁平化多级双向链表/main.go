@@ -7,7 +7,7 @@ type Node struct {
 	Child *Node
 }
 
-//Link: https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list
+// Link: https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list
 
 func flatten(root *Node) *Node {
 	if root == nil {

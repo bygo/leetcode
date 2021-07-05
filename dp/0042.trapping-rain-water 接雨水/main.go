@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/trapping-rain-water
+// Link: https://leetcode-cn.com/problems/trapping-rain-water
 
 // 前缀max 后缀max
 func trap(height []int) int {

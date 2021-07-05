@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/wildcard-matching
+// Link: https://leetcode-cn.com/problems/wildcard-matching
 
 //s = "adceb"
 //p = "*a*b"

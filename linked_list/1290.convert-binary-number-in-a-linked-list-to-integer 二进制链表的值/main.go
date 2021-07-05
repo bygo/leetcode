@@ -6,7 +6,7 @@ type ListNode struct {
 }
 
 //Title: Convert Binary Number in a Linked List to Integer
-//Link: https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer
+// Link: https://leetcode-cn.com/problems/convert-binary-number-in-a-linked-list-to-integer
 
 func getDecimalValue(head *ListNode) int {
 	var i int

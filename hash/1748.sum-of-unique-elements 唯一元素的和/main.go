@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/sum-of-unique-elements
+// Link: https://leetcode-cn.com/problems/sum-of-unique-elements
 
 func sumOfUnique(nums []int) int {
 	var m = map[int]int{}

@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/longest-valid-parentheses
+// Link: https://leetcode-cn.com/problems/longest-valid-parentheses
 
 // f(n) = f(n-2) + 2
 // f(n) = f(n-1) + 2 + f(n-f(n-1)-2)

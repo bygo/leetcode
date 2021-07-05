@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/climbing-stairs
+// Link: https://leetcode-cn.com/problems/climbing-stairs
 
 // dp
 func climbStairs(n int) int {
@@ -17,12 +17,12 @@ func climbStairs(n int) int {
 
 // 压缩
 func climbStairs(n int) int {
-	var a, b = 0, 1
+	var x, y = 0, 1
 	for 0 < n {
-		b, a = a+b, b
+		y, x = x+y, y
 		n--
 	}
-	return b
+	return y
 }
 
 // 1 1 2

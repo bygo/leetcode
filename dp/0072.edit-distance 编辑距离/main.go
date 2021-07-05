@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/edit-distance
+// Link: https://leetcode-cn.com/problems/edit-distance
 
 // dp
 func minDistanc(word1, word2 string) int {

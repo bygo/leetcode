@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/scramble-string
+// Link: https://leetcode-cn.com/problems/scramble-string
 
 // 递归
 func isScramble3(s1 string, s2 string) bool {
@@ -87,6 +87,7 @@ func isScramble2(s1, s2 string) bool {
 			freq[x[i]-'a']++
 			freq[y[i]-'a']--
 		}
+
 		for _, f := range freq {
 			if f != 0 {
 				return 0

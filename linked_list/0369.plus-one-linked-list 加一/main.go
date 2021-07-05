@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/plus-one-linked-list
+// Link: https://leetcode-cn.com/problems/plus-one-linked-list
 
 func plusOne(head *ListNode) *ListNode {
 	zero := &ListNode{Next: head}

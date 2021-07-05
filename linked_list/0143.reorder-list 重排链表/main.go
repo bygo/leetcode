@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/reorder-list
+// Link: https://leetcode-cn.com/problems/reorder-list
 
 func middleNode(head *ListNode) *ListNode {
 	slow, fast := head, head

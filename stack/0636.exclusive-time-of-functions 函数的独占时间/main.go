@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-//Link: https://leetcode-cn.com/problems/exclusive-time-of-functions
+// Link: https://leetcode-cn.com/problems/exclusive-time-of-functions
 
 func exclusiveTime(n int, logs []string) []int {
 	res := make([]int, n)

@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/maximum-frequency-stack
+// Link: https://leetcode-cn.com/problems/maximum-frequency-stack
 
 type FreqStack struct {
 	max   int

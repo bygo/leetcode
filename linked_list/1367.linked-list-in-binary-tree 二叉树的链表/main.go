@@ -11,7 +11,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-//Link: https://leetcode-cn.com/problems/linked-list-in-binary-tree
+// Link: https://leetcode-cn.com/problems/linked-list-in-binary-tree
 
 func isSubPath(head *ListNode, root *TreeNode) bool {
 	if root == nil {

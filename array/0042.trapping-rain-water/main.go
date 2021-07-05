@@ -1,6 +1,6 @@
 package main
 
-//Link:https://leetcode-cn.com/problems/trapping-rain-water/
+// Link:https://leetcode-cn.com/problems/trapping-rain-water/
 
 func trap(h []int) int {
 	var l, r, lMax, rMax, res int

@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/coin-change-2
+// Link: https://leetcode-cn.com/problems/coin-change-2
 
 func change(amount int, coins []int) int {
 	dp := make([]int, amount+1)

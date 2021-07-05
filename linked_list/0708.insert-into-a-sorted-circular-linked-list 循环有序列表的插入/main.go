@@ -5,7 +5,7 @@ type Node struct {
 	Next *Node
 }
 
-//Link: https://leetcode-cn.com/problems/insert-into-a-sorted-circular-linked-list
+// Link: https://leetcode-cn.com/problems/insert-into-a-sorted-circular-linked-list
 
 func insert(root *Node, x int) *Node {
 	if root == nil {

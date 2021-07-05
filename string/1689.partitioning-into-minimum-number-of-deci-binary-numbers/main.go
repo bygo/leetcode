@@ -1,7 +1,7 @@
 package main
 
 //Title: Partitioning Into Minimum Number Of Deci-Binary Numbers
-//Link: https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers
+// Link: https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers
 
 func minPartitions(n string) int {
 	var max rune = -1

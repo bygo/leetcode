@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/validate-stack-sequences
+// Link: https://leetcode-cn.com/problems/validate-stack-sequences
 
 // pushed = [1,2,3,4,5], popped = [4,5,3,2,1]
 func validateStackSequences(pushed []int, popped []int) bool {

@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/add-two-numbers-ii
+// Link: https://leetcode-cn.com/problems/add-two-numbers-ii
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	var s1, s2 []int

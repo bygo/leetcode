@@ -1,7 +1,7 @@
 package main
 
 //Title: Find Anagram Mappings
-//Link: https://leetcode-cn.com/problems/find-anagram-mappings
+// Link: https://leetcode-cn.com/problems/find-anagram-mappings
 
 func anagramMappings(A []int, B []int) []int {
 	var m = map[int]int{}

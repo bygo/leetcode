@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/minimum-path-sum
+// Link: https://leetcode-cn.com/problems/minimum-path-sum
 
 // dp
 func minPathSum(grid [][]int) int {

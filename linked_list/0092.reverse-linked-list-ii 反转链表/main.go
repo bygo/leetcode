@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/reverse-linked-list-ii
+// Link: https://leetcode-cn.com/problems/reverse-linked-list-ii
 
 func reverseBetween(head *ListNode, left, right int) *ListNode {
 	zero := &ListNode{Next: head}

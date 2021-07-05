@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/total-hamming-distance
+// Link: https://leetcode-cn.com/problems/total-hamming-distance
 
 func totalHammingDistance(nums []int) (ans int) {
 	n := len(nums)

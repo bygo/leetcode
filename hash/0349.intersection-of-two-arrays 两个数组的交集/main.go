@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/intersection-of-two-arrays
+// Link: https://leetcode-cn.com/problems/intersection-of-two-arrays
 
 func intersection(nums1 []int, nums2 []int) []int {
 	var m = map[int]int{}

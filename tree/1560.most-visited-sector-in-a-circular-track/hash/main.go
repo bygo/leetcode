@@ -8,7 +8,7 @@ type Node struct {
 }
 
 //Title: Most Visited Sector in  a Circular Track
-//Link: https://leetcode-cn.com/problems/most-visited-sector-in-a-circular-track
+// Link: https://leetcode-cn.com/problems/most-visited-sector-in-a-circular-track
 
 func lowestCommonAncestor(p *Node, q *Node) *Node {
 	var m = map[*Node]struct{}{}

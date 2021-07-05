@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/triangle
+// Link: https://leetcode-cn.com/problems/triangle
 
 // 压缩
 func minimumTotal(triangle [][]int) int {
@@ -11,7 +11,7 @@ func minimumTotal(triangle [][]int) int {
 	dp[0] = triangle[0][0]
 	for i := 1; i < m; i++ {
 		dp[i] = dp[i-1] + triangle[i][i] // 最后一个
-		for j := i - 1; 0 < j; j-- {     //中间
+		for j := i - 1; 0 < j; j-- {     // 中间
 			dp[j] = min(dp[j], dp[j-1]) + triangle[i][j]
 		}
 		dp[0] = dp[0] + triangle[i][0] // 第一个

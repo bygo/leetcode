@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/daily-temperatures
+// Link: https://leetcode-cn.com/problems/daily-temperatures
 
 func dailyTemperatures(temperatures []int) []int {
 	var stack []int

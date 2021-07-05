@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/crawler-log-folder
+// Link: https://leetcode-cn.com/problems/crawler-log-folder
 
 func minOperations(logs []string) int {
 	res := 0

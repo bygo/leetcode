@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
+// Link: https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 
 // 前缀和
 func canEat(candiesCount []int, queries [][]int) []bool {

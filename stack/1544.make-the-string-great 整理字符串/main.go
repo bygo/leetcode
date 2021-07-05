@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/make-the-string-great
+// Link: https://leetcode-cn.com/problems/make-the-string-great
 
 func makeGood(s string) string {
 	var res []byte

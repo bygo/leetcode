@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/keyboard-row
+// Link: https://leetcode-cn.com/problems/keyboard-row
 
 func findWords(words []string) []string {
 	var res []string

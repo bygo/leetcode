@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/regular-expression-matching
+// Link: https://leetcode-cn.com/problems/regular-expression-matching
 
 // 递归
 func isMatch(s string, p string) bool {
@@ -12,18 +12,14 @@ func dfs(s string, p string) bool {
 	if n == 0 {
 		return m == 0
 	}
-	if 2 <= n && p[1] == '*' { // 长度大于2，获取下一个元素且为*
-		return dfs(s, p[2:]) || // 1.去除x*（p[2:]）
-			0 < m && (s[0] == p[0] || p[0] == '.') && dfs(s[1:], p) // 2.去除字符(s[1:])
+	if 2 <= n && p[1] == '*' {
+		return dfs(s, p[2:]) || 0 < m && (s[0] == p[0] || p[0] == '.') && dfs(s[1:], p)
 	} else {
-		return 0 < m && (s[0] == p[0] || p[0] == '.') && dfs(s[1:], p[1:]) // 3.普通匹配
+		return 0 < m && (s[0] == p[0] || p[0] == '.') && dfs(s[1:], p[1:])
 	}
 }
 
 // dp
-
-//S = abbbbc
-//P = ab*d*c
 func isMatch(s string, p string) bool {
 	m, n := len(s), len(p)
 	dp := make([][]bool, m+1)
@@ -38,12 +34,12 @@ func isMatch(s string, p string) bool {
 				if dp[i][j-2] {
 					dp[i][j] = true
 				} else if i != 0 && dp[i-1][j] {
-					if s[i-1] == p[j-2] || p[j-2] == '.' {
+					if s[i-1] == p[j-2] || '.' == p[j-2] {
 						dp[i][j] = true
 					}
 				}
 			} else if i != 0 && dp[i-1][j-1] {
-				if s[i-1] == p[j-1] || p[j-1] == '.' {
+				if s[i-1] == p[j-1] || ',' == p[j-1] {
 					dp[i][j] = true
 				}
 			}

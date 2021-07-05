@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/flatten-nested-list-iterator
+// Link: https://leetcode-cn.com/problems/flatten-nested-list-iterator
 
 type NestedInteger struct {
 }

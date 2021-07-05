@@ -11,7 +11,7 @@ type Node struct {
 }
 
 //Title: Serialize and Deserialize N-ary Tree
-//Link: https://leetcode-cn.com/problems/serialize-and-deserialize-n-ary-tree
+// Link: https://leetcode-cn.com/problems/serialize-and-deserialize-n-ary-tree
 
 func main() {
 	c := Codec{}

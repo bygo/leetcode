@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/decoded-string-at-index
+// Link: https://leetcode-cn.com/problems/decoded-string-at-index
 
 func decodeAtIndex(s string, k int) string {
 	var size = 0

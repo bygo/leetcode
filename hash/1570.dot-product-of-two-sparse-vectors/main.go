@@ -1,7 +1,7 @@
 package main
 
 //Title: Dot Product of Two Sparse Vectors
-//Link: https://leetcode-cn.com/problems/dot-product-of-two-sparse-vectors
+// Link: https://leetcode-cn.com/problems/dot-product-of-two-sparse-vectors
 
 type SparseVector struct {
 	m map[int]int

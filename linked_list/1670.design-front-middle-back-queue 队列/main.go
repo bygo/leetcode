@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/design-front-middle-back-queue
+// Link: https://leetcode-cn.com/problems/design-front-middle-back-queue
 
 type FrontMiddleBackQueue struct {
 	d []int

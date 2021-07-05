@@ -6,5 +6,5 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-//Link: @DummyLink
+// Link: @DummyLink
 

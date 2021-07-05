@@ -42,7 +42,7 @@ func longestPalindrome(s string) string {
 			right = k + p[k]
 		}
 
-		if p[k] > maxRight {
+		if maxRight < p[k] {
 			maxCenter = k
 			maxRight = p[k]
 		}

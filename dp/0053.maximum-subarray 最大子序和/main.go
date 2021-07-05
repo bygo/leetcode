@@ -1,6 +1,6 @@
 package main
 
-//Link: https://leetcode-cn.com/problems/maximum-subarray
+// Link: https://leetcode-cn.com/problems/maximum-subarray
 
 // 有条件的前缀和
 func maxSubArray(nums []int) int {

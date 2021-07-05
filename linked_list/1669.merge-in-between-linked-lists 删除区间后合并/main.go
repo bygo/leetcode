@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-//Link: https://leetcode-cn.com/problems/merge-in-between-linked-lists
+// Link: https://leetcode-cn.com/problems/merge-in-between-linked-lists
 
 func mergeInBetween(list1 *ListNode, a int, b int, list2 *ListNode) *ListNode {
 	var res = list1
