@@ -97,11 +97,14 @@ var problemStubs = map[string]*Stub{
 	"link":    {"link.stub", "main.go"},
 	"sql":     {"sql.stub", "1.sql"},
 }
-var dummyClassBuf = []byte("@DummyClass")
-var dummyTableBuf = []byte("@DummyTable")
-var dummyIndexBuf = []byte("@DummyIndex")
-var dummyLinkBuf = []byte("@DummyLink")
-var dummyLinkTitle = []byte("@DummyTitle")
+
+var dummyBufClass = []byte("@DummyClass")
+var dummyBufTable = []byte("@DummyTable")
+var dummyBufIndex = []byte("@DummyIndex")
+var dummyBufLink = []byte("@DummyLink")
+var dummyBufLinkTitle = []byte("@DummyTitle")
+var dummyBufHeadline = []byte("@DummyHeadline")
+var dummyBufAC = []byte("601")
 
 func main() {
 	problemID := flag.String("p", "", "problem id")
@@ -111,20 +114,20 @@ func main() {
 	body, err := ioutil.ReadFile(AllJsonFile)
 	if err != nil || *problemID == "" {
 		resp, err := http.Get(ApiProblemsAll)
-		IsBreak(err)
+		Check(err)
 		defer func() {
 			err = resp.Body.Close()
-			IsBreak(err)
+			Check(err)
 			println(AllJsonUpdatedText)
 		}()
 
 		body, err = ioutil.ReadAll(resp.Body)
-		IsBreak(err)
+		Check(err)
 	}
 
-	IsBreak(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
+	Check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
-	IsBreak(json.Unmarshal(body, &profile))
+	Check(json.Unmarshal(body, &profile))
 
 	if *problemID == "" {
 		buildReadme()
@@ -137,25 +140,25 @@ func main() {
 	}
 
 	problemStub, err := ioutil.ReadFile(StubPrefix + v.Stub)
-	IsBreak(err)
+	Check(err)
 
 	i, err := strconv.Atoi(p.Stat.FrontendQuestionId)
-	IsBreak(err)
+	Check(err)
 
 	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
 
-	problemStub = bytes.Replace(problemStub, dummyLinkTitle, []byte(p.Stat.QuestionTitle), 1)
-	problemStub = bytes.Replace(problemStub, dummyLinkBuf, []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
+	problemStub = bytes.Replace(problemStub, dummyBufLinkTitle, []byte(p.Stat.QuestionTitle), 1)
+	problemStub = bytes.Replace(problemStub, dummyBufLink, []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
 
-	IsBreak(os.Mkdir(path, os.ModePerm))
+	Check(os.Mkdir(path, os.ModePerm))
 
-	IsBreak(ioutil.WriteFile(fmt.Sprintf("%s/%s", path, RealPrefix+v.Real), problemStub, os.ModePerm))
+	Check(ioutil.WriteFile(fmt.Sprintf("%s/%s", path, RealPrefix+v.Real), problemStub, os.ModePerm))
 }
 
 func getSolutions(dir os.FileInfo, path string) {
 	if dir.IsDir() {
 		dirs, err := ioutil.ReadDir(path)
-		IsBreak(err)
+		Check(err)
 		for _, d := range dirs {
 			getSolutions(d, path+"/"+d.Name())
 		}
@@ -188,7 +191,7 @@ func getProblem(id string) Problem {
 
 func buildReadme() {
 	class, err := ioutil.ReadDir("./")
-	IsBreak(err)
+	Check(err)
 	for _, c := range class {
 		if c.IsDir() && c.Name()[0] != '.' && valueOf(solutionOrder, c.Name()) {
 			currentClassName = c.Name()
@@ -198,7 +201,7 @@ func buildReadme() {
 	}
 
 	stubReadme, err := ioutil.ReadFile(StubPrefix + ReadmeMdStub)
-	IsBreak(err)
+	Check(err)
 
 	var readmeBuf []byte
 	var directoryIndex []byte
@@ -208,8 +211,8 @@ func buildReadme() {
 		directoryIndex = append(directoryIndex, fmt.Sprintf("- [%s](#%s)\n\r", className, className)...)
 		problems := problems[index]
 		stubClass, err := ioutil.ReadFile(StubPrefix + ReadmeClassStub)
-		IsBreak(err)
-		class := bytes.Replace(stubClass, dummyClassBuf, []byte(className), 1)
+		Check(err)
+		class := bytes.Replace(stubClass, dummyBufClass, []byte(className), 1)
 
 		for k, problem := range problems {
 			var questionId, questionTitle, questionDifficulty, questionAcceptance, questionTitleSlug string
@@ -233,12 +236,14 @@ func buildReadme() {
 		}
 		readmeBuf = append(readmeBuf, class...)
 	}
-	readme := bytes.Replace(stubReadme, dummyTableBuf, readmeBuf, 1)
-	readme = bytes.Replace(readme, dummyIndexBuf, directoryIndex, 1)
-	IsBreak(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
+
+	readme := bytes.Replace(stubReadme, dummyBufHeadline, dummyBufAC, 1)
+	readme = bytes.Replace(readme, dummyBufTable, readmeBuf, 1)
+	readme = bytes.Replace(readme, dummyBufIndex, directoryIndex, 1)
+	Check(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
 }
 
-func IsBreak(err error) {
+func Check(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}

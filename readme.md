@@ -1,7 +1,7 @@
 # LeetCode
 
 [![](https://img.shields.io/badge/Language-Go-%2300ADD8)](https://golang.org/)
-[![](https://img.shields.io/badge/AC-@DummyHeadline-%23F781BE)](https://leetcode-cn.com/u/bygo/)
+[![](https://img.shields.io/badge/AC-601-%23F781BE)](https://leetcode-cn.com/u/bygo/)
 
 ---
 
@@ -116,7 +116,7 @@
 | 0657 | [Robot Return to Origin          ](https://leetcode-cn.com/problems/robot-return-to-origin) | 78.2% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0657.robot-return-to-origin%20机器人能否返回原点/main.go)| 
 | 0760 | [Find Anagram Mappings           ](https://leetcode-cn.com/problems/find-anagram-mappings) | 83.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0760.find-anagram-mappings/main.go)| 
 | 0811 | [Subdomain Visit Count           ](https://leetcode-cn.com/problems/subdomain-visit-count) | 70.2% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0811.subdomain-visit-count%20子域名访问计数/main.go)| 
-| 1002 | [Find Common Characters          ](https://leetcode-cn.com/problems/find-common-characters) | 74.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1002.find-common-characters%20查找常用字符/main.go)| 
+| 1002 | [Find Common Characters          ](https://leetcode-cn.com/problems/find-common-characters) | 73.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1002.find-common-characters%20查找常用字符/main.go)| 
 | 1165 | [Single-Row Keyboard             ](https://leetcode-cn.com/problems/single-row-keyboard) | 83.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1165.single-row-keyboard%20机械手最少移动次数/main.go)| 
 | 1436 | [Destination City                ](https://leetcode-cn.com/problems/destination-city) | 78.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1436.destination-city%20旅行终点站/main.go)| 
 | 1512 | [Number of Good Pairs            ](https://leetcode-cn.com/problems/number-of-good-pairs) | 84.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1512.number-of-good-pairs/main.go)| 
@@ -143,7 +143,7 @@
 |  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0109.convert-sorted-list-to-binary-search-tree%20有序链表转二叉搜索树/recursive/main.go)| recursive
 | 0138 | [Copy List with Random Pointer   ](https://leetcode-cn.com/problems/copy-list-with-random-pointer) | 62.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0138.copy-list-with-random-pointer%20深拷贝随机指针链表/main.go)| 
 | 0141 | [Linked List Cycle               ](https://leetcode-cn.com/problems/linked-list-cycle) | 51.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0141.linked-list-cycle%20是否有环/main.go)| 
-| 0142 | [Linked List Cycle II            ](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 54.8% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0142.linked-list-cycle-ii%20环的起点/main.go)| 
+| 0142 | [Linked List Cycle II            ](https://leetcode-cn.com/problems/linked-list-cycle-ii) | 54.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0142.linked-list-cycle-ii%20环的起点/main.go)| 
 | 0143 | [Reorder List                    ](https://leetcode-cn.com/problems/reorder-list) | 60.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0143.reorder-list%20重排链表/main.go)| 
 | 0147 | [Insertion Sort List             ](https://leetcode-cn.com/problems/insertion-sort-list) | 67.8% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0147.insertion-sort-list%20插入排序/main.go)| 
 | 0160 | [Intersection of Two Linked Lists](https://leetcode-cn.com/problems/intersection-of-two-linked-lists) | 60.6% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0160.intersection-of-two-linked-lists%20相交起始点/main.go)| 
@@ -201,8 +201,8 @@
 | 0579 | [Find Cumulative Salary of an Employee](https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee) | 43.4% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/sql/0579.find-cumulative-salary-of-an-employee%20员工累积薪水/1.sql)| 
 | 0580 | [Count Student Number in Departments](https://leetcode-cn.com/problems/count-student-number-in-departments) | 52.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0580.count-student-number-in-departments%20各专业学生人数/1.sql)| 
 | 0584 | [Find Customer Referee           ](https://leetcode-cn.com/problems/find-customer-referee) | 77.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0584.find-customer-referee%20用户的推荐人/1.sql)| 
-| 0585 | [Investments in 2016             ](https://leetcode-cn.com/problems/investments-in-2016) | 59.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0585.investments-in-2016%202016年的投资/1.sql)| 
-| 0586 | [Customer Placing the Largest Number of Orders](https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders) | 75.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0586.customer-placing-the-largest-number-of-orders%20订单最多的客户/1.sql)| 
+| 0585 | [Investments in 2016             ](https://leetcode-cn.com/problems/investments-in-2016) | 59.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0585.investments-in-2016%202016年的投资/1.sql)| 
+| 0586 | [Customer Placing the Largest Number of Orders](https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders) | 74.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0586.customer-placing-the-largest-number-of-orders%20订单最多的客户/1.sql)| 
 | 0595 | [Big Countries                   ](https://leetcode-cn.com/problems/big-countries) | 79.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0595.big-countries%20大的国家/1.sql)| 
 | 0596 | [Classes More Than 5 Students    ](https://leetcode-cn.com/problems/classes-more-than-5-students) | 41.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0596.classes-more-than-5-students%20超过5名学生的课/1.sql)| 
 | 0597 | [Friend Requests I: Overall Acceptance Rate](https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate) | 44.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0597.friend-requests-i-overall-acceptance-rate%20好友申请总体通过率/1.sql)| 
@@ -227,7 +227,7 @@
 | 1069 | [Product Sales Analysis II       ](https://leetcode-cn.com/problems/product-sales-analysis-ii) | 82.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1069.product-sales-analysis-ii%20产品的销售总额/1.sql)| 
 | 1070 | [Product Sales Analysis III      ](https://leetcode-cn.com/problems/product-sales-analysis-iii) | 48.3% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1070.product-sales-analysis-iii%20第一年的价格/1.sql)| 
 | 1075 | [Project Employees I             ](https://leetcode-cn.com/problems/project-employees-i) | 69.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1075.project-employees-i%20项目的平均年限/1.sql)| 
-| 1076 | [Project Employees II            ](https://leetcode-cn.com/problems/project-employees-ii) | 50.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1076.project-employees-ii%20员工最多的项目%20销售额最高的销售者/1.sql)| 
+| 1076 | [Project Employees II            ](https://leetcode-cn.com/problems/project-employees-ii) | 50.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1076.project-employees-ii%20员工最多的项目%20销售额最高的销售者/1.sql)| 
 | 1077 | [Project Employees III           ](https://leetcode-cn.com/problems/project-employees-iii) | 71.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1077.project-employees-iii%20项目经济最丰富的员工/1.sql)| 
 | 1082 | [Sales Analysis I                ](https://leetcode-cn.com/problems/sales-analysis-i) | 75.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1082.sales-analysis-i%20销售额最高的销售者/1.sql)| 
 | 1083 | [Sales Analysis II               ](https://leetcode-cn.com/problems/sales-analysis-ii) | 52.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1083.sales-analysis-ii%20买%20S8%20却没有%20iPhone%20的买家/1.sql)| 
@@ -250,7 +250,7 @@
 | 1173 | [Immediate Food Delivery I       ](https://leetcode-cn.com/problems/immediate-food-delivery-i) | 75.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1173.immediate-food-delivery-i%20当天配送率/1.sql)| 
 | 1174 | [Immediate Food Delivery II      ](https://leetcode-cn.com/problems/immediate-food-delivery-ii) | 61.5% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1174.immediate-food-delivery-ii%20首日即时配送订单/1.sql)| 
 | 1179 | [Reformat Department Table       ](https://leetcode-cn.com/problems/reformat-department-table) | 63.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1179.reformat-department-table%20格式化工资/1.sql)| 
-| 1193 | [Monthly Transactions I          ](https://leetcode-cn.com/problems/monthly-transactions-i) | 61.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1193.monthly-transactions-i%20统计/1.sql)| 
+| 1193 | [Monthly Transactions I          ](https://leetcode-cn.com/problems/monthly-transactions-i) | 61.5% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1193.monthly-transactions-i%20统计/1.sql)| 
 | 1194 | [Tournament Winners              ](https://leetcode-cn.com/problems/tournament-winners) | 52.4% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/sql/1194.tournament-winners%20每组的优胜者/1.sql)| 
 | 1204 | [Last Person to Fit in the Bus   ](https://leetcode-cn.com/problems/last-person-to-fit-in-the-bus) | 72.5% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1204.last-person-to-fit-in-the-elevator%20最后进入电梯/1.sql)| 
 | 1205 | [Monthly Transactions II         ](https://leetcode-cn.com/problems/monthly-transactions-ii) | 47.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1205.monthly-transactions-ii%20交易统计/1.sql)| 
@@ -317,7 +317,7 @@
 | 1683 | [Invalid Tweets                  ](https://leetcode-cn.com/problems/invalid-tweets) | 89.2% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1683.invalid-tweets%20无效推文/1.sql)| 
 | 1693 | [Daily Leads and Partners        ](https://leetcode-cn.com/problems/daily-leads-and-partners) | 80.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1693.daily-leads-and-partners%20统计/1.sql)| 
 | 1699 | [Number of Calls Between Two Persons](https://leetcode-cn.com/problems/number-of-calls-between-two-persons) | 79.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1699.number-of-calls-between-two-persons%20通话次数/1.sql)| 
-| 1709 | [Biggest Window Between Visits   ](https://leetcode-cn.com/problems/biggest-window-between-visits) | 72.3% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1709.biggest-window-between-visits%20日期缺失/1.sql)| 
+| 1709 | [Biggest Window Between Visits   ](https://leetcode-cn.com/problems/biggest-window-between-visits) | 72.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1709.biggest-window-between-visits%20日期缺失/1.sql)| 
 | 1715 | [Count Apples and Oranges        ](https://leetcode-cn.com/problems/count-apples-and-oranges) | 74.8% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1715.count-apples-and-oranges%20统计/1.sql)| 
 | 1729 | [Find Followers Count            ](https://leetcode-cn.com/problems/find-followers-count) | 62.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1729.find-followers-count%20关注数/1.sql)| 
 | 1731 | [The Number of Employees Which Report to Each Employee](https://leetcode-cn.com/problems/the-number-of-employees-which-report-to-each-employee) | 48.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1731.the-number-of-employees-which-report-to-each-employee%20每位经理有多少下属/1.sql)| 
@@ -347,7 +347,7 @@
 | 0066 | [Plus One                        ](https://leetcode-cn.com/problems/plus-one) | 45.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/0066.plus-one/main.go)| 
 | 0191 | [Number of 1 Bits                ](https://leetcode-cn.com/problems/number-of-1-bits) | 74.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/0191.number-of-1-bits/main.go)| 
 | 0292 | [Nim Game                        ](https://leetcode-cn.com/problems/nim-game) | 69.6% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/0292.nim-game/main.go)| 
-| 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 51.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/math/0319.bulb-switcher/main.go)| 
+| 0319 | [Bulb Switcher                   ](https://leetcode-cn.com/problems/bulb-switcher) | 51.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/math/0319.bulb-switcher/main.go)| 
 | 0877 | [Stone Game                      ](https://leetcode-cn.com/problems/stone-game) | 75.5% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/math/0877.stone-game%20石头游戏/main.go)| 
 | 1025 | [Divisor Game                    ](https://leetcode-cn.com/problems/divisor-game) | 70.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/1025.divisor-game%20除数博弈/main.go)| 
 | 1266 | [Minimum Time Visiting All Points](https://leetcode-cn.com/problems/minimum-time-visiting-all-points) | 82.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/1266.minimum-time-visiting-all-points/main.go)| 
