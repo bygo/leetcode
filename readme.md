@@ -151,7 +151,7 @@
 | 0206 | [Reverse Linked List             ](https://leetcode-cn.com/problems/reverse-linked-list) | 71.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0206.reverse-linked-list%20反转链表/main.go)| 
 | 0234 | [Palindrome Linked List          ](https://leetcode-cn.com/problems/palindrome-linked-list) | 48.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0234.palindrome-linked-list%20回文链表/main.go)| 
 | 0237 | [Delete Node in a Linked List    ](https://leetcode-cn.com/problems/delete-node-in-a-linked-list) | 84.6% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0237.delete-node-in-a-linked-list%20删除节点/main.go)| 
-| 0328 | [Odd Even Linked List            ](https://leetcode-cn.com/problems/odd-even-linked-list) | 65.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0328.odd-even-linked-list%20奇偶链表/main.go)| 
+| 0328 | [Odd Even Linked List            ](https://leetcode-cn.com/problems/odd-even-linked-list) | 65.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0328.odd-even-linked-list%20奇偶链表/main.go)| 
 | 0369 | [Plus One Linked List            ](https://leetcode-cn.com/problems/plus-one-linked-list) | 61.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0369.plus-one-linked-list%20加一/main.go)| 
 | 0379 | [Design Phone Directory          ](https://leetcode-cn.com/problems/design-phone-directory) | 64.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0379.design-phone-directory/main.go)| 
 | 0430 | [Flatten a Multilevel Doubly Linked List](https://leetcode-cn.com/problems/flatten-a-multilevel-doubly-linked-list) | 53.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/0430.flatten-a-multilevel-doubly-linked-list%20扁平化多级双向链表/main.go)| 
@@ -202,7 +202,7 @@
 | 0580 | [Count Student Number in Departments](https://leetcode-cn.com/problems/count-student-number-in-departments) | 52.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0580.count-student-number-in-departments%20各专业学生人数/1.sql)| 
 | 0584 | [Find Customer Referee           ](https://leetcode-cn.com/problems/find-customer-referee) | 77.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0584.find-customer-referee%20用户的推荐人/1.sql)| 
 | 0585 | [Investments in 2016             ](https://leetcode-cn.com/problems/investments-in-2016) | 59.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0585.investments-in-2016%202016年的投资/1.sql)| 
-| 0586 | [Customer Placing the Largest Number of Orders](https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders) | 74.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0586.customer-placing-the-largest-number-of-orders%20订单最多的客户/1.sql)| 
+| 0586 | [Customer Placing the Largest Number of Orders](https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders) | 74.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0586.customer-placing-the-largest-number-of-orders%20订单最多的客户/1.sql)| 
 | 0595 | [Big Countries                   ](https://leetcode-cn.com/problems/big-countries) | 79.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0595.big-countries%20大的国家/1.sql)| 
 | 0596 | [Classes More Than 5 Students    ](https://leetcode-cn.com/problems/classes-more-than-5-students) | 41.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0596.classes-more-than-5-students%20超过5名学生的课/1.sql)| 
 | 0597 | [Friend Requests I: Overall Acceptance Rate](https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate) | 44.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0597.friend-requests-i-overall-acceptance-rate%20好友申请总体通过率/1.sql)| 
@@ -273,7 +273,7 @@
 | 1341 | [Movie Rating                    ](https://leetcode-cn.com/problems/movie-rating) | 49.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1341.movie-rating%20评论数和评分数统计/1.sql)| 
 | 1350 | [Students With Invalid Departments](https://leetcode-cn.com/problems/students-with-invalid-departments) | 84.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1350.students-with-invalid-departments%20不存在院校的学生/1.sql)| 
 | 1355 | [Activity Participants           ](https://leetcode-cn.com/problems/activity-participants) | 66.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1355.activity-participants%20去除第一和倒数第一/1.sql)| 
-| 1364 | [Number of Trusted Contacts of a Customer](https://leetcode-cn.com/problems/number-of-trusted-contacts-of-a-customer) | 67.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1364.number-of-trusted-contacts-of-a-customer%20互为好友的顾客/1.sql)| 
+| 1364 | [Number of Trusted Contacts of a Customer](https://leetcode-cn.com/problems/number-of-trusted-contacts-of-a-customer) | 68.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1364.number-of-trusted-contacts-of-a-customer%20互为好友的顾客/1.sql)| 
 | 1369 | [Get the Second Most Recent Activity](https://leetcode-cn.com/problems/get-the-second-most-recent-activity) | 61.1% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/sql/1369.get-the-second-most-recent-activity%20倒数第二次活动/1.sql)| 
 | 1378 | [Replace Employee ID With The Unique Identifier](https://leetcode-cn.com/problems/replace-employee-id-with-the-unique-identifier) | 86.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1378.replace-employee-id-with-the-unique-identifier%20使用uuid替换id/1.sql)| 
 | 1384 | [Total Sales Amount by Year      ](https://leetcode-cn.com/problems/total-sales-amount-by-year) | 55.7% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/sql/1384.total-sales-amount-by-year%20年度统计/1.sql)| 
@@ -332,7 +332,7 @@
 | 1809 | [Ad-Free Sessions                ](https://leetcode-cn.com/problems/ad-free-sessions) | 64.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1809.ad-free-sessions%20没有展示广告的会话/1.sql)| 
 | 1811 | [Find Interview Candidates       ](https://leetcode-cn.com/problems/find-interview-candidates) | 68.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1811.find-interview-candidates%20统计/1.sql)| 
 | 1821 | [Find Customers With Positive Revenue this Year](https://leetcode-cn.com/problems/find-customers-with-positive-revenue-this-year) | 89.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/1821.find-customers-with-positive-revenue-this-year%20正收入/1.sql)| 
-| 1831 | [Maximum Transaction Each Day    ](https://leetcode-cn.com/problems/maximum-transaction-each-day) | 78.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1831.maximum-transaction-each-day%20每天最大交易/1.sql)| 
+| 1831 | [Maximum Transaction Each Day    ](https://leetcode-cn.com/problems/maximum-transaction-each-day) | 77.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/1831.maximum-transaction-each-day%20每天最大交易/1.sql)| 
 
 ## Math
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -391,7 +391,7 @@
 | 0503 | [Next Greater Element II         ](https://leetcode-cn.com/problems/next-greater-element-ii) | 62.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/stack/0503.next-greater-element-ii%20下一个更大的值/main.go)| 
 | 0591 | [Tag Validator                   ](https://leetcode-cn.com/problems/tag-validator) | 33.8% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack/0591.tag-validator%20标签验证器/main.go)| 
 | 0636 | [Exclusive Time of Functions     ](https://leetcode-cn.com/problems/exclusive-time-of-functions) | 54.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/stack/0636.exclusive-time-of-functions%20函数的独占时间/main.go)| 
-| 0726 | [Number of Atoms                 ](https://leetcode-cn.com/problems/number-of-atoms) | 53.5% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack/0726.number-of-atoms%20原子的数量/main.go)| 
+| 0726 | [Number of Atoms                 ](https://leetcode-cn.com/problems/number-of-atoms) | 53.6% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack/0726.number-of-atoms%20原子的数量/main.go)| 
 | 0735 | [Asteroid Collision              ](https://leetcode-cn.com/problems/asteroid-collision) | 40.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/stack/0735.asteroid-collision%20星球碰撞/main.go)| 
 | 0739 | [Daily Temperatures              ](https://leetcode-cn.com/problems/daily-temperatures) | 67.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/stack/0739.daily-temperatures%20能观测到更高温度的天数/main.go)| 
 | 0772 | [Basic Calculator III            ](https://leetcode-cn.com/problems/basic-calculator-iii) | 47.7% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack/0772.basic-calculator-iii%20加减乘除小括号/main.go)| 

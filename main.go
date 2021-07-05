@@ -106,10 +106,28 @@ var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
 var dummyBufAC = []byte("601")
 
+type NodeReadme struct {
+	Dir      string
+	Language string
+}
+
+var NodeReadmeArr = []NodeReadme{
+	{"dp", "go"},
+	{"sql", "sql"},
+}
+
 func main() {
 	problemID := flag.String("p", "", "problem id")
 	problemTyp := flag.String("t", "", "problem type")
+	cmd := flag.String("c", "", "other cmd")
+
 	flag.Parse()
+
+	if *cmd == "n" {
+		for _, n := range NodeReadmeArr {
+			GenNodeReadme(n.Language, n.Dir)
+		}
+	}
 
 	body, err := ioutil.ReadFile(AllJsonFile)
 	if err != nil || *problemID == "" {
@@ -241,6 +259,27 @@ func buildReadme() {
 	readme = bytes.Replace(readme, dummyBufTable, readmeBuf, 1)
 	readme = bytes.Replace(readme, dummyBufIndex, directoryIndex, 1)
 	Check(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
+}
+
+func GenNodeReadme(language string, dir string) {
+	var md bytes.Buffer
+
+	all, err := ioutil.ReadDir(dir)
+	Check(err)
+
+	for _, item := range all {
+		sqlDir, _ := ioutil.ReadDir(fmt.Sprintf("./%s/%s", dir, item.Name()))
+		var b = bytes.NewBufferString(fmt.Sprintf("# %s \n", item.Name()))
+		for _, sqlFile := range sqlDir {
+			b.WriteString("```" + language + "\n")
+			s, _ := ioutil.ReadFile(fmt.Sprintf("%s/%s/%s", dir, item.Name(), sqlFile.Name()))
+			b.Write(s)
+			b.WriteString("\n```\n\n")
+			md.WriteString(b.String())
+		}
+	}
+
+	ioutil.WriteFile(dir+"/readme.md", md.Bytes(), 0755)
 }
 
 func Check(err error) {
