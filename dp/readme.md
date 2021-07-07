@@ -4,19 +4,19 @@ package main
 
 // Link: https://leetcode-cn.com/problems/longest-palindromic-substring
 
-// 双串
+// 一维
 func longestPalindrome(s string) string {
 	n := len(s)
-	dp := make([][]bool, n)
-	for i := range dp {
-		dp[i] = make([]bool, n)
+	f := make([][]bool, n)
+	for i := range f {
+		f[i] = make([]bool, n) // f[left][right] left至right 是否回文
 	}
 
 	var left, right int
 	for r := 0; r < n; r++ {
-		for l := 0; l < n; l++ {
-			if s[l] == s[r] && (r-l <= 2 || dp[l+1][r-1]) {
-				dp[l][r] = true
+		for l := 0; l < r; l++ {
+			if s[l] == s[r] && (r-l <= 2 || f[l+1][r-1]) { // 0:相等  1:相邻  2:隔一个字符
+				f[l][r] = true
 				if right-left < r-l {
 					right = r
 					left = l
@@ -27,18 +27,18 @@ func longestPalindrome(s string) string {
 	return s[left : right+1]
 }
 
-// 压缩
+// 压缩外循环
 func longestPalindrome(s string) string {
 	n := len(s)
-	dp := make([]bool, n)
+	f := make([]bool, n)
 
 	var left, right int
 	for r := 0; r < n; r++ {
 		for l := 0; l < r; l++ {
-			dp[l] = s[r] == s[l] && (r-l <= 2 || dp[l+1])
-			if dp[l] && right-left < r-l {
-				left = l
+			f[l] = s[l] == s[r] && (r-l <= 2 || f[l+1])
+			if f[l] && right-left < r-l {
 				right = r
+				left = l
 			}
 		}
 	}
@@ -52,6 +52,32 @@ func longestPalindrome(s string) string {
 package main
 
 // Link: https://leetcode-cn.com/problems/regular-expression-matching
+
+// 二维
+func isMatch(s string, p string) bool {
+	m, n := len(s), len(p)
+	f := make([][]bool, m+1)
+	for i := range f {
+		f[i] = make([]bool, n+1)
+	}
+
+	f[0][0] = true
+	for i := 0; i <= m; i++ {
+		for j := 1; j <= n; j++ {
+			if p[j-1] == '*' {
+				if f[i][j-2] {
+					f[i][j] = true
+				} else if i != 0 && f[i-1][j] && (p[j-2] == s[i-1] || p[i-2] == '.') {
+					f[i][j] = true
+				}
+			} else if i != 0 && f[i-1][j-1] && (p[j-1] == s[i-1] || p[i-1] == '.') {
+				f[i][j] = true
+			}
+		}
+	}
+
+	return f[m][n]
+}
 
 // 递归
 func isMatch(s string, p string) bool {
@@ -70,36 +96,6 @@ func dfs(s string, p string) bool {
 	}
 }
 
-// dp
-func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	dp := make([][]bool, m+1)
-	for i := range dp {
-		dp[i] = make([]bool, n+1)
-	}
-
-	dp[0][0] = true
-	for i := 0; i <= m; i++ {
-		for j := 1; j <= n; j++ {
-			if p[j-1] == '*' {
-				if dp[i][j-2] {
-					dp[i][j] = true
-				} else if i != 0 && dp[i-1][j] {
-					if s[i-1] == p[j-2] || '.' == p[j-2] {
-						dp[i][j] = true
-					}
-				}
-			} else if i != 0 && dp[i-1][j-1] {
-				if s[i-1] == p[j-1] || ',' == p[j-1] {
-					dp[i][j] = true
-				}
-			}
-		}
-	}
-
-	return dp[m][n]
-}
-
 ```
 
 # 0032.longest-valid-parentheses 最长有效括号 
@@ -108,30 +104,51 @@ package main
 
 // Link: https://leetcode-cn.com/problems/longest-valid-parentheses
 
-// f(n) = f(n-2) + 2
-// f(n) = f(n-1) + 2 + f(n-f(n-1)-2)
+// 一维
+// if **() : f(n) = f(n-2) + 2
+// if (*)) : f(n) = f(n-1) + 2 + f(n-f(n-1)-2)
 func longestValidParentheses(s string) int {
 	var res int
-	var dp = make([]int, len(s))
 	var n = len(s)
+	var f = make([]int, n)
 	for i := 1; i < n; i++ {
 		if s[i] == ')' { // 1. 当前  )
 			if s[i-1] == '(' { // 2.前置  (
-				if 2 <= i { // 3.子状态 dp[i-2]
-					dp[i] = dp[i-2] + 2
+				if 2 <= i {
+					f[i] = f[i-2] + 2
 				} else {
-					dp[i] = 2
+					f[i] = 2
 				}
-			} else if 0 < i-dp[i-1] && s[i-dp[i-1]-1] == '(' {
-				if 2 <= i-dp[i-1] { // s[i-1] 必是 )
-					dp[i] = dp[i-1] + dp[i-dp[i-1]-2] + 2 // 4.子状态 dp[i-dp[i-1]-2]
+			} else if 0 < i-f[i-1] && s[i-f[i-1]-1] == '(' {
+				if 2 <= i-f[i-1] {
+					f[i] = f[i-1] + f[i-f[i-1]-2] + 2
 				} else {
-					dp[i] = dp[i-1] + 2
+					f[i] = f[i-1] + 2
 				}
 			}
+			if res < f[i] {
+				res = f[i]
+			}
 		}
-		if res < dp[i] {
-			res = dp[i]
+	}
+	return res
+}
+
+// map
+func longestValidParentheses(s string) int {
+	var res int
+	var n = len(s)
+	var f = map[int]int{}
+	for i := 1; i < n; i++ {
+		if s[i] == ')' {
+			if s[i-1] == '(' {
+				f[i] = f[i-2] + 2
+			} else if 0 < i-f[i-1] && s[i-f[i-1]-1] == '(' {
+				f[i] = f[i-1] + f[i-f[i-1]-2] + 2
+			}
+			if res < f[i] {
+				res = f[i]
+			}
 		}
 	}
 	return res
@@ -145,7 +162,8 @@ package main
 
 // Link: https://leetcode-cn.com/problems/trapping-rain-water
 
-// 前缀max 后缀max
+// 前缀
+// f(n) = min(leftMax,rightMax) - self
 func trap(height []int) int {
 	n := len(height)
 	if n == 0 {
@@ -193,32 +211,30 @@ package main
 
 // Link: https://leetcode-cn.com/problems/wildcard-matching
 
-//s = "adceb"
-//p = "*a*b"
+// 二维
 func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	dp := make([][]bool, m+1)
-	for i := range dp {
-		dp[i] = make([]bool, n+1)
+	l1, l2 := len(s), len(p)
+	f := make([][]bool, l1+1)
+	for i := range f {
+		f[i] = make([]bool, l2+1)
 	}
-	dp[0][0] = true
-	for i := 1; i <= n; i++ {
-		if p[i-1] != '*' {
+	f[0][0] = true
+	for j := 1; j <= l2; j++ {
+		if p[j-1] != '*' {
 			break
 		}
-		dp[0][i] = true
+		f[0][j] = true
 	}
-
-	for i := 1; i <= m; i++ {
-		for j := 1; j <= n; j++ {
+	for i := 1; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
 			if p[j-1] == '*' {
-				dp[i][j] = dp[i][j-1] || dp[i-1][j] // 不要* 或者 不要字符
-			} else if s[i-1] == p[j-1] || p[j-1] == '?' {
-				dp[i][j] = dp[i-1][j-1]
+				f[i][j] = f[i-1][j] || f[i][j-1]
+			} else if s[i-1] == p[j-1] || '?' == p[j-1] {
+				f[i][j] = f[i-1][j-1]
 			}
 		}
 	}
-	return dp[m][n]
+	return f[l1][l2]
 }
 
 ```
@@ -229,15 +245,17 @@ package main
 
 // Link: https://leetcode-cn.com/problems/maximum-subarray
 
-// 有条件的前缀和
-func maxSubArray(nums []int) int {
-	res := nums[0]
-	for i := 1; i < len(nums); i++ {
-		if 0 < nums[i-1] { // 有所贡献
-			nums[i] += nums[i-1]
+// 前缀
+// f(n) = f(n) + f(n-1)
+func maxSubArray(f []int) int {
+	res := f[0]
+	l1 := len(f)
+	for i := 1; i < l1; i++ {
+		if 0 < f[i-1] { // 贡献
+			f[i] += f[i-1]
 		}
-		if res < nums[i] {
-			res = nums[i]
+		if res < f[i] {
+			res = f[i]
 		}
 	}
 	return res
@@ -251,34 +269,35 @@ package main
 
 // Link: https://leetcode-cn.com/problems/unique-paths
 
-// dp
-func uniquePaths(m, n int) int {
-	dp := make([][]int, m)
-	for i := range dp {
-		dp[i] = make([]int, n)
-		dp[i][0] = 1
+// 二维
+// f(i)(j) = f(i-1)(j) + f(i)(j-1)
+func uniquePaths(l1, l2 int) int {
+	f := make([][]int, l1)
+	for i := range f {
+		f[i] = make([]int, l2)
+		f[i][0] = 1
 	}
-	for j := 0; j < n; j++ {
-		dp[0][j] = 1
+	for j := 0; j < l2; j++ {
+		f[0][j] = 1
 	}
-	for i := 1; i < m; i++ {
-		for j := 1; j < n; j++ {
-			dp[i][j] = dp[i-1][j] + dp[i][j-1] // 转移
+	for i := 1; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			f[i][j] = f[i-1][j] + f[i][j-1]
 		}
 	}
-	return dp[m-1][n-1]
+	return f[l1-1][l2-1]
 }
 
 // 压缩
-func uniquePaths(m, n int) int {
-	dp := make([]int, n)
-	dp[0] = 1
-	for i := 0; i < m; i++ {
-		for j := 1; j < n; j++ {
-			dp[j] += dp[j-1]
+func uniquePaths(l1, l2 int) int {
+	f := make([]int, l2)
+	f[0] = 1
+	for i := 0; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			f[j] += f[j-1]
 		}
 	}
-	return dp[m-1]
+	return f[l2-1]
 }
 
 ```
@@ -289,64 +308,63 @@ package main
 
 // Link: https://leetcode-cn.com/problems/unique-paths-ii
 
-// dp
-
+// 二维
+// f(i)(j) = f(i-1)(j) + f(i)(j-1)
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
-	m := len(obstacleGrid)
-	n := len(obstacleGrid[0])
-	dp := make([][]int, m)
+	l1 := len(obstacleGrid)
+	l2 := len(obstacleGrid[0])
+	f := make([][]int, l1)
 
 	var i int
-	for i < m { // 第一列
+	for i < l1 { // 第一列
 		if obstacleGrid[i][0] == 1 {
-			for i < m {
-				dp[i] = make([]int, n)
-				i++
-			}
-		} else {
-			dp[i] = make([]int, n)
-			dp[i][0] = 1
-			i++
+			break
 		}
+		f[i] = make([]int, l2)
+		f[i][0] = 1
+		i++
 	}
 
-	for j := 0; j < n; j++ { // 第一行
+	for i < l1 {
+		f[i] = make([]int, l2)
+		i++
+	}
+
+	for j := 0; j < l2; j++ { // 第一行
 		if obstacleGrid[0][j] == 1 {
 			break
 		}
-		dp[0][j] = 1
+		f[0][j] = 1
 	}
-	for i := 1; i < m; i++ {
-		for j := 1; j < n; j++ {
-			if obstacleGrid[i][j] == 1 {
-				dp[i][j] = 0
-			} else {
-				dp[i][j] = dp[i-1][j] + dp[i][j-1]
+	for i := 1; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			if obstacleGrid[i][j] == 0 {
+				f[i][j] = f[i-1][j] + f[i][j-1]
 			}
 		}
 	}
-	return dp[m-1][n-1]
+	return f[l1-1][l2-1]
 }
 
 // 压缩
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
-	n, m := len(obstacleGrid), len(obstacleGrid[0])
-	dp := make([]int, m)
+	l1, l2 := len(obstacleGrid), len(obstacleGrid[0])
+	f := make([]int, l2)
 	if obstacleGrid[0][0] == 1 {
 		return 0
 	}
-	dp[0] = 1
+	f[0] = 1
 
-	for i := 0; i < n; i++ {
-		for j := 0; j < m; j++ {
+	for i := 0; i < l1; i++ {
+		for j := 0; j < l2; j++ {
 			if obstacleGrid[i][j] == 1 {
-				dp[j] = 0
+				f[j] = 0
 			} else if 1 <= j {
-				dp[j] += dp[j-1]
+				f[j] += f[j-1]
 			}
 		}
 	}
-	return dp[m-1]
+	return f[l2-1]
 }
 
 ```
@@ -357,47 +375,48 @@ package main
 
 // Link: https://leetcode-cn.com/problems/minimum-path-sum
 
-// dp
+// 二维
+// f(i)(j) = f(i-1)(j) + f(i)(j-1)
 func minPathSum(grid [][]int) int {
-	m, n := len(grid), len(grid[0])
-	dp := make([][]int, m)
-	dp[0] = make([]int, n)
-	dp[0][0] = grid[0][0]
-	for i := 1; i < m; i++ {
-		dp[i] = make([]int, n)
-		dp[i][0] = grid[i][0] + dp[i-1][0]
+	l1, l2 := len(grid), len(grid[0])
+	f := make([][]int, l1)
+	f[0] = make([]int, l2)
+	f[0][0] = grid[0][0]
+	for i := 1; i < l1; i++ {
+		f[i] = make([]int, l2)
+		f[i][0] = grid[i][0] + f[i-1][0]
 	}
 
-	for i := 1; i < n; i++ {
-		dp[0][i] = grid[0][i] + dp[0][i-1]
+	for i := 1; i < l2; i++ {
+		f[0][i] = grid[0][i] + f[0][i-1]
 	}
 
-	for i := 1; i < m; i++ {
-		for j := 1; j < n; j++ {
-			dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
+	for i := 1; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			f[i][j] = min(f[i-1][j], f[i][j-1]) + grid[i][j]
 		}
 	}
 
-	return dp[m-1][n-1]
+	return f[l1-1][l2-1]
 }
 
 // 压缩
 func minPathSum(grid [][]int) int {
-	m, n := len(grid), len(grid[0])
-	dp := make([]int, n)
-	dp[0] = grid[0][0]
-	for j := 1; j < n; j++ {
-		dp[j] = grid[0][j] + dp[j-1]
+	l1, l2 := len(grid), len(grid[0])
+	f := make([]int, l2)
+	f[0] = grid[0][0]
+	for j := 1; j < l2; j++ {
+		f[j] = grid[0][j] + f[j-1]
 	}
 
-	for i := 1; i < m; i++ {
-		dp[0] += grid[i][0]
-		for j := 1; j < n; j++ {
-			dp[j] = min(dp[j-1], dp[j]) + grid[i][j]
+	for i := 1; i < l1; i++ {
+		f[0] += grid[i][0]
+		for j := 1; j < l2; j++ {
+			f[j] = min(f[j-1], f[j]) + grid[i][j]
 		}
 	}
 
-	return dp[n-1]
+	return f[l2-1]
 }
 
 func min(x, y int) int {
@@ -415,30 +434,26 @@ package main
 
 // Link: https://leetcode-cn.com/problems/climbing-stairs
 
-// dp
+// 一维
+// f(n) = f(n-1) + f(n-2)
 func climbStairs(n int) int {
-	var dp = make([]int, n+1)
-	dp[0] = 1
-	dp[1] = 1
-	var i = 2
-	for i <= n {
-		dp[i] = dp[i-1] + dp[i-2]
-		i++
+	f := make([]int, n+1)
+	f[0] = 1
+	f[1] = 1
+	for i := 2; i <= n; i++ {
+		f[i] = f[i-1] + f[i-2]
 	}
-	return dp[n]
+	return f[n]
 }
 
 // 压缩
 func climbStairs(n int) int {
-	var x, y = 0, 1
-	for 0 < n {
+	x, y := 1, 1
+	for i := 2; i <= n; i++ {
 		y, x = x+y, y
-		n--
 	}
 	return y
 }
-
-// 1 1 2
 
 ```
 
@@ -448,68 +463,68 @@ package main
 
 // Link: https://leetcode-cn.com/problems/edit-distance
 
-// dp
-func minDistanc(word1, word2 string) int {
-	m, n := len(word1), len(word2)
-	var dp = make([][]int, m+1)
-	for i := 0; i <= m; i++ {
-		dp[i] = make([]int, n+1)
-		dp[i][0] = i
+// f(i)(j) = min( f(i-1)(j), f(i)(j-1), f(i-1)(j-1) )
+func minDistance(word1, word2 string) int {
+	l1, l2 := len(word1), len(word2)
+	var f = make([][]int, l1+1)
+	for i := 0; i <= l1; i++ {
+		f[i] = make([]int, l2+1)
+		f[i][0] = i
 	}
 
-	for i := range dp[0] {
-		dp[0][i] = i
+	for i := range f[0] {
+		f[0][i] = i
 	}
 
-	for i := 1; i <= m; i++ {
-		for j := 1; j <= n; j++ {
-			angle := dp[i-1][j-1]
+	for i := 1; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
+			angle := f[i-1][j-1]
 			if word1[i-1] == word2[j-1] {
 				angle -= 1
 			}
-			dp[i][j] = min(dp[i-1][j], dp[i][j-1], angle) + 1
+			f[i][j] = min(f[i-1][j], f[i][j-1], angle) + 1
 		}
 	}
 
-	return dp[m][n]
+	return f[l1][l2]
 }
 
 // 压缩
 func minDistance(word1 string, word2 string) int {
-	m, n := len(word1), len(word2)
-	var dp = []int{}
-	for i := 0; i <= n; i++ {
-		dp = append(dp, i)
+	l1, l2 := len(word1), len(word2)
+	var f = []int{}
+	for i := 0; i <= l2; i++ {
+		f = append(f, i)
 	}
 
-	for i := 1; i <= m; i++ {
+	for i := 1; i <= l1; i++ {
 		angle := i - 1
-		dp[0] = i
-		for j := 1; j <= n; j++ {
+		f[0] = i
+		for j := 1; j <= l2; j++ {
 			if word1[i-1] == word2[j-1] {
 				angle -= 1
 			}
-			dp[j], angle = min(dp[j-1], dp[j], angle)+1, dp[j]
+			f[j], angle = min(f[j-1], f[j], angle)+1, f[j]
 		}
 	}
 
-	// dp[i-1][j-1] 不同等于替换
-	// dp[i][j-1] 插入2
-	// dp[i-1][j] 插入1
+	// f[i-1][j-1] 不同等于替换
+	// f[i][j-1] 插入2
+	// f[i-1][j] 插入1
 	// 	  #  h  h  h  o
 	// #  0  1  2  3  4
 	// h  1  0  1  2  3
 	// o  2  1  1  2  2
 
-	//    #   s   i   t   t   e   m
+	//    #   s   i   t   t   e   l1
 	// #  0   1   2   3   4   5   6
 	// k  1   1   2   3   4   5   6
 	// i  2   2   1   2   3   4   5
 	// t  3   3
 	// t  4
 	// e  5
-	// m  6
-	return dp[n]
+	// l1  6
+	return f[l2]
 }
 
 func min(nums ...int) int {
@@ -1243,26 +1258,23 @@ package main
 // Link: https://leetcode-cn.com/problems/fibonacci-number
 
 // 0 1 1
-func fib(n int) int {
-	var dp = make([]int, n+2)
-	dp[0] = 0
-	dp[1] = 1
-	var i = 2
-	for i <= n {
-		dp[i] = dp[i-1] + dp[i-2]
-		i++
+func climbStairs(n int) int {
+	f := make([]int, n+1)
+	f[0] = 0
+	f[1] = 1
+	for i := 2; i <= n; i++ {
+		f[i] = f[i-1] + f[i-2]
 	}
-	return dp[n]
+	return f[n]
 }
 
 // 压缩
 func fib(n int) int {
-	var a, b = 0, 1
-	for 0 < n {
-		b, a = (a+b)%1000000007, b
-		n--
+	var x, y = 0, 1
+	for i := 1; i <= n; i++ {
+		y, x = (x+y)%1000000007, y
 	}
-	return a
+	return x
 }
 
 ```

@@ -2,32 +2,33 @@ package main
 
 // Link: https://leetcode-cn.com/problems/unique-paths
 
-// dp
-func uniquePaths(m, n int) int {
-	dp := make([][]int, m)
-	for i := range dp {
-		dp[i] = make([]int, n)
-		dp[i][0] = 1
+// 二维
+// f(i)(j) = f(i-1)(j) + f(i)(j-1)
+func uniquePaths(l1, l2 int) int {
+	f := make([][]int, l1)
+	for i := range f {
+		f[i] = make([]int, l2)
+		f[i][0] = 1
 	}
-	for j := 0; j < n; j++ {
-		dp[0][j] = 1
+	for j := 0; j < l2; j++ {
+		f[0][j] = 1
 	}
-	for i := 1; i < m; i++ {
-		for j := 1; j < n; j++ {
-			dp[i][j] = dp[i-1][j] + dp[i][j-1] // 转移
+	for i := 1; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			f[i][j] = f[i-1][j] + f[i][j-1]
 		}
 	}
-	return dp[m-1][n-1]
+	return f[l1-1][l2-1]
 }
 
 // 压缩
-func uniquePaths(m, n int) int {
-	dp := make([]int, n)
-	dp[0] = 1
-	for i := 0; i < m; i++ {
-		for j := 1; j < n; j++ {
-			dp[j] += dp[j-1]
+func uniquePaths(l1, l2 int) int {
+	f := make([]int, l2)
+	f[0] = 1
+	for i := 0; i < l1; i++ {
+		for j := 1; j < l2; j++ {
+			f[j] += f[j-1]
 		}
 	}
-	return dp[m-1]
+	return f[l2-1]
 }

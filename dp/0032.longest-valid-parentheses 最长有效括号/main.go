@@ -2,30 +2,51 @@ package main
 
 // Link: https://leetcode-cn.com/problems/longest-valid-parentheses
 
-// f(n) = f(n-2) + 2
-// f(n) = f(n-1) + 2 + f(n-f(n-1)-2)
+// 一维
+// if **() : f(n) = f(n-2) + 2
+// if (*)) : f(n) = f(n-1) + 2 + f(n-f(n-1)-2)
 func longestValidParentheses(s string) int {
 	var res int
-	var dp = make([]int, len(s))
 	var n = len(s)
+	var f = make([]int, n)
 	for i := 1; i < n; i++ {
 		if s[i] == ')' { // 1. 当前  )
 			if s[i-1] == '(' { // 2.前置  (
-				if 2 <= i { // 3.子状态 dp[i-2]
-					dp[i] = dp[i-2] + 2
+				if 2 <= i {
+					f[i] = f[i-2] + 2
 				} else {
-					dp[i] = 2
+					f[i] = 2
 				}
-			} else if 0 < i-dp[i-1] && s[i-dp[i-1]-1] == '(' {
-				if 2 <= i-dp[i-1] { // s[i-1] 必是 )
-					dp[i] = dp[i-1] + dp[i-dp[i-1]-2] + 2 // 4.子状态 dp[i-dp[i-1]-2]
+			} else if 0 < i-f[i-1] && s[i-f[i-1]-1] == '(' {
+				if 2 <= i-f[i-1] {
+					f[i] = f[i-1] + f[i-f[i-1]-2] + 2
 				} else {
-					dp[i] = dp[i-1] + 2
+					f[i] = f[i-1] + 2
 				}
 			}
+			if res < f[i] {
+				res = f[i]
+			}
 		}
-		if res < dp[i] {
-			res = dp[i]
+	}
+	return res
+}
+
+// map
+func longestValidParentheses(s string) int {
+	var res int
+	var n = len(s)
+	var f = map[int]int{}
+	for i := 1; i < n; i++ {
+		if s[i] == ')' {
+			if s[i-1] == '(' {
+				f[i] = f[i-2] + 2
+			} else if 0 < i-f[i-1] && s[i-f[i-1]-1] == '(' {
+				f[i] = f[i-1] + f[i-f[i-1]-2] + 2
+			}
+			if res < f[i] {
+				res = f[i]
+			}
 		}
 	}
 	return res

@@ -2,30 +2,28 @@ package main
 
 // Link: https://leetcode-cn.com/problems/wildcard-matching
 
-//s = "adceb"
-//p = "*a*b"
+// 二维
 func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	dp := make([][]bool, m+1)
-	for i := range dp {
-		dp[i] = make([]bool, n+1)
+	l1, l2 := len(s), len(p)
+	f := make([][]bool, l1+1)
+	for i := range f {
+		f[i] = make([]bool, l2+1)
 	}
-	dp[0][0] = true
-	for i := 1; i <= n; i++ {
-		if p[i-1] != '*' {
+	f[0][0] = true
+	for j := 1; j <= l2; j++ {
+		if p[j-1] != '*' {
 			break
 		}
-		dp[0][i] = true
+		f[0][j] = true
 	}
-
-	for i := 1; i <= m; i++ {
-		for j := 1; j <= n; j++ {
+	for i := 1; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
 			if p[j-1] == '*' {
-				dp[i][j] = dp[i][j-1] || dp[i-1][j] // 不要* 或者 不要字符
-			} else if s[i-1] == p[j-1] || p[j-1] == '?' {
-				dp[i][j] = dp[i-1][j-1]
+				f[i][j] = f[i-1][j] || f[i][j-1]
+			} else if s[i-1] == p[j-1] || '?' == p[j-1] {
+				f[i][j] = f[i-1][j-1]
 			}
 		}
 	}
-	return dp[m][n]
+	return f[l1][l2]
 }
