@@ -2,6 +2,8 @@ package main
 
 // Link: https://leetcode-cn.com/problems/pascals-triangle-ii
 
+// 压缩
+// f(i)(j) = f(i-1)(j-1) + f(i-1)(j)
 func getRow(rowIndex int) []int {
 	numRows := rowIndex + 1
 	var dp = make([]int, numRows)

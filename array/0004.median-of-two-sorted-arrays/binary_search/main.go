@@ -2,7 +2,7 @@ package main
 
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	l1, l2 := len(nums1), len(nums2)
-	if l1 > l2 {
+	if l2 < l1 {
 		nums1, nums2, l1, l2 = nums2, nums1, l2, l1 //保证num1最短，只要计算出num1的k1，就可计算出num2的k2
 	}
 	var min, max, k1, k2 int
@@ -11,9 +11,9 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	for min <= max {
 		k1 = (min + max) / 2                     // 二分
 		k2 = half - k1                           //k2永远等于 half-k1
-		if k1 < max && nums2[k2-1] > nums1[k1] { //如果 右2 大于 左1，二分范围min为 k1+1
+		if k1 < max && nums1[k1] < nums2[k2-1] { //如果 右2 大于 左1，二分范围min为 k1+1
 			min = k1 + 1
-		} else if k1 > min && nums1[k1-1] > nums2[k2] { //如果 右1 大于 左2,二分范围max 为k1-1
+		} else if min < k1 && nums2[k2] < nums1[k1-1] { //如果 右1 大于 左2,二分范围max 为k1-1
 			max = k1 - 1
 		} else { // 右1右1 全部大于左1 左2，计算值
 			var leftMax int
@@ -44,10 +44,10 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 }
 
 func maxInt(a, b int) int {
-	if a > b {
-		return a
+	if a < b {
+		return b
 	}
-	return b
+	return a
 }
 
 func minInt(a, b int) int {

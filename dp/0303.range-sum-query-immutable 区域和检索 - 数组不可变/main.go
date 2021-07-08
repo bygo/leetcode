@@ -2,6 +2,7 @@ package main
 
 // Link: https://leetcode-cn.com/problems/range-sum-query-immutable
 
+// 前缀
 type NumArray struct {
 	nums []int
 }
@@ -16,15 +17,9 @@ func Constructor(nums []int) NumArray {
 	return NumArray{nums: s}
 }
 
-func (this *NumArray) SumRange(left int, right int) int {
+func (n *NumArray) SumRange(left int, right int) int {
 	if 0 == left {
-		return this.nums[right]
+		return n.nums[right]
 	}
-	return this.nums[right] - this.nums[left-1]
+	return n.nums[right] - n.nums[left-1]
 }
-
-/**
- * Your NumArray object will be instantiated and called as such:
- * obj := Constructor(nums);
- * param_1 := obj.SumRange(left,right);
- */

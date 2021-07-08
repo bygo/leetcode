@@ -2,7 +2,7 @@ package main
 
 // Link: https://leetcode-cn.com/problems/fibonacci-number
 
-// 0 1 1
+// f(n) = f(n-1) + f(n-2)
 func climbStairs(n int) int {
 	f := make([]int, n+1)
 	f[0] = 0

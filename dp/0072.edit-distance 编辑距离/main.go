@@ -2,8 +2,9 @@ package main
 
 // Link: https://leetcode-cn.com/problems/edit-distance
 
+// 二维
 // f(i)(j) = min( f(i-1)(j), f(i)(j-1), f(i-1)(j-1) )
-func minDistance(word1, word2 string) int {
+func minDistances(word1, word2 string) int {
 	l1, l2 := len(word1), len(word2)
 	var f = make([][]int, l1+1)
 	for i := 0; i <= l1; i++ {
@@ -20,7 +21,7 @@ func minDistance(word1, word2 string) int {
 			angle := f[i-1][j-1]
 			if word1[i-1] == word2[j-1] {
 				angle -= 1
-			}
+			} // 45000
 			f[i][j] = min(f[i-1][j], f[i][j-1], angle) + 1
 		}
 	}
@@ -31,9 +32,9 @@ func minDistance(word1, word2 string) int {
 // 压缩
 func minDistance(word1 string, word2 string) int {
 	l1, l2 := len(word1), len(word2)
-	var f = []int{}
+	var f = make([]int, l2+1)
 	for i := 0; i <= l2; i++ {
-		f = append(f, i)
+		f[i] = i
 	}
 
 	for i := 1; i <= l1; i++ {
@@ -55,14 +56,13 @@ func minDistance(word1 string, word2 string) int {
 	// h  1  0  1  2  3
 	// o  2  1  1  2  2
 
-	//    #   s   i   t   t   e   l1
-	// #  0   1   2   3   4   5   6
-	// k  1   1   2   3   4   5   6
-	// i  2   2   1   2   3   4   5
-	// t  3   3
-	// t  4
-	// e  5
-	// l1  6
+	//    #   s   i   t   t   e
+	// #  0   1   2   3   4   5
+	// k  1   1   2   3   4   5
+	// i  2   2   1   2   3   4
+	// t  3   3   2   1   2   3
+	// t  4   4   3   2   1   2
+	// e  5   5   4   3   2   1
 	return f[l2]
 }
 

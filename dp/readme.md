@@ -463,8 +463,9 @@ package main
 
 // Link: https://leetcode-cn.com/problems/edit-distance
 
+// 二维
 // f(i)(j) = min( f(i-1)(j), f(i)(j-1), f(i-1)(j-1) )
-func minDistance(word1, word2 string) int {
+func minDistances(word1, word2 string) int {
 	l1, l2 := len(word1), len(word2)
 	var f = make([][]int, l1+1)
 	for i := 0; i <= l1; i++ {
@@ -481,7 +482,7 @@ func minDistance(word1, word2 string) int {
 			angle := f[i-1][j-1]
 			if word1[i-1] == word2[j-1] {
 				angle -= 1
-			}
+			} // 45000
 			f[i][j] = min(f[i-1][j], f[i][j-1], angle) + 1
 		}
 	}
@@ -492,9 +493,9 @@ func minDistance(word1, word2 string) int {
 // 压缩
 func minDistance(word1 string, word2 string) int {
 	l1, l2 := len(word1), len(word2)
-	var f = []int{}
+	var f = make([]int, l2+1)
 	for i := 0; i <= l2; i++ {
-		f = append(f, i)
+		f[i] = i
 	}
 
 	for i := 1; i <= l1; i++ {
@@ -516,14 +517,13 @@ func minDistance(word1 string, word2 string) int {
 	// h  1  0  1  2  3
 	// o  2  1  1  2  2
 
-	//    #   s   i   t   t   e   l1
-	// #  0   1   2   3   4   5   6
-	// k  1   1   2   3   4   5   6
-	// i  2   2   1   2   3   4   5
-	// t  3   3
-	// t  4
-	// e  5
-	// l1  6
+	//    #   s   i   t   t   e
+	// #  0   1   2   3   4   5
+	// k  1   1   2   3   4   5
+	// i  2   2   1   2   3   4
+	// t  3   3   2   1   2   3
+	// t  4   4   3   2   1   2
+	// e  5   5   4   3   2   1
 	return f[l2]
 }
 
@@ -544,8 +544,8 @@ package main
 
 // Link: https://leetcode-cn.com/problems/scramble-string
 
-// 递归
-func isScramble3(s1 string, s2 string) bool {
+// 记忆递归
+func isScramble(s1 string, s2 string) bool {
 	// 记忆 减少重复计算
 	var cache = make(map[string]bool)
 
@@ -565,13 +565,13 @@ func isScramble3(s1 string, s2 string) bool {
 
 		l := len(s1)
 
-		var d [26]int
+		var freq = map[byte]int{}
 		for i := 0; i < l; i++ {
-			d[s1[i]-'a']++
-			d[s2[i]-'a']--
+			freq[s1[i]]++
+			freq[s2[i]]--
 		}
 
-		for _, v := range d {
+		for _, v := range freq {
 			if v != 0 {
 				cache[s] = false
 				return false
@@ -582,10 +582,9 @@ func isScramble3(s1 string, s2 string) bool {
 		for i := 1; i < l; i++ {
 			if dfs(s1[:i], s2[:i]) && dfs(s1[i:], s2[i:]) || dfs(s1[:i], s2[l-i:]) && dfs(s1[i:], s2[:l-i]) {
 				cache[s] = true
-				return cache[s]
+				return true
 			}
 		}
-
 		// 没有一个符合要求的
 		cache[s] = false
 		return false
@@ -593,130 +592,36 @@ func isScramble3(s1 string, s2 string) bool {
 	return dfs(s1, s2)
 }
 
-func isScramble2(s1, s2 string) bool {
-	n := len(s1)
-	dp := make([][][]int8, n)
-	for i := range dp {
-		dp[i] = make([][]int8, n)
-		for j := range dp[i] {
-			dp[i][j] = make([]int8, n+1)
-			for k := range dp[i][j] {
-				dp[i][j][k] = -1
-			}
-		}
-	}
-
-	// 第一个字符串从 i1 开始，第二个字符串从 i2 开始，子串的长度为 length
-	// 和谐返回 1，不和谐返回 0
-	var dfs func(i1, i2, l int) int8
-	dfs = func(i1, i2, l int) int8 {
-		var res int8
-		d := &dp[i1][i2][l]
-		if *d != -1 {
-			return *d
-		}
-		defer func() { *d = res }()
-
-		// 判断两个子串是否相等
-		x, y := s1[i1:i1+l], s2[i2:i2+l]
-		if x == y {
-			return 1
-		}
-
-		// 判断是否存在字符 c 在两个子串中出现的次数不同
-		freq := [26]int{}
-		for i := range x {
-			freq[x[i]-'a']++
-			freq[y[i]-'a']--
-		}
-
-		for _, f := range freq {
-			if f != 0 {
-				return 0
-			}
-		}
-
-		// 枚举分割位置
-		for i := 1; i < l; i++ {
-			// 不交换的情况
-			if dfs(i1, i2, i) == 1 && dfs(i1+i, i2+i, l-i) == 1 {
-				return 1
-			}
-			// 交换的情况
-			if dfs(i1, i2+l-i, i) == 1 && dfs(i1+i, i2, l-i) == 1 {
-				return 1
-			}
-		}
-		return 0
-	}
-	return dfs(0, 0, n) == 1
-}
-
-// s1 = "great", s2 = "rgeat"
-//
-
-func main() {
-	isScramble("great", "eatgr")
-}
-
-// dp[i][j][l] 代表 字符串s1[0:l] s2[0:l]  是否和谐
+// 三维
+// f[i][j][l] 代表 字符串s1[i:i+l] s2[j:j+l]  是否和谐
 func isScramble(s1 string, s2 string) bool {
-	dp := [30][30][31]bool{}
-	n := len(s1)
+	f := [30][30][31]bool{}
+	l1 := len(s1)
 
 	// 枚举长度 1 是否和谐
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			dp[i][j][1] = s1[i] == s2[j]
+	for i := 0; i < l1; i++ {
+		for j := 0; j < l1; j++ {
+			f[i][j][1] = s1[i] == s2[j]
 		}
 	}
 
-	// 枚举长度 2～n 是否和谐
-	for l := 2; l <= n; l++ { // 长度变长
+	// 枚举长度 2～l1 是否和谐
+	for l := 2; l <= l1; l++ { // 长度变长
 		// 枚举 A 中的起点位置
-		for i := 0; i <= n-l; i++ { //  5-2长度越长 字符串区间越小
+		for i := 0; i <= l1-l; i++ { //  5-2长度越长 字符串区间越小
 			// 枚举 B 中的起点位置
-			for j := 0; j <= n-l; j++ { //  长度越长 字符串区间越小
+			for j := 0; j <= l1-l; j++ { //  长度越长 字符串区间越小
 				// 枚举划分位置
 				for k := 1; k < l; k++ { // 1-l 长度区间 切割点
-					if dp[i][j][k] && dp[i+k][j+k][l-k] {
-						dp[i][j][l] = true
-						break
-					}
-
-					if dp[i][j+l-k][k] && dp[i+k][j][l-k] {
-						dp[i][j][l] = true
+					if f[i][j][k] && f[i+k][j+k][l-k] || f[i][j+l-k][k] && f[i+k][j][l-k] {
+						f[i][j][l] = true
 						break
 					}
 				}
 			}
 		}
 	}
-	return dp[0][0][n]
-}
-
-func is(s1, s2 string) bool {
-	dp := [30][30][31]bool{}
-	n := len(s1)
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			dp[i][j][1] = s1[i] == s2[j]
-		}
-	}
-
-	for l := 2; l <= n; l++ {
-		for i := 0; i <= n-l; i++ {
-			for j := 0; j <= n-l; j++ {
-				for k := 1; k < l; k++ {
-					if dp[i][j][k] && dp[i+k][j+k][l-k] || dp[i][j+l-k][k] && dp[i+k][j][l-k] {
-						dp[i][j][l] = true
-						break
-					}
-				}
-			}
-		}
-	}
-	return dp[0][0][n]
+	return f[0][0][l1]
 }
 
 ```
@@ -877,18 +782,20 @@ package main
 
 // Link: https://leetcode-cn.com/problems/pascals-triangle
 
+// 二维
+// f(i)(j) = f(i-1)(j-1) + f(i-1)(j)
 func generate(numRows int) [][]int {
-	var dp = make([][]int, numRows)
+	var f = make([][]int, numRows)
 	for i := 0; i < numRows; i++ {
-		dp[i] = make([]int, i+1)
-		dp[i][0] = 1
-		dp[i][i] = 1
+		f[i] = make([]int, i+1)
+		f[i][0] = 1
+		f[i][i] = 1
 		for j := 1; j < i; j++ {
-			dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
+			f[i][j] = f[i-1][j-1] + f[i-1][j]
 		}
 	}
 
-	return dp
+	return f
 }
 
 ```
@@ -899,6 +806,8 @@ package main
 
 // Link: https://leetcode-cn.com/problems/pascals-triangle-ii
 
+// 压缩
+// f(i)(j) = f(i-1)(j-1) + f(i-1)(j)
 func getRow(rowIndex int) []int {
 	numRows := rowIndex + 1
 	var dp = make([]int, numRows)
@@ -920,42 +829,42 @@ package main
 
 // Link: https://leetcode-cn.com/problems/triangle
 
-// 压缩
+// 压缩 从顶至底
 func minimumTotal(triangle [][]int) int {
-	m := len(triangle)
-	n := len(triangle[m-1])
-	var dp = make([]int, n)
+	l1 := len(triangle)
+	l2 := len(triangle[l1-1])
+	var f = make([]int, l2)
+	f[0] = triangle[0][0]
 
-	dp[0] = triangle[0][0]
-	for i := 1; i < m; i++ {
-		dp[i] = dp[i-1] + triangle[i][i] // 最后一个
-		for j := i - 1; 0 < j; j-- {     // 中间
-			dp[j] = min(dp[j], dp[j-1]) + triangle[i][j]
+	for i := 1; i < l1; i++ {
+		f[i] = f[i-1] + triangle[i][i] // 最后一个
+		for j := i - 1; 0 < j; j-- {   // 中间
+			f[j] = min(f[j], f[j-1]) + triangle[i][j]
 		}
-		dp[0] = dp[0] + triangle[i][0] // 第一个
+		f[0] = f[0] + triangle[i][0] // 第一个
 	}
 
-	for i := 1; i < n; i++ {
-		if dp[i] < dp[0] {
-			dp[0] = dp[i]
+	for i := 1; i < l2; i++ {
+		if f[i] < f[0] {
+			f[0] = f[i]
 		}
 	}
 
-	return dp[0]
+	return f[0]
 }
 
-// 继续压缩
+// 压缩 从底至顶
 func minimumTotal(triangle [][]int) int {
-	m := len(triangle)
-	n := len(triangle[m-1])
-	var dp = make([]int, n+1)
-	for i := n - 1; 0 <= i; i-- {
+	l1 := len(triangle)
+	l2 := len(triangle[l1-1])
+	var f = make([]int, l2+1)
+	for i := l2 - 1; 0 <= i; i-- {
 		for j := 0; j <= i; j++ {
-			dp[j] = min(dp[j], dp[j+1]) + triangle[i][j]
+			f[j] = min(f[j], f[j+1]) + triangle[i][j]
 		}
 	}
 
-	return dp[0]
+	return f[0]
 }
 
 func min(a, b int) int {
@@ -1095,6 +1004,7 @@ package main
 
 // Link: https://leetcode-cn.com/problems/range-sum-query-immutable
 
+// 前缀
 type NumArray struct {
 	nums []int
 }
@@ -1109,18 +1019,12 @@ func Constructor(nums []int) NumArray {
 	return NumArray{nums: s}
 }
 
-func (this *NumArray) SumRange(left int, right int) int {
+func (n *NumArray) SumRange(left int, right int) int {
 	if 0 == left {
-		return this.nums[right]
+		return n.nums[right]
 	}
-	return this.nums[right] - this.nums[left-1]
+	return n.nums[right] - n.nums[left-1]
 }
-
-/**
- * Your NumArray object will be instantiated and called as such:
- * obj := Constructor(nums);
- * param_1 := obj.SumRange(left,right);
- */
 
 ```
 
@@ -1257,7 +1161,7 @@ package main
 
 // Link: https://leetcode-cn.com/problems/fibonacci-number
 
-// 0 1 1
+// f(n) = f(n-1) + f(n-2)
 func climbStairs(n int) int {
 	f := make([]int, n+1)
 	f[0] = 0

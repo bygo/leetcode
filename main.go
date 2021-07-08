@@ -125,7 +125,7 @@ func main() {
 
 	if *cmd == "n" {
 		for _, n := range NodeReadmeArr {
-			GenNodeReadme(n.Language, n.Dir)
+			genNodeReadme(n.Language, n.Dir)
 		}
 	}
 
@@ -211,7 +211,7 @@ func buildReadme() {
 	class, err := ioutil.ReadDir("./")
 	Check(err)
 	for _, c := range class {
-		if c.IsDir() && c.Name()[0] != '.' && valueOf(solutionOrder, c.Name()) {
+		if c.IsDir() && c.Name()[0] != '.' && ValueOf(solutionOrder, c.Name()) {
 			currentClassName = c.Name()
 			problems[currentClassName] = []Problem{}
 			getSolutions(c, currentClassName)
@@ -225,7 +225,7 @@ func buildReadme() {
 	var directoryIndex []byte
 
 	for _, index := range solutionOrder {
-		className := normalizeClassTitle(index)
+		className := NormalizeClassTitle(index)
 		directoryIndex = append(directoryIndex, fmt.Sprintf("- [%s](#%s)\n\r", className, className)...)
 		problems := problems[index]
 		stubClass, err := ioutil.ReadFile(StubPrefix + ReadmeClassStub)
@@ -261,7 +261,7 @@ func buildReadme() {
 	Check(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
 }
 
-func GenNodeReadme(language string, dir string) {
+func genNodeReadme(language string, dir string) {
 	var md bytes.Buffer
 
 	all, err := ioutil.ReadDir(dir)
@@ -279,7 +279,8 @@ func GenNodeReadme(language string, dir string) {
 		}
 	}
 
-	ioutil.WriteFile(dir+"/readme.md", md.Bytes(), 0755)
+	err = ioutil.WriteFile(dir+"/readme.md", md.Bytes(), 0755)
+	Check(err)
 }
 
 func Check(err error) {
@@ -288,7 +289,7 @@ func Check(err error) {
 	}
 }
 
-func valueOf(str []string, value string) bool {
+func ValueOf(str []string, value string) bool {
 	for _, v := range str {
 		if v == value {
 			return true
@@ -297,7 +298,7 @@ func valueOf(str []string, value string) bool {
 	return false
 }
 
-func normalizeClassTitle(title string) string {
+func NormalizeClassTitle(title string) string {
 	words := strings.Split(title, "_")
 	for i, w := range words {
 		words[i] = strings.ToUpper(w[:1]) + w[1:]
