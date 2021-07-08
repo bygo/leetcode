@@ -632,44 +632,52 @@ package main
 
 // Link: https://leetcode-cn.com/problems/decode-ways
 
+// 一维
+// f(n) = f(n-1) + f(n-2)
 func numDecodings(s string) int {
-	n := len(s)
-	dp := make([]int, n+1)
-	dp[0] = 1
+	l1 := len(s)
+	f := make([]int, l1+1)
+	f[0] = 1
 	if s[0] != '0' {
-		dp[1] = 1
+		f[1] = 1
 	}
-	for i := 2; i <= n; i++ {
-		if s[i-1] != '0' { // 当前不是0 组合 1 种
-			dp[i] += dp[i-1]
+
+	for i := 2; i <= l1; i++ {
+		if s[i-1] != '0' {
+			f[i] += f[i-1]
 		}
 
-		if s[i-2] != '0' && (s[i-2]-'0')*10+(s[i-1]-'0') <= 26 { // 前面不是0 就可以组合 2 种
-			dp[i] += dp[i-2]
+		if s[i-2] != '0' && (s[i-2]-'0')*10+s[i-1]-'0' <= 26 {
+			f[i] += f[i-2]
 		}
 	}
-	return dp[n]
+
+	return f[l1]
 }
 
 // 压缩
 func numDecodings(s string) int {
-	n := len(s)
-	var a, b, c = 1, 0, 0
+	l1 := len(s)
+	x, y, z := 1, 0, 0
 	if s[0] != '0' {
-		b = 1
-		c = 1
+		y = 1
+		z = 1
 	}
-	for i := 1; i < n; i++ {
-		c = 0
+
+	for i := 1; i < l1; i++ {
 		if s[i] != '0' {
-			c += b
+			z = y
+		} else {
+			z = 0
 		}
+
 		if s[i-1] != '0' && ((s[i-1]-'0')*10+(s[i]-'0') <= 26) {
-			c += a
+			z += x
 		}
-		a, b = b, c
+
+		x, y = y, z
 	}
-	return c
+	return z
 }
 
 ```
@@ -680,70 +688,48 @@ package main
 
 // Link: https://leetcode-cn.com/problems/interleaving-string
 
-// i j 能组成p
+// 二维
+// f(i)(j) = f(i)(j-1) && s2[j-1] == p || f(i-1)(j) && s1[i-1] == p
 func isInterleave(s1 string, s2 string, s3 string) bool {
 	l1, l2, l3 := len(s1), len(s2), len(s3)
 	if (l1 + l2) != l3 {
 		return false
 	}
-	dp := make([][]bool, l1+1)
+	f := make([][]bool, l1+1)
 	for i := 0; i <= l1; i++ {
-		dp[i] = make([]bool, l2+1)
+		f[i] = make([]bool, l2+1)
 	}
-	dp[0][0] = true
+	f[0][0] = true
 	for i := 0; i <= l1; i++ {
 		for j := 0; j <= l2; j++ {
-			p := i + j - 1
-			dp[i][j] = 0 < i && dp[i-1][j] && s1[i-1] == s3[p] ||
-				0 < j && dp[i][j-1] && s2[j-1] == s3[p] ||
-				dp[i][j]
+			f[i][j] = i == 0 && j == 0 || 0 < i && f[i-1][j] && s1[i-1] == s3[i+j-1] ||
+				0 < j && f[i][j-1] && s2[j-1] == s3[i+j-1]
 		}
 	}
-	return dp[l1][l2]
+	return f[l1][l2]
 }
 
-// 压缩 dp[j] 表示 当前i下
+// 压缩
+// dp[j] 表示 当前i下
 func isInterleave(s1 string, s2 string, s3 string) bool {
 	l1, l2, l3 := len(s1), len(s2), len(s3)
 	if (l1 + l2) != l3 {
 		return false
 	}
-	dp := make([]bool, l2+1)
-	dp[0] = true
+	f := make([]bool, l2+1)
+	f[0] = true
 	for i := 0; i <= l1; i++ {
 		for j := 0; j <= l2; j++ {
-			p := i + j - 1
 			if 0 < i {
-				dp[j] = dp[j] && s1[i-1] == s3[p] // i增加后 dp[j] 是否依然有效
+				f[j] = f[j] && s1[i-1] == s3[i+j-1] // i增加后 f[j] 是否依然有效
 			}
 
 			if 0 < j { // 如果dp[j] 有效 或 可以通过增加j 使之有效
-				dp[j] = dp[j] || dp[j-1] && s2[j-1] == s3[p] //
+				f[j] = f[j] || f[j-1] && s2[j-1] == s3[i+j-1]
 			}
 		}
 	}
-	return dp[l2]
-}
-
-func isInterleave(s1 string, s2 string, s3 string) bool {
-	n, m, t := len(s1), len(s2), len(s3)
-	if (n + m) != t {
-		return false
-	}
-	dp := make([]bool, m+1)
-	dp[0] = true
-	for i := 0; i <= n; i++ {
-		for j := 0; j <= m; j++ {
-			p := i + j - 1
-			if i > 0 {
-				dp[j] = dp[j] && s1[i-1] == s3[p]
-			}
-			if j > 0 {
-				dp[j] = dp[j] || dp[j-1] && s2[j-1] == s3[p]
-			}
-		}
-	}
-	return dp[m]
+	return f[l2]
 }
 
 ```
@@ -755,23 +741,23 @@ package main
 // Link: https://leetcode-cn.com/problems/distinct-subsequences
 
 func numDistinct(s string, t string) int {
-	m, n := len(s), len(t)
-	dp := make([][]int, m+1)
-	for i := range dp {
-		dp[i] = make([]int, n+1)
-		dp[i][0] = 1
+	l1, l2 := len(s), len(t)
+	f := make([][]int, l1+1)
+	for i := range f {
+		f[i] = make([]int, l2+1)
+		f[i][0] = 1
 	}
 
-	for i := 1; i <= m; i++ {
-		for j := 1; j <= n; j++ {
-			dp[i][j] = dp[i-1][j] // 少一个字符 的路径数
+	for i := 1; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
+			f[i][j] = f[i-1][j]   // 少一个字符 的路径数
 			if s[i-1] == t[j-1] { // 如果相等 加 上次普通路径数
-				dp[i][j] += dp[i-1][j-1]
+				f[i][j] += f[i-1][j-1]
 			}
 		}
 	}
 
-	return dp[m][n]
+	return f[l1][l2]
 }
 
 ```
