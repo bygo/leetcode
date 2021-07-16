@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list
+// https://leetcode-cn.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list
 
 // 前缀和
 func removeZeroSumSublists(head *ListNode) *ListNode {

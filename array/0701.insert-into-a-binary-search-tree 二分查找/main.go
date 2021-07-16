@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/insert-into-a-binary-search-tree
+// https://leetcode-cn.com/problems/insert-into-a-binary-search-tree
 
 func search(nums []int, target int) int {
 	l, r := 0, len(nums)-1

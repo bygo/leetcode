@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/pascals-triangle
+// https://leetcode-cn.com/problems/pascals-triangle
 
 // 二维
 // f(i)(j) = f(i-1)(j-1) + f(i-1)(j)

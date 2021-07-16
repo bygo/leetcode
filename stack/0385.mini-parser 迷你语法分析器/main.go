@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/mini-parser
+// https://leetcode-cn.com/problems/mini-parser
 
 type NestedInteger struct {
 }

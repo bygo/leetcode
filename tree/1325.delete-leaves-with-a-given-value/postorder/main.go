@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 //Title: Delete Leaves With a Given Value
-// Link: https://leetcode-cn.com/problems/delete-leaves-with-a-given-value
+// https://leetcode-cn.com/problems/delete-leaves-with-a-given-value
 
 func removeLeafNodes(root *TreeNode, target int) *TreeNode {
 	if root == nil {

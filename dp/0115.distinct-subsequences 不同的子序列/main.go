@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/distinct-subsequences
+// https://leetcode-cn.com/problems/distinct-subsequences
 
 func numDistinct(s string, t string) int {
 	l1, l2 := len(s), len(t)

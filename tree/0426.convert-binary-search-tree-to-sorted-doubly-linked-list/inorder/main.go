@@ -7,7 +7,7 @@ type Node struct {
 }
 
 //Title: Convert Binary Search Tree to Sorted Doubly Linked List
-// Link: https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
+// https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
 
 var pre *Node
 var head *Node

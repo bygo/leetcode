@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/contains-duplicate
+// https://leetcode-cn.com/problems/contains-duplicate
 
 func containsDuplicate(nums []int) bool {
 	var set = map[int]int{}

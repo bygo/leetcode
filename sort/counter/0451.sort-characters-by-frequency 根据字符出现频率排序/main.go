@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// Link: https://leetcode-cn.com/problems/sort-characters-by-frequency
+// https://leetcode-cn.com/problems/sort-characters-by-frequency
 
 func frequencySort(s string) string {
 	var m = map[byte]int{}

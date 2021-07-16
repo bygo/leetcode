@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/largest-rectangle-in-histogram
+// https://leetcode-cn.com/problems/largest-rectangle-in-histogram
 
 // 找左边界与右边界,只统计当前高度的最大延展宽度
 func largestRectangleArea(heights []int) int {

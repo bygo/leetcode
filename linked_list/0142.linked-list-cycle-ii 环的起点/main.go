@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/linked-list-cycle-ii
+// https://leetcode-cn.com/problems/linked-list-cycle-ii
 
 func detectCycle(head *ListNode) *ListNode {
 	slow, fast := head, head

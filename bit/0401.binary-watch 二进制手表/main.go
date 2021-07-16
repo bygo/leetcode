@@ -5,7 +5,7 @@ import (
 	"math/bits"
 )
 
-// Link: https://leetcode-cn.com/problems/binary-watch
+// https://leetcode-cn.com/problems/binary-watch
 
 func readBinaryWatch(turnedOn int) []string {
 	var res []string

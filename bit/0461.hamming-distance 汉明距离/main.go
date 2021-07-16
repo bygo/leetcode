@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/hamming-distance
+// https://leetcode-cn.com/problems/hamming-distance
 
 func hammingDistance(x int, y int) int {
 	z := x ^ y

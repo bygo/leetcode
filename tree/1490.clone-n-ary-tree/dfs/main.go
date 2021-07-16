@@ -6,7 +6,7 @@ type Node struct {
 }
 
 //Title: Clone N-ary Tree
-// Link: https://leetcode-cn.com/problems/clone-n-ary-tree
+// https://leetcode-cn.com/problems/clone-n-ary-tree
 
 func cloneTree(root *Node) *Node {
 	if root == nil {

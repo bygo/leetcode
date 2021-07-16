@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/chuan-di-xin-xi/
+// https://leetcode-cn.com/problems/chuan-di-xin-xi/
 
 func numWays(n int, relation [][]int, k int) (res int) {
 	edges := make([][]int, n)

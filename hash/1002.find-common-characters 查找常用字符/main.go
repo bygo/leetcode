@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/find-common-characters
+// https://leetcode-cn.com/problems/find-common-characters
 
 func commonChars(words []string) {
 	var res []string

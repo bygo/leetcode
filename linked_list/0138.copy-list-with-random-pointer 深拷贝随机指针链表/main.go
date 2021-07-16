@@ -6,7 +6,7 @@ type Node struct {
 	Random *Node
 }
 
-// Link: https://leetcode-cn.com/problems/copy-list-with-random-pointer
+// https://leetcode-cn.com/problems/copy-list-with-random-pointer
 
 var m map[*Node]*Node
 

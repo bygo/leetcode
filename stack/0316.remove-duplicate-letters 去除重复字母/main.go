@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/remove-duplicate-letters
+// https://leetcode-cn.com/problems/remove-duplicate-letters
 
 func removeDuplicateLetters(s string) string {
 	counter := map[byte]int{}

@@ -1,6 +1,6 @@
 package main
 
-// Link:https://leetcode-cn.com/problems/longest-valid-parentheses/
+// L:https://leetcode-cn.com/problems/longest-valid-parentheses/
 
 // 左右计数器,
 func longestValidParentheses(s string) int {

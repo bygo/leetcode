@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/delete-node-in-a-linked-list
+// https://leetcode-cn.com/problems/delete-node-in-a-linked-list
 
 func deleteNode(node *ListNode) {
 	node.Val = node.Next.Val

@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/rotate-list
+// https://leetcode-cn.com/problems/rotate-list
 
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil || k == 0 {

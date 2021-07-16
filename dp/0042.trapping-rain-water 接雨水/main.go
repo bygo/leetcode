@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/trapping-rain-water
+// https://leetcode-cn.com/problems/trapping-rain-water
 
 // 前缀
 // f(n) = min(leftMax,rightMax) - self

@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/online-stock-span
+// https://leetcode-cn.com/problems/online-stock-span
 
 type StockSpanner struct {
 	arr   []int

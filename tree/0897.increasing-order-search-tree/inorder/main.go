@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 //Title: Increasing Order Search Tree
-// Link: https://leetcode-cn.com/problems/increasing-order-search-tree
+// https://leetcode-cn.com/problems/increasing-order-search-tree
 
 var last *TreeNode
 var head *TreeNode

@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/binary-subarrays-with-sum
+// https://leetcode-cn.com/problems/binary-subarrays-with-sum
 
 // 前缀
 func numSubarraysWithSum(nums []int, goal int) (res int) {

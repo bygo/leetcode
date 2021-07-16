@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/logger-rate-limiter
+// https://leetcode-cn.com/problems/logger-rate-limiter
 
 type Logger struct {
 	m map[string]int

@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/merge-two-sorted-lists
+// https://leetcode-cn.com/problems/merge-two-sorted-lists
 
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	zero := &ListNode{} // 前置节点

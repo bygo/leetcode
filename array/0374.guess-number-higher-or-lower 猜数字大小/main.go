@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/guess-number-higher-or-lower
+// https://leetcode-cn.com/problems/guess-number-higher-or-lower
 
 func guessNumber(r int) int {
 	var l = 1

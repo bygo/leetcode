@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/longest-valid-parentheses
+// https://leetcode-cn.com/problems/longest-valid-parentheses
 
 // 一维
 // if **() : f(n) = f(n-2) + 2

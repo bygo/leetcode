@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 //Title: Maximum Level Sum of a Binary Tree
-// Link: https://leetcode-cn.com/problems/maximum-level-sum-of-a-binary-tree
+// https://leetcode-cn.com/problems/maximum-level-sum-of-a-binary-tree
 
 func maxLevelSum(root *TreeNode) int {
 	if root == nil {

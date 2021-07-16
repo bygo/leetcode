@@ -1,7 +1,7 @@
 package main
 
 //Title: Richest Customer Wealth
-// Link: https://leetcode-cn.com/problems/richest-customer-wealth
+// https://leetcode-cn.com/problems/richest-customer-wealth
 
 func maximumWealth(accounts [][]int) int {
 	var max int

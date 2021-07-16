@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/word-break
+// https://leetcode-cn.com/problems/word-break
 
 func wordBreak(s string, wordDict []string) bool {
 	m := make(map[string]bool)

@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/scramble-string
+// https://leetcode-cn.com/problems/scramble-string
 
 // 记忆递归
 func isScramble(s1 string, s2 string) bool {

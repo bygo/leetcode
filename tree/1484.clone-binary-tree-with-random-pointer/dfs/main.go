@@ -15,7 +15,7 @@ type NodeCopy struct {
 }
 
 //Title: Clone Binary Tree With Random Pointer
-// Link: https://leetcode-cn.com/problems/clone-binary-tree-with-random-pointer
+// https://leetcode-cn.com/problems/clone-binary-tree-with-random-pointer
 
 var m = map[*Node]*NodeCopy{}
 

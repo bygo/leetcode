@@ -1,7 +1,7 @@
 package main
 
 //Title: Design Parking System
-// Link: https://leetcode-cn.com/problems/design-parking-system
+// https://leetcode-cn.com/problems/design-parking-system
 
 type ParkingSystem struct {
 	Packing int

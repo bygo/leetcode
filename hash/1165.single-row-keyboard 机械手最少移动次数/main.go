@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/single-row-keyboard
+// https://leetcode-cn.com/problems/single-row-keyboard
 
 func calculateTime(keyboard string, word string) int {
 	var m = map[byte]int{}

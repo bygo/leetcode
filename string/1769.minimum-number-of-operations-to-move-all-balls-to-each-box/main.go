@@ -1,7 +1,7 @@
 package main
 
 //Title: Minimum Number of Operations to Move All Balls to Each Box
-// Link: https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
+// https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
 
 func minOperations(boxes string) []int {
 	var res []int

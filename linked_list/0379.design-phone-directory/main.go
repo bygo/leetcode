@@ -6,7 +6,7 @@ type ListNode struct {
 }
 
 //Title: Design Phone Directory
-// Link: https://leetcode-cn.com/problems/design-phone-directory
+// https://leetcode-cn.com/problems/design-phone-directory
 
 type PhoneDirectory struct {
 	start, max int

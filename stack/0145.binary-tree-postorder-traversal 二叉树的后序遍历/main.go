@@ -6,7 +6,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// Link: https://leetcode-cn.com/problems/binary-tree-postorder-traversal
+// https://leetcode-cn.com/problems/binary-tree-postorder-traversal
 
 func postorderTraversal(root *TreeNode) []int {
 	var res []int

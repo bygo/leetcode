@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/wildcard-matching
+// https://leetcode-cn.com/problems/wildcard-matching
 
 // 二维
 func isMatch(s string, p string) bool {

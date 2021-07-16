@@ -6,7 +6,7 @@ type ListNode struct {
 	Next        *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/add-two-polynomials-represented-as-linked-lists
+// https://leetcode-cn.com/problems/add-two-polynomials-represented-as-linked-lists
 
 func addPoly(lh, rh *ListNode) *ListNode {
 	l := &ListNode{Next: lh}

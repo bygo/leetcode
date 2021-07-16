@@ -7,7 +7,7 @@ type TreeNode struct {
 }
 
 //Title: Binary Search Tree to Greater Sum Tree
-// Link: https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree
+// https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree
 
 func bstToGst(root *TreeNode) *TreeNode {
 	var sum int

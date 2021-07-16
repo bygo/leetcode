@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/backspace-string-compare
+// https://leetcode-cn.com/problems/backspace-string-compare
 
 func backspaceCompare(s string, t string) bool {
 	var ss, tt []byte

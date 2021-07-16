@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: https://leetcode-cn.com/problems/remove-linked-list-elements
+// https://leetcode-cn.com/problems/remove-linked-list-elements
 
 func removeElements(head *ListNode, val int) *ListNode {
 	for head != nil && head.Val == val {

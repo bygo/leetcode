@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/maximum-ice-cream-bars
+// https://leetcode-cn.com/problems/maximum-ice-cream-bars
 
 func maxIceCream(costs []int, coins int) (res int) {
 	var max int

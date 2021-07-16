@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/destination-city
+// https://leetcode-cn.com/problems/destination-city
 
 func destCity(paths [][]string) string {
 	m := map[string]struct{}{}

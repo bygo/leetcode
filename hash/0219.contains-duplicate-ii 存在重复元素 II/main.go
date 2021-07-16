@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/contains-duplicate-ii
+// https://leetcode-cn.com/problems/contains-duplicate-ii
 
 func containsNearbyDuplicate(nums []int, k int) bool {
 	var set = map[int]int{}

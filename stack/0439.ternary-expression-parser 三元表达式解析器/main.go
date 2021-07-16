@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/ternary-expression-parser
+// https://leetcode-cn.com/problems/ternary-expression-parser
 
 // 从右往左 遇到 ? 结算
 func parseTernary(expression string) string {

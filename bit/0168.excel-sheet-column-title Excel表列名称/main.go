@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/excel-sheet-column-title
+// https://leetcode-cn.com/problems/excel-sheet-column-title
 
 func convertToTitle(columnNumber int) string {
 	var res []byte

@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/count-good-meals
+// https://leetcode-cn.com/problems/count-good-meals
 
 func countPairs(deliciousness []int) (res int) {
 	var max, sumMax int

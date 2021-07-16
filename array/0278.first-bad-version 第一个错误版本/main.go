@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/first-bad-version
+// https://leetcode-cn.com/problems/first-bad-version
 
 func firstBadVersion(r int) int {
 	var l = 1

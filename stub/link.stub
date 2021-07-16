@@ -5,5 +5,5 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// Link: @DummyLink
+// @DummyLink
 

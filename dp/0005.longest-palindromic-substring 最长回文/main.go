@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/longest-palindromic-substring
+// https://leetcode-cn.com/problems/longest-palindromic-substring
 
 // 一维
 func longestPalindrome(s string) string {

@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// Link: https://leetcode-cn.com/problems/subdomain-visit-count
+// https://leetcode-cn.com/problems/subdomain-visit-count
 
 func subdomainVisits(cpdomains []string) []string {
 	var m = map[string]int{}

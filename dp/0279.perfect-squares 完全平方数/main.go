@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/perfect-squares
+// https://leetcode-cn.com/problems/perfect-squares
 
 func numSquares(n int) int {
 	dp := make([]int, n+1)

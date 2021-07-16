@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/range-sum-query-immutable
+// https://leetcode-cn.com/problems/range-sum-query-immutable
 
 // 前缀
 type NumArray struct {

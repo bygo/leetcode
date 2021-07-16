@@ -1,7 +1,7 @@
 package main
 
 //Title: Check if One String Swap Can Make Strings Equal
-// Link: https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal
+// https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal
 
 func areAlmostEqual(s1 string, s2 string) bool {
 	var first, second, flag byte

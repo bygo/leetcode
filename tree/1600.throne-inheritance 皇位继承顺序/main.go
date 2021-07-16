@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/throne-inheritance
+// https://leetcode-cn.com/problems/throne-inheritance
 
 type ThroneInheritance struct {
 	king  string

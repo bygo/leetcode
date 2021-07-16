@@ -1,6 +1,6 @@
 package main
 
-// Link: https://leetcode-cn.com/problems/climbing-stairs
+// https://leetcode-cn.com/problems/climbing-stairs
 
 // 一维
 // f(n) = f(n-1) + f(n-2)
