@@ -6,6 +6,9 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// add one row to tree
+// https://leetcode-cn.com/problems/add-one-row-to-tree/
+
 func addOneRow(root *TreeNode, v int, d int) *TreeNode {
 	if root == nil {
 		return &TreeNode{Val: v}
@@ -18,24 +21,20 @@ func addOneRow(root *TreeNode, v int, d int) *TreeNode {
 	var queue = []*TreeNode{root}
 	var depth = 1
 
-	for {
-		counter := len(queue)
-		if counter == 0 {
-			break
-		}
-
+	for 0 < len(queue) {
+		var cnt = len(queue)
 		depth++
 		if depth == d {
 			for _, q := range queue {
-				newL := &TreeNode{Val: v, Left: q.Left}
-				q.Left = newL
-				newR := &TreeNode{Val: v, Right: q.Right}
-				q.Right = newR
+				nl := &TreeNode{Val: v, Left: q.Left}
+				q.Left = nl
+				nr := &TreeNode{Val: v, Right: q.Right}
+				q.Right = nr
 			}
 			break
 		}
 
-		for _, q := range queue[:counter] {
+		for _, q := range queue[:cnt] {
 			if q.Left != nil {
 				queue = append(queue, q.Left)
 			}
@@ -44,7 +43,7 @@ func addOneRow(root *TreeNode, v int, d int) *TreeNode {
 				queue = append(queue, q.Right)
 			}
 		}
-		queue = queue[counter:]
+		queue = queue[cnt:]
 	}
 
 	return root

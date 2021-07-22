@@ -6,19 +6,20 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// find bottom left tree value
+// https://leetcode-cn.com/problems/find-bottom-left-tree-value/
+
 func findBottomLeftValue(root *TreeNode) int {
-	var res int
 	if root == nil {
-		return res
+		return 0
 	}
+	var res int
+
 	var queue = []*TreeNode{root}
-	for {
-		counter := len(queue)
-		if counter == 0 {
-			break
-		}
+	for 0 < len(queue) {
+		var cnt = len(queue)
 		res = queue[0].Val
-		for _, v := range queue[:counter] {
+		for _, v := range queue[:cnt] {
 			if v.Left != nil {
 				queue = append(queue, v.Left)
 			}
@@ -26,7 +27,7 @@ func findBottomLeftValue(root *TreeNode) int {
 				queue = append(queue, v.Right)
 			}
 		}
-		queue = queue[counter:]
+		queue = queue[cnt:]
 	}
 	return res
 }

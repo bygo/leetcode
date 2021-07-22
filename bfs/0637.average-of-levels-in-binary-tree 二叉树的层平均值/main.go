@@ -6,19 +6,19 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// average of levels in binary tree
+// https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/
+
 func averageOfLevels(root *TreeNode) []float64 {
 	if root == nil {
 		return nil
 	}
 	var queue = []*TreeNode{root}
 	var res []float64
-	for {
+	for 0 < len(queue) {
 		var sum int
-		counter := len(queue)
-		if counter == 0 {
-			break
-		}
-		for _, q := range queue[:counter] {
+		var cnt = len(queue)
+		for _, q := range queue[:cnt] {
 			sum += q.Val
 			if q.Left != nil {
 				queue = append(queue, q.Left)
@@ -27,8 +27,8 @@ func averageOfLevels(root *TreeNode) []float64 {
 				queue = append(queue, q.Right)
 			}
 		}
-		res = append(res, float64(sum)/float64(counter))
-		queue = queue[counter:]
+		res = append(res, float64(sum)/float64(cnt))
+		queue = queue[cnt:]
 	}
 	return res
 }

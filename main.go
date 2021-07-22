@@ -114,6 +114,7 @@ type NodeReadme struct {
 var NodeReadmeArr = []NodeReadme{
 	{"dp", "go"},
 	{"sql", "sql"},
+	{"bfs", "go"},
 }
 
 func main() {
