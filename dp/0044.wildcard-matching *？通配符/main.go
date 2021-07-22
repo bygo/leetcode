@@ -2,7 +2,9 @@ package main
 
 // https://leetcode-cn.com/problems/wildcard-matching
 
-// 二维
+// ? any one char
+// * any match
+// f[i][j] = f[i-1][j] || f[i][j-1] || f[i-1][j-1]
 func isMatch(s string, p string) bool {
 	l1, l2 := len(s), len(p)
 	f := make([][]bool, l1+1)

@@ -3,7 +3,7 @@ package main
 // fewest steps jumps to point ?
 // https://leetcode-cn.com/problems/jump-game-ii
 
-// find farthest point
+// find farthest point where have must jump
 // init 0
 func jump(nums []int) int {
 	var steps, farthest, point int

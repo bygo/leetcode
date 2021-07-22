@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/longest-palindromic-substring
 
-// 一维
+// f[l][r] = f[l+1][r-1]
 func longestPalindrome(s string) string {
 	n := len(s)
 	f := make([][]bool, n)

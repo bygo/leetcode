@@ -1,6 +1,6 @@
 package main
 
-// can i jump to last index ？
+// can i jump to last point ？
 // https://leetcode-cn.com/problems/jump-game
 
 // find farthest point

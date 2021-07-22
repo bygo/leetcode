@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/trapping-rain-water
 
-// 前缀
+// pre
 // f(n) = min(leftMax,rightMax) - self
 func trap(height []int) int {
 	n := len(height)

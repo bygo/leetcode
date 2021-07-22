@@ -1,31 +1,31 @@
 package main
 
-// Q: can i `jump` to `position' which the value is 0 ?
+// can i jump to point which the value is 0 ?
 // https://leetcode-cn.com/problems/jump-game-iii
 
-// A: bfs
 func canReach(arr []int, start int) bool {
 	var l1 = len(arr) - 1
 	var queue = []int{start}
 	var visited = map[int]bool{}
 	for 0 < len(queue) {
-		count := len(queue)
-		for _, index := range queue {
-			if arr[index] == 0 {
+		var cnt = len(queue)
+		for _, idx := range queue[:cnt] {
+			if arr[idx] == 0 {
 				return true
 			}
-			left := index - arr[index]
-			right := index + arr[index]
-			if 0 <= left && !visited[left] {
-				queue = append(queue, left)
-				visited[left] = true
+			var l = idx - arr[idx]
+			var r = idx + arr[idx]
+			if 0 <= l && !visited[l] {
+				queue = append(queue, l)
+				visited[l] = true
 			}
-			if right <= l1 && !visited[right] {
-				queue = append(queue, right)
-				visited[right] = true
+
+			if r <= l1 && !visited[r] {
+				queue = append(queue, r)
+				visited[r] = true
 			}
 		}
-		queue = queue[count:]
+		queue = queue[cnt:]
 	}
 
 	return false

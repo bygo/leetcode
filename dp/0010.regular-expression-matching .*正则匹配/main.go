@@ -1,8 +1,10 @@
 package main
 
+// . any char
+// * pre(0~n) match
 // https://leetcode-cn.com/problems/regular-expression-matching
 
-// 二维
+// f[i][j] = f[i][j-2] || f[i-1][j-1]
 func isMatch(s string, p string) bool {
 	m, n := len(s), len(p)
 	f := make([][]bool, m+1)

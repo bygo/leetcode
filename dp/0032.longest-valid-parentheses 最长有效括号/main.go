@@ -2,9 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/longest-valid-parentheses
 
-// 一维
-// if **() : f(n) = f(n-2) + 2
-// if (*)) : f(n) = f(n-1) + 2 + f(n-f(n-1)-2)
+// f(n) = f(n-2) + 2 || f(n-1) + 2 + f(n-f(n-1)-2)
 func longestValidParentheses(s string) int {
 	var res int
 	var n = len(s)
