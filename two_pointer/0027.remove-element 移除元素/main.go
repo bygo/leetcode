@@ -1,8 +1,11 @@
 package main
 
+// remover element
+// https://leetcode-cn.com/problems/remove-element/
+
 func removeElement(nums []int, val int) int {
-	left := 0
-	right := len(nums) - 1
+	var left = 0
+	var right = len(nums) - 1
 	for left < right {
 		if nums[left] != val {
 			left++

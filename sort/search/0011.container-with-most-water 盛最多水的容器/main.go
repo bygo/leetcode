@@ -13,7 +13,7 @@ func maxArea(height []int) int {
 			cur = height[r] * (r - l)
 			r--
 		}
-		if cur > max {
+		if max < cur {
 			max = cur
 		}
 

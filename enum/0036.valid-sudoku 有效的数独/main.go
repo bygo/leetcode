@@ -1,5 +1,7 @@
 package main
 
+// https://leetcode-cn.com/problems/valid-sudoku/
+
 func isValidSudoku(board [][]byte) bool {
 	row := [9]map[byte]bool{}
 	col := [9]map[byte]bool{}
