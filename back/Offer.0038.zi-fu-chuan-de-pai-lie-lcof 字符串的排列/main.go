@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// L:https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
+// https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
 
 func permutation(s string) []string {
 	var res []string
