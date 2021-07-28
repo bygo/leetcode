@@ -21,7 +21,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		prev = prev.Next // 哨兵移动一下
 	}
 
-	if l1 == nil {  //
+	if l1 == nil { //
 		prev.Next = l2
 	} else if l2 == nil {
 		prev.Next = l1
