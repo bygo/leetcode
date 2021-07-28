@@ -1,9 +1,7 @@
 package main
 
-// https://leetcode-cn.com/problems/generate-parentheses/
-
 func generateParenthesis(n int) []string {
-	var res = make([]string, 0)
+	res := make([]string, 0)
 	if n == 0 {
 		res = append(res, "")
 	} else {

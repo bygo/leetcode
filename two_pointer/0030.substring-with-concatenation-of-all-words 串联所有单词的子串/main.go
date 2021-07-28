@@ -8,63 +8,60 @@ func findSubstring(s string, words []string) []int {
 		return nil
 	}
 
-	wordLen := len(words[0])
-	wordNum := len(words)
-	sLen := len(s)
-	res := make([]int, 0)
-	l := wordLen * wordNum
-	var left, cursor int
-	reset := true
-	right := l
-	var m map[string]int8
+	var wordLen = len(words[0])
+	var wordNum = len(words)
+	var l1 = len(s)
+	var res = make([]int, 0)
+	var l2 = wordLen * wordNum
+	var l, cur int
+	var reset = true
+	var r = l2
+	var m = map[string]int{}
+
 	for i := 0; i < wordLen; i++ {
-		left = i
-		cursor = left
-		right = left + l
+		l = i
+		cur = l
+		r = l + l2
 		if reset {
 			reset = false
-			m = map[string]int8{}
+			m = map[string]int{}
 			for _, w := range words {
 				m[w]++
 			}
 		}
 
-		for cursor < right && right <= sLen {
-			index := s[cursor : cursor+wordLen]
-			how, ok := m[index]
+		for cur < r && r <= l1 {
+			var index = s[cur : cur+wordLen]
+			var how, ok = m[index]
 			if !ok {
 				if reset {
 					reset = false
-					m = map[string]int8{}
+					m = map[string]int{}
 					for _, w := range words {
 						m[w]++
 					}
 				}
-				left = cursor + wordLen
-				cursor = left
-				right = left + l
+				l = cur + wordLen
+				cur = l
+				r = l + l2
 				continue
 			}
 			if how <= 0 {
-				m[s[left:left+wordLen]]++
-				left += wordLen
-				right += wordLen
+				m[s[l:l+wordLen]]++
+				l += wordLen
+				r += wordLen
 				continue
 			}
 			reset = true
 			m[index]--
-			cursor += wordLen
-			if cursor == right {
-				res = append(res, left)
-				m[s[left:left+wordLen]]++
-				left += wordLen
-				right += wordLen
+			cur += wordLen
+			if cur == r {
+				res = append(res, l)
+				m[s[l:l+wordLen]]++
+				l += wordLen
+				r += wordLen
 			}
 		}
 	}
 	return res
 }
-
-/**
-思路:四指针i left cursor right
-*/
