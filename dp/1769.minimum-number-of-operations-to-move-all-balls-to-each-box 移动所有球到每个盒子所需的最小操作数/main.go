@@ -1,23 +1,23 @@
 package main
 
-//Title: Minimum Number of Operations to Move All Balls to Each Box
 // https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
 
 func minOperations(boxes string) []int {
 	var res []int
-	var counter, cur int
+	var cnt, cur int
 	var l = len(boxes) - 1
 	for i := 0; i <= l; i++ {
-		counter += cur
-		res = append(res, counter)
+		cnt += cur
+		res = append(res, cnt)
 		if boxes[i] == '1' {
 			cur++
 		}
 	}
-	counter, cur = 0, 0
+
+	cnt, cur = 0, 0
 	for i := l; 0 <= i; i-- {
-		counter += cur
-		res[i] += counter
+		cnt += cur
+		res[i] += cnt
 		if boxes[i] == '1' {
 			cur++
 		}

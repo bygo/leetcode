@@ -4,38 +4,38 @@ package main
 
 // 左右计数器,
 func longestValidParentheses(s string) int {
-	var l = len(s)
+	var l1 = len(s)
 	var max int
 
-	left, right := 0, 0
-	for i := 0; i < l; i++ {
+	l, r := 0, 0
+	for i := 0; i < l1; i++ {
 		if s[i] == '(' {
-			left++
+			l++
 		} else {
-			right++
+			r++
 		}
-		if left == right {
-			if max < left {
-				max = left
+		if l == r {
+			if max < l {
+				max = l
 			}
-		} else if left < right { // 不合法 重新计算
-			left, right = 0, 0
+		} else if l < r { // 不合法 重新计算
+			l, r = 0, 0
 		}
 	}
 
-	left, right = 0, 0
-	for i := l - 1; 0 < i; i-- {
+	l, r = 0, 0
+	for i := l1 - 1; 0 < i; i-- {
 		if s[i] == '(' {
-			left++
+			l++
 		} else {
-			right++
+			r++
 		}
-		if left == right {
-			if max < right {
-				max = right
+		if l == r {
+			if max < r {
+				max = r
 			}
-		} else if right < left { // 不合法 重新计算
-			left, right = 0, 0
+		} else if r < l { // 不合法 重新计算
+			l, r = 0, 0
 		}
 	}
 	return max * 2
@@ -46,8 +46,8 @@ func longestValidParentheses(s string) int {
 	var res int
 	stack := []int{-1} // -1 前置索引
 
-	l := len(s)
-	for i := 0; i < l; i++ {
+	l1 := len(s)
+	for i := 0; i < l1; i++ {
 		if s[i] == '(' { //
 			stack = append(stack, i)
 		} else {

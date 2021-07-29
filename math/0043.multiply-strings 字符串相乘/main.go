@@ -1,5 +1,7 @@
 package main
 
+// https://leetcode-cn.com/problems/multiply-strings/
+
 func multiply(num1 string, num2 string) string {
 	if num1 == "0" || num2 == "0" {
 		return "0"

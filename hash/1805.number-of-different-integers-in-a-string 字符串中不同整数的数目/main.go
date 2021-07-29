@@ -1,5 +1,7 @@
 package main
 
+// https://leetcode-cn.com/problems/number-of-different-integers-in-a-string/
+
 func numDifferentIntegers(word string) int {
 	var cur int
 	var m = map[int]struct{}{}

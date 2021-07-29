@@ -31,7 +31,6 @@ func frequencySort(s string) string {
 	return string(res)
 }
 
-
 func frequencySort(s string) string {
 	var freq = map[byte]int{}
 	for i := range s {

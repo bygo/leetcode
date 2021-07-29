@@ -7,15 +7,15 @@ func search(nums []int, target int) int {
 	var left, mid, ok int
 	right := len(nums) - 1
 	for left < right {
-		mid = (left + right) / 2
+		mid = left + (right-left)/2
 		ok = 0
-		if target < nums[0] { // point < target 旋转点在答案左边
+		if target < nums[0] {
 			ok++
 		}
-		if nums[mid] < nums[0] { //point < mid 旋转点在二分点左边
+		if nums[mid] < nums[0] {
 			ok++
 		}
-		if nums[mid] < target { //mid < target 二分点在答案左边
+		if nums[mid] < target {
 			ok++
 		}
 		if ok == 1 || ok == 3 { //其中1个或者3个都满足条件时，删除左边
