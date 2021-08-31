@@ -39,9 +39,10 @@ const (
 )
 
 var difficulty = map[Level]string{
-	LevelEasy:   "Easy",
-	LevelMedium: "Medium",
-	LevelHard:   "lHard",
+	LevelEasy:    "Easy",
+	LevelMedium:  "Medium",
+	LevelHard:    "Hard",
+	LevelUnknown: "Unknown",
 }
 
 type Stat struct {
@@ -226,8 +227,9 @@ func getSolutions(dir os.FileInfo, path string) {
 		problem.Stat.TotalAcs = 0
 		problem.Stat.TotalSubmitted = 0
 		problem.Difficulty.Level = LevelUnknown
+		problem.Stat.QuestionTitle = title[1]
+		problem.Stat.QuestionTitleSlug = title[1]
 	}
-	problem.Stat.QuestionTitle = title[1]
 
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm
