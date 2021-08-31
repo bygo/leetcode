@@ -21,7 +21,7 @@ func commonChars(words []string) {
 	}
 	for i := 0; i < 26; i++ {
 		for j := 0; j < minFreq[i]; j++ {
-			res = append(res, string('a'+i))
+			res = append(res, string(i+'a'))
 		}
 	}
 	return

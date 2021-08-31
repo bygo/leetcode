@@ -14,11 +14,13 @@ func wordPattern(pattern string, s string) bool {
 	for i := range pattern {
 		p := patternSet[words[i]]
 		w := wordsSet[pattern[i]]
-		if 0 != p && p != pattern[i] || 0 < len(w) && w != words[i] {
+		if p != 0 && p != pattern[i] || w != "" && w != words[i] { // 双向判断
 			return false
 		}
 		patternSet[words[i]] = pattern[i]
 		wordsSet[pattern[i]] = words[i]
+
 	}
+
 	return true
 }

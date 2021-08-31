@@ -9,13 +9,11 @@ func convertToTitle(columnNumber int) string {
 		res = append(res, byte(columnNumber%26+'A'))
 		columnNumber /= 26
 	}
-
 	l, r := 0, len(res)-1
 	for l < r {
 		res[l], res[r] = res[r], res[l]
 		l++
 		r--
 	}
-
 	return string(res)
 }

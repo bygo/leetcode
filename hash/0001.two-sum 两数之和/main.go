@@ -2,14 +2,14 @@ package main
 
 // https://leetcode-cn.com/problems/two-sum/
 
-// 1:08
 func twoSum(nums []int, target int) []int {
-	set := make(map[int]int, len(nums))
-	for i, num := range nums {
-		if k, ok := set[target-num]; ok {
-			return []int{i, k}
+	var m = map[int]int{}
+	for rawK, rawV := range nums {
+		hashK, ok := m[target-rawV]
+		if ok {
+			return []int{hashK, rawK}
 		}
-		set[num] = i
+		m[rawV] = rawK
 	}
 	return nil
 }

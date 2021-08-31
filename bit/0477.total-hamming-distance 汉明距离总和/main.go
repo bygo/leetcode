@@ -2,14 +2,15 @@ package main
 
 // https://leetcode-cn.com/problems/total-hamming-distance
 
-func totalHammingDistance(nums []int) (ans int) {
-	n := len(nums)
+func totalHammingDistance(nums []int) int {
+	var res int
+	l1 := len(nums)
 	for i := 0; i < 30; i++ {
-		c := 0
-		for _, val := range nums {
-			c += val >> i & 1 // 逐位计算 有多少个1
+		var cnt int
+		for _, num := range nums {
+			cnt += num >> i & 1
 		}
-		ans += c * (n - c) // 0*1
+		res += cnt * (l1 - cnt)
 	}
-	return
+	return res
 }

@@ -3,13 +3,12 @@ package main
 // https://leetcode-cn.com/problems/binary-subarrays-with-sum
 
 func numSubarraysWithSum(nums []int, goal int) int {
+	var res, sum int
 	cnt := map[int]int{}
-	var sum, res int
 	for _, num := range nums {
 		cnt[sum]++
 		sum += num
-		res += cnt[sum-goal]
+		res += cnt[sum-goal] // 公式成立 sum[j] - sum[i] = goal
 	}
-
 	return res
 }

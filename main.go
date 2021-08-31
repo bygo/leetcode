@@ -33,15 +33,15 @@ type Difficulty struct {
 type Level int
 
 const (
-	Easy Level = iota
-	Medium
-	Hard
+	LevelEasy Level = iota
+	LevelMedium
+	LevelHard
 )
 
 var difficulty = map[Level]string{
-	Easy:   "Easy",
-	Medium: "Medium",
-	Hard:   "Hard",
+	LevelEasy:   "Easy",
+	LevelMedium: "Medium",
+	LevelHard:   "lHard",
 }
 
 type Stat struct {
@@ -105,6 +105,8 @@ var dummyBufLink = []byte("@DummyLink")
 var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
 var dummyBufAC = []byte("601")
+
+var ignorePrefix = []string{"LCP", "Offer"}
 
 type NodeReadme struct {
 	Dir      string
@@ -191,6 +193,11 @@ func getSolutions(dir os.FileInfo, path string) {
 	}
 	algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
 	title := strings.Split(desc[1], ".")
+	for _, prefix := range ignorePrefix {
+		if strings.HasPrefix(title[0], prefix) {
+			return
+		}
+	}
 	problem := getProblem(title[0])
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm

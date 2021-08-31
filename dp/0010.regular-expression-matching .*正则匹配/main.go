@@ -6,28 +6,28 @@ package main
 
 // f[i][j] = f[i][j-2] || f[i-1][j-1]
 func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	f := make([][]bool, m+1)
+	l1, l2 := len(s), len(p)
+	f := make([][]bool, l1+1)
 	for i := range f {
-		f[i] = make([]bool, n+1)
+		f[i] = make([]bool, l2+1)
 	}
 
 	f[0][0] = true
-	for i := 0; i <= m; i++ {
-		for j := 1; j <= n; j++ {
+	for i := 0; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
 			if p[j-1] == '*' {
 				if f[i][j-2] {
 					f[i][j] = true
-				} else if i != 0 && f[i-1][j] && (p[j-2] == s[i-1] || p[i-2] == '.') {
+				} else if i != 0 && f[i-1][j] && (s[i-1] == p[j-2] || p[j-2] == '.') {
 					f[i][j] = true
 				}
-			} else if i != 0 && f[i-1][j-1] && (p[j-1] == s[i-1] || p[i-1] == '.') {
+			} else if i != 0 && f[i-1][j-1] && (s[i-1] == p[j-1] || p[j-1] == '.') {
 				f[i][j] = true
 			}
 		}
 	}
 
-	return f[m][n]
+	return f[l1][l2]
 }
 
 // 递归
