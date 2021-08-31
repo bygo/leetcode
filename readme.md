@@ -225,7 +225,7 @@
 | 0461 | [Hamming Distance                ](https://leetcode-cn.com/problems/hamming-distance) | 81.2% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/bit/0461.hamming-distance%20汉明距离/main.go)| 
 | 0477 | [Total Hamming Distance          ](https://leetcode-cn.com/problems/total-hamming-distance) | 60.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bit/0477.total-hamming-distance%20汉明距离总和/main.go)| 
 | 1689 | [Partitioning Into Minimum Number Of Deci-Binary Numbers](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers) | 87.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bit/1689.partitioning-into-minimum-number-of-deci-binary-numbers%20十-二进制数的最少数目/main.go)| 
-| 0000 | [                                ](https://leetcode-cn.com/problems/) | NaN% |  | [Go](https://github.com/bygo/leetcode/blob/master/bit/Offer%200015.er-jin-zhi-zhong-1de-ge-shu-lcof%20二进制中1的个数/main.go)| 
+| 0000 | [Offer 0015                      ](https://leetcode-cn.com/problems/er-jin-zhi-zhong-1de-ge-shu-lcof 二进制中1的个数) | NaN% | lHard | [Go](https://github.com/bygo/leetcode/blob/master/bit/Offer%200015.er-jin-zhi-zhong-1de-ge-shu-lcof%20二进制中1的个数/main.go)| 
 
 ## Bfs
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -453,7 +453,7 @@
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
 | 0037 | [Sudoku Solver                   ](https://leetcode-cn.com/problems/sudoku-solver) | 67.1% | lHard | [Go](https://github.com/bygo/leetcode/blob/master/back/0037.sudoku-solver%20解数独/main.go)| 
-| 0000 | [                                ](https://leetcode-cn.com/problems/) | NaN% |  | [Go](https://github.com/bygo/leetcode/blob/master/back/Offer.0038.zi-fu-chuan-de-pai-lie-lcof%20字符串的排列/main.go)| 
+| 0000 | [Offer                           ](https://leetcode-cn.com/problems/0038) | NaN% | lHard | [Go](https://github.com/bygo/leetcode/blob/master/back/Offer.0038.zi-fu-chuan-de-pai-lie-lcof%20字符串的排列/main.go)| 
 
 ## Sort
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -469,7 +469,7 @@
 | 0018 | [4Sum                            ](https://leetcode-cn.com/problems/4sum) | 40.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/search/0018.4sum%20四数之和/main.go)| 
 | 0026 | [Remove Duplicates from Sorted Array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) | 54.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/search/0026.remove-duplicates-from-sorted-array%20删除有序数组中的重复项/main.go)| 
 | 1838 | [Frequency of the Most Frequent Element](https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element) | 43.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/search/1838.frequency-of-the-most-frequent-element%20最高频元素的频数/main.go)| 
-| 0000 | [                                ](https://leetcode-cn.com/problems/) | NaN% |  | [Go](https://github.com/bygo/leetcode/blob/master/search/Offer%2053%20-%20I.%20在排序数组中查找数字%20I/main.go)| 
+| 0000 | [Offer 53 - I                    ](https://leetcode-cn.com/problems/ 在排序数组中查找数字 I) | NaN% | lHard | [Go](https://github.com/bygo/leetcode/blob/master/search/Offer%2053%20-%20I.%20在排序数组中查找数字%20I/main.go)| 
 
 ## LinkedList
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -612,7 +612,7 @@
 | 1711 | [Count Good Meals                ](https://leetcode-cn.com/problems/count-good-meals) | 35.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/1711.count-good-meals%20大餐计数/main.go)| 
 | 1748 | [Sum of Unique Elements          ](https://leetcode-cn.com/problems/sum-of-unique-elements) | 75.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1748.sum-of-unique-elements%20唯一元素的和/main.go)| 
 | 1805 | [Number of Different Integers in a String](https://leetcode-cn.com/problems/number-of-different-integers-in-a-string) | 49.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1805.number-of-different-integers-in-a-string%20字符串中不同整数的数目/main.go)| 
-| 0000 | [                                ](https://leetcode-cn.com/problems/) | NaN% |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP.07.%20传递信息/main.go)| 
+| 0000 | [LCP                             ](https://leetcode-cn.com/problems/07) | NaN% | lHard | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP.07.%20传递信息/main.go)| 
 
 ## Greedy
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -660,9 +660,9 @@
 ## Classic
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
 | ---- | -------------------------------------- |  ---------- | ----------- |----------------- | ----------
-| 0000 | [                                ](https://leetcode-cn.com/problems/) | NaN% |  | [Go](https://github.com/bygo/leetcode/blob/master/classic/Boyer-Moore%20投票/0169.majority-element%20众数/main.go)| 0169.majority-element 众数
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/classic/kmp/0028.implement-strstr/main.go)| 0028.implement-strstr
-|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/classic/manacher/0005.longest-palindromic-substring/main.go)| 0005.longest-palindromic-substring
+| 0005 | [Longest Palindromic Substring   ](https://leetcode-cn.com/problems/longest-palindromic-substring) | 35.3% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/classic/0005.longest-palindromic-substring/manacher/main.go)| manacher
+| 0028 | [Implement strStr()              ](https://leetcode-cn.com/problems/implement-strstr) | 40.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/classic/0028.implement-strstr/kmp/main.go)| kmp
+| 0169 | [Majority Element                ](https://leetcode-cn.com/problems/majority-element) | 66.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/classic/0169.majority-element%20众数/Boyer-Moore%20投票/main.go)| Boyer-Moore 投票
 
 ## Math
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm

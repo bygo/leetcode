@@ -36,6 +36,7 @@ const (
 	LevelEasy Level = iota
 	LevelMedium
 	LevelHard
+	LevelUnknown
 )
 
 var difficulty = map[Level]string{
@@ -221,6 +222,14 @@ func getSolutions(dir os.FileInfo, path string) {
 		}
 	}
 	problem := getProblem(title[0])
+	if problem.Stat.QuestionId == 0 {
+		problem.Stat.QuestionId = 9999
+		problem.Stat.QuestionTitle = title[0]
+		problem.Stat.QuestionTitleSlug = title[1]
+		problem.Stat.TotalAcs = 0
+		problem.Stat.TotalSubmitted = 0
+		problem.Difficulty.Level = LevelUnknown
+	}
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], problem)
