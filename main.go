@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"strconv"
 	"strings"
@@ -90,7 +89,6 @@ var currentClassName string
 var problems = map[string][]Problem{}
 var solutionOrder = []string{
 	"two_pointer",
-	"sql",
 	"bit",
 	"bfs",
 	"stack",
@@ -110,6 +108,7 @@ var solutionOrder = []string{
 	"dp",
 	"classic",
 	"math",
+	"sql",
 }
 
 var problemStubs = map[string]*Stub{
@@ -156,18 +155,18 @@ func main() {
 	}
 
 	body, err := ioutil.ReadFile(AllJsonFile)
-	if err != nil || *problemID == "" {
-		resp, err := http.Get(ApiProblemsAll)
-		Check(err)
-		defer func() {
-			err = resp.Body.Close()
-			Check(err)
-			println(AllJsonUpdatedText)
-		}()
-
-		body, err = ioutil.ReadAll(resp.Body)
-		Check(err)
-	}
+	//if err != nil || *problemID == "" {
+	//	resp, err := http.Get(ApiProblemsAll)
+	//	Check(err)
+	//	defer func() {
+	//		err = resp.Body.Close()
+	//		Check(err)
+	//		println(AllJsonUpdatedText)
+	//	}()
+	//
+	//	body, err = ioutil.ReadAll(resp.Body)
+	//	Check(err)
+	//}
 
 	Check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
@@ -224,12 +223,12 @@ func getSolutions(dir os.FileInfo, path string) {
 	problem := getProblem(title[0])
 	if problem.Stat.QuestionId == 0 {
 		problem.Stat.QuestionId = 9999
-		problem.Stat.QuestionTitle = title[0]
-		problem.Stat.QuestionTitleSlug = title[1]
 		problem.Stat.TotalAcs = 0
 		problem.Stat.TotalSubmitted = 0
 		problem.Difficulty.Level = LevelUnknown
 	}
+	problem.Stat.QuestionTitle = title[1]
+
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
 	problem.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], problem)
