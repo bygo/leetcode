@@ -88,7 +88,27 @@ var currentClassName string
 
 var problems = map[string][]Problem{}
 var solutionOrder = []string{
-	"array", "bit", "dp", "hash", "linked_list", "sql", "math", "stack", "string", "tree",
+	"two_pointer",
+	"sql",
+	"bit",
+	"bfs",
+	"stack",
+	"enum",
+	"tree",
+	"divide&conquer",
+	"back",
+	"sort",
+	"search",
+	"linked_list",
+	"binary_search",
+	"catalan",
+	"stack_monotonic",
+	"sort_counter",
+	"hash",
+	"greedy",
+	"dp",
+	"classic",
+	"math",
 }
 
 var problemStubs = map[string]*Stub{
@@ -106,7 +126,9 @@ var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
 var dummyBufAC = []byte("673")
 
-var ignorePrefix = []string{"LCP", "Offer"}
+var ignorePrefix = []string{
+	//"LCP", "Offer"
+}
 
 type NodeReadme struct {
 	Dir      string
@@ -212,7 +234,7 @@ func getProblem(id string) Problem {
 		}
 		left++
 	}
-	panic(id + " not exists")
+	return Problem{}
 }
 
 func buildReadme() {
