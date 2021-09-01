@@ -1,31 +1,23 @@
 package main
 
+// https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
 	Right *TreeNode
 }
 
-var target int
-var h map[int]bool
-var res bool
-
 func findTarget(root *TreeNode, k int) bool {
-	h = map[int]bool{}
-	res = false
-	target = k
-	dfs(root)
-	return res
-}
-
-func dfs(root *TreeNode) {
-	if root != nil {
-		dfs(root.Left)
-		if h[target-root.Val] {
-			res = true
-			return
+	m := map[int]struct{}{}
+	var dfs func(root *TreeNode) bool
+	dfs = func(root *TreeNode) bool {
+		if root != nil {
+			_, ok := m[k-root.Val]
+			m[root.Val] = struct{}{}
+			return ok || dfs(root.Left) || dfs(root.Right)
 		}
-		h[root.Val] = true
-		dfs(root.Right)
+		return false
 	}
+	return dfs(root)
 }

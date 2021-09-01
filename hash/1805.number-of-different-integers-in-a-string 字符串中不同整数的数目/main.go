@@ -1,23 +1,25 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-different-integers-in-a-string/
+// https://leetcode-cn.com/problems/number-of-different-integers-in-a-string
 
 func numDifferentIntegers(word string) int {
-	var cur int
-	var m = map[int]struct{}{}
-	for _, v := range word {
-		if '0' <= v && v <= '9' {
-			cur = cur*10 + int(v-48)
+	m := map[string]struct{}{}
+	word += "#"
+	var cur []byte
+	for i := range word {
+		if '0' <= word[i] && word[i] <= '9' {
+			cur = append(cur, word[i])
 		} else {
-			if cur != 0 {
-				m[cur] = struct{}{}
+			l1 := len(cur)
+			if 0 < l1 {
+				i := 0
+				for cur[i] == '0' && i < len(cur)-1 {
+					i++
+				}
+				m[string(cur[i:])] = struct{}{}
+				cur = []byte{}
 			}
-			cur = 0
 		}
-	}
-
-	if cur != 0 {
-		m[cur] = struct{}{}
 	}
 	return len(m)
 }

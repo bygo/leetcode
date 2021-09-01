@@ -1,7 +1,7 @@
 # LeetCode
 
 [![](https://img.shields.io/badge/Language-Go-%2300ADD8)](https://golang.org/)
-[![](https://img.shields.io/badge/AC-673-%23F781BE)](https://leetcode-cn.com/u/bygo/)
+[![](https://img.shields.io/badge/AC-705-%23F781BE)](https://leetcode-cn.com/u/bygo/)
 
 ---
 
@@ -353,6 +353,7 @@
 | 1669 | [Merge In Between Linked Lists   ](https://leetcode-cn.com/problems/merge-in-between-linked-lists) | 76.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/1669.merge-in-between-linked-lists%20删除区间后合并/main.go)| 
 | 1670 | [Design Front Middle Back Queue  ](https://leetcode-cn.com/problems/design-front-middle-back-queue) | 52.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/1670.design-front-middle-back-queue%20队列/main.go)| 
 | 1721 | [Swapping Nodes in a Linked List ](https://leetcode-cn.com/problems/swapping-nodes-in-a-linked-list) | 64.7% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/1721.swapping-nodes-in-a-linked-list%20交换镜像节点/main.go)| 
+| 剑指 Offer II 023 | [两个链表的第一个重合节点                    ](https://leetcode-cn.com/problems/3u1WK4) | 71.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/剑指%20Offer%20II%20023.%20两个链表的第一个重合节点/main.go)| 
 
 ## BinarySearch
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -391,6 +392,7 @@
 | 0001 | [Two Sum                         ](https://leetcode-cn.com/problems/two-sum) | 51.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0001.two-sum%20两数之和/main.go)| 
 | 0003 | [Longest Substring Without Repeating Characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) | 37.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/0003.longest-substring-without-repeating-characters%20无重复的最长子串/main.go)| 
 | 0041 | [First Missing Positive          ](https://leetcode-cn.com/problems/first-missing-positive) | 41.9% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/0041.first-missing-positive%20缺失的第一个正数/main.go)| 
+| 0049 | [Group Anagrams                  ](https://leetcode-cn.com/problems/group-anagrams) | 66.4% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/0049.group-anagrams%20字母异位词分组/main.go)| 
 | 0170 | [Two Sum III - Data structure design](https://leetcode-cn.com/problems/two-sum-iii-data-structure-design) | 41.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0170.two-sum-iii-data-structure-design%20两数之和%20III%20-%20数据结构设计/main.go)| 
 | 0205 | [Isomorphic Strings              ](https://leetcode-cn.com/problems/isomorphic-strings) | 50.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0205.isomorphic-strings%20同构字符串/main.go)| 
 | 0217 | [Contains Duplicate              ](https://leetcode-cn.com/problems/contains-duplicate) | 56.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/0217.contains-duplicate%20出现重复/main.go)| 
@@ -441,15 +443,41 @@
 | 1133 | [Largest Unique Number           ](https://leetcode-cn.com/problems/largest-unique-number) | 64.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1133.largest-unique-number%20最大唯一数/main.go)| 
 | 1160 | [Find Words That Can Be Formed by Characters](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters) | 68.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1160.find-words-that-can-be-formed-by-characters%20拼写单词/main.go)| 
 | 1165 | [Single-Row Keyboard             ](https://leetcode-cn.com/problems/single-row-keyboard) | 83.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1165.single-row-keyboard%20机械手最少移动次数/main.go)| 
+| 1189 | [Maximum Number of Balloons      ](https://leetcode-cn.com/problems/maximum-number-of-balloons) | 64.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1189.maximum-number-of-balloons%20“气球”%20的最大数量/main.go)| 
+| 1275 | [Find Winner on a Tic Tac Toe Game](https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game) | 54.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1275.find-winner-on-a-tic-tac-toe-game%20找出井字棋的获胜者/main.go)| 
 | 1331 | [Rank Transform of an Array      ](https://leetcode-cn.com/problems/rank-transform-of-an-array) | 53.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1331.rank-transform-of-an-array%20数组序号转换/main.go)| 
+| 1346 | [Check If N and Its Double Exist ](https://leetcode-cn.com/problems/check-if-n-and-its-double-exist) | 43.6% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1346.check-if-n-and-its-double-exist%20检查整数及其两倍数是否存在/main.go)| 
+| 1370 | [Increasing Decreasing String    ](https://leetcode-cn.com/problems/increasing-decreasing-string) | 79.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1370.increasing-decreasing-string%20上升下降字符串/main.go)| 
+| 1394 | [Find Lucky Integer in an Array  ](https://leetcode-cn.com/problems/find-lucky-integer-in-an-array) | 66.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1394.find-lucky-integer-in-an-array%20找出数组中的幸运数/main.go)| 
+| 1399 | [Count Largest Group             ](https://leetcode-cn.com/problems/count-largest-group) | 66.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1399.count-largest-group%20统计最大组的数目/main.go)| 
+| 1426 | [Counting Elements               ](https://leetcode-cn.com/problems/counting-elements) | 70.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1426.counting-elements%20数元素/main.go)| 
 | 1436 | [Destination City                ](https://leetcode-cn.com/problems/destination-city) | 78.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1436.destination-city%20旅行终点站/main.go)| 
+| 1460 | [Make Two Arrays Equal by Reversing Sub-arrays](https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays) | 74.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1460.make-two-arrays-equal-by-reversing-sub-arrays%20通过翻转子数组使两个数组相等/main.go)| 
 | 1512 | [Number of Good Pairs            ](https://leetcode-cn.com/problems/number-of-good-pairs) | 84.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1512.number-of-good-pairs/main.go)| 
+| 1536 | [Minimum Swaps to Arrange a Binary Grid](https://leetcode-cn.com/problems/minimum-swaps-to-arrange-a-binary-grid) | 43.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/1536.minimum-swaps-to-arrange-a-binary-grid%20按照频率将数组升序排序/main.go)| 
 | 1570 | [Dot Product of Two Sparse Vectors](https://leetcode-cn.com/problems/dot-product-of-two-sparse-vectors) | 90.1% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/1570.dot-product-of-two-sparse-vectors/main.go)| 
 | 1603 | [Design Parking System           ](https://leetcode-cn.com/problems/design-parking-system) | 84.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1603.design-parking-system/main.go)| 
+| 1624 | [Largest Substring Between Two Equal Characters](https://leetcode-cn.com/problems/largest-substring-between-two-equal-characters) | 62.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1624.largest-substring-between-two-equal-characters%20两个相同字符之间的最长子字符串/main.go)| 
+| 1640 | [Check Array Formation Through Concatenation](https://leetcode-cn.com/problems/check-array-formation-through-concatenation) | 66.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1640.check-array-formation-through-concatenation%20能否连接形成数组/main.go)| 
+| 1656 | [Design an Ordered Stream        ](https://leetcode-cn.com/problems/design-an-ordered-stream) | 78.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1656.design-an-ordered-stream%20设计有序流/main.go)| 
 | 1711 | [Count Good Meals                ](https://leetcode-cn.com/problems/count-good-meals) | 35.9% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/1711.count-good-meals%20大餐计数/main.go)| 
+| 1742 | [Maximum Number of Balls in a Box](https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box) | 70.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1742.maximum-number-of-balls-in-a-box%20盒子中小球的最大数量/main.go)| 
 | 1748 | [Sum of Unique Elements          ](https://leetcode-cn.com/problems/sum-of-unique-elements) | 75.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1748.sum-of-unique-elements%20唯一元素的和/main.go)| 
+| 1763 | [Longest Nice Substring          ](https://leetcode-cn.com/problems/longest-nice-substring) | 60.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1763.longest-nice-substring%20最长的美好子字符串/main.go)| 
+| 1796 | [Second Largest Digit in a String](https://leetcode-cn.com/problems/second-largest-digit-in-a-string) | 48.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1796.second-largest-digit-in-a-string%20字符串中第二大的数字/main.go)| 
 | 1805 | [Number of Different Integers in a String](https://leetcode-cn.com/problems/number-of-different-integers-in-a-string) | 49.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1805.number-of-different-integers-in-a-string%20字符串中不同整数的数目/main.go)| 
+| 1935 | [Maximum Number of Words You Can Type](https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type) | 74.2% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1935.maximum-number-of-words-you-can-type%20可以输入的最大单词数/main.go)| 
+| 1941 | [Check if All Characters Have Equal Number of Occurrences](https://leetcode-cn.com/problems/check-if-all-characters-have-equal-number-of-occurrences) | 77.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1941.check-if-all-characters-have-equal-number-of-occurrences%20检查是否所有字符出现次数相同/main.go)| 
+| LCP 11 | [期望个数统计                          ](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji) | 68.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP%2011.%20期望个数统计/main.go)| 
 | 0000 | [07                              ](https://leetcode-cn.com/problems/07) | NaN% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP.07.%20传递信息/main.go)| 
+| 剑指 Offer 50 | [第一个只出现一次的字符  LCOF               ](https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof) | 61.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/剑指%20Offer%2050.%20第一个只出现一次的字符/main.go)| 
+| 剑指 Offer II 032 | [有效的变位词                          ](https://leetcode-cn.com/problems/dKk3P7) | 59.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/剑指%20Offer%20II%20032.%20有效的变位词/main.go)| 
+| 剑指 Offer II 075 | [数组相对排序                          ](https://leetcode-cn.com/problems/0H97ZC) | 71.8% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/剑指%20Offer%20II%20075.%20数组相对排序/main.go)| 
+| 0000 | [01                              ](https://leetcode-cn.com/problems/01) | NaN% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2001.01.%20判定字符是否唯一/main.go)| 
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2001.02.%20判定是否互为字符重排/main.go)| 
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2001.04.%20回文排列/main.go)| 
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2016.15.%20珠玑妙算/main.go)| 
+|  | [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2017.04.%20消失的数字/main.go)| 
 
 ## Greedy
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -500,6 +528,7 @@
 | 0005 | [Longest Palindromic Substring   ](https://leetcode-cn.com/problems/longest-palindromic-substring) | 35.3% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/classic/0005.longest-palindromic-substring/manacher/main.go)| manacher
 | 0028 | [Implement strStr()              ](https://leetcode-cn.com/problems/implement-strstr) | 40.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/classic/0028.implement-strstr/kmp/main.go)| kmp
 | 0169 | [Majority Element                ](https://leetcode-cn.com/problems/majority-element) | 66.5% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/classic/0169.majority-element%20众数/Boyer-Moore%20投票/main.go)| Boyer-Moore 投票
+| 0000 | [10                              ](https://leetcode-cn.com/problems/10) | NaN% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/classic/面试题%2017.10.%20主要元素/Boyer-Moore%20投票/main.go)| Boyer-Moore 投票
 
 ## Math
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm

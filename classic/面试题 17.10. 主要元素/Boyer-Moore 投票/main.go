@@ -27,30 +27,3 @@ func majorityElement(nums []int) int {
 	}
 	return -1
 }
-
-func majorityElement(nums []int) int {
-	l1 := len(nums)
-	candidate := -1
-	cnt := 0
-	for _, num := range nums {
-		if cnt == 0 {
-			candidate = num
-		}
-		if candidate == num {
-			cnt++
-		} else {
-			cnt--
-		}
-	}
-
-	cnt = 0
-	for _, num := range nums {
-		if num == candidate {
-			cnt++
-		}
-	}
-	if l1/2 < cnt {
-		return candidate
-	}
-	return -1
-}
