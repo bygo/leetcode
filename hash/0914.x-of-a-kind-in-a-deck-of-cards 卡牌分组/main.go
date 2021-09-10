@@ -6,6 +6,7 @@ func hasGroupsSizeX(deck []int) bool {
 	if len(deck) <= 1 {
 		return false
 	}
+
 	m := map[int]int{}
 	for i := range deck {
 		m[deck[i]]++
