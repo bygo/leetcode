@@ -39,3 +39,47 @@ func max(x, y int) int {
 	}
 	return x
 }
+
+func maxmiumScore(cards []int, cnt int) int {
+	m := [10001]int{}
+	for i := range cards {
+		m[cards[i]]++
+	}
+
+	var odd int
+	var oddCnt int
+	var res int
+	var j int
+	var last int
+	var lastlast int
+	for i := 10000; 0 <= i && j < cnt; i-- {
+		if m[i] == 0 {
+			continue
+		}
+		if i%2 == 0 {
+			lastlast = last
+			last = i * m[i]
+			res += last
+			j++
+		} else {
+			if oddCnt == 1 {
+				if cnt == j+1 {
+					break
+				}
+				lastCur := last + lastlast
+				cur := odd + i*m[i]
+				if lastCur < cur {
+					res += cur - lastCur
+				}
+				oddCnt = 0
+				if 2 < j {
+
+				}
+			} else {
+				odd = i * m[i]
+				oddCnt = 1
+			}
+		}
+	}
+	return res
+}
