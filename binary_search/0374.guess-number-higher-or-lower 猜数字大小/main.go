@@ -6,12 +6,12 @@ func guessNumber(r int) int {
 	var l = 1
 	for l <= r {
 		mid := l + (r-l)/2
-		switch guess(mid) {
-		case -1:
+		cur := guess(mid)
+		if cur == -1 {
 			r = mid - 1
-		case 1:
+		} else if cur == 1 {
 			l = mid + 1
-		case 0:
+		} else if cur == 0 {
 			return mid
 		}
 	}

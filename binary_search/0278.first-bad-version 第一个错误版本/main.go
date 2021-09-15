@@ -17,5 +17,5 @@ func firstBadVersion(r int) int {
 }
 
 func isBadVersion(n int) bool {
-	return true
+	return n == 1
 }
