@@ -126,7 +126,7 @@ var dummyBufIndex = []byte("@DummyIndex")
 var dummyBufLink = []byte("@DummyLink")
 var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
-var dummyBufAC = []byte("743")
+var dummyBufAC = []byte("779")
 
 var ignorePrefix = []string{
 	//"LCP", "Offer"

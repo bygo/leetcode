@@ -1,7 +1,7 @@
 # LeetCode
 
 [![](https://img.shields.io/badge/Language-Go-%2300ADD8)](https://golang.org/)
-[![](https://img.shields.io/badge/AC-743-%23F781BE)](https://leetcode-cn.com/u/bygo/)
+[![](https://img.shields.io/badge/AC-779-%23F781BE)](https://leetcode-cn.com/u/bygo/)
 
 ---
 
@@ -164,6 +164,7 @@
 | 1503 | [Last Moment Before All Ants Fall Out of a Plank](https://leetcode-cn.com/problems/last-moment-before-all-ants-fall-out-of-a-plank) | 51.2% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/enum/1503.last-moment-before-all-ants-fall-out-of-a-plank%20所有蚂蚁掉下来前的最后一刻/main.go)| 
 | 1646 | [Get Maximum in Generated Array  ](https://leetcode-cn.com/problems/get-maximum-in-generated-array) | 53.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/1646.get-maximum-in-generated-array%20获取生成数组中的最大值/main.go)| 
 | 1672 | [Richest Customer Wealth         ](https://leetcode-cn.com/problems/richest-customer-wealth) | 85.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/1672.richest-customer-wealth%20最富有客户的资产总量/main.go)| 
+| 5875 | [Final Value of Variable After Performing Operations](https://leetcode-cn.com/problems/final-value-of-variable-after-performing-operations) | 95.0% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/5875.final-value-of-variable-after-performing-operations%20执行操作后的变量值/main.go)| 
 
 ## Tree
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
@@ -511,6 +512,7 @@
 | 1805 | [Number of Different Integers in a String](https://leetcode-cn.com/problems/number-of-different-integers-in-a-string) | 49.1% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1805.number-of-different-integers-in-a-string%20字符串中不同整数的数目/main.go)| 
 | 1935 | [Maximum Number of Words You Can Type](https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type) | 73.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1935.maximum-number-of-words-you-can-type%20可以输入的最大单词数/main.go)| 
 | 1941 | [Check if All Characters Have Equal Number of Occurrences](https://leetcode-cn.com/problems/check-if-all-characters-have-equal-number-of-occurrences) | 77.3% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1941.check-if-all-characters-have-equal-number-of-occurrences%20检查是否所有字符出现次数相同/main.go)| 
+| 5877 | [Detect Squares                  ](https://leetcode-cn.com/problems/detect-squares) | 26.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/5877.detect-squares%20检测正方形/main.go)| 
 | LCP 11 | [期望个数统计                          ](https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji) | 68.7% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP%2011.%20期望个数统计/main.go)| 
 | 0000 | [07                              ](https://leetcode-cn.com/problems/07) | NaN% | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP.07.%20传递信息/main.go)| 
 | 剑指 Offer 50 | [第一个只出现一次的字符  LCOF               ](https://leetcode-cn.com/problems/di-yi-ge-zhi-chu-xian-yi-ci-de-zi-fu-lcof) | 61.4% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/剑指%20Offer%2050.%20第一个只出现一次的字符/main.go)| 
@@ -568,6 +570,7 @@
 | 1480 | [Running Sum of 1d Array         ](https://leetcode-cn.com/problems/running-sum-of-1d-array) | 86.9% | Easy | [Go](https://github.com/bygo/leetcode/blob/master/dp/1480.running-sum-of-1d-array%20一维数组的动态和/main.go)| 
 | 1744 | [Can You Eat Your Favorite Candy on Your Favorite Day?](https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day) | 36.3% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/1744.can-you-eat-your-favorite-candy-on-your-favorite-day%20你能在你最喜欢的那天吃到你最喜欢的糖果吗？/main.go)| 
 | 1769 | [Minimum Number of Operations to Move All Balls to Each Box](https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box) | 85.6% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/1769.minimum-number-of-operations-to-move-all-balls-to-each-box%20移动所有球到每个盒子所需的最小操作数/main.go)| 
+| 5876 | [Sum of Beauty in the Array      ](https://leetcode-cn.com/problems/sum-of-beauty-in-the-array) | 31.0% | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/5876.sum-of-beauty-in-the-array%20数组美丽值求和/main.go)| 
 
 ## Classic
 |  #   | Title                                  | Acceptance  | Difficulty  | Solution         | Algorithm
