@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
+	"net/http"
 	"os"
 	"strconv"
 	"strings"
@@ -156,18 +157,18 @@ func main() {
 	}
 
 	body, err := ioutil.ReadFile(AllJsonFile)
-	//if err != nil || *problemID == "" {
-	//	resp, err := http.Get(ApiProblemsAll)
-	//	Check(err)
-	//	defer func() {
-	//		err = resp.Body.Close()
-	//		Check(err)
-	//		println(AllJsonUpdatedText)
-	//	}()
-	//
-	//	body, err = ioutil.ReadAll(resp.Body)
-	//	Check(err)
-	//}
+	if err != nil || *problemID == "" {
+		resp, err := http.Get(ApiProblemsAll)
+		Check(err)
+		defer func() {
+			err = resp.Body.Close()
+			Check(err)
+			println(AllJsonUpdatedText)
+		}()
+
+		body, err = ioutil.ReadAll(resp.Body)
+		Check(err)
+	}
 
 	Check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 

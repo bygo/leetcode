@@ -50,7 +50,7 @@ func (t *Trie) StartsWith(prefix string) bool {
 /**
  * Your Trie object will be instantiated and called as such:
  * obj := Constructor();
- * obj.Insert(word);
+ * obj.Add(word);
  * param_2 := obj.Search(word);
  * param_3 := obj.StartsWith(prefix);
  */

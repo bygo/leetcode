@@ -33,23 +33,28 @@ func search(nums []int, target int) int {
 }
 
 func search(nums []int, target int) int {
-	n := len(nums) - 1
-	var mid int
-	l, r := 0, len(nums)-1
+	l, r := 0, len(nums)
 	for l < r {
-		mid = l + (r-l)/2
-		if nums[0] < nums[mid] { // 左
-			if nums[0] < target && target < nums[mid] { // 第一段 一定范围内
-				r = mid - 1
+		mid := l + (r-l)/2
+		cur := nums[mid]
+		if cur == target {
+			return mid
+		} else if nums[l] <= cur {
+			if nums[l] <= target && target < cur {
+				r = mid
 			} else {
 				l = mid + 1
 			}
-		} else if nums[mid] <= nums[0] { // 右
-			if nums[mid] < target && target <= nums[n] { // 第二段 一定范围内
+		} else if cur < nums[l] {
+			if cur < target && target <= nums[r-1] {
 				l = mid + 1
 			} else {
-				r = mid - 1
+				r = mid
 			}
 		}
 	}
+	if 0 < l && nums[l-1] == target {
+		return l
+	}
+	return -1
 }
