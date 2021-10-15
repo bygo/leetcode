@@ -15,3 +15,29 @@ func destCity(paths [][]string) string {
 	}
 	return ""
 }
+
+func gridGame(grid [][]int) int64 {
+	l1 := len(grid)
+	l2 := len(grid[0])
+
+	var path = make([][]int, l1)
+	for i := range path {
+		path[i] = make([]int, l2)
+	}
+	var dfs func(x, y int)
+	dfs = func(x, y int) {
+		nx1, ny1 := x+1, y
+		nx2, ny2 := x, y+1
+		if nx1 == l1 && ny1 == l2 {
+
+		}
+		if nx1 <= l1 && ny1 <= l2 {
+
+		}
+
+		if nx2 <= l1 && ny2 <= l2 {
+
+		}
+	}
+}
+

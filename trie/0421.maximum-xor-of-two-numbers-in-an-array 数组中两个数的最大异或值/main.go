@@ -27,40 +27,39 @@ func (t *trie) add(num int) {
 }
 
 func (t *trie) check(num int) int {
-	var x int
+	var res int
 	var cur = t
-	for i := h; 0 <= i; i-- {
+	for i := h; 0 <= i && cur != nil; i-- {
 		bit := num >> i & 1
+		res <<= 1
 		if bit == 0 {
 			if cur.right != nil {
-				x = x*2 + 1
+				res += 1
 				cur = cur.right
 			} else {
-				x = x * 2
 				cur = cur.left
 			}
 		} else if bit == 1 {
 			if cur.left != nil {
-				x = x*2 + 1
+				res += 1
 				cur = cur.left
 			} else {
-				x = x * 2
 				cur = cur.right
 			}
 		}
 	}
-	return x
+	return res
 }
 
 func findMaximumXOR(nums []int) (x int) {
 	root := &trie{}
 	var res int
 	for _, num := range nums {
-		root.add(num)
 		cur := root.check(num)
 		if res < cur {
 			res = cur
 		}
+		root.add(num)
 	}
 	return res
 }

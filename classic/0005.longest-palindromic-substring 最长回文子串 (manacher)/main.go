@@ -37,3 +37,7 @@ func longestPalindrome(s string) string {
 	}
 	return s[(maxCenter-maxRight)/2 : (maxCenter+maxRight)/2-1]
 }
+
+// 5 4 3
+// 4 3 2
+// 3 2 1

@@ -1,4 +1,4 @@
-package _646_get_maximum_in_generated_array_获取生成数组中的最大值
+package main
 
 // https://leetcode-cn.com/problems/get-maximum-in-generated-array
 

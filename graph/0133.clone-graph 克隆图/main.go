@@ -37,7 +37,7 @@ func cloneGraph(node *Node) *Node {
 
 	var queue = []*Node{node}
 	m := map[*Node]*Node{}
-	m[node] = &Node{node.Val, []*Node{}}
+	m[node] = &Node{Val: node.Val}
 	for 0 < len(queue) {
 		n := queue[0]
 		queue = queue[1:]

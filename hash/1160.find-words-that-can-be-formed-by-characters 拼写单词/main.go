@@ -15,10 +15,11 @@ func countCharacters(words []string, chars string) int {
 			tmp[words[i][j]-'a']++
 		}
 		k := 0
-		for ; k < 26; k++ {
+		for k < 26 {
 			if m[k] < tmp[k] {
 				break
 			}
+			k++
 		}
 		if k == 26 {
 			res += len(words[i])

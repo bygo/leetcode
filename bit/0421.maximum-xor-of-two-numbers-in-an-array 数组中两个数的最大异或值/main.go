@@ -3,22 +3,19 @@ package main
 // https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array
 
 func findMaximumXOR(nums []int) int {
-	var res int
-	const h = 30
-	for k := h; 0 <= k; k-- {
-		next := res*2 + 1
-		res = next - 1
-
+	var res, next int
+	var h = 30
+	for i := h; 0 <= i; i-- {
+		res <<= 1
+		next = res + 1
 		m := map[int]bool{}
 		for _, num := range nums {
-			m[num>>k] = true
-		}
-
-		for _, num := range nums {
-			if m[num>>k^next] {
+			cur := num >> i
+			if m[cur] {
 				res += 1
 				break
 			}
+			m[cur^next] = true
 		}
 	}
 	return res

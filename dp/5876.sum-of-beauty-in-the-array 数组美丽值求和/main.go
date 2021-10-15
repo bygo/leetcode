@@ -2,6 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/sum-of-beauty-in-the-array
 
+// Pre
 func sumOfBeauties(nums []int) int {
 	l1 := len(nums)
 	var left = make([]int, l1)

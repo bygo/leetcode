@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 
-// 前缀和
+// Pre
 func canEat(candiesCount []int, queries [][]int) []bool {
 	var res []bool
 

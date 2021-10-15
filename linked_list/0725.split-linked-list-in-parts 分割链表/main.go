@@ -7,8 +7,8 @@ type ListNode struct {
 
 // https://leetcode-cn.com/problems/split-linked-list-in-parts
 
-func splitListToParts(root *ListNode, k int) []*ListNode {
-	cur := root
+func splitListToParts(head *ListNode, k int) []*ListNode {
+	cur := head
 	l := 0
 	// 长度
 	for cur != nil {
@@ -18,22 +18,20 @@ func splitListToParts(root *ListNode, k int) []*ListNode {
 
 	width := l / k
 	rem := l % k
-	var res []*ListNode
+	var res = make([]*ListNode, k)
 
 	for i := 0; i < k; i++ {
 		var j = width
 		if i < rem { // 前面的比较长
-			j += 1
+			j++
 		}
-		res = append(res, root)
-		for 1 < j { // 只有一个 原地不动
-			root = root.Next
+		res[i] = head
+		for 1 < j { // 移动到最后一个
+			head = head.Next
 			j--
 		}
-		if root != nil { // 移动到下一个 并且切割
-			next := root.Next
-			root.Next = nil
-			root = next
+		if head != nil { // 移动到下一个 并且切割
+			head, head.Next = head.Next, nil
 		}
 	}
 	return res

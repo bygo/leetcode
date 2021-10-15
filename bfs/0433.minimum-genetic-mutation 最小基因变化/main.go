@@ -27,9 +27,7 @@ func minMutation(start string, end string, bank []string) int {
 			for j := 0; j < 8; j++ {
 				for k := 0; k < 4; k++ {
 					if b[j] != base[k] {
-						b[j] ^= base[k]
-						base[k] ^= b[j]
-						b[j] ^= base[k]
+						b[j], base[k] = base[k], b[j]
 						s := string(b)
 						if s == end {
 							return res
@@ -37,10 +35,7 @@ func minMutation(start string, end string, bank []string) int {
 						if _, ok := m[s]; ok {
 							queue = append(queue, s)
 						}
-						b[j] ^= base[k]
-						base[k] ^= b[j]
-						b[j] ^= base[k]
-
+						b[j], base[k] = base[k], b[j]
 					}
 				}
 			}
