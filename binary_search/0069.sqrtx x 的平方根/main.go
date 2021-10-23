@@ -5,13 +5,13 @@ package main
 func mySqrt(x int) int {
 	var l = 0
 	var r = x
-	for l < r {
+	for l <= r {
 		mid := l + (r-l)/2
 		cur := mid * mid
 		if cur < x {
 			l = mid + 1
 		} else if x < cur {
-			r = mid
+			r = mid - 1
 		} else if x == cur {
 			return mid
 		}

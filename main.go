@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"strconv"
 	"strings"
@@ -126,7 +125,7 @@ var dummyBufIndex = []byte("@DummyIndex")
 var dummyBufLink = []byte("@DummyLink")
 var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
-var dummyBufAC = []byte("779")
+var dummyBufAC = []byte("842")
 
 var ignorePrefix = []string{
 	//"LCP", "Offer"
@@ -157,18 +156,18 @@ func main() {
 	}
 
 	body, err := ioutil.ReadFile(AllJsonFile)
-	if err != nil || *problemID == "" {
-		resp, err := http.Get(ApiProblemsAll)
-		Check(err)
-		defer func() {
-			err = resp.Body.Close()
-			Check(err)
-			println(AllJsonUpdatedText)
-		}()
-
-		body, err = ioutil.ReadAll(resp.Body)
-		Check(err)
-	}
+	//if err != nil || *problemID == "" {
+	//	resp, err := http.Get(ApiProblemsAll)
+	//	Check(err)
+	//	defer func() {
+	//		err = resp.Body.Close()
+	//		Check(err)
+	//		println(AllJsonUpdatedText)
+	//	}()
+	//
+	//	body, err = ioutil.ReadAll(resp.Body)
+	//	Check(err)
+	//}
 
 	Check(ioutil.WriteFile(AllJsonFile, body, os.ModePerm))
 
@@ -215,37 +214,53 @@ func getSolutions(dir os.FileInfo, path string) {
 	if l == 2 {
 		return
 	}
-	algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
-	title := strings.Split(desc[1], ".")
+	//algorithm := strings.Replace(strings.Join(desc[2:l-1], "."), "_", " ", -1)
+	//title := strings.Split(desc[1], ".")
+	title := desc[1]
 	for _, prefix := range ignorePrefix {
-		if strings.HasPrefix(title[0], prefix) {
+		if strings.HasPrefix(title, prefix) {
 			return
 		}
 	}
-	problem := getProblem(title[0])
+	problem := getProblem(title)
 	if problem.Stat.QuestionId == 0 {
 		problem.Stat.QuestionId = 9999
 		problem.Stat.TotalAcs = 0
 		problem.Stat.TotalSubmitted = 0
 		problem.Difficulty.Level = LevelUnknown
-		problem.Stat.QuestionTitle = title[1]
-		problem.Stat.QuestionTitleSlug = title[1]
+		problem.Stat.QuestionTitle = title
+		problem.Stat.QuestionTitleSlug = title
 	}
 
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)
-	problem.Algorithm = algorithm
+	//problem.Algorithm = algorithm
 	problems[currentClassName] = append(problems[currentClassName], problem)
 }
 
 func getProblem(id string) Problem {
 	left, right := 0, len(profile.StatStatusPairs)
 	for left < right {
-		if profile.StatStatusPairs[left].Stat.FrontendQuestionId == strings.TrimLeft(id, "0") {
+		if profile.StatStatusPairs[left].Stat.FrontendQuestionId == parseInt(id) {
+			profile.StatStatusPairs[left].Stat.QuestionTitle = id
 			return profile.StatStatusPairs[left]
 		}
 		left++
 	}
 	return Problem{}
+}
+
+func parseInt(id string) string {
+	var sum []byte
+	for i := range id {
+		if '0' <= id[i] && id[i] <= '9' {
+			if 0 != len(sum) || id[i] != '0' {
+				sum = append(sum, id[i])
+			}
+		} else if 0 < len(sum) {
+			return string(sum)
+		}
+	}
+	return string(sum)
 }
 
 func buildReadme() {
@@ -274,23 +289,21 @@ func buildReadme() {
 		class := bytes.Replace(stubClass, dummyBufClass, []byte(className), 1)
 
 		for k, problem := range problems {
-			var questionId, questionTitle, questionDifficulty, questionAcceptance, questionTitleSlug string
+			var questionTitle, questionDifficulty, questionAcceptance, questionTitleSlug string
 			if k == 0 || problem.Stat.QuestionId != problems[k-1].Stat.QuestionId {
-				questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
+				//questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
 				questionTitle = problem.Stat.QuestionTitle
 				questionTitleSlug = problem.Stat.QuestionTitleSlug
 				questionAcceptance = fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")
 				questionDifficulty = difficulty[problem.Difficulty.Level-1]
 			}
 
-			class = append(class, fmt.Sprintf("\n| %s | [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s)| %s",
-				questionId,
+			class = append(class, fmt.Sprintf("\n | [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s)",
 				questionTitle,
 				questionTitleSlug,
 				questionAcceptance,
 				questionDifficulty,
 				problem.File,
-				problem.Algorithm,
 			)...)
 		}
 		readmeBuf = append(readmeBuf, class...)

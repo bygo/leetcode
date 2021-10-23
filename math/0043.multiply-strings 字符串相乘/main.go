@@ -55,26 +55,4 @@ func main() {
 	//println(math.Pow(-3110.2233, -31) == pow(-3110.2233, -31))
 }
 
-func pow(x float64, n int) float64 {
-	if x == 1.0 || n == 0 {
-		return 1.0
-	}
-	var res = 1.0
-	var b = n
-	if n < 0 {
-		b = -b
-	}
-	base := x
-	for b != 0 {
-		println(b)
-		if b&1 == 1 {
-			res *= base
-		}
-		base *= base
-		b >>= 1
-	}
-	if n < 0 {
-		return 1.0 / res
-	}
-	return res
-}
+
