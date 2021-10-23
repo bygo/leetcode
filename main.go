@@ -50,6 +50,7 @@ type Stat struct {
 	QuestionTitle       string `json:"question__title"`
 	QuestionTitleSlug   string `json:"question__title_slug"`
 	QuestionHide        bool   `json:"question__hide"`
+	QuestionCN          string
 	TotalAcs            int    `json:"total_acs"`
 	TotalSubmitted      int    `json:"total_submitted"`
 	TotalColumnArticles int    `json:"total_column_articles"`
@@ -239,9 +240,31 @@ func getSolutions(dir os.FileInfo, path string) {
 
 func getProblem(id string) Problem {
 	left, right := 0, len(profile.StatStatusPairs)
+	var algorithm, code, title, cn string
+	index := 0
+	if id[index] == '(' {
+		for id[index] != ')' {
+			index++
+		}
+		algorithm = id[1:index]
+		index += 2
+	}
+	code = parseInt(id[index:])
+
+	titleLeft := index
+	for index < len(id) && id[index] != ' ' {
+		index++
+	}
+	title = id[titleLeft:index]
+	println(title)
+	cn = id[index:]
+
 	for left < right {
-		if profile.StatStatusPairs[left].Stat.FrontendQuestionId == parseInt(id) {
-			profile.StatStatusPairs[left].Stat.QuestionTitle = id
+		if profile.StatStatusPairs[left].Stat.FrontendQuestionId == code {
+			profile.StatStatusPairs[left].Stat.QuestionTitle = title
+			profile.StatStatusPairs[left].Algorithm = algorithm
+			profile.StatStatusPairs[left].Stat.QuestionCN = cn
+
 			return profile.StatStatusPairs[left]
 		}
 		left++
@@ -289,21 +312,25 @@ func buildReadme() {
 		class := bytes.Replace(stubClass, dummyBufClass, []byte(className), 1)
 
 		for k, problem := range problems {
-			var questionTitle, questionDifficulty, questionAcceptance, questionTitleSlug string
+			var questionAlgorithm, questionTitle, questionDifficulty, questionTitleSlug, questionCN string
+			questionAlgorithm = " "
 			if k == 0 || problem.Stat.QuestionId != problems[k-1].Stat.QuestionId {
 				//questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
+				questionAlgorithm = problem.Algorithm
 				questionTitle = problem.Stat.QuestionTitle
+				questionCN = problem.Stat.QuestionCN
 				questionTitleSlug = problem.Stat.QuestionTitleSlug
-				questionAcceptance = fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")
+				//questionAcceptance = fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")
 				questionDifficulty = difficulty[problem.Difficulty.Level-1]
 			}
 
-			class = append(class, fmt.Sprintf("\n | [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s)",
+			class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) <br/> %s | %s | [Go](%s) | %s",
 				questionTitle,
 				questionTitleSlug,
-				questionAcceptance,
+				questionCN,
 				questionDifficulty,
 				problem.File,
+				questionAlgorithm,
 			)...)
 		}
 		readmeBuf = append(readmeBuf, class...)
