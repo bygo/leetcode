@@ -252,7 +252,7 @@ func getProblem(id string) Problem {
 	code = parseInt(id[index:])
 
 	titleLeft := index
-	for index < len(id) && id[index] != ' ' {
+	for index < len(id) && id[index] <= 127 {
 		index++
 	}
 	title = id[titleLeft:index]
