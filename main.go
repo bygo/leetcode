@@ -324,7 +324,7 @@ func buildReadme() {
 				questionDifficulty = difficulty[problem.Difficulty.Level-1]
 			}
 
-			class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) <br/> %s | %s | [Go](%s) | %s",
+			class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s) | %s",
 				questionTitle,
 				questionTitleSlug,
 				questionCN,
