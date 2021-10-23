@@ -230,7 +230,7 @@ func getSolutions(dir os.FileInfo, path string) {
 		problem.Stat.TotalSubmitted = 0
 		problem.Difficulty.Level = LevelUnknown
 		problem.Stat.QuestionTitle = title
-		problem.Stat.QuestionTitleSlug = title
+		problem.Stat.QuestionTitleSlug = " "
 	}
 
 	problem.File = Repository + "/blob/master/" + strings.Replace(path, " ", "%20", -1)

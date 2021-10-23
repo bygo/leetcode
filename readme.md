@@ -168,7 +168,7 @@
  [1646.get-maximum-in-generated-array](https://leetcode-cn.com/problems/get-maximum-in-generated-array) |  获取生成数组中的最大值 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/1646.get-maximum-in-generated-array%20获取生成数组中的最大值/main.go) | 
  [1672.richest-customer-wealth    ](https://leetcode-cn.com/problems/richest-customer-wealth) |  最富有客户的资产总量 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/1672.richest-customer-wealth%20最富有客户的资产总量/main.go) | 
  [2042.check-if-numbers-are-ascending-in-a-sentence](https://leetcode-cn.com/problems/check-if-numbers-are-ascending-in-a-sentence) |  检查句子中的数字是否递增 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/2042.check-if-numbers-are-ascending-in-a-sentence%20检查句子中的数字是否递增/main.go) | 
- [5875.final-value-of-variable-after-performing-operations 执行操作后的变量值](https://leetcode-cn.com/problems/5875.final-value-of-variable-after-performing-operations 执行操作后的变量值) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/enum/5875.final-value-of-variable-after-performing-operations%20执行操作后的变量值/main.go) | 
+ [5875.final-value-of-variable-after-performing-operations 执行操作后的变量值](https://leetcode-cn.com/problems/ ) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/enum/5875.final-value-of-variable-after-performing-operations%20执行操作后的变量值/main.go) | 
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/enum/5883.check-if-word-can-be-placed-in-crossword%20判断单词是否能放入填字游戏内/main.go) |  
 
 ## Tree
@@ -507,13 +507,13 @@
  [1941.check-if-all-characters-have-equal-number-of-occurrences](https://leetcode-cn.com/problems/check-if-all-characters-have-equal-number-of-occurrences) |  检查是否所有字符出现次数相同 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/1941.check-if-all-characters-have-equal-number-of-occurrences%20检查是否所有字符出现次数相同/main.go) | 
  [2006.count-number-of-pairs-with-absolute-difference-k](https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k) |  差的绝对值为 K 的数对数目 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/2006.count-number-of-pairs-with-absolute-difference-k%20差的绝对值为%20K%20的数对数目/main.go) | 
  [2007.find-original-array-from-doubled-array](https://leetcode-cn.com/problems/find-original-array-from-doubled-array) |  从双倍数组中还原原数组 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/2007.find-original-array-from-doubled-array%20从双倍数组中还原原数组/main.go) | 
- [5859.count-number-of-pairs-with-absolute-difference-k 差的绝对值为 K 的数对数目](https://leetcode-cn.com/problems/5859.count-number-of-pairs-with-absolute-difference-k 差的绝对值为 K 的数对数目) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/5859.count-number-of-pairs-with-absolute-difference-k%20差的绝对值为%20K%20的数对数目/main.go) | 
+ [5859.count-number-of-pairs-with-absolute-difference-k 差的绝对值为 K 的数对数目](https://leetcode-cn.com/problems/ ) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/5859.count-number-of-pairs-with-absolute-difference-k%20差的绝对值为%20K%20的数对数目/main.go) | 
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/5860.find-original-array-from-doubled-array%20从双倍数组中还原原数组/main.go) |  
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/5877.detect-squares%20检测正方形/main.go) |  
  [LCP                             ](https://leetcode-cn.com/problems/container-with-most-water) |  11. 期望个数统计 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP%2011.%20期望个数统计/main.go) | 
  [LCP.07.                         ](https://leetcode-cn.com/problems/reverse-integer) |  传递信息 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCP.07.%20传递信息/main.go) | 
  [LCS                             ](https://leetcode-cn.com/problems/add-two-numbers) |  02. 完成一半题目 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/LCS%2002.%20完成一半题目/main.go) | 
- [vip                             ](https://leetcode-cn.com/problems/vip) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/vip/0159.longest-substring-with-at-most-two-distinct-characters%20至多包含两个不同字符的最长子串/main.go) | 
+ [vip                             ](https://leetcode-cn.com/problems/ ) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/vip/0159.longest-substring-with-at-most-two-distinct-characters%20至多包含两个不同字符的最长子串/main.go) | 
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/vip/0244.shortest-word-distance-ii%20最短单词距离%20II/main.go) |  
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/vip/0249.group-shifted-strings%20移位字符串分组/main.go) |  
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/vip/0266.palindrome-permutation%20回文排列/main.go) |  
@@ -574,7 +574,7 @@
  [1480.running-sum-of-1d-array    ](https://leetcode-cn.com/problems/running-sum-of-1d-array) |  数组前缀和 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/dp/1480.running-sum-of-1d-array%20数组前缀和/main.go) | 
  [1744.can-you-eat-your-favorite-candy-on-your-favorite-day](https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day) |  你能在你最喜欢的那天吃到你最喜欢的糖果吗？ | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/1744.can-you-eat-your-favorite-candy-on-your-favorite-day%20你能在你最喜欢的那天吃到你最喜欢的糖果吗？/main.go) | 
  [1769.minimum-number-of-operations-to-move-all-balls-to-each-box](https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box) |  移动所有球到每个盒子所需的最小操作数 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/1769.minimum-number-of-operations-to-move-all-balls-to-each-box%20移动所有球到每个盒子所需的最小操作数/main.go) | 
- [5876.sum-of-beauty-in-the-array 数组美丽值求和](https://leetcode-cn.com/problems/5876.sum-of-beauty-in-the-array 数组美丽值求和) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/dp/5876.sum-of-beauty-in-the-array%20数组美丽值求和/main.go) | 
+ [5876.sum-of-beauty-in-the-array 数组美丽值求和](https://leetcode-cn.com/problems/ ) |  | Hard | [Go](https://github.com/bygo/leetcode/blob/master/dp/5876.sum-of-beauty-in-the-array%20数组美丽值求和/main.go) | 
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/dp/5881.maximum-difference-between-increasing-elements%20增量元素之间的最大差值/main.go) |  
 
 ## Classic
