@@ -39,8 +39,8 @@
 
 
 ## TwoPointer
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0003.longest-substring-without-repeating-characters](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters) |  无重复字符的最长子串 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/two_pointer/0003.longest-substring-without-repeating-characters%20无重复字符的最长子串/main.go) | 
  [0019.remove-nth-node-from-end-of-list](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list) |  删除链表的倒数第 N 个结点 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/two_pointer/0019.remove-nth-node-from-end-of-list%20删除链表的倒数第%20N%20个结点/main.go) | 
  [0027.remove-element             ](https://leetcode-cn.com/problems/remove-element) |  移除元素 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/two_pointer/0027.remove-element%20移除元素/main.go) | 
@@ -58,8 +58,8 @@
  [1790.check-if-one-string-swap-can-make-strings-equal](https://leetcode-cn.com/problems/check-if-one-string-swap-can-make-strings-equal) |  仅执行一次字符串交换能否使两个字符串相等 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/two_pointer/1790.check-if-one-string-swap-can-make-strings-equal%20仅执行一次字符串交换能否使两个字符串相等/main.go) | 
 
 ## Bit
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0067.add-binary                 ](https://leetcode-cn.com/problems/add-binary) |  二进制求和 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/bit/0067.add-binary%20二进制求和/main.go) | 
  [0168.excel-sheet-column-title   ](https://leetcode-cn.com/problems/excel-sheet-column-title) |  Excel表列名称 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/bit/0168.excel-sheet-column-title%20Excel表列名称/main.go) | 
  [0371.sum-of-two-integers        ](https://leetcode-cn.com/problems/sum-of-two-integers) |  两整数之和 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bit/0371.sum-of-two-integers%20两整数之和/main.go) | 
@@ -72,8 +72,8 @@
  [Offer                           ](https://leetcode-cn.com/problems/3sum) |  0015.er-jin-zhi-zhong-1de-ge-shu-lcof 二进制中1的个数 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bit/Offer%200015.er-jin-zhi-zhong-1de-ge-shu-lcof%20二进制中1的个数/main.go) | 
 
 ## Bfs
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0098.validate-binary-search-tree](https://leetcode-cn.com/problems/validate-binary-search-tree) |  验证二叉搜索树 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bfs/0098.validate-binary-search-tree%20验证二叉搜索树/main.go) | 
  [0102.binary-tree-level-order-traversal](https://leetcode-cn.com/problems/binary-tree-level-order-traversal) |  二叉树的层序遍历 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bfs/0102.binary-tree-level-order-traversal%20二叉树的层序遍历/main.go) | 
  [0103.binary-tree-zigzag-level-order-traversal](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal) |  二叉树的锯齿形层序遍历 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bfs/0103.binary-tree-zigzag-level-order-traversal%20二叉树的锯齿形层序遍历/main.go) | 
@@ -95,8 +95,8 @@
  [1306.jump-game-iii              ](https://leetcode-cn.com/problems/jump-game-iii) |  跳跃游戏 III | Medium | [Go](https://github.com/bygo/leetcode/blob/master/bfs/1306.jump-game-iii%20跳跃游戏%20III/main.go) | 
 
 ## Stack
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0020.valid-parentheses          ](https://leetcode-cn.com/problems/valid-parentheses) |  有效(){}[]括号 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/stack/0020.valid-parentheses%20有效(){}[]括号/main.go) | 
  [0032.longest-valid-parentheses  ](https://leetcode-cn.com/problems/longest-valid-parentheses) |  最长有效()括号 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack/0032.longest-valid-parentheses%20最长有效()括号/main.go) | 
  [0071.simplify-path              ](https://leetcode-cn.com/problems/simplify-path) |  简化路径 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/stack/0071.simplify-path%20简化路径/main.go) | 
@@ -149,8 +149,8 @@
  [1598.crawler-log-folder         ](https://leetcode-cn.com/problems/crawler-log-folder) |  文件夹操作日志搜集器 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/stack/1598.crawler-log-folder%20文件夹操作日志搜集器/main.go) | 
 
 ## Enum
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0002.add-two-numbers            ](https://leetcode-cn.com/problems/add-two-numbers) |  两数相加 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/enum/0002.add-two-numbers%20两数相加/main.go) | 
  [0006.zigzag-conversion          ](https://leetcode-cn.com/problems/zigzag-conversion) |  Z 字形变换 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/enum/0006.zigzag-conversion%20Z%20字形变换/main.go) | 
  [0014.longest-common-prefix      ](https://leetcode-cn.com/problems/longest-common-prefix) |  最长公共前缀 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/enum/0014.longest-common-prefix%20最长公共前缀/main.go) | 
@@ -172,8 +172,8 @@
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/enum/5883.check-if-word-can-be-placed-in-crossword%20判断单词是否能放入填字游戏内/main.go) |  
 
 ## Tree
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0022.generate-parentheses       ](https://leetcode-cn.com/problems/generate-parentheses) |  有效的 括号组合 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/tree/0022.generate-parentheses%20有效的%20括号组合/main.go) | 
  [0094.binary-tree-inorder-traversal](https://leetcode-cn.com/problems/binary-tree-inorder-traversal) |  | Easy | [Go](https://github.com/bygo/leetcode/blob/master/tree/0094.binary-tree-inorder-traversal/dfs/inorder/recursive/main.go) | 
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/tree/0094.binary-tree-inorder-traversal/dfs/inorder/stack/main.go) |  
@@ -294,27 +294,27 @@
  [1740.find-distance-in-a-binary-tree](https://leetcode-cn.com/problems/find-distance-in-a-binary-tree) |  | Medium | [Go](https://github.com/bygo/leetcode/blob/master/tree/1740.find-distance-in-a-binary-tree/dfs/main.go) | 
 
 ## Divide&conquer
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0014.longest-common-prefix      ](https://leetcode-cn.com/problems/longest-common-prefix) |  最长公共前缀 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/divide&conquer/0014.longest-common-prefix%20最长公共前缀/main.go) | 
 
 ## Back
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0037.sudoku-solver              ](https://leetcode-cn.com/problems/sudoku-solver) |  解数独 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/back/0037.sudoku-solver%20解数独/main.go) | 
  [0051.n-queens                   ](https://leetcode-cn.com/problems/n-queens) |  N 皇后 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/back/0051.n-queens%20N%20皇后/main.go) | 
  [0052.n-queens-ii                ](https://leetcode-cn.com/problems/n-queens-ii) |  N皇后 II | Hard | [Go](https://github.com/bygo/leetcode/blob/master/back/0052.n-queens-ii%20N皇后%20II/main.go) | 
  [Offer.0038.zi-fu-chuan-de-pai-lie-lcof](https://leetcode-cn.com/problems/count-and-say) |  字符串的排列 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/back/Offer.0038.zi-fu-chuan-de-pai-lie-lcof%20字符串的排列/main.go) | 
 
 ## Sort
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0179.largest-number             ](https://leetcode-cn.com/problems/largest-number) |  最大数 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sort/0179.largest-number%20最大数/main.go) | 
  [面试题                             ](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number) |  17.14. 最小K个数 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sort/面试题%2017.14.%20最小K个数/main.go) | 
 
 ## Search
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0011.container-with-most-water  ](https://leetcode-cn.com/problems/container-with-most-water) |  盛最多水的容器 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/search/0011.container-with-most-water%20盛最多水的容器/main.go) | 
  [0026.remove-duplicates-from-sorted-array](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array) |  删除有序数组中的重复项 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/search/0026.remove-duplicates-from-sorted-array%20删除有序数组中的重复项/main.go) | 
  [1838.frequency-of-the-most-frequent-element](https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element) |  最高频元素的频数 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/search/1838.frequency-of-the-most-frequent-element%20最高频元素的频数/main.go) | 
@@ -322,8 +322,8 @@
  [Offer                           ](https://leetcode-cn.com/problems/maximum-subarray) |  53 - I. 在排序数组中查找数字 I | Easy | [Go](https://github.com/bygo/leetcode/blob/master/search/Offer%2053%20-%20I.%20在排序数组中查找数字%20I/main.go) | 
 
 ## LinkedList
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0457.circular-array-loop        ](https://leetcode-cn.com/problems/circular-array-loop) |  环形数组是否存在循环 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/(Array)%200457.circular-array-loop%20环形数组是否存在循环/main.go) | Array
  [0021.merge-two-sorted-lists     ](https://leetcode-cn.com/problems/merge-two-sorted-lists) |  合并两个有序链表 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/(Merge)%200021.merge-two-sorted-lists%20合并两个有序链表/main.go) | Merge
  [0023.merge-k-sorted-lists       ](https://leetcode-cn.com/problems/merge-k-sorted-lists) |  合并K个有序链表 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/(Merge)%200023.merge-k-sorted-lists%20合并K个有序链表/main.go) | Merge
@@ -372,8 +372,8 @@
  [剑指                              ](https://leetcode-cn.com/problems/merge-k-sorted-lists) |  Offer II 023. 两个链表的第一个重合节点 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/linked_list/剑指%20Offer%20II%20023.%20两个链表的第一个重合节点/main.go) | 
 
 ## BinarySearch
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0004.median-of-two-sorted-arrays](https://leetcode-cn.com/problems/median-of-two-sorted-arrays) |  寻找两个正序数组的中位数 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/binary_search/0004.median-of-two-sorted-arrays%20寻找两个正序数组的中位数/main.go) | 
  [0014.longest-common-prefix      ](https://leetcode-cn.com/problems/longest-common-prefix) |  最长公共前缀 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/binary_search/0014.longest-common-prefix%20最长公共前缀/main.go) | 
  [0033.search-in-rotated-sorted-array](https://leetcode-cn.com/problems/search-in-rotated-sorted-array) |  搜索旋转排序数组 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/binary_search/0033.search-in-rotated-sorted-array%20搜索旋转排序数组/main.go) | 
@@ -404,22 +404,22 @@
  [面试题                             ](https://leetcode-cn.com/problems/regular-expression-matching) |  10.05. 稀疏数组搜索 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/binary_search/面试题%2010.05.%20稀疏数组搜索/main.go) | 
 
 ## Catalan
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0022.generate-parentheses       ](https://leetcode-cn.com/problems/generate-parentheses) |  | Medium | [Go](https://github.com/bygo/leetcode/blob/master/catalan/0022.generate-parentheses/main.go) | 
 
 ## StackMonotonic
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0042.trapping-rain-water        ](https://leetcode-cn.com/problems/trapping-rain-water) |  接雨水 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/stack_monotonic/0042.trapping-rain-water%20接雨水/main.go) | 
 
 ## SortCounter
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
 
 ## Hash
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0380.insert-delete-getrandom-o1 ](https://leetcode-cn.com/problems/insert-delete-getrandom-o1) |  O(1) 时间插入、删除和获取随机元素 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/(Array)%200380.insert-delete-getrandom-o1%20O(1)%20时间插入、删除和获取随机元素/main.go) | Array
  [0041.first-missing-positive     ](https://leetcode-cn.com/problems/first-missing-positive) |  缺失的第一个正数 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/hash/(Bit)%200041.first-missing-positive%20缺失的第一个正数/main.go) | Bit
  [0442.find-all-duplicates-in-an-array](https://leetcode-cn.com/problems/find-all-duplicates-in-an-array) |  数组中重复的数据 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/hash/(Bit)%200442.find-all-duplicates-in-an-array%20数组中重复的数据/main.go) | Bit
@@ -531,15 +531,15 @@
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/hash/面试题%2017.10.%20主要元素%20(Moore%20投票)/main.go) |  
 
 ## Greedy
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0045.jump-game-ii               ](https://leetcode-cn.com/problems/jump-game-ii) |  跳跃游戏 II | Medium | [Go](https://github.com/bygo/leetcode/blob/master/greedy/0045.jump-game-ii%20跳跃游戏%20II/main.go) | 
  [0055.jump-game                  ](https://leetcode-cn.com/problems/jump-game) |  跳跃游戏 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/greedy/0055.jump-game%20跳跃游戏/main.go) | 
  [0678.valid-parenthesis-string   ](https://leetcode-cn.com/problems/valid-parenthesis-string) |  有效的括号字符串 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/greedy/0678.valid-parenthesis-string%20有效的括号字符串/main.go) | 
 
 ## Dp
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0005.longest-palindromic-substring](https://leetcode-cn.com/problems/longest-palindromic-substring) |  最长回文 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/dp/0005.longest-palindromic-substring%20最长回文/main.go) | 
  [0010.regular-expression-matching](https://leetcode-cn.com/problems/regular-expression-matching) |  .*正则匹配 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/dp/0010.regular-expression-matching%20.*正则匹配/main.go) | 
  [0032.longest-valid-parentheses  ](https://leetcode-cn.com/problems/longest-valid-parentheses) |  最长有效括号 | Hard | [Go](https://github.com/bygo/leetcode/blob/master/dp/0032.longest-valid-parentheses%20最长有效括号/main.go) | 
@@ -578,14 +578,14 @@
  [                                ](https://leetcode-cn.com/problems/) |  |  | [Go](https://github.com/bygo/leetcode/blob/master/dp/5881.maximum-difference-between-increasing-elements%20增量元素之间的最大差值/main.go) |  
 
 ## Classic
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0005.longest-palindromic-substring](https://leetcode-cn.com/problems/longest-palindromic-substring) |  最长回文子串 (manacher) | Medium | [Go](https://github.com/bygo/leetcode/blob/master/classic/0005.longest-palindromic-substring%20最长回文子串%20(manacher)/main.go) | 
  [0028.implement-strstr           ](https://leetcode-cn.com/problems/implement-strstr) |  实现 strStr() (kmp) | Easy | [Go](https://github.com/bygo/leetcode/blob/master/classic/0028.implement-strstr%20实现%20strStr()%20(kmp)/main.go) | 
 
 ## Math
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0007.reverse-integer            ](https://leetcode-cn.com/problems/reverse-integer) |  | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/0007.reverse-integer/main.go) | 
  [0008.string-to-integer-atoi     ](https://leetcode-cn.com/problems/string-to-integer-atoi) |  | Medium | [Go](https://github.com/bygo/leetcode/blob/master/math/0008.string-to-integer-atoi/main.go) | 
  [0009.palindrome-number          ](https://leetcode-cn.com/problems/palindrome-number) |  | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/0009.palindrome-number/main.go) | 
@@ -616,8 +616,8 @@
  [1791.find-center-of-star-graph  ](https://leetcode-cn.com/problems/find-center-of-star-graph) |  | Easy | [Go](https://github.com/bygo/leetcode/blob/master/math/1791.find-center-of-star-graph/main.go) | 
 
 ## Sql
-| Title                           | cn                  | Difficulty  | Solution | Algorithm
-| ------------------------------- | ------------------  | ----------- |--------- | ---------
+| Title                 | cn                                 | Difficulty  | Solution | Algorithm
+| --------------------- | ---------------------------------  | ----------- |--------- | ---------
  [0175.combine-two-tables         ](https://leetcode-cn.com/problems/combine-two-tables) |  给所有人加上地址 | Easy | [Go](https://github.com/bygo/leetcode/blob/master/sql/0175.combine-two-tables%20给所有人加上地址/1.sql) | 
  [0176.second-highest-salary      ](https://leetcode-cn.com/problems/second-highest-salary) |  找第二名 Null 也返回 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0176.second-highest-salary%20找第二名%20Null%20也返回/1.sql) | 
  [0177.nth-highest-salary         ](https://leetcode-cn.com/problems/nth-highest-salary) |  找第N名 Null 也返回 | Medium | [Go](https://github.com/bygo/leetcode/blob/master/sql/0177.nth-highest-salary%20找第N名%20Null%20也返回/1.sql) | 

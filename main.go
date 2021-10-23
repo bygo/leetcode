@@ -256,7 +256,6 @@ func getProblem(id string) Problem {
 		index++
 	}
 	title = id[titleLeft:index]
-	println(title)
 	cn = id[index:]
 
 	for left < right {
