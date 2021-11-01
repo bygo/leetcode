@@ -18,9 +18,9 @@ func nextGreaterElement(nums1 []int, nums2 []int) []int {
 
 	var res []int
 	for _, v := range nums1 {
-		_, ok := m[v]
+		index, ok := m[v]
 		if ok {
-			res = append(res, m[v])
+			res = append(res, index)
 		} else {
 			res = append(res, -1)
 		}
