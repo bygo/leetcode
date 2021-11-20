@@ -57,28 +57,28 @@ package main
 
 // f[i][j] = f[i][j-2] || f[i-1][j-1]
 func isMatch(s string, p string) bool {
-	m, n := len(s), len(p)
-	f := make([][]bool, m+1)
+	l1, l2 := len(s), len(p)
+	f := make([][]bool, l1+1)
 	for i := range f {
-		f[i] = make([]bool, n+1)
+		f[i] = make([]bool, l2+1)
 	}
 
 	f[0][0] = true
-	for i := 0; i <= m; i++ {
-		for j := 1; j <= n; j++ {
+	for i := 0; i <= l1; i++ {
+		for j := 1; j <= l2; j++ {
 			if p[j-1] == '*' {
 				if f[i][j-2] {
 					f[i][j] = true
-				} else if i != 0 && f[i-1][j] && (p[j-2] == s[i-1] || p[i-2] == '.') {
+				} else if i != 0 && f[i-1][j] && (s[i-1] == p[j-2] || p[j-2] == '.') {
 					f[i][j] = true
 				}
-			} else if i != 0 && f[i-1][j-1] && (p[j-1] == s[i-1] || p[i-1] == '.') {
+			} else if i != 0 && f[i-1][j-1] && (s[i-1] == p[j-1] || p[j-1] == '.') {
 				f[i][j] = true
 			}
 		}
 	}
 
-	return f[m][n]
+	return f[l1][l2]
 }
 
 // 递归
@@ -1291,6 +1291,35 @@ func findMaxLength(nums []int) int {
 
 ```
 
+# 0650.2-keys-keyboard 只有两个键的键盘 
+```go
+package main
+
+// https://leetcode-cn.com/problems/2-keys-keyboard
+
+func minSteps(n int) int {
+	f := make([]int, n+1)
+	for i := 2; i <= n; i++ {
+		f[i] = 1<<31 - 1
+		for j := 1; j*j <= i; j++ {
+			if i%j == 0 {
+				f[i] = min(f[i], f[j]+i/j)
+				f[i] = min(f[i], f[i/j]+j)
+			}
+		}
+	}
+	return f[n]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+```
+
 # 0877.stone-game 石头游戏 
 ```go
 package main
@@ -1337,13 +1366,28 @@ func max(x, y int) int {
 
 ```
 
+# 1480.running-sum-of-1d-array 数组前缀和 
+```go
+package main
+
+// https://leetcode-cn.com/problems/running-sum-of-1d-array
+
+func runningSum(nums []int) []int {
+	for i := range nums[1:] {
+		nums[i+1] += nums[i]
+	}
+	return nums
+}
+
+```
+
 # 1744.can-you-eat-your-favorite-candy-on-your-favorite-day 你能在你最喜欢的那天吃到你最喜欢的糖果吗？ 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 
-// 前缀和
+// Pre
 func canEat(candiesCount []int, queries [][]int) []bool {
 	var res []bool
 
@@ -1366,6 +1410,107 @@ func canEat(candiesCount []int, queries [][]int) []bool {
 		// 最大够不到最左  最小超过最右 都为false
 		//res = append(res, !(max < left || right < min))
 		res = append(res, left <= max && min <= right)
+	}
+	return res
+}
+
+```
+
+# 1769.minimum-number-of-operations-to-move-all-balls-to-each-box 移动所有球到每个盒子所需的最小操作数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
+
+// Pre
+func minOperations(boxes string) []int {
+	var cnt, cur int
+	var l = len(boxes)
+	var res = make([]int, l)
+	for i := 0; i < l; i++ {
+		cnt += cur
+		res[i] += cnt
+		if boxes[i] == '1' {
+			cur++
+		}
+	}
+
+	cnt, cur = 0, 0
+	for i := l - 1; 0 < i; i-- {
+		cnt += cur
+		res[i] += cnt
+		if boxes[i] == '1' {
+			cur++
+		}
+	}
+
+	return res
+}
+
+```
+
+# 5876.sum-of-beauty-in-the-array 数组美丽值求和 
+```go
+package main
+
+// https://leetcode-cn.com/problems/sum-of-beauty-in-the-array
+
+// Pre
+func sumOfBeauties(nums []int) int {
+	l1 := len(nums)
+	var left = make([]int, l1)
+	var right = make([]int, l1)
+	var min = 1<<63 - 1
+	var max = -1 << 63
+
+	for i := 0; i < l1; i++ {
+		if max < nums[i] {
+			max = nums[i]
+		}
+		left[i] = max
+	}
+
+	for i := l1 - 1; 0 <= i; i-- {
+		if nums[i] < min {
+			min = nums[i]
+		}
+		right[i] = min
+	}
+
+	var res int
+	top := l1 - 1
+	for i := 1; i < top; i++ {
+		if left[i-1] < nums[i] && nums[i] < right[i+1] {
+			res += 2
+		} else if nums[i-1] < nums[i] && nums[i] < nums[i+1] {
+			res += 1
+		}
+	}
+	return res
+}
+
+```
+
+# 5881.maximum-difference-between-increasing-elements 增量元素之间的最大差值 
+```go
+package main
+
+// https://leetcode-cn.com/problems/maximum-difference-between-increasing-elements
+
+func maximumDifference(nums []int) int {
+	var min = 1<<63 - 1
+	min = nums[0]
+	l := len(nums)
+	var res = -1
+	for i := 1; i < l; i++ {
+		if min < nums[i] {
+			cur := nums[i] - min
+			if res < cur {
+				res = cur
+			}
+		} else if nums[i] < min {
+			min = nums[i]
+		}
 	}
 	return res
 }

@@ -109,6 +109,7 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		return wordToId[word]
 	}
 
+	// 虚拟图
 	addEdge := func(word string) int {
 		id1 := getId(word)
 		b := []byte(word)

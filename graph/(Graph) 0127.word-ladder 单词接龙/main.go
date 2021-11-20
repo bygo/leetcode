@@ -41,11 +41,9 @@ func ladderLength(beginWord string, endWord string, wordList []string) int {
 	dist[beginId] = -1 << 31
 
 	beginQueue := []int{beginId}
-	endQueue := []int{endId}
 	for {
 		cnt1 := len(beginQueue)
-		cnt2 := len(endQueue)
-		if cnt1 == 0 || cnt2 == 0 {
+		if cnt1 == 0 {
 			break
 		}
 		for _, q := range beginQueue {

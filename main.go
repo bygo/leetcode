@@ -75,7 +75,7 @@ const (
 	AllJsonFile        = "all.json"
 	AllJsonUpdatedText = "update `all.json`"
 
-	StubPrefix = "stub/"
+	StubPrefix = "Stub/"
 	RealPrefix = ""
 
 	ReadmeClassStub = "class.stub"
@@ -141,6 +141,7 @@ var NodeReadmeArr = []NodeReadme{
 	{"dp", "go"},
 	{"sql", "sql"},
 	{"bfs", "go"},
+	{"hash", "go"},
 }
 
 func main() {
