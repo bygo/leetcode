@@ -5,23 +5,31 @@ package main
 func combine(n int, k int) [][]int {
 	var res [][]int
 	var cur []int
-	var dfs func(right int)
-	dfs = func(right int) {
-		l2 := len(cur)
-		if l2+n-right+1 < k {
+	var dfs func(i int)
+	dfs = func(i int) {
+		l := len(cur)
+		if n-i+l < k {
 			return
 		}
-		if l2 == k {
-			tmp := make([]int, k)
-			copy(tmp, cur)
-			res = append(res, tmp)
+		if l == k {
+			res = append(res, append([]int(nil), cur...))
 			return
 		}
-		cur = append(cur, right)
-		dfs(right + 1)
+		cur = append(cur, i+1)
+		dfs(i + 1)
 		cur = cur[:len(cur)-1]
-		dfs(right + 1)
+		dfs(i + 1)
 	}
-	dfs(1)
+	dfs(0)
 	return res
+}
+
+func combine(n int, k int) [][]int {
+	var res [][]int
+	var cur []int
+	var dfs func(i int)
+	dfs = func(i int) {
+		l2 := len(cur)
+
+	}
 }

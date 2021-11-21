@@ -12,9 +12,7 @@ func combine(n int, k int) [][]int {
 
 	var j = 0
 	for j < k {
-		tmp := make([]int, k)
-		copy(tmp, cur[:k])
-		res = append(res, tmp)
+		res = append(res, append([]int{}, cur[:k]...))
 		j = 0
 		for j < k && cur[j]+1 == cur[j+1] {
 			cur[j] = j + 1
