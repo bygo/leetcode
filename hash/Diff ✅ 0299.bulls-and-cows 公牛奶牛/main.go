@@ -7,8 +7,6 @@ import "strconv"
 func getHint(secret string, guess string) string {
 	m1 := [10]int{}
 	m2 := [10]int{}
-
-	var res []byte
 	var bull, cow int
 	for i := range guess {
 		if guess[i] == secret[i] {
@@ -22,12 +20,7 @@ func getHint(secret string, guess string) string {
 	for i := 0; i < 10; i++ {
 		cow += min(m1[i], m2[i])
 	}
-
-	res = append(res, strconv.Itoa(bull)...)
-	res = append(res, 'A')
-	res = append(res, strconv.Itoa(cow)...)
-	res = append(res, 'B')
-	return string(res)
+	return "A" + strconv.Itoa(bull) + "B" + strconv.Itoa(cow)
 }
 
 func min(a, b int) int {

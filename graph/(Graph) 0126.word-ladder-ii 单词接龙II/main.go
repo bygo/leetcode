@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // https://leetcode-cn.com/problems/word-ladder-ii
 
@@ -91,25 +93,25 @@ func main() {
 	//"cog"
 	//["hot","dot","dog","lot","log","cog"]
 }
-
 func findLadders(beginWord string, endWord string, wordList []string) [][]string {
 	var res [][]string
 
 	graph := [][]int{}
 
-	wordToId := map[string]int{}
+	// id 压缩
+	wordToID := map[string]int{}
 	idToWord := map[int]string{}
 	getId := func(word string) int {
-		_, ok := wordToId[word]
+		_, ok := wordToID[word]
 		if !ok {
-			wordToId[word] = len(wordToId)
-			idToWord[wordToId[word]] = word
+			wordToID[word] = len(wordToID)
+			idToWord[wordToID[word]] = word
 			graph = append(graph, []int{})
 		}
-		return wordToId[word]
+		return wordToID[word]
 	}
 
-	// 虚拟图
+	// 虚拟双向图
 	addEdge := func(word string) int {
 		id1 := getId(word)
 		b := []byte(word)
@@ -123,22 +125,22 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		return id1
 	}
 
-	for _, s := range wordList {
-		addEdge(s)
+	for _, word := range wordList {
+		addEdge(word)
 	}
 
-	beginId, ok := wordToId[beginWord]
+	beginId, ok := wordToID[beginWord]
 	if !ok {
 		beginId = addEdge(beginWord)
 	}
-	endId, ok := wordToId[endWord]
+	endId, ok := wordToID[endWord]
 	if !ok {
 		return res
 	}
 
-	beginDist := make([]int, len(wordToId))
+	beginDist := make([]int, len(wordToID))
 	beginDist[beginId] = -1 << 31
-	endDist := make([]int, len(wordToId))
+	endDist := make([]int, len(wordToID))
 	endDist[endId] = -1 << 31
 
 	beginQueue := []int{beginId}
@@ -147,15 +149,15 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 		for {
 			cnt1 := len(beginQueue)
 			cnt2 := len(endQueue)
-			if cnt1 == 0 || cnt2 == 0 {
+			if cnt1 == 0 || cnt2 == 0 { // end到begin || end到begin 都算搜索失败
 				break
 			}
 			for _, q := range beginQueue {
 				if endDist[q] < 0 {
-					return beginDist[q] + endDist[q] + 2<<31 + 1
+					return beginDist[q] + endDist[q] + 1<<32 + 1
 				} else {
 					for _, next := range graph[q] {
-						if beginDist[next] == 0 {
+						if beginDist[next] == 0 { // 0 代表未访问
 							beginDist[next] = beginDist[q] + 1
 							beginQueue = append(beginQueue, next)
 						}
@@ -166,7 +168,7 @@ func findLadders(beginWord string, endWord string, wordList []string) [][]string
 
 			for _, q := range endQueue {
 				if beginDist[q] < 0 {
-					return beginDist[q] + endDist[q] + 2<<31 + 1
+					return beginDist[q] + endDist[q] + 1<<32 + 1
 				} else {
 					for _, next := range graph[q] {
 						if endDist[next] == 0 {

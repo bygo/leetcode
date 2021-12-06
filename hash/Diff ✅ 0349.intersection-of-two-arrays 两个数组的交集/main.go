@@ -4,16 +4,17 @@ package main
 
 func intersection(nums1 []int, nums2 []int) []int {
 	var m = map[int]struct{}{}
-	for _, v := range nums1 {
-		m[v] = struct{}{}
+	for _, num := range nums1 {
+		m[num] = struct{}{}
 	}
 
 	var res []int
-	for _, v := range nums2 {
-		_, ok := m[v]
+	for _, num := range nums2 {
+		_, ok := m[num]
+
 		if ok {
-			res = append(res, v)
-			delete(m, v)
+			res = append(res, num)
+			delete(m, num)
 		}
 	}
 	return res

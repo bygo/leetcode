@@ -2,15 +2,41 @@ package main
 
 // https://leetcode-cn.com/problems/jewels-and-stones/
 
-func numJewelsInStones(J string, S string) int {
+func numJewelsInStones(j string, s string) int {
 	var m = map[byte]int{}
-	for i := range J {
-		m[J[i]] = 1
+	for i := range j {
+		m[j[i]] = 1
 	}
 
 	var res int
-	for i := range S {
-		res += m[S[i]]
+	for i := range s {
+		res += m[s[i]]
+	}
+	return res
+}
+
+func num(j string, s string) int {
+	var m = map[byte]int{}
+	for i := range j {
+		m[j[i]] = 1
+	}
+
+	var res int
+	for i := range s {
+		res += m[s[i]]
+	}
+	return res
+}
+
+func s(j string, s string) int {
+	m := map[byte]int{}
+	for i := range j {
+		m[j[i]] = 1
+	}
+
+	var res int
+	for i := range s {
+		res += m[s[i]]
 	}
 	return res
 }
