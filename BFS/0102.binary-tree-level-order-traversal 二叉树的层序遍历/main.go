@@ -6,7 +6,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// binary tree level order traversal (top)
 // https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
 
 func levelOrder(root *TreeNode) [][]int {

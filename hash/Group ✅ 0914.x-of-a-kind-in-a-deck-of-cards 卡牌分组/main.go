@@ -1,0 +1,30 @@
+package main
+
+// https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards
+
+// ❓存在 int(x) 把数组分为 = 每组元素数为 int(x) + 每组元素相同
+func hasGroupsSizeX(deck []int) bool {
+	// 统计元素
+	m := map[int]int{}
+	for i := range deck {
+		m[deck[i]]++
+	}
+
+	// 最大公约数
+	x := -1
+	for i := range m {
+		if x == -1 {
+			x = m[i]
+		} else {
+			x = gcd(x, m[i])
+		}
+	}
+	return 2 <= x
+}
+
+func gcd(x, y int) int {
+	if x == 0 {
+		return y
+	}
+	return gcd(y%x, x)
+}

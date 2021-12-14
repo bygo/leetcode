@@ -1,15 +1,16 @@
 package main
 
-//
 // https://leetcode-cn.com/problems/contains-duplicate
 
+// ❓出现重复
+
 func containsDuplicate(nums []int) bool {
-	var m = map[int]int{}
+	var valMpCnt = map[int]int{}
 	for _, num := range nums {
-		if 0 < m[num] {
+		if 0 < valMpCnt[num] {
 			return true
 		}
-		m[num] += 1
+		valMpCnt[num] += 1
 	}
 	return false
 }

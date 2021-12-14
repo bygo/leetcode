@@ -2,6 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
 
+// 整体二分法
+
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	l1, l2 := len(nums1), len(nums2)
 	if l2 < l1 {
@@ -11,11 +13,11 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	half = (l1 + l2 + 1) / 2 // 向上取整,保证左边数量永大于右边
 	r = l1
 	for l <= r {
-		m1 = l + (r-l)/2                       // 二分
-		m2 = half - m1                         //k2永远等于 half-m1
-		if m1 < r && nums1[m1] < nums2[m2-1] { //如果 右2 大于 左1，二分范围min为 m1+1
+		m1 = l + (r-l)/2                       // 二分 ，如果是奇数，就会向下取正
+		m2 = half - m1                         // m2永远等于 half-m1
+		if m1 < r && nums1[m1] < nums2[m2-1] { // 如果 右2 大于 左1，二分范围min为 m1+1
 			l = m1 + 1
-		} else if l < m1 && nums2[m2] < nums1[m1-1] { //如果 右1 大于 左2,二分范围max 为m1-1
+		} else if l < m1 && nums2[m2] < nums1[m1-1] { // 如果 右1 大于 左2,二分范围max 为m1-1
 			r = m1 - 1
 		} else { // 右1右2 全部大于左1 左2，计算值
 			var leftMax int
@@ -57,6 +59,45 @@ func min(a, b int) int {
 		return a
 	}
 	return b
+}
+
+// k数二分法
+func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
+	l := len(nums1) + len(nums2)
+
+	if l%2 == 1 {
+		return float64(getKthElement(nums1, nums2, l/2+1))
+	} else {
+		return float64(getKthElement(nums1, nums2, l/2)+getKthElement(nums1, nums2, l/2+1)) / 2.0
+	}
+}
+
+func getKthElement(nums1, nums2 []int, k int) int {
+	var p1, p2 int
+	var l1, l2 = len(nums1), len(nums2)
+	for {
+		if p1 == l1 {
+			return nums2[p2+k-1]
+		}
+		if p2 == l2 {
+			return nums1[p1+k-1]
+		}
+		if k == 1 {
+			return min(nums1[p1], nums2[p2])
+		}
+		half := k / 2
+		pn1 := min(p1+half, l1) - 1 // p1 已包含计算 p1 ~ (p1+half-1 | l1-1)
+		pn2 := min(p2+half, l2) - 1 // p2 已包含计算
+		if nums1[pn1] < nums2[pn2] {
+			pn1 += 1      // 下一个
+			k -= pn1 - p1 // 包括当前p1 总共 pn1-p1 个
+			p1 = pn1
+		} else {
+			pn2 += 1
+			k -= pn2 - p2
+			p2 = pn2
+		}
+	}
 }
 
 /**

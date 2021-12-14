@@ -2,17 +2,24 @@ package main
 
 // https://leetcode-cn.com/problems/single-row-keyboard
 
+// ❓移动次数 = sum(abs(i - j))
+
 func calculateTime(keyboard string, word string) int {
-	var m = [26]int{}
+	// 索引统计
+	var valMpIdx = [26]int{}
 	for i := range keyboard {
-		m[keyboard[i]-'a'] = i
+		valMpIdx[keyboard[i]-'a'] = i
 	}
 
-	var res = m[word[0]-'a']
+	// 计算移动次数
+	// 0
+	var res = valMpIdx[word[0]-'a']
+
+	// 1～l
 	var l = len(word)
 	var i = 1
 	for i < l {
-		res += abs(m[word[i-1]-'a'], m[word[i]-'a'])
+		res += abs(valMpIdx[word[i-1]-'a'], valMpIdx[word[i]-'a'])
 		i++
 	}
 

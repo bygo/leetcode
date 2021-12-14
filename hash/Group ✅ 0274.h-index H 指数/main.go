@@ -2,22 +2,26 @@ package main
 
 // https://leetcode-cn.com/problems/h-index
 
+// ❓h指数 == (篇数cnt == 至少引用次数val)
+
 func hIndex(citations []int) (h int) {
-	l1 := len(citations)
-	freq := make([]int, l1+1)
+	// 后缀和：至少引用次数val == 篇幅cnt
+	max := len(citations)
+	quoteMpCnt := make([]int, max+1)
 	for i := range citations {
-		if l1 <= citations[i] { // 最多l1 篇
-			freq[l1]++
+		if max <= citations[i] {
+			quoteMpCnt[max] ++
 		} else {
-			freq[citations[i]]++
+			quoteMpCnt[citations[i]]++
 		}
 	}
 	var cnt int
-	for i := l1; 0 <= i; i-- {
-		cnt += freq[i]
-		if i <= cnt {
-			return i
+	// i = 0 时，为一个都没被引用
+	for quote := max; 0 < quote; quote-- {
+		cnt += quoteMpCnt[quote]
+		if quote <= cnt {
+			return quote
 		}
 	}
-	return 0
+	return -1
 }
