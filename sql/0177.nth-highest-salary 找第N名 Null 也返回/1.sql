@@ -1,13 +1,13 @@
 # Link: https://leetcode-cn.com/problems/nth-highest-salary
 
-CREATE FUNCTION getNthHighestSalary(`N` INT) RETURNS INT
+CREATE FUNCTION getNthHighestSalary(`n` INT) RETURNS INT
 BEGIN
-    SET `N` := `N` - 1;
+    SET `n` := `n` - 1;
     RETURN (
         SELECT (
-                   SELECT DISTINCT `Salary`
-                   FROM `Employee`
-                   ORDER BY `Salary` DESC
-                   LIMIT `N`,1) `NthHighestSalary`
+                   SELECT DISTINCT `salary`
+                   FROM `employee`
+                   ORDER BY `salary` DESC
+                   LIMIT `n`,1) `nthhighestsalary`
     );
 END

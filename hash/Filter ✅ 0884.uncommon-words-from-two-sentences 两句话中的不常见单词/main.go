@@ -4,28 +4,28 @@ import "strings"
 
 // https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
 
-// ❓在两个数组只出现一次的单词
+// ❓ 在两个数组只出现一次的单词
 
 func uncommonFromSentences(s1 string, s2 string) []string {
-	// 统计
+	// 计数
 	a1 := strings.Split(s1, " ")
 	a2 := strings.Split(s2, " ")
 
-	wordMpCnt := map[string]int{}
+	strMpCnt := map[string]int{}
 
-	for i := range a1 {
-		wordMpCnt[a1[i]]++
+	for _, s := range a1 {
+		strMpCnt[s]++
 	}
 
-	for i := range a2 {
-		wordMpCnt[a2[i]]++
+	for _, s := range a2 {
+		strMpCnt[s]++
 	}
 
-	// 是否只一次
+	// 是否一次
 	var res []string
-	for word := range wordMpCnt {
-		if wordMpCnt[word] == 1 {
-			res = append(res, word)
+	for str := range strMpCnt {
+		if strMpCnt[str] == 1 {
+			res = append(res, str)
 		}
 	}
 	return res

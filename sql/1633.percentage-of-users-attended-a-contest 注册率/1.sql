@@ -2,7 +2,7 @@
 
 
 SELECT `contest_id`,
-       round(count(DISTINCT `r`.`user_id`) / count(DISTINCT `u`.`user_id`) * 100, 2) `percentage`
+       ROUND(COUNT(DISTINCT `r`.`user_id`) / COUNT(DISTINCT `u`.`user_id`) * 100, 2) `percentage`
 FROM `register`       `r`
          JOIN `users` `u`
 GROUP BY `contest_id`

@@ -38,4 +38,3 @@ func Constructor(nums []int) Solution {
 		cur: append([]int{}, nums...),
 	}
 }
-

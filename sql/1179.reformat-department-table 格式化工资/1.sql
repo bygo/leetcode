@@ -1,18 +1,18 @@
 # Link: https://leetcode-cn.com/problems/reformat-department-table
 
 SELECT `id`,
-       SUM(IF(`month` = 'Jan', `revenue`, NULL)) `Jan_Revenue`,
-       SUM(IF(`month` = 'Feb', `revenue`, NULL)) `Feb_Revenue`,
-       SUM(IF(`month` = 'Mar', `revenue`, NULL)) `Mar_Revenue`,
-       SUM(IF(`month` = 'Apr', `revenue`, NULL)) `Apr_Revenue`,
-       SUM(IF(`month` = 'May', `revenue`, NULL)) `May_Revenue`,
-       SUM(IF(`month` = 'Jun', `revenue`, NULL)) `Jun_Revenue`,
-       SUM(IF(`month` = 'Jul', `revenue`, NULL)) `Jul_Revenue`,
-       SUM(IF(`month` = 'Aug', `revenue`, NULL)) `Aug_Revenue`,
-       SUM(IF(`month` = 'Sep', `revenue`, NULL)) `Sep_Revenue`,
-       SUM(IF(`month` = 'Oct', `revenue`, NULL)) `Oct_Revenue`,
-       SUM(IF(`month` = 'Nov', `revenue`, NULL)) `Nov_Revenue`,
-       SUM(IF(`month` = 'Dec', `revenue`, NULL)) `Dec_Revenue`
+       SUM(IF(`month` = 'Jan', `revenue`, NULL)) `jan_revenue`,
+       SUM(IF(`month` = 'Feb', `revenue`, NULL)) `feb_revenue`,
+       SUM(IF(`month` = 'Mar', `revenue`, NULL)) `mar_revenue`,
+       SUM(IF(`month` = 'Apr', `revenue`, NULL)) `apr_revenue`,
+       SUM(IF(`month` = 'May', `revenue`, NULL)) `may_revenue`,
+       SUM(IF(`month` = 'Jun', `revenue`, NULL)) `jun_revenue`,
+       SUM(IF(`month` = 'Jul', `revenue`, NULL)) `jul_revenue`,
+       SUM(IF(`month` = 'Aug', `revenue`, NULL)) `aug_revenue`,
+       SUM(IF(`month` = 'Sep', `revenue`, NULL)) `sep_revenue`,
+       SUM(IF(`month` = 'Oct', `revenue`, NULL)) `oct_revenue`,
+       SUM(IF(`month` = 'Nov', `revenue`, NULL)) `nov_revenue`,
+       SUM(IF(`month` = 'Dec', `revenue`, NULL)) `dec_revenue`
 FROM `department`
 GROUP BY `id`
 ORDER BY `id`;

@@ -8,7 +8,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// validate binary search tree is valid ?
 // https://leetcode-cn.com/problems/validate-binary-search-tree/
 
 func isValidBST(root *TreeNode) bool {
@@ -55,7 +54,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// binary tree level order traversal (top)
 // https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
 
 func levelOrder(root *TreeNode) [][]int {
@@ -97,7 +95,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// binary tree zigzag level order traversal
 // https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
 
 func zigzagLevelOrder(root *TreeNode) [][]int {
@@ -148,7 +145,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// binary tree level order traversal (bottom)
 // https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
 
 func levelOrderBottom(root *TreeNode) [][]int {
@@ -198,7 +194,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// minimum depth of binary tree
 // https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
 
 func minDepth(root *TreeNode) int {
@@ -239,7 +234,6 @@ type Node struct {
 	Next  *Node
 }
 
-// populating next right pointers in each node
 // https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/
 
 func connect(root *Node) *Node {

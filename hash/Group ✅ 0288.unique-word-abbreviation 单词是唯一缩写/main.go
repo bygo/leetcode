@@ -6,7 +6,7 @@ import (
 
 // https://leetcode-cn.com/problems/unique-word-abbreviation
 
-// ❓单词是唯一的缩写
+// ❓ 单词是唯一的缩写
 
 type ValidWordAbbr struct {
 	valMpComMpCnt map[string]map[string]int

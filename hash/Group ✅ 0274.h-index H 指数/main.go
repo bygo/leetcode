@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/h-index
 
-// ❓h指数 == (篇数cnt == 至少引用次数val)
+// ❓ h指数 为 篇数cnt 等于 至少引用次数quote
 
 func hIndex(citations []int) (h int) {
 	// 后缀和：至少引用次数val == 篇幅cnt

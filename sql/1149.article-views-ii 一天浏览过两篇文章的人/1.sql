@@ -3,5 +3,5 @@
 SELECT DISTINCT `viewer_id` `id`
 FROM `views`
 GROUP BY `viewer_id`, `view_date`
-HAVING 1 < count(DISTINCT `article_id`)
+HAVING 1 < COUNT(DISTINCT `article_id`)
 ORDER BY `id`

@@ -2,26 +2,27 @@ package main
 
 import "strconv"
 
-// 求公牛母牛数
-// 公牛: idx & val 交集
-// 母牛: val 交集
 // https://leetcode-cn.com/problems/bulls-and-cows
 
+// ❓ 公牛母牛数
+// 公牛: idx & val 交集
+// 母牛: val 交集
+
 func getHint(secret string, guess string) string {
-	m1 := [10]int{}
-	m2 := [10]int{}
+	secretMpCnt := [10]int{}
+	guessMpCNt := [10]int{}
 	var bull, cow int
 	for i := range guess {
 		if guess[i] == secret[i] {
 			bull++
 		} else {
-			m1[secret[i]-'0']++
-			m2[guess[i]-'0']++
+			secretMpCnt[secret[i]-'0']++
+			guessMpCNt[guess[i]-'0']++
 		}
 	}
 
-	for i := 0; i < 10; i++ {
-		cow += min(m1[i], m2[i])
+	for num := 0; num < 10; num++ {
+		cow += min(secretMpCnt[num], guessMpCNt[num])
 	}
 	return "A" + strconv.Itoa(bull) + "B" + strconv.Itoa(cow)
 }

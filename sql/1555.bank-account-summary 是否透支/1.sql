@@ -6,14 +6,14 @@ SELECT `u`.`user_id`,
        `credit` + IFNULL(`t`.`amount`, 0)                       `credit`,
        IF(`credit` + IFNULL(`t`.`amount`, 0) >= 0, 'No', 'Yes') `credit_limit_breached`
 FROM `users`                            `u`
-         LEFT JOIN (SELECT `user_id`, sum(`amount`) `amount`
+         LEFT JOIN (SELECT `user_id`, SUM(`amount`) `amount`
                     FROM (
                              (
-                                 SELECT `paid_by` `user_id`, -sum(`amount`) `amount`
+                                 SELECT `paid_by` `user_id`, -SUM(`amount`) `amount`
                                  FROM `transactions`
                                  GROUP BY `paid_by`
                                  UNION
-                                 SELECT `paid_to` `user_id`, sum(`amount`) `amount`
+                                 SELECT `paid_to` `user_id`, SUM(`amount`) `amount`
                                  FROM `transactions`
                                  GROUP BY `paid_to`)
                          ) `t1`

@@ -1,6 +1,5 @@
 # 前驱指针 zero
 
-
 ### [加一](https://leetcode-cn.com/problems/plus-one-linked-list)
 
 ```go
@@ -52,9 +51,7 @@ func deleteDuplicates(head *ListNode) *ListNode {
 }
 ```
 
-
 # 快慢指针 slow fast
-
 
 ### [环的起点](https://leetcode-cn.com/problems/linked-list-cycle-ii)
 
@@ -89,7 +86,6 @@ func middleNode(head *ListNode) *ListNode {
 	return slow
 }
 ```
-
 
 # 哨兵指针 prev
 

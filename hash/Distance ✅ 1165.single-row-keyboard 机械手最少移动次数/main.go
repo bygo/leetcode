@@ -2,7 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/single-row-keyboard
 
-// ❓移动次数 = sum(abs(i - j))
+// ❓ 输入一个单词的移动长度总和
+// ⚠️ 移动长度 = abs(i - j)
 
 func calculateTime(keyboard string, word string) int {
 	// 索引统计

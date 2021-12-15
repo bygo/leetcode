@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/design-tic-tac-toe
 
-// ❓井字棋 n不止3
+// ❓设计无限大井字棋 n不止3
 
 var symbols = map[int]int{
 	1: 1,

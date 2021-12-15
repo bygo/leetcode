@@ -1,9 +1,9 @@
 # Link: https://leetcode-cn.com/problems/new-users-daily-count
 
 
-SELECT `activity_date` `login_date`, count(*) `user_count`
+SELECT `activity_date` `login_date`, COUNT(*) `user_count`
 FROM (
-         SELECT `user_id`, min(`activity_date`) `activity_date`
+         SELECT `user_id`, MIN(`activity_date`) `activity_date`
          FROM `traffic`
          WHERE `activity` = 'login'
          GROUP BY `user_id`) `t`

@@ -9,7 +9,7 @@ WITH RECURSIVE `t1`(`month`) AS (
 )
 
 SELECT `t1`.`month`,
-       ifnull(round(ifnull(`active_rides`, 0) / sum(ifnull(`c`, 0)) OVER (ORDER BY `t1`.`month`) * 100, 2),
+       IFNULL(ROUND(IFNULL(`active_rides`, 0) / SUM(IFNULL(`c`, 0)) OVER (ORDER BY `t1`.`month`) * 100, 2),
               0) `working_percentage`
 FROM `t1`
          LEFT JOIN

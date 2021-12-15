@@ -20,7 +20,7 @@ HAVING 3 <= COUNT(*);
 
 #
 
-SELECT DISTINCT `l1`.`num` AS `consecutivenums`
+SELECT DISTINCT `l1`.`num` `consecutivenums`
 FROM `logs` `l1`,
      `logs` `l2`,
      `logs` `l3`

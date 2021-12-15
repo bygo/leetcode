@@ -1,12 +1,12 @@
 # Link: https://leetcode-cn.com/problems/customers-who-never-order
 
-SELECT `Customers`.`Name` `Customers`
-FROM `Customers`
-         LEFT JOIN `Orders` ON `Customers`.`Id` = `Orders`.`CustomerId`
-WHERE `Orders`.`CustomerId` IS NULL;
+SELECT `customers`.`name` `customers`
+FROM `customers`
+         LEFT JOIN `orders` ON `customers`.`id` = `orders`.`customerid`
+WHERE `orders`.`customerid` IS NULL;
 
 #
 
-SELECT `name` `Customers`
-FROM `Customers`
-WHERE `Id` NOT IN (SELECT `CustomerId` FROM `Orders`)
+SELECT `name` `customers`
+FROM `customers`
+WHERE `id` NOT IN (SELECT `customerid` FROM `orders`)

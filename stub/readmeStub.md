@@ -6,6 +6,7 @@
 ---
 
 # Template
+
 - [Tree](https://github.com/bygo/leetcode/tree/master/templates/tree)
 - [LinkedList](https://github.com/bygo/leetcode/tree/master/templates/linked_list)
 - [Stack](https://github.com/bygo/leetcode/tree/master/templates/stack)

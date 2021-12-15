@@ -6,7 +6,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-
 // https://leetcode-cn.com/problems/validate-binary-search-tree/
 
 func isValidBST(root *TreeNode) bool {

@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/sum-of-unique-elements
 
-// ❓所有唯一元素的和
+// ❓ 所有唯一元素的和
 
 func sumOfUnique(nums []int) int {
 	var numMpCnt = map[int]int{}

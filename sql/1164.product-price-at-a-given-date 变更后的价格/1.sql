@@ -8,7 +8,7 @@ FROM (
          UNION
          SELECT `product_id`, `price`
          FROM (SELECT `product_id`,
-                      rank() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`,
+                      RANK() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`,
                       `new_price`                                                         `price`
                FROM `products`
                WHERE `change_date` <= '2019-08-16'
@@ -17,11 +17,11 @@ FROM (
      ) `t`;
 
 SELECT DISTINCT `p`.`product_id`, IFNULL(`t`.`new_price`, 10) `price`
-FROM `products` `p`
+FROM `products`                                          `p`
          LEFT JOIN (SELECT `product_id`,
                            `new_price`,
                            RANK() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`
                     FROM `products`
                     WHERE `change_date` <= '2019-08-16') `t`
-                   ON `P`.`product_id` = `t`.`product_id`
+                   ON `p`.`product_id` = `t`.`product_id`
                        AND `r` = 1;

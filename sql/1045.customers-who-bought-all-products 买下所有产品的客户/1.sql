@@ -1,6 +1,6 @@
 # Link: https://leetcode-cn.com/problems/customers-who-bought-all-products
 
 SELECT `customer_id`
-FROM `Customer`
+FROM `customer`
 GROUP BY `customer_id`
-HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) AS `cc` FROM `product`)
+HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) `cc` FROM `product`)

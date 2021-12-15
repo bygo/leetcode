@@ -2,11 +2,11 @@
 
 
 SELECT `name`,
-       sum(`amount`) `balance`
+       SUM(`amount`) `balance`
 FROM `users`,
      `transactions`
 WHERE `users`.`account` = `transactions`.`account`
 GROUP BY `name`
-HAVING sum(`amount`) > 10000;
+HAVING SUM(`amount`) > 10000;
 
 

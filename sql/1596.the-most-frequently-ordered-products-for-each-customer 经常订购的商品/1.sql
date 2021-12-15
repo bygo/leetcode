@@ -2,9 +2,9 @@
 
 SELECT `o`.`customer_id`, `o`.`product_id`, `p`.`product_name`
 FROM (
-         SELECT `customer_id`, `product_id`, rank() OVER (PARTITION BY `customer_id` ORDER BY `c` DESC) `r`
+         SELECT `customer_id`, `product_id`, RANK() OVER (PARTITION BY `customer_id` ORDER BY `c` DESC) `r`
          FROM (
-                  SELECT `customer_id`, `product_id`, count(*) `c`
+                  SELECT `customer_id`, `product_id`, COUNT(*) `c`
                   FROM `orders`
                   GROUP BY `customer_id`, `product_id`
               ) `a`

@@ -1,9 +1,9 @@
 # Link: https://leetcode-cn.com/problems/fix-product-name-format
 
 
-SELECT lower(trim(`product_name`)) `product_name`,
-       left(`sale_date`, 7)        `sale_date`,
-       count(*)                    `total`
+SELECT LOWER(TRIM(`product_name`)) `product_name`,
+       LEFT(`sale_date`, 7)        `sale_date`,
+       COUNT(*)                    `total`
 FROM `sales`
-GROUP BY lower(trim(`product_name`)), left(`sale_date`, 7)
-ORDER BY lower(trim(`product_name`)), left(`sale_date`, 7)
+GROUP BY LOWER(TRIM(`product_name`)), LEFT(`sale_date`, 7)
+ORDER BY LOWER(TRIM(`product_name`)), LEFT(`sale_date`, 7)

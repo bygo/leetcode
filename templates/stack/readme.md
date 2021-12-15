@@ -1,5 +1,5 @@
 # 栈的特性
- 
+
 ### [用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks)
 
 ```go
@@ -33,7 +33,7 @@ func (q *MyQueue) Pop() int {
 }
 ```
 
-###  [用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues)
+### [用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues)
 
 ```go
 type MyStack struct {
@@ -82,9 +82,7 @@ func reversePrint(head *ListNode) []int {
 }
 ```
 
-
 # 单调栈
-
 
 ### [接雨水](https://leetcode-cn.com/problems/trapping-rain-water)
 

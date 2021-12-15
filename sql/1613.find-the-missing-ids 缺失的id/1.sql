@@ -14,6 +14,6 @@ WHERE `n` NOT IN (
     FROM `customers`
 )
   AND `n` <= (
-    SELECT max(`customer_id`)
+    SELECT MAX(`customer_id`)
     FROM `customers`
 )

@@ -6,12 +6,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-
 func subtreeWithAllDeepest(root *TreeNode) *TreeNode {
 	res, _ := dfs(root, 0)
 	return res
 }
-
 
 func dfs(root *TreeNode, level int) (*TreeNode, int) {
 	if root == nil {

@@ -1,11 +1,11 @@
 # Link: https://leetcode-cn.com/problems/friend-requests-ii-who-has-the-most-friends
 
-SELECT `id`, SUM(`n`) AS `num`
-FROM (SELECT `accepter_id` AS `id`, COUNT(*) AS `n`
+SELECT `id`, SUM(`n`) `num`
+FROM (SELECT `accepter_id` `id`, COUNT(*) `n`
       FROM `request_accepted`
       GROUP BY `accepter_id`
       UNION ALL
-      SELECT `requester_id` AS `id`, COUNT(*) AS `n`
+      SELECT `requester_id` `id`, COUNT(*) `n`
       FROM `request_accepted`
       GROUP BY `requester_id`) `t`
 GROUP BY `id`

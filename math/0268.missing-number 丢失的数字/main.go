@@ -9,5 +9,5 @@ func missingNumber(nums []int) int {
 	for _, num := range nums {
 		sum += num
 	}
-	return l1-sum
+	return l1 - sum
 }

@@ -1,9 +1,9 @@
 # Link: https://leetcode-cn.com/problems/report-contiguous-dates
 
 
-SELECT `type` `period_state`, min(`date`) `start_date`, max(`date`) `end_date`
+SELECT `type` `period_state`, MIN(`date`) `start_date`, MAX(`date`) `end_date`
 FROM (
-         SELECT `type`, `date`, subdate(`date`, row_number() OVER (PARTITION BY `type` ORDER BY `date`)) `diff`
+         SELECT `type`, `date`, SUBDATE(`date`, ROW_NUMBER() OVER (PARTITION BY `type` ORDER BY `date`)) `diff`
          FROM (
                   SELECT 'failed' `type`, `fail_date` `date`
                   FROM `failed`

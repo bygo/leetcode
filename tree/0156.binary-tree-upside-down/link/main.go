@@ -6,7 +6,6 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-
 func upsideDownBinaryTree(root *TreeNode) *TreeNode {
 	var p, l, r *TreeNode
 

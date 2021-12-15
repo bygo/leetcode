@@ -1,14 +1,14 @@
 # Link: https://leetcode-cn.com/problems/trips-and-users
 
-SELECT `t`.`request_at` `Day`,
+SELECT `t`.`request_at` `day`,
        ROUND(
-               SUM(IF(`t`.`STATUS` = 'completed', 0, 1)) / COUNT(`t`.`STATUS`),
-               2)       `Cancellation Rate`
-FROM `Trips` `t`
+               SUM(IF(`t`.`status` = 'completed', 0, 1)) / COUNT(`t`.`status`),
+               2)       `cancellation rate`
+FROM `trips` `t`
          JOIN
-     `Users` `u1`
+     `users` `u1`
          JOIN
-     `Users` `u2`
+     `users` `u2`
      ON `t`.`client_id` = `u1`.`users_id`
          AND `u1`.`banned` = 'No'
          AND `t`.`driver_id` = `u2`.`users_id`

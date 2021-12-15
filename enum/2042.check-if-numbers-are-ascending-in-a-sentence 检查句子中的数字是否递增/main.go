@@ -2,7 +2,6 @@ package main
 
 // https://leetcode-cn.com/problems/check-if-numbers-are-ascending-in-a-sentence
 
-
 func areNumbersAscending(s string) bool {
 	var sum = -1
 	var pre = -1

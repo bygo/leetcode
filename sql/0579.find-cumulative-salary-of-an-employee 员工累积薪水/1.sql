@@ -1,33 +1,33 @@
 # Link: https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee
 
 
-SELECT `E1`.`id`,
-       `E1`.`month`,
-       (IFNULL(`E1`.`salary`, 0) + IFNULL(`E2`.`salary`, 0) + IFNULL(`E3`.`salary`, 0)) AS `Salary`
+SELECT `e1`.`id`,
+       `e1`.`month`,
+       (IFNULL(`e1`.`salary`, 0) + IFNULL(`e2`.`salary`, 0) + IFNULL(`e3`.`salary`, 0)) `salary`
 FROM (SELECT `id`,
-             MAX(`month`) AS `month`
-      FROM `Employee`
+             MAX(`month`) `month`
+      FROM `employee`
       GROUP BY `id`
       HAVING COUNT(*) > 1) AS `maxmonth`
          LEFT JOIN
-     `Employee` `E1` ON `maxmonth`.`id` = `E1`.`id`
-         AND `maxmonth`.`month` > `E1`.`month`
+     `employee`               `e1` ON `maxmonth`.`id` = `e1`.`id`
+         AND `maxmonth`.`month` > `e1`.`month`
          LEFT JOIN
-     `Employee` `E2` ON `E2`.`id` = `E1`.`id`
-         AND `E2`.`month` = `E1`.`month` - 1
+     `employee`               `e2` ON `e2`.`id` = `e1`.`id`
+         AND `e2`.`month` = `e1`.`month` - 1
          LEFT JOIN
-     `Employee` `E3` ON `E3`.`id` = `E1`.`id`
-         AND `E3`.`month` = `E1`.`month` - 2
+     `employee`               `e3` ON `e3`.`id` = `e1`.`id`
+         AND `e3`.`month` = `e1`.`month` - 2
 ORDER BY `id`, `month` DESC;
 
 #
 
-SELECT `id`, `Month`, SUM(`Salary`) AS `Salary`
+SELECT `id`, `month`, SUM(`salary`) `salary`
 FROM (
          SELECT `e1`.`id`, `e1`.`month`, `e1`.`salary`
-         FROM (SELECT `id`, `month`, `salary`, MAX(`month`) OVER (PARTITION BY `id`,`month`) AS `maxmonth`
-               FROM `Employee`) `e1`
-                  JOIN `Employee` `e2`
+         FROM (SELECT `id`, `month`, `salary`, MAX(`month`) OVER (PARTITION BY `id`,`month`) `maxmonth`
+               FROM `employee`)   `e1`
+                  JOIN `employee` `e2`
          WHERE `e1`.`month` != `e1`.`maxmonth`
            AND `e1`.`id` = `e2`.`id`
            AND `e2`.`month` BETWEEN `e1`.`month` - 2 AND `e1`.`month`

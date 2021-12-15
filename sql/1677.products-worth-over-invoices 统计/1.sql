@@ -1,10 +1,10 @@
 # Link: https://leetcode-cn.com/problems/products-worth-over-invoices
 
 SELECT `p`.`name`                     `name`,
-       ifnull(sum(`i`.`rest`), 0)     `rest`,
-       ifnull(sum(`i`.`paid`), 0)     `paid`,
-       ifnull(sum(`i`.`canceled`), 0) `canceled`,
-       ifnull(sum(`i`.`refunded`), 0) `refunded`
+       IFNULL(SUM(`i`.`rest`), 0)     `rest`,
+       IFNULL(SUM(`i`.`paid`), 0)     `paid`,
+       IFNULL(SUM(`i`.`canceled`), 0) `canceled`,
+       IFNULL(SUM(`i`.`refunded`), 0) `refunded`
 FROM `product`               `p`
          LEFT JOIN `invoice` `i`
                    ON `p`.`product_id` = `i`.`product_id`

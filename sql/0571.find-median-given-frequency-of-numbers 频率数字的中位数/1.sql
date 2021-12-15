@@ -1,9 +1,9 @@
 # Link: https://leetcode-cn.com/problems/find-median-given-frequency-of-numbers
 
 
-SELECT AVG(`Number`) `Median`
+SELECT AVG(`number`) `median`
 FROM (SELECT *,
-             SUM(`Frequency`) OVER (ORDER BY `Number` ASC)  `n1`,
-             SUM(`Frequency`) OVER (ORDER BY `Number` DESC) `n2`
-      FROM `Numbers`) `t`
-WHERE `n1` BETWEEN `n2` - `Frequency` AND `n2` + `Frequency`;
+             SUM(`frequency`) OVER (ORDER BY `number` ASC)  `n1`,
+             SUM(`frequency`) OVER (ORDER BY `number` DESC) `n2`
+      FROM `numbers`) `t`
+WHERE `n1` BETWEEN `n2` - `frequency` AND `n2` + `frequency`;

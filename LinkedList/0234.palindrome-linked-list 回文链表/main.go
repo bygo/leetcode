@@ -7,7 +7,6 @@ type ListNode struct {
 
 // https://leetcode-cn.com/problems/palindrome-linked-list
 
-
 func isPalindrome(head *ListNode) bool {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {

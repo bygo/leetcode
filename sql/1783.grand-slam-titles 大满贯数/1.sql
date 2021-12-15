@@ -13,7 +13,7 @@ WITH `t` AS (SELECT `wimbledon` `tournament`
              SELECT `au_open` `tournament`
              FROM `championships`)
 
-SELECT `p`.`player_id`, `p`.`player_name`, count(*) `grand_slams_count`
+SELECT `p`.`player_id`, `p`.`player_name`, COUNT(*) `grand_slams_count`
 FROM `t`
          LEFT JOIN `players` `p` ON `t`.`tournament` = `p`.`player_id`
 GROUP BY `p`.`player_id`, `p`.`player_name`

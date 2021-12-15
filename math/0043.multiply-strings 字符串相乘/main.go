@@ -54,5 +54,3 @@ func main() {
 	//println(math.Pow(312, -31) == pow(312, -31))
 	//println(math.Pow(-3110.2233, -31) == pow(-3110.2233, -31))
 }
-
-

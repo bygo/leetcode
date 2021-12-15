@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/remove-vowels-from-a-string
 
-// ❓移除元音字符
+// ❓ 移除元音字符
 
 func removeVowels(s string) string {
 	l := len(s)

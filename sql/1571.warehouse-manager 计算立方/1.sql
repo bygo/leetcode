@@ -2,7 +2,7 @@
 
 
 SELECT `w`.`name`                                                   `warehouse_name`,
-       sum(`w`.`units` * `p`.`width` * `p`.`length` * `p`.`height`) `volume`
+       SUM(`w`.`units` * `p`.`width` * `p`.`length` * `p`.`height`) `volume`
 FROM `warehouse` `w`
          JOIN
      `products`  `p`

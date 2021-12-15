@@ -3,8 +3,8 @@
 
 SELECT `a`.`person_name`
 FROM (
-         SELECT `person_name`, @`pre` := @`pre` + `weight` AS `weight`
-         FROM `Queue`,
+         SELECT `person_name`, @`pre` := @`pre` + `weight` `weight`
+         FROM `queue`,
               (SELECT @`pre` := 0) `tmp`
          ORDER BY `turn`
      ) `a`

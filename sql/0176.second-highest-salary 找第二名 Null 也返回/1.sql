@@ -1,7 +1,7 @@
 # Link: https://leetcode-cn.com/problems/second-highest-salary
 
 SELECT (
-           SELECT DISTINCT `Salary`
-           FROM `Employee`
-           ORDER BY `Salary` DESC
-           LIMIT 1,1) `SecondHighestSalary`
+           SELECT DISTINCT `salary`
+           FROM `employee`
+           ORDER BY `salary` DESC
+           LIMIT 1,1) `secondhighestsalary`

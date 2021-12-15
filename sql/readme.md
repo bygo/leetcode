@@ -2,9 +2,9 @@
 ```sql
 # Link: https://leetcode-cn.com/problems/combine-two-tables
 
-SELECT `FirstName`, `LastName`, `City`, `State`
-FROM `Person`
-         LEFT JOIN `Address` ON `Person`.`PersonId` = `Address`.`PersonId`
+SELECT `firstname`, `lastname`, `city`, `state`
+FROM `person`
+         LEFT JOIN `address` ON `person`.`personid` = `address`.`personid`
 ```
 
 # 0176.second-highest-salary 找第二名 Null 也返回 
@@ -12,25 +12,25 @@ FROM `Person`
 # Link: https://leetcode-cn.com/problems/second-highest-salary
 
 SELECT (
-           SELECT DISTINCT `Salary`
-           FROM `Employee`
-           ORDER BY `Salary` DESC
-           LIMIT 1,1) `SecondHighestSalary`
+           SELECT DISTINCT `salary`
+           FROM `employee`
+           ORDER BY `salary` DESC
+           LIMIT 1,1) `secondhighestsalary`
 ```
 
 # 0177.nth-highest-salary 找第N名 Null 也返回 
 ```sql
 # Link: https://leetcode-cn.com/problems/nth-highest-salary
 
-CREATE FUNCTION getNthHighestSalary(`N` INT) RETURNS INT
+CREATE FUNCTION getNthHighestSalary(`n` INT) RETURNS INT
 BEGIN
-    SET `N` := `N` - 1;
+    SET `n` := `n` - 1;
     RETURN (
         SELECT (
-                   SELECT DISTINCT `Salary`
-                   FROM `Employee`
-                   ORDER BY `Salary` DESC
-                   LIMIT `N`,1) `NthHighestSalary`
+                   SELECT DISTINCT `salary`
+                   FROM `employee`
+                   ORDER BY `salary` DESC
+                   LIMIT `n`,1) `nthhighestsalary`
     );
 END
 ```
@@ -40,7 +40,7 @@ END
 # Link: https://leetcode-cn.com/problems/rank-scores
 
 SELECT `score`,
-       @`rank` := @`rank` + (@`pre` != (@`pre` := `score`)) `Rank`
+       @`rank` := @`rank` + (@`pre` != (@`pre` := `score`)) `rank`
 FROM `scores`,
      (SELECT @`pre` := -1, @`rank` := 0) `tmp`
 ORDER BY `score` DESC;
@@ -48,7 +48,7 @@ ORDER BY `score` DESC;
 #
 
 SELECT `score`,
-       DENSE_RANK() OVER (ORDER BY `Score` DESC) `Rank`
+       DENSE_RANK() OVER (ORDER BY `score` DESC) `rank`
 FROM `scores`
 ```
 
@@ -76,7 +76,7 @@ HAVING 3 <= COUNT(*);
 
 #
 
-SELECT DISTINCT `l1`.`num` AS `consecutivenums`
+SELECT DISTINCT `l1`.`num` `consecutivenums`
 FROM `logs` `l1`,
      `logs` `l2`,
      `logs` `l3`
@@ -90,67 +90,67 @@ WHERE `l1`.`id` = `l2`.`id` - 1
 ```sql
 # Link: https://leetcode-cn.com/problems/employees-earning-more-than-their-managers
 
-SELECT `E1`.`Name` AS `Employee`
-FROM `Employee` AS `E1`
-         LEFT JOIN `Employee` AS `E2` ON `E1`.`ManagerId` = `E2`.`id`
-WHERE `E2`.`Salary` < `E1`.`Salary`
+SELECT `e1`.`name` `employee`
+FROM `employee`               AS `e1`
+         LEFT JOIN `employee` AS `e2` ON `e1`.`managerid` = `e2`.`id`
+WHERE `e2`.`salary` < `e1`.`salary`
 ```
 
 # 0182.duplicate-emails 找重复邮箱 
 ```sql
 # Link: https://leetcode-cn.com/problems/duplicate-emails
 
-SELECT `Email`
-FROM `Person`
-GROUP BY `Email`
-HAVING 1 < count(`Email`)
+SELECT `email`
+FROM `person`
+GROUP BY `email`
+HAVING 1 < COUNT(`email`)
 ```
 
 # 0183.customers-who-never-order 从不订购的客户 
 ```sql
 # Link: https://leetcode-cn.com/problems/customers-who-never-order
 
-SELECT `Customers`.`Name` `Customers`
-FROM `Customers`
-         LEFT JOIN `Orders` ON `Customers`.`Id` = `Orders`.`CustomerId`
-WHERE `Orders`.`CustomerId` IS NULL;
+SELECT `customers`.`name` `customers`
+FROM `customers`
+         LEFT JOIN `orders` ON `customers`.`id` = `orders`.`customerid`
+WHERE `orders`.`customerid` IS NULL;
 
 #
 
-SELECT `name` `Customers`
-FROM `Customers`
-WHERE `Id` NOT IN (SELECT `CustomerId` FROM `Orders`)
+SELECT `name` `customers`
+FROM `customers`
+WHERE `id` NOT IN (SELECT `customerid` FROM `orders`)
 ```
 
 # 0184.department-highest-salary 部门最高工资的员工 
 ```sql
 # Link: https://leetcode-cn.com/problems/department-highest-salary
 
-SELECT `d`.`name` 'Department',
-       `e`.`name` 'Employee',
-       `Salary`
-FROM `Employee` `e`
+SELECT `d`.`name` 'department',
+       `e`.`name` 'employee',
+       `salary`
+FROM `employee`   `e`
          JOIN
-     `Department` `d` ON `e`.`DepartmentId` = `d`.`Id`
-         AND (`e`.`DepartmentId`, `Salary`) IN
-             (SELECT `DepartmentId`,
-                     MAX(`Salary`)
-              FROM `Employee`
-              GROUP BY `DepartmentId`
+     `department` `d` ON `e`.`departmentid` = `d`.`id`
+         AND (`e`.`departmentid`, `salary`) IN
+             (SELECT `departmentid`,
+                     MAX(`salary`)
+              FROM `employee`
+              GROUP BY `departmentid`
              );
 
 #
 
-SELECT `Department`,
-       `Employee`,
-       `Salary`
-FROM (SELECT `d`.`name`                                                            'Department',
-             `e`.`name`                                                            'Employee',
-             `e`.`Salary`,
-             RANK() OVER (PARTITION BY `e`.`DepartmentId` ORDER BY `Salary` DESC ) `r`
-      FROM `Department` `d`
-               JOIN `Employee` `e`
-                    ON `d`.`id` = `e`.`DepartmentId`
+SELECT `department`,
+       `employee`,
+       `salary`
+FROM (SELECT `d`.`name`                                                            'department',
+             `e`.`name`                                                            'employee',
+             `e`.`salary`,
+             RANK() OVER (PARTITION BY `e`.`departmentid` ORDER BY `salary` DESC ) `r`
+      FROM `department`        `d`
+               JOIN `employee` `e`
+                    ON `d`.`id` = `e`.`departmentid`
      ) `t`
 WHERE `r` = 1;
 ```
@@ -159,31 +159,31 @@ WHERE `r` = 1;
 ```sql
 # Link: https://leetcode-cn.com/problems/department-top-three-salaries
 
-SELECT `Department`, `Employee`, `Salary`
-FROM (SELECT `d`.`Name`                                                                       `Department`,
-             `e1`.`Name`                                                                      `Employee`,
-             `e1`.`Salary`                                                                    `Salary`,
-             dense_rank() OVER (PARTITION BY `e1`.`DepartmentId` ORDER BY `e1`.`Salary` DESC) `r`
-      FROM `Employee` `e1`
-               JOIN `Department` `d`
+SELECT `department`, `employee`, `salary`
+FROM (SELECT `d`.`name`                                                                       `department`,
+             `e1`.`name`                                                                      `employee`,
+             `e1`.`salary`                                                                    `salary`,
+             DENSE_RANK() OVER (PARTITION BY `e1`.`departmentid` ORDER BY `e1`.`salary` DESC) `r`
+      FROM `employee`            `e1`
+               JOIN `department` `d`
                     ON
-                        `e1`.`DepartmentId` = `d`.`Id`) `t`
+                        `e1`.`departmentid` = `d`.`id`) `t`
 WHERE `r` <= 3;
 
 #
 
-SELECT `d`.`Name`    `Department`,
-       `e1`.`Name`   `Employee`,
-       `e1`.`Salary` `Salary`
-FROM `Employee` `e1`
-         JOIN `Department` `d`
+SELECT `d`.`name`    `department`,
+       `e1`.`name`   `employee`,
+       `e1`.`salary` `salary`
+FROM `employee`            `e1`
+         JOIN `department` `d`
               ON
-                      `e1`.`DepartmentId` = `d`.`Id`
-                      AND (SELECT count(DISTINCT `e2`.`Salary`)
-                           FROM `Employee` AS `e2`
-                           WHERE `e1`.`Salary` < `e2`.`Salary`
-                             AND `e1`.`DepartmentId` = `e2`.`DepartmentId`) < 3
-ORDER BY `Salary` DESC;
+                      `e1`.`departmentid` = `d`.`id`
+                      AND (SELECT COUNT(DISTINCT `e2`.`salary`)
+                           FROM `employee` AS `e2`
+                           WHERE `e1`.`salary` < `e2`.`salary`
+                             AND `e1`.`departmentid` = `e2`.`departmentid`) < 3
+ORDER BY `salary` DESC;
 ```
 
 # 0196.delete-duplicate-emails 删除重复邮箱 
@@ -191,36 +191,36 @@ ORDER BY `Salary` DESC;
 # Link: https://leetcode-cn.com/problems/delete-duplicate-emails
 
 DELETE `p2`
-FROM `Person` `p1`
-         JOIN `Person` `p2`
-WHERE `p1`.`Email` = `p2`.`Email`
-  AND `p1`.`Id` < `p2`.`Id`
+FROM `person`          `p1`
+         JOIN `person` `p2`
+WHERE `p1`.`email` = `p2`.`email`
+  AND `p1`.`id` < `p2`.`id`
 ```
 
 # 0197.rising-temperature 温度相比昨天是上升的 
 ```sql
 # Link: https://leetcode-cn.com/problems/rising-temperature
 
-SELECT `w2`.`Id` `Id`
-FROM `Weather` `w2`
-         JOIN `Weather` `w1`
-              ON DATEDIFF(`w2`.`recordDate`, `w1`.`recordDate`) = 1
-                  AND `w1`.`Temperature` < `w2`.`Temperature`
+SELECT `w2`.`id` `id`
+FROM `weather`          `w2`
+         JOIN `weather` `w1`
+              ON DATEDIFF(`w2`.`recorddate`, `w1`.`recorddate`) = 1
+                  AND `w1`.`temperature` < `w2`.`temperature`
 ```
 
 # 0262.trips-and-users 非禁止用户取消率 
 ```sql
 # Link: https://leetcode-cn.com/problems/trips-and-users
 
-SELECT `t`.`request_at` `Day`,
+SELECT `t`.`request_at` `day`,
        ROUND(
-               SUM(IF(`t`.`STATUS` = 'completed', 0, 1)) / COUNT(`t`.`STATUS`),
-               2)       `Cancellation Rate`
-FROM `Trips` `t`
+               SUM(IF(`t`.`status` = 'completed', 0, 1)) / COUNT(`t`.`status`),
+               2)       `cancellation rate`
+FROM `trips` `t`
          JOIN
-     `Users` `u1`
+     `users` `u1`
          JOIN
-     `Users` `u2`
+     `users` `u2`
      ON `t`.`client_id` = `u1`.`users_id`
          AND `u1`.`banned` = 'No'
          AND `t`.`driver_id` = `u2`.`users_id`
@@ -235,7 +235,7 @@ GROUP BY `t`.`request_at`
 
 SELECT `player_id`,
        MIN(`event_date`) `first_login`
-FROM `Activity`
+FROM `activity`
 GROUP BY `player_id`
 ```
 
@@ -244,9 +244,9 @@ GROUP BY `player_id`
 # Link: https://leetcode-cn.com/problems/game-play-analysis-ii
 
 SELECT `player_id`, `device_id`
-FROM `Activity`
+FROM `activity`
 WHERE (`player_id`, `event_date`) IN (SELECT `player_id`, MIN(`event_date`)
-                                      FROM `Activity`
+                                      FROM `activity`
                                       GROUP BY `player_id`);
 
 #
@@ -256,7 +256,7 @@ FROM (SELECT `player_id`,
              `device_id`,
              `event_date`,
              MIN(`event_date`) OVER (PARTITION BY `player_id` ) `m`
-      FROM `Activity`) `t`
+      FROM `activity`) `t`
 WHERE `m` = `event_date`
 
 ```
@@ -268,9 +268,9 @@ WHERE `m` = `event_date`
 SELECT `a1`.`player_id`         `player_id`,
        `a1`.`event_date`        `event_date`,
        SUM(`a2`.`games_played`) `games_played_so_far`
-FROM `Activity` `a2`
+FROM `activity` `a2`
          JOIN
-     `Activity` `a1`
+     `activity` `a1`
      ON `a1`.`player_id` = `a2`.`player_id`
          AND `a2`.`event_date` <= `a1`.`event_date`
 GROUP BY `a1`.`player_id`, `a1`.`event_date`
@@ -285,9 +285,9 @@ SELECT ROUND(
                2) `fraction`
 FROM (
          SELECT `player_id`, MIN(`event_date`) `event_date`
-         FROM `Activity`
+         FROM `activity`
          GROUP BY `player_id`) `a1`
-         LEFT JOIN `Activity` `a2`
+         LEFT JOIN `activity`  `a2`
                    ON `a1`.`player_id` = `a2`.`player_id`
                        AND DATEDIFF(`a2`.`event_date`, `a1`.`event_date`) = 1;
 ```
@@ -296,32 +296,32 @@ FROM (
 ```sql
 # Link: https://leetcode-cn.com/problems/median-employee-salary
 
-SELECT `id`, `Company`, `Salary`
+SELECT `id`, `company`, `salary`
 FROM (SELECT `id`,
-             `Company`,
-             `Salary`,
-             ROW_NUMBER() OVER (PARTITION BY `Company` ORDER BY `Salary`) AS `rank`,
-             COUNT(*) OVER (PARTITION BY `Company`)                       AS `count`
-      FROM `Employee`) `t`
-WHERE `RANK` BETWEEN `count` / 2 AND `count` / 2 + 1
+             `company`,
+             `salary`,
+             ROW_NUMBER() OVER (PARTITION BY `company` ORDER BY `salary`) `rank`,
+             COUNT(*) OVER (PARTITION BY `company`)                       `count`
+      FROM `employee`) `t`
+WHERE `rank` BETWEEN `count` / 2 AND `count` / 2 + 1
 ```
 
 # 0570.managers-with-at-least-5-direct-reports 至少5名下属的经理 
 ```sql
 # Link: https://leetcode-cn.com/problems/managers-with-at-least-5-direct-reports
 
-SELECT `Name`
-FROM `employee` `t1`
-         JOIN (SELECT `ManagerId` FROM `employee` GROUP BY `ManagerId` HAVING COUNT(*) >= 5) `t2`
-              ON `t1`.`Id` = `t2`.`ManagerId`;
+SELECT `name`
+FROM `employee`                                                                              `t1`
+         JOIN (SELECT `managerid` FROM `employee` GROUP BY `managerid` HAVING COUNT(*) >= 5) `t2`
+              ON `t1`.`id` = `t2`.`managerid`;
 
 #
 
-SELECT `Name`
+SELECT `name`
 FROM `employee`
-WHERE `id` IN (SELECT DISTINCT `ManagerId`
-               FROM (SELECT `ManagerId`,
-                            count(`ManagerId`) OVER (PARTITION BY `ManagerId`) `c`
+WHERE `id` IN (SELECT DISTINCT `managerid`
+               FROM (SELECT `managerid`,
+                            COUNT(`managerid`) OVER (PARTITION BY `managerid`) `c`
                      FROM `employee`
                      ORDER BY `c` DESC
                     ) `t`
@@ -333,12 +333,12 @@ WHERE `id` IN (SELECT DISTINCT `ManagerId`
 # Link: https://leetcode-cn.com/problems/find-median-given-frequency-of-numbers
 
 
-SELECT AVG(`Number`) `Median`
+SELECT AVG(`number`) `median`
 FROM (SELECT *,
-             SUM(`Frequency`) OVER (ORDER BY `Number` ASC)  `n1`,
-             SUM(`Frequency`) OVER (ORDER BY `Number` DESC) `n2`
-      FROM `Numbers`) `t`
-WHERE `n1` BETWEEN `n2` - `Frequency` AND `n2` + `Frequency`;
+             SUM(`frequency`) OVER (ORDER BY `number` ASC)  `n1`,
+             SUM(`frequency`) OVER (ORDER BY `number` DESC) `n2`
+      FROM `numbers`) `t`
+WHERE `n1` BETWEEN `n2` - `frequency` AND `n2` + `frequency`;
 
 ```
 
@@ -346,14 +346,14 @@ WHERE `n1` BETWEEN `n2` - `Frequency` AND `n2` + `Frequency`;
 ```sql
 # Link: https://leetcode-cn.com/problems/winning-candidate
 
-SELECT `Name`
+SELECT `name`
 FROM (
-         SELECT `CandidateId`
+         SELECT `candidateid`
          FROM `vote`
-         GROUP BY `CandidateId`
-         ORDER BY COUNT(`CandidateId`) DESC
+         GROUP BY `candidateid`
+         ORDER BY COUNT(`candidateid`) DESC
          LIMIT 1) `t`
-         JOIN `Candidate` ON `Candidate`.`id` = `CandidateId`
+         JOIN `candidate` ON `candidate`.`id` = `candidateid`
 ```
 
 # 0577.employee-bonus 员工奖金 
@@ -361,8 +361,8 @@ FROM (
 # Link: https://leetcode-cn.com/problems/employee-bonus
 
 SELECT `name`, `bonus`
-FROM `Employee`
-         LEFT JOIN `Bonus` ON `Employee`.`empid` = `Bonus`.`empid`
+FROM `employee`
+         LEFT JOIN `bonus` ON `employee`.`empid` = `bonus`.`empid`
 WHERE `bonus`.`bonus` < 1000
    OR `bonus` IS NULL
 ```
@@ -371,7 +371,7 @@ WHERE `bonus`.`bonus` < 1000
 ```sql
 # Link: https://leetcode-cn.com/problems/get-highest-answer-rate-question
 
-SELECT `question_id` AS `survey_log`
+SELECT `question_id` `survey_log`
 FROM `survey_log`
 GROUP BY `question_id`
 ORDER BY SUM(IF(`action` = 'answer', 1, 0)) / SUM(IF(`action` = 'show', 1, 0)) DESC
@@ -383,33 +383,33 @@ LIMIT 1
 # Link: https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee
 
 
-SELECT `E1`.`id`,
-       `E1`.`month`,
-       (IFNULL(`E1`.`salary`, 0) + IFNULL(`E2`.`salary`, 0) + IFNULL(`E3`.`salary`, 0)) AS `Salary`
+SELECT `e1`.`id`,
+       `e1`.`month`,
+       (IFNULL(`e1`.`salary`, 0) + IFNULL(`e2`.`salary`, 0) + IFNULL(`e3`.`salary`, 0)) `salary`
 FROM (SELECT `id`,
-             MAX(`month`) AS `month`
-      FROM `Employee`
+             MAX(`month`) `month`
+      FROM `employee`
       GROUP BY `id`
       HAVING COUNT(*) > 1) AS `maxmonth`
          LEFT JOIN
-     `Employee` `E1` ON `maxmonth`.`id` = `E1`.`id`
-         AND `maxmonth`.`month` > `E1`.`month`
+     `employee`               `e1` ON `maxmonth`.`id` = `e1`.`id`
+         AND `maxmonth`.`month` > `e1`.`month`
          LEFT JOIN
-     `Employee` `E2` ON `E2`.`id` = `E1`.`id`
-         AND `E2`.`month` = `E1`.`month` - 1
+     `employee`               `e2` ON `e2`.`id` = `e1`.`id`
+         AND `e2`.`month` = `e1`.`month` - 1
          LEFT JOIN
-     `Employee` `E3` ON `E3`.`id` = `E1`.`id`
-         AND `E3`.`month` = `E1`.`month` - 2
+     `employee`               `e3` ON `e3`.`id` = `e1`.`id`
+         AND `e3`.`month` = `e1`.`month` - 2
 ORDER BY `id`, `month` DESC;
 
 #
 
-SELECT `id`, `Month`, SUM(`Salary`) AS `Salary`
+SELECT `id`, `month`, SUM(`salary`) `salary`
 FROM (
          SELECT `e1`.`id`, `e1`.`month`, `e1`.`salary`
-         FROM (SELECT `id`, `month`, `salary`, MAX(`month`) OVER (PARTITION BY `id`,`month`) AS `maxmonth`
-               FROM `Employee`) `e1`
-                  JOIN `Employee` `e2`
+         FROM (SELECT `id`, `month`, `salary`, MAX(`month`) OVER (PARTITION BY `id`,`month`) `maxmonth`
+               FROM `employee`)   `e1`
+                  JOIN `employee` `e2`
          WHERE `e1`.`month` != `e1`.`maxmonth`
            AND `e1`.`id` = `e2`.`id`
            AND `e2`.`month` BETWEEN `e1`.`month` - 2 AND `e1`.`month`
@@ -424,8 +424,8 @@ ORDER BY `id`, `month` DESC;
 ```sql
 # Link: https://leetcode-cn.com/problems/count-student-number-in-departments
 
-SELECT `dept_name`, COUNT(`student_id`) AS `student_number`
-FROM `department` `d`
+SELECT `dept_name`, COUNT(`student_id`) `student_number`
+FROM `department`            `d`
          LEFT JOIN `student` `s` ON `d`.`dept_id` = `s`.`dept_id`
 GROUP BY `dept_name`
 ORDER BY `student_number` DESC
@@ -446,10 +446,10 @@ WHERE `referee_id` != 2
 ```sql
 # Link: https://leetcode-cn.com/problems/investments-in-2016
 
-SELECT ROUND(SUM(`tiv_2016`), 2) AS `tiv_2016`
+SELECT ROUND(SUM(`tiv_2016`), 2) `tiv_2016`
 FROM (SELECT *,
-             COUNT(*) OVER ( PARTITION BY `tiv_2015`)  AS `y`,
-             COUNT(*) OVER ( PARTITION BY `lat`,`lon`) AS `p`
+             COUNT(*) OVER ( PARTITION BY `tiv_2015`)  `y`,
+             COUNT(*) OVER ( PARTITION BY `lat`,`lon`) `p`
       FROM `insurance`) `t`
 WHERE `y` > 1 && `p` = 1
 ```
@@ -492,29 +492,29 @@ HAVING COUNT(DISTINCT `student`) >= 5
 SELECT ROUND(
                IFNULL(
                            (SELECT COUNT(*)
-                            FROM (SELECT DISTINCT `requester_id`, `accepter_id` FROM `RequestAccepted`) AS `A`)
+                            FROM (SELECT DISTINCT `requester_id`, `accepter_id` FROM `requestaccepted`) AS `a`)
                            /
                            (SELECT COUNT(*)
-                            FROM (SELECT DISTINCT `sender_id`, `send_to_id` FROM `FriendRequest`) AS `B`),
+                            FROM (SELECT DISTINCT `sender_id`, `send_to_id` FROM `friendrequest`) AS `b`),
                            0)
-           , 2) AS `accept_rate`;
+           , 2) `accept_rate`;
 ```
 
 # 0601.human-traffic-of-stadium 人流量 
 ```sql
 # Link: https://leetcode-cn.com/problems/human-traffic-of-stadium
 
-WITH `countT` AS (SELECT `id`,
-                         COUNT(*) OVER (PARTITION BY `rn` ORDER BY `rn` ) AS `counter`
+WITH `countt` AS (SELECT `id`,
+                         COUNT(*) OVER (PARTITION BY `rn` ORDER BY `rn` ) `counter`
                   FROM (SELECT `id`,
-                               `id` - ROW_NUMBER() OVER (ORDER BY `id`) AS `rn`
+                               `id` - ROW_NUMBER() OVER (ORDER BY `id`) `rn`
                         FROM `stadium`
-                        WHERE `people` >= 100) `rowT`)
+                        WHERE `people` >= 100) `rowt`)
 SELECT `s`.*
 FROM `stadium` `s`
-         JOIN `countT` ON
-    `s`.`id` = `countT`.`id`
-WHERE `countT`.`counter` > 2
+         JOIN `countt` ON
+    `s`.`id` = `countt`.`id`
+WHERE `countt`.`counter` > 2
 ORDER BY `s`.`visit_date`;
 ```
 
@@ -522,12 +522,12 @@ ORDER BY `s`.`visit_date`;
 ```sql
 # Link: https://leetcode-cn.com/problems/friend-requests-ii-who-has-the-most-friends
 
-SELECT `id`, SUM(`n`) AS `num`
-FROM (SELECT `accepter_id` AS `id`, COUNT(*) AS `n`
+SELECT `id`, SUM(`n`) `num`
+FROM (SELECT `accepter_id` `id`, COUNT(*) `n`
       FROM `request_accepted`
       GROUP BY `accepter_id`
       UNION ALL
-      SELECT `requester_id` AS `id`, COUNT(*) AS `n`
+      SELECT `requester_id` `id`, COUNT(*) `n`
       FROM `request_accepted`
       GROUP BY `requester_id`) `t`
 GROUP BY `id`
@@ -541,9 +541,9 @@ LIMIT 1;
 # Link: https://leetcode-cn.com/problems/consecutive-available-seats
 
 SELECT `seat_id`
-FROM (SELECT `seat_id`, COUNT(*) OVER (PARTITION BY `r`) AS `c`
+FROM (SELECT `seat_id`, COUNT(*) OVER (PARTITION BY `r`) `c`
       FROM (SELECT `seat_id`,
-                   `seat_id` - ROW_NUMBER() OVER (ORDER BY `seat_id`) AS `r`
+                   `seat_id` - ROW_NUMBER() OVER (ORDER BY `seat_id`) `r`
             FROM `cinema`
             WHERE `free` = 1) `t`) `t2`
 WHERE `c` > 1
@@ -566,10 +566,10 @@ WHERE `sales_id` NOT IN (SELECT `sales_id`
 ```sql
 # Link: https://leetcode-cn.com/problems/tree-node
 
-SELECT DISTINCT `t1`.`Id`,
+SELECT DISTINCT `t1`.`id`,
                 IF(`t1`.`p_id` IS NULL, 'Root',
-                   IF(`t2`.`id` IS NOT NULL, 'Inner', 'Leaf')) AS `Type`
-FROM `tree` AS `t1`
+                   IF(`t2`.`id` IS NOT NULL, 'Inner', 'Leaf')) `type`
+FROM `tree`               AS `t1`
          LEFT JOIN `tree` AS `t2`
                    ON `t1`.`id` = `t2`.`p_id`
 ```
@@ -578,7 +578,7 @@ FROM `tree` AS `t1`
 ```sql
 # Link: https://leetcode-cn.com/problems/triangle-judgement
 
-SELECT *, IF(`x` + `y` > `z` AND `x` + `z` > `y` AND `y` + `z` > `x`, "Yes", "No") AS `triangle`
+SELECT *, IF(`x` + `y` > `z` AND `x` + `z` > `y` AND `y` + `z` > `x`, "yes", "no") `triangle`
 FROM `triangle`
 ```
 
@@ -586,7 +586,7 @@ FROM `triangle`
 ```sql
 # Link: https://leetcode-cn.com/problems/shortest-distance-in-a-plane
 
-SELECT ROUND(SQRT(MIN((POW(`p1`.`x` - `p2`.`x`, 2) + POW(`p1`.`y` - `p2`.`y`, 2)))), 2) AS `shortest`
+SELECT ROUND(SQRT(MIN((POW(`p1`.`x` - `p2`.`x`, 2) + POW(`p1`.`y` - `p2`.`y`, 2)))), 2) `shortest`
 FROM `point_2d` `p1`
          JOIN
      `point_2d` `p2` ON (`p1`.`x` != `p2`.`x` AND `p1`.`y` = `p2`.`y`)
@@ -599,8 +599,8 @@ FROM `point_2d` `p1`
 ```sql
 # Link: https://leetcode-cn.com/problems/shortest-distance-in-a-line
 
-SELECT MIN(ABS(`p1`.`x` - `p2`.`x`)) AS `shortest`
-FROM `point` `p1`
+SELECT MIN(ABS(`p1`.`x` - `p2`.`x`)) `shortest`
+FROM `point`          `p1`
          JOIN `point` `p2` ON `p1`.`x` != `p2`.`x`;
 
 ```
@@ -609,8 +609,8 @@ FROM `point` `p1`
 ```sql
 # Link: https://leetcode-cn.com/problems/second-degree-follower
 
-SELECT `followee`                 AS `follower`,
-       count(DISTINCT `follower`) AS `num`
+SELECT `followee`                 `follower`,
+       COUNT(DISTINCT `follower`) `num`
 FROM `follow`
 WHERE `followee` IN (SELECT `follower` FROM `follow`)
 GROUP BY `followee`
@@ -618,8 +618,8 @@ ORDER BY `followee`
 
 
 
-SELECT `followee`                 AS `follower`,
-       count(DISTINCT `follower`) AS `num`
+SELECT `followee`                 `follower`,
+       COUNT(DISTINCT `follower`) `num`
 FROM `follow`
 WHERE `followee` IN (SELECT `follower` FROM `follow`)
 GROUP BY `followee`
@@ -630,15 +630,15 @@ ORDER BY `followee`
 ```sql
 # Link: https://leetcode-cn.com/problems/average-salary-departments-vs-company
 
-SELECT DISTINCT DATE_FORMAT(`pay_date`, '%Y-%m')                        AS `pay_month`,
+SELECT DISTINCT DATE_FORMAT(`pay_date`, '%Y-%m')                        `pay_month`,
                 `department_id`,
-                IF(`b` = `a`, 'same', IF(`a` < `b`, 'lower', 'higher')) AS `comparison`
+                IF(`b` = `a`, 'same', IF(`a` < `b`, 'lower', 'higher')) `comparison`
 FROM (SELECT `department_id`,
              `amount`,
              `pay_date`,
-             AVG(`amount`) OVER (PARTITION BY `pay_date`,`department_id`) AS `a`,
-             AVG(`amount`) OVER (PARTITION BY `pay_date`)                 AS `b`
-      FROM `salary` `st`
+             AVG(`amount`) OVER (PARTITION BY `pay_date`,`department_id`) `a`,
+             AVG(`amount`) OVER (PARTITION BY `pay_date`)                 `b`
+      FROM `salary`            `st`
                JOIN `employee` `et` ON `st`.`employee_id` = `et`.`employee_id`) `t`
 ORDER BY `pay_month` DESC;
 ```
@@ -647,14 +647,14 @@ ORDER BY `pay_month` DESC;
 ```sql
 # Link: https://leetcode-cn.com/problems/students-report-by-geography
 
-SELECT `America`, `Asia`, `Europe`
-FROM (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) AS `r`, `name` AS `America`
+SELECT `america`, `asia`, `europe`
+FROM (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `america`
       FROM `student`
-      WHERE `continent` = 'America') `a`
-         LEFT JOIN (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) AS `r`, `name` AS `Asia`
+      WHERE `continent` = 'America')              `a`
+         LEFT JOIN (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `asia`
                     FROM `student`
-                    WHERE `continent` = 'Asia') `b` ON `a`.`r` = `b`.`r`
-         LEFT JOIN (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) AS `r`, `name` AS `Europe`
+                    WHERE `continent` = 'Asia')   `b` ON `a`.`r` = `b`.`r`
+         LEFT JOIN (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `europe`
                     FROM `student`
                     WHERE `continent` = 'Europe') `c` ON `a`.`r` = `c`.`r`
 ```
@@ -686,15 +686,15 @@ ORDER BY `rating` DESC
 ```sql
 # Link: https://leetcode-cn.com/problems/exchange-seats
 
-SELECT row_number() OVER (ORDER BY (`id` + 1 - 2 * power(0, `id` % 2))) AS `id`,
+SELECT ROW_NUMBER() OVER (ORDER BY (`id` + 1 - 2 * POWER(0, `id` % 2))) `id`,
        `student`
 FROM `seat`
 
 
 
-SELECT IF(`id` % 2 = 0, `id` - 1, `id` + 1) AS `id`
+SELECT IF(`id` % 2 = 0, `id` - 1, `id` + 1) `id`
     `student`
-FROM `ORDER` BY id ASC;
+FROM `order` BY id ASC;
 
 ```
 
@@ -703,7 +703,7 @@ FROM `ORDER` BY id ASC;
 # Link: https://leetcode-cn.com/problems/swap-salary
 
 UPDATE `salary`
-SET `sex` = IF(`Sex` = 'f', 'm', 'f')
+SET `sex` = IF(`sex` = 'f', 'm', 'f')
 ```
 
 # 1045.customers-who-bought-all-products 买下所有产品的客户 
@@ -711,9 +711,9 @@ SET `sex` = IF(`Sex` = 'f', 'm', 'f')
 # Link: https://leetcode-cn.com/problems/customers-who-bought-all-products
 
 SELECT `customer_id`
-FROM `Customer`
+FROM `customer`
 GROUP BY `customer_id`
-HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) AS `cc` FROM `product`)
+HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) `cc` FROM `product`)
 ```
 
 # 1050.actors-and-directors-who-cooperated-at-least-three-times 合作至少三次的演员和导员 
@@ -721,7 +721,7 @@ HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) AS `cc` FROM `product`)
 # Link: https://leetcode-cn.com/problems/actors-and-directors-who-cooperated-at-least-three-times
 
 SELECT `actor_id`, `director_id`
-FROM `ActorDirector`
+FROM `actordirector`
 GROUP BY `actor_id`, `director_id`
 HAVING COUNT(*) >= 3
 ```
@@ -731,15 +731,15 @@ HAVING COUNT(*) >= 3
 # Link: https://leetcode-cn.com/problems/product-sales-analysis-i
 
 SELECT `product_name`, `year`, `price`
-FROM `Sales`
-         JOIN `Product` ON `Sales`.`product_id` = `Product`.`product_id`
+FROM `sales`
+         JOIN `product` ON `sales`.`product_id` = `product`.`product_id`
 ```
 
 # 1069.product-sales-analysis-ii 产品的销售总额 
 ```sql
 # Link: https://leetcode-cn.com/problems/product-sales-analysis-ii
 
-SELECT `product_id`, SUM(`quantity`) AS `total_quantity`
+SELECT `product_id`, SUM(`quantity`) `total_quantity`
 FROM `sales`
 GROUP BY `product_id`
 ```
@@ -749,10 +749,10 @@ GROUP BY `product_id`
 # Link: https://leetcode-cn.com/problems/product-sales-analysis-iii
 
 
-SELECT `product_id`, `year` AS `first_year`, `quantity`, `price`
-FROM `Sales`
-WHERE (`product_id`, `year`) IN (SELECT `product_id`, min(`year`)
-                                 FROM `Sales`
+SELECT `product_id`, `year` `first_year`, `quantity`, `price`
+FROM `sales`
+WHERE (`product_id`, `year`) IN (SELECT `product_id`, MIN(`year`)
+                                 FROM `sales`
                                  GROUP BY `product_id`);
 ```
 
@@ -761,9 +761,9 @@ WHERE (`product_id`, `year`) IN (SELECT `product_id`, min(`year`)
 # Title: Project Employees I
 # Link: https://leetcode-cn.com/problems/project-employees-i
 
-SELECT `project_id`, round(avg(`experience_years`), 2) AS `average_years`
-FROM `Project` AS `p`
-         INNER JOIN `Employee` AS `e`
+SELECT `project_id`, ROUND(AVG(`experience_years`), 2) `average_years`
+FROM `project`                 AS `p`
+         INNER JOIN `employee` AS `e`
                     ON `p`.`employee_id` = `e`.`employee_id`
 GROUP BY `project_id`;
 ```
@@ -773,10 +773,10 @@ GROUP BY `project_id`;
 # Title: Project Employees II
 # Link: https://leetcode-cn.com/problems/project-employees-ii
 
-WITH `tmp` AS (SELECT `project_id`, count(*) AS `c` FROM `project` GROUP BY `project_id`)
+WITH `tmp` AS (SELECT `project_id`, COUNT(*) `c` FROM `project` GROUP BY `project_id`)
 SELECT `project_id`
 FROM `tmp`
-WHERE `c` = (SELECT max(`c`) FROM `tmp`);
+WHERE `c` = (SELECT MAX(`c`) FROM `tmp`);
 ```
 
 # 1077.project-employees-iii 项目经济最丰富的员工 
@@ -786,10 +786,10 @@ WHERE `c` = (SELECT max(`c`) FROM `tmp`);
 SELECT `project_id`, `employee_id`
 FROM (SELECT `project_id`,
              `p`.`employee_id`,
-             RANK() OVER (PARTITION BY `project_id` ORDER BY `experience_years` DESC) AS `r`
-      FROM `project` `p`
+             RANK() OVER (PARTITION BY `project_id` ORDER BY `experience_years` DESC) `r`
+      FROM `project`                 `p`
                INNER JOIN `employee` `e`
-                          ON `P`.`employee_id` = `e`.`employee_id`) `a`
+                          ON `p`.`employee_id` = `e`.`employee_id`) `a`
 WHERE `r` = 1;
 ```
 
@@ -802,7 +802,7 @@ SELECT `seller_id`
 FROM (
          SELECT `seller_id`, DENSE_RANK() OVER (ORDER BY `total` DESC) `n`
          FROM (
-                  SELECT `seller_id`, SUM(`price`) `total` FROM `Sales` GROUP BY `seller_id`) `t1`) `t2`
+                  SELECT `seller_id`, SUM(`price`) `total` FROM `sales` GROUP BY `seller_id`) `t1`) `t2`
 WHERE `n` = 1
 ```
 
@@ -814,11 +814,11 @@ SELECT `buyer_id`
 FROM (SELECT `buyer_id`,
              IF(`p`.`product_name` = 'S8', 1, 0)     `s8`,
              IF(`p`.`product_name` = 'iPhone', 1, 0) `ip`
-      FROM `sales` `s`
+      FROM `sales`            `s`
                JOIN `product` `p` ON `s`.`product_id` = `p`.`product_id`) `t`
 GROUP BY `buyer_id`
-HAVING 0 < sum(`ip`)
-   AND sum(`s8`) = 0
+HAVING 0 < SUM(`ip`)
+   AND SUM(`s8`) = 0
 ```
 
 # 1084.sales-analysis-iii 只在春季销售的产品 
@@ -826,19 +826,19 @@ HAVING 0 < sum(`ip`)
 # Link: https://leetcode-cn.com/problems/sales-analysis-iii
 
 SELECT `p`.`product_id`, `p`.`product_name`
-FROM `product` `p`
+FROM `product`        `p`
          JOIN `sales` `s` ON `p`.`product_id` = `s`.`product_id`
 GROUP BY `product_id`
-HAVING (sum(`sale_date` BETWEEN '2019-01-01' AND '2019-03-31')) = count(*);
+HAVING (SUM(`sale_date` BETWEEN '2019-01-01' AND '2019-03-31')) = COUNT(*);
 
 #
 
 SELECT `product_id`,
        `product_name`
-FROM `Product`
+FROM `product`
 WHERE `product_id` NOT IN
       (SELECT `product_id`
-       FROM `Sales`
+       FROM `sales`
        WHERE `sale_date` NOT BETWEEN '2019-01-01' AND '2019-03-31')
 ```
 
@@ -847,15 +847,15 @@ WHERE `product_id` NOT IN
 # Link: https://leetcode-cn.com/problems/game-play-analysis-v
 
 SELECT `first_day`                 `install_dt`,
-       count(DISTINCT `player_id`) `installs`,
+       COUNT(DISTINCT `player_id`) `installs`,
        ROUND(
-                   (SUM(if(datediff(`event_date`, `first_day`) = 1, 1, 0))) / (count(DISTINCT `player_id`)), 2
-           )                       `Day1_retention`
+                   (SUM(IF(DATEDIFF(`event_date`, `first_day`) = 1, 1, 0))) / (COUNT(DISTINCT `player_id`)), 2
+           )                       `day1_retention`
 FROM (
          SELECT `player_id`,
                 `event_date`,
                 MIN(`event_date`) OVER (PARTITION BY `player_id`) `first_day`
-         FROM `Activity`
+         FROM `activity`
      ) `a`
 GROUP BY `first_day`
 
@@ -867,12 +867,12 @@ GROUP BY `first_day`
 
 
 SELECT `b`.`book_id`, `b`.`name`
-FROM `books` `b`
+FROM `books`                `b`
          LEFT JOIN `orders` `o` ON `b`.`book_id` = `o`.`book_id`
     AND '2018-06-23' <= `o`.`dispatch_date`
 WHERE `b`.`available_from` < '2019-05-23'
 GROUP BY `b`.`book_id`
-HAVING ifnull(sum(`o`.`quantity`), 0) < 10
+HAVING IFNULL(SUM(`o`.`quantity`), 0) < 10
 ```
 
 # 1107.new-users-daily-count 每日新用户 
@@ -880,9 +880,9 @@ HAVING ifnull(sum(`o`.`quantity`), 0) < 10
 # Link: https://leetcode-cn.com/problems/new-users-daily-count
 
 
-SELECT `activity_date` `login_date`, count(*) `user_count`
+SELECT `activity_date` `login_date`, COUNT(*) `user_count`
 FROM (
-         SELECT `user_id`, min(`activity_date`) `activity_date`
+         SELECT `user_id`, MIN(`activity_date`) `activity_date`
          FROM `traffic`
          WHERE `activity` = 'login'
          GROUP BY `user_id`) `t`
@@ -895,8 +895,8 @@ GROUP BY `login_date
 # Link: https://leetcode-cn.com/problems/highest-grade-for-each-student
 
 SELECT `student_id`, `course_id`, `grade`
-FROM (SELECT *, row_number() OVER (PARTITION BY `student_id` ORDER BY `grade` DESC,`course_id`) AS `r`
-      FROM `Enrollments`) `t`
+FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY `student_id` ORDER BY `grade` DESC,`course_id`) `r`
+      FROM `enrollments`) `t`
 WHERE `r` = 1
 ```
 
@@ -904,8 +904,8 @@ WHERE `r` = 1
 ```sql
 # Link: https://leetcode-cn.com/problems/reported-posts
 
-SELECT `extra` "report_reason", count(DISTINCT `post_id`) "report_count"
-FROM `Actions`
+SELECT `extra` "report_reason", COUNT(DISTINCT `post_id`) "report_count"
+FROM `actions`
 WHERE `action_date` = '2019-07-04'
   AND `action` = 'report'
   AND `extra` IS NOT NULL
@@ -918,11 +918,11 @@ GROUP BY `extra`
 
 SELECT `business_id`
 FROM (SELECT *,
-             avg(`occurences`) OVER (PARTITION BY `event_type`) `a`
+             AVG(`occurences`) OVER (PARTITION BY `event_type`) `a`
       FROM `events`) `t`
 WHERE `occurences` > `a`
 GROUP BY `business_id`
-HAVING count(*) > 1
+HAVING COUNT(*) > 1
 ```
 
 # 1127.user-purchase-platform 统计单端或双端人数 
@@ -931,13 +931,13 @@ HAVING count(*) > 1
 
 SELECT `spend_date`,
        `t2`.`platform`,
-       sum(if(`t1`.`platform` = `t2`.`platform`, `amount`, 0)) `total_amount`,
-       count(if(`t1`.`platform` = `t2`.`platform`, 1, NULL))   `total_users`
+       SUM(IF(`t1`.`platform` = `t2`.`platform`, `amount`, 0)) `total_amount`,
+       COUNT(IF(`t1`.`platform` = `t2`.`platform`, 1, NULL))   `total_users`
 FROM (
          SELECT `spend_date`,
                 `user_id`,
-                if(count(DISTINCT `platform`) = 2, 'both', `platform`) `platform`,
-                sum(`amount`)                                          `amount`
+                IF(COUNT(DISTINCT `platform`) = 2, 'both', `platform`) `platform`,
+                SUM(`amount`)                                          `amount`
          FROM `spending`
          GROUP BY `user_id`, `spend_date`
      ) `t1`
@@ -961,7 +961,7 @@ SELECT ROUND(AVG(`proportion`) * 100, 2) `average_daily_percent`
 FROM (
          SELECT `a`.`action_date`,
                 COUNT(DISTINCT `r`.`post_id`) / COUNT(DISTINCT `a`.`post_id`) `proportion`
-         FROM `actions` `a`
+         FROM `actions`                `a`
                   LEFT JOIN `removals` `r`
                             ON `a`.`post_id` = `r`.`post_id`
          WHERE `extra` = 'spam'
@@ -1008,7 +1008,7 @@ ORDER BY `author_id`
 SELECT DISTINCT `viewer_id` `id`
 FROM `views`
 GROUP BY `viewer_id`, `view_date`
-HAVING 1 < count(DISTINCT `article_id`)
+HAVING 1 < COUNT(DISTINCT `article_id`)
 ORDER BY `id`
 ```
 
@@ -1019,8 +1019,8 @@ ORDER BY `id`
 
 SELECT `u`.`user_id`     `buyer_id`,
        `join_date`,
-       count(`order_id`) `orders_in_2019`
-FROM `users` `u`
+       COUNT(`order_id`) `orders_in_2019`
+FROM `users`                `u`
          LEFT JOIN `orders` `o` ON `u`.`user_id` = `o`.`buyer_id` AND `order_date` BETWEEN '2019-01-01' AND '2019-12-31'
 GROUP BY `user_id`
 ```
@@ -1032,11 +1032,11 @@ GROUP BY `user_id`
 
 SELECT `user_id`                                                                        `seller_id`,
        IF(`t`.`item_brand` != `u`.`favorite_brand` || `seller_id` IS NULL, 'no', 'yes') `2nd_item_fav_brand`
-FROM `users` `u`
+FROM `users`                                                        `u`
          LEFT JOIN (SELECT `seller_id`,
                            `item_brand`,
                            RANK() OVER (PARTITION BY `seller_id` ORDER BY `order_date`) `r`
-                    FROM `orders` AS `o`
+                    FROM `orders`         AS `o`
                              JOIN `items` AS `i`
                                   ON `o`.`item_id` = `i`.`item_id`) `t`
                    ON `u`.`user_id` = `t`.`seller_id`
@@ -1055,7 +1055,7 @@ FROM (
          UNION
          SELECT `product_id`, `price`
          FROM (SELECT `product_id`,
-                      rank() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`,
+                      RANK() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`,
                       `new_price`                                                         `price`
                FROM `products`
                WHERE `change_date` <= '2019-08-16'
@@ -1064,13 +1064,13 @@ FROM (
      ) `t`;
 
 SELECT DISTINCT `p`.`product_id`, IFNULL(`t`.`new_price`, 10) `price`
-FROM `products` `p`
+FROM `products`                                          `p`
          LEFT JOIN (SELECT `product_id`,
                            `new_price`,
                            RANK() OVER (PARTITION BY `product_id` ORDER BY `change_date` DESC) `r`
                     FROM `products`
                     WHERE `change_date` <= '2019-08-16') `t`
-                   ON `P`.`product_id` = `t`.`product_id`
+                   ON `p`.`product_id` = `t`.`product_id`
                        AND `r` = 1;
 
 ```
@@ -1079,9 +1079,9 @@ FROM `products` `p`
 ```sql
 # Link: https://leetcode-cn.com/problems/immediate-food-delivery-i
 
-SELECT round(
-                       sum(if(`order_date` = `customer_pref_delivery_date`, 1, 0)) /
-                       count(*) * 100, 2) `immediate_percentage`
+SELECT ROUND(
+                       SUM(IF(`order_date` = `customer_pref_delivery_date`, 1, 0)) /
+                       COUNT(*) * 100, 2) `immediate_percentage`
 FROM `delivery`
 ```
 
@@ -1089,14 +1089,14 @@ FROM `delivery`
 ```sql
 # Link: https://leetcode-cn.com/problems/immediate-food-delivery-ii
 
-SELECT round(
-                   sum(`order_date` = `customer_pref_delivery_date`) * 100 /
-                   count(*),
+SELECT ROUND(
+                   SUM(`order_date` = `customer_pref_delivery_date`) * 100 /
+                   COUNT(*),
                    2
            ) `immediate_percentage`
-FROM `Delivery`
+FROM `delivery`
 WHERE (`customer_id`, `order_date`) IN (
-    SELECT `customer_id`, min(`order_date`)
+    SELECT `customer_id`, MIN(`order_date`)
     FROM `delivery`
     GROUP BY `customer_id`
 )
@@ -1107,18 +1107,18 @@ WHERE (`customer_id`, `order_date`) IN (
 # Link: https://leetcode-cn.com/problems/reformat-department-table
 
 SELECT `id`,
-       SUM(IF(`month` = 'Jan', `revenue`, NULL)) `Jan_Revenue`,
-       SUM(IF(`month` = 'Feb', `revenue`, NULL)) `Feb_Revenue`,
-       SUM(IF(`month` = 'Mar', `revenue`, NULL)) `Mar_Revenue`,
-       SUM(IF(`month` = 'Apr', `revenue`, NULL)) `Apr_Revenue`,
-       SUM(IF(`month` = 'May', `revenue`, NULL)) `May_Revenue`,
-       SUM(IF(`month` = 'Jun', `revenue`, NULL)) `Jun_Revenue`,
-       SUM(IF(`month` = 'Jul', `revenue`, NULL)) `Jul_Revenue`,
-       SUM(IF(`month` = 'Aug', `revenue`, NULL)) `Aug_Revenue`,
-       SUM(IF(`month` = 'Sep', `revenue`, NULL)) `Sep_Revenue`,
-       SUM(IF(`month` = 'Oct', `revenue`, NULL)) `Oct_Revenue`,
-       SUM(IF(`month` = 'Nov', `revenue`, NULL)) `Nov_Revenue`,
-       SUM(IF(`month` = 'Dec', `revenue`, NULL)) `Dec_Revenue`
+       SUM(IF(`month` = 'Jan', `revenue`, NULL)) `jan_revenue`,
+       SUM(IF(`month` = 'Feb', `revenue`, NULL)) `feb_revenue`,
+       SUM(IF(`month` = 'Mar', `revenue`, NULL)) `mar_revenue`,
+       SUM(IF(`month` = 'Apr', `revenue`, NULL)) `apr_revenue`,
+       SUM(IF(`month` = 'May', `revenue`, NULL)) `may_revenue`,
+       SUM(IF(`month` = 'Jun', `revenue`, NULL)) `jun_revenue`,
+       SUM(IF(`month` = 'Jul', `revenue`, NULL)) `jul_revenue`,
+       SUM(IF(`month` = 'Aug', `revenue`, NULL)) `aug_revenue`,
+       SUM(IF(`month` = 'Sep', `revenue`, NULL)) `sep_revenue`,
+       SUM(IF(`month` = 'Oct', `revenue`, NULL)) `oct_revenue`,
+       SUM(IF(`month` = 'Nov', `revenue`, NULL)) `nov_revenue`,
+       SUM(IF(`month` = 'Dec', `revenue`, NULL)) `dec_revenue`
 FROM `department`
 GROUP BY `id`
 ORDER BY `id`;
@@ -1135,7 +1135,7 @@ SELECT DATE_FORMAT(`trans_date`, '%Y-%m')         `month`,
        COUNT(IF(`state` = 'approved', 1, NULL))   `approved_count`,
        SUM(`amount`)                              `trans_total_amount`,
        SUM(IF(`state` = 'approved', `amount`, 0)) `approved_total_amount`
-FROM `Transactions`
+FROM `transactions`
 GROUP BY `month`, `country`
 ```
 
@@ -1149,16 +1149,16 @@ FROM (
          FROM (
                   -- 每个用户总的 first_score
                   SELECT `p1`.`group_id`, p1.`player_id`, SUM(`m1`.`first_score`) `score`
-                  FROM `Players` `p1`
-                           JOIN `Matches` m1 ON `p1`.`player_id` = `m1`.`first_player`
+                  FROM `players`          `p1`
+                           JOIN `matches` m1 ON `p1`.`player_id` = `m1`.`first_player`
                   GROUP BY `p1`.`player_id`
 
                   UNION ALL
 
                   -- 每个用户总的 second_score
                   SELECT `p2`.`group_id`, `p2`.`player_id`, SUM(`m2`.`second_score`) `score`
-                  FROM `Players` `p2`
-                           JOIN `Matches` m2 ON `p2`.`player_id` = `m2`.`second_player`
+                  FROM `players`          `p2`
+                           JOIN `matches` m2 ON `p2`.`player_id` = `m2`.`second_player`
                   GROUP BY `p2`.`player_id`
               ) `s`
          GROUP BY `player_id`
@@ -1175,8 +1175,8 @@ ORDER BY `group_id`
 
 SELECT `a`.`person_name`
 FROM (
-         SELECT `person_name`, @`pre` := @`pre` + `weight` AS `weight`
-         FROM `Queue`,
+         SELECT `person_name`, @`pre` := @`pre` + `weight` `weight`
+         FROM `queue`,
               (SELECT @`pre` := 0) `tmp`
          ORDER BY `turn`
      ) `a`
@@ -1245,9 +1245,9 @@ ORDER BY `num_points` DESC, `t`.`team_id`;
 # Link: https://leetcode-cn.com/problems/report-contiguous-dates
 
 
-SELECT `type` `period_state`, min(`date`) `start_date`, max(`date`) `end_date`
+SELECT `type` `period_state`, MIN(`date`) `start_date`, MAX(`date`) `end_date`
 FROM (
-         SELECT `type`, `date`, subdate(`date`, row_number() OVER (PARTITION BY `type` ORDER BY `date`)) `diff`
+         SELECT `type`, `date`, SUBDATE(`date`, ROW_NUMBER() OVER (PARTITION BY `type` ORDER BY `date`)) `diff`
          FROM (
                   SELECT 'failed' `type`, `fail_date` `date`
                   FROM `failed`
@@ -1383,8 +1383,8 @@ FROM (
 ```sql
 # Link: https://leetcode-cn.com/problems/find-the-team-size
 
-SELECT `employee_id`, count(*) OVER (PARTITION BY `team_id`) `team_size`
-FROM `Employee`
+SELECT `employee_id`, COUNT(*) OVER (PARTITION BY `team_id`) `team_size`
+FROM `employee`
 
 ```
 
@@ -1504,8 +1504,8 @@ WHERE `department_id` NOT IN (SELECT `id` FROM `departments`)
 
 SELECT `activity`
 FROM (SELECT `activity`,
-             dense_rank() OVER (ORDER BY count(*))      `r1`,
-             dense_rank() OVER (ORDER BY count(*) DESC) `r2`
+             DENSE_RANK() OVER (ORDER BY COUNT(*))      `r1`,
+             DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) `r2`
       FROM `friends`
       GROUP BY `activity`) `t`
 WHERE `r1` != 1
@@ -1561,9 +1561,9 @@ FROM `employeeuni`
 SELECT `sales`.`product_id`,
        `product_name`,
        '2018' `report_year`,
-       if(`period_start` < '2019-01-01',
-          (datediff(if(`period_end` < '2019-01-01', `period_end`, date('2018-12-31')),
-                    if(`period_start` >= '2018-01-01', `period_start`, date('2018-01-01'))) + 1) *
+       IF(`period_start` < '2019-01-01',
+          (DATEDIFF(IF(`period_end` < '2019-01-01', `period_end`, DATE('2018-12-31')),
+                    IF(`period_start` >= '2018-01-01', `period_start`, DATE('2018-01-01'))) + 1) *
           `average_daily_sales`, 0) `total_amount`
 FROM `sales`
          JOIN `product` ON `sales`.`product_id` = `product`.`product_id`
@@ -1574,9 +1574,9 @@ UNION
 SELECT `sales`.`product_id`,
        `product_name`,
        '2019' `report_year`,
-       if(`period_start` < '2020-01-01',
-          (datediff(if(`period_end` < '2020-01-01', `period_end`, date('2019-12-31')),
-                    if(`period_start` >= '2019-01-01', `period_start`, date('2019-01-01'))) + 1) *
+       IF(`period_start` < '2020-01-01',
+          (DATEDIFF(IF(`period_end` < '2020-01-01', `period_end`, DATE('2019-12-31')),
+                    IF(`period_start` >= '2019-01-01', `period_start`, DATE('2019-01-01'))) + 1) *
           `average_daily_sales`, 0) `total_amount`
 FROM `sales`
          JOIN `product` ON (`sales`.`product_id` = `product`.`product_id`)
@@ -1587,8 +1587,8 @@ UNION
 SELECT `sales`.`product_id`,
        `product_name`,
        '2020' `report_year`,
-       (datediff(if(`period_end` < '2021-01-01', `period_end`, date('2020-12-31')),
-                 if(`period_start` >= '2020-01-01', `period_start`, date('2020-01-01'))) + 1) *
+       (DATEDIFF(IF(`period_end` < '2021-01-01', `period_end`, DATE('2020-12-31')),
+                 IF(`period_start` >= '2020-01-01', `period_start`, DATE('2020-01-01'))) + 1) *
        `average_daily_sales` `total_amount`
 FROM `sales`
          JOIN `product` ON (`sales`.`product_id` = `product`.`product_id`)
@@ -1605,7 +1605,7 @@ ORDER BY `product_id`, `report_year`
 # Link: https://leetcode-cn.com/problems/capital-gainloss
 
 SELECT `stock_name`,
-       sum(IF(`operation` = 'Buy', -`price`, `price`)) `capital_gain_loss`
+       SUM(IF(`operation` = 'Buy', -`price`, `price`)) `capital_gain_loss`
 FROM `stocks`
 GROUP BY `stock_name`;
 ```
@@ -1629,7 +1629,7 @@ ORDER BY `c`.`customer_id`
 ```sql
 # Link: https://leetcode-cn.com/problems/top-travellers
 
-SELECT `name`, IFNULL(sum(`distance`), 0) `travelled_distance`
+SELECT `name`, IFNULL(SUM(`distance`), 0) `travelled_distance`
 FROM `users`
          LEFT JOIN `rides` ON `users`.`id` = `rides`.`user_id`
 GROUP BY `name`
@@ -1651,13 +1651,13 @@ WHERE `s`.`student_id` IN
                    SELECT `student_id`,
                           `score`,
                           `exam_id`,
-                          max(`score`) OVER (PARTITION BY `exam_id`) `max_score`,
-                          min(`score`) OVER (PARTITION BY `exam_id`) `min_score`
+                          MAX(`score`) OVER (PARTITION BY `exam_id`) `max_score`,
+                          MIN(`score`) OVER (PARTITION BY `exam_id`) `min_score`
                    FROM `exam`
                ) `e`
           GROUP BY `student_id`
-          HAVING sum(if(`min_score` < `e`.`score` AND `e`.`score` < `max_score`, 1, 0))
-                     = count(DISTINCT `exam_id`)
+          HAVING SUM(IF(`min_score` < `e`.`score` AND `e`.`score` < `max_score`, 1, 0))
+                     = COUNT(DISTINCT `exam_id`)
       )
 ORDER BY `s`.`student_id`
 
@@ -1736,7 +1736,7 @@ FROM `queries` `q`
 # Link: https://leetcode-cn.com/problems/create-a-session-bar-chart
 
 
-SELECT `a`.`bin`, count(`b`.`bin`) `total`
+SELECT `a`.`bin`, COUNT(`b`.`bin`) `total`
 FROM (
          SELECT '[0-5>' `bin` UNION SELECT '[5-10>' `bin` UNION SELECT '[10-15>' `bin` UNION SELECT '15 or more' `bin`
      ) `a`
@@ -1835,13 +1835,13 @@ SELECT `s`.`company_id`,
        (
            CASE
                WHEN `maxsalary` < 1000 THEN `salary`
-               WHEN `maxsalary` >= 1000 AND `maxsalary` < 10000 THEN round(`salary` - `salary` * 0.24)
-               WHEN `maxsalary` >= 10000 THEN round(`salary` - `salary` * 0.49)
+               WHEN `maxsalary` >= 1000 AND `maxsalary` < 10000 THEN ROUND(`salary` - `salary` * 0.24)
+               WHEN `maxsalary` >= 10000 THEN ROUND(`salary` - `salary` * 0.49)
                END
            ) `salary`
 FROM `salaries`      `s`
          LEFT JOIN (
-                       SELECT `company_id`, max(`salary`) `maxsalary`
+                       SELECT `company_id`, MAX(`salary`) `maxsalary`
                        FROM `salaries`
                        GROUP BY `company_id`
                    ) `m`
@@ -1855,13 +1855,13 @@ FROM `salaries`      `s`
 
 
 SELECT DISTINCT `i`.`item_category`                                         `category`,
-                sum(IF(dayofweek(`o`.`order_date`) = 2, `o`.`quantity`, 0)) `monday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 3, `o`.`quantity`, 0)) `tuesday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 4, `o`.`quantity`, 0)) `wednesday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 5, `o`.`quantity`, 0)) `thursday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 6, `o`.`quantity`, 0)) `friday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 7, `o`.`quantity`, 0)) `saturday`,
-                sum(IF(dayofweek(`o`.`order_date`) = 1, `o`.`quantity`, 0)) `sunday`
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 2, `o`.`quantity`, 0)) `monday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 3, `o`.`quantity`, 0)) `tuesday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 4, `o`.`quantity`, 0)) `wednesday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 5, `o`.`quantity`, 0)) `thursday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 6, `o`.`quantity`, 0)) `friday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 7, `o`.`quantity`, 0)) `saturday`,
+                SUM(IF(DAYOFWEEK(`o`.`order_date`) = 1, `o`.`quantity`, 0)) `sunday`
 FROM `items`                `i`
          LEFT JOIN `orders` `o` ON `i`.`item_id` = `o`.`item_id`
 GROUP BY `category`
@@ -1874,7 +1874,7 @@ ORDER BY `category`
 # Link: https://leetcode-cn.com/problems/group-sold-products-by-the-date
 
 SELECT `sell_date`,
-       count(DISTINCT `product`)        `num_sold`,
+       COUNT(DISTINCT `product`)        `num_sold`,
        GROUP_CONCAT(DISTINCT `product`) `products`
 FROM `activities`
 GROUP BY `sell_date`
@@ -1888,7 +1888,7 @@ ORDER BY `sell_date`
 SELECT DISTINCT `title`
 FROM `tvprogram`             `t`
          LEFT JOIN `content` `c` ON `t`.`content_id` = `c`.`content_id`
-WHERE left(`t`.`program_date`, 7) = '2020-06'
+WHERE LEFT(`t`.`program_date`, 7) = '2020-06'
   AND `c`.`kids_content` = 'Y'
   AND `c`.`content_type` = 'Movies';
 
@@ -1940,10 +1940,10 @@ WHERE `mail` REGEXP '^[a-zA-Z][a-zA-Z0-9\_\.\-]*@leetcode\.com$'
 
 # Write your MySQL query statement below
 
-    SELECT *
-    FROM `patients`
-    WHERE `conditions` LIKE 'DIAB1%'
-       OR `conditions` LIKE '% DIAB1%'
+SELECT *
+FROM `patients`
+WHERE `conditions` LIKE 'DIAB1%'
+   OR `conditions` LIKE '% DIAB1%'
 ```
 
 # 1532.the-most-recent-three-orders 最近三笔订单 
@@ -1973,12 +1973,12 @@ ORDER BY `customer_name`, `customer_id`, `order_date` DESC
 # Link: https://leetcode-cn.com/problems/fix-product-name-format
 
 
-SELECT lower(trim(`product_name`)) `product_name`,
-       left(`sale_date`, 7)        `sale_date`,
-       count(*)                    `total`
+SELECT LOWER(TRIM(`product_name`)) `product_name`,
+       LEFT(`sale_date`, 7)        `sale_date`,
+       COUNT(*)                    `total`
 FROM `sales`
-GROUP BY lower(trim(`product_name`)), left(`sale_date`, 7)
-ORDER BY lower(trim(`product_name`)), left(`sale_date`, 7)
+GROUP BY LOWER(TRIM(`product_name`)), LEFT(`sale_date`, 7)
+ORDER BY LOWER(TRIM(`product_name`)), LEFT(`sale_date`, 7)
 
 ```
 
@@ -1992,7 +1992,7 @@ FROM `products`          `p`
      (SELECT `o`.`product_id`,
              `o`.`order_id`,
              `o`.`order_date`,
-             rank() OVER (PARTITION BY `o`.`product_id` ORDER BY `o`.`order_date` DESC) `r`
+             RANK() OVER (PARTITION BY `o`.`product_id` ORDER BY `o`.`order_date` DESC) `r`
       FROM `orders` `o`) `t` ON `p`.`product_id` = `t`.`product_id`
 WHERE `r` = 1
 ORDER BY `p`.`product_name`, `p`.`product_id`, `t`.`order_id`;
@@ -2009,14 +2009,14 @@ SELECT `u`.`user_id`,
        `credit` + IFNULL(`t`.`amount`, 0)                       `credit`,
        IF(`credit` + IFNULL(`t`.`amount`, 0) >= 0, 'No', 'Yes') `credit_limit_breached`
 FROM `users`                            `u`
-         LEFT JOIN (SELECT `user_id`, sum(`amount`) `amount`
+         LEFT JOIN (SELECT `user_id`, SUM(`amount`) `amount`
                     FROM (
                              (
-                                 SELECT `paid_by` `user_id`, -sum(`amount`) `amount`
+                                 SELECT `paid_by` `user_id`, -SUM(`amount`) `amount`
                                  FROM `transactions`
                                  GROUP BY `paid_by`
                                  UNION
-                                 SELECT `paid_to` `user_id`, sum(`amount`) `amount`
+                                 SELECT `paid_to` `user_id`, SUM(`amount`) `amount`
                                  FROM `transactions`
                                  GROUP BY `paid_to`)
                          ) `t1`
@@ -2043,7 +2043,7 @@ GROUP BY LEFT(`o`.`order_date`, 7);
 
 
 SELECT `w`.`name`                                                   `warehouse_name`,
-       sum(`w`.`units` * `p`.`width` * `p`.`length` * `p`.`height`) `volume`
+       SUM(`w`.`units` * `p`.`width` * `p`.`length` * `p`.`height`) `volume`
 FROM `warehouse` `w`
          JOIN
      `products`  `p`
@@ -2057,7 +2057,7 @@ GROUP BY `w`.`name`;
 # Link: https://leetcode-cn.com/problems/customer-who-visited-but-did-not-make-any-transactions
 
 SELECT `v`.`customer_id`,
-       count(DISTINCT `v`.`visit_id`) `count_no_trans`
+       COUNT(DISTINCT `v`.`visit_id`) `count_no_trans`
 FROM `visits`                     `v`
          LEFT JOIN `transactions` `t` ON `v`.`visit_id` = `t`.`visit_id`
 WHERE `t`.`visit_id` IS NULL
@@ -2072,12 +2072,12 @@ GROUP BY `v`.`customer_id`
 
 
 SELECT `name`,
-       sum(`amount`) `balance`
+       SUM(`amount`) `balance`
 FROM `users`,
      `transactions`
 WHERE `users`.`account` = `transactions`.`account`
 GROUP BY `name`
-HAVING sum(`amount`) > 10000;
+HAVING SUM(`amount`) > 10000;
 
 
 
@@ -2089,9 +2089,9 @@ HAVING sum(`amount`) > 10000;
 
 SELECT `o`.`customer_id`, `o`.`product_id`, `p`.`product_name`
 FROM (
-         SELECT `customer_id`, `product_id`, rank() OVER (PARTITION BY `customer_id` ORDER BY `c` DESC) `r`
+         SELECT `customer_id`, `product_id`, RANK() OVER (PARTITION BY `customer_id` ORDER BY `c` DESC) `r`
          FROM (
-                  SELECT `customer_id`, `product_id`, count(*) `c`
+                  SELECT `customer_id`, `product_id`, COUNT(*) `c`
                   FROM `orders`
                   GROUP BY `customer_id`, `product_id`
               ) `a`
@@ -2116,7 +2116,7 @@ ORDER BY `seller_name`;
 
 SELECT `seller_name`
 FROM `seller` `s`
-WHERE NOT exists(SELECT DISTINCT `seller_id`
+WHERE NOT EXISTS(SELECT DISTINCT `seller_id`
                  FROM `orders` `o`
                  WHERE `sale_date` BETWEEN '2020-01-01' AND '2020-12-31'
                    AND `o`.`seller_id` = `s`.`seller_id`)
@@ -2141,7 +2141,7 @@ WHERE `n` NOT IN (
     FROM `customers`
 )
   AND `n` <= (
-    SELECT max(`customer_id`)
+    SELECT MAX(`customer_id`)
     FROM `customers`
 )
 ```
@@ -2154,8 +2154,8 @@ SELECT `a`.`student_name` `member_a`,
        `b`.`student_name` `member_b`,
        `c`.`student_name` `member_c`
 FROM `schoola` `a`,
-    `schoolb` `b`,
-    `schoolc` `c`
+     `schoolb` `b`,
+     `schoolc` `c`
 WHERE `a`.`student_id` != `b`.`student_id`
   AND `b`.`student_id` != `c`.`student_id`
   AND `a`.`student_id` != `c`.`student_id`
@@ -2170,7 +2170,7 @@ WHERE `a`.`student_id` != `b`.`student_id`
 
 
 SELECT `contest_id`,
-       round(count(DISTINCT `r`.`user_id`) / count(DISTINCT `u`.`user_id`) * 100, 2) `percentage`
+       ROUND(COUNT(DISTINCT `r`.`user_id`) / COUNT(DISTINCT `u`.`user_id`) * 100, 2) `percentage`
 FROM `register`       `r`
          JOIN `users` `u`
 GROUP BY `contest_id`
@@ -2190,22 +2190,22 @@ WITH RECURSIVE `t1`(`month`) AS (
 )
 
 SELECT `t1`.`month`,
-       sum(ifnull(`c`, 0)) OVER (ORDER BY `t1`.`month`) `active_drivers`,
-       ifnull(`active_rides`, 0)                        `accepted_rides`
+       SUM(IFNULL(`c`, 0)) OVER (ORDER BY `t1`.`month`) `active_drivers`,
+       IFNULL(`active_rides`, 0)                        `accepted_rides`
 FROM `t1`
          LEFT JOIN
      (
-         SELECT if(year(`join_date`) < '2020', 1, month(`join_date`)) `month`, count(`driver_id`) `c`
+         SELECT IF(YEAR(`join_date`) < '2020', 1, MONTH(`join_date`)) `month`, COUNT(`driver_id`) `c`
          FROM `drivers`
-         WHERE year(`join_date`) <= '2020'
+         WHERE YEAR(`join_date`) <= '2020'
          GROUP BY `month`
      ) `t2` ON `t1`.`month` = `t2`.`month`
          LEFT JOIN
      (
-         SELECT month(`r`.`requested_at`) `month`, count(`driver_id`) `active_rides`
+         SELECT MONTH(`r`.`requested_at`) `month`, COUNT(`driver_id`) `active_rides`
          FROM `acceptedrides`       `a`
                   LEFT JOIN `rides` `r` ON `a`.`ride_id` = `r`.`ride_id`
-             AND year(`r`.`requested_at`) >= '2020' AND year(`r`.`requested_at`) < '2021'
+             AND YEAR(`r`.`requested_at`) >= '2020' AND YEAR(`r`.`requested_at`) < '2021'
          GROUP BY `month`
      ) `t3` ON `t1`.`month` = `t3`.`month`
 ```
@@ -2223,7 +2223,7 @@ WITH RECURSIVE `t1`(`month`) AS (
 )
 
 SELECT `t1`.`month`,
-       ifnull(round(ifnull(`active_rides`, 0) / sum(ifnull(`c`, 0)) OVER (ORDER BY `t1`.`month`) * 100, 2),
+       IFNULL(ROUND(IFNULL(`active_rides`, 0) / SUM(IFNULL(`c`, 0)) OVER (ORDER BY `t1`.`month`) * 100, 2),
               0) `working_percentage`
 FROM `t1`
          LEFT JOIN
@@ -2258,21 +2258,21 @@ WITH RECURSIVE `t1`(`month`) AS (
 
 SELECT `month`, `average_ride_distance`, `average_ride_duration`
 FROM (SELECT `month`,
-             ROUND(AVG(ifnull(`ride_distance`, 0)) OVER (ORDER BY `month` ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING ),
+             ROUND(AVG(IFNULL(`ride_distance`, 0)) OVER (ORDER BY `month` ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING ),
                    2)                             `average_ride_distance`,
-             ROUND(AVG(ifnull(`ride_duration`, 0)) OVER (ORDER BY `month` ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING ),
+             ROUND(AVG(IFNULL(`ride_duration`, 0)) OVER (ORDER BY `month` ROWS BETWEEN CURRENT ROW AND 2 FOLLOWING ),
                    2)                             `average_ride_duration`,
              ROW_NUMBER() OVER (ORDER BY `month`) `r`
       FROM `t1`
                LEFT JOIN
-           (SELECT DISTINCT month(`requested_at`)                                                        `month`,
+           (SELECT DISTINCT MONTH(`requested_at`)                                                        `month`,
                             SUM(`ride_distance`)
-                                OVER (PARTITION BY month(`requested_at`) ORDER BY month(`requested_at`)) `ride_distance`,
+                                OVER (PARTITION BY MONTH(`requested_at`) ORDER BY MONTH(`requested_at`)) `ride_distance`,
                             SUM(`ride_duration`)
-                                OVER (PARTITION BY month(`requested_at`) ORDER BY month(`requested_at`)) `ride_duration`
+                                OVER (PARTITION BY MONTH(`requested_at`) ORDER BY MONTH(`requested_at`)) `ride_duration`
             FROM `acceptedrides`
                      JOIN `rides` USING (`ride_id`)
-            WHERE year(`requested_at`) = 2020) `a`
+            WHERE YEAR(`requested_at`) = 2020) `a`
            USING (`month`)) `b`
 WHERE `b`.`r` <= 10
 
@@ -2283,7 +2283,7 @@ WHERE `b`.`r` <= 10
 # Link: https://leetcode-cn.com/problems/average-time-of-process-per-machine
 
 SELECT `machine_id`,
-       round(sum(IF(`activity_type` = 'end', `timestamp`, -`timestamp`)) / count(*) * 2, 3) `processing_time`
+       ROUND(SUM(IF(`activity_type` = 'end', `timestamp`, -`timestamp`)) / COUNT(*) * 2, 3) `processing_time`
 FROM `activity`
 GROUP BY `machine_id`
 ```
@@ -2293,7 +2293,7 @@ GROUP BY `machine_id`
 # Link: https://leetcode-cn.com/problems/fix-names-in-a-table
 
 SELECT `user_id`,
-       concat(upper(left(`name`, 1)), lower(substr(`name`, 2))) `name`
+       CONCAT(UPPER(LEFT(`name`, 1)), LOWER(SUBSTR(`name`, 2))) `name`
 FROM `users`
 ORDER BY `user_id`
 ```
@@ -2303,10 +2303,10 @@ ORDER BY `user_id`
 # Link: https://leetcode-cn.com/problems/products-worth-over-invoices
 
 SELECT `p`.`name`                     `name`,
-       ifnull(sum(`i`.`rest`), 0)     `rest`,
-       ifnull(sum(`i`.`paid`), 0)     `paid`,
-       ifnull(sum(`i`.`canceled`), 0) `canceled`,
-       ifnull(sum(`i`.`refunded`), 0) `refunded`
+       IFNULL(SUM(`i`.`rest`), 0)     `rest`,
+       IFNULL(SUM(`i`.`paid`), 0)     `paid`,
+       IFNULL(SUM(`i`.`canceled`), 0) `canceled`,
+       IFNULL(SUM(`i`.`refunded`), 0) `refunded`
 FROM `product`               `p`
          LEFT JOIN `invoice` `i`
                    ON `p`.`product_id` = `i`.`product_id`
@@ -2320,7 +2320,7 @@ ORDER BY `p`.`name`
 
 SELECT `tweet_id`
 FROM `tweets`
-WHERE char_length(`content`) > 15
+WHERE CHAR_LENGTH(`content`) > 15
 ```
 
 # 1693.daily-leads-and-partners 统计 
@@ -2329,8 +2329,8 @@ WHERE char_length(`content`) > 15
 
 SELECT `date_id`,
        `make_name`,
-       count(DISTINCT `lead_id`)    `unique_leads`,
-       count(DISTINCT `partner_id`) `unique_partners`
+       COUNT(DISTINCT `lead_id`)    `unique_leads`,
+       COUNT(DISTINCT `partner_id`) `unique_partners`
 FROM `dailysales`
 GROUP BY `date_id`, `make_name`
 
@@ -2340,20 +2340,20 @@ GROUP BY `date_id`, `make_name`
 ```sql
 # Link: https://leetcode-cn.com/problems/number-of-calls-between-two-persons
 
-SELECT `person1`, `person2`, count(1) `call_count`, sum(`duration`) `total_duration`
+SELECT `person1`, `person2`, COUNT(1) `call_count`, SUM(`duration`) `total_duration`
 FROM (
-         SELECT if(`from_id` > `to_id`, `to_id`, `from_id`) `person1`,
-                if(`from_id` > `to_id`, `from_id`, `to_id`) `person2`,
+         SELECT IF(`from_id` > `to_id`, `to_id`, `from_id`) `person1`,
+                IF(`from_id` > `to_id`, `from_id`, `to_id`) `person2`,
                 `duration`
          FROM `calls`) `c`
 GROUP BY `person1`, `person2`;
 
 SELECT `from_id`        `person1`,
        `to_id`          `person2`,
-       count(`from_id`) `call_count`,
-       sum(`duration`)  `total_duration`
+       COUNT(`from_id`) `call_count`,
+       SUM(`duration`)  `total_duration`
 FROM `calls`
-GROUP BY least(`from_id`, `to_id`), greatest(`from_id`, `to_id`)
+GROUP BY LEAST(`from_id`, `to_id`), GREATEST(`from_id`, `to_id`)
 ```
 
 # 1709.biggest-window-between-visits 日期缺失 
@@ -2361,11 +2361,11 @@ GROUP BY least(`from_id`, `to_id`), greatest(`from_id`, `to_id`)
 # Link: https://leetcode-cn.com/problems/biggest-window-between-visits
 
 
-SELECT `user_id`, max(`diff`) `biggest_window`
+SELECT `user_id`, MAX(`diff`) `biggest_window`
 FROM (
          SELECT `user_id`,
-                datediff(
-                        lead(`visit_date`, 1, '2021-01-01') OVER (PARTITION BY `user_id` ORDER BY `visit_date`),
+                DATEDIFF(
+                        LEAD(`visit_date`, 1, '2021-01-01') OVER (PARTITION BY `user_id` ORDER BY `visit_date`),
                         `visit_date`
                     ) `diff`
          FROM `uservisits`
@@ -2380,17 +2380,17 @@ GROUP BY `user_id`
 # Link: https://leetcode-cn.com/problems/count-apples-and-oranges
 
 
-SELECT sum(`b`.`apple_count` + ifnull(`c`.`apple_count`, 0))   `apple_count`,
-       sum(`b`.`orange_count` + ifnull(`c`.`orange_count`, 0)) `orange_count`
+SELECT SUM(`b`.`apple_count` + IFNULL(`c`.`apple_count`, 0))   `apple_count`,
+       SUM(`b`.`orange_count` + IFNULL(`c`.`orange_count`, 0)) `orange_count`
 FROM `boxes`                `b`
-    LEFT JOIN `chests` `c` ON `b`.`chest_id` = `c`.`chest_id`
+         LEFT JOIN `chests` `c` ON `b`.`chest_id` = `c`.`chest_id`
 ```
 
 # 1729.find-followers-count 关注数 
 ```sql
 # Link: https://leetcode-cn.com/problems/find-followers-count
 
-SELECT `user_id`, count(`follower_id`) `followers_count`
+SELECT `user_id`, COUNT(`follower_id`) `followers_count`
 FROM `followers`
 GROUP BY `user_id`
 ORDER BY `user_id`
@@ -2404,8 +2404,8 @@ ORDER BY `user_id`
 
 SELECT `e1`.`reports_to`        `employee_id`,
        `e2`.`name`,
-       count(`e1`.`reports_to`) `reports_count`,
-       round(avg(`e1`.`age`))   `average_age`
+       COUNT(`e1`.`reports_to`) `reports_count`,
+       ROUND(AVG(`e1`.`age`))   `average_age`
 FROM `employees`          `e1`
          JOIN `employees` `e2` ON `e1`.`reports_to` = `e2`.`employee_id`
 GROUP BY `e1`.`reports_to`, `e2`.`name`
@@ -2416,7 +2416,7 @@ ORDER BY `e1`.`reports_to`
 ```sql
 # Link: https://leetcode-cn.com/problems/find-total-time-spent-by-each-employee
 
-SELECT `event_day` `day`, `emp_id`, sum(`out_time` - `in_time`) `total_time`
+SELECT `event_day` `day`, `emp_id`, SUM(`out_time` - `in_time`) `total_time`
 FROM `employees`
 GROUP BY `day`, `emp_id`
 ```
@@ -2470,9 +2470,9 @@ ORDER BY `task_id`, `subtask_id`
 # Link: https://leetcode-cn.com/problems/products-price-for-each-store
 
 SELECT `product_id`,
-       sum(IF(`store` = 'store1', `price`, NULL)) `store1`,
-       sum(IF(`store` = 'store2', `price`, NULL)) `store2`,
-       sum(IF(`store` = 'store3', `price`, NULL)) `store3`
+       SUM(IF(`store` = 'store1', `price`, NULL)) `store1`,
+       SUM(IF(`store` = 'store2', `price`, NULL)) `store2`,
+       SUM(IF(`store` = 'store3', `price`, NULL)) `store3`
 FROM `products`
 GROUP BY `product_id`;
 ```
@@ -2494,7 +2494,7 @@ WITH `t` AS (SELECT `wimbledon` `tournament`
              SELECT `au_open` `tournament`
              FROM `championships`)
 
-SELECT `p`.`player_id`, `p`.`player_name`, count(*) `grand_slams_count`
+SELECT `p`.`player_id`, `p`.`player_name`, COUNT(*) `grand_slams_count`
 FROM `t`
          LEFT JOIN `players` `p` ON `t`.`tournament` = `p`.`player_id`
 GROUP BY `p`.`player_id`, `p`.`player_name`
@@ -2551,13 +2551,13 @@ WITH `a` AS
                           `u1`.`user_id`,
                           `u1`.`name`,
                           `mail`,
-                          `contest_id` - row_number() OVER (PARTITION BY `u1`.`user_id` ORDER BY `contest_id`) `diffs`
+                          `contest_id` - ROW_NUMBER() OVER (PARTITION BY `u1`.`user_id` ORDER BY `contest_id`) `diffs`
                    FROM `users`             `u1`
                             JOIN `contests` `c`
                                  ON `u1`.`user_id` IN (`c`.`gold_medal`, `c`.`silver_medal`, `c`.`bronze_medal`)
                    ORDER BY `u1`.`user_id`, `contest_id`) `temp1`
           GROUP BY `temp1`.`user_id`, `diffs`
-          HAVING count(`contest_id`) >= 3
+          HAVING COUNT(`contest_id`) >= 3
           ORDER BY `temp1`.`user_id`)
 SELECT *
 FROM `a`
@@ -2567,7 +2567,7 @@ FROM `users`             `u2`
          JOIN `contests` `c1`
               ON `u2`.`user_id` = `c1`.`gold_medal`
 GROUP BY `c1`.`gold_medal`
-HAVING count(*) >= 3
+HAVING COUNT(*) >= 3
 
 
 ```
@@ -2580,7 +2580,7 @@ SELECT `customer_id`
 FROM `customers`
 WHERE `year` = 2021
 GROUP BY `customer_id`
-HAVING sum(`revenue`) > 0
+HAVING SUM(`revenue`) > 0
 ```
 
 # 1831.maximum-transaction-each-day 每天最大交易 
@@ -2591,7 +2591,7 @@ HAVING sum(`revenue`) > 0
 SELECT `transaction_id`
 FROM (
          SELECT `transaction_id`,
-                rank() OVER (PARTITION BY left(`day`, 10) ORDER BY `amount` DESC) `r`
+                RANK() OVER (PARTITION BY LEFT(`day`, 10) ORDER BY `amount` DESC) `r`
          FROM `transactions`
          ORDER BY `transaction_id`
      ) `t`

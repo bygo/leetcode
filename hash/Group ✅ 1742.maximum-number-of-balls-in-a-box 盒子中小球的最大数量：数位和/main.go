@@ -2,6 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box
 
+// ❓ 盒子中小球的最大数量
+
 func countBalls(lowLimit int, highLimit int) int {
 	var sum int
 	j := lowLimit
@@ -9,10 +11,10 @@ func countBalls(lowLimit int, highLimit int) int {
 		sum += j % 10
 		j /= 10
 	}
-	m := [46]int{} // 最大9999 = 46
+	sumMpCnt := [46]int{} // 最大9999 = 46
 	var max int
 	for i := lowLimit; i <= highLimit; i++ {
-		m[sum]++
+		sumMpCnt[sum]++
 		k := i
 		for k%10 == 9 { // 每次进1 减9
 			sum -= 9
@@ -21,9 +23,9 @@ func countBalls(lowLimit int, highLimit int) int {
 		sum++
 	}
 
-	for i := range m {
-		if max < m[i] {
-			max = m[i]
+	for sum := range sumMpCnt {
+		if max < sumMpCnt[sum] {
+			max = sumMpCnt[sum]
 		}
 	}
 

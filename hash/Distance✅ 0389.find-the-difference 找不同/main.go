@@ -2,8 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/find-the-difference
 
-// s = t + 随机byte(x)
-// ❓找出 x
+// ❓ 找出 x
+// ⚠️ s = t + 随机byte(x)
 
 func findTheDifferenceCnt(s string, t string) byte {
 	// 统计

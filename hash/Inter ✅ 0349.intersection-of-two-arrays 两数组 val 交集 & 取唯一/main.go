@@ -1,21 +1,22 @@
 package main
 
-// 相对交集 val 取唯一值
 // https://leetcode-cn.com/problems/intersection-of-two-arrays
 
+// ❓ 相对交集 val 取唯一值
+
 func intersection(nums1 []int, nums2 []int) []int {
-	var m = map[int]struct{}{}
+	var numMp = map[int]struct{}{}
 	for _, num := range nums1 {
-		m[num] = struct{}{}
+		numMp[num] = struct{}{}
 	}
 
 	var res []int
 	for _, num := range nums2 {
-		_, ok := m[num]
+		_, ok := numMp[num]
 
 		if ok {
 			res = append(res, num)
-			delete(m, num)
+			delete(numMp, num)
 		}
 	}
 	return res

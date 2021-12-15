@@ -31,5 +31,3 @@ func (s *MyStack) Top() int {
 func (s *MyStack) Empty() bool {
 	return len(s.queue) == 0
 }
-
-

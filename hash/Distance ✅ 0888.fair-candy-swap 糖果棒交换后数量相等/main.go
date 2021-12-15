@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/fair-candy-swap
 
-// ❓找出 val1 & val2 交换后 sum(aliceSizes) == sum(bobSizes)
+// ❓ 交换一个值后，总和相等
 
 func fairCandySwap(aliceSizes []int, bobSizes []int) []int {
 	// aliceSizes map

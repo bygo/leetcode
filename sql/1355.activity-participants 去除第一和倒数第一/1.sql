@@ -3,8 +3,8 @@
 
 SELECT `activity`
 FROM (SELECT `activity`,
-             dense_rank() OVER (ORDER BY count(*))      `r1`,
-             dense_rank() OVER (ORDER BY count(*) DESC) `r2`
+             DENSE_RANK() OVER (ORDER BY COUNT(*))      `r1`,
+             DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) `r2`
       FROM `friends`
       GROUP BY `activity`) `t`
 WHERE `r1` != 1

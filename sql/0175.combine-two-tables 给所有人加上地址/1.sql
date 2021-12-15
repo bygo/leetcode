@@ -1,5 +1,5 @@
 # Link: https://leetcode-cn.com/problems/combine-two-tables
 
-SELECT `FirstName`, `LastName`, `City`, `State`
-FROM `Person`
-         LEFT JOIN `Address` ON `Person`.`PersonId` = `Address`.`PersonId`
+SELECT `firstname`, `lastname`, `city`, `state`
+FROM `person`
+         LEFT JOIN `address` ON `person`.`personid` = `address`.`personid`

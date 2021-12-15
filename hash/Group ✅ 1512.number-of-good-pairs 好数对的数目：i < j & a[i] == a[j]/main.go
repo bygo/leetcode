@@ -2,14 +2,17 @@ package main
 
 // https://leetcode-cn.com/problems/number-of-good-pairs
 
+// ❓ 好数对的数目
+// ⚠️ i < j && nums[i] == nums[j]
+
 func numIdenticalPairs(nums []int) int {
-	var m = map[int]int{}
+	var numMpCnt = map[int]int{}
 	var res int
-	for _, v := range nums {
-		if 0 < m[v] {
-			res += m[v]
+	for _, num := range nums {
+		if 0 < numMpCnt[num] {
+			res += numMpCnt[num]
 		}
-		m[v]++
+		numMpCnt[num]++
 	}
 	return res
 }

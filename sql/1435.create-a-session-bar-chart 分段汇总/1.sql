@@ -1,7 +1,7 @@
 # Link: https://leetcode-cn.com/problems/create-a-session-bar-chart
 
 
-SELECT `a`.`bin`, count(`b`.`bin`) `total`
+SELECT `a`.`bin`, COUNT(`b`.`bin`) `total`
 FROM (
          SELECT '[0-5>' `bin` UNION SELECT '[5-10>' `bin` UNION SELECT '[10-15>' `bin` UNION SELECT '15 or more' `bin`
      ) `a`

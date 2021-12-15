@@ -87,9 +87,7 @@ func preorderMorrisKeep(root *TreeNode) []int {
 }
 ```
 
-
 # 中序遍历
-
 
 ### 递归
 
@@ -182,9 +180,7 @@ func inorderMorrisKeep(root *TreeNode) []int {
 }
 ```
 
-
 # 后序遍历
-
 
 ### 递归
 
@@ -294,7 +290,6 @@ func postorderMorrisKeep(root *TreeNode) []int {
 	return res
 }
 ```
-
 
 # 层次遍历
 

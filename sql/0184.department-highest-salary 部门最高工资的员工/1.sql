@@ -1,29 +1,29 @@
 # Link: https://leetcode-cn.com/problems/department-highest-salary
 
-SELECT `d`.`name` 'Department',
-       `e`.`name` 'Employee',
-       `Salary`
-FROM `Employee` `e`
+SELECT `d`.`name` 'department',
+       `e`.`name` 'employee',
+       `salary`
+FROM `employee`   `e`
          JOIN
-     `Department` `d` ON `e`.`DepartmentId` = `d`.`Id`
-         AND (`e`.`DepartmentId`, `Salary`) IN
-             (SELECT `DepartmentId`,
-                     MAX(`Salary`)
-              FROM `Employee`
-              GROUP BY `DepartmentId`
+     `department` `d` ON `e`.`departmentid` = `d`.`id`
+         AND (`e`.`departmentid`, `salary`) IN
+             (SELECT `departmentid`,
+                     MAX(`salary`)
+              FROM `employee`
+              GROUP BY `departmentid`
              );
 
 #
 
-SELECT `Department`,
-       `Employee`,
-       `Salary`
-FROM (SELECT `d`.`name`                                                            'Department',
-             `e`.`name`                                                            'Employee',
-             `e`.`Salary`,
-             RANK() OVER (PARTITION BY `e`.`DepartmentId` ORDER BY `Salary` DESC ) `r`
-      FROM `Department` `d`
-               JOIN `Employee` `e`
-                    ON `d`.`id` = `e`.`DepartmentId`
+SELECT `department`,
+       `employee`,
+       `salary`
+FROM (SELECT `d`.`name`                                                            'department',
+             `e`.`name`                                                            'employee',
+             `e`.`salary`,
+             RANK() OVER (PARTITION BY `e`.`departmentid` ORDER BY `salary` DESC ) `r`
+      FROM `department`        `d`
+               JOIN `employee` `e`
+                    ON `d`.`id` = `e`.`departmentid`
      ) `t`
 WHERE `r` = 1;
