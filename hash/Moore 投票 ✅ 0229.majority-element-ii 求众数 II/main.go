@@ -2,56 +2,72 @@ package main
 
 // https://leetcode-cn.com/problems/majority-element-ii
 
-type candidate struct {
+// ❓ 超过1/n的数
+
+type Elem struct {
 	num, cnt int
 }
 
 const base = 3
-const csLen = base - 1
+const elemL = base - 1
 
 func majorityElement(nums []int) []int {
 	var l = len(nums)
-	var cs [csLen]candidate
+	var elems [elemL]Elem
 	for _, num := range nums {
-		var firstSlot = -1
-		var k int
-		for k < csLen && cs[k].num != num {
-			if cs[k].cnt == 0 {
-				firstSlot = k
+		var slotInsert = -1
+		var idx int
+		// 找出第一个插槽
+		for idx < elemL {
+			if elems[idx].num == num {
+				// 同值插槽
+				break
+			} else if elems[idx].cnt == 0 {
+				// 第一个空槽
+				slotInsert = idx
 			}
-			k++
+			idx++
 		}
-		if k < csLen {
-			cs[k].cnt++
-		} else if k == csLen {
-			if -1 < firstSlot {
-				cs[firstSlot].num = num
-				cs[firstSlot].cnt = 1
+
+		if idx < elemL {
+			// 同值插槽
+			elems[idx].cnt++
+		} else if idx == elemL {
+			if -1 < slotInsert {
+				// 有空槽 替换
+				elems[slotInsert].num = num
+				elems[slotInsert].cnt = 1
 			} else {
-				for i := range cs {
-					cs[i].cnt--
+				// 全部自减
+				for i := range elems {
+					elems[i].cnt--
 				}
 			}
 		}
 	}
-	for i := range cs {
-		cs[i].cnt = 0
+
+	// 置零
+	for i := range elems {
+		elems[i].cnt = 0
 	}
+
+	// 因为抵消，需要重新计数
 	for _, num := range nums {
-		for i := range cs {
-			if cs[i].num == num {
-				cs[i].cnt++
+		for i := range elems {
+			if elems[i].num == num {
+				elems[i].cnt++
 				break
 			}
 		}
 	}
 
+	// 多个答案
 	var limit = l / base
-	var res []int
-	for i := range cs {
-		if limit < cs[i].cnt {
-			res = append(res, cs[i].num)
+	var numsMode []int
+	for i := range elems {
+		if limit < elems[i].cnt {
+			numsMode = append(numsMode, elems[i].num)
 		}
 	}
-	return res
+	return numsMode
 }

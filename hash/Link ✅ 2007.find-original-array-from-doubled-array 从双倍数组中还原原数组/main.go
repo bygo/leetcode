@@ -3,26 +3,26 @@ package main
 // https://leetcode-cn.com/problems/find-original-array-from-doubled-array
 
 func findOriginalArray(changed []int) []int {
-	l := len(changed)
-	if l%2 == 1 {
+	if len(changed)%2 == 1 {
 		return nil
 	}
-	m := [100001]int{}
+	// 计数
+	numMpCnt := [100001]int{}
 	var cnt int
-	for i := range changed {
-		m[changed[i]]++
+	for _, num := range changed {
+		numMpCnt[num]++
 		cnt++
 	}
 
-	var res []int
-	for i := 0; i <= 50000; i++ {
+	var numsOri []int
+	for num := 0; num <= 50000; num++ {
 		// 必须从小开始抵消
-		for 0 < m[i] {
-			m[i]--
-			m[i*2]--
+		for 0 < numMpCnt[num] {
+			numMpCnt[num]--
+			numMpCnt[num*2]--
 			cnt -= 2
-			res = append(res, i)
-			if m[i*2] < 0 {
+			numsOri = append(numsOri, num)
+			if numMpCnt[num*2] < 0 {
 				return nil
 			}
 		}
@@ -30,5 +30,5 @@ func findOriginalArray(changed []int) []int {
 	if 0 < cnt {
 		return nil
 	}
-	return res
+	return numsOri
 }

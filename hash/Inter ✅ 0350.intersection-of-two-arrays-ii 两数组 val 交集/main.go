@@ -6,16 +6,16 @@ package main
 
 func intersect(nums1 []int, nums2 []int) []int {
 	numMpCnt := map[int]int{}
-	for i := range nums1 {
-		numMpCnt[nums1[i]]++
+	for _, num := range nums1 {
+		numMpCnt[num]++
 	}
 
-	var res []int
+	var numsInter []int
 	for _, num := range nums2 {
 		if 0 < numMpCnt[num] {
-			res = append(res, num)
+			numsInter = append(numsInter, num)
 			numMpCnt[num]--
 		}
 	}
-	return res
+	return numsInter
 }

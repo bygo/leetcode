@@ -2,34 +2,35 @@ package main
 
 // https://leetcode-cn.com/problems/unique-email-addresses
 
-// ❓ 子域名访问次数
+// ❓ 不同的邮件地址数
 // b.y+ig@gmail.com
 // .会被忽略
 // +忽略 +~@内容
 func numUniqueEmails(emails []string) int {
 	mailMp := map[string]struct{}{}
 	for _, email := range emails {
-		l1 := len(email)
+		emailL := len(email)
 		var idx int
-		var cur []byte
+		var emailTmp []byte
 		// 计算 b.y+ig
-		for idx < l1 && email[idx] != '@' {
+		for idx < emailL && email[idx] != '@' {
 			if email[idx] == '+' {
 				// 移动到后 @gmail.com
-				for idx < l1 && email[idx] != '@' {
+				for idx < emailL && email[idx] != '@' {
 					idx++
 				}
 			} else {
 				if email[idx] != '.' {
-					cur = append(cur, email[idx])
+					emailTmp = append(emailTmp, email[idx])
 				}
 				idx++
 			}
 		}
 
 		// 计算 @gmail.com
-		cur = append(cur, email[idx:]...)
-		mailMp[string(cur)] = struct{}{}
+		emailTmp = append(emailTmp, email[idx:]...)
+
+		mailMp[string(emailTmp)] = struct{}{}
 	}
 	return len(mailMp)
 }

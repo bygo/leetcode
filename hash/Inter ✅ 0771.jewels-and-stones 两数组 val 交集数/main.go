@@ -9,9 +9,9 @@ func numJewelsInStones(j string, s string) int {
 		chMpCnt[j[i]] = 1
 	}
 
-	var res int
+	var cntInter int
 	for i := range s {
-		res += chMpCnt[s[i]]
+		cntInter += chMpCnt[s[i]]
 	}
-	return res
+	return cntInter
 }

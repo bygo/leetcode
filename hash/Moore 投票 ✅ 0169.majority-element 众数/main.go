@@ -2,19 +2,21 @@ package main
 
 // https://leetcode-cn.com/problems/majority-element
 
+// ❓ 超过一半的数
+
 func majorityElement(nums []int) int {
-	var num, cnt int
-	for i := range nums {
-		if num == nums[i] {
+	var numMode, cnt int
+	for _, num := range nums {
+		if numMode == num {
 			cnt++
 		} else {
 			if cnt == 0 {
-				num = nums[i]
+				numMode = num
 				cnt = 1
 			} else {
 				cnt--
 			}
 		}
 	}
-	return num
+	return numMode
 }

@@ -9,30 +9,31 @@ import (
 // ❓ 单词是唯一的缩写
 
 type ValidWordAbbr struct {
-	valMpComMpCnt map[string]map[string]int
+	comMpStrMpCnt map[string]map[string]int
 }
 
 func Constructor(dictionary []string) ValidWordAbbr {
-	valMpComMpCnt := map[string]map[string]int{}
-	for i := range dictionary {
-		s := Compress(dictionary[i])
-		if valMpComMpCnt[s] == nil {
-			valMpComMpCnt[s] = map[string]int{}
+	comMpStrMpCnt := map[string]map[string]int{}
+	for _, str := range dictionary {
+		com := Compress(str)
+		if comMpStrMpCnt[com] == nil {
+			comMpStrMpCnt[com] = map[string]int{}
 		}
-		valMpComMpCnt[s][dictionary[i]] ++
+		comMpStrMpCnt[com][str] ++
 	}
 	return ValidWordAbbr{
-		valMpComMpCnt: valMpComMpCnt,
+		comMpStrMpCnt: comMpStrMpCnt,
 	}
 }
 
-func (vwa *ValidWordAbbr) IsUnique(word string) bool {
-	s := Compress(word)
-	return vwa.valMpComMpCnt[s] == nil || len(vwa.valMpComMpCnt[s]) == 1 && 0 < vwa.valMpComMpCnt[s][word]
+func (vwa *ValidWordAbbr) IsUnique(str string) bool {
+	com := Compress(str)
+	return vwa.comMpStrMpCnt[com] == nil || len(vwa.comMpStrMpCnt[com]) == 1 && 0 < vwa.comMpStrMpCnt[com][str]
 }
 
 // hello => h3o
-func Compress(word string) string {
-	l := len(word)
-	return string(word[0]) + strconv.Itoa(l-2) + string(word[l-1])
+
+func Compress(str string) string {
+	wordL := len(str)
+	return string(str[0]) + strconv.Itoa(wordL-2) + string(str[wordL-1])
 }

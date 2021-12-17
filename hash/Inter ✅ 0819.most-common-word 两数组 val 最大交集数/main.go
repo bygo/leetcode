@@ -11,29 +11,31 @@ func mostCommonWord(paragraph string, banned []string) string {
 		banMpCnt[banned[i]] = 1
 	}
 
-	var res string
-	var max int
-	var tmp []byte
+	var strInter string
+	var strTmp []byte
+	var cntMax int
+
 	fn := func() {
-		str := string(tmp)
+		str := string(strTmp)
+		// 不在禁用列表
 		if 0 < len(str) && 0 == banMpCnt[str] {
 			strMpCnt[str]++
-			if max < strMpCnt[str] {
-				res = str
-				max = strMpCnt[str]
+			if cntMax < strMpCnt[str] {
+				strInter = str
+				cntMax = strMpCnt[str]
 			}
 		}
-		tmp = []byte{}
+		strTmp = []byte{}
 	}
 	for i := range paragraph {
 		if 'A' <= paragraph[i] && paragraph[i] <= 'Z' {
-			tmp = append(tmp, paragraph[i]+32)
+			strTmp = append(strTmp, paragraph[i]+32)
 		} else if 'a' <= paragraph[i] && paragraph[i] <= 'z' {
-			tmp = append(tmp, paragraph[i])
+			strTmp = append(strTmp, paragraph[i])
 		} else {
 			fn()
 		}
 	}
 	fn()
-	return res
+	return strInter
 }

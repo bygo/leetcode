@@ -10,14 +10,14 @@ func intersection(nums1 []int, nums2 []int) []int {
 		numMp[num] = struct{}{}
 	}
 
-	var res []int
+	var numsInter []int
 	for _, num := range nums2 {
 		_, ok := numMp[num]
 
 		if ok {
-			res = append(res, num)
+			numsInter = append(numsInter, num)
 			delete(numMp, num)
 		}
 	}
-	return res
+	return numsInter
 }

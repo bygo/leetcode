@@ -7,26 +7,29 @@ package main
 
 func numDifferentIntegers(word string) int {
 	strMp := map[string]struct{}{}
-	var tmp []byte
-	fn := func() {
-		tmpL := len(tmp)
+	var numBuf []byte
+
+	// 整数结算
+	cntNum := func() {
+		tmpL := len(numBuf)
 		if 0 < tmpL {
 			j := 0
-			for tmp[j] == '0' && j < tmpL-1 {
+			// 保存至少一个零
+			for numBuf[j] == '0' && j < tmpL-1 {
 				j++
 			}
-			strMp[string(tmp[j:])] = struct{}{}
-			tmp = []byte{}
+			strMp[string(numBuf[j:])] = struct{}{}
+			numBuf = []byte{}
 		}
 	}
 
 	for i := range word {
 		if '0' <= word[i] && word[i] <= '9' {
-			tmp = append(tmp, word[i])
+			numBuf = append(numBuf, word[i])
 		} else {
-			fn()
+			cntNum()
 		}
 	}
-	fn()
+	cntNum()
 	return len(strMp)
 }
