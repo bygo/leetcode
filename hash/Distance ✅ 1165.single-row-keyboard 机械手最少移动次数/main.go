@@ -7,29 +7,31 @@ package main
 
 func calculateTime(keyboard string, word string) int {
 	// 索引统计
-	var valMpIdx = [26]int{}
-	for i := range keyboard {
-		valMpIdx[keyboard[i]-'a'] = i
+	var chMpIdx = [26]int{}
+	for idx := range keyboard {
+		chMpIdx[keyboard[idx]-'a'] = idx
 	}
 
 	// 计算移动次数
 	// 0
-	var res = valMpIdx[word[0]-'a']
+	var res = chMpIdx[word[0]-'a']
 
 	// 1～l
 	var l = len(word)
 	var i = 1
 	for i < l {
-		res += abs(valMpIdx[word[i-1]-'a'], valMpIdx[word[i]-'a'])
+		chPrev := word[i-1] - 'a'
+		chNext := word[i] - 'a'
+		res += abs(chMpIdx[chPrev] - chMpIdx[chNext])
 		i++
 	}
 
 	return res
 }
 
-func abs(a, b int) int {
-	if a < b {
-		return b - a
+func abs(a int) int {
+	if a < 0 {
+		return -a
 	}
-	return a - b
+	return a
 }
