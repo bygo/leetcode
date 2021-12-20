@@ -1,13 +1,15 @@
 package main
 
-import "sort"
+import (
+	"sort"
+)
 
 func findMinStep(board string, hand string) int {
-	h := []byte(hand)
-	sort.Slice(h, func(i, j int) bool {
-		return h[i] < h[j]
+	handBuf := []byte(hand)
+	sort.Slice(handBuf, func(i, j int) bool {
+		return handBuf[i] < handBuf[j]
 	})
-	hand = string(h)
+	hand = string(handBuf)
 	vis := map[[2]string]int{}
 
 	var dfs func(board, hand string) int
@@ -18,35 +20,36 @@ func findMinStep(board string, hand string) int {
 		key := [2]string{board, hand}
 		_, ok := vis[key]
 		if !ok {
-			min := 6
-			for i := range hand {
-				if 0 < i && hand[i-1] == hand[i] {
+			depCur := 6
+			for idxHand := range hand {
+				if 0 < idxHand && hand[idxHand-1] == hand[idxHand] {
 					continue
 				}
-				for j := range board {
-					if 0 < j && board[j-1] == hand[i] {
+				for idxBoard := range board {
+					if 0 < idxBoard && board[idxBoard-1] == hand[idxHand] {
 						continue
 					}
 
-					if board[j] == hand[i] || 0 < j && board[j-1] == board[j] {
-						newBoard := clean(board[:j] + string(hand[i]) + board[j:])
-						newHand := hand[:i] + hand[i+1:]
-						cur := dfs(newBoard, newHand) + 1
-						if cur < min {
-							min = cur
+					if board[idxBoard] == hand[idxHand] || 0 < idxBoard && board[idxBoard-1] == board[idxBoard] {
+						newBoard := clean(board[:idxBoard] + string(hand[idxHand]) + board[idxBoard:])
+						newHand := hand[:idxHand] + hand[idxHand+1:]
+						dep := dfs(newBoard, newHand) + 1
+						if dep < depCur {
+							depCur = dep
 						}
 					}
 				}
 			}
-			vis[key] = min
+			vis[key] = depCur
 		}
 		return vis[key]
 	}
-	res := dfs(board, hand)
-	if res == 6 {
+
+	depMin := dfs(board, hand)
+	if depMin == 6 {
 		return -1
 	}
-	return res
+	return depMin
 }
 
 func clean(board string) string {
