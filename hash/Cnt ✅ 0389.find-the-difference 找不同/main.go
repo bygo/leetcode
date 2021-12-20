@@ -7,19 +7,19 @@ package main
 
 func findTheDifferenceCnt(s string, t string) byte {
 	// 统计
-	chMpIdx := [26]int{}
+	chMpCnt := [26]int{}
 	for i := range s {
 		ch := s[i] - 'a'
-		chMpIdx[ch]++
+		chMpCnt[ch]++
 	}
 
 	// map抵消
 	for i := range t {
 		ch := t[i] - 'a'
-		if chMpIdx[ch] == 0 {
+		if chMpCnt[ch] == 0 {
 			return t[i]
 		}
-		chMpIdx[ch]--
+		chMpCnt[ch]--
 	}
 	return 0
 }

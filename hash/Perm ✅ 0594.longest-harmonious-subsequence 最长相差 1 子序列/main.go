@@ -36,9 +36,9 @@ func findLHSOne(nums []int) int {
 		}
 
 		if 0 < numMpCnt[num-1] {
-			cur := numMpCnt[num-1] + numMpCnt[num]
-			if cntLongest < cur {
-				cntLongest = cur
+			cntCur := numMpCnt[num-1] + numMpCnt[num]
+			if cntLongest < cntCur {
+				cntLongest = cntCur
 			}
 		}
 	}

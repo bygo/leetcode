@@ -14,7 +14,8 @@ func buddyStrings(str string, goal string) bool {
 	var slotFirst, slotSecond = -1, -1
 	var chMpCnt = [26]int{}
 	for i := 0; i < strL; i++ {
-		chMpCnt[str[i]-'a']++
+		ch := str[i] - 'a'
+		chMpCnt[ch]++
 		if str[i] != goal[i] {
 			if slotFirst == -1 {
 				slotFirst = i

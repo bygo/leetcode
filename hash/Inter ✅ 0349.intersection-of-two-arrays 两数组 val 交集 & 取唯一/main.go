@@ -13,7 +13,6 @@ func intersection(nums1 []int, nums2 []int) []int {
 	var numsInter []int
 	for _, num := range nums2 {
 		_, ok := numMp[num]
-
 		if ok {
 			numsInter = append(numsInter, num)
 			delete(numMp, num)
