@@ -1,4 +1,96 @@
-# Distance ✅ 0888.fair-candy-swap 糖果棒交换后数量相等 
+# Cnt ✅ 0389.find-the-difference 找不同 
+```go
+package main
+
+// https://leetcode-c 	n.com/problems/find-the-difference
+
+// ❓ 找出 x
+// ⚠️ s = t + 随机byte(x)
+
+func findTheDifferenceCnt(s string, t string) byte {
+	// 统计
+	chMpCnt := [26]int{}
+	for i := range s {
+		ch := s[i] - 'a'
+		chMpCnt[ch]++
+	}
+
+	// map抵消
+	for i := range t {
+		ch := t[i] - 'a'
+		if chMpCnt[ch] == 0 {
+			return t[i]
+		}
+		chMpCnt[ch]--
+	}
+	return 0
+}
+
+func findTheDifferenceDistance(s string, t string) byte {
+	// sum抵消
+	var sum = 0
+	for i := range s {
+		sum = sum - int(s[i]) + int(t[i])
+	}
+	return byte(sum + int(t[len(t)-1]))
+}
+
+func findTheDifferenceXor(s string, t string) byte {
+	// 异或抵消
+	var sum byte
+	for i := range s {
+		sum ^= s[i] ^ t[i]
+	}
+	return sum ^ t[len(t)-1]
+}
+
+```
+
+# Cnt ✅ 0811.subdomain-visit-count 子域名访问次数 
+```go
+package main
+
+import (
+	"strconv"
+)
+
+// https://leetcode-cn.com/problems/subdomain-visit-count
+
+// ❓ 子域名访问次数
+// ⚠️ 10 www.by.com
+
+func subdomainVisits(cpdomains []string) []string {
+	var hostMpCnt = map[string]int{}
+	for _, str := range cpdomains {
+		// 出现次数
+		var cnt int
+		var idx int
+		var strL = len(str)
+		for str[idx] != ' ' {
+			cnt = cnt*10 + int(str[idx]-'0')
+			idx++
+		}
+		idx++
+
+		// 域名
+		for idx < strL {
+			hostMpCnt[str[idx:]] += cnt
+			for idx < strL && str[idx] != '.' { // 移动到 .
+				idx++
+			}
+			idx++ // 去除 .
+		}
+	}
+	var cntMp []string
+	for host, cnt := range hostMpCnt {
+		cntMp = append(cntMp, strconv.Itoa(cnt)+" "+host)
+	}
+	return cntMp
+}
+
+```
+
+# Cnt ✅ 0888.fair-candy-swap 糖果棒交换后数量相等 
 ```go
 package main
 
@@ -45,435 +137,112 @@ func fairCandySwap(aliceSizes []int, bobSizes []int) []int {
 
 ```
 
-# Distance ✅ 1165.single-row-keyboard 机械手最少移动次数 
+# Comb Trie ✅ 0720.longest-word-in-dictionary 词典中连续递接 的最长单词 
 ```go
 package main
 
-// https://leetcode-cn.com/problems/single-row-keyboard
+import "sort"
 
-// ❓ 输入一个单词的移动长度总和
-// ⚠️ 移动长度 = abs(i - j)
+// https://leetcode-cn.com/problems/longest-word-in-dictionary
 
-func calculateTime(keyboard string, word string) int {
-	// 索引统计
-	var valMpIdx = [26]int{}
-	for i := range keyboard {
-		valMpIdx[keyboard[i]-'a'] = i
-	}
+// ❓词典中连续递接 的最长单词
 
-	// 计算移动次数
-	// 0
-	var res = valMpIdx[word[0]-'a']
+func longestWord(words []string) string {
+	sort.Strings(words)
+	strMp := map[string]struct{}{}
 
-	// 1～l
-	var l = len(word)
-	var i = 1
-	for i < l {
-		res += abs(valMpIdx[word[i-1]-'a'], valMpIdx[word[i]-'a'])
-		i++
-	}
-
-	return res
-}
-
-func abs(a, b int) int {
-	if a < b {
-		return b - a
-	}
-	return a - b
-}
-
-```
-
-# Distance✅ 0389.find-the-difference 找不同 
-```go
-package main
-
-// https://leetcode-cn.com/problems/find-the-difference
-
-// ❓ 找出 x
-// ⚠️ s = t + 随机byte(x)
-
-func findTheDifferenceCnt(s string, t string) byte {
-	// 统计
-	valMpIdx := [26]int{}
-	for i := range s {
-		ch := s[i] - 'a'
-		valMpIdx[ch]++
-	}
-
-	// map抵消
-	for i := range t {
-		ch := t[i] - 'a'
-		if valMpIdx[ch] == 0 {
-			return ch + 'a'
-		}
-		valMpIdx[ch]--
-	}
-	return 0
-}
-
-func findTheDifferenceDistance(s string, t string) byte {
-	// sum抵消
-	var sum = 0
-	for i := range s {
-		sum = sum - int(s[i]) + int(t[i])
-	}
-	return byte(sum + int(t[len(t)-1]))
-}
-
-func findTheDifferenceXor(s string, t string) byte {
-	// 异或抵消
-	var sum byte
-	for i := range s {
-		sum ^= s[i] ^ t[i]
-	}
-	return sum ^ t[len(t)-1]
-}
-
-```
-
-# Divide ✅ 1763.longest-nice-substring 大小写成对出现的最长子串 
-```go
-package main
-
-// https://leetcode-cn.com/problems/longest-nice-substring
-
-// ❓ 大小写成对出现的最长子串
-// ⚠️ Aa Bb... 成对
-
-func longestNiceSubstring(s string) string {
-	byteMp := map[byte]struct{}{}
-	for i := range s {
-		byteMp[s[i]] = struct{}{}
-	}
-
-	for i := range s {
-		// 找对
-		ch := s[i]
-		if ch <= 'Z' {
-			ch += 32
-		} else {
-			ch -= 32
-		}
-		_, ok := byteMp[ch]
-
-		if !ok {
-			// 分区
-			left := longestNiceSubstring(s[:i])
-			right := longestNiceSubstring(s[i+1:])
-			if len(left) < len(right) {
-				return right
+	var longestStr string
+	for _, str := range words {
+		strL := len(str)
+		if len(str) == 1 {
+			// 单个字符 直接加入
+			strMp[str] = struct{}{}
+			// 比答案更长
+			if len(longestStr) == 0 {
+				longestStr = str
 			}
-			return left
-		}
-	}
-	return s
-}
-
-```
-
-# Filter ✅ 0217.contains-duplicate 出现重复 
-```go
-package main
-
-// https://leetcode-cn.com/problems/contains-duplicate
-
-// ❓ 出现重复
-
-func containsDuplicate(nums []int) bool {
-	var valMpCnt = map[int]int{}
-	for _, val := range nums {
-		if 0 < valMpCnt[val] {
-			return true
-		}
-		valMpCnt[val] += 1
-	}
-	return false
-}
-
-```
-
-# Filter ✅ 0359.logger-rate-limiter 相同消息截流 
-```go
-package main
-
-// https://leetcode-cn.com/problems/logger-rate-limiter
-
-// ❓相同消息截流
-
-type Logger struct {
-	msgMpTime map[string]int
-}
-
-func Constructor() Logger {
-	return Logger{msgMpTime: make(map[string]int)}
-}
-
-func (l *Logger) ShouldPrintMessage(timestamp int, message string) bool {
-	// 还在截流期
-	if timestamp < l.msgMpTime[message] {
-		return false
-	}
-	// 10秒
-	l.msgMpTime[message] = timestamp + 10
-	return true
-}
-
-```
-
-# Filter ✅ 0884.uncommon-words-from-two-sentences 两句话中的不常见单词 
-```go
-package main
-
-import "strings"
-
-// https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
-
-// ❓ 在两个数组只出现一次的单词
-
-func uncommonFromSentences(s1 string, s2 string) []string {
-	// 计数
-	a1 := strings.Split(s1, " ")
-	a2 := strings.Split(s2, " ")
-
-	strMpCnt := map[string]int{}
-
-	for _, s := range a1 {
-		strMpCnt[s]++
-	}
-
-	for _, s := range a2 {
-		strMpCnt[s]++
-	}
-
-	// 是否一次
-	var res []string
-	for str := range strMpCnt {
-		if strMpCnt[str] == 1 {
-			res = append(res, str)
-		}
-	}
-	return res
-}
-
-```
-
-# Filter ✅ 1119.remove-vowels-from-a-string 删去字符串中的元音 
-```go
-package main
-
-// https://leetcode-cn.com/problems/remove-vowels-from-a-string
-
-// ❓ 移除元音字符
-
-func removeVowels(s string) string {
-	l := len(s)
-	var res = make([]byte, 0, l)
-	for i := range s {
-		// 元音跳过
-		if s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' {
-			l--
 		} else {
-			res = append(res, s[i])
-		}
-	}
-	return string(res[:l])
-}
-
-```
-
-# Filter ✅ 1133.largest-unique-number 最大的唯一数 
-```go
-package main
-
-// https://leetcode-cn.com/problems/largest-unique-number
-
-// ❓ 最大的唯一值
-
-func largestUniqueNumber(nums []int) int {
-	// 计数
-	numMpCnt := [1001]int{}
-	for _, num := range nums {
-		numMpCnt[num]++
-	}
-
-	// 倒序
-	for num := 1000; 0 <= num; num-- {
-		if numMpCnt[num] == 1 {
-			return num
-		}
-	}
-	return -1
-}
-
-```
-
-# Filter ✅ 1394.find-lucky-integer-in-an-array 找出数组中的幸运数 
-```go
-package main
-
-// https://leetcode-cn.com/problems/find-lucky-integer-in-an-array
-
-// ❓ 出现次数cnt等于值val的最大值
-
-func findLucky(arr []int) int {
-	// 计数
-	numMpCnt := [501]int{}
-	for i := range arr {
-		numMpCnt[arr[i]]++
-	}
-
-	// 倒序
-	for num := 500; 0 < num; num-- {
-		if numMpCnt[num] == num {
-			return num
-		}
-	}
-	return -1
-}
-
-```
-
-# Filter ✅ 1748.sum-of-unique-elements 唯一元素的和 
-```go
-package main
-
-// https://leetcode-cn.com/problems/sum-of-unique-elements
-
-// ❓ 所有唯一元素的和
-
-func sumOfUnique(nums []int) int {
-	var numMpCnt = map[int]int{}
-	var res int
-	for _, num := range nums {
-		if numMpCnt[num] == 0 {
-			res += num
-			numMpCnt[num] = 1
-		} else if numMpCnt[num] == 1 {
-			res -= num
-			numMpCnt[num] = 2
-		}
-	}
-	return res
-}
-
-```
-
-# Filter ✅ 1935.maximum-number-of-words-you-can-type 可以输入的最大单词数 
-```go
-package main
-
-// https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type
-
-// ❓ 可以输入的最大单词数
-// ⚠️ hello word , w
-func canBeTypedWords(text string, brokenLetters string) int {
-	// 损坏键 计数
-	var chMpDis = map[byte]bool{}
-	for i := range brokenLetters {
-		chMpDis[brokenLetters[i]] = true
-	}
-	var res int
-
-	var idx int
-	var l = len(text)
-	for idx < l {
-		// 损坏键
-		for idx < l && text[idx] != ' ' && !chMpDis[text[idx]] {
-			idx++
-		}
-
-		if idx == l || text[idx] == ' ' {
-			res++
-		} else {
-			for idx < l && text[idx] != ' ' {
-				idx++
+			// 多个字符 判断是否有前缀
+			_, ok := strMp[str[:strL-1]]
+			if ok {
+				strMp[str] = struct{}{}
+				// 比答案更长
+				if len(longestStr) < strL {
+					longestStr = str
+				}
 			}
 		}
-		idx++
+
 	}
-	return res
+	return longestStr
+}
+
+type trie struct {
+	child [26]*trie
+	s     string
+}
+
+func longestWordTrie(words []string) string {
+	root := &trie{}
+	for _, word := range words {
+		n := root
+		for j := range word {
+			ch := word[j] - 'a'
+			if n.child[ch] == nil {
+				n.child[ch] = &trie{}
+			}
+			n = n.child[ch]
+		}
+		n.s = word
+	}
+
+	var longestStr string
+	var queue = []*trie{root}
+	for {
+		cnt := len(queue)
+		if cnt == 0 {
+			break
+		}
+		longestStr = queue[0].s
+		for i := 0; i < cnt; i++ {
+			for j := 0; j < 26; j++ {
+				if queue[i].child[j] != nil && queue[i].child[j].s != "" {
+					queue = append(queue, queue[i].child[j])
+				}
+			}
+		}
+
+		queue = queue[cnt:]
+	}
+	return longestStr
 }
 
 ```
 
-# Group ✅ 0274.h-index H 指数 
+# Comb ✅ 0001.two-sum 两数之和 
 ```go
 package main
 
-// https://leetcode-cn.com/problems/h-index
+// https://leetcode-cn.com/problems/two-sum/
 
-// ❓ h指数 为 篇数cnt 等于 至少引用次数quote
+// ❓ 两数之和
 
-func hIndex(citations []int) (h int) {
-	// 后缀和：至少引用次数val == 篇幅cnt
-	max := len(citations)
-	quoteMpCnt := make([]int, max+1)
-	for i := range citations {
-		if max <= citations[i] {
-			quoteMpCnt[max] ++
-		} else {
-			quoteMpCnt[citations[i]]++
+func twoSum(nums []int, target int) []int {
+	var numMpIdx = map[int]int{}
+	for idxRaw, numRaw := range nums {
+		numHash := target - numRaw
+		idxHash, ok := numMpIdx[numHash]
+		if ok {
+			return []int{idxHash, idxRaw}
 		}
+		numMpIdx[numRaw] = idxRaw
 	}
-	var cnt int
-	// i = 0 时，为一个都没被引用
-	for quote := max; 0 < quote; quote-- {
-		cnt += quoteMpCnt[quote]
-		if quote <= cnt {
-			return quote
-		}
-	}
-	return -1
+	return nil
 }
 
 ```
 
-# Group ✅ 0288.unique-word-abbreviation 单词是唯一缩写 
-```go
-package main
-
-import (
-	"strconv"
-)
-
-// https://leetcode-cn.com/problems/unique-word-abbreviation
-
-// ❓ 单词是唯一的缩写
-
-type ValidWordAbbr struct {
-	valMpComMpCnt map[string]map[string]int
-}
-
-func Constructor(dictionary []string) ValidWordAbbr {
-	valMpComMpCnt := map[string]map[string]int{}
-	for i := range dictionary {
-		s := Compress(dictionary[i])
-		if valMpComMpCnt[s] == nil {
-			valMpComMpCnt[s] = map[string]int{}
-		}
-		valMpComMpCnt[s][dictionary[i]] ++
-	}
-	return ValidWordAbbr{
-		valMpComMpCnt: valMpComMpCnt,
-	}
-}
-
-func (vwa *ValidWordAbbr) IsUnique(word string) bool {
-	s := Compress(word)
-	return vwa.valMpComMpCnt[s] == nil || len(vwa.valMpComMpCnt[s]) == 1 && 0 < vwa.valMpComMpCnt[s][word]
-}
-
-// hello => h3o
-func Compress(word string) string {
-	l := len(word)
-	return string(word[0]) + strconv.Itoa(l-2) + string(word[l-1])
-}
-
-```
-
-# Group ✅ 0348.design-tic-tac-toe 设计井字棋 
+# Comb ✅ 0348.design-tic-tac-toe 设计井字棋 
 ```go
 package main
 
@@ -534,13 +303,14 @@ func (t *TicTacToe) win(i int) bool {
 
 ```
 
-# Group ✅ 0500.keyboard-row 键盘同一行的单词数 
+# Comb ✅ 0500.keyboard-row 键盘同一行的单词数 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/keyboard-row
 
 // ❓ 在键盘同一行的单词数
+
 var chMpState = map[byte]uint8{}
 
 func init() {
@@ -556,23 +326,129 @@ func init() {
 }
 
 func findWords(words []string) []string {
-	var res []string
+	var wordSame []string
 	for _, word := range words {
-		idx := 0
-		l := len(word)
-		for idx < l && chMpState[word[idx]] == chMpState[word[0]] {
+		wordL := len(word)
+		chZero := word[0]
+		idx := 1
+		for idx < wordL {
+			chCur := word[idx]
+			if chMpState[chCur] != chMpState[chZero] {
+				break
+			}
 			idx++
 		}
-		if idx == l {
-			res = append(res, word)
+		if idx == wordL {
+			wordSame = append(wordSame, word)
 		}
 	}
-	return res
+	return wordSame
 }
 
 ```
 
-# Group ✅ 0811.subdomain-visit-count 子域名访问次数 
+# Comb ✅ 1128.number-of-equivalent-domino-pairs 组合相同的数量 
+```go
+package main
+
+// https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs
+
+// ❓ 组合相同的数量
+// ⚠️ 一个组只有2个数字
+
+func numEquivDominoPairs(d [][]int) int {
+	combMpCnt := map[int]int{}
+	var cnt int
+	for i := range d {
+		if d[i][0] < d[i][1] {
+			d[i][0], d[i][1] = d[i][1], d[i][0]
+		}
+		comb := d[i][0]*10 + d[i][1]
+		cnt += combMpCnt[comb]
+		combMpCnt[comb]++
+	}
+	return cnt
+}
+
+```
+
+# Comb ✅ 1275.find-winner-on-a-tic-tac-toe-game 找出井字棋的获胜者 
+```go
+package main
+
+// https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game
+
+// ❓ 3x3 井字棋
+
+const (
+	A       = "A"
+	B       = "B"
+	Pending = "Pending"
+	Draw    = "Draw"
+)
+
+func tictactoe(moves [][]int) string {
+	movesL := len(moves)
+
+	combMpCnt := [8]int{}
+
+	// 倒序
+	for i := movesL - 1; 0 <= i; i -= 2 {
+		row := moves[i][0]
+		col := moves[i][1] + 3
+		combMpCnt[row]++
+		combMpCnt[col]++
+		if moves[i][0] == moves[i][1] {
+			combMpCnt[6]++
+		}
+		if moves[i][0]+moves[i][1] == 2 {
+			combMpCnt[7]++
+		}
+	}
+
+	for i := range combMpCnt {
+		if combMpCnt[i] != 3 {
+			continue
+		}
+		// A先手
+		if movesL%2 == 1 {
+			return A
+		}
+		return B
+	}
+	if movesL < 9 {
+		return Pending
+	}
+
+	return Draw
+}
+
+```
+
+# Comb ✅ 1512.number-of-good-pairs 好数对的数目：i < j & a[i] == a[j] 
+```go
+package main
+
+// https://leetcode-cn.com/problems/number-of-good-pairs
+
+// ❓ 好数对的数目
+// ⚠️ i < j && nums[i] == nums[j]
+
+func numIdenticalPairs(nums []int) int {
+	var numMpCnt = map[int]int{}
+	var cntGood int
+	for _, num := range nums {
+		if 0 < numMpCnt[num] {
+			cntGood += numMpCnt[num]
+		}
+		numMpCnt[num]++
+	}
+	return cntGood
+}
+
+```
+
+# Group ✅ 0288.unique-word-abbreviation 单词是唯一缩写 
 ```go
 package main
 
@@ -580,38 +456,38 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/subdomain-visit-count
+// https://leetcode-cn.com/problems/unique-word-abbreviation
 
-// ❓ 子域名访问次数
-// ⚠️ 10 www.by.com
+// ❓ 单词是唯一的缩写
 
-func subdomainVisits(cpdomains []string) []string {
-	var hostMpCnt = map[string]int{}
-	for _, str := range cpdomains {
-		// 出现次数
-		var cnt int
-		var idx int
-		var strL = len(str)
-		for str[idx] != ' ' {
-			cnt = cnt*10 + int(str[idx]-'0')
-			idx++
+type ValidWordAbbr struct {
+	comMpStrMpCnt map[string]map[string]int
+}
+
+func Constructor(dictionary []string) ValidWordAbbr {
+	comMpStrMpCnt := map[string]map[string]int{}
+	for _, str := range dictionary {
+		com := Compress(str)
+		if comMpStrMpCnt[com] == nil {
+			comMpStrMpCnt[com] = map[string]int{}
 		}
-		idx++
+		comMpStrMpCnt[com][str] ++
+	}
+	return ValidWordAbbr{
+		comMpStrMpCnt: comMpStrMpCnt,
+	}
+}
 
-		// 域名
-		for idx < strL {
-			hostMpCnt[str[idx:]] += cnt
-			for idx < strL && str[idx] != '.' {
-				idx++
-			}
-			idx++
-		}
-	}
-	var res []string
-	for host, cnt := range hostMpCnt {
-		res = append(res, strconv.Itoa(cnt)+" "+host)
-	}
-	return res
+func (vwa *ValidWordAbbr) IsUnique(str string) bool {
+	com := Compress(str)
+	return vwa.comMpStrMpCnt[com] == nil || len(vwa.comMpStrMpCnt[com]) == 1 && 0 < vwa.comMpStrMpCnt[com][str]
+}
+
+// hello => h3o
+
+func Compress(str string) string {
+	wordL := len(str)
+	return string(str[0]) + strconv.Itoa(wordL-2) + string(str[wordL-1])
 }
 
 ```
@@ -623,7 +499,7 @@ package main
 // https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards
 
 // ❓存在 int(x) 把数组分为:
-// ⚠️ 每组cnt为 int(x)
+// ⚠️ 每组cnt为 int(g)
 // ⚠️ 每组val相同
 
 func hasGroupsSizeX(deck []int) bool {
@@ -634,15 +510,15 @@ func hasGroupsSizeX(deck []int) bool {
 	}
 
 	// 最大公约数
-	x := -1
+	g := -1
 	for num := range numMpCnt {
-		if x == -1 {
-			x = numMpCnt[num]
+		if g == -1 {
+			g = numMpCnt[num]
 		} else {
-			x = gcd(x, numMpCnt[num])
+			g = gcd(g, numMpCnt[num])
 		}
 	}
-	return 2 <= x
+	return 2 <= g
 }
 
 func gcd(x, y int) int {
@@ -660,125 +536,51 @@ package main
 
 // https://leetcode-cn.com/problems/unique-email-addresses
 
-// ❓ 子域名访问次数
+// ❓ 不同的邮件地址数
 // b.y+ig@gmail.com
 // .会被忽略
 // +忽略 +~@内容
 func numUniqueEmails(emails []string) int {
 	mailMp := map[string]struct{}{}
 	for _, email := range emails {
-		l1 := len(email)
+		emailL := len(email)
 		var idx int
-		var cur []byte
-		// 计算 b.y+ig
-		for idx < l1 && email[idx] != '@' {
+		var emailTmp []byte
+		// 处理 b.y+ig
+		for idx < emailL && email[idx] != '@' {
 			if email[idx] == '+' {
 				// 移动到后 @gmail.com
-				for idx < l1 && email[idx] != '@' {
+				for idx < emailL && email[idx] != '@' {
 					idx++
 				}
 			} else {
 				if email[idx] != '.' {
-					cur = append(cur, email[idx])
+					emailTmp = append(emailTmp, email[idx])
 				}
 				idx++
 			}
 		}
 
-		// 计算 @gmail.com
-		cur = append(cur, email[idx:]...)
-		mailMp[string(cur)] = struct{}{}
+		// 处理 @gmail.com
+		emailTmp = append(emailTmp, email[idx:]...)
+
+		mailMp[string(emailTmp)] = struct{}{}
 	}
 	return len(mailMp)
 }
 
 ```
 
-# Group ✅ 1128.number-of-equivalent-domino-pairs 组合相同的数量 
-```go
-package main
-
-// https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs
-
-// ❓ 组合相同的数量
-// ⚠️ 一个组只有2个数字
-
-func numEquivDominoPairs(d [][]int) int {
-	combMpCnt := map[int]int{}
-	var res int
-	for i := range d {
-		if d[i][0] < d[i][1] {
-			d[i][0], d[i][1] = d[i][1], d[i][0]
-		}
-		comb := d[i][0]*10 + d[i][1]
-		res += combMpCnt[comb]
-		combMpCnt[comb]++
-	}
-	return res
-}
-
-```
-
-# Group ✅ 1275.find-winner-on-a-tic-tac-toe-game 找出井字棋的获胜者 
-```go
-package main
-
-// https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game
-
-// ❓ 3x3 井字棋
-
-const (
-	A       = "A"
-	B       = "B"
-	Pending = "Pending"
-	Draw    = "Draw"
-)
-
-func tictactoe(moves [][]int) string {
-	l1 := len(moves)
-
-	perMpCnt := [8]int{}
-
-	for i := l1 - 1; 0 <= i; i -= 2 {
-		row := moves[i][0]
-		col := moves[i][1] + 3
-		perMpCnt[row]++
-		perMpCnt[col]++
-		if moves[i][0] == moves[i][1] {
-			perMpCnt[6]++
-		}
-		if moves[i][0]+moves[i][1] == 2 {
-			perMpCnt[7]++
-		}
-	}
-
-	for i := range perMpCnt {
-		if perMpCnt[i] != 3 {
-			continue
-		}
-		if l1%2 == 1 {
-			return A
-		}
-		return B
-	}
-	if l1 < 9 {
-		return Pending
-	}
-
-	return Draw
-}
-
-```
-
-# Group ✅ 1399.count-largest-group 统计数位sum相同的组，cnt最大组的数量 
+# Group ✅ 1399.count-largest-group 数位和相同为一组，含有最大数量的有多少组 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/count-largest-group
 
-// ❓ 统计数位sum相同的组，cnt最大组的数量
+// ❓ 数位和相同为一组，含有最大数量的有多少组
 
 func countLargestGroup(n int) int {
+	// 统计
 	sumMpCnt := map[int]int{}
 	for i := 1; i <= n; i++ {
 		j := i
@@ -789,39 +591,17 @@ func countLargestGroup(n int) int {
 		}
 		sumMpCnt[sum] ++
 	}
-	var cnt, res int
+	// 最大数量
+	var cnt, cntLargest int
 	for sum := range sumMpCnt {
 		if cnt < sumMpCnt[sum] {
 			cnt = sumMpCnt[sum]
-			res = 1
+			cntLargest = 1
 		} else if sumMpCnt[sum] == cnt {
-			res++
+			cntLargest++
 		}
 	}
-	return res
-}
-
-```
-
-# Group ✅ 1512.number-of-good-pairs 好数对的数目：i < j & a[i] == a[j] 
-```go
-package main
-
-// https://leetcode-cn.com/problems/number-of-good-pairs
-
-// ❓ 好数对的数目
-// ⚠️ i < j && nums[i] == nums[j]
-
-func numIdenticalPairs(nums []int) int {
-	var numMpCnt = map[int]int{}
-	var res int
-	for _, num := range nums {
-		if 0 < numMpCnt[num] {
-			res += numMpCnt[num]
-		}
-		numMpCnt[num]++
-	}
-	return res
+	return cntLargest
 }
 
 ```
@@ -835,6 +615,7 @@ package main
 // ❓ 盒子中小球的最大数量
 
 func countBalls(lowLimit int, highLimit int) int {
+	// 数位和
 	var sum int
 	j := lowLimit
 	for 0 < j {
@@ -842,7 +623,7 @@ func countBalls(lowLimit int, highLimit int) int {
 		j /= 10
 	}
 	sumMpCnt := [46]int{} // 最大9999 = 46
-	var max int
+	var cntMax int
 	for i := lowLimit; i <= highLimit; i++ {
 		sumMpCnt[sum]++
 		k := i
@@ -853,13 +634,14 @@ func countBalls(lowLimit int, highLimit int) int {
 		sum++
 	}
 
+	// 计算最大数量
 	for sum := range sumMpCnt {
-		if max < sumMpCnt[sum] {
-			max = sumMpCnt[sum]
+		if cntMax < sumMpCnt[sum] {
+			cntMax = sumMpCnt[sum]
 		}
 	}
 
-	return max
+	return cntMax
 }
 
 ```
@@ -875,28 +657,183 @@ package main
 
 func numDifferentIntegers(word string) int {
 	strMp := map[string]struct{}{}
-	var tmp []byte
-	fn := func() {
-		tmpL := len(tmp)
+	var numBuf []byte
+
+	// 整数结算
+	cntNum := func() {
+		tmpL := len(numBuf)
 		if 0 < tmpL {
 			j := 0
-			for tmp[j] == '0' && j < tmpL-1 {
+			// 保存至少一个零
+			for numBuf[j] == '0' && j < tmpL-1 {
 				j++
 			}
-			strMp[string(tmp[j:])] = struct{}{}
-			tmp = []byte{}
+			strMp[string(numBuf[j:])] = struct{}{}
+			numBuf = []byte{}
 		}
 	}
 
 	for i := range word {
 		if '0' <= word[i] && word[i] <= '9' {
-			tmp = append(tmp, word[i])
+			numBuf = append(numBuf, word[i])
 		} else {
-			fn()
+			cntNum()
 		}
 	}
-	fn()
+	cntNum()
 	return len(strMp)
+}
+
+```
+
+# Idx ✅ 0244.shortest-word-distance-ii 两单词距离最小索引 
+```go
+package main
+
+// https://leetcode-cn.com/problems/shortest-word-distance-ii
+
+// ❓ 两单词距离最小索引
+
+type WordDistance struct {
+	strMpIdxes map[string][]int
+}
+
+func Constructor(wordsDict []string) WordDistance {
+	strMpIdxes := map[string][]int{}
+	for i, str := range wordsDict {
+		strMpIdxes[str] = append(strMpIdxes[str], i)
+	}
+	return WordDistance{
+		strMpIdxes: strMpIdxes,
+	}
+}
+
+func (wd *WordDistance) Shortest(word1 string, word2 string) int {
+	idxes1 := wd.strMpIdxes[word1]
+	idxes2 := wd.strMpIdxes[word2]
+	i, j := len(idxes1)-1, len(idxes2)-1
+	var distMin = 1<<63 - 1
+	var distTmp int
+	for -1 < i && -1 < j {
+		if idxes1[i] < idxes2[j] {
+			// 2逼近1
+			distTmp = idxes2[j] - idxes1[i]
+			j--
+		} else {
+			// 1逼近2
+			distTmp = idxes1[i] - idxes2[j]
+			i--
+		}
+
+		// 距离
+		if distTmp < distMin {
+			distMin = distTmp
+		}
+	}
+	return distMin
+}
+
+```
+
+# Idx ✅ 0599.minimum-index-sum-of-two-lists 两数组相同值的最小索引集合 
+```go
+package main
+
+// https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists
+
+// ❓ 两数组相同值的最小索引集合
+// ⚠️ 没有重复
+
+func findRestaurant(list1 []string, list2 []string) []string {
+	strMpIdx := map[string]int{}
+	for i, str := range list1 {
+		strMpIdx[str] = i + 1
+	}
+
+	var stringsDist []string
+	var distMin = 1<<63 - 1
+	for i := range list2 {
+		if 0 < strMpIdx[list2[i]] {
+			// 存在时计算
+			dist := strMpIdx[list2[i]] + i
+
+			if dist < distMin {
+				// 比当前还小
+				stringsDist = []string{list2[i]}
+				distMin = dist
+			} else if dist == distMin {
+				// 累加
+				stringsDist = append(stringsDist, list2[i])
+			}
+		}
+	}
+	return stringsDist
+}
+
+```
+
+# Idx ✅ 0760.find-anagram-mappings 在B找A的位置 
+```go
+package main
+
+// https://leetcode-cn.com/problems/find-anagram-mappings
+
+// ❓ 在B找A的位置
+
+func anagramMappings(A []int, B []int) []int {
+	// B 的位置
+	var numMpIdx = map[int]int{}
+	for idx, num := range B {
+		numMpIdx[num] = idx
+	}
+
+	var idxesA []int
+	for _, num := range A {
+		idxesA = append(idxesA, numMpIdx[num])
+	}
+	return idxesA
+}
+
+```
+
+# Idx ✅ 1165.single-row-keyboard 机械手最少移动次数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/single-row-keyboard
+
+// ❓ 输入一个单词的移动长度总和
+// ⚠️ 移动长度 = abs(i - j)
+
+func calculateTime(keyboard string, word string) int {
+	// 索引统计
+	var chMpIdx = [26]int{}
+	for idx := range keyboard {
+		ch := keyboard[idx] - 'a'
+		chMpIdx[ch] = idx
+	}
+
+	// 计算移动次数
+	// 0
+	ch0 := word[0] - 'a'
+	var cntDist = chMpIdx[ch0]
+
+	// 1～l
+	for i := 1; i < len(word); i++ {
+		chPrev := word[i-1] - 'a'
+		chNext := word[i] - 'a'
+		cntDist += abs(chMpIdx[chPrev] - chMpIdx[chNext])
+		i++
+	}
+
+	return cntDist
+}
+
+func abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
 }
 
 ```
@@ -955,16 +892,15 @@ func intersection(nums1 []int, nums2 []int) []int {
 		numMp[num] = struct{}{}
 	}
 
-	var res []int
+	var numsInter []int
 	for _, num := range nums2 {
 		_, ok := numMp[num]
-
 		if ok {
-			res = append(res, num)
+			numsInter = append(numsInter, num)
 			delete(numMp, num)
 		}
 	}
-	return res
+	return numsInter
 }
 
 ```
@@ -979,18 +915,18 @@ package main
 
 func intersect(nums1 []int, nums2 []int) []int {
 	numMpCnt := map[int]int{}
-	for i := range nums1 {
-		numMpCnt[nums1[i]]++
+	for _, num := range nums1 {
+		numMpCnt[num]++
 	}
 
-	var res []int
+	var numsInter []int
 	for _, num := range nums2 {
 		if 0 < numMpCnt[num] {
-			res = append(res, num)
+			numsInter = append(numsInter, num)
 			numMpCnt[num]--
 		}
 	}
-	return res
+	return numsInter
 }
 
 ```
@@ -1008,11 +944,11 @@ func numJewelsInStones(j string, s string) int {
 		chMpCnt[j[i]] = 1
 	}
 
-	var res int
+	var cntInter int
 	for i := range s {
-		res += chMpCnt[s[i]]
+		cntInter += chMpCnt[s[i]]
 	}
-	return res
+	return cntInter
 }
 
 ```
@@ -1032,66 +968,74 @@ func mostCommonWord(paragraph string, banned []string) string {
 		banMpCnt[banned[i]] = 1
 	}
 
-	var res string
-	var max int
-	var tmp []byte
+	var strInter string
+	var strTmp []byte
+	var cntMax int
+
 	fn := func() {
-		str := string(tmp)
+		str := string(strTmp)
+		// 不在禁用列表
 		if 0 < len(str) && 0 == banMpCnt[str] {
 			strMpCnt[str]++
-			if max < strMpCnt[str] {
-				res = str
-				max = strMpCnt[str]
+			if cntMax < strMpCnt[str] {
+				strInter = str
+				cntMax = strMpCnt[str]
 			}
 		}
-		tmp = []byte{}
+		strTmp = []byte{}
 	}
 	for i := range paragraph {
 		if 'A' <= paragraph[i] && paragraph[i] <= 'Z' {
-			tmp = append(tmp, paragraph[i]+32)
+			strTmp = append(strTmp, paragraph[i]+32)
 		} else if 'a' <= paragraph[i] && paragraph[i] <= 'z' {
-			tmp = append(tmp, paragraph[i])
+			strTmp = append(strTmp, paragraph[i])
 		} else {
 			fn()
 		}
 	}
 	fn()
-	return res
+	return strInter
 }
 
 ```
 
-# Inter ✅ 1002.find-common-characters N个数组 val 交集 
+# Inter ✅ 1002.find-common-characters N个字符串 公共字符 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/find-common-characters
 
-func commonChars(words []string) {
-	var res []string
-	minFreq := [26]int{}
-	for i := range minFreq {
-		minFreq[i] = 1<<63 - 1
+// ❓ N个字符串 公共字符
+
+func commonChars(words []string) []string {
+	// 占位
+	var chsCommon []string
+	chMpCnt := [26]int{}
+	for i := range chMpCnt {
+		chMpCnt[i] = 1<<63 - 1
 	}
+
 	for _, word := range words {
-		freq := [26]int{}
-		for _, b := range word {
-			freq[b-'a']++
+		// 计数
+		chMpCntTmp := [26]int{}
+		for _, ch := range word {
+			chMpCntTmp[ch-'a']++
 		}
-		for i, f := range freq[:] {
-			if f < minFreq[i] {
-				minFreq[i] = f
+		// 计算最小值
+		for ch, cntTmp := range chMpCntTmp {
+			if cntTmp < chMpCnt[ch] {
+				chMpCnt[ch] = cntTmp
 			}
 		}
 	}
 
 	// 字典序
 	for i := 0; i < 26; i++ {
-		for j := 0; j < minFreq[i]; j++ {
-			res = append(res, string(rune(i+'a')))
+		for j := 0; j < chMpCnt[i]; j++ {
+			chsCommon = append(chsCommon, string(byte(i+'a')))
 		}
 	}
-	return
+	return chsCommon
 }
 
 ```
@@ -1103,331 +1047,36 @@ package main
 // https://leetcode-cn.com/problems/line-reflection
 
 func isReflected(points [][]int) bool {
-	m := map[int]map[int]bool{}
+	xMpYMpBool := map[int]map[int]bool{}
 	max, min := -1<<63, 1<<63-1
 
+	// 找出最大范围 并统计
 	for _, point := range points {
-		if max < point[0] {
-			max = point[0]
+		x := point[0]
+		y := point[1]
+		if max < x {
+			max = x
 		}
-		if point[0] < min {
-			min = point[0]
+		if x < min {
+			min = x
 		}
-		if m[point[0]] == nil {
-			m[point[0]] = map[int]bool{}
+		if xMpYMpBool[x] == nil {
+			xMpYMpBool[x] = map[int]bool{}
 		}
-		m[point[0]][point[1]] = true
+		xMpYMpBool[x][y] = true
 	}
+
+	// 使所有平行，必须找出中垂线
+
 	for _, point := range points {
 		x := max + min - point[0]
+		y := point[1]
 		// x 镜像不存在 或者 不平行
-		if m[x] == nil || !m[x][point[1]] {
+		if xMpYMpBool[x] == nil || !xMpYMpBool[x][y] {
 			return false
 		}
 	}
 	return true
-}
-
-```
-
-# Link Trie ✅ 0720.longest-word-in-dictionary 词典中连续递接 的最长单词 
-```go
-package main
-
-import "sort"
-
-// https://leetcode-cn.com/problems/longest-word-in-dictionary
-
-func longestWord(words []string) string {
-	sort.Strings(words)
-	m := map[string]struct{}{}
-
-	var res string
-	for i := range words {
-		l1 := len(words[i])
-		if len(words[i]) == 1 {
-			m[words[i]] = struct{}{}
-			if len(res) < l1 {
-				res = words[i]
-			}
-		} else {
-			_, ok := m[words[i][:l1-1]]
-			if ok {
-				m[words[i]] = struct{}{}
-				if len(res) < l1 {
-					res = words[i]
-				}
-			}
-		}
-
-	}
-	return res
-}
-
-type trie struct {
-	child [26]*trie
-	s     string
-}
-
-func longestWordTrie(words []string) string {
-	root := &trie{}
-	for _, word := range words {
-		n := root
-		for j := range word {
-			ch := word[j] - 'a'
-			if n.child[ch] == nil {
-				n.child[ch] = &trie{}
-			}
-			n = n.child[ch]
-		}
-		n.s = word
-	}
-
-	var res string
-	var queue = []*trie{root}
-	for {
-		cnt := len(queue)
-		if cnt == 0 {
-			break
-		}
-		res = queue[0].s
-		for i := 0; i < cnt; i++ {
-			for j := 0; j < 26; j++ {
-				if queue[i].child[j] != nil && queue[i].child[j].s != "" {
-					queue = append(queue, queue[i].child[j])
-				}
-			}
-		}
-
-		queue = queue[cnt:]
-	}
-	return res
-}
-
-```
-
-# Link ✅ 0001.two-sum 两数之和 
-```go
-package main
-
-// https://leetcode-cn.com/problems/two-sum/
-
-func twoSum(nums []int, target int) []int {
-	var m = map[int]int{}
-	for rawK, rawV := range nums {
-		hashK, ok := m[target-rawV]
-		if ok {
-			return []int{hashK, rawK}
-		}
-		m[rawV] = rawK
-	}
-	return nil
-}
-
-```
-
-# Link ✅ 0205.isomorphic-strings 同构字符串 
-```go
-package main
-
-// https://leetcode-cn.com/problems/isomorphic-strings
-
-func isIsomorphic(s string, t string) bool {
-	m1 := map[byte]byte{}
-	m2 := map[byte]byte{}
-	l := len(s)
-	for i := 0; i < l; i++ {
-		ch1 := s[i]
-		ch2 := t[i]
-		if m1[ch1] != 0 && m1[ch1] != ch2 || m2[ch1] != 0 && m2[ch2] != ch1 {
-			return false
-		}
-		m1[ch1] = ch2
-		m2[ch2] = ch1
-	}
-
-	return true
-}
-
-```
-
-# Link ✅ 0244.shortest-word-distance-ii 两数组相同值最小索引 II 🤚 索引队列 
-```go
-package main
-
-// https://leetcode-cn.com/problems/shortest-word-distance-ii
-
-type WordDistance struct {
-	indexes map[string][]int
-}
-
-func Constructor(wordsDict []string) WordDistance {
-	indexes := map[string][]int{}
-	for i := range wordsDict {
-		indexes[wordsDict[i]] = append(indexes[wordsDict[i]], i)
-	}
-	return WordDistance{
-		indexes: indexes,
-	}
-}
-
-func (wd *WordDistance) Shortest(word1 string, word2 string) int {
-	arr1 := wd.indexes[word1]
-	arr2 := wd.indexes[word2]
-	i, j := len(arr1)-1, len(arr2)-1
-	var min = 1<<63 - 1
-	for -1 < i && -1 < j {
-		var cur int
-		if arr1[i] < arr2[j] {
-			cur = arr2[j] - arr1[i]
-			j--
-		} else {
-			cur = arr1[i] - arr2[j]
-			i--
-		}
-		if cur < min {
-			min = cur
-		}
-	}
-	return min
-}
-
-```
-
-# Link ✅ 0290.word-pattern 单词规律 
-```go
-package main
-
-import "strings"
-
-// https://leetcode-cn.com/problems/word-pattern
-
-func wordPattern(pattern string, s string) bool {
-	words := strings.Split(s, " ")
-	if len(pattern) != len(words) {
-		return false
-	}
-	var patternSet = map[string]byte{}
-	var wordsSet = map[byte]string{}
-	for i := range pattern {
-		p := patternSet[words[i]]
-		w := wordsSet[pattern[i]]
-		if p != 0 && p != pattern[i] || w != "" && w != words[i] {
-			return false
-		}
-		patternSet[words[i]] = pattern[i]
-		wordsSet[pattern[i]] = words[i]
-
-	}
-
-	return true
-}
-
-```
-
-# Link ✅ 0599.minimum-index-sum-of-two-lists 两数组相同值的最小索引总和 
-```go
-package main
-
-// https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists
-
-func findRestaurant(list1 []string, list2 []string) []string {
-	m := map[string]int{}
-	for i := range list1 {
-		m[list1[i]] = i + 1
-	}
-
-	var res []string
-	var min = 1<<63 - 1
-	for i := range list2 {
-		if 0 < m[list2[i]] {
-			cur := m[list2[i]] + i
-			if cur < min {
-				res = []string{list2[i]}
-				min = cur
-			} else if cur == min {
-				res = append(res, list2[i])
-			}
-		}
-	}
-	return res
-}
-
-```
-
-# Link ✅ 0734.sentence-similarity 句子相似性 
-```go
-package main
-
-// https://leetcode-cn.com/problems/sentence-similarity
-
-func areSentencesSimilar(sentence1 []string, sentence2 []string, similarPairs [][]string) bool {
-	m := map[string]map[string]bool{}
-	for _, pair := range similarPairs {
-		if m[pair[0]] == nil {
-			m[pair[0]] = map[string]bool{}
-		}
-		if m[pair[1]] == nil {
-			m[pair[1]] = map[string]bool{}
-		}
-		m[pair[0]][pair[1]] = true
-		m[pair[1]][pair[0]] = true
-	}
-
-	if len(sentence1) != len(sentence2) {
-		return false
-	}
-	for i := range sentence1 {
-		if sentence1[i] != sentence2[i] && !m[sentence1[i]][sentence2[i]] && !m[sentence2[i]][sentence1[i]] {
-			return false
-		}
-	}
-	return true
-}
-
-```
-
-# Link ✅ 0760.find-anagram-mappings 找A在B的位置 
-```go
-package main
-
-// https://leetcode-cn.com/problems/find-anagram-mappings
-
-func anagramMappings(A []int, B []int) []int {
-	var m = map[int]int{}
-	for k, v := range B {
-		m[v] = k
-	}
-
-	var res []int
-	for _, v := range A {
-		res = append(res, m[v])
-	}
-	return res
-}
-
-```
-
-# Link ✅ 1346.check-if-n-and-its-double-exist 是否存在两倍数 
-```go
-package main
-
-// https://leetcode-cn.com/problems/check-if-n-and-its-double-exist
-
-func checkIfExist(arr []int) bool {
-	m := map[int]int{}
-	for i := range arr {
-		m[arr[i]]++
-	}
-
-	for i := range m {
-		if 0 < m[i*2] {
-			if i != 0 || 2 <= m[i] {
-				return true
-			}
-		}
-	}
-	return false
 }
 
 ```
@@ -1457,26 +1106,26 @@ package main
 // https://leetcode-cn.com/problems/find-original-array-from-doubled-array
 
 func findOriginalArray(changed []int) []int {
-	l := len(changed)
-	if l%2 == 1 {
+	if len(changed)%2 == 1 {
 		return nil
 	}
-	m := [100001]int{}
+	// 计数
+	numMpCnt := [100001]int{}
 	var cnt int
-	for i := range changed {
-		m[changed[i]]++
+	for _, num := range changed {
+		numMpCnt[num]++
 		cnt++
 	}
 
-	var res []int
-	for i := 0; i <= 50000; i++ {
+	var numsOri []int
+	for num := 0; num <= 50000; num++ {
 		// 必须从小开始抵消
-		for 0 < m[i] {
-			m[i]--
-			m[i*2]--
+		for 0 < numMpCnt[num] {
+			numMpCnt[num]--
+			numMpCnt[num*2]--
 			cnt -= 2
-			res = append(res, i)
-			if m[i*2] < 0 {
+			numsOri = append(numsOri, num)
+			if numMpCnt[num*2] < 0 {
 				return nil
 			}
 		}
@@ -1484,7 +1133,7 @@ func findOriginalArray(changed []int) []int {
 	if 0 < cnt {
 		return nil
 	}
-	return res
+	return numsOri
 }
 
 ```
@@ -1495,44 +1144,46 @@ package main
 
 // https://leetcode-cn.com/problems/detect-squares
 
+// ❓ 输入的点，能形成几个正方形
+
 type DetectSquares struct {
-	m map[int]map[int]int
+	xMpYMpCnt map[int]map[int]int
 }
 
 func Constructor() DetectSquares {
-	return DetectSquares{m: map[int]map[int]int{}}
+	return DetectSquares{xMpYMpCnt: map[int]map[int]int{}}
 }
 
 func (ds *DetectSquares) Add(p []int) {
 	x := p[0]
 	y := p[1]
-	if ds.m[x] == nil {
-		ds.m[x] = map[int]int{}
+	if ds.xMpYMpCnt[x] == nil {
+		ds.xMpYMpCnt[x] = map[int]int{}
 	}
-	ds.m[x][y] ++
+	ds.xMpYMpCnt[x][y] ++
 }
 
 func (ds *DetectSquares) Count(p []int) int {
-	x1 := p[0]
-	y1 := p[1]
-	yMap := ds.m[x1] // 所有x = x1 的 y 点
-	var res int
-	for y2 := range yMap {
-		dis := y2 - y1 // 需要的边长
-		if dis != 0 {
-			//  左边 右边
-			ys := ds.m[x1-dis] // x1-dis 的 y 点
-			if ys != nil {
-				res += ys[y1] * ys[y2] * yMap[y2] // 与其他三点成为正方形
+	x := p[0]
+	y := p[1]
+	yMpCnt := ds.xMpYMpCnt[x] // 所有x = x1 的 y 点
+	var cntSquare int
+	for yCur := range yMpCnt {
+		dist := yCur - y // 需要的边长
+		if dist != 0 {
+			// 左边 右边
+			yCurMpCnt := ds.xMpYMpCnt[x-dist] // x1-dis 的 y 点
+			if yCurMpCnt != nil {
+				cntSquare += yCurMpCnt[y] * yCurMpCnt[yCur] * yMpCnt[yCur] // 与其他三点成为正方形
 			}
 
-			ys = ds.m[x1+dis] // x1+dis 的 y 点
-			if ys != nil {
-				res += ys[y1] * ys[y2] * yMap[y2] // 与其他三点成为正方形
+			yCurMpCnt = ds.xMpYMpCnt[x+dist] // x1+dis 的 y 点
+			if yCurMpCnt != nil {
+				cntSquare += yCurMpCnt[y] * yCurMpCnt[yCur] * yMpCnt[yCur] // 与其他三点成为正方形
 			}
 		}
 	}
-	return res
+	return cntSquare
 }
 
 ```
@@ -1543,21 +1194,23 @@ package main
 
 // https://leetcode-cn.com/problems/majority-element
 
+// ❓ 超过一半的数
+
 func majorityElement(nums []int) int {
-	var num, cnt int
-	for i := range nums {
-		if num == nums[i] {
+	var numMode, cnt int
+	for _, num := range nums {
+		if numMode == num {
 			cnt++
 		} else {
 			if cnt == 0 {
-				num = nums[i]
+				numMode = num
 				cnt = 1
 			} else {
 				cnt--
 			}
 		}
 	}
-	return num
+	return numMode
 }
 
 ```
@@ -1568,161 +1221,224 @@ package main
 
 // https://leetcode-cn.com/problems/majority-element-ii
 
-type candidate struct {
+// ❓ 超过1/n的数
+
+type Elem struct {
 	num, cnt int
 }
 
 const base = 3
-const csLen = base - 1
+const elemL = base - 1
 
 func majorityElement(nums []int) []int {
 	var l = len(nums)
-	var cs [csLen]candidate
+	var elems [elemL]Elem
 	for _, num := range nums {
-		var firstSlot = -1
-		var k int
-		for k < csLen && cs[k].num != num {
-			if cs[k].cnt == 0 {
-				firstSlot = k
+		var slotInsert = -1
+		var idx int
+		// 找出第一个插槽
+		for idx < elemL {
+			if elems[idx].num == num {
+				// 同值插槽
+				break
+			} else if elems[idx].cnt == 0 {
+				// 第一个空槽
+				slotInsert = idx
 			}
-			k++
+			idx++
 		}
-		if k < csLen {
-			cs[k].cnt++
-		} else if k == csLen {
-			if -1 < firstSlot {
-				cs[firstSlot].num = num
-				cs[firstSlot].cnt = 1
+
+		if idx < elemL {
+			// 同值插槽
+			elems[idx].cnt++
+		} else if idx == elemL {
+			if -1 < slotInsert {
+				// 有空槽 替换
+				elems[slotInsert].num = num
+				elems[slotInsert].cnt = 1
 			} else {
-				for i := range cs {
-					cs[i].cnt--
+				// 全部自减
+				for i := range elems {
+					elems[i].cnt--
 				}
 			}
 		}
 	}
-	for i := range cs {
-		cs[i].cnt = 0
+
+	// 置零
+	for i := range elems {
+		elems[i].cnt = 0
 	}
+
+	// 因为抵消，需要重新计数
 	for _, num := range nums {
-		for i := range cs {
-			if cs[i].num == num {
-				cs[i].cnt++
+		for i := range elems {
+			if elems[i].num == num {
+				elems[i].cnt++
 				break
 			}
 		}
 	}
 
+	// 多个答案
 	var limit = l / base
-	var res []int
-	for i := range cs {
-		if limit < cs[i].cnt {
-			res = append(res, cs[i].num)
+	var numsMode []int
+	for i := range elems {
+		if limit < elems[i].cnt {
+			numsMode = append(numsMode, elems[i].num)
 		}
 	}
-	return res
+	return numsMode
 }
 
 ```
 
-# Permutation Heap ✅ 1086.high-five 前五科的均分 🤚 最高值 
+# Order ✅ 0205.isomorphic-strings 同构字符串 
 ```go
 package main
 
-import "sort"
+// https://leetcode-cn.com/problems/isomorphic-strings
 
-// https://leetcode-cn.com/problems/high-five
+func isIsomorphic(s string, t string) bool {
+	ch1MpCh2 := map[byte]byte{}
+	ch2MpCh1 := map[byte]byte{}
+	sL := len(s)
+	for i := 0; i < sL; i++ {
+		ch1 := s[i]
+		ch2 := t[i]
 
-func highFive(items [][]int) [][]int {
-	m1 := map[int]int{}
-	m2 := map[int]int{}
-	slice := [][]int{}
-	getSlice := func(id int) *[]int {
-		_, ok := m1[id]
-		if !ok {
-			l := len(slice)
-			m1[id] = l
-			m2[l] = id
-			slice = append(slice, []int{})
+
+
+		if ch1MpCh2[ch1] != 0 && ch1MpCh2[ch1] != ch2 || ch2MpCh1[ch2] != 0 && ch2MpCh1[ch2] != ch1 {
+			return false
 		}
-		return &slice[m1[id]]
-	}
-	getId := func(index int) int {
-		return m2[index]
-	}
-	for _, item := range items {
-		s := getSlice(item[0])
-		*s = append(*s, item[1])
+		ch1MpCh2[ch1] = ch2
+		ch2MpCh1[ch2] = ch1
 	}
 
-	var res [][]int
-	for i := range slice {
-		sort.Slice(slice[i], func(l, r int) bool {
-			return slice[i][r] < slice[i][l]
-		})
-		var sum int
-		for _, v := range slice[i][:5] {
-			sum += v
-		}
-		sum /= 5
-		res = append(res, []int{getId(i), sum})
-	}
-
-	sort.Slice(res, func(l, r int) bool {
-		return res[l][0] < res[r][0]
-	})
-	return res
+	return true
 }
 
 ```
 
-# Permutation ✅ 0128.longest-consecutive-sequence 最长递增 🤚 偏移 
+# Order ✅ 0290.word-pattern  句子与单词 双向绑定 
+```go
+package main
+
+import "strings"
+
+// https://leetcode-cn.com/problems/word-pattern
+
+// ❓ 句子与单词 双向绑定
+
+func wordPattern(pattern string, s string) bool {
+	words := strings.Split(s, " ")
+	if len(pattern) != len(words) {
+		return false
+	}
+	var strMpCh = map[string]byte{}
+	var chMpStr = map[byte]string{}
+	for i := range pattern {
+		ch := strMpCh[words[i]]
+		str := chMpStr[pattern[i]]
+		if ch != 0 && ch != pattern[i] || str != "" && str != words[i] {
+			return false
+		}
+		strMpCh[words[i]] = pattern[i]
+		chMpStr[pattern[i]] = words[i]
+
+	}
+	return true
+}
+
+```
+
+# Order ✅ 0734.sentence-similarity 句子相似性 双向绑定 
+```go
+package main
+
+// https://leetcode-cn.com/problems/sentence-similarity
+
+// ❓ 句子相似性 双向绑定
+// ⚠️ great 和 fine 相似 相当 fine 和 great 相似
+
+func areSentencesSimilar(sentence1 []string, sentence2 []string, similarPairs [][]string) bool {
+	str1MpStr2MpBool := map[string]map[string]bool{}
+	for _, pair := range similarPairs {
+		str1 := pair[0]
+		str2 := pair[1]
+		if str1MpStr2MpBool[str1] == nil {
+			str1MpStr2MpBool[str1] = map[string]bool{}
+		}
+		if str1MpStr2MpBool[str2] == nil {
+			str1MpStr2MpBool[str2] = map[string]bool{}
+		}
+		str1MpStr2MpBool[str1][str2] = true
+		str1MpStr2MpBool[str2][str1] = true
+	}
+
+	if len(sentence1) != len(sentence2) {
+		return false
+	}
+	for i := range sentence1 {
+		if sentence1[i] != sentence2[i] && !str1MpStr2MpBool[sentence1[i]][sentence2[i]] && !str1MpStr2MpBool[sentence2[i]][sentence1[i]] {
+			return false
+		}
+	}
+	return true
+}
+
+```
+
+# Perm ✅ 0128.longest-consecutive-sequence 最长递增 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/longest-consecutive-sequence
 
 func longestConsecutive(nums []int) int {
-	m := map[int]bool{}
+	numMpBool := map[int]bool{}
 	for _, num := range nums {
-		m[num] = true
+		numMpBool[num] = true
 	}
 
-	var res int
-	for num := range m {
-		if !m[num-1] {
-			cur := 1
+	var cntLongest int
+	for num := range numMpBool {
+		if !numMpBool[num-1] {
+			cnt := 1
 			num += 1
-			for m[num] {
+			for numMpBool[num] {
 				num++
-				cur++
+				cnt++
 			}
-			if res < cur {
-				res = cur
+			if cntLongest < cnt {
+				cntLongest = cnt
 			}
 		}
 	}
-	return res
+	return cntLongest
 }
 
 ```
 
-# Permutation ✅ 0242.valid-anagram 有效的字母异位词 🤚 
+# Perm ✅ 0242.valid-anagram 有效的异位词 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/valid-anagram
 
+// ❓ 有效的异位词
 func isAnagram(s string, t string) bool {
 	if len(s) != len(t) {
 		return false
 	}
-	m := [26]int{}
+	chMpCnt := [26]int{}
 	for i := range s {
-		m[s[i]-'a']++
-		m[t[i]-'a']--
+		chMpCnt[s[i]-'a']++
+		chMpCnt[t[i]-'a']--
 	}
 
-	for _, cnt := range m {
+	for _, cnt := range chMpCnt {
 		if cnt != 0 {
 			return false
 		}
@@ -1730,241 +1446,326 @@ func isAnagram(s string, t string) bool {
 	return true
 }
 
+// ❌ 通过字母code总和 求差，比如 bc 与 ad 相等， 却不是异位词
+
 ```
 
-# Permutation ✅ 0266.palindrome-permutation 有效回文 
+# Perm ✅ 0266.palindrome-permutation 有效回文 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/palindrome-permutation
 
+// ❓ 有效回文
+
 func canPermutePalindrome(s string) bool {
-	m := map[byte]int{}
+	chMpCnt := map[byte]int{}
 	for i := range s {
-		m[s[i]]++
+		chMpCnt[s[i]]++
 	}
 
-	var c = 0
-	for _, v := range m {
-		if v%2 == 1 {
-			c++
+	// 奇数
+	var odd = 0
+	for _, cnt := range chMpCnt {
+		if cnt%2 == 1 {
+			odd++
 		}
 	}
 
-	return c <= 1
+	return odd <= 1
 }
 
 ```
 
-# Permutation ✅ 0383.ransom-note  全排列 == 子排列 
+# Perm ✅ 0383.ransom-note  全排列 == 子排列 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/ransom-note
 
+// ❓ 从magazine组合成ransomNote
+
 func canConstruct(ransomNote string, magazine string) bool {
-	m := map[byte]int{}
+	chMpCnt := map[byte]int{}
 	for i := range magazine {
-		m[magazine[i]]++
+		chMpCnt[magazine[i]]++
 	}
 
 	for i := range ransomNote {
-		if m[ransomNote[i]] == 0 {
+		if chMpCnt[ransomNote[i]] == 0 {
 			return false
 		}
-		m[ransomNote[i]]--
+		chMpCnt[ransomNote[i]]--
 	}
 	return true
 }
 
 ```
 
-# Permutation ✅ 0409.longest-palindrome 最长回文串 
+# Perm ✅ 0409.longest-palindrome 最长回文串 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/longest-palindrome
 
+// ❓ 能排列为最长的回文串
+
 func longestPalindrome(s string) int {
-	m := map[byte]int{}
+	chMpCnt := map[byte]int{}
 	for i := range s {
-		m[s[i]-'a']++
+		chMpCnt[s[i]-'a']++
 	}
 
-	var cnt = len(s)
+	var cntLongest = len(s)
 	var odd = 0
-	for _, v := range m {
-		if v%2 == 1 {
+	for _, cnt := range chMpCnt {
+		if cnt%2 == 1 {
 			odd++
 		}
 	}
 
 	if 0 < odd {
-		return cnt - odd + 1
+		return cntLongest - odd + 1
 	}
-	return cnt
+	return cntLongest
 }
 
 ```
 
-# Permutation ✅ 0575.distribute-candies 分糖果 🤚 最多类型 
+# Perm ✅ 0575.distribute-candies 得到最多类型的糖果 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/distribute-candies
 
-func distributeCandies(candyType []int) int {
-	l1 := len(candyType)
-	m := map[int]struct{}{}
-	for i := range candyType {
-		m[candyType[i]] = struct{}{} // 类型数
+// ❓ 得到最多类型的糖果
+func distributeCandies(candy []int) int {
+	candyL := len(candy)
+	typMp := map[int]struct{}{}
+	for _, typ := range candy {
+		typMp[typ] = struct{}{} // 类型数
 	}
 
-	l2 := len(m)
-	if l1/2 < l2 { // 类型数超过 一半，每样一颗
-		return l1 / 2
+	typMpL := len(typMp)
+	if candyL/2 < typMpL { // 类型数超过 一半，每样一颗
+		return candyL / 2
 	}
-	return l2 // 小于一半 最多l2
+	return typMpL // 小于一半 最多typMpL
 }
 
 ```
 
-# Permutation ✅ 0594.longest-harmonious-subsequence 最长相差 1 子排列 🤚 偏移 
+# Perm ✅ 0594.longest-harmonious-subsequence 最长相差 1 子序列 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/longest-harmonious-subsequence
 
+// ❓ 最长相差1 子序列
 // 二次扫描
 func findLHSTwo(nums []int) int {
-	m := map[int]int{}
-	for i := range nums {
-		m[nums[i]]++
+	numMpCnt := map[int]int{}
+	for _, num := range nums {
+		numMpCnt[num]++
 	}
-	var res int
-	for num, v := range m {
-		if 0 < m[num+1] {
-			cur := m[num+1] + v
-			if res < cur {
-				res = cur
+
+	var cntLongest int
+	for num, cnt := range numMpCnt {
+		if 0 < numMpCnt[num+1] {
+			cntCur := numMpCnt[num+1] + cnt
+			if cntLongest < cntCur {
+				cntLongest = cntCur
 			}
 		}
 	}
-	return res
+	return cntLongest
 }
 
 // 一次扫描
 func findLHSOne(nums []int) int {
-	m := map[int]int{}
-	var res int
+	numMpCnt := map[int]int{}
+	var cntLongest int
 	for _, num := range nums {
-		m[num]++
-		if 0 < m[num+1] {
-			cur := m[num+1] + m[num]
-			if res < cur {
-				res = cur
+		numMpCnt[num]++
+		if 0 < numMpCnt[num+1] {
+			cntCur := numMpCnt[num+1] + numMpCnt[num]
+			if cntLongest < cntCur {
+				cntLongest = cntCur
 			}
 		}
-		if 0 < m[num-1] {
-			cur := m[num-1] + m[num]
-			if res < cur {
-				res = cur
+
+		if 0 < numMpCnt[num-1] {
+			cntCur := numMpCnt[num-1] + numMpCnt[num]
+			if cntLongest < cntCur {
+				cntLongest = cntCur
 			}
 		}
 	}
-	return res
+	return cntLongest
 }
 
 ```
 
-# Permutation ✅ 0748.shortest-completing-word 最短补全词 
+# Perm ✅ 0748.shortest-completing-word 最短补全词 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/shortest-completing-word
 
+// ❓ 最短补全词
+// ⚠️ step 能覆盖 s1T2p 所有字母 stp
+// ⚠️ 不区分大小写
+
 func shortestCompletingWord(licensePlate string, words []string) string {
-	m := [26]int{}
+	chMpCnt := [26]int{}
+	// 计算次数
 	for i := range licensePlate {
 		if 'A' <= licensePlate[i] && licensePlate[i] <= 'Z' {
-			m[licensePlate[i]-'A'] ++
+			chMpCnt[licensePlate[i]-'A'] ++
 		} else if 'a' <= licensePlate[i] && licensePlate[i] <= 'z' {
-			m[licensePlate[i]-'a'] ++
+			chMpCnt[licensePlate[i]-'a'] ++
 		}
 	}
 
-	var res string
-	var min = 1<<63 - 1
-	var k int
+	var strShortest string
+	var strShortestL = 1<<63 - 1
+	var ch int
 	for i := range words {
-		cur := [26]int{}
+		// 计算当前次数
+		chMpCntCur := [26]int{}
 		for j := range words[i] {
-			cur[words[i][j]-'a']++
+			chMpCntCur[words[i][j]-'a']++
 		}
-		for k = 0; k < 26; k++ {
-			if cur[k] < m[k] {
+		for ch = 0; ch < 26; ch++ {
+			if chMpCntCur[ch] < chMpCnt[ch] {
+				// 少于就不合法
 				break
 			}
 		}
-		if k == 26 {
-			l1 := len(words[i])
-			if l1 < min {
-				res = words[i]
-				min = len(words[i])
+
+		if ch == 26 {
+			// 合法判断
+			strCurL := len(words[i])
+			if strCurL < strShortestL {
+				strShortest = words[i]
+				strShortestL = len(words[i])
 			}
 		}
 	}
 
-	return res
+	return strShortest
 }
 
 ```
 
-# Permutation ✅ 0859.buddy-strings 交换一次后字符串相等 
+# Perm ✅ 0859.buddy-strings 交换一次后字符串相等 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/buddy-strings
 
-func buddyStrings(s string, goal string) bool {
-	l1 := len(s)
-	l2 := len(goal)
-	if l1 != l2 {
+// ❓ 交换一次后字符串相等
+
+func buddyStrings(str string, goal string) bool {
+	strL := len(str)
+	goalL := len(goal)
+	if strL != goalL {
 		return false
 	}
 
-	if s == goal {
-		m := map[byte]int{}
-		for i := 0; i < l1; i++ {
-			if m[s[i]] == 1 {
-				return true
-			}
-			m[s[i]]++
-		}
-		return false
-	}
-
-	var first, second = -1, -1
-	var cnt = [26]int{}
-	for i := 0; i < l1; i++ {
-		cnt[s[i]-'a']++
-		if s[i] != goal[i] {
-			if first == -1 {
-				first = i
-			} else if second == -1 {
-				second = i
+	var slotFirst, slotSecond = -1, -1
+	var chMpCnt = [26]int{}
+	for i := 0; i < strL; i++ {
+		ch := str[i] - 'a'
+		chMpCnt[ch]++
+		if str[i] != goal[i] {
+			if slotFirst == -1 {
+				slotFirst = i
+			} else if slotSecond == -1 {
+				slotSecond = i
 			} else {
 				return false
 			}
 		}
 	}
 
-	return second != -1 && s[first] == goal[second] && s[second] == goal[first]
+	isSame := func() bool {
+		for _, cnt := range chMpCnt {
+			if 2 <= cnt {
+				return true
+			}
+		}
+		return false
+	}
+
+	return slotSecond != -1 && str[slotFirst] == goal[slotSecond] && str[slotSecond] == goal[slotFirst] || slotFirst == -1 && isSame()
 }
 
 ```
 
-# Permutation ✅ 1160.find-words-that-can-be-formed-by-characters 拼写单词 
+# Perm ✅ 1086.high-five 每个学生 最高的五科 成绩的 平均分 
+```go
+package main
+
+import "sort"
+
+// https://leetcode-cn.com/problems/high-five
+
+// ❓ 每个学生 最高的五科 成绩的 平均分
+
+func highFive(items [][]int) [][]int {
+	idMpIdx := map[int]int{}
+	idxMpId := map[int]int{}
+	grades := [][]int{}
+
+	// 成绩池
+	getGrades := func(id int) *[]int {
+		_, ok := idMpIdx[id]
+		if !ok {
+			l := len(grades)
+			idMpIdx[id] = l
+			idxMpId[l] = id
+			grades = append(grades, []int{})
+		}
+		return &grades[idMpIdx[id]]
+	}
+
+	// 获取id
+	getId := func(index int) int {
+		return idxMpId[index]
+	}
+
+	for _, item := range items {
+		// or head
+		grades := getGrades(item[0])
+		*grades = append(*grades, item[1])
+	}
+
+	var students [][]int
+	for i := range grades {
+		sort.Slice(grades[i], func(l, r int) bool {
+			return grades[i][r] < grades[i][l]
+		})
+		// 前五颗总分
+		var sum int
+		for _, v := range grades[i][:5] {
+			sum += v
+		}
+		// 平均分
+		avg := sum / 5
+		students = append(students, []int{getId(i), avg})
+	}
+
+	// 按 ID 正序
+	sort.Slice(students, func(l, r int) bool {
+		return students[l][0] < students[r][0]
+	})
+	return students
+}
+
+```
+
+# Perm ✅ 1160.find-words-that-can-be-formed-by-characters 拼写单词 
 ```go
 package main
 
@@ -2000,18 +1801,21 @@ func countCharacters(words []string, chars string) int {
 
 ```
 
-# Permutation ✅ 1189.maximum-number-of-balloons “气球” 的最大数量 
+# Perm ✅ 1189.maximum-number-of-balloons 气球的最大数量 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/maximum-number-of-balloons
 
+// ❓ 气球的最大数量
+
 func maxNumberOfBalloons(text string) int {
-	m := map[byte]int{}
+	chMpCnt := map[byte]int{}
 	for i := range text {
-		m[text[i]]++
+		chMpCnt[text[i]]++
 	}
-	c := map[byte]int{
+
+	chMpCntBalloon := map[byte]int{
 		'a': 1,
 		'b': 1,
 		'n': 1,
@@ -2019,61 +1823,63 @@ func maxNumberOfBalloons(text string) int {
 		'l': 2,
 	}
 
-	var res = 1<<63 - 1
-	for b := range c {
-		cur := m[b] / c[b]
-		if cur < res {
-			res = cur
+	var cntMax = 1<<63 - 1
+	for ch := range chMpCntBalloon {
+		cnt := chMpCnt[ch] / chMpCntBalloon[ch]
+		if cnt < cntMax {
+			cntMax = cnt
 		}
 	}
-	return res
+	return cntMax
 }
 
 ```
 
-# Permutation ✅ 1426.counting-elements 存在 (值+1 的后置元素) 的元素个数 🤚 偏移 
+# Perm ✅ 1426.counting-elements 存在后置元素的元素个数 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/counting-elements
 
+// 存在后置元素的元素个数
 func countElements(arr []int) int {
-	m := map[int]int{}
-	for i := range arr {
-		m[arr[i]]++
+	numMpCnt := map[int]int{}
+	for _, num := range arr {
+		numMpCnt[num]++
 	}
 
-	var res int
-	for i := range m {
-		if 0 < m[i+1] {
-			res += m[i]
+	var cnt int
+	for num := range numMpCnt {
+		if 0 < numMpCnt[num+1] {
+			cnt += numMpCnt[num]
 		}
 	}
-	return res
+	return cnt
 }
-
 ```
 
-# Permutation ✅ 1460.make-two-arrays-equal-by-reversing-sub-arrays 通过翻转子数组使两个数组相等 
+# Perm ✅ 1460.make-two-arrays-equal-by-reversing-sub-arrays 无限翻转子数组 使两个数组相等 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays
 
+// ❓ 无限翻转子数组 使两个数组相等
+
 func canBeEqual(target []int, arr []int) bool {
-	l1 := len(target)
-	l2 := len(arr)
-	if l1 != l2 {
+	targetL := len(target)
+	arrL := len(arr)
+	if targetL != arrL {
 		return false
 	}
-	m := map[int]int{}
-	for i := 0; i < l1; i++ {
-		m[target[i]]++
-		m[arr[i]]--
+	numMpCnt := map[int]int{}
+	for i := 0; i < targetL; i++ {
+		numMpCnt[target[i]]++
+		numMpCnt[arr[i]]--
 	}
 
-	for i := range m {
-		if m[i] != 0 {
+	for i := range numMpCnt {
+		if numMpCnt[i] != 0 {
 			return false
 		}
 	}
@@ -2082,7 +1888,47 @@ func canBeEqual(target []int, arr []int) bool {
 
 ```
 
-# Permutation ✅ LCS 02. 完成一半题目最少的题型 🤚 最少类型 
+# Perm ✅ 1763.longest-nice-substring 大小写成对出现的最长子串 
+```go
+package main
+
+// https://leetcode-cn.com/problems/longest-nice-substring
+
+// ❓ 大小写成对出现的最长子串
+// ⚠️ Aa Bb... 成对
+
+func longestNiceSubstring(s string) string {
+	chMp := map[byte]struct{}{}
+	for i := range s {
+		chMp[s[i]] = struct{}{}
+	}
+
+	for i := range s {
+		ch := s[i]
+		if ch <= 'Z' {
+			ch += 32
+		} else if 'a' <= ch {
+			ch -= 32
+		}
+		_, ok := chMp[ch]
+		if !ok {
+			left := longestNiceSubstring(s[:i])
+			if len(s[i+1:]) <= len(left) {
+				return left
+			}
+			right := longestNiceSubstring(s[i+1:])
+			if len(left) < len(right) {
+				return right
+			}
+			return left
+		}
+	}
+	return s
+}
+
+```
+
+# Perm ✅ LCS 02. 完成一半题目最少的题型 
 ```go
 package main
 
@@ -2090,45 +1936,54 @@ import "sort"
 
 // https://leetcode-cn.com/problems/WqXACV/
 
+// ❓ 完成一半题目最少题型
+// ⚠️ 2*N 道题目
 func halfQuestions(questions []int) int {
-	m := make([]int, 1001)
+	// 类型计数
+	typMpCnt := make([]int, 1001)
 	half := len(questions) / 2
 	for i := range questions {
-		m[questions[i]]++
+		typMpCnt[questions[i]]++
 	}
 
-	sort.Slice(m, func(i, j int) bool {
-		return m[j] < m[i]
+	// 类型排序
+	sort.Slice(typMpCnt, func(i, j int) bool {
+		return typMpCnt[j] < typMpCnt[i]
 	})
 
-	var res int
-	for i := range m {
+	// 最少类型
+	var cntTyp int
+	for i := range typMpCnt {
 		if half <= 0 {
-			return res
+			return cntTyp
 		}
-		half -= m[i]
-		res++
+		half -= typMpCnt[i]
+		cntTyp++
 	}
-	return res
+	return 10086
 }
 
 ```
 
-# Pre ✅ 0930.binary-subarrays-with-sum 和相同的二元子数组 
+# Pre ✅ 0930.binary-subarrays-with-sum 和为 goal 的二元子数组 
 ```go
 package main
 
 // https://leetcode-cn.com/problems/binary-subarrays-with-sum
 
+// ❓ 和为 goal 的二元子数组
+// ⚠️ 1 0 0 1 0 0 0 0 1
+//  0 1 1 1 2 2 2 2 2 3
+
 func numSubarraysWithSum(nums []int, goal int) int {
-	var res, sum int
-	cnt := map[int]int{}
+	var cnt, sum int
+	sumMpCnt := map[int]int{}
 	for _, num := range nums {
-		cnt[sum]++
+		sumMpCnt[sum]++ // 0
 		sum += num
-		res += cnt[sum-goal] // 前缀和 sum[j] - sum[i] = goal
+		cnt += sumMpCnt[sum-goal] // 前缀和 sum[j] - goal = sum[i]  包含自身的组合
 	}
-	return res
+	return cnt
 }
 
 ```
@@ -2877,6 +2732,349 @@ func groupStrings(strings []string) [][]string {
 		}
 		id := getId(string(b))
 		res[id] = append(res[id], char)
+	}
+	return res
+}
+
+```
+
+# Where ✅ 0217.contains-duplicate 出现重复 
+```go
+package main
+
+// https://leetcode-cn.com/problems/contains-duplicate
+
+// ❓ 出现重复
+
+func containsDuplicate(nums []int) bool {
+	var valMpCnt = map[int]int{}
+	for _, val := range nums {
+		if 0 < valMpCnt[val] {
+			return true
+		}
+		valMpCnt[val] += 1
+	}
+	return false
+}
+
+```
+
+# Where ✅ 0274.h-index H 指数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/h-index
+
+// ❓ h指数 为 篇数cnt 等于 至少引用次数quote
+
+func hIndex(citations []int) (h int) {
+	// 后缀和：至少引用次数val == 篇幅cnt
+	quoteMax := len(citations)
+	quoteMpCnt := make([]int, quoteMax+1)
+	for i := range citations {
+		if quoteMax <= citations[i] {
+			quoteMpCnt[quoteMax] ++
+		} else {
+			quoteMpCnt[citations[i]]++
+		}
+	}
+	var cnt int
+	// i = 0 时，为一个都没被引用
+	for quote := quoteMax; 0 < quote; quote-- {
+		cnt += quoteMpCnt[quote]
+		if quote <= cnt {
+			return quote
+		}
+	}
+	return -1
+}
+
+```
+
+# Where ✅ 0359.logger-rate-limiter 相同消息截流 
+```go
+package main
+
+// https://leetcode-cn.com/problems/logger-rate-limiter
+
+// ❓相同消息截流
+
+type Logger struct {
+	msgMpTime map[string]int
+}
+
+func Constructor() Logger {
+	return Logger{msgMpTime: make(map[string]int)}
+}
+
+func (l *Logger) ShouldPrintMessage(timestamp int, message string) bool {
+	// 还在截流期
+	if timestamp < l.msgMpTime[message] {
+		return false
+	}
+	// 10秒
+	l.msgMpTime[message] = timestamp + 10
+	return true
+}
+
+```
+
+# Where ✅ 0884.uncommon-words-from-two-sentences 两句话中的不常见单词 
+```go
+package main
+
+import "strings"
+
+// https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
+
+// ❓ 在两个数组只出现一次的单词
+
+func uncommonFromSentences(s1 string, s2 string) []string {
+	// 计数
+	a1 := strings.Split(s1, " ")
+	a2 := strings.Split(s2, " ")
+
+	strMpCnt := map[string]int{}
+
+	for _, str := range a1 {
+		strMpCnt[str]++
+	}
+
+	for _, str := range a2 {
+		strMpCnt[str]++
+	}
+
+	// 是否一次
+	var res []string
+	for str := range strMpCnt {
+		if strMpCnt[str] == 1 {
+			res = append(res, str)
+		}
+	}
+	return res
+}
+
+```
+
+# Where ✅ 1119.remove-vowels-from-a-string 删去字符串中的元音 
+```go
+package main
+
+// https://leetcode-cn.com/problems/remove-vowels-from-a-string
+
+// ❓ 移除元音字符
+
+func removeVowels(s string) string {
+	l := len(s)
+	var res = make([]byte, 0, l)
+	for i := range s {
+		// 元音跳过
+		if s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' {
+			l--
+		} else {
+			res = append(res, s[i])
+		}
+	}
+	return string(res[:l])
+}
+
+```
+
+# Where ✅ 1133.largest-unique-number 最大的唯一数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/largest-unique-number
+
+// ❓ 最大的唯一值
+
+func largestUniqueNumber(nums []int) int {
+	// 计数
+	numMpCnt := [1001]int{}
+	for _, num := range nums {
+		numMpCnt[num]++
+	}
+
+	// 倒序
+	for num := 1000; 0 <= num; num-- {
+		if numMpCnt[num] == 1 {
+			return num
+		}
+	}
+	return -1
+}
+
+```
+
+# Where ✅ 1346.check-if-n-and-its-double-exist 是否存在两倍数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/check-if-n-and-its-double-exist
+
+// ❓是否存在两倍数
+
+func checkIfExist(arr []int) bool {
+	numMpCnt := map[int]int{}
+	for _, num := range arr {
+		numMpCnt[num]++
+	}
+
+	for num := range numMpCnt {
+		if 0 < numMpCnt[num*2] {
+			if num != 0 || 2 <= numMpCnt[num] {
+				return true
+			}
+		}
+	}
+	return false
+}
+
+```
+
+# Where ✅ 1394.find-lucky-integer-in-an-array 找出数组中的幸运数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/find-lucky-integer-in-an-array
+
+// ❓ 出现次数cnt等于值val的最大值
+
+func findLucky(arr []int) int {
+	// 计数
+	numMpCnt := [501]int{}
+	for _, num := range arr {
+		numMpCnt[num]++
+	}
+
+	// 倒序
+	for num := 500; 0 < num; num-- {
+		if numMpCnt[num] == num {
+			return num
+		}
+	}
+	return -1
+}
+
+```
+
+# Where ✅ 1748.sum-of-unique-elements 唯一元素的和 
+```go
+package main
+
+// https://leetcode-cn.com/problems/sum-of-unique-elements
+
+// ❓ 所有唯一元素的和
+
+func sumOfUnique(nums []int) int {
+	var numMpCnt = map[int]int{}
+	var res int
+	for _, num := range nums {
+		if numMpCnt[num] == 0 {
+			res += num
+			numMpCnt[num] = 1
+		} else if numMpCnt[num] == 1 {
+			res -= num
+			numMpCnt[num] = 2
+		}
+	}
+	return res
+}
+
+```
+
+# Where ✅ 1935.maximum-number-of-words-you-can-type 可以输入的最大单词数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type
+
+// ❓ 可以输入的最大单词数
+// ⚠️ hello word , w
+
+func canBeTypedWords(text string, brokenLetters string) int {
+	// 损坏键 计数
+	var chMpDis = map[byte]bool{}
+	for i := range brokenLetters {
+		chMpDis[brokenLetters[i]] = true
+	}
+	var res int
+
+	var idx int
+	var l = len(text)
+	for idx < l {
+		// 损坏键
+		for idx < l && text[idx] != ' ' && !chMpDis[text[idx]] {
+			idx++
+		}
+
+		if idx == l || text[idx] == ' ' {
+			res++
+		} else {
+			for idx < l && text[idx] != ' ' {
+				idx++
+			}
+		}
+		idx++
+	}
+	return res
+}
+
+```
+
+# Where ✅ 2062.count-vowel-substrings-of-a-string 连续元音子串数 
+```go
+package main
+
+// https://leetcode-cn.com/problems/count-vowel-substrings-of-a-string
+
+// ❓ 连续元音子串数
+
+func countVowelSubstrings(word string) int {
+	var res int
+	var byteMpCnt map[byte]int
+
+	wordL := len(word)
+	for i := 0; i < wordL; i++ {
+		byteMpCnt = map[byte]int{}
+		for j := i; j < wordL && (word[j] == 'a' || word[j] == 'e' || word[j] == 'i' || word[j] == 'o' || word[j] == 'u'); j++ {
+			byteMpCnt[word[j]]++
+			if len(byteMpCnt) == 5 {
+				res++
+			}
+		}
+	}
+	return res
+}
+
+func countVowelSubstringsBit(word string) int {
+	var res int
+	wordL := len(word)
+	var state, success int32
+	// 计算合法状态
+	success |= 1 << int('a'-'a')
+	success |= 1 << int('e'-'a')
+	success |= 1 << int('i'-'a')
+	success |= 1 << int('o'-'a')
+	success |= 1 << int('u'-'a')
+
+	for i := 0; i < wordL; i++ {
+		// 每次清空状态
+		state = 0
+		for j := i; j < wordL; j++ {
+			bit := word[j] - 'a'
+			if success&1<<bit == 0 {
+				// 非法状态
+				break
+			}
+			// 合并状态
+			state |= 1 << bit
+
+			// 是否合法
+			if state == success {
+				res++
+			}
+		}
 	}
 	return res
 }

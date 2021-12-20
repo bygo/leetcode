@@ -3,7 +3,7 @@ package main
 // https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards
 
 // ❓存在 int(x) 把数组分为:
-// ⚠️ 每组cnt为 int(x)
+// ⚠️ 每组cnt为 int(g)
 // ⚠️ 每组val相同
 
 func hasGroupsSizeX(deck []int) bool {
@@ -14,15 +14,15 @@ func hasGroupsSizeX(deck []int) bool {
 	}
 
 	// 最大公约数
-	x := -1
+	g := -1
 	for num := range numMpCnt {
-		if x == -1 {
-			x = numMpCnt[num]
+		if g == -1 {
+			g = numMpCnt[num]
 		} else {
-			x = gcd(x, numMpCnt[num])
+			g = gcd(g, numMpCnt[num])
 		}
 	}
-	return 2 <= x
+	return 2 <= g
 }
 
 func gcd(x, y int) int {

@@ -16,6 +16,7 @@ func tictactoe(moves [][]int) string {
 
 	combMpCnt := [8]int{}
 
+	// 倒序
 	for i := movesL - 1; 0 <= i; i -= 2 {
 		row := moves[i][0]
 		col := moves[i][1] + 3
@@ -33,6 +34,7 @@ func tictactoe(moves [][]int) string {
 		if combMpCnt[i] != 3 {
 			continue
 		}
+		// A先手
 		if movesL%2 == 1 {
 			return A
 		}

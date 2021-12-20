@@ -21,9 +21,14 @@ func init() {
 func findWords(words []string) []string {
 	var wordSame []string
 	for _, word := range words {
-		idx := 0
 		wordL := len(word)
-		for idx < wordL && chMpState[word[idx]] == chMpState[word[0]] {
+		chZero := word[0]
+		idx := 1
+		for idx < wordL {
+			chCur := word[idx]
+			if chMpState[chCur] != chMpState[chZero] {
+				break
+			}
 			idx++
 		}
 		if idx == wordL {

@@ -12,7 +12,7 @@ func numUniqueEmails(emails []string) int {
 		emailL := len(email)
 		var idx int
 		var emailTmp []byte
-		// 计算 b.y+ig
+		// 处理 b.y+ig
 		for idx < emailL && email[idx] != '@' {
 			if email[idx] == '+' {
 				// 移动到后 @gmail.com
@@ -27,7 +27,7 @@ func numUniqueEmails(emails []string) int {
 			}
 		}
 
-		// 计算 @gmail.com
+		// 处理 @gmail.com
 		emailTmp = append(emailTmp, email[idx:]...)
 
 		mailMp[string(emailTmp)] = struct{}{}
