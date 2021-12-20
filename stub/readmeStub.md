@@ -4,16 +4,5 @@
 [![](https://img.shields.io/badge/AC-@DummyHeadline-%23F781BE)](https://leetcode-cn.com/u/bygo/)
 
 ---
-
-# Template
-
-- [Tree](https://github.com/bygo/leetcode/tree/master/templates/tree)
-- [LinkedList](https://github.com/bygo/leetcode/tree/master/templates/linked_list)
-- [Stack](https://github.com/bygo/leetcode/tree/master/templates/stack)
-- [Array](https://github.com/bygo/leetcode/tree/master/templates/array)
-
----
 @DummyIndex
 ---
-
-@DummyTable

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-c 	n.com/problems/find-the-difference
+// https://leetcode-cn.com/problems/find-the-difference
 
 // ❓ 找出 x
 // ⚠️ s = t + 随机byte(x)

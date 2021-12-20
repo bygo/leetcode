@@ -126,7 +126,7 @@ var dummyBufIndex = []byte("@DummyIndex")
 var dummyBufLink = []byte("@DummyLink")
 var dummyBufLinkTitle = []byte("@DummyTitle")
 var dummyBufHeadline = []byte("@DummyHeadline")
-var dummyBufAC = []byte("856")
+var dummyBufAC = []byte("896")
 
 var ignorePrefix = []string{
 	//"LCP", "Offer"
@@ -303,41 +303,50 @@ func buildReadme() {
 	var readmeBuf []byte
 	var directoryIndex []byte
 
+	_ = func() {
+		for _, index := range solutionOrder {
+			className := NormalizeClassTitle(index)
+			directoryIndex = append(directoryIndex, fmt.Sprintf("- [%s](#%s)\n\r", className, className)...)
+			problems := problems[index]
+			stubClass, err := ioutil.ReadFile(StubPrefix + ReadmeClassStub)
+			Check(err)
+			class := bytes.Replace(stubClass, dummyBufClass, []byte(className), 1)
+
+			for k, problem := range problems {
+				var questionAlgorithm, questionTitle, questionDifficulty, questionTitleSlug, questionCN string
+				questionAlgorithm = " "
+				if k == 0 || problem.Stat.QuestionId != problems[k-1].Stat.QuestionId {
+					//questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
+					questionAlgorithm = problem.Algorithm
+					questionTitle = problem.Stat.QuestionTitle
+					questionCN = problem.Stat.QuestionCN
+					questionTitleSlug = problem.Stat.QuestionTitleSlug
+					//questionAcceptance = fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")
+					questionDifficulty = difficulty[problem.Difficulty.Level-1]
+				}
+
+				class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s) | %s",
+					questionTitle,
+					questionTitleSlug,
+					questionCN,
+					questionDifficulty,
+					problem.File,
+					questionAlgorithm,
+				)...)
+			}
+			readmeBuf = append(readmeBuf, class...)
+		}
+	}
+
+	const prefix = "https://github.com/bygo/leetcode/tree/master/"
 	for _, index := range solutionOrder {
 		className := NormalizeClassTitle(index)
-		directoryIndex = append(directoryIndex, fmt.Sprintf("- [%s](#%s)\n\r", className, className)...)
-		problems := problems[index]
-		stubClass, err := ioutil.ReadFile(StubPrefix + ReadmeClassStub)
+		directoryIndex = append(directoryIndex, fmt.Sprintf("- [%s](%s%s)\n\r", className, prefix, className)...)
 		Check(err)
-		class := bytes.Replace(stubClass, dummyBufClass, []byte(className), 1)
-
-		for k, problem := range problems {
-			var questionAlgorithm, questionTitle, questionDifficulty, questionTitleSlug, questionCN string
-			questionAlgorithm = " "
-			if k == 0 || problem.Stat.QuestionId != problems[k-1].Stat.QuestionId {
-				//questionId = fmt.Sprintf("%04s", problem.Stat.FrontendQuestionId)
-				questionAlgorithm = problem.Algorithm
-				questionTitle = problem.Stat.QuestionTitle
-				questionCN = problem.Stat.QuestionCN
-				questionTitleSlug = problem.Stat.QuestionTitleSlug
-				//questionAcceptance = fmt.Sprintf("%.1f%s", float64(problem.Stat.TotalAcs)*100/float64(problem.Stat.TotalSubmitted), "%")
-				questionDifficulty = difficulty[problem.Difficulty.Level-1]
-			}
-
-			class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s) | %s",
-				questionTitle,
-				questionTitleSlug,
-				questionCN,
-				questionDifficulty,
-				problem.File,
-				questionAlgorithm,
-			)...)
-		}
-		readmeBuf = append(readmeBuf, class...)
 	}
 
 	readme := bytes.Replace(stubReadme, dummyBufHeadline, dummyBufAC, 1)
-	readme = bytes.Replace(readme, dummyBufTable, readmeBuf, 1)
+	//readme = bytes.Replace(readme, dummyBufTable, readmeBuf, 1)
 	readme = bytes.Replace(readme, dummyBufIndex, directoryIndex, 1)
 	Check(ioutil.WriteFile(ReadmeName, readme, os.ModePerm))
 }
