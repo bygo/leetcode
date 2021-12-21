@@ -2,41 +2,49 @@ package main
 
 // https://leetcode-cn.com/problems/degree-of-an-array
 
-type e struct {
-	cnt int
-	l   int
-	r   int
+// ❓ 度相同的最短连续子数组
+// ⚠️ 度 指 数组 其中一元素频数的最大值。
+
+type node struct {
+	cnt   int
+	left  int
+	right int
 }
 
-// 最大的度必定横跨首尾
+// 最短 且 最大的度必定横跨首尾
+
 func findShortestSubArray(nums []int) int {
-	m := map[int]*e{}
-	for i := range nums {
-		_, ok := m[nums[i]]
+	numMpNode := map[int]*node{}
+	for idx, num := range nums {
+		_, ok := numMpNode[num]
 		if ok {
-			m[nums[i]].r = i
-			m[nums[i]].cnt++
+			// 已存在，计算右边界
+			numMpNode[num].right = idx
+			numMpNode[num].cnt++
 		} else {
-			m[nums[i]] = &e{
-				cnt: 1,
-				l:   i,
-				r:   i,
+			numMpNode[num] = &node{
+				cnt:   1,
+				left:  idx,
+				right: idx,
 			}
 		}
 	}
 
-	var cnt int
-	var res int
-	for _, e := range m {
-		if cnt < e.cnt {
-			cnt = e.cnt
-			res = e.r - e.l + 1
-		} else if cnt == e.cnt {
-			cur := e.r - e.l + 1
-			if cur < res {
-				res = cur
+	var cntMax int
+	var shortestL int
+	for _, node := range numMpNode {
+		if cntMax < node.cnt {
+			// 频率大于之前 重算
+			cntMax = node.cnt
+			shortestL = node.right - node.left + 1
+		} else if cntMax == node.cnt {
+
+			// 频率相同时，计算最短长度
+			curL := node.right - node.left + 1
+			if curL < shortestL {
+				shortestL = curL
 			}
 		}
 	}
-	return res
+	return shortestL
 }

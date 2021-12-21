@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/check-if-n-and-its-double-exist
 
-// ❓是否存在两倍数
+// ❓ 是否存在两倍数
 
 func checkIfExist(arr []int) bool {
 	numMpCnt := map[int]int{}
@@ -12,6 +12,7 @@ func checkIfExist(arr []int) bool {
 
 	for num := range numMpCnt {
 		if 0 < numMpCnt[num*2] {
+			// 0的时候要 0*2 = 0
 			if num != 0 || 2 <= numMpCnt[num] {
 				return true
 			}

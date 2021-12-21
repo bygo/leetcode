@@ -2,25 +2,30 @@ package main
 
 // https://leetcode-cn.com/problems/relative-sort-array
 
+// ❓ 数组A 遵循 数组B 正序
+
 func relativeSortArray(arr1 []int, arr2 []int) []int {
-	m := [1001]int{}
-	for i := range arr1 {
-		m[arr1[i]]++
+	numMpCnt := [1001]int{}
+	for _, num := range arr1 {
+		numMpCnt[num]++
 	}
 
-	res := []int{}
-	for i := range arr2 {
-		for 0 < m[arr2[i]] {
-			res = append(res, arr2[i])
-			m[arr2[i]]--
+	var numsSort []int
+
+	// 按数组B 排序
+	for _, num := range arr2 {
+		for 0 < numMpCnt[num] {
+			numsSort = append(numsSort, num)
+			numMpCnt[num]--
 		}
 	}
 
-	for i := range m {
-		for 0 < m[i] {
-			res = append(res, i)
-			m[i]--
+	// 未出现过的 正序
+	for num := range numMpCnt {
+		for 0 < numMpCnt[num] {
+			numsSort = append(numsSort, num)
+			numMpCnt[num]--
 		}
 	}
-	return res
+	return numsSort
 }

@@ -2,27 +2,33 @@ package main
 
 // https://leetcode-cn.com/problems/increasing-decreasing-string
 
+// ❓ 上升下降字符串
+
 func sortString(s string) string {
-	m := [26]int{}
+	chMpCnt := [26]int{}
 	for i := range s {
-		m[s[i]-'a']++
+		ch := s[i] - 'a'
+		chMpCnt[ch]++
 	}
-	var res []byte
-	l1 := len(s)
-	for len(res) < l1 {
-		for i := 0; i <= 25; i++ {
-			if 0 < m[i] {
-				res = append(res, byte(i+'a'))
-				m[i]--
+	var strBuf []byte
+	sL := len(s)
+	for len(strBuf) < sL {
+
+		// 上升
+		for ch := 0; ch <= 25; ch++ {
+			if 0 < chMpCnt[ch] {
+				strBuf = append(strBuf, byte(ch+'a'))
+				chMpCnt[ch]--
 			}
 		}
 
-		for i := 25; 0 <= i; i-- {
-			if 0 < m[i] {
-				res = append(res, byte(i+'a'))
-				m[i]--
+		// 下降
+		for ch := 25; 0 <= ch; ch-- {
+			if 0 < chMpCnt[ch] {
+				strBuf = append(strBuf, byte(ch+'a'))
+				chMpCnt[ch]--
 			}
 		}
 	}
-	return string(res)
+	return string(strBuf)
 }

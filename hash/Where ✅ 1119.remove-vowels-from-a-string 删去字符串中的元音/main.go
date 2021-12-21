@@ -4,16 +4,16 @@ package main
 
 // ❓ 移除元音字符
 
-func removeVowels(s string) string {
-	l := len(s)
-	var res = make([]byte, 0, l)
-	for i := range s {
+func removeVowels(str string) string {
+	//strL := len(str)
+	var strBuf []byte
+	for i := range str {
 		// 元音跳过
-		if s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u' {
-			l--
+		if str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' {
+			continue
 		} else {
-			res = append(res, s[i])
+			strBuf = append(strBuf, str[i])
 		}
 	}
-	return string(res[:l])
+	return string(strBuf)
 }

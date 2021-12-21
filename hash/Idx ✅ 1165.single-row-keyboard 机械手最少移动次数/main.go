@@ -14,12 +14,13 @@ func calculateTime(keyboard string, word string) int {
 	}
 
 	// 计算移动次数
-	// 0
+	// 到起始位置 0
 	ch0 := word[0] - 'a'
 	var cntDist = chMpIdx[ch0]
 
 	// 1～l
 	for i := 1; i < len(word); i++ {
+		// 移动距离
 		chPrev := word[i-1] - 'a'
 		chNext := word[i] - 'a'
 		cntDist += abs(chMpIdx[chPrev] - chMpIdx[chNext])

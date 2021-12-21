@@ -16,6 +16,7 @@ func countLargestGroup(n int) int {
 		}
 		sumMpCnt[sum] ++
 	}
+
 	// 最大数量
 	var cnt, cntLargest int
 	for sum := range sumMpCnt {

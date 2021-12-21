@@ -2,18 +2,21 @@ package main
 
 // https://leetcode-cn.com/problems/group-anagrams
 
+// ❓ 异位词分组
+
 func groupAnagrams(strs []string) [][]string {
-	m := map[[26]int][]string{}
-	for i := range strs {
+	vectorMpStrings := map[[26]int][]string{}
+	for _, str := range strs {
 		var vector [26]int
-		for j := range strs[i] {
-			vector[strs[i][j]-'a']++
+		for j := range str {
+			ch := str[j] - 'a'
+			vector[ch]++
 		}
-		m[vector] = append(m[vector], strs[i])
+		vectorMpStrings[vector] = append(vectorMpStrings[vector], str)
 	}
-	var res [][]string
-	for i := range m {
-		res = append(res, m[i])
+	var vectorsStrings [][]string
+	for _, strings := range vectorMpStrings {
+		vectorsStrings = append(vectorsStrings, strings)
 	}
-	return res
+	return vectorsStrings
 }

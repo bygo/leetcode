@@ -2,8 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/find-lucky-integer-in-an-array
 
-// ❓ 出现次数cnt等于值val的最大值
-
+// ❓ 出现次数cnt等于值num的最大值
+// ⚠️ 1 <= arr[i] <= 500
 func findLucky(arr []int) int {
 	// 计数
 	numMpCnt := [501]int{}

@@ -8,25 +8,25 @@ import "strings"
 
 func uncommonFromSentences(s1 string, s2 string) []string {
 	// 计数
-	a1 := strings.Split(s1, " ")
-	a2 := strings.Split(s2, " ")
+	strings1 := strings.Split(s1, " ")
+	strings2 := strings.Split(s2, " ")
 
 	strMpCnt := map[string]int{}
 
-	for _, str := range a1 {
+	for _, str := range strings1 {
 		strMpCnt[str]++
 	}
 
-	for _, str := range a2 {
+	for _, str := range strings2 {
 		strMpCnt[str]++
 	}
 
 	// 是否一次
-	var res []string
+	var strsUnique []string
 	for str := range strMpCnt {
 		if strMpCnt[str] == 1 {
-			res = append(res, str)
+			strsUnique = append(strsUnique, str)
 		}
 	}
-	return res
+	return strsUnique
 }

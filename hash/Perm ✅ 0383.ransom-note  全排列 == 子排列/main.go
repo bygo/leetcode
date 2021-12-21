@@ -7,14 +7,16 @@ package main
 func canConstruct(ransomNote string, magazine string) bool {
 	chMpCnt := map[byte]int{}
 	for i := range magazine {
-		chMpCnt[magazine[i]]++
+		ch := magazine[i]
+		chMpCnt[ch]++
 	}
 
 	for i := range ransomNote {
-		if chMpCnt[ransomNote[i]] == 0 {
+		ch := ransomNote[i]
+		if chMpCnt[ch] == 0 {
 			return false
 		}
-		chMpCnt[ransomNote[i]]--
+		chMpCnt[ch]--
 	}
 	return true
 }

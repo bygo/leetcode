@@ -5,12 +5,12 @@ package main
 // ❓ 出现重复
 
 func containsDuplicate(nums []int) bool {
-	var valMpCnt = map[int]int{}
-	for _, val := range nums {
-		if 0 < valMpCnt[val] {
+	var numMpCnt = map[int]int{}
+	for _, num := range nums {
+		if 0 < numMpCnt[num] {
 			return true
 		}
-		valMpCnt[val] += 1
+		numMpCnt[num] += 1
 	}
 	return false
 }

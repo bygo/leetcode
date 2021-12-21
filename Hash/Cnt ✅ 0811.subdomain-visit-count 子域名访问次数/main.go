@@ -24,7 +24,8 @@ func subdomainVisits(cpdomains []string) []string {
 
 		// 域名
 		for idx < strL {
-			hostMpCnt[str[idx:]] += cnt
+			host := str[idx:]
+			hostMpCnt[host] += cnt
 			for idx < strL && str[idx] != '.' { // 移动到 .
 				idx++
 			}

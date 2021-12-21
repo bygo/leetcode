@@ -7,7 +7,8 @@ package main
 func longestPalindrome(s string) int {
 	chMpCnt := map[byte]int{}
 	for i := range s {
-		chMpCnt[s[i]-'a']++
+		ch := s[i] - 'a'
+		chMpCnt[ch]++
 	}
 
 	var cntLongest = len(s)

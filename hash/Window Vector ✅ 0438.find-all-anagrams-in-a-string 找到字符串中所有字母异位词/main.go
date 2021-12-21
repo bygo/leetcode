@@ -2,35 +2,43 @@ package main
 
 // https://leetcode-cn.com/problems/find-all-anagrams-in-a-string
 
+// ❓ 找到字符串中所有字母异位词(重排后相等)
+
 func findAnagrams(s string, p string) []int {
-	l1 := len(s)
-	l2 := len(p)
-	l := 0
-	r := l2 - 1
-	var res []int
-	if l1 < l2 {
-		return res
+	sL := len(s)
+	pL := len(p)
+	left := 0
+	right := pL - 1
+	if sL < pL {
+		return nil
 	}
-	m1 := [26]int{}
+	chMpCntP := [26]int{}
 	for i := range p {
-		m1[p[i]-'a']++
+		ch := p[i] - 'a'
+		chMpCntP[ch]++
 	}
 
-	m2 := [26]int{}
-	for l < r {
-		m2[s[l]-'a']++
-		l++
+	// 计算相同长度的 vector
+	chMpCntS := [26]int{}
+	for left < right {
+		ch := s[left] - 'a'
+		chMpCntS[ch]++
+		left++
 	}
-	l = 0
-	for r < l1 {
-		m2[s[r]-'a']++
-		if m1 == m2 {
-			res = append(res, l)
+
+	var idxAnagrams []int
+	left = 0
+	for right < sL {
+		ch := s[right] - 'a'
+		chMpCntS[ch]++
+		if chMpCntP == chMpCntS {
+			idxAnagrams = append(idxAnagrams, left)
 		}
-		m2[s[l]-'a']--
-		l++
-		r++
+		chMpCntS[s[left]-'a']--
+
+		left++
+		right++
 	}
 
-	return res
+	return idxAnagrams
 }

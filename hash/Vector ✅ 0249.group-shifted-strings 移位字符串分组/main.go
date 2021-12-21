@@ -2,28 +2,31 @@ package main
 
 // https://leetcode-cn.com/problems/group-shifted-strings
 
+// ❓ 移位字符串分组
+
 func groupStrings(strings []string) [][]string {
-	m := map[string]int{}
-	res := [][]string{}
-	getId := func(s string) int {
-		_, ok := m[s]
+	strMpID := map[string]int{}
+	var IDsStrings [][]string
+	getID := func(str string) int {
+		_, ok := strMpID[str]
 		if !ok {
-			m[s] = len(res)
-			res = append(res, []string{})
+			strMpID[str] = len(IDsStrings)
+			IDsStrings = append(IDsStrings, []string{})
 		}
-		return m[s]
+		return strMpID[str]
 	}
 
-	for _, char := range strings {
-		j := 1
-		l := len(char)
-		b := make([]byte, l)
-		for j < l {
-			b = append(b, (char[j]-char[0]+26)%26) // 以防变负
-			j++
+	for _, str := range strings {
+		idxStr := 1
+		strL := len(str)
+		strBuf := make([]byte, strL)
+		for idxStr < strL {
+			ch := (str[idxStr] - str[0] + 26) % 26 // +26以防变负
+			strBuf = append(strBuf, ch)
+			idxStr++
 		}
-		id := getId(string(b))
-		res[id] = append(res[id], char)
+		id := getID(string(strBuf))
+		IDsStrings[id] = append(IDsStrings[id], str)
 	}
-	return res
+	return IDsStrings
 }

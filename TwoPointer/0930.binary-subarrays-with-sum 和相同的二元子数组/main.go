@@ -2,21 +2,29 @@ package main
 
 // https://leetcode-cn.com/problems/binary-subarrays-with-sum
 
-func numSubarraysWithSum(nums []int, goal int) (res int) {
-	var l1, l2, sum1, sum2 int
-	for r, num := range nums {
-		sum1 += num
-		for l1 <= r && goal < sum1 {
-			sum1 -= nums[l1]
-			l1++
-		}
+// ❓ 和为 goal 的二元子数组
+// ⚠️ 1 0 0 1 0 0 0 0 1
+//  0 1 1 1 2 2 2 2 2 3
 
-		sum2 += num
-		for l2 <= r && goal <= sum2 {
-			sum2 -= nums[l2]
-			l2++
+func numSubarraysWithSum(nums []int, goal int) int {
+	var cnt int
+	idx1, idx2 := 0, 0
+	sum1, sum2 := 0, 0
+	for right, num := range nums {
+		sum1 += num
+		for idx1 <= right && goal < sum1 {
+			sum1 -= nums[idx1]
+			idx1++
 		}
-		res += l2 - l1
+		sum2 += num
+		for idx2 <= right && goal <= sum2 {
+			sum2 -= nums[idx2]
+			idx2++
+		}
+		// 索引差
+		cnt += idx2 - idx1
 	}
-	return res
+	return cnt
 }
+
+// ☝️ Hash

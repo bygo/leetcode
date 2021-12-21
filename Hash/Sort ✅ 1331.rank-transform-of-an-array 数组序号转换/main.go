@@ -4,22 +4,27 @@ import "sort"
 
 // https://leetcode-cn.com/problems/rank-transform-of-an-array
 
-func arrayRankTransform(arr []int) []int {
-	sorted := make([]int, len(arr))
-	copy(sorted, arr)
-	sort.Ints(sorted)
+// ❓ 数组序号转换
 
-	m := map[int]int{}
+func arrayRankTransform(arr []int) []int {
+	arrL := len(arr)
+	arrSorted := make([]int, arrL)
+	copy(arrSorted, arr)
+	sort.Ints(arrSorted)
+
+	numMpCnt := map[int]int{}
 	cnt := 0
-	for i := range sorted {
-		if m[sorted[i]] == 0 {
+	// 排名
+	for _, num := range arrSorted {
+		if numMpCnt[num] == 0 {
 			cnt++
 		}
-		m[sorted[i]] = cnt
+		numMpCnt[num] = cnt
 	}
 
+	// 设置序号
 	for i := range arr {
-		arr[i] = m[arr[i]]
+		arr[i] = numMpCnt[arr[i]]
 	}
 	return arr
 }

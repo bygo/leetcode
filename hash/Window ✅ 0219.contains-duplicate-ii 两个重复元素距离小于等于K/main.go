@@ -2,14 +2,16 @@ package main
 
 // https://leetcode-cn.com/problems/contains-duplicate-ii
 
+// ❓ 是否存在两个重复元素距离小于等于K
+
 func containsNearbyDuplicate(nums []int, k int) bool {
-	var m = map[int]int{}
-	for r, num := range nums {
-		l, ok := m[num]
-		if ok && r-l <= k {
+	var numMpIdx = map[int]int{}
+	for idxCur, num := range nums {
+		idxPre, ok := numMpIdx[num]
+		if ok && idxCur-idxPre <= k {
 			return true
 		}
-		m[num] = r
+		numMpIdx[num] = idxCur
 	}
 	return false
 }

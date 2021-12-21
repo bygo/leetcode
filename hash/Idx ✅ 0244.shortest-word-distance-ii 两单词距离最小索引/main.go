@@ -18,21 +18,21 @@ func Constructor(wordsDict []string) WordDistance {
 	}
 }
 
-func (wd *WordDistance) Shortest(word1 string, word2 string) int {
-	idxes1 := wd.strMpIdxes[word1]
-	idxes2 := wd.strMpIdxes[word2]
-	i, j := len(idxes1)-1, len(idxes2)-1
+func (wd *WordDistance) Shortest(str1 string, str2 string) int {
+	idxes1 := wd.strMpIdxes[str1]
+	idxes2 := wd.strMpIdxes[str2]
+	idx1, idx2 := len(idxes1)-1, len(idxes2)-1
 	var distMin = 1<<63 - 1
 	var distTmp int
-	for -1 < i && -1 < j {
-		if idxes1[i] < idxes2[j] {
+	for -1 < idx1 && -1 < idx2 {
+		if idxes1[idx1] < idxes2[idx2] {
 			// 2逼近1
-			distTmp = idxes2[j] - idxes1[i]
-			j--
+			distTmp = idxes2[idx2] - idxes1[idx1]
+			idx2--
 		} else {
 			// 1逼近2
-			distTmp = idxes1[i] - idxes2[j]
-			i--
+			distTmp = idxes1[idx1] - idxes2[idx2]
+			idx1--
 		}
 
 		// 距离

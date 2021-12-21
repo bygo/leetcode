@@ -8,15 +8,16 @@ func hIndex(citations []int) (h int) {
 	// 后缀和：至少引用次数val == 篇幅cnt
 	quoteMax := len(citations)
 	quoteMpCnt := make([]int, quoteMax+1)
-	for i := range citations {
-		if quoteMax <= citations[i] {
+	for _, quote := range citations {
+		if quoteMax <= quote {
 			quoteMpCnt[quoteMax] ++
 		} else {
-			quoteMpCnt[citations[i]]++
+			quoteMpCnt[quote]++
 		}
 	}
 	var cnt int
-	// i = 0 时，为一个都没被引用
+
+	// quote = 0 时，为一个都没被引用
 	for quote := quoteMax; 0 < quote; quote-- {
 		cnt += quoteMpCnt[quote]
 		if quote <= cnt {

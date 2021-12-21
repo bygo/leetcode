@@ -11,14 +11,15 @@ func numDifferentIntegers(word string) int {
 
 	// 整数结算
 	cntNum := func() {
-		tmpL := len(numBuf)
-		if 0 < tmpL {
-			j := 0
+		numBufL := len(numBuf)
+		if 0 < numBufL {
+			idx := 0
 			// 保存至少一个零
-			for numBuf[j] == '0' && j < tmpL-1 {
-				j++
+			for numBuf[idx] == '0' && idx < numBufL-1 {
+				idx++
 			}
-			strMp[string(numBuf[j:])] = struct{}{}
+			str := string(numBuf[idx:])
+			strMp[str] = struct{}{}
 			numBuf = []byte{}
 		}
 	}

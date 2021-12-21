@@ -9,26 +9,29 @@ func canBeTypedWords(text string, brokenLetters string) int {
 	// 损坏键 计数
 	var chMpDis = map[byte]bool{}
 	for i := range brokenLetters {
-		chMpDis[brokenLetters[i]] = true
+		ch := brokenLetters[i]
+		chMpDis[ch] = true
 	}
-	var res int
+	var cntInput int
 
 	var idx int
-	var l = len(text)
-	for idx < l {
+	var textL = len(text)
+	for idx < textL {
 		// 损坏键
-		for idx < l && text[idx] != ' ' && !chMpDis[text[idx]] {
+		for idx < textL && text[idx] != ' ' && !chMpDis[text[idx]] {
 			idx++
 		}
 
-		if idx == l || text[idx] == ' ' {
-			res++
+		// 最后 或者 ' '
+		if idx == textL || text[idx] == ' ' {
+			cntInput++
 		} else {
-			for idx < l && text[idx] != ' ' {
+			// 出现损坏，移动到下一个单词
+			for idx < textL && text[idx] != ' ' {
 				idx++
 			}
 		}
 		idx++
 	}
-	return res
+	return cntInput
 }

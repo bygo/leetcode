@@ -5,24 +5,24 @@ package main
 // ❓ 连续元音子串数
 
 func countVowelSubstrings(word string) int {
-	var res int
-	var byteMpCnt map[byte]int
+	var cntVowel int
+	var chMpCnt map[byte]int
 
 	wordL := len(word)
 	for i := 0; i < wordL; i++ {
-		byteMpCnt = map[byte]int{}
+		chMpCnt = map[byte]int{}
 		for j := i; j < wordL && (word[j] == 'a' || word[j] == 'e' || word[j] == 'i' || word[j] == 'o' || word[j] == 'u'); j++ {
-			byteMpCnt[word[j]]++
-			if len(byteMpCnt) == 5 {
-				res++
+			chMpCnt[word[j]]++
+			if len(chMpCnt) == 5 {
+				cntVowel++
 			}
 		}
 	}
-	return res
+	return cntVowel
 }
 
 func countVowelSubstringsBit(word string) int {
-	var res int
+	var cntVowel int
 	wordL := len(word)
 	var state, success int32
 	// 计算合法状态
@@ -46,9 +46,9 @@ func countVowelSubstringsBit(word string) int {
 
 			// 是否合法
 			if state == success {
-				res++
+				cntVowel++
 			}
 		}
 	}
-	return res
+	return cntVowel
 }
