@@ -7,14 +7,18 @@ package main
 
 func numEquivDominoPairs(d [][]int) int {
 	combMpCnt := map[int]int{}
-	var cnt int
+	var cntEquiv int
 	for i := range d {
 		if d[i][0] < d[i][1] {
 			d[i][0], d[i][1] = d[i][1], d[i][0]
 		}
 		comb := d[i][0]*10 + d[i][1]
-		cnt += combMpCnt[comb]
+		//cnt += combMpCnt[comb]
 		combMpCnt[comb]++
 	}
-	return cnt
+
+	for _, cnt := range combMpCnt {
+		cntEquiv += cnt * (cnt - 1) / 2
+	}
+	return cntEquiv
 }

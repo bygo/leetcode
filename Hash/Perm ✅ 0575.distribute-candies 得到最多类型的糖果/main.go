@@ -3,6 +3,7 @@ package main
 // https://leetcode-cn.com/problems/distribute-candies
 
 // ❓ 得到最多类型的糖果
+
 func distributeCandies(candy []int) int {
 	candyL := len(candy)
 	typMp := map[int]struct{}{}

@@ -4,7 +4,7 @@ import "sort"
 
 // https://leetcode-cn.com/problems/longest-word-in-dictionary
 
-// ❓词典中连续递接 的最长单词
+// ❓ 词典中连续递接 的最长单词
 
 func longestWord(words []string) string {
 	sort.Strings(words)

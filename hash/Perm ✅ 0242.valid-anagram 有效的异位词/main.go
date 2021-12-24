@@ -3,6 +3,7 @@ package main
 // https://leetcode-cn.com/problems/valid-anagram
 
 // ❓ 有效的异位词
+
 func isAnagram(s string, t string) bool {
 	if len(s) != len(t) {
 		return false
@@ -21,4 +22,4 @@ func isAnagram(s string, t string) bool {
 	return true
 }
 
-// ❌ 通过字母code总和 求差，比如 bc 与 ad 相等， 却不是异位词
+// ❌ 通过字母 code 总和 求差，比如 bc 与 ad 相等， 却不是异位词

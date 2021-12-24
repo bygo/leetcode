@@ -3,6 +3,7 @@ package main
 // https://leetcode-cn.com/problems/longest-harmonious-subsequence
 
 // ❓ 最长相差1 子序列
+
 // 二次扫描
 func findLHSTwo(nums []int) int {
 	numMpCnt := map[int]int{}

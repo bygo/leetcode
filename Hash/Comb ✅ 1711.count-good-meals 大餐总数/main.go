@@ -18,7 +18,7 @@ func countPairs(deliciousness []int) int {
 			cnt += numMpCnt[numTarget]
 		}
 		// 存入
-		numMpCnt[delicious] += 1
+		numMpCnt[delicious] ++
 	}
 	return cnt % (1e9 + 7)
 }

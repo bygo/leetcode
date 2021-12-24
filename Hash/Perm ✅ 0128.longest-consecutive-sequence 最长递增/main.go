@@ -2,6 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/longest-consecutive-sequence
 
+// ❓ 最长递增序列
+
 func longestConsecutive(nums []int) int {
 	numMpBool := map[int]bool{}
 	for _, num := range nums {

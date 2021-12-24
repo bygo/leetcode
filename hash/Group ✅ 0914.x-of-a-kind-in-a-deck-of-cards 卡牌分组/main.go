@@ -2,7 +2,7 @@ package main
 
 // https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards
 
-// ❓存在 int(x) 把数组分为:
+// ❓存在 int(g) 把数组分为:
 // ⚠️ 每组cnt为 int(g)
 // ⚠️ 每组val相同
 
