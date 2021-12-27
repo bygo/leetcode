@@ -13,33 +13,36 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 		return nil
 	}
 
-	var res [][]int
-	var queue = []*TreeNode{root}
-	var depth, cnt int
-	for 0 < len(queue) {
-		cnt = len(queue)
-		res = append(res, []int{})
-		for _, q := range queue[:cnt] {
-			res[depth] = append(res[depth], q.Val)
-			if q.Left != nil {
-				queue = append(queue, q.Left)
-			}
-			if q.Right != nil {
-				queue = append(queue, q.Right)
-			}
+	var depsNums [][]int
+	var que = []*TreeNode{root}
+	var queL int
+	for {
+		queL = len(que)
+		if queL == 0 {
+			break
 		}
-		if depth%2 == 1 {
-			var i = 0
-			var j = len(res[depth]) - 1
-			for i < j {
-				res[depth][i], res[depth][j] = res[depth][j], res[depth][i]
-				i++
-				j--
-			}
+		depsNums = append(depsNums, []int{})
+		top := len(depsNums) - 1
+		var idxMirror int
+		var step = 1
+		if top%2 == 1 {
+			idxMirror = queL - 1
+			step = -1
 		}
-		depth++
-		queue = queue[cnt:]
+		for i := 0; i < queL; i++ {
+			node := que[i]
+			nodeMirror := que[idxMirror]
+			depsNums[top] = append(depsNums[top], nodeMirror.Val)
+			if node.Left != nil {
+				que = append(que, node.Left)
+			}
+			if node.Right != nil {
+				que = append(que, node.Right)
+			}
+			idxMirror += step
+		}
+		que = que[queL:]
 	}
 
-	return res
+	return depsNums
 }

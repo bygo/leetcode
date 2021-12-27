@@ -21,12 +21,12 @@ func countLargestGroup(n int) int {
 	}
 
 	// 最大数量
-	var cnt, cntLargest int
+	var cntMax, cntLargest int
 	for sum := range sumMpCnt {
-		if cnt < sumMpCnt[sum] {
-			cnt = sumMpCnt[sum]
+		if cntMax < sumMpCnt[sum] {
+			cntMax = sumMpCnt[sum]
 			cntLargest = 1
-		} else if sumMpCnt[sum] == cnt {
+		} else if sumMpCnt[sum] == cntMax {
 			cntLargest++
 		}
 	}
