@@ -7,35 +7,11 @@ import "container/heap"
 // ❓ 吃苹果的最大数目
 
 func eatenApples(apples, days []int) int {
-	h := hp{}
-	applesL := len(apples)
-	for day := 0; day < applesL; day++ {
-		if 0 < apples[day] {
-			heap.Push(&h, pair{day + days[day], apples[day]})
-		}
-	}
-
-	var day int
-	for 0 < len(h) {
-		// 过期的丢掉
-		for 0 < len(h) && (h[0].exp <= day || h[0].cnt == 0) {
-			heap.Pop(&h)
-		}
-
-		if 0 == len(h) {
-			break
-		}
-
-		h[0].cnt--
-		day++
-	}
-	return day
-}
-
-func eatenAppless(apples, days []int) int {
 	var cntMax int
 	h := hp{}
 	day := 0
+
+	// 先循环 以避免 未生产 被 先消费
 	for day < len(apples) {
 		// 已经腐败的 pop
 		for 0 < len(h) && h[0].exp <= day {
@@ -69,9 +45,9 @@ func eatenAppless(apples, days []int) int {
 		}
 
 		p := heap.Pop(&h).(pair)
-		cntCur := min(p.exp-day, p.cnt) // 还能坚持几天
-		cntMax += cntCur
-		day += cntCur
+		cntMost := min(p.exp-day, p.cnt) // 还能坚持几天
+		cntMax += cntMost
+		day += cntMost
 	}
 	return cntMax
 }
@@ -102,7 +78,7 @@ func (h *hp) Push(v interface{}) {
 func (h *hp) Pop() interface{} {
 	top := len(*h) - 1
 	p := (*h)[top]
-	*h = (*h)[:top-1]
+	*h = (*h)[:top]
 	return p
 }
 

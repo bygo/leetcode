@@ -27,10 +27,11 @@ func commonChars(words []string) []string {
 	}
 
 	// 字典序
-	for i := 0; i < 26; i++ {
-		for j := 0; j < chMpCnt[i]; j++ {
-			chsCommon = append(chsCommon, string(byte(i+'a')))
+	for ch, cnt := range chMpCnt {
+		for j := 0; j < cnt; j++ {
+			chsCommon = append(chsCommon, string(byte(ch+'a')))
 		}
 	}
+
 	return chsCommon
 }
