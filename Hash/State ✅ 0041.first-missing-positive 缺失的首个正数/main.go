@@ -27,9 +27,9 @@ func firstMissingPositive(nums []int) int {
 	}
 
 	// 筛选
-	for i := 1; i <= numsL; i++ {
-		if 0 < nums[i] {
-			return i
+	for idxNum := 1; idxNum <= numsL; idxNum++ {
+		if 0 < nums[idxNum] {
+			return idxNum
 		}
 	}
 
