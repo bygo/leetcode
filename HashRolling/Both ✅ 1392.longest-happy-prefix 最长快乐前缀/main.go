@@ -12,10 +12,10 @@ func longestPrefix(s string) string {
 	var hashLeft, hashRight, mul uint = 0, 0, 1
 	var idx = -1
 	for i := 0; i < sTop; i++ {
-		bitLeftLow := uint(s[i])
-		bitRightHigh := uint(s[sTop-i])
-		hashLeft = hashLeft*base + bitLeftLow
-		hashRight = bitRightHigh*mul + hashRight
+		bitLeftLo := uint(s[i])
+		bitRightHi := uint(s[sTop-i])
+		hashLeft = hashLeft*base + bitLeftLo
+		hashRight = bitRightHi*mul + hashRight
 		if hashLeft == hashRight {
 			idx = i
 		}

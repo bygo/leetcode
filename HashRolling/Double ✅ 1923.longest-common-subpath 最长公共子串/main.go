@@ -25,9 +25,9 @@ func longestCommonSubpath(n int, paths [][]int) int {
 		preHashs[i] = make([][2]int, pathL+1)
 		preHash := preHashs[i]
 		for j := 0; j < pathL; j++ {
-			bitLow := int(path[j])
-			preHash[j+1][0] = (preHash[j][0]*base1 + bitLow) % mod1
-			preHash[j+1][1] = (preHash[j][1]*base2 + bitLow) % mod2
+			bitLo := int(path[j])
+			preHash[j+1][0] = (preHash[j][0]*base1 + bitLo) % mod1
+			preHash[j+1][1] = (preHash[j][1]*base2 + bitLo) % mod2
 		}
 	}
 
@@ -53,16 +53,16 @@ func longestCommonSubpath(n int, paths [][]int) int {
 		pathCur := paths[0]
 		pathCurL := len(pathCur)
 		for idx := 0; idx < pathCurL-curL; idx++ {
-			bitHigh := pathCur[idx]
-			bitLow := pathCur[idx+curL]
-			hashCur[0] = (hashCur[0] - bitHigh*mul1%mod1 + mod1) % mod1 // 减最高
-			hashCur[0] = hashCur[0] * base1 % mod1                      // 提升
-			hashCur[0] = hashCur[0] + bitLow                            // 加最低
+			bitHi := pathCur[idx]
+			bitLo := pathCur[idx+curL]
+			hashCur[0] = (hashCur[0] - bitHi*mul1%mod1 + mod1) % mod1 // 减最高
+			hashCur[0] = hashCur[0] * base1 % mod1                    // 提升
+			hashCur[0] = hashCur[0] + bitLo                           // 加最低
 			hashCur[0] %= mod1
 
-			hashCur[1] = (hashCur[1] - bitHigh*mul2%mod2 + mod2) % mod2 // 减最高
-			hashCur[1] = hashCur[1] * base2 % mod2                      // 提升
-			hashCur[1] = hashCur[1] + bitLow                            // 加最低
+			hashCur[1] = (hashCur[1] - bitHi*mul2%mod2 + mod2) % mod2 // 减最高
+			hashCur[1] = hashCur[1] * base2 % mod2                    // 提升
+			hashCur[1] = hashCur[1] + bitLo                           // 加最低
 			hashCur[1] %= mod2
 			hashMpBool[hashCur] = true
 		}
@@ -74,16 +74,16 @@ func longestCommonSubpath(n int, paths [][]int) int {
 			pathCur = paths[i]
 			pathCurL = len(pathCur)
 			for idx := 0; idx < pathCurL-curL; idx++ {
-				bitHigh := pathCur[idx]
-				bitLow := pathCur[idx+curL]
-				hashCur[0] = (hashCur[0] - bitHigh*mul1%mod1 + mod1) % mod1 // 减最高
-				hashCur[0] = hashCur[0] * base1 % mod1                      // 提升
-				hashCur[0] = hashCur[0] + bitLow                            // 加最低
+				bitHi := pathCur[idx]
+				bitLo := pathCur[idx+curL]
+				hashCur[0] = (hashCur[0] - bitHi*mul1%mod1 + mod1) % mod1 // 减最高
+				hashCur[0] = hashCur[0] * base1 % mod1                    // 提升
+				hashCur[0] = hashCur[0] + bitLo                           // 加最低
 				hashCur[0] %= mod1
 
-				hashCur[1] = (hashCur[1] - bitHigh*mul2%mod2 + mod2) % mod2 // 减最高
-				hashCur[1] = hashCur[1] * base2 % mod2                      // 提升
-				hashCur[1] = hashCur[1] + bitLow                            // 加最低
+				hashCur[1] = (hashCur[1] - bitHi*mul2%mod2 + mod2) % mod2 // 减最高
+				hashCur[1] = hashCur[1] * base2 % mod2                    // 提升
+				hashCur[1] = hashCur[1] + bitLo                           // 加最低
 				hashCur[1] %= mod2
 				hashMpBoolCur[hashCur] = true
 			}

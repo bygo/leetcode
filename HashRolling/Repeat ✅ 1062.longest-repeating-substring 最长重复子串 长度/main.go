@@ -12,8 +12,8 @@ func longestRepeatingSubstring(s string) int {
 	var preMul = make([]uint, sL+1)
 	preMul[0] = 1
 	for i := 1; i <= sL; i++ {
-		bitLow := uint(s[i-1])
-		preHash[i] = preHash[i-1]*base + bitLow
+		bitLo := uint(s[i-1])
+		preHash[i] = preHash[i-1]*base + bitLo
 		preMul[i] = preMul[i-1] * base
 	}
 
@@ -25,11 +25,11 @@ func longestRepeatingSubstring(s string) int {
 		hashMpState := map[uint]int8{hash: 1}
 
 		for i := 0; i < sL-curL; i++ {
-			bitHigh := uint(s[i])
-			bitLow := uint(s[i+curL])
-			hash = hash - bitHigh*mul // 减最高
+			bitHi := uint(s[i])
+			bitLo := uint(s[i+curL])
+			hash = hash - bitHi*mul // 减最高
 			hash = hash * base        // 提升
-			hash = hash + bitLow      // 加最低
+			hash = hash + bitLo      // 加最低
 
 			if hashMpState[hash] < 2 {
 				hashMpState[hash]++

@@ -13,8 +13,8 @@ func longestDupSubstring(s string) string {
 	var preMul = make([]uint, sL+1)
 	preMul[0] = 1
 	for i := 1; i <= sL; i++ {
-		bitLow := uint(s[i-1])
-		preHash[i] = preHash[i-1]*base + bitLow
+		bitLo := uint(s[i-1])
+		preHash[i] = preHash[i-1]*base + bitLo
 		preMul[i] = preMul[i-1] * base
 	}
 
@@ -27,11 +27,11 @@ func longestDupSubstring(s string) string {
 
 		// 当前最高位系数
 		for i := curL; i < sL; i++ {
-			bitHigh := uint(s[i-curL])
-			bitLow := uint(s[i])
-			hash = hash - bitHigh*mul // 减最高
+			bitHi := uint(s[i-curL])
+			bitLo := uint(s[i])
+			hash = hash - bitHi*mul // 减最高
 			hash = hash * base        // 提升
-			hash = hash + bitLow      // 加最低
+			hash = hash + bitLo      // 加最低
 			hashMpState[hash]++
 
 			if hashMpState[hash] == 2 {

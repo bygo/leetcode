@@ -19,20 +19,20 @@ func findRepeatedDnaSequences(s string) []string {
 	hashMpCnt := map[int]int8{}
 	for i := 0; i < baseL; i++ {
 		ch := s[i]
-		bitLow := bases[ch]
-		hashCur = hashCur*base + bitLow
+		bitLo := bases[ch]
+		hashCur = hashCur*base + bitLo
 	}
 	hashMpCnt[hashCur]++
 
 	// 统计
 	var strsRepeat []string
 	for idx := 0; idx < sL-baseL; idx++ {
-		bitHigh := bases[s[idx]]      // 高位
-		bitLow := bases[s[idx+baseL]] // 低位
+		bitHi := bases[s[idx]]      // 高位
+		bitLo := bases[s[idx+baseL]] // 低位
 
-		hashCur = hashCur - bitHigh*mul // 减最左
+		hashCur = hashCur - bitHi*mul // 减最左
 		hashCur *= base                 // 提升
-		hashCur += bitLow               // 加最右
+		hashCur += bitLo               // 加最右
 
 		// 临界
 		if hashMpCnt[hashCur] < 2 {

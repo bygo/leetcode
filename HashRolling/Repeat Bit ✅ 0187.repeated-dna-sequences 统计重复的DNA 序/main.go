@@ -28,8 +28,8 @@ func findRepeatedDnaSequences(s string) []string {
 
 	numMpCnt := [1 << 20]int8{}
 	for idx := 0; idx <= sL-baseL; idx++ {
-		bitLow := s[idx+baseL-1]
-		num = num<<2 | base[bitLow] // 提升
+		bitLo := s[idx+baseL-1]
+		num = num<<2 | base[bitLo] // 提升
 		num = num & bitStand        // 对齐
 		if numMpCnt[num] < 2 {
 			numMpCnt[num]++

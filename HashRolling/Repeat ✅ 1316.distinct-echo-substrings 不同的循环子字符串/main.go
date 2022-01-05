@@ -14,8 +14,8 @@ func distinctEchoSubstrings(text string) int {
 
 	// 初始化
 	for curL := 1; curL <= textL; curL++ {
-		bitLow := uint(text[curL-1])
-		preHash[curL] = preHash[curL-1]*base + bitLow
+		bitLo := uint(text[curL-1])
+		preHash[curL] = preHash[curL-1]*base + bitLo
 		preMul[curL] = preMul[curL-1] * base
 	}
 

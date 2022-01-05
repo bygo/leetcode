@@ -4,7 +4,7 @@ package main
 
 // ❓ 盒子中小球的最大数量
 
-func countBalls(lowLimit int, highLimit int) int {
+func countBalls(lowLimit int, hiLimit int) int {
 	// 计算初始数位和
 	var sum int
 	numCur := lowLimit
@@ -16,7 +16,7 @@ func countBalls(lowLimit int, highLimit int) int {
 	// 统计
 	sumMpCnt := [46]int{} // 最大99999 = 46
 	var cntMax int
-	for num := lowLimit; num <= highLimit; num++ {
+	for num := lowLimit; num <= hiLimit; num++ {
 		sumMpCnt[sum]++
 		numCur = num
 		for numCur%10 == 9 { // 每次进1 减9

@@ -13,7 +13,6 @@ func sortString(s string) string {
 	var strBuf []byte
 	sL := len(s)
 	for len(strBuf) < sL {
-
 		// 上升
 		for ch := 0; ch <= 25; ch++ {
 			if 0 < chMpCnt[ch] {

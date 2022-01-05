@@ -12,8 +12,8 @@ func genPre(nums []int) ([]uint, []uint) {
 	var preMul = make([]uint, numsL+1)
 	preMul[0] = 1
 	for i := 1; i <= numsL; i++ {
-		bitLow := uint(nums[i-1])
-		preHash[i] = preHash[i-1]*base + bitLow
+		bitLo := uint(nums[i-1])
+		preHash[i] = preHash[i-1]*base + bitLo
 		preMul[i] = preMul[i-1] * base
 	}
 	return preHash, preMul
@@ -35,11 +35,11 @@ func findLength(nums1 []int, nums2 []int) int {
 		hashMpBool := map[uint]bool{hashCur: true}
 
 		for idx := 0; idx < nums1L-curL; idx++ {
-			bitHigh := uint(nums1[idx])
-			bitLow := uint(nums1[idx+curL])
-			hashCur = hashCur - bitHigh*mul // 减最高
+			bitHi := uint(nums1[idx])
+			bitLo := uint(nums1[idx+curL])
+			hashCur = hashCur - bitHi*mul // 减最高
 			hashCur = hashCur * base        // 提升
-			hashCur = hashCur + bitLow      // 加最低
+			hashCur = hashCur + bitLo      // 加最低
 			hashMpBool[hashCur] = true
 		}
 
@@ -51,10 +51,10 @@ func findLength(nums1 []int, nums2 []int) int {
 			return true
 		}
 		for i := 0; i < nums2L-curL; i++ {
-			bitHigh := uint(nums2[i]) * mul
-			bitLow := uint(nums2[i+curL])
-			hashCur = hashCur - bitHigh
-			hashCur = hashCur*base + bitLow
+			bitHi := uint(nums2[i]) * mul
+			bitLo := uint(nums2[i+curL])
+			hashCur = hashCur - bitHi
+			hashCur = hashCur*base + bitLo
 			// 合法
 			if hashMpBool[hashCur] {
 				return true

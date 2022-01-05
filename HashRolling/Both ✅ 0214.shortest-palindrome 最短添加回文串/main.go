@@ -11,9 +11,9 @@ func shortestPalindrome(s string) string {
 	var hashLeft, hashRight, mul uint = 0, 0, 1
 	var idx = -1
 	for i := 0; i < sL; i++ {
-		bitLow := uint(s[i])
-		hashLeft = hashLeft*base + bitLow
-		hashRight = hashRight + bitLow*mul
+		bitLo := uint(s[i])
+		hashLeft = hashLeft*base + bitLo
+		hashRight = hashRight + bitLo*mul
 		if hashLeft == hashRight {
 			idx = i
 		}

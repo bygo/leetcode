@@ -2,21 +2,25 @@ package main
 
 // https://leetcode-cn.com/problems/word-break
 
+// ❓ 单词拆分
+
 func wordBreak(s string, wordDict []string) bool {
-	m := make(map[string]bool)
-	for _, w := range wordDict {
-		m[w] = true
+	wordMpBool := make(map[string]bool)
+	for _, word := range wordDict {
+		wordMpBool[word] = true
 	}
-	n := len(s)
-	dp := make([]bool, n+1)
-	dp[0] = true
-	for r := 1; r <= n; r++ {
+	sL := len(s)
+	idxMpBool := make([]bool, sL+1)
+	idxMpBool[0] = true
+
+	for r := 1; r <= sL; r++ {
 		for l := 0; l < r; l++ {
-			if dp[l] && m[s[l:r]] {
-				dp[r] = true
+			if idxMpBool[l] && wordMpBool[s[l:r]] {
+				idxMpBool[r] = true
 				break
 			}
 		}
 	}
-	return dp[n]
+
+	return idxMpBool[sL]
 }

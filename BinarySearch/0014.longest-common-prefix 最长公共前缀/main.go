@@ -22,14 +22,14 @@ func longestCommonPrefix(strs []string) string {
 			minLength = len(s)
 		}
 	}
-	low, high := 0, minLength
-	for low < high {
-		mid := (high-low+1)/2 + low
+	lo, hi := 0, minLength
+	for lo < hi {
+		mid := (hi-lo+1)/2 + lo
 		if isCommonPrefix(mid) {
-			low = mid
+			lo = mid
 		} else {
-			high = mid - 1
+			hi = mid - 1
 		}
 	}
-	return strs[0][:low]
+	return strs[0][:lo]
 }
