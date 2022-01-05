@@ -16,12 +16,13 @@ func firstMissingPositive(nums []int) int {
 	// 记录
 	nums = append(nums, numsL+1)
 	for _, num := range nums {
-		// 原始值
-		num = abs(num)
+		// 原始值当key
+		idxNum := abs(num)
 
-		if num <= numsL {
-			// 存在标记为负数，相反，循环后第一个正数即为答案
-			nums[num] = - abs(nums[num])
+		if idxNum <= numsL {
+			// 把对应位置上的数字，标记为负数
+			// ⚠️ 重复标记，也能保证负数
+			nums[idxNum] = - abs(nums[idxNum])
 		}
 	}
 
