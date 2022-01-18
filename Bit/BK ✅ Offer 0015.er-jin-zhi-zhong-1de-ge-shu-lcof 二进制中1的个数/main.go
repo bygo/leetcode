@@ -5,11 +5,11 @@ package main
 // ❓ 二进制中1 的个数
 
 func hammingWeight(num uint32) int {
-	var ones int
+	var cntOne int
 	for 0 < num {
-		ones++
+		cntOne++
 		// 每次消去最右的1
 		num &= num - 1
 	}
-	return ones
+	return cntOne
 }

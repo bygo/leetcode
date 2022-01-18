@@ -7,11 +7,13 @@ package main
 func totalHammingDistance(nums []int) int {
 	var cntTot int
 	numsL := len(nums)
-	for i := 0; i < 30; i++ {
+
+	// 枚举 1~30 位
+	for pos := 0; pos < 30; pos++ {
 		var cnt int
 		// 统计1的个数
 		for _, num := range nums {
-			cnt += num >> i & 1
+			cnt += num >> pos & 1
 		}
 		// 乘以0的个数(组合)
 		cntTot += cnt * (numsL - cnt)

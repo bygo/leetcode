@@ -5,10 +5,10 @@ package main
 // ❓ 只出现一次的数字
 
 func singleNumber(nums []int) int {
-	var num int
-	for i := range nums {
+	var numUnique int
+	for _, num := range nums {
 		// 两两消除
-		num ^= nums[i]
+		numUnique ^= num
 	}
-	return num
+	return numUnique
 }

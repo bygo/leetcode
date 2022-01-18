@@ -6,12 +6,12 @@ package main
 
 func hammingDistance(x int, y int) int {
 	// 异或取不同个数
-	z := x ^ y
-	var ones int
-	for 0 < z {
+	num := x ^ y
+	var cntDiff int
+	for 0 < num {
 		// bk
-		z &= z - 1
-		ones++
+		num &= num - 1
+		cntDiff++
 	}
-	return ones
+	return cntDiff
 }
