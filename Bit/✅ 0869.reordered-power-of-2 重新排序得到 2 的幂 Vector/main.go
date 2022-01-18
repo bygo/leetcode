@@ -15,6 +15,7 @@ func countDigits(n int) (cnt [10]int) {
 
 var powerOf2Digits = map[[10]int]bool{}
 
+// vector
 func init() {
 	for n := 1; n <= 1e9; n <<= 1 {
 		// 2的幂 每数位的数字总数

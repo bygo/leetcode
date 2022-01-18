@@ -15,5 +15,7 @@ func findComplement(num int) int {
 		}
 	}
 
-	return 1<<lo - num - 1
+	// num 补全数 1<<mid - 1
+	// num 补数 = 补全数 - num
+	return 1<<lo - 1 - num
 }
