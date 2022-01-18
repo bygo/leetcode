@@ -15,7 +15,6 @@ func lexicalOrder(n int) []int {
 		numsOrder = append(numsOrder, num)
 		for i := 0; i < 10; i++ {
 			dfs(num*10 + i)
-
 		}
 	}
 	for i := 1; i < 10; i++ {

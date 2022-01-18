@@ -45,10 +45,10 @@ func (root *Trie) Search(word string) bool {
 					return true
 				}
 			}
-		} else {
+		} else if 'a' <= ch && ch <= 'z' {
 			// 精准匹配
-			child := node.chMp[ch-'a']
-			if child != nil && dfs(idx+1, child) {
+			node = node.chMp[ch-'a']
+			if node != nil && dfs(idx+1, node) {
 				return true
 			}
 		}

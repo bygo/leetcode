@@ -5,8 +5,8 @@ package main
 // ❓ h指数 为 篇数cnt 等于 至少引用次数quote
 
 func hIndex(citations []int) (h int) {
-	// 后缀和：至少引用次数val == 篇幅cnt
 	quoteMax := len(citations)
+	// 计数
 	quoteMpCnt := make([]int, quoteMax+1)
 	for _, quote := range citations {
 		if quoteMax <= quote {
@@ -17,10 +17,10 @@ func hIndex(citations []int) (h int) {
 	}
 	var cnt int
 
-	// quote = 0 时，为一个都没被引用
-	for quote := quoteMax; 0 < quote; quote-- {
-		cnt += quoteMpCnt[quote]
-		if quote <= cnt {
+	// 从大到小，quote = 0 时，为一个都没被引用
+	for quote := quoteMax; 0 <= quote; quote-- {
+		cnt += quoteMpCnt[quote] // 大于等于 quote 的篇数
+		if quote <= cnt {        // 后缀和 == 当前篇幅cnt
 			return quote
 		}
 	}

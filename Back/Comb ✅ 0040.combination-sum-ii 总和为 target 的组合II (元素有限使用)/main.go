@@ -4,6 +4,9 @@ import "sort"
 
 // https://leetcode-cn.com/problems/combination-sum-ii/
 
+// ❓ 总和为target的组合
+// ⚠️ 元素有限使用 并且 唯一组合
+
 func combinationSum2(candidates []int, target int) [][]int {
 	sort.Ints(candidates)
 	var res [][]int
@@ -19,7 +22,7 @@ func combinationSum2(candidates []int, target int) [][]int {
 
 		for i := left; i < len(candidates); i++ {
 			// 除非首发 否则相同的只用一次，剪枝相同路口
-
+			// 1 1 7 ~ 1 7
 			if val < candidates[i] || left < i && candidates[i-1] == candidates[i] {
 				continue
 			}

@@ -4,14 +4,14 @@ package main
 
 func combinationSum(candidates []int, target int) [][]int {
 	//sort.Ints(candidates)
-	var res [][]int
+	var combNums [][]int
 	var dfs func(val, left int)
-	var cur []int
+	var nums []int
 
 	// left 限定为组合
 	dfs = func(val, left int) {
 		if val == 0 {
-			res = append(res, append([]int{}, cur...))
+			combNums = append(combNums, append([]int{}, nums...))
 			return
 		}
 
@@ -20,11 +20,11 @@ func combinationSum(candidates []int, target int) [][]int {
 				continue
 				//break
 			}
-			cur = append(cur, candidates[i])
+			nums = append(nums, candidates[i])
 			dfs(val-candidates[i], i)
-			cur = cur[:len(cur)-1]
+			nums = nums[:len(nums)-1]
 		}
 	}
 	dfs(target, 0)
-	return res
+	return combNums
 }

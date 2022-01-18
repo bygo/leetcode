@@ -13,23 +13,23 @@ func firstMissingPositive(nums []int) int {
 		}
 	}
 
-	// 记录
-	nums = append(nums, numsL+1)
+	// 标记
+	//nums = append(nums, numsL+1)
 	for _, num := range nums {
-		// 原始值当key
-		idxNum := abs(num)
+		// 原始值 偏移(-1) 当key
+		idxNum := abs(num) - 1
 
-		if idxNum <= numsL {
+		if idxNum < numsL {
 			// 把对应位置上的数字，标记为负数
 			// ⚠️ 重复标记，也能保证负数
 			nums[idxNum] = - abs(nums[idxNum])
 		}
 	}
 
-	// 筛选 数字 1~numsL
-	for num := 1; num <= numsL; num++ {
+	// 筛选 数字 1~numsL (偏移-1)
+	for num := 0; num < numsL; num++ {
 		if 0 < nums[num] {
-			return num
+			return num + 1
 		}
 	}
 
