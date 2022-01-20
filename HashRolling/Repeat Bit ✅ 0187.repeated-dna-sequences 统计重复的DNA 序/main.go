@@ -30,7 +30,7 @@ func findRepeatedDnaSequences(s string) []string {
 	for idx := 0; idx <= sL-baseL; idx++ {
 		bitLo := s[idx+baseL-1]
 		num = num<<2 | base[bitLo] // 提升
-		num = num & bitStand        // 对齐
+		num = num & bitStand       // 对齐
 		if numMpCnt[num] < 2 {
 			numMpCnt[num]++
 			if numMpCnt[num] == 2 {

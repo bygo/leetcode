@@ -2,6 +2,8 @@ package main
 
 // https://leetcode-cn.com/problems/gray-code
 
+// ❓ 格雷编码
+
 func grayCode(n int) []int {
 	f := []int{0}
 
@@ -12,12 +14,4 @@ func grayCode(n int) []int {
 		}
 	}
 	return f
-}
-
-func grayCode(n int) []int {
-	var res []int
-	for i := 0; i < 1<<n; i++ {
-		res = append(res, i^(i>>1))
-	}
-	return res
 }

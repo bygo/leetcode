@@ -63,7 +63,3 @@ func quickAdd(x, y, z int) bool {
 	}
 	return true
 }
-
-/**
-思路：移位倍增
-*/

@@ -33,7 +33,7 @@ func findNumOfValidWords(words []string, puzzles []string) []int {
 			ch -= 'a'
 			num |= 1 << ch
 		}
-		// 求所有子集
+		// 求puzzle所有子集
 		subset := num
 		for {
 			// first 必须存在

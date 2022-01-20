@@ -1,25 +1,30 @@
 package main
 
-func mul(a, b int) int {
-	var res = 0
+func mul(x, y int) int {
+	var numRes int
 	var cnt int
-	if a < 0 {
+	// 符号转换
+	if x < 0 {
 		cnt++
-		a = -a
+		x = -x
 	}
-	if b < 0 {
+	if y < 0 {
 		cnt++
-		b = -b
+		y = -y
 	}
-	for 0 < b {
-		if 1 == b&1 {
-			res += a
+
+	for 0 < y {
+		// 按位相加
+		if 1 == y&1 {
+			numRes += x
 		}
-		b >>= 1
-		a <<= 1
+		// 减少位
+		y >>= 1
+		// 翻倍
+		x <<= 1
 	}
 	if cnt%2 == 1 {
-		return -res
+		return -numRes
 	}
-	return res
+	return numRes
 }

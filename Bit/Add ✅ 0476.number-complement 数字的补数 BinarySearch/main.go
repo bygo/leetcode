@@ -7,6 +7,7 @@ package main
 func findComplement(num int) int {
 	lo, hi := 0, 31
 	for lo < hi {
+		// 求补全数
 		mid := int(uint(lo+hi) >> 1)
 		if 1<<mid <= num {
 			lo = mid + 1
