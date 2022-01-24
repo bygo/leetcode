@@ -21,11 +21,11 @@ func readBinaryWatch(turnedOn int) []string {
 	return strsTime
 }
 
-func OnesCounter(i int) int {
+func OnesCounter(num int) int {
 	var ones int
-	for 0 < i {
+	for 0 < num {
 		ones++
-		i = i & (i - 1)
+		num = num & (num - 1)
 	}
 	return ones
 }

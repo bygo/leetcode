@@ -10,6 +10,6 @@ func isPowerOfTwo(n int) bool {
 }
 
 func isPowerOfTwo_(n int) bool {
-	// 1<<63 的约数
+	// 1<<31 的约数
 	return 0 < n && 0b10000000000000000000000000000000%n == 0
 }

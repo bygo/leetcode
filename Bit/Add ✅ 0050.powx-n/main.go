@@ -2,19 +2,24 @@ package main
 
 // https://leetcode-cn.com/problems/powx-n
 
+// ❓ 实现 Pow(x, n)
+
 func myPow(x float64, n int) float64 {
 	var res float64 = 1
-	var y = n
-	if y < 0 {
-		y = -y
+	var num = n
+	if num < 0 {
+		num = -num
 	}
-	for 0 < y {
-		if 1 == y&1 {
+
+	for 0 < num {
+		// 快速乘
+		if 1 == num&1 {
 			res *= x
 		}
-		x *= x
-		y >>= 1
+		x *= x // x<<=1
+		num >>= 1
 	}
+	// 负数倒数
 	if n < 0 {
 		return 1 / res
 	}

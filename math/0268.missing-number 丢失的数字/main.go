@@ -2,12 +2,14 @@ package main
 
 // https://leetcode-cn.com/problems/missing-number
 
+// ❓ 丢失的数字
+
 func missingNumber(nums []int) int {
-	l1 := len(nums)
-	l1 = l1 * (l1 + 1) / 2
+	numsL := len(nums)
+	numsL = numsL * (numsL + 1) / 2 // 等差数列
 	var sum int
 	for _, num := range nums {
 		sum += num
 	}
-	return l1 - sum
+	return numsL - sum
 }

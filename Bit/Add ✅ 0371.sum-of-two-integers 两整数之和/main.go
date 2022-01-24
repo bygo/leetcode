@@ -4,6 +4,7 @@ package main
 
 // ❓ 两整数之和
 // ⚠️ 不使用+ - 符号
+// ⚠️ 有负数
 
 func getSum(a int, b int) int {
 	for b != 0 { // 通过转换为 uint ,防止负数溢出 （变正）

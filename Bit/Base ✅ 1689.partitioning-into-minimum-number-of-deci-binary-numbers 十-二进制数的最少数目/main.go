@@ -6,10 +6,10 @@ package main
 // 123 => 111 011 001 => 3
 
 func minPartitions(str string) int {
-	var max rune = -1
-	for _, ch := range str {
-		if max < ch {
-			max = ch
+	var max byte = 0
+	for i := range str {
+		if max < str[i] {
+			max = str[i]
 		}
 	}
 	return int(max - '0')

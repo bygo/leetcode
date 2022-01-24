@@ -6,10 +6,15 @@ package main
 
 func missingNumber(nums []int) int {
 	numsL := len(nums)
-	numsL = numsL * (numsL + 1) / 2 // 等差数列
-	var sum int
-	for _, num := range nums {
-		sum += num
+	var num int
+
+	// 起始
+	num ^= nums[0]
+	// 中间diff
+	for n := 1; n < numsL; n++ {
+		num ^= n
+		num ^= nums[n]
 	}
-	return numsL - sum
+	// 尾部 numsL
+	return num ^ numsL
 }

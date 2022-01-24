@@ -9,9 +9,7 @@ func numIdenticalPairs(nums []int) int {
 	var numMpCnt = map[int]int{}
 	var cntGood int
 	for _, num := range nums {
-		if 0 < numMpCnt[num] {
-			cntGood += numMpCnt[num]
-		}
+		cntGood += numMpCnt[num]
 		numMpCnt[num]++
 	}
 	return cntGood

@@ -4,22 +4,22 @@ package main
 
 // ❓ Excel 列名称
 
-func convertToTitle(columnNumber int) string {
-	var titleBuf = []byte{}
-	for 0 < columnNumber {
+func convertToTitle(num int) string {
+	var buf = []byte{}
+	for 0 < num {
 		// 偏移 A从1开始
 		// 0~26 -> 1~27
 		// 也就是 26(z)不进位，27(aa)才进位
-		columnNumber -= 1
-		titleBuf = append(titleBuf, byte((columnNumber)%26+'A'))
-		columnNumber /= 26
+		num -= 1
+		buf = append(buf, byte((num)%26+'A'))
+		num /= 26
 	}
 
-	lo, hi := 0, len(titleBuf)-1
+	lo, hi := 0, len(buf)-1
 	for lo < hi {
-		titleBuf[lo], titleBuf[hi] = titleBuf[hi], titleBuf[lo]
+		buf[lo], buf[hi] = buf[hi], buf[lo]
 		lo++
 		hi--
 	}
-	return string(titleBuf)
+	return string(buf)
 }

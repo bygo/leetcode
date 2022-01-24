@@ -5,7 +5,7 @@ package main
 // ❓ 不同的邮件地址数
 // ⚠️ b.y+ig@gmail.com
 // ⚠️ .会被忽略
-// ⚠️ +忽略 +~@内容
+// ⚠️ +忽略 + ~ @内容
 
 func numUniqueEmails(emails []string) int {
 	mailMp := map[string]struct{}{}

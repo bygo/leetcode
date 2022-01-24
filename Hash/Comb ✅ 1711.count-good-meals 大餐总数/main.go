@@ -12,8 +12,11 @@ func countPairs(deliciousness []int) int {
 		if sumMax>>1 < delicious {
 			sumMax = delicious << 1
 		}
-		// 2的幂循环一遍s
+		// 2的幂循环一遍
 		for sum := 1; sum <= sumMax; sum <<= 1 {
+			if sum < delicious {
+				continue
+			}
 			numTarget := sum - delicious
 			cnt += numMpCnt[numTarget]
 		}

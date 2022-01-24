@@ -7,62 +7,59 @@ import "math"
 // ❓ 两数相除
 // ⚠️ 随时判溢出
 
-func quickAdd(x, y, z int32) bool {
-	var numRes int32 = 0 // y*z
-	for 0 < z {
-		if 0 < z&1 {
-			numRes += y
-			if 0 <= numRes { // 溢出 z 过大
-				return false
-			}
-			if numRes < x { //  y*z 超过x ，z 过大
-				return false
-			}
-		}
-		z >>= 1
-		if 0 < z {
-			// 下次倍增 y
-			y <<= 1
-			if 0 <= y { // 溢出 z 过大
-				return false
-			}
-			if y < x { // y 自身超过 x ，z 过大
+func quickAdd(dividend int32, divisor, quotient int32) bool {
+	var numRes int32
+	// divisor * quotient
+	// 乘以 quotient 每一bit
+	for 0 < quotient {
+		if quotient&1 == 1 {
+			numRes += divisor
+			if 0 <= numRes || numRes < dividend {
 				return false
 			}
 		}
+
+		quotient >>= 1
+		if 0 < quotient {
+			divisor <<= 1
+			if 0 <= divisor || divisor < dividend {
+				return false
+			}
+		}
+
 	}
-	return true // z 在合理范围内
+	return true
 }
 
-func divide(dividend, divisor int) int {
+func divide(x, y int) int {
 	// 负数范围更大
-	minus := false
+	minus := x^y < 0
 
-	var x, y = int32(dividend), int32(divisor)
-	if 0 < dividend {
-		x = -x
-		minus = !minus
+	var dividend, divisor = int32(x), int32(y)
+	if 0 < x {
+		dividend = -dividend
 	}
-	if 0 < divisor {
-		y = -y
-		minus = !minus
+	if 0 < y {
+		divisor = -divisor
 	}
 
-	if x == 0 || y < x { // 被除数为 0
+	// 特殊用例，被除数为 0 | 除数 有效位更大
+	if dividend == 0 || divisor < dividend {
 		return 0
 	}
 
-	if x == math.MinInt32 { // 被除数为最小值
-		if divisor == 1 {
+	// 特殊用例， 被除数为最小值 超过 math.MaxInt32 的精度
+	if dividend == math.MinInt32 {
+		if y == 1 {
 			return math.MinInt32
 		}
-		if divisor == -1 {
+		if y == -1 {
 			return math.MaxInt32
 		}
 	}
-
-	//if y == math.MinInt32 { // 除数为最小值
-	//	if x == math.MinInt32 {
+	// 除数为最小值，可以精准计算，无需判断
+	//if divisor == math.MinInt32 {
+	//	if dividend == math.MinInt32 {
 	//		return 1
 	//	}
 	//	return 0
@@ -70,9 +67,10 @@ func divide(dividend, divisor int) int {
 
 	var numRes int32 = 0
 	var lo, hi int32 = 1, math.MaxInt32
+	// <= 充分利用
 	for lo <= hi {
 		mid := lo + (hi-lo)>>1
-		if quickAdd(x, y, mid) {
+		if quickAdd(dividend, divisor, mid) {
 			numRes = mid
 			if mid == math.MaxInt32 {
 				break
@@ -85,6 +83,7 @@ func divide(dividend, divisor int) int {
 	}
 
 	if minus {
+		// 恢复
 		return -int(numRes)
 	}
 	return int(numRes)

@@ -18,6 +18,7 @@ func singleNumber(nums []int) []int {
 	// -num = 取反+1，取最低有效位
 	// 1111000
 	// 0000111 + 1
+	// 0001000
 
 	numStd = numStd & -numStd // 数字不同 肯定会有一位不同,根据一位的不同 切分不同数字
 	var num1, num2 int

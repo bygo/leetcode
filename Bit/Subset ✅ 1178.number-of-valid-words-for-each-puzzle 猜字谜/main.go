@@ -26,12 +26,10 @@ func findNumOfValidWords(words []string, puzzles []string) []int {
 	// 谜底数
 	var numsPuzzle = make([]int, len(puzzles))
 	for idx, puzzle := range puzzles {
-		ch := puzzle[0] - 'a'
-		first := 1 << ch
+		first := 1 << (puzzle[0] - 'a')
 		var num int
 		for _, ch := range puzzle[1:] {
-			ch -= 'a'
-			num |= 1 << ch
+			num |= 1 << (ch - 'a')
 		}
 		// 求puzzle所有子集
 		subset := num

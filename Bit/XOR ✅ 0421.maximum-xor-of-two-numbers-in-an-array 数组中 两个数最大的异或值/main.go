@@ -4,6 +4,7 @@ package main
 
 // ❓ 数组中 两个数最大的异或值
 // 30*n
+
 func findMaximumXOR(nums []int) int {
 	var numRes, numMax int
 	// 按位确认

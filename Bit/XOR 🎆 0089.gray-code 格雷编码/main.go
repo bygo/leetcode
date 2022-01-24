@@ -14,7 +14,7 @@ func grayCode(n int) []int {
 
 // 映射唯一
 // g ^ num = g ^ num>>1 = num ^ num>>1
-// 即
+//
 // x^1 = x^0 , x = 1
 // x^2 = x^1 , x = 3
 // x^3 = x^1 , x = 2

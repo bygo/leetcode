@@ -6,37 +6,35 @@ package main
 
 func addBinary(a string, b string) string {
 	var carry int
-	var buf []byte
 	aTop := len(a) - 1
 	bTop := len(b) - 1
-
-	for 0 <= aTop || 0 <= bTop || 0 < carry {
-		var num = carry
+	var bufL int
+	if aTop < bTop {
+		bufL = bTop + 2
+	} else {
+		bufL = aTop + 2
+	}
+	var buf = make([]byte, bufL)
+	var bufTop = bufL - 1
+	for 0 <= aTop || 0 <= bTop {
 		if 0 <= aTop {
-			if a[aTop] == '1' {
-				num++
-			}
+			carry += int(a[aTop] - '0')
 			aTop--
 		}
+
 		if 0 <= bTop {
-			if b[bTop] == '1' {
-				num++
-			}
+			carry += int(b[bTop] - '0')
 			bTop--
 		}
-		if num%2 == 0 {
-			buf = append(buf, '0')
-		} else {
-			buf = append(buf, '1')
-		}
-		carry = num / 2
+
+		buf[bufTop] = byte(carry%2) + '0'
+		carry /= 2
+		bufTop--
 	}
 
-	lo, hi := 0, len(buf)-1
-	for lo < hi {
-		buf[lo], buf[hi] = buf[hi], buf[lo]
-		lo++
-		hi--
+	if 0 < carry {
+		buf[bufTop] = byte(carry) + '0'
+		bufTop--
 	}
-	return string(buf)
+	return string(buf[bufTop+1:])
 }
