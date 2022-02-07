@@ -12,7 +12,7 @@ const (
 )
 
 func reverseBits(n uint32) uint32 {
-	n = n>>1&m1 | n&m1<<1 // n>>1 左移右 ， n&m1 右合法 移左
+	n = n>>1&m1 | n&m1<<1
 	n = n>>2&m2 | n&m2<<2
 	n = n>>4&m4 | n&m4<<4
 	n = n>>8&m8 | n&m8<<8

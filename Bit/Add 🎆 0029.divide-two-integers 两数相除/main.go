@@ -7,13 +7,13 @@ import "math"
 // ❓ 两数相除
 // ⚠️ 随时判溢出
 
+// 快速乘 divisor * quotient
 func quickAdd(dividend int32, divisor, quotient int32) bool {
 	var numRes int32
-	// divisor * quotient
-	// 乘以 quotient 每一bit
 	for 0 < quotient {
 		if quotient&1 == 1 {
 			numRes += divisor
+			// 溢出
 			if 0 <= numRes || numRes < dividend {
 				return false
 			}
@@ -22,6 +22,7 @@ func quickAdd(dividend int32, divisor, quotient int32) bool {
 		quotient >>= 1
 		if 0 < quotient {
 			divisor <<= 1
+			// 溢出
 			if 0 <= divisor || divisor < dividend {
 				return false
 			}
@@ -48,7 +49,7 @@ func divide(x, y int) int {
 		return 0
 	}
 
-	// 特殊用例， 被除数为最小值 超过 math.MaxInt32 的精度
+	// 特殊用例，被除数为最小值 超过 math.MaxInt32 的精度
 	if dividend == math.MinInt32 {
 		if y == 1 {
 			return math.MinInt32
@@ -67,9 +68,10 @@ func divide(x, y int) int {
 
 	var numRes int32 = 0
 	var lo, hi int32 = 1, math.MaxInt32
-	// <= 充分利用
+	// `<=` 充分利用整数范围
 	for lo <= hi {
 		mid := lo + (hi-lo)>>1
+		// 合法
 		if quickAdd(dividend, divisor, mid) {
 			numRes = mid
 			if mid == math.MaxInt32 {
@@ -78,12 +80,13 @@ func divide(x, y int) int {
 			}
 			lo = mid + 1
 		} else {
+			// 溢出 (mid 过大)
 			hi = mid - 1
 		}
 	}
 
 	if minus {
-		// 恢复
+		// 还原
 		return -int(numRes)
 	}
 	return int(numRes)

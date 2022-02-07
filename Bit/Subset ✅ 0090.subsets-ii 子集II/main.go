@@ -33,3 +33,27 @@ func subsetsWithDup(nums []int) [][]int {
 	}
 	return combNums
 }
+
+func subsets(nums []int) [][]int {
+	var combNums [][]int
+	numsL := len(nums)
+	subsetMax := 1 << numsL
+	for subset := 0; subset < subsetMax; subset++ {
+		numMpIdx := map[int]int{}
+		numsCur := []int{}
+		idx := 0
+		for idx < numsL {
+			if subset>>idx&1 == 1 {
+				idxPre, ok := numMpIdx[nums[idx]]
+				if ok && subset>>idxPre&1 == 0 {
+					break
+				}
+				numsCur = append(numsCur, nums[idx])
+			}
+		}
+		if idx == numsL {
+			combNums = append(combNums, numsCur)
+		}
+	}
+	return combNums
+}

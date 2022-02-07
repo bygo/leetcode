@@ -10,6 +10,7 @@ func totalHammingDistance(nums []int) int {
 
 	// 枚举 1~30 位
 	for pos := 0; pos < 30; pos++ {
+
 		var cnt int
 		// 统计1的个数
 		for _, num := range nums {

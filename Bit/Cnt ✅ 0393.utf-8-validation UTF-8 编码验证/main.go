@@ -7,6 +7,7 @@ package main
 func validUtf8(data []int) bool {
 	cnt := 0
 	for _, num := range data {
+		// 首段 验证
 		if cnt == 0 {
 			if num>>5 == 0b110 {
 				cnt = 1
@@ -18,6 +19,7 @@ func validUtf8(data []int) bool {
 				return false
 			}
 		} else {
+			// 其他段 验证
 			if num>>6 != 0b10 {
 				return false
 			}

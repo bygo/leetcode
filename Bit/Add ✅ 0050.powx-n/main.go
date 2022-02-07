@@ -4,24 +4,27 @@ package main
 
 // ❓ 实现 Pow(x, n)
 
-func myPow(x float64, n int) float64 {
-	var res float64 = 1
-	var num = n
-	if num < 0 {
-		num = -num
+func myPow(num float64, pow int) float64 {
+	var numRes float64 = 1
+	// 负指数幂
+	var minus bool
+	if pow < 0 {
+		minus = true
+		pow = -pow
 	}
 
-	for 0 < num {
+	for 0 < pow {
 		// 快速乘
-		if 1 == num&1 {
-			res *= x
+		if pow&1 == 1 {
+			numRes *= num
 		}
-		x *= x // x<<=1
-		num >>= 1
+		num *= num
+		pow >>= 1
 	}
+
 	// 负数倒数
-	if n < 0 {
-		return 1 / res
+	if minus {
+		return 1 / numRes
 	}
-	return res
+	return numRes
 }

@@ -7,12 +7,12 @@ package main
 func countBits(n int) []int {
 	var bits []int
 	for num := 0; num <= n; num++ {
-		bits = append(bits, count(num))
+		bits = append(bits, bk(num))
 	}
 	return bits
 }
 
-func count(num int) int {
+func bk(num int) int {
 	var cnt int
 	for 0 < num {
 		num &= num - 1

@@ -5,36 +5,38 @@ package main
 // ❓  二进制字符串求和
 
 func addBinary(a string, b string) string {
-	var carry int
-	aTop := len(a) - 1
-	bTop := len(b) - 1
+	aT := len(a) - 1
+	bT := len(b) - 1
 	var bufL int
-	if aTop < bTop {
-		bufL = bTop + 2
+	if aT < bT {
+		bufL = bT
 	} else {
-		bufL = aTop + 2
+		bufL = aT
 	}
+	bufL += 2
 	var buf = make([]byte, bufL)
-	var bufTop = bufL - 1
-	for 0 <= aTop || 0 <= bTop {
-		if 0 <= aTop {
-			carry += int(a[aTop] - '0')
-			aTop--
+	var bufT = bufL - 1
+
+	var carry int
+	for 0 <= aT || 0 <= bT {
+		if 0 <= aT {
+			carry += int(a[aT] - '0')
+			aT--
 		}
 
-		if 0 <= bTop {
-			carry += int(b[bTop] - '0')
-			bTop--
+		if 0 <= bT {
+			carry += int(b[bT] - '0')
+			bT--
 		}
 
-		buf[bufTop] = byte(carry%2) + '0'
+		buf[bufT] = byte(carry%2) + '0'
 		carry /= 2
-		bufTop--
+		bufT--
 	}
 
 	if 0 < carry {
-		buf[bufTop] = byte(carry) + '0'
-		bufTop--
+		buf[bufT] = byte(carry) + '0'
+		bufT--
 	}
-	return string(buf[bufTop+1:])
+	return string(buf[bufT+1:])
 }
