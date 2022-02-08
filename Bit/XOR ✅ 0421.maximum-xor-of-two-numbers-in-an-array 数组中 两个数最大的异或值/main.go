@@ -3,11 +3,11 @@ package main
 // https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array
 
 // ❓ 数组中 两个数最大的异或值
-// 30*n
+// O( 30*n )
 
 func findMaximumXOR(nums []int) int {
 	var numRes, numMax int
-	// 按位确认
+	// 从高到低 按位确认
 	for pos := 30; 0 <= pos; pos-- {
 		// 结果翻倍
 		numRes <<= 1

@@ -1,30 +1,27 @@
 package main
 
-import (
-	"math"
-)
-
 // https://leetcode-cn.com/problems/increasing-subsequences
+
+// ❓ 递增子序列
 
 func findSubsequences(nums []int) [][]int {
 	var combNums [][]int
 	numsL := len(nums)
-	subsetMax := 1 << numsL
+	numMax := 1 << numsL
 	hashMp := map[uint]struct{}{}
-	for num := 0; num < subsetMax; num++ {
+	for subset := 0; subset < numMax; subset++ {
 		numsCur := []int{}
 		idx := 0
 		numPre := -101
-		subset := num
 		for idx < numsL {
-			if subset>>idx&1 == 1 && numPre <= nums[idx] { // 是否选择 且合法
+			if subset>>idx&1 == 1 && numPre <= nums[idx] { // 是否选择  是否合法
 				numsCur = append(numsCur, nums[idx])
 				numPre = nums[idx]
 			}
 			idx++
 		}
 
-		if idx == numsL && 2 <= len(numsCur) {
+		if 2 <= len(numsCur) {
 			h := hash(numsCur)
 			_, ok := hashMp[h]
 			if !ok {
@@ -45,15 +42,14 @@ func hash(nums []int) uint {
 }
 
 func findSubsequences_(nums []int) [][]int {
-	var subsetNums [][]int
+	var combNums [][]int
 	var numsCur []int
 	var dfs func(idx, numPre int)
 	var numsL = len(nums)
 	dfs = func(idx, numPre int) {
 		if numsL == idx {
-			numsCurL := len(numsCur)
-			if 2 <= numsCurL {
-				subsetNums = append(subsetNums, append([]int{}, numsCur...))
+			if 2 <= len(numsCur) {
+				combNums = append(combNums, append([]int{}, numsCur...))
 			}
 			return
 		}
@@ -76,6 +72,6 @@ func findSubsequences_(nums []int) [][]int {
 			dfs(idx+1, numPre)
 		}
 	}
-	dfs(0, math.MinInt32)
-	return subsetNums
+	dfs(0, -101)
+	return combNums
 }
