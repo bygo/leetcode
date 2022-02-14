@@ -26,3 +26,5 @@ func bstToGst(root *TreeNode) *TreeNode {
 	dfs(root)
 	return root
 }
+
+// 0538 https://leetcode-cn.com/problems/convert-bst-to-greater-tree/
