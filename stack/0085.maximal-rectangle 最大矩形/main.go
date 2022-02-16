@@ -46,10 +46,10 @@ func min(a, b int) int {
 }
 
 func max(a, b int) int {
-	if a > b {
-		return a
+	if a < b {
+		return b
 	}
-	return b
+	return a
 }
 
 func maximalRectangle(matrix [][]byte) int {
