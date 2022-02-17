@@ -10,7 +10,7 @@ type TreeNode struct {
 
 // ❓ 找到二叉树中最近的右侧节点
 
-func findNearestRightNode(root *TreeNode, u *TreeNode) *TreeNode {
+func findNearestRightNode(root *TreeNode, target *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
 	}
@@ -18,27 +18,27 @@ func findNearestRightNode(root *TreeNode, u *TreeNode) *TreeNode {
 	var que = []*TreeNode{root}
 
 	for {
-		cnt := len(que)
-		if cnt == 0 {
+		queL := len(que)
+		if queL == 0 {
 			break
 		}
 
-		for idx, q := range que[:cnt] {
-			if q == u {
-				if idx == cnt-1 {
+		for idx, node := range que[:queL] {
+			if node == target {
+				if idx == queL-1 {
 					return nil
 				} else {
 					return que[idx+1]
 				}
 			}
-			if q.Left != nil {
-				que = append(que, q.Left)
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
-		que = que[cnt:]
+		que = que[queL:]
 	}
 	return nil
 }

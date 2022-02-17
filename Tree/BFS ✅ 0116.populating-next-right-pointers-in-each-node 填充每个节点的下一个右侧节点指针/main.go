@@ -10,7 +10,7 @@ type Node struct {
 }
 
 // ❓ 填充每个节点的右侧节点指针
-// ⚠️ 完全树
+// ⚠️ Complete Binary Tree
 
 func connect(root *Node) *Node {
 	if root == nil {
@@ -18,7 +18,6 @@ func connect(root *Node) *Node {
 	}
 
 	var que = []*Node{root}
-	var head = root
 	var pre *Node
 	for {
 		queL := len(que)
@@ -26,21 +25,21 @@ func connect(root *Node) *Node {
 			break
 		}
 		pre = nil
-		for _, q := range que[:queL] {
+		for _, node := range que[:queL] {
 			if pre != nil {
-				pre.Next = q
+				pre.Next = node
 			}
-			pre = q
-			if q.Left != nil {
-				que = append(que, q.Left)
+			pre = node
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
 
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		que = que[queL:]
 	}
 
-	return head
+	return root
 }

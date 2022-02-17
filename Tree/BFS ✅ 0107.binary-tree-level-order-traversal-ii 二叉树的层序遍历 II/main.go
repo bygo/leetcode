@@ -17,12 +17,13 @@ func levelOrderBottom(root *TreeNode) [][]int {
 	}
 
 	var que = []*TreeNode{root}
-	var dep int
+	var dep = -1
 	for {
 		queL := len(que)
 		if queL == 0 {
 			break
 		}
+		dep++
 		depsNums = append(depsNums, []int{})
 		for _, q := range que[:queL] {
 			if q.Left != nil {
@@ -34,7 +35,6 @@ func levelOrderBottom(root *TreeNode) [][]int {
 			depsNums[dep] = append(depsNums[dep], q.Val)
 		}
 		que = que[queL:]
-		dep++
 	}
 
 	lo, hi := 0, len(depsNums)-1

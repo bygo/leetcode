@@ -17,9 +17,12 @@ func closestValue(root *TreeNode, target float64) int {
 		if abs(numCur-target) < abs(numClosest-target) {
 			numClosest = numCur
 		}
+		// 寻路剪枝
 		if numCur < target {
+			// 向target移动
 			root = root.Right
 		} else if target < numCur {
+			// 向target移动
 			root = root.Left
 		} else {
 			return root.Val

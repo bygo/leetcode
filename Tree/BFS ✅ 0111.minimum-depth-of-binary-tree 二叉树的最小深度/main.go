@@ -22,15 +22,15 @@ func minDepth(root *TreeNode) int {
 			break
 		}
 		dep++
-		for _, q := range que[:queL] {
-			if q.Left == nil && q.Right == nil {
+		for _, node := range que[:queL] {
+			if node.Left == nil && node.Right == nil {
 				return dep
 			}
-			if q.Left != nil {
-				que = append(que, q.Left)
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		que = que[queL:]

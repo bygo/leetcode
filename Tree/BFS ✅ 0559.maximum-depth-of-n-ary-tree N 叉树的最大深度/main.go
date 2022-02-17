@@ -22,8 +22,8 @@ func maxDepth(root *Node) int {
 			break
 		}
 		dep++
-		for _, q := range que[:queL] {
-			for _, child := range q.Children {
+		for _, node := range que[:queL] {
+			for _, child := range node.Children {
 				que = append(que, child)
 			}
 		}

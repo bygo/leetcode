@@ -15,21 +15,21 @@ func levelOrder(root *Node) [][]int {
 		return depsNums
 	}
 
-	var dep int
+	var dep = -1
 	var que = []*Node{root}
 	for {
 		queL := len(que)
 		if queL == 0 {
 			break
 		}
+		dep++
 		depsNums = append(depsNums, []int{})
-		for _, q := range que[:queL] {
-			depsNums[dep] = append(depsNums[dep], q.Val)
-			for _, child := range q.Children {
+		for _, node := range que[:queL] {
+			depsNums[dep] = append(depsNums[dep], node.Val)
+			for _, child := range node.Children {
 				que = append(que, child)
 			}
 		}
-		dep++
 		que = que[queL:]
 	}
 	return depsNums

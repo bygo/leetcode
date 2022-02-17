@@ -24,8 +24,10 @@ func deleteNode(root *TreeNode, val int) *TreeNode {
 			node.Left = dfs(node.Left)
 		} else {
 			if node.Left == nil {
+				// 移除根节点
 				node = node.Right
 			} else if node.Right == nil {
+				// 移除根节点
 				node = node.Left
 			} else {
 				// 最小值 替代 根节点

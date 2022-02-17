@@ -15,8 +15,7 @@ type TreeNode struct {
 
 // ❓ 二叉树的序列化与反序列化
 
-type Codec struct {
-}
+type Codec struct{}
 
 func Constructor() Codec {
 	return Codec{}
@@ -33,13 +32,13 @@ func (c *Codec) serialize(root *TreeNode) string {
 		if queL == 0 {
 			break
 		}
-		for _, q := range que[:queL] {
-			if q == nil {
+		for _, node := range que[:queL] {
+			if node == nil {
 				strs = append(strs, "#")
-			} else {
-				strs = append(strs, strconv.Itoa(q.Val))
-				que = append(que, q.Left, q.Right)
+				continue
 			}
+			strs = append(strs, strconv.Itoa(node.Val))
+			que = append(que, node.Left, node.Right)
 		}
 		que = que[queL:]
 	}
@@ -61,17 +60,17 @@ func (c *Codec) deserialize(data string) *TreeNode {
 		if queL == 0 {
 			break
 		}
-		for _, q := range que[:queL] {
+		for _, node := range que[:queL] {
 			if strs[0] != "#" {
-				v, _ := strconv.Atoi(strs[0])
-				q.Left = &TreeNode{Val: v}
-				que = append(que, q.Left)
+				numLeft, _ := strconv.Atoi(strs[0])
+				node.Left = &TreeNode{Val: numLeft}
+				que = append(que, node.Left)
 			}
 
 			if strs[1] != "#" {
-				r, _ := strconv.Atoi(strs[1])
-				q.Right = &TreeNode{Val: r}
-				que = append(que, q.Right)
+				numRight, _ := strconv.Atoi(strs[1])
+				node.Right = &TreeNode{Val: numRight}
+				que = append(que, node.Right)
 			}
 			strs = strs[2:]
 		}

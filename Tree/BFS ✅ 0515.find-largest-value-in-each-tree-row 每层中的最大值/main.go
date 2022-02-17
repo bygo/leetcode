@@ -23,16 +23,16 @@ func largestValues(root *TreeNode) []int {
 			break
 		}
 		var max = -1 << 63
-		for _, q := range que[:queL] {
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:queL] {
+			if max < node.Val {
+				max = node.Val
+			}
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
 
-			if q.Right != nil {
-				que = append(que, q.Right)
-			}
-			if max < q.Val {
-				max = q.Val
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		numsMax = append(numsMax, max)

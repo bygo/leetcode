@@ -9,6 +9,7 @@ type TreeNode struct {
 }
 
 // ❓ 在二叉树中增加一行
+// ⚠️ 原来层 移到 下一层
 
 func addOneRow(root *TreeNode, val int, depth int) *TreeNode {
 	if root == nil {
@@ -21,7 +22,7 @@ func addOneRow(root *TreeNode, val int, depth int) *TreeNode {
 	}
 
 	var que = []*TreeNode{root}
-	var dep = 1
+	var dep int
 
 	for {
 		cnt := len(que)
@@ -29,21 +30,22 @@ func addOneRow(root *TreeNode, val int, depth int) *TreeNode {
 			break
 		}
 		dep++
-		if dep == depth {
-			for _, q := range que {
-				q.Left = &TreeNode{Val: val, Left: q.Left}
-				q.Right = &TreeNode{Val: val, Right: q.Right}
+		// 添加方式 = 修改子节点 所以需要提前
+		if dep+1 == depth {
+			for _, node := range que {
+				node.Left = &TreeNode{Val: val, Left: node.Left}
+				node.Right = &TreeNode{Val: val, Right: node.Right}
 			}
 			break
 		}
 
-		for _, q := range que[:cnt] {
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:cnt] {
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
 
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		que = que[cnt:]

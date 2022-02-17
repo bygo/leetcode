@@ -22,13 +22,13 @@ func averageOfLevels(root *TreeNode) []float64 {
 			break
 		}
 		var sum int
-		for _, q := range que[:queL] {
-			sum += q.Val
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:queL] {
+			sum += node.Val
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		numsAvg = append(numsAvg, float64(sum)/float64(queL))

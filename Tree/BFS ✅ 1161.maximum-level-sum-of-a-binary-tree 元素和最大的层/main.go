@@ -24,14 +24,14 @@ func maxLevelSum(root *TreeNode) int {
 		}
 		sum = 0
 		dep++
-		for _, q := range que[:cnt] {
-			sum += q.Val
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:cnt] {
+			sum += node.Val
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
 
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		if sumMax < sum {

@@ -17,22 +17,22 @@ func deepestLeavesSum(root *TreeNode) int {
 	}
 	var que = []*TreeNode{root}
 	for {
-		cnt := len(que)
-		if cnt == 0 {
+		queL := len(que)
+		if queL == 0 {
 			break
 		}
 		sum = 0
-		for _, q := range que[:cnt] {
-			sum += q.Val
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:queL] {
+			sum += node.Val
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
 
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
-		que = que[cnt:]
+		que = que[queL:]
 	}
 	return sum
 }

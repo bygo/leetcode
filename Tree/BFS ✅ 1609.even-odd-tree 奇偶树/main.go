@@ -9,6 +9,7 @@ type TreeNode struct {
 }
 
 // ❓ 奇偶树
+// 📚 镜像遍历
 
 func isEvenOddTree(root *TreeNode) bool {
 	if root == nil {
@@ -17,37 +18,38 @@ func isEvenOddTree(root *TreeNode) bool {
 
 	var que = []*TreeNode{root}
 	var dep, numPre int
-	var idxMirror, step int
+	var idxMir, step int
 	for {
 		queL := len(que)
 		if queL == 0 {
 			break
 		}
 		numPre = 0
+		// 奇数递增 偶数递减
 		var remDep = dep % 2
 
 		// 偶数 递减
 		if remDep == 1 {
-			idxMirror, step = queL-1, -1
+			idxMir, step = queL-1, -1
 		} else {
-			idxMirror, step = 0, 1
+			idxMir, step = 0, 1
 		}
 
-		for i := 0; i < queL; i++ {
-			nodeCur := que[i]
-			nodeMirror := que[idxMirror]
+		for idx := 0; idx < queL; idx++ {
+			node := que[idx]
+			nodeMir := que[idxMir]
 			// 严格递增 & 索引奇偶和值奇偶 互斥
-			if nodeMirror.Val <= numPre || nodeMirror.Val%2 == remDep {
+			if nodeMir.Val <= numPre || nodeMir.Val%2 == remDep {
 				return false
 			}
-			numPre = nodeMirror.Val
-			idxMirror += step
-			if nodeCur.Left != nil {
-				que = append(que, nodeCur.Left)
+			numPre = nodeMir.Val
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
-			if nodeCur.Right != nil {
-				que = append(que, nodeCur.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
+			idxMir += step
 		}
 		dep++
 		que = que[queL:]

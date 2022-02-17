@@ -14,8 +14,7 @@ type Node struct {
 
 // ❓ 序列化和反序列化 N 叉树
 
-type Codec struct {
-}
+type Codec struct{}
 
 func Constructor() *Codec {
 	return &Codec{}
@@ -34,11 +33,11 @@ func (c *Codec) serialize(root *Node) string {
 			break
 		}
 		strs = append(strs, "d")
-		for idx, q := range que[:queL] {
+		for idx, node := range que[:queL] {
 			if idx != 0 {
 				strs = append(strs, "#")
 			}
-			for idxChild, child := range q.Children {
+			for idxChild, child := range node.Children {
 				if idxChild != 0 {
 					strs = append(strs, ",")
 				}
@@ -56,23 +55,28 @@ func (c *Codec) deserialize(data string) *Node {
 	if data == "" {
 		return nil
 	}
-	var pre, parent = &Node{}, &Node{}
-	var que = []*Node{pre}
-	for _, strsDep := range strings.Split(data, "d") {
+	var zero, parent = &Node{}, &Node{}
+	var que = []*Node{zero}
+
+	depsNodes := strings.Split(data, "d")
+	for _, nodes := range depsNodes {
 		queL := len(que)
-		for dep, str := range strings.Split(strsDep, "#") {
-			parent = que[dep]
-			for _, q := range strings.Split(str, ",") {
-				if q != "" {
-					v, _ := strconv.Atoi(q)
-					child := &Node{Val: v}
-					parent.Children = append(parent.Children, child)
-					que = append(que, child)
+		node := strings.Split(nodes, "#")
+		for idx, child := range node {
+			parent = que[idx]
+			nodesChild := strings.Split(child, ",")
+			for _, nodeChild := range nodesChild {
+				if nodeChild == "" {
+					continue
 				}
+				num, _ := strconv.Atoi(nodeChild)
+				nodeChild := &Node{Val: num}
+				parent.Children = append(parent.Children, nodeChild)
+				que = append(que, nodeChild)
 			}
 		}
 		que = que[queL:]
 	}
 
-	return pre.Children[0]
+	return zero.Children[0]
 }

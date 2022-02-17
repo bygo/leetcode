@@ -9,6 +9,7 @@ type TreeNode struct {
 }
 
 // ❓ 找树左下角的值
+// ⚠️ 最底层的最左
 
 func findBottomLeftValue(root *TreeNode) int {
 	if root == nil {
@@ -23,12 +24,12 @@ func findBottomLeftValue(root *TreeNode) int {
 			break
 		}
 		num = que[0].Val
-		for _, q := range que[:queL] {
-			if q.Left != nil {
-				que = append(que, q.Left)
+		for _, node := range que[:queL] {
+			if node.Left != nil {
+				que = append(que, node.Left)
 			}
-			if q.Right != nil {
-				que = append(que, q.Right)
+			if node.Right != nil {
+				que = append(que, node.Right)
 			}
 		}
 		que = que[queL:]

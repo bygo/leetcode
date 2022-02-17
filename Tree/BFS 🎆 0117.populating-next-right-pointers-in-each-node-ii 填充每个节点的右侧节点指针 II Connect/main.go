@@ -16,33 +16,31 @@ func connect(root *Node) *Node {
 		return nil
 	}
 
-	var parent *Node
+	var parent, child, link *Node
 	parent = root
 
-	for parent != nil {
-		var pre, down *Node
-		down = nil
-		for parent != nil {
-			if parent.Left != nil {
-				if pre == nil {
-					down = parent.Left
-				} else {
-					pre.Next = parent.Left
-				}
-				pre = parent.Left
-			}
+	suture := func(node *Node) {
+		if node == nil {
+			return
+		}
+		if link == nil {
+			// 头指针
+			child = node
+		} else {
+			link.Next = node
+		}
+		link = node
+	}
 
-			if parent.Right != nil {
-				if pre == nil {
-					down = parent.Right
-				} else {
-					pre.Next = parent.Right
-				}
-				pre = parent.Right
-			}
+	for parent != nil {
+		link, child = nil, nil
+		// 顶层链表移动,连接底层链表
+		for parent != nil {
+			suture(parent.Left)
+			suture(parent.Right)
 			parent = parent.Next
 		}
-		parent = down
+		parent = child
 	}
 	return root
 }
