@@ -21,7 +21,7 @@ func inorderSuccessor(node *Node) *Node {
 			}
 			node = node.Parent
 		}
-	} else { // //如果有root.Right，找最小值
+	} else { // 如果有root.Right，找最小值
 		node = node.Right
 		for node.Left != nil {
 			node = node.Left

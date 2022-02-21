@@ -14,11 +14,12 @@ func preorderTraversal(root *TreeNode) []int {
 	var nums []int
 	var dfs func(node *TreeNode)
 	dfs = func(node *TreeNode) {
-		if node != nil {
-			nums = append(nums, node.Val)
-			dfs(node.Left)
-			dfs(node.Right)
+		if node == nil {
+			return
 		}
+		nums = append(nums, node.Val)
+		dfs(node.Left)
+		dfs(node.Right)
 	}
 	dfs(root)
 	return nums

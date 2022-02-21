@@ -9,23 +9,26 @@ func verifyPreorder(preorder []int) bool {
 		return true
 	}
 
-	var root = -1 << 63 //第一次判断
-	var stack = []int{}
-
-	for _, num := range preorder {
+	var stack = []int{preorder[0]}
+	// zero 占位节点
+	var root int
+	for _, num := range preorder[1:] {
 		top := len(stack) - 1
-		for 0 <= top && stack[top] < num { //大值，出栈，准备进入右树
+		for 0 <= top && stack[top] < num { // 比栈顶大的值，出栈，准备进入右树, 改变根节点
 			root = stack[top]
 			stack = stack[:top]
 			top--
 		}
 
+		// 出现 比 最后根节点小的值
 		if num < root {
-			//左树最后的根节点大于当前节点=错误的树
 			return false
 		}
 
-		stack = append(stack, num) //小值，入栈，准备进入左树
+		// 单调递减栈
+		// 比栈顶小的值，入栈，进入左树
+		// min ~ root
+		stack = append(stack, num)
 	}
 
 	return true

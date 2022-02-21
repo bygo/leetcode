@@ -14,11 +14,12 @@ func postorderTraversal(root *TreeNode) []int {
 	var nums []int
 	var dfs func(node *TreeNode)
 	dfs = func(node *TreeNode) {
-		if node != nil {
-			dfs(node.Left)
-			dfs(node.Right)
-			nums = append(nums, node.Val)
+		if node == nil {
+			return
 		}
+		dfs(node.Left)
+		dfs(node.Right)
+		nums = append(nums, node.Val)
 	}
 	dfs(root)
 	return nums

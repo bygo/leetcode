@@ -17,7 +17,6 @@ func generateTrees(n int) []*TreeNode {
 	var dfs func(start, end int) []*TreeNode
 	dfs = func(start, end int) []*TreeNode {
 		var comb []*TreeNode
-
 		if end < start {
 			comb = append(comb, nil)
 			return comb

@@ -14,11 +14,11 @@ func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
 	var nums []int
 	var dfs func(node *TreeNode)
 	dfs = func(node *TreeNode) {
-		dfs(node.Left)
-		dfs(node.Right)
 		if node == nil {
 			return
 		}
+		dfs(node.Left)
+		dfs(node.Right)
 		if node.Left == nil && node.Right == nil {
 			nums = append(nums, node.Val)
 		}

@@ -9,6 +9,7 @@ type TreeNode struct {
 }
 
 // ❓ 二叉树展开为链表
+// ⚠️ 与先序遍历相同
 
 func flatten(root *TreeNode) *TreeNode {
 	head := root

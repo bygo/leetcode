@@ -3,6 +3,7 @@ package main
 // https://leetcode-cn.com/problems/throne-inheritance
 
 // ❓ 皇位继承顺序
+// ⚠️ 多叉树前序遍历
 
 type ThroneInheritance struct {
 	king          string
@@ -28,16 +29,16 @@ func (t *ThroneInheritance) Death(name string) {
 
 func (t *ThroneInheritance) GetInheritanceOrder() []string {
 	var strsName []string
-	var preorder func(string)
-	preorder = func(parent string) {
+	var dfs func(string)
+	dfs = func(parent string) {
 		_, ok := t.dead[parent]
 		if !ok {
 			strsName = append(strsName, parent)
 		}
 		for _, childName := range t.ParentMpChild[parent] {
-			preorder(childName)
+			dfs(childName)
 		}
 	}
-	preorder(t.king)
+	dfs(t.king)
 	return strsName
 }

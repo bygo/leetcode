@@ -11,18 +11,24 @@ type TreeNode struct {
 }
 
 func inorderTraversal(root *TreeNode) []int {
+	if root == nil {
+		return nil
+	}
 	var nums []int
 	var stack []*TreeNode
-
-	for root != nil || 0 < len(stack) {
+	for 0 < len(stack) || root != nil {
 		for root != nil {
+			// 保存上下文
 			stack = append(stack, root)
 			root = root.Left
 		}
 
+		// 恢复上下文
 		top := len(stack) - 1
 		nums = append(nums, stack[top].Val)
+
 		root = stack[top].Right
+		// 出栈
 		stack = stack[:top]
 	}
 	return nums

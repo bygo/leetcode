@@ -30,6 +30,7 @@ func inorderTraversal(root *TreeNode) []int {
 				root = root.Left
 			} else {
 				// 已连接,断开连接
+				// 提前进入右树，就不会陷入环
 				max.Right = nil
 				nums = append(nums, root.Val)
 				root = root.Right

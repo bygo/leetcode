@@ -30,6 +30,8 @@ func inorderTraversal(root *TreeNode) []int {
 
 			//root = root.Left :移动root到root.left
 			//root.Left = nil  :砍左子树，避免下一次遍历到root时，再进入到左子树
+
+			// ⚠️ 当节点 为右节点，max.right 与 root.right 将指向同一个节点
 			root, root.Left = root.Left, nil
 		}
 	}

@@ -16,7 +16,7 @@ type NodeCopy struct {
 	Random *NodeCopy
 }
 
-// 克隆含随机指针的二叉树
+// ❓ 克隆含随机指针的二叉树
 
 func copyRandomBinaryTree(root *Node) *NodeCopy {
 	nodeMpCopy := map[*Node]*NodeCopy{}

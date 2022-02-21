@@ -14,14 +14,14 @@ func findFrequentTreeSum(root *TreeNode) []int {
 	var sumsMax []int
 	var cntMax int
 	var sumMpCnt = map[int]int{}
-	var dfs func(root *TreeNode) int
-	dfs = func(root *TreeNode) int {
-		if root == nil {
+	var dfs func(node *TreeNode) int
+	dfs = func(node *TreeNode) int {
+		if node == nil {
 			return 0
 		}
-		sumLeft := dfs(root.Left)
-		sumRight := dfs(root.Right)
-		sum := sumLeft + sumRight + root.Val
+		sumLeft := dfs(node.Left)
+		sumRight := dfs(node.Right)
+		sum := sumLeft + sumRight + node.Val
 		sumMpCnt[sum]++
 		return sum
 	}

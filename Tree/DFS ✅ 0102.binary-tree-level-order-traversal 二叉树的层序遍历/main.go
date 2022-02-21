@@ -19,7 +19,7 @@ func levelOrder(root *TreeNode) [][]int {
 			return
 		}
 		depCur++
-		for len(depsNums) < depCur+1 {
+		if len(depsNums) <= depCur {
 			depsNums = append(depsNums, []int{})
 		}
 		dfs(node.Left)

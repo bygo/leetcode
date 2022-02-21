@@ -19,7 +19,7 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 			return
 		}
 		depCur++
-		for len(depsNums) < depCur+1 {
+		if len(depsNums) <= depCur {
 			depsNums = append(depsNums, []int{})
 		}
 		depsNums[depCur] = append(depsNums[depCur], node.Val)
@@ -36,7 +36,6 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 				lo++
 				hi--
 			}
-
 		}
 	}
 	return depsNums
