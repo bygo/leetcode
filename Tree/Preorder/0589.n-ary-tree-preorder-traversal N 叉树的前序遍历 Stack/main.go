@@ -15,18 +15,14 @@ func preorder(root *Node) []int {
 		return nums
 	}
 	var stack = []*Node{root}
-	for {
-		stackL := len(stack)
-		if stackL == 0 {
-			break
-		}
+	for 0 < len(stack) {
+		top := len(stack) - 1
+		root = stack[top]
+		stack = stack[:top]
 		nums = append(nums, root.Val)                        //前序输出
 		for idx := len(root.Children) - 1; 0 <= idx; idx-- { // 反向
 			stack = append(stack, root.Children[idx]) // 入栈
 		}
-		top := len(stack) - 1
-		root = stack[top]
-		stack = stack[:top]
 	}
 	return nums
 }

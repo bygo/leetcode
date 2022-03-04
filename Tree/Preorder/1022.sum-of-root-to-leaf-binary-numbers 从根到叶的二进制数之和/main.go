@@ -12,20 +12,25 @@ type TreeNode struct {
 
 func sumRootToLeaf(root *TreeNode) int {
 	var sumRes int
-	var dfs func(node *TreeNode, sumCur int)
-	dfs = func(node *TreeNode, sumCur int) {
+	var sumCur int
+	var dfs func(node *TreeNode)
+	dfs = func(node *TreeNode) {
 		if node == nil {
 			return
 		}
 		sumCur <<= 1
 		sumCur += node.Val
+		defer func() {
+			sumCur -= node.Val
+			sumCur >>= 1
+		}()
 		if node.Left == nil && node.Right == nil {
 			sumRes += sumCur
 			return
 		}
-		dfs(node.Left, sumCur)
-		dfs(node.Right, sumCur)
+		dfs(node.Left)
+		dfs(node.Right)
 	}
-	dfs(root, 0)
+	dfs(root)
 	return sumRes
 }

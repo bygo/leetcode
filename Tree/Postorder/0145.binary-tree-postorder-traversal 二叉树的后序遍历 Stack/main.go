@@ -17,16 +17,14 @@ func postorderTraversal(root *TreeNode) []int {
 	var nums []int
 	var stack = []*TreeNode{root}
 	for 0 < len(stack) {
-		top := len(stack) - 1 //栈顶
-		root = stack[top]     //出栈
-		stack = stack[:top]
-		nums = append(nums, root.Val) //根右左
-		if root.Left != nil {
+		for root != nil {
+			nums = append(nums, root.Val)
 			stack = append(stack, root.Left)
+			root = root.Right
 		}
-		if root.Right != nil {
-			stack = append(stack, root.Right)
-		}
+		top := len(stack) - 1
+		root = stack[top]
+		stack = stack[:top]
 	}
 
 	//反转 变成后序遍历 左右根

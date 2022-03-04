@@ -31,16 +31,18 @@ func pathInZigZagTree(label int) []int {
 		hi--
 	}
 
-	// 奇数1开始，偶数0是错误的
-	// 偶数0开始，奇数1是错误的
-	rem := numsL % 2
+	// 奇数开始，偶数需要反排
+	// 偶数开始，奇数需要反排
+	rem := (numsL - 1) % 2
 	for dep, num := range nums {
+		//
 		if dep%2 == rem {
-			// 需要还原成补数的 end - num + start
-			start := 1 << dep
-			end := 1<<(dep+1) - 1
-			nums[dep] = end - num + start
+			continue
 		}
+		// 需要还原成补数的 end - num + start
+		start := 1 << dep
+		end := 1<<(dep+1) - 1
+		nums[dep] = end - num + start
 	}
 
 	return nums

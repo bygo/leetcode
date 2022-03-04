@@ -9,7 +9,7 @@ type TreeNode struct {
 }
 
 // ❓ 统计二叉树中好节点的数目
-
+// ⚠️ 根到节点 X 路径 没有比 X 大
 func goodNodes(root *TreeNode) int {
 	var cntGood int
 	var dfs func(node *TreeNode, max int)

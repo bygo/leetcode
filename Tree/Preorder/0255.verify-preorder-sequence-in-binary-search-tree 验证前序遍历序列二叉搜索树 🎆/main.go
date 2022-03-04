@@ -9,10 +9,10 @@ func verifyPreorder(preorder []int) bool {
 		return true
 	}
 
-	var stack = []int{preorder[0]}
+	var stack = []int{}
 	// zero 占位节点
-	var root int
-	for _, num := range preorder[1:] {
+	var root = -1 << 63
+	for _, num := range preorder {
 		top := len(stack) - 1
 		for 0 <= top && stack[top] < num { // 比栈顶大的值，出栈，准备进入右树, 改变根节点
 			root = stack[top]

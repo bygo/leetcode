@@ -8,7 +8,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// ❓ 节点与节点 与其祖先之间的最大差值
+// ❓ 节点与节点之间 与其祖先之间的最大差值
 
 func maxAncestorDiff(root *TreeNode) int {
 	var numDiffMax int
