@@ -11,17 +11,17 @@ type TreeNode struct {
 // ❓ 删除二叉搜索树中的节点
 
 func deleteNode(root *TreeNode, val int) *TreeNode {
-	var dfs func(node *TreeNode) *TreeNode
-	dfs = func(node *TreeNode) *TreeNode {
+	var del func(node *TreeNode) *TreeNode
+	del = func(node *TreeNode) *TreeNode {
 		if node == nil {
 			return nil
 		}
 		if node.Val < val {
 			// 只处理右子树
-			node.Right = dfs(node.Right)
+			node.Right = del(node.Right)
 		} else if val < node.Val {
 			// 只处理左子树
-			node.Left = dfs(node.Left)
+			node.Left = del(node.Left)
 		} else {
 			if node.Left == nil {
 				// 移除根节点
@@ -49,5 +49,5 @@ func deleteNode(root *TreeNode, val int) *TreeNode {
 		}
 		return node
 	}
-	return dfs(root)
+	return del(root)
 }

@@ -28,7 +28,7 @@ func countNodes(root *TreeNode) int {
 	idxMin := 1<<dep - 1
 	idxMax := 1<<(dep+1) - 1 - 1
 
-	exist := func(node *TreeNode, idx int) bool {
+	check := func(node *TreeNode, idx int) bool {
 		idxLo, idxHi := idxMin, idxMax
 		var depCur = dep
 		for 0 < depCur {
@@ -63,7 +63,7 @@ func countNodes(root *TreeNode) int {
 	lo, hi := idxMin, idxMax+1
 	for lo < hi {
 		mid := (lo + hi) >> 1
-		if exist(root, mid) {
+		if check(root, mid) {
 			lo = mid + 1
 		} else {
 			hi = mid

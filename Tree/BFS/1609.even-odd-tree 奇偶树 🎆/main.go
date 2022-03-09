@@ -10,6 +10,7 @@ type TreeNode struct {
 
 // ❓ 奇偶树
 // 📚 镜像遍历
+// 📚 互斥量
 
 func isEvenOddTree(root *TreeNode) bool {
 	if root == nil {

@@ -8,6 +8,8 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// ❓ 均匀树划分
+
 func checkEqualTree(root *TreeNode) bool {
 	sumMp := map[int]int{}
 	var dfs func(node *TreeNode) int

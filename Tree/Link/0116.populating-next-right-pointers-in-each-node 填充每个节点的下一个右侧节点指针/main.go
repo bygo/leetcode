@@ -10,7 +10,7 @@ type Node struct {
 }
 
 // ❓ 填充每个节点的下一个右侧节点指针
-// ⚠️ Complete Binary Tree
+// ⚠️ CBT
 
 func connect(root *Node) *Node {
 	if root == nil {
