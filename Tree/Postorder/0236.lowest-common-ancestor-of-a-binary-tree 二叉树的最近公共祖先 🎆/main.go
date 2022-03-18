@@ -12,6 +12,7 @@ type TreeNode struct {
 
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root == nil || root == p || root == q {
+		// 最终返回 nil p q
 		return root
 	}
 	nodeLeft := lowestCommonAncestor(root.Left, p, q)
@@ -22,5 +23,7 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if nodeRight == nil {
 		return nodeLeft
 	}
+
+	// 都不为空 ，本节点为祖先节点
 	return root
 }

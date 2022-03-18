@@ -1,5 +1,7 @@
 package main
 
+// https://leetcode-cn.com/problems/linked-list-in-binary-tree
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
@@ -10,8 +12,6 @@ type TreeNode struct {
 	Left  *TreeNode
 	Right *TreeNode
 }
-
-// https://leetcode-cn.com/problems/linked-list-in-binary-tree
 
 func isSubPath(head *ListNode, root *TreeNode) bool {
 	if root == nil {
