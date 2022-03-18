@@ -8,7 +8,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// ❓ 两数之和 IV - 输入 BST
+// ❓ 两数之和 = target
 
 func findTarget(root *TreeNode, target int) bool {
 	numMp := map[int]struct{}{}

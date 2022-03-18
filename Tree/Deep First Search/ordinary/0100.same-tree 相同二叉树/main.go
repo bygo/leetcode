@@ -8,7 +8,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// ❓ 相同的树
+// ❓ 相同二叉树
 
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil || q == nil {
