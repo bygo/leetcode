@@ -13,7 +13,7 @@ type TreeNode struct {
 func distanceK(root, target *TreeNode, k int) (ans []int) {
 	// 从 root 出发 DFS，记录每个结点的父结点
 	parents := map[int]*TreeNode{}
-	var findParents func(*TreeNode)
+	var findParents func(node *TreeNode)
 	findParents = func(node *TreeNode) {
 		if node.Left != nil {
 			parents[node.Left.Val] = node

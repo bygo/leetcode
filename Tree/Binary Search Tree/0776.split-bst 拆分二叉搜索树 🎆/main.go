@@ -9,21 +9,27 @@ type TreeNode struct {
 }
 
 // ❓ 拆分二叉搜索树
-func splitBST(root *TreeNode, target int) []*TreeNode {
-	if root == nil {
-		return []*TreeNode{nil, nil}
-	} else if root.Val <= target {
-		// 左树合法，进入右树
 
-		ts := splitBST(root.Right, target)
-		root.Right = ts[0] // right 连上合法位置
-		ts[0] = root       // 设当前节点为第一位置
-		return ts
-	} else {
-		// 右树合法，进入左树
-		ts := splitBST(root.Left, target)
-		root.Left = ts[1] // left 连上合法位置
-		ts[1] = root      // 设当前节点为第二位置
-		return ts
+func splitBST(root *TreeNode, target int) []*TreeNode {
+	var dfs func(node *TreeNode) (*TreeNode, *TreeNode)
+	dfs = func(node *TreeNode) (*TreeNode, *TreeNode) {
+		if node == nil {
+			return nil, nil
+		}
+
+		if node.Val <= target {
+			// 左树合法，进入右树
+			left, right := dfs(node.Right)
+			node.Right = left // right 连上合法位置
+			return node, right
+		} else {
+			// 右树合法，进入左树
+			left, right := dfs(node.Left)
+			node.Left = right // left 连上合法位置
+			return left, node
+		}
 	}
+
+	left, right := dfs(root)
+	return []*TreeNode{left, right}
 }

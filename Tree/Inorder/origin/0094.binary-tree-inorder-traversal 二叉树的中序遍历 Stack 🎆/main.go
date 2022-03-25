@@ -26,9 +26,9 @@ func inorderTraversal(root *TreeNode) []int {
 		for 0 <= top && root == nil {
 			nums = append(nums, stack[top].Val)
 			root = stack[top].Right
-			stack = stack[:top]
 			top--
 		}
+		stack = stack[:top+1]
 	}
 	return nums
 }
