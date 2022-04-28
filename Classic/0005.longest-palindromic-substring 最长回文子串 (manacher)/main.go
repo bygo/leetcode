@@ -3,36 +3,38 @@ package main
 // https://leetcode-cn.com/problems/longest-palindromic-substring/
 
 func longestPalindrome(s string) string {
-	m := make([]byte, len(s)*2+3)
-	m[0] = '^'
+	sL := len(s)
+	bufL := sL*2 + 3
+	buf := make([]byte, bufL)
+	buf[0] = '^'
 	for k, v := range s {
-		m[k*2+1] = '#'
-		m[k*2+2] = byte(v)
+		buf[k*2+1] = '#'
+		buf[k*2+2] = byte(v)
 	}
-	m[len(s)*2+1] = '#'
-	m[len(s)*2+2] = '$'
-	p := make([]int, len(m))
+	buf[sL*2+1] = '#'
+	buf[sL*2+2] = '$'
+	p := make([]int, bufL)
 	var maxCenter, maxRight, center, right int
-	for k := 1; k < len(m)-1 && maxRight < len(m)-k; k++ {
-		if k < right {
-			if p[center*2-k]+k < right { //镜像跳过
+	for idx := 1; idx < bufL-1 && maxRight < bufL-idx; idx++ {
+		if idx < right {
+			if p[center*2-idx]+idx < right { //镜像跳过
 				continue
 			}
-			p[k] = right - k
+			p[idx] = right - idx
 		}
 
 		for { //扩散
-			p[k]++
-			if m[k-p[k]] != m[k+p[k]] {
+			p[idx]++
+			if buf[idx-p[idx]] != buf[idx+p[idx]] {
 				break
 			}
-			center = k
-			right = k + p[k]
+			center = idx
+			right = idx + p[idx]
 		}
 
-		if maxRight < p[k] {
-			maxCenter = k
-			maxRight = p[k]
+		if maxRight < p[idx] {
+			maxCenter = idx
+			maxRight = p[idx]
 		}
 	}
 	return s[(maxCenter-maxRight)/2 : (maxCenter+maxRight)/2-1]

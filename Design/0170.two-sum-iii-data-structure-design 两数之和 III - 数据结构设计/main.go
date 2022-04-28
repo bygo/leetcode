@@ -12,24 +12,18 @@ func Constructor() TwoSum {
 	}
 }
 
-func (this *TwoSum) Add(number int) {
-	this.nums[number]++
+func (ts *TwoSum) Add(num int) {
+	ts.nums[num]++
 }
 
-func (this *TwoSum) Find(value int) bool {
-	for num, fre := range this.nums {
-		if 0 < this.nums[value-num] {
-			if value != 2*num || fre == 2 {
+func (ts *TwoSum) Find(target int) bool {
+	for num, cnt := range ts.nums {
+		if 0 < ts.nums[target-num] {
+			// 0
+			if target != 2*num || cnt == 2 {
 				return true
 			}
 		}
 	}
 	return false
 }
-
-/**
- * Your TwoSum object will be instantiated and called as such:
- * obj := Constructor();
- * obj.Add(number);
- * param_2 := obj.Find(value);
- */

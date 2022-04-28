@@ -19,10 +19,11 @@ func (s *MyHashSet) hash(key int) int {
 }
 
 func (s *MyHashSet) Add(key int) {
-	if !s.Contains(key) {
-		h := s.hash(key)
-		s.data[h].PushBack(key)
+	if s.Contains(key) {
+		return
 	}
+	h := s.hash(key)
+	s.data[h].PushBack(key)
 }
 
 func (s *MyHashSet) Remove(key int) {

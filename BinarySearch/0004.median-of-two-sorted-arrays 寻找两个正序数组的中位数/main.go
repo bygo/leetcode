@@ -9,24 +9,23 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	if l2 < l1 {
 		nums1, nums2, l1, l2 = nums2, nums1, l2, l1 //保证num1最短？ 只要计算出num1的k1，就可计算出num2的k2
 	}
-	var l, r, m1, m2, half int
-	half = (l1 + l2 + 1) / 2 // 向上取整,保证左边数量永大于右边
-	r = l1
-	for l <= r {
-		m1 = l + (r-l)/2                       // 二分 ，如果是奇数，就会向下取正
-		m2 = half - m1                         // m2永远等于 half-m1
-		if m1 < r && nums1[m1] < nums2[m2-1] { // 如果 右2 大于 左1，二分范围min为 m1+1
-			l = m1 + 1
-		} else if l < m1 && nums2[m2] < nums1[m1-1] { // 如果 右1 大于 左2,二分范围max 为m1-1
-			r = m1 - 1
+	half := (l1 + l2 + 1) >> 1 // 向上取整,保证左边数量永大于右边
+	lo, hi := 0, l1-1
+	for lo < hi {
+		m1 := int(uint(lo+hi) >> 1)           // 二分 ，如果是奇数，就会向下取正
+		m2 := half - m1 - 1                   // m2永远等于 half-m1
+		if m1 < hi && nums1[m1] < nums2[m2] { // 如果 右2 大于 左1，二分范围  m1+1 ~ hi
+			lo = m1 + 1
+		} else if lo < m1 && nums2[m2] < nums1[m1] { // 如果 右1 大于 左2,二分范围max 为m1-1
+			hi = m1
 		} else { // 右1右2 全部大于左1 左2，计算值
 			var leftMax int
 			if m1 == 0 {
-				leftMax = nums2[m2-1]
+				leftMax = nums2[m2]
 			} else if m2 == 0 {
-				leftMax = nums1[m1-1]
+				leftMax = nums1[m1]
 			} else {
-				leftMax = max(nums2[m2-1], nums1[m1-1])
+				leftMax = max(nums2[m2], nums1[m1])
 			}
 			if (l1+l2)%2 == 1 {
 				return float64(leftMax)
@@ -46,7 +45,6 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 	return 0
 }
-
 func max(a, b int) int {
 	if a < b {
 		return b
@@ -68,34 +66,32 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	if l%2 == 1 {
 		return float64(getKthElement(nums1, nums2, l/2+1))
 	} else {
-		return float64(getKthElement(nums1, nums2, l/2)+getKthElement(nums1, nums2, l/2+1)) / 2.0
+		return float64(getKthElement(nums1, nums2, l/2)+getKthElement(nums1, nums2, l/2+1)) / 2
 	}
 }
 
 func getKthElement(nums1, nums2 []int, k int) int {
-	var p1, p2 int
-	var l1, l2 = len(nums1), len(nums2)
+	var idxCur1, idxCur2 int
+	l1, l2 := len(nums1), len(nums2)
 	for {
-		if p1 == l1 {
-			return nums2[p2+k-1]
+		if idxCur1 == l1 {
+			return nums2[idxCur2-1+k]
 		}
-		if p2 == l2 {
-			return nums1[p1+k-1]
+		if idxCur2 == l2 {
+			return nums1[idxCur1-1+k]
 		}
 		if k == 1 {
-			return min(nums1[p1], nums2[p2])
+			return min(nums1[idxCur1], nums2[idxCur2])
 		}
 		half := k / 2
-		pn1 := min(p1+half, l1) - 1 // p1 已包含计算 p1 ~ (p1+half-1 | l1-1)
-		pn2 := min(p2+half, l2) - 1 // p2 已包含计算
-		if nums1[pn1] < nums2[pn2] {
-			pn1 += 1      // 下一个
-			k -= pn1 - p1 // 包括当前p1 总共 pn1-p1 个
-			p1 = pn1
+		idxJump1 := min(idxCur1+half, l1) - 1
+		idxJump2 := min(idxCur2+half, l2) - 1
+		if nums1[idxJump1] < nums2[idxJump2] {
+			k -= idxJump1 - idxCur1 + 1 // 包括当前p1 总共 pn1-p1 个
+			idxCur1 = idxJump1 + 1
 		} else {
-			pn2 += 1
-			k -= pn2 - p2
-			p2 = pn2
+			k -= idxJump2 - idxCur2 + 1 // 包括当前p1 总共 pn1-p1 个
+			idxCur2 = idxJump2 + 1
 		}
 	}
 }
