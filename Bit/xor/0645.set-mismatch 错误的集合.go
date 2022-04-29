@@ -9,8 +9,8 @@ func findErrorNums(nums []int) []int {
 
 	// ⚠️ 找出区别
 	var numStd int
-	numStd ^= nums[0]
-	for n := 1; n < numsL; n++ {
+	//numStd ^= nums[0]
+	for n := 0; n < numsL; n++ {
 		numStd ^= n
 		numStd ^= nums[n]
 	}
@@ -21,14 +21,8 @@ func findErrorNums(nums []int) []int {
 
 	// 起始
 	num1, num2 := 0, 0
-	if numStd&nums[0] == 0 {
-		num1 ^= nums[0]
-	} else {
-		num2 ^= nums[0]
-	}
-
 	// 区间
-	for n := 1; n < numsL; n++ {
+	for n := 0; n < numsL; n++ {
 		num := nums[n]
 		if numStd&num == 0 {
 			num1 ^= num
