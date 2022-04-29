@@ -8,12 +8,12 @@ func missingNumber(nums []int) int {
 	numsL := len(nums)
 	var num int
 
-	// 起始
-	num ^= nums[0]
-	// 中间diff
-	for n := 1; n < numsL; n++ {
-		num ^= n
-		num ^= nums[n]
+	//// 起始
+	//num ^= nums[0]
+
+	for idx := 0; idx < numsL; idx++ {
+		num ^= idx
+		num ^= nums[idx]
 	}
 	// 尾部 numsL
 	return num ^ numsL

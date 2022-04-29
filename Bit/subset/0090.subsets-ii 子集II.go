@@ -3,6 +3,7 @@ package main
 // https://leetcode-cn.com/problems/subsets-ii
 
 // ❓ 子集II
+// ⚠️ 重复数字 | 不算重复子集
 
 func subsetsWithDup(nums []int) [][]int {
 	var combNums [][]int
@@ -12,14 +13,14 @@ func subsetsWithDup(nums []int) [][]int {
 	subsetMax := 1 << numsL
 	for subset := 0; subset < subsetMax; subset++ {
 		numMpIdx := map[int]int{}
-		numsCur := []int{}
+		var numsCur []int
 		idx := 0
 		for idx < numsL {
 			if subset>>idx&1 == 1 { // 是否选择
 				idxPre, ok := numMpIdx[nums[idx]]
 				//if 0 < idx && subset>>(idx-1)&1 == 0 && nums[idx] == nums[idx-1] {
 				if ok && subset>>idxPre&1 == 0 {
-					// 上一个数没有选择，本次也不选择
+					// 上一个相同的数没有选择，本次也不选择
 					break
 				}
 				numsCur = append(numsCur, nums[idx])

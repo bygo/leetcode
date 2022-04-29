@@ -4,6 +4,7 @@ package main
 
 // 二维
 // f(i)(j) = f(i)(j-1) && s2[j-1] == p || f(i-1)(j) && s1[i-1] == p
+
 func isInterleave(s1, s2, s3 string) bool {
 	l1, l2, l3 := len(s1), len(s2), len(s3)
 	if (l1 + l2) != l3 {

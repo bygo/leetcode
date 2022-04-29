@@ -17,7 +17,7 @@ func main() {
 			dirNameOld := dir.Name() + "/" + nameOld + "/main.go"
 			dirNameNew := dir.Name() + "/" + nameOld + ".go"
 			err := os.Rename(dirNameOld, dirNameNew)
-			os.RemoveAll(dir.Name() + "/" + nameOld)
+			os.Remove(dir.Name() + "/" + nameOld)
 			if err != nil {
 				panic(err.Error())
 			}

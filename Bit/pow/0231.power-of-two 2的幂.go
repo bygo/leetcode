@@ -9,7 +9,7 @@ func isPowerOfTwo(n int) bool {
 	return 0 < n && 0b10000000000000000000000000000000%n == 0
 }
 
-func isPowerOfTwo_(n int) bool {
+func isPowerOfTwo(n int) bool {
 	// BK 只有一个1
 	return 0 < n && n&(n-1) == 0
 }

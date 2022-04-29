@@ -8,7 +8,7 @@ func toHex(num int) string {
 	}
 	var buf []byte
 	for pos := 7; 0 <= pos; pos-- {
-		numHex := byte(num >> (pos * 4) & 0xf) // 每4位1 代表1个16进制， 15
+		numHex := byte(num >> (pos * 4) & 0xf) // 每4位1 代表1个16进制， 0~15
 		if numHex == 0 && len(buf) == 0 {
 			continue
 		}

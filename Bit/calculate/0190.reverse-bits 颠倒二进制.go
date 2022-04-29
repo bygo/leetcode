@@ -4,6 +4,15 @@ package main
 
 // ❓ 颠倒二进制
 
+func reverseBits(n uint32) uint32 {
+	var num uint32
+	for pos := 31; 0 <= pos; pos-- {
+		num |= n & 1 << pos
+		n >>= 1
+	}
+	return num
+}
+
 const (
 	m1 = 0b01010101010101010101010101010101
 	m2 = 0b00110011001100110011001100110011

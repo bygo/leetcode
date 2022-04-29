@@ -12,7 +12,7 @@ package main
 // 1: 0^1 &^ 1 = 0 | 1^1 &^ 0 = 0 // lo &^抵消,hi ^抵消
 // 0: 0^0 &^ 0 = 0 | 0^0 &^ 0 = 0
 
-func singleNumber_(nums []int) int {
+func singleNumber(nums []int) int {
 	var lo, hi int
 	for _, num := range nums {
 		lo = (lo ^ num) &^ hi
@@ -38,15 +38,3 @@ func singleNumber(nums []int) int {
 	}
 	return int(single)
 }
-
-/**
-bugfix
-1.文案
-2.千里马去掉
-3.24小时 改成 昨天（凌晨之前）
-4.图片预览可以放大
-
-feature
-1.积分赠送
-2.积分群收款 (任务类型)
-*/

@@ -9,10 +9,10 @@ func convertToTitle(num int) string {
 
 	for 0 < num {
 		// 偏移 A从1开始
-		// 0~26 -> 1~27
+		// 0~25 -> 1~26
 		// 也就是 26(z)不进位，27(aa)才进位
 		num -= 1
-		buf = append(buf, byte((num)%26+'A'))
+		buf = append(buf, byte(num%26)+'A')
 		num /= 26
 	}
 
