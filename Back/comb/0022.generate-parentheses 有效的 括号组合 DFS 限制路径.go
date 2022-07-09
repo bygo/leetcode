@@ -5,19 +5,18 @@ package main
 func generateParenthesis(n int) []string {
 	var buf = make([]byte, n*2)
 	var strs []string
-	var n8 = int8(n)
-	var cntL, cntR int8
+	var cntL, cntR int
 	var dfs func()
 	dfs = func() {
 		// 左边 <= 右边 永远合法
 		if cntL < cntR {
 			return
 		}
-		if cntR == n8 && cntL == n8 {
+		if cntR == n && cntL == n {
 			strs = append(strs, string(buf))
 			return
 		}
-		if cntL < n8 {
+		if cntL < n {
 			// 添加一个左括号
 			buf[cntL+cntR] = '('
 			cntL++

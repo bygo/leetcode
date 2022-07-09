@@ -1,12 +1,9 @@
 package main
 
-import "sort"
-
 // https://leetcode-cn.com/problems/permutations
 
 func permute(raw []int) [][]int {
 	var permNums [][]int
-	sort.Slice(raw, func(i, j int) bool { return raw[i] < raw[j] })
 	rawL := len(raw)
 	cur := make([]int, rawL)
 	vis := make([]bool, rawL)

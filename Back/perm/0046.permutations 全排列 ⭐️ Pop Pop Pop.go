@@ -40,7 +40,7 @@ func permute(nums []int) [][]int {
 		var cur []int
 		str := que[i][0]
 		for j := range str {
-			cur = append(cur, int(str[j])-10)
+			cur = append(cur, int(str[j])-10) // 负数补齐
 		}
 		permNums = append(permNums, append([]int{}, cur...))
 	}
@@ -50,7 +50,7 @@ func permute(nums []int) [][]int {
 func build(nums []int) string {
 	b := strings.Builder{}
 	for _, v := range nums {
-		b.WriteByte(byte(v + 10))
+		b.WriteByte(byte(v + 10)) // 负数补齐
 	}
 	return b.String()
 }

@@ -47,10 +47,10 @@ func findMinStep(board string, hand string) int {
 					if boardCur[j] == handCur[i] || 0 < j && boardCur[j-1] == boardCur[j] {
 						boardRaw := boardCur[:j] + string(handCur[i]) + boardCur[j:]
 						boardNew := clean(boardRaw)
-						handNew := handCur[:i] + handCur[i+1:]
 						if len(boardNew) == 0 {
 							return dep
 						}
+						handNew := handCur[:i] + handCur[i+1:]
 						str := [2]string{boardNew, handNew}
 						if !vis[str] {
 							que = append(que, str)
@@ -68,30 +68,29 @@ func findMinStep(board string, hand string) int {
 func clean(board string) string {
 	curL := len(board)
 	preL := curL + 1
-	cur := []byte(board)
-	var cnt int
-	for preL != curL {
+
+	buf := []byte(board)
+	for curL != preL {
 		preL = curL
-		cnt = 1
+		cnt := 1
 		for idx := 1; idx < curL; idx++ {
-			if cur[idx-1] == cur[idx] {
+			if buf[idx-1] == buf[idx] {
 				cnt++
 			} else {
-				// 超过三个相同,消除
 				if 3 <= cnt {
-					copy(cur[idx-cnt:], cur[idx:])
-					curL = preL - cnt
-					cur = cur[:curL]
-					break
+					copy(buf[idx-cnt:], buf[idx:])
+					idx = idx - cnt
+					curL = curL - cnt
 				}
 				cnt = 1
 			}
+
 		}
-		// 超过三个相同,消除
+
 		if 3 <= cnt {
-			curL = preL - cnt
-			cur = cur[:curL]
+			curL = curL - cnt
+			buf = buf[:curL]
 		}
 	}
-	return string(cur)
+	return string(buf[:curL])
 }

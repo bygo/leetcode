@@ -7,11 +7,11 @@ import (
 // https://leetcode-cn.com/problems/zuma-game
 
 func findMinStep(board string, hand string) int {
-	h := []byte(hand)
-	sort.Slice(h, func(i, j int) bool {
-		return h[i] < h[j]
+	bytesHand := []byte(hand)
+	sort.Slice(bytesHand, func(i, j int) bool {
+		return bytesHand[i] < bytesHand[j]
 	})
-	hand = string(h)
+	hand = string(bytesHand)
 	vis := map[[2]string]int{}
 	// 置底向上 缓存最小路径 避免重复，
 	// 出现相同时 减少递归
@@ -63,30 +63,29 @@ func findMinStep(board string, hand string) int {
 func clean(board string) string {
 	curL := len(board)
 	preL := curL + 1
-	cur := []byte(board)
-	var cnt int
-	for preL != curL {
+
+	buf := []byte(board)
+	for curL != preL {
 		preL = curL
-		cnt = 1
+		cnt := 1
 		for idx := 1; idx < curL; idx++ {
-			if cur[idx-1] == cur[idx] {
+			if buf[idx-1] == buf[idx] {
 				cnt++
 			} else {
-				// 消除
 				if 3 <= cnt {
-					copy(cur[idx-cnt:], cur[idx:])
-					curL = preL - cnt
-					cur = cur[:curL]
-					break
+					copy(buf[idx-cnt:], buf[idx:])
+					idx = idx - cnt
+					curL = curL - cnt
 				}
 				cnt = 1
 			}
+
 		}
-		// 消除
+
 		if 3 <= cnt {
-			curL = preL - cnt
-			cur = cur[:curL]
+			curL = curL - cnt
+			buf = buf[:curL]
 		}
 	}
-	return string(cur)
+	return string(buf[:curL])
 }
