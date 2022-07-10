@@ -5,10 +5,11 @@ package main
 func solveNQueens(n int) [][]string {
 	col, as1, as2 := make([]bool, n), map[int]bool{}, map[int]bool{}
 	var bufCur = make([]byte, n)
+	var rowCur = make([]string, n)
+
 	for i := 0; i < n; i++ {
 		bufCur[i] = '.'
 	}
-	var rowCur = make([]string, n)
 	var rows [][]string
 
 	var dfs func(idx int)

@@ -5,25 +5,25 @@ import "sort"
 // https://leetcode-cn.com/problems/online-election
 
 type TopVotedCandidate struct {
-	tops  []int
-	times []int
+	personTops []int
+	times      []int
 }
 
 func Constructor(persons []int, times []int) TopVotedCandidate {
-	var tops []int
-	top := -1                  // 领先的
-	cnt := map[int]int{-1: -1} // 统计
-	for _, p := range persons {
-		cnt[p]++                // 选票
-		if cnt[top] <= cnt[p] { // 领先
-			top = p
+	var personTops []int
+	personTop := -1                    // 领先的
+	personMpCnt := map[int]int{-1: -1} // 统计
+	for _, person := range persons {
+		personMpCnt[person]++                              // 选票
+		if personMpCnt[personTop] <= personMpCnt[person] { // 是否领先，改变领先者
+			personTop = person
 		}
-		tops = append(tops, top)
+		personTops = append(personTops, personTop)
 	}
 
-	return TopVotedCandidate{tops, times}
+	return TopVotedCandidate{personTops, times}
 }
 
 func (c *TopVotedCandidate) Q(t int) int {
-	return c.tops[sort.SearchInts(c.times, t+1)-1]
+	return c.personTops[sort.SearchInts(c.times, t+1)-1]
 }

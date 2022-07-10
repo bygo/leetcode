@@ -8,6 +8,7 @@ func findString(words []string, s string) int {
 		for lo < mid && words[mid] == "" {
 			mid--
 		}
+
 		str := words[mid]
 		if str == s {
 			return mid

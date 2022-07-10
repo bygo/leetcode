@@ -22,7 +22,7 @@ func permutation(s string) []string {
 		for j := 0; j < l; j++ {
 			// 已使用
 			// 相似路径剪枝 限定为组合
-			if vis[j] || 0 != j && !vis[j-1] && raw[j-1] == raw[j] {
+			if vis[j] || 0 < j && !vis[j-1] && raw[j-1] == raw[j] {
 				continue
 			}
 			vis[j] = true
@@ -56,19 +56,31 @@ func reverse(a []byte) {
 }
 
 func nextPermutation(nums []byte) bool {
-	n := len(nums)
-	i := n - 2
-	for 0 <= i && nums[i+1] <= nums[i] { // 后面那个比前面大
-		i--
+	numsL := len(nums)
+	idx := numsL - 2
+	for 0 <= idx && nums[idx+1] <= nums[idx] { // 寻找比较小的前置位
+		idx--
 	}
-	if i < 0 {
+	if idx < 0 {
 		return false
 	}
-	j := n - 1
-	for 0 <= j && nums[j] <= nums[i] {
+
+	// 找到比较小的前置位
+
+	// 寻找第一个比目标值大的值
+	j := numsL - 1
+	for 0 <= j && nums[j] <= nums[idx] {
 		j--
 	}
-	nums[i], nums[j] = nums[j], nums[i]
-	reverse(nums[i+1:])
+	// 交换
+	nums[idx], nums[j] = nums[j], nums[idx]
+
+	// 后置位全部重置 回归最小位
+	reverse(nums[idx+1:])
 	return true
 }
+
+// 1 2 3 4
+// 1 2 4 3
+// 1 3 2 4
+//

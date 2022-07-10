@@ -14,33 +14,33 @@ func isPowerOfTwo(num int) bool {
 }
 
 func reorderedPowerOf2(n int) bool {
-	nums := []byte(strconv.Itoa(n))
-	sort.Slice(nums, func(i, j int) bool {
-		return nums[i] < nums[j]
-	})
+	var nums []int
+	for _, num := range strconv.Itoa(n) {
+		nums = append(nums, int(num-'0'))
+	}
+	sort.Ints(nums)
 	numsL := len(nums)
-	vis := make([]bool, numsL)
+	var vis = make([]bool, numsL)
 	var dfs func(idx, num int) bool
 	dfs = func(idx, num int) bool {
 		if idx == numsL {
 			return isPowerOfTwo(num)
 		}
+
 		for i := range nums {
 			if vis[i] {
 				continue
 			}
 
-			if num == 0 && nums[i] == '0' {
+			if num == 0 && nums[i] == 0 {
 				continue
 			}
 
 			if 0 < i && nums[i] == nums[i-1] && !vis[i-1] {
-				// 组合  位置相同且同一层 = 相同问题
 				continue
 			}
-
 			vis[i] = true
-			if dfs(idx+1, num*10+int(nums[i]-'0')) {
+			if dfs(idx+1, num*10+nums[i]) {
 				return true
 			}
 			vis[i] = false

@@ -8,29 +8,31 @@ func longestCommonPrefix(strs []string) string {
 	}
 
 	check := func(length int) bool {
-		str0, strsL := strs[0][:length], len(strs)
-		for i := 1; i < strsL; i++ {
+		str0, strL := strs[0][:length], len(strs)
+		for i := 1; i < strL; i++ {
 			if strs[i][:length] != str0 {
 				return false
 			}
 		}
 		return true
 	}
+
 	minLength := len(strs[0])
 	for _, str := range strs {
-		if len(str) < minLength {
-			minLength = len(str)
+		strL := len(str)
+		if strL < minLength {
+			minLength = strL
 		}
 	}
 
-	lo, hi := 0, minLength
+	lo, hi := 0, minLength+1
 	for lo < hi {
-		mid := int(uint(lo+hi+1) >> 1) // 向上尝试
+		mid := int(uint(lo+hi) >> 1)
 		if check(mid) {
-			lo = mid // 答案
+			lo = mid + 1
 		} else {
-			hi = mid - 1
+			hi = mid
 		}
 	}
-	return strs[0][:lo]
+	return strs[0][:lo-1]
 }

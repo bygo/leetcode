@@ -19,6 +19,7 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 		}
 		return lo
 	}
+
 	var cnt int
 	for _, num := range drinks {
 		if num < x {

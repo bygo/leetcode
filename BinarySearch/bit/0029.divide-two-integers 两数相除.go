@@ -14,8 +14,8 @@ func quickAdd(dividend int32, divisor int32, quotient int32) bool {
 	for 0 < quotient {
 		if quotient&1 == 1 {
 			numRes += divisor
-			// 结果溢出
 			if 0 <= numRes || numRes < dividend {
+				// 结果溢出
 				return false
 			}
 		}
@@ -23,9 +23,9 @@ func quickAdd(dividend int32, divisor int32, quotient int32) bool {
 		quotient >>= 1
 
 		if 0 < quotient {
-			// 除数溢出
 			divisor <<= 1
 			if 0 <= divisor || divisor < dividend {
+				// 除数溢出
 				return false
 			}
 		}

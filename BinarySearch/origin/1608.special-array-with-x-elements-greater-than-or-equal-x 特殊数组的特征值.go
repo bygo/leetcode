@@ -13,14 +13,15 @@ func specialArray(nums []int) int {
 		sufL := numsL - mid
 		// sufL: max -- min
 		// num:  min -- max
-		if sufL <= nums[mid] {
-			if mid == 0 || nums[mid-1] < sufL {
-				// 大于和等于都判断
+		if nums[mid] < sufL { // 长度过大
+			lo = mid + 1
+		} else if sufL <= nums[mid] {
+			// nums[mid] 不可能总刚好等于 sufL
+			// 所以 大于和等于都判断
+			if mid == 0 || nums[mid-1] < sufL { // 前一个刚好，小于sufL
 				return sufL
 			}
 			hi = mid
-		} else if nums[mid] < sufL {
-			lo = mid + 1
 		}
 	}
 	return -1

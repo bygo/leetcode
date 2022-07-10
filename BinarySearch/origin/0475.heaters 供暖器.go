@@ -57,7 +57,7 @@ func findRadius_(houses, heaters []int) int {
 		distCur := abs(house - heaters[idx]) // 当前距离
 		for idx+1 < len(heaters) {           // 是否还有下一个取暖器
 			distNext := abs(house - heaters[idx+1])
-			if distCur < distNext { // 必须单调递减
+			if distCur < distNext { // 必须更近
 				break
 			}
 			idx++

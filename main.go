@@ -197,9 +197,9 @@ func main() {
 	problemStub = bytes.Replace(problemStub, dummyBufLinkTitle, []byte(p.Stat.QuestionTitle), 1)
 	problemStub = bytes.Replace(problemStub, dummyBufLink, []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
 
-	Check(os.Mkdir(path, os.ModePerm))
+	//Check(os.Mkdir(path, os.ModePerm))
 
-	Check(ioutil.WriteFile(fmt.Sprintf("%s/%s", path, RealPrefix+v.Real), problemStub, os.ModePerm))
+	Check(ioutil.WriteFile(fmt.Sprintf("%s", path+v.Real), problemStub, os.ModePerm))
 }
 
 func getSolutions(dir os.FileInfo, path string) {
