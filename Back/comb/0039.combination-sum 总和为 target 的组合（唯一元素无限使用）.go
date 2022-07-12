@@ -14,14 +14,14 @@ func combinationSum(candidates []int, target int) [][]int {
 			return
 		}
 
-		for i := start; i < len(candidates); i++ {
-			if val < candidates[i] {
+		for idx := start; idx < len(candidates); idx++ {
+			if val < candidates[idx] {
 				continue
 				//break
 			}
 			// back
-			nums = append(nums, candidates[i])
-			dfs(val-candidates[i], i)
+			nums = append(nums, candidates[idx])
+			dfs(val-candidates[idx], idx)
 			nums = nums[:len(nums)-1]
 		}
 	}
