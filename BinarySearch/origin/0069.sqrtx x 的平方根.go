@@ -3,10 +3,10 @@ package main
 // https://leetcode-cn.com/problems/sqrtx
 
 func mySqrt(x int) int {
-	if x == 0 || x == 1 {
-		return x
-	}
-	lo, hi := 0, x
+	//if x == 0 || x == 1 {
+	//	return x
+	//}
+	lo, hi := 0, x+1
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
 		cur := mid * mid
@@ -21,7 +21,7 @@ func mySqrt(x int) int {
 	return lo - 1
 }
 
-func mySqrt_(x int) int {
+func mySqrt(x int) int {
 	var lo = 0
 	var hi = x
 	for lo <= hi {

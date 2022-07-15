@@ -3,16 +3,16 @@ package main
 // https://leetcode-cn.com/problems/find-peak-element
 
 func findPeakElement(nums []int) int {
-	numL := len(nums)
+	numsL := len(nums)
 
 	find := func(i int) int {
-		if i == -1 || i == numL {
+		if i == -1 || i == numsL {
 			return -1 << 63
 		}
 		return nums[i]
 	}
 
-	lo, hi := 0, numL
+	lo, hi := 0, numsL
 	for {
 		mid := int(uint(lo+hi) >> 1)
 		cur := find(mid)

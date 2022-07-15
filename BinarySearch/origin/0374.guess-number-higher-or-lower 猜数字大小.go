@@ -5,7 +5,7 @@ package main
 func guessNumber(hi int) int {
 	var lo = 1
 	hi += 1
-	for lo < hi {
+	for {
 		mid := int(uint(lo+hi) >> 1)
 		cur := guess(mid)
 		if cur == 1 {
@@ -16,9 +16,8 @@ func guessNumber(hi int) int {
 			return mid
 		}
 	}
-	return -1
 }
 
 func guess(n int) int {
-	return 0
+	return 0 // -1 0 1
 }

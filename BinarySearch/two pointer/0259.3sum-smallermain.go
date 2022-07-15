@@ -7,24 +7,24 @@ import "sort"
 func threeSumSmaller(nums []int, target int) int {
 	sort.Ints(nums)
 	numsL := len(nums)
-	var sum int
+	var cnt int
 	for i := 0; i < numsL; i++ {
-		sum += twoSumSmaller(nums, i+1, target-nums[i])
+		cnt += twoSumSmaller(nums, i+1, target-nums[i])
 	}
-	return sum
+	return cnt
 }
 
-func twoSumSmaller(nums []int, idxLeft, target int) int {
-	var sum int
-	idxRight := len(nums) - 1
-	for idxLeft < idxRight {
-		numCur := nums[idxLeft] + nums[idxRight]
+func twoSumSmaller(nums []int, lo, target int) int {
+	var cnt int
+	hi := len(nums) - 1
+	for lo < hi {
+		numCur := nums[lo] + nums[hi]
 		if target <= numCur {
-			idxRight--
+			hi--
 		} else if numCur < target {
-			sum += idxRight - idxLeft
-			idxLeft++
+			cnt += hi - lo
+			lo++
 		}
 	}
-	return sum
+	return cnt
 }

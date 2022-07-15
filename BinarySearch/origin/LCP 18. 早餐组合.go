@@ -29,8 +29,7 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 	return cnt % 1000000007
 }
 
-/*
-two pointer
+// two pointer
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
 	dL := len(drinks)
@@ -74,4 +73,3 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 	}
 	return cnt % 1000000007
 }
-*/

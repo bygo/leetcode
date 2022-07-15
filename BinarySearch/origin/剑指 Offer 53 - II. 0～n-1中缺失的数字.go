@@ -8,7 +8,7 @@ func missingNumber(nums []int) int {
 		mid := int(uint(lo+hi) >> 1)
 		if mid == nums[mid] {
 			lo = mid + 1
-		} else {
+		} else if mid < nums[mid] {
 			hi = mid
 		}
 	}
