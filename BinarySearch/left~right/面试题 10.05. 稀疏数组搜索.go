@@ -10,9 +10,9 @@ func findString(words []string, str string) int {
 			mid--
 		}
 
-		if str == words[mid] {
+		if words[mid] == str {
 			return mid
-		} else if words[mid] < str { //  words[mid] == ""
+		} else if words[mid] < str {
 			lo = mid + 1
 		} else if str < words[mid] {
 			hi = mid
@@ -29,7 +29,7 @@ func findString(words []string, str string) int {
 			mid++
 		}
 
-		if str == words[mid] {
+		if words[mid] == str {
 			return mid
 		} else if str < words[mid] || words[mid] == "" {
 			hi = mid - 1

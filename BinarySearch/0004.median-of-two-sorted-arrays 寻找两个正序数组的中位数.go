@@ -9,11 +9,12 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	if l2 < l1 {
 		nums1, nums2, l1, l2 = nums2, nums1, l2, l1 //保证num1最短？ 只要计算出num1的k1，就可计算出num2的k2
 	}
+
 	half := (l1 + l2 + 1) >> 1 // 向上取整,保证左边数量永大于右边
-	lo, hi := 0, l1-1
+	lo, hi := 0, l1
 	for lo < hi {
 		m1 := int(uint(lo+hi) >> 1)           // 二分 ，如果是奇数，就会向下取正
-		m2 := half - m1 - 1                   // m2永远等于 half-m1
+		m2 := half - m1                       // m2永远等于 half-m1-1
 		if m1 < hi && nums1[m1] < nums2[m2] { // 如果 右2 大于 左1，二分范围  m1+1 ~ hi
 			lo = m1 + 1
 		} else if lo < m1 && nums2[m2] < nums1[m1] { // 如果 右1 大于 左2,二分范围max 为m1-1
@@ -45,6 +46,26 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	}
 	return 0
 }
+
+func findMedianSortedArray(nums1 []int, nums2 []int) float64 {
+	l1, l2 := len(nums1), len(nums2)
+	if l2 < l1 {
+		nums1, nums2, l1, l2 = nums2, nums1, l2, l1
+	}
+	half := (l1 + l2) >> 1
+	lo, hi := 0, l1
+	for lo < hi {
+		m1 := int(uint(lo+hi) >> 1)
+		m2 := half - m1
+		if nums1[m1] < nums2[m2] {
+			lo = m1 + 1
+		} else if nums2[m2] < nums1[m1] {
+			hi = m1
+		} else {
+		}
+	}
+}
+
 func max(a, b int) int {
 	if a < b {
 		return b
