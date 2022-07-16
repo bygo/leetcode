@@ -24,3 +24,12 @@ func convertToTitle(num int) string {
 	}
 	return string(buf)
 }
+
+func convertToTitle(num int) string {
+	var buf []byte
+	for 0 < num {
+		num -= 1
+		buf = append(buf, byte(num%26)+'A')
+		num /= 26
+	}
+}

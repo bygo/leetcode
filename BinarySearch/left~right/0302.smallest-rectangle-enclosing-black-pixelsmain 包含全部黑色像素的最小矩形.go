@@ -2,29 +2,26 @@ package main
 
 // https://leetcode-cn.com/problems/smallest-rectangle-enclosing-black-pixels
 
-func minArea(image [][]byte, x int, y int) int {
-	rows, cols := len(image), len(image[0])
-	left := searchCols(image, 0, y, 0, rows, true)
-	right := searchCols(image, y+1, cols, 0, rows, false)
-	top := searchRows(image, 0, x, left, right, true)
-	bottom := searchRows(image, x+1, rows, left, right, false)
+func minArea(image [][]byte, y int, x int) int {
+	rowL, colL := len(image), len(image[0])
+	left := searchCols(image, 0, x, 0, rowL, true)
+	right := searchCols(image, x+1, colL, 0, rowL, false)
+	top := searchRows(image, left, right, 0, y, true)
+	bottom := searchRows(image, left, right, y+1, rowL, false)
 	return (right - left) * (bottom - top)
 }
 
-func searchCols(image [][]byte, lo, hi, top, bottom int, findLeft bool) int {
+func searchRows(image [][]byte, left, right, top, bottom int, whiteToBlack bool) int {
+	lo, hi := top, bottom
 	for lo < hi {
-		rowK := top
 		mid := int(uint(lo+hi) >> 1)
-		for rowK < bottom && image[rowK][mid] == '0' {
-			rowK++
+		colK := left
+		for colK < right && image[mid][colK] == '0' {
+			colK++
 		}
-		// rowK < bottom 等价于 找到黑色
 
-		// 如果找left ，就必须 缩hi
-		// 如果找right，就必须 缩lo
-
-		// 其他情况 取反
-		if rowK < bottom == findLeft {
+		hasBlack := colK < right
+		if hasBlack == whiteToBlack {
 			hi = mid
 		} else {
 			lo = mid + 1
@@ -33,19 +30,16 @@ func searchCols(image [][]byte, lo, hi, top, bottom int, findLeft bool) int {
 	return lo
 }
 
-func searchRows(image [][]byte, lo, hi, left, right int, findTop bool) int {
+func searchCols(image [][]byte, left, right, top, bottom int, whiteToBlack bool) int {
+	lo, hi := left, right
 	for lo < hi {
-		colK := left
 		mid := int(uint(lo+hi) >> 1)
-		for colK < right && image[mid][colK] == '0' {
-			colK++
+		rowK := top
+		for rowK < bottom && image[rowK][mid] == '0' {
+			rowK++
 		}
-		// colK < right 等价于 找到黑色
-		// 如果找top ，  就必须 缩hi
-		// 如果找bottom，就必须 缩lo
-
-		// 其他情况 取反
-		if colK < right == findTop {
+		hasBlack := rowK < bottom
+		if hasBlack == whiteToBlack {
 			hi = mid
 		} else {
 			lo = mid + 1

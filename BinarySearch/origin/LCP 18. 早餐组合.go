@@ -4,7 +4,7 @@ import "sort"
 
 // https://leetcode-cn.com/problems/2vYnGI/
 
-func breakfastNumber(staple []int, drinks []int, x int) int {
+func breakfastNumber(staple []int, drinks []int, total int) int {
 	sL := len(staple)
 	sort.Ints(staple)
 	find := func(target int) int {
@@ -13,24 +13,65 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 			mid := int(uint(lo+hi) >> 1)
 			if staple[mid] <= target {
 				lo = mid + 1
-			} else {
+			} else if target < staple[mid] {
 				hi = mid
 			}
 		}
 		return lo
 	}
-
 	var cnt int
-	for _, num := range drinks {
-		if num < x {
-			cnt += find(x - num)
+	for _, drink := range drinks {
+		if drink < total {
+			cnt += find(total - drink)
 		}
 	}
 	return cnt % 1000000007
 }
 
-/*
-two pointer
+func breakfastNumber(staple []int, drinks []int, total int) int {
+	sL := len(staple)
+	sort.Ints(staple)
+	find := func(target int) int {
+		lo, hi := 0, sL
+		for lo < hi {
+			mid := int(uint(lo+hi) >> 1)
+			if staple[mid] <= target {
+				lo = mid + 1
+			} else if target < staple[mid] {
+				hi = mid
+			}
+		}
+		return lo
+	}
+	var cnt int
+	for _, drink := range drinks {
+		if drink < total {
+			cnt += find(total - drink)
+		}
+	}
+	return cnt % 1000000007
+}
+
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	sum := make([]int, x+1)
+	for _, num := range staple {
+		if num < x {
+			sum[num]++
+		}
+	}
+
+	for i := 1; i <= x; i++ {
+		sum[i] += sum[i-1]
+	}
+
+	var cnt int
+	for _, drink := range drinks {
+		cnt += sum[x-drink]
+	}
+	return cnt
+}
+
+// two pointer
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
 	dL := len(drinks)
@@ -74,4 +115,8 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 	}
 	return cnt % 1000000007
 }
-*/
+
+func breakfastNumber(staple []int, drinks []int, x int) int {
+	sum := make([]int, x+1)
+
+}

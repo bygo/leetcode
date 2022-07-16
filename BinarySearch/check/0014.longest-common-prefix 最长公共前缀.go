@@ -3,36 +3,35 @@ package main
 // https://leetcode-cn.com/problems/longest-common-prefix/
 
 func longestCommonPrefix(strs []string) string {
-	if len(strs) == 0 {
+	strsL := len(strs)
+	if strsL == 0 {
 		return ""
 	}
 
-	check := func(length int) bool {
-		str0, strL := strs[0][:length], len(strs)
-		for i := 1; i < strL; i++ {
-			if strs[i][:length] != str0 {
+	check := func(lo, hi int) bool {
+		for i := 1; i < strsL; i++ {
+			if strs[i][lo:hi] != strs[0][lo:hi] {
 				return false
 			}
 		}
 		return true
 	}
-
-	minLength := len(strs[0])
+	minL := 1<<63 - 1
 	for _, str := range strs {
 		strL := len(str)
-		if strL < minLength {
-			minLength = strL
+		if strL < minL {
+			minL = strL
 		}
 	}
 
-	lo, hi := 0, minLength+1
+	lo, hi := 0, minL-1
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
-		if check(mid) {
+		if check(lo, mid+1) {
 			lo = mid + 1
 		} else {
 			hi = mid
 		}
 	}
-	return strs[0][:lo-1]
+	return strs[0][:lo]
 }

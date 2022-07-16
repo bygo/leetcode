@@ -6,9 +6,9 @@ func missingNumber(nums []int) int {
 	lo, hi := 0, len(nums)
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
-		if mid == nums[mid] {
+		if nums[mid] == mid {
 			lo = mid + 1
-		} else {
+		} else if mid < nums[mid] {
 			hi = mid
 		}
 	}

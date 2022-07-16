@@ -19,11 +19,11 @@ func twoSumSmaller(nums []int, idxLeft, target int) int {
 	idxRight := len(nums) - 1
 	for idxLeft < idxRight {
 		numCur := nums[idxLeft] + nums[idxRight]
-		if target <= numCur {
-			idxRight--
-		} else if numCur < target {
+		if numCur < target {
 			sum += idxRight - idxLeft
 			idxLeft++
+		} else {
+			idxRight--
 		}
 	}
 	return sum
