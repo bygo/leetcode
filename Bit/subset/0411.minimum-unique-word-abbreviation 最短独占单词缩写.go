@@ -9,27 +9,30 @@ import "strconv"
 func minAbbreviation(target string, dictionary []string) string {
 	targetL := len(target)
 	subsetBanMp := map[int]struct{}{}
-	for _, dict := range dictionary {
-		dictL := len(dict)
+	for _, word := range dictionary {
+		wordL := len(word)
 		// 不相等 永不相同
-		if dictL != targetL {
+		if wordL != targetL {
 			continue
 		}
 
-		var num int
-		for pos := 0; pos < dictL; pos++ {
-			if target[pos] == dict[pos] {
-				num |= 1 << pos
+		var subset int
+		for idx := 0; idx < wordL; idx++ {
+			if target[idx] == word[idx] { // 相同
+				subset += 1 << idx
 			}
 		}
-		subset := num
+		sub := subset
 		for {
 			// 所有禁止的子集
-			subsetBanMp[subset] = struct{}{}
-			subset = (subset - 1) & num
-			if subset == num {
+			subsetBanMp[sub] = struct{}{}
+			if sub == 0 {
 				break
 			}
+			sub = (sub - 1) & subset
+			//if subset == num {
+			//	break
+			//}
 		}
 	}
 
@@ -37,8 +40,8 @@ func minAbbreviation(target string, dictionary []string) string {
 		return strconv.Itoa(targetL)
 	}
 	var strRes = target
-	numMax := 1<<targetL - 1 // 本身已计算
-	for subset := 0; subset < numMax; subset++ {
+	subsetMax := 1<<targetL - 1 // 本身已计算
+	for subset := 0; subset < subsetMax; subset++ {
 		_, ok := subsetBanMp[subset]
 		if ok {
 			continue
@@ -47,13 +50,13 @@ func minAbbreviation(target string, dictionary []string) string {
 		var cnt int
 		var buf []byte
 
-		for pos := 0; pos < targetL; pos++ {
-			if subset>>pos&1 == 1 {
+		for idx := 0; idx < targetL; idx++ {
+			if subset>>idx&1 == 1 {
 				if 0 < cnt {
 					buf = append(buf, strconv.Itoa(cnt)...)
 					cnt = 0
 				}
-				buf = append(buf, target[pos])
+				buf = append(buf, target[idx])
 			} else {
 				// 未出现的压缩
 				cnt++
@@ -73,7 +76,7 @@ func minAbbreviation(target string, dictionary []string) string {
 
 // ban 字符串
 
-func minAbbreviation_String(target string, dictionary []string) string {
+func minAbbreviation(target string, dictionary []string) string {
 	subsetBanMp := map[string]struct{}{}
 	var targetL = len(target)
 

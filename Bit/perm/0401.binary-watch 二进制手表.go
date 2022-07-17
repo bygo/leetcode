@@ -21,6 +21,18 @@ func readBinaryWatch(turnedOn int) []string {
 	return strsTime
 }
 
+func readBinaryWatch(turnedOn int) []string {
+	var strsTime []string
+	for hour := 0; hour < 12; hour++ {
+		for min := 0; min < 60; min++ {
+			if OnesCounter(hour)+OnesCounter(min) == turnedOn {
+				strsTime = append(strsTime, fmt.Sprintf("%d:%02d", hour, min))
+			}
+		}
+	}
+	return strsTime
+}
+
 func OnesCounter(num int) int {
 	var ones int
 	for 0 < num {

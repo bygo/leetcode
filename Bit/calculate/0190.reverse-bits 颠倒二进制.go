@@ -6,8 +6,8 @@ package main
 
 func reverseBits(n uint32) uint32 {
 	var num uint32
-	for pos := 31; 0 <= pos; pos-- {
-		num |= n & 1 << pos
+	for idx := 31; 0 <= idx; idx-- {
+		num |= n & 1 << idx
 		n >>= 1
 	}
 	return num

@@ -23,9 +23,9 @@ func maxProduct(words []string) int {
 	}
 
 	// 组合乘积
-	for xHash, xL := range hashMpLen {
-		for yHash, yL := range hashMpLen {
-			if xHash&yHash != 0 {
+	for hashX, xL := range hashMpLen {
+		for hashY, yL := range hashMpLen {
+			if hashX&hashY != 0 {
 				continue
 			}
 			numCur := xL * yL

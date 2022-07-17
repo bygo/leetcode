@@ -16,7 +16,7 @@ func addBinary(a string, b string) string {
 	var buf = make([]byte, bufL)
 	var carry byte
 	for 0 <= aT {
-		carry += a[aT] + b[bT] - '0' - '0'
+		carry += a[aT] + b[bT] - '0'*2
 		aT--
 		bT--
 		buf[bufT] = carry%2 + '0'

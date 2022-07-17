@@ -8,11 +8,11 @@ func hammingDistance(x int, y int) int {
 	// xor 取不同个数
 	num := x ^ y
 	// bk
-	var cntDiff int
+	var cnt int
 	for 0 < num {
 		// bk
 		num &= num - 1
-		cntDiff++
+		cnt++
 	}
-	return cntDiff
+	return cnt
 }

@@ -8,18 +8,18 @@ import "strconv"
 
 func generateAbbreviations(word string) []string {
 	wordL := len(word)
-	var numMax = 1<<wordL - 1
+	var subsetMax = 1 << wordL
 	var strsSubset []string
-	for subset := 0; subset < numMax; subset++ {
+	for subset := 0; subset < subsetMax; subset++ {
 		var buf []byte
 		var cnt int
-		for pos := 0; pos < wordL; pos++ {
-			if subset>>pos&1 == 1 {
+		for idx := 0; idx < wordL; idx++ {
+			if subset>>idx&1 == 1 {
 				if 0 < cnt {
 					buf = append(buf, strconv.Itoa(cnt)...)
 				}
 				cnt = 0
-				buf = append(buf, word[pos])
+				buf = append(buf, word[idx])
 			} else {
 				cnt++
 			}

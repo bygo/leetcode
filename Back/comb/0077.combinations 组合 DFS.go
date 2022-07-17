@@ -2,26 +2,22 @@ package main
 
 // https://leetcode-cn.com/problems/combinations
 
-func combine(n int, needL int) [][]int {
+func combine(numMax int, needL int) [][]int {
 	var combNums [][]int
 	var nums []int
 	var dfs func(num int)
 	dfs = func(num int) {
-		numsL := len(nums)
-		if numsL == needL {
+		curL := len(nums)
+		if curL == needL {
 			combNums = append(combNums, append([]int{}, nums...))
 			return
 		}
-
-		if n-num < needL-numsL {
+		if numMax-num < needL-curL {
 			return
 		}
-
 		nums = append(nums, num+1)
 		dfs(num + 1)
-		nums = nums[:len(nums)-1]
-
-		// 跳过当前
+		nums = nums[:curL]
 		dfs(num + 1)
 	}
 	dfs(0)
