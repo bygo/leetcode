@@ -38,6 +38,7 @@ func minAbbreviation(target string, dictionary []string) string {
 	}
 
 	if len(subsetMp) == 0 {
+		// 如果有长度相同，0必定在即合理
 		return strconv.Itoa(targetL)
 	}
 

@@ -8,24 +8,23 @@ package main
 func findMaximumXOR(nums []int) int {
 	var numRes, numMax int
 	// 从高到低 按位确认
-	for pos := 30; 0 <= pos; pos-- {
+	for idx := 30; 0 <= idx; idx-- {
 		// 结果翻倍
 		numRes <<= 1
 		// 下一个最大值
 		numMax = numRes + 1
-
 		// 每个数移位后 与 当前最大值 异或
-		numMp := map[int]struct{}{}
+		numMp := map[int]bool{}
 		for _, num := range nums {
 			// 异或结合律 寻找另一个数
-			num >>= pos
+			// 100000000,保留高位，低位都是0，便取到对应target
+			num >>= idx
 			numTarget := num ^ numMax
-			_, ok := numMp[numTarget]
-			if ok {
+			if numMp[numTarget] {
 				numRes += 1
 				break
 			}
-			numMp[num] = struct{}{}
+			numMp[num] = true
 		}
 	}
 	return numRes
