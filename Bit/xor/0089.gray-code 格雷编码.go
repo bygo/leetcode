@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/gray-code
+// https://leetcode.cn/problems/gray-code
 
 // ❓ 格雷编码
 // ⚠️ 自身 xor 自身>>1

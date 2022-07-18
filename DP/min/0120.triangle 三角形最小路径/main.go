@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/triangle
+// https://leetcode.cn/problems/triangle
 
 // 压缩 从底至顶
 func minimumTotal(triangle [][]int) int {

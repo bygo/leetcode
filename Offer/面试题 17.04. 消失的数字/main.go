@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/missing-number-lcci/
+// https://leetcode.cn/problems/missing-number-lcci/
 
 func missingNumber(nums []int) int {
 	n := len(nums)

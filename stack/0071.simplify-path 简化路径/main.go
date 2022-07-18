@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/simplify-path
+// https://leetcode.cn/problems/simplify-path
 
 // 状态机
 func simplifyPath(path string) string {

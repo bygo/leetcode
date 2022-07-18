@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/ransom-note
+// https://leetcode.cn/problems/ransom-note
 
 // ❓ 从magazine组合成ransomNote
 

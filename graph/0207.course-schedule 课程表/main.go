@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/course-schedule
+// https://leetcode.cn/problems/course-schedule
 
 func canFinish(numCourses int, prerequisites [][]int) bool {
 	var edges = make([][]int, numCourses)

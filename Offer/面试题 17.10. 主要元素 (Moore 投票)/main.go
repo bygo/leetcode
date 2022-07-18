@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-majority-element-lcci/
+// https://leetcode.cn/problems/find-majority-element-lcci/
 
 func majorityElement(nums []int) int {
 	l1 := len(nums)

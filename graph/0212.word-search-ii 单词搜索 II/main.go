@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/word-search-ii
+// https://leetcode.cn/problems/word-search-ii
 
 type Trie struct {
 	children [26]*Trie

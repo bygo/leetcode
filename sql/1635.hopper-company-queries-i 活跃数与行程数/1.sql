@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/hopper-company-queries-i
+# Link: https://leetcode.cn/problems/hopper-company-queries-i
 
 WITH RECURSIVE `t1`(`month`) AS (
     SELECT 1

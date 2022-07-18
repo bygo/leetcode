@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/deepest-leaves-sum/
+// https://leetcode.cn/problems/deepest-leaves-sum/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/logger-rate-limiter
+// https://leetcode.cn/problems/logger-rate-limiter
 
 // ❓相同消息截流
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/equal-tree-partition
+// https://leetcode.cn/problems/equal-tree-partition
 
 type TreeNode struct {
 	Val   int
@@ -18,7 +18,7 @@ func checkEqualTree(root *TreeNode) bool {
 			return 0
 		}
 		sum := dfs(node.Left) + dfs(node.Right) + node.Val
-		sumMp[sum] ++
+		sumMp[sum]++
 		return sum
 	}
 

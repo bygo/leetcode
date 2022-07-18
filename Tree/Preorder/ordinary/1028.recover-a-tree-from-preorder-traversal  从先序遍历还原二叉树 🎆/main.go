@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/recover-a-tree-from-preorder-traversal
+// https://leetcode.cn/problems/recover-a-tree-from-preorder-traversal
 
 type TreeNode struct {
 	Val   int

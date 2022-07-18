@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/permutation-sequence
+// https://leetcode.cn/problems/permutation-sequence
 
 func getPermutation(n int, k int) string {
 	f := make([]int, n)

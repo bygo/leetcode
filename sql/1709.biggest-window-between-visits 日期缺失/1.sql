@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/biggest-window-between-visits
+# Link: https://leetcode.cn/problems/biggest-window-between-visits
 
 
 SELECT `user_id`, MAX(`diff`) `biggest_window`

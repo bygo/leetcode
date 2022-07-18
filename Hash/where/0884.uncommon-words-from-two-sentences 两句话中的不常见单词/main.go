@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
+// https://leetcode.cn/problems/uncommon-words-from-two-sentences
 
 // ❓ 在两个数组只出现一次的单词
 

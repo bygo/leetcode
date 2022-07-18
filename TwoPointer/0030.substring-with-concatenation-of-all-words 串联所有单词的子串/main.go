@@ -1,7 +1,7 @@
 package main
 
 // substring with concatenation of all words
-// https://leetcode-cn.com/problems/substring-with-concatenation-of-all-words/
+// https://leetcode.cn/problems/substring-with-concatenation-of-all-words/
 
 func findSubstring(s string, words []string) []int {
 	if len(s) == 0 || len(words) == 0 {

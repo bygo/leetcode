@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/merge-two-binary-trees/
+// https://leetcode.cn/problems/merge-two-binary-trees/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/dKk3P7/
+// https://leetcode.cn/problems/dKk3P7/
 
 func isAnagram(s string, t string) bool {
 	if s == t || len(s) != len(t) {

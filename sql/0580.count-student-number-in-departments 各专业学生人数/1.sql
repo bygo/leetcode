@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/count-student-number-in-departments
+# Link: https://leetcode.cn/problems/count-student-number-in-departments
 
 SELECT `dept_name`, COUNT(`student_id`) `student_number`
 FROM `department`            `d`

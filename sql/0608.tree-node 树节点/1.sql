@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/tree-node
+# Link: https://leetcode.cn/problems/tree-node
 
 SELECT DISTINCT `t1`.`id`,
                 IF(`t1`.`p_id` IS NULL, 'Root',

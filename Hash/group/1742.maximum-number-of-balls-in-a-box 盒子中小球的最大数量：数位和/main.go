@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box
+// https://leetcode.cn/problems/maximum-number-of-balls-in-a-box
 
 // ❓ 盒子中小球的最大数量
 

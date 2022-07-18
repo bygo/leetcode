@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/number-of-transactions-per-visit
+# Link: https://leetcode.cn/problems/number-of-transactions-per-visit
 
 WITH `cte` AS (SELECT COUNT(`amount`) `transactions_count`
                FROM `visits`                     `v`

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/symmetric-tree/
+// https://leetcode.cn/problems/symmetric-tree/
 
 type TreeNode struct {
 	Val   int

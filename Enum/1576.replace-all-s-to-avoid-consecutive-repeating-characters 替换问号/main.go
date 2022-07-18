@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters
+// https://leetcode.cn/problems/replace-all-s-to-avoid-consecutive-repeating-characters
 
 // ❓ 替换问号
 

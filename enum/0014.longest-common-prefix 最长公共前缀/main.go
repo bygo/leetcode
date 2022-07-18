@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-common-prefix/
+// https://leetcode.cn/problems/longest-common-prefix/
 
 // 1:00
 func longestCommonPrefix(strs []string) string {

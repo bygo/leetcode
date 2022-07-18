@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-path-sum
+// https://leetcode.cn/problems/minimum-path-sum
 
 // 二维
 // f(i)(j) = f(i-1)(j) + f(i)(j-1)

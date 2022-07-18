@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/sort-characters-by-frequency
+// https://leetcode.cn/problems/sort-characters-by-frequency
 
 // ❓ 根据出现频率降序
 

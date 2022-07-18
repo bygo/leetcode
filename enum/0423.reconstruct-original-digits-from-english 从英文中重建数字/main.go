@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/reconstruct-original-digits-from-english
+// https://leetcode.cn/problems/reconstruct-original-digits-from-english
 
 func originalDigits(s string) string {
 	m1 := [26]int{}

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-palindrome
+// https://leetcode.cn/problems/longest-palindrome
 
 // ❓ 能排列为最长的回文串
 

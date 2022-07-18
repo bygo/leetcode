@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/grand-slam-titles
+# Link: https://leetcode.cn/problems/grand-slam-titles
 
 
 WITH `t` AS (SELECT `wimbledon` `tournament`

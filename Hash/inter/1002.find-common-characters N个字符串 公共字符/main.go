@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-common-characters
+// https://leetcode.cn/problems/find-common-characters
 
 // ❓ N个字符串 公共字符
 

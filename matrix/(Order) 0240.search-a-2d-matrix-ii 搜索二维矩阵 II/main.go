@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/search-a-2d-matrix-ii
+// https://leetcode.cn/problems/search-a-2d-matrix-ii
 
 func searchMatrix(matrix [][]int, target int) bool {
 	for _, i := range matrix {

@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/insertion-sort-list
+// https://leetcode.cn/problems/insertion-sort-list
 
 func insertionSortList(head *ListNode) *ListNode {
 	if head == nil {

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/rectangles-area
+# Link: https://leetcode.cn/problems/rectangles-area
 
 
 SELECT `a`.`id`                                                               `p1`,

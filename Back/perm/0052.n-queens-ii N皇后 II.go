@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/n-queens-ii
+// https://leetcode.cn/problems/n-queens-ii
 
 func totalNQueens(n int) int {
 	cols, ds1, ds2 := map[int]bool{}, map[int]bool{}, map[int]bool{}

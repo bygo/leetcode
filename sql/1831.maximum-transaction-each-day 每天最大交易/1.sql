@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/maximum-transaction-each-day
+# Link: https://leetcode.cn/problems/maximum-transaction-each-day
 
 
 SELECT `transaction_id`

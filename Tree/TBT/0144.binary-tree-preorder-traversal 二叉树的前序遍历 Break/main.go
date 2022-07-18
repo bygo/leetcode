@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
+// https://leetcode.cn/problems/binary-tree-preorder-traversal/
 
 // ❓ 前序遍历
 

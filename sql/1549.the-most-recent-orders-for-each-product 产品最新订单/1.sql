@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/the-most-recent-orders-for-each-product
+# Link: https://leetcode.cn/problems/the-most-recent-orders-for-each-product
 
 SELECT `product_name`, `p`.`product_id`, `order_id`, `order_date`
 FROM `products`          `p`

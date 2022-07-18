@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/percentage-of-users-attended-a-contest
+# Link: https://leetcode.cn/problems/percentage-of-users-attended-a-contest
 
 
 SELECT `contest_id`,

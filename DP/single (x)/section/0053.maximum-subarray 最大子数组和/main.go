@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-subarray
+// https://leetcode.cn/problems/maximum-subarray
 
 // 前缀
 // f(n) = f(n) + f(n-1)

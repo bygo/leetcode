@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/increasing-decreasing-string
+// https://leetcode.cn/problems/increasing-decreasing-string
 
 // ❓ 上升下降字符串
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-nodes-with-the-highest-score
+// https://leetcode.cn/problems/count-nodes-with-the-highest-score
 
 // ❓ 统计最高分的节点数目
 // ⚠️ 除去当前节点，所有子树,数量的乘积

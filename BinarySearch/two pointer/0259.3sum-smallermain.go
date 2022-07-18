@@ -2,7 +2,7 @@ package two_pointer
 
 import "sort"
 
-// https://leetcode-cn.com/problems/3sum-smaller
+// https://leetcode.cn/problems/3sum-smaller
 
 func threeSumSmaller(nums []int, target int) int {
 	sort.Ints(nums)

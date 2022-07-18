@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-if-a-string-contains-all-binary-codes-of-size-k
+// https://leetcode.cn/problems/check-if-a-string-contains-all-binary-codes-of-size-k
 
 // ❓ 检查一个字符串是否包含所有长度为 K 的二进制子串
 

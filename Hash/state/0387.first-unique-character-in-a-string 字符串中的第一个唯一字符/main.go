@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/first-unique-character-in-a-string
+// https://leetcode.cn/problems/first-unique-character-in-a-string
 
 // ❓ 字符串中第一个唯一字符索引
 

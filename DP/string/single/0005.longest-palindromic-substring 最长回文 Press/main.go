@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-palindromic-substring
+// https://leetcode.cn/problems/longest-palindromic-substring
 
 // f[l][r] = f[l+1][r-1]
 

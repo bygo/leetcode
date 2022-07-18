@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-happy-prefix
+// https://leetcode.cn/problems/longest-happy-prefix
 
 // ❓ 最长快乐前缀
 

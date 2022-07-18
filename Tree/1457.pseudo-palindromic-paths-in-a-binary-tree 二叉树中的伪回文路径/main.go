@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/pseudo-palindromic-paths-in-a-binary-tree
+// https://leetcode.cn/problems/pseudo-palindromic-paths-in-a-binary-tree
 
 type TreeNode struct {
 	Val   int

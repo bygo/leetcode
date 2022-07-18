@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-word-with-all-prefixes
+// https://leetcode.cn/problems/longest-word-with-all-prefixes
 
 // ❓ 包含所有前缀的最长单词
 

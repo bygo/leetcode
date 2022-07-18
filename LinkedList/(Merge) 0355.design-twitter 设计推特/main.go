@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-twitter
+// https://leetcode.cn/problems/design-twitter
 
 type ListNode struct {
 	TweetId int

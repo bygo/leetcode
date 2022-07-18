@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-the-start-and-end-number-of-continuous-ranges
+# Link: https://leetcode.cn/problems/find-the-start-and-end-number-of-continuous-ranges
 
 SELECT MIN(`log_id`) `start_id`,
        MAX(`log_id`) `end_id`

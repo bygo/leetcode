@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array
+// https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array
 
 // ❓ 两个数的最大异或值
 // ⚠️ 贪心路径

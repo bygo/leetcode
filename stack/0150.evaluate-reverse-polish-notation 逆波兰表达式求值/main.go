@@ -2,7 +2,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/evaluate-reverse-polish-notation
+// https://leetcode.cn/problems/evaluate-reverse-polish-notation
 
 func evalRPN(tokens []string) int {
 	var stack []int

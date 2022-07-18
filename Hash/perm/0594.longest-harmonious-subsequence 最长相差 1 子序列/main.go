@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-harmonious-subsequence
+// https://leetcode.cn/problems/longest-harmonious-subsequence
 
 // ❓ 最长相差1 子序列
 

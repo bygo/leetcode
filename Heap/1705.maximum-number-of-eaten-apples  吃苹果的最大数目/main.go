@@ -2,7 +2,7 @@ package main
 
 import "container/heap"
 
-// https://leetcode-cn.com/problems/maximum-number-of-eaten-apples
+// https://leetcode.cn/problems/maximum-number-of-eaten-apples
 
 // ❓ 吃苹果的最大数目
 

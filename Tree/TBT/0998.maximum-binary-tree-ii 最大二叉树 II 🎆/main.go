@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-binary-tree-ii
+// https://leetcode.cn/problems/maximum-binary-tree-ii
 
 type TreeNode struct {
 	Val   int

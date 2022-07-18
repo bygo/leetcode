@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/rank-scores
+# Link: https://leetcode.cn/problems/rank-scores
 
 SELECT `score`,
        @`rank` := @`rank` + (@`pre` != (@`pre` := `score`)) `rank`

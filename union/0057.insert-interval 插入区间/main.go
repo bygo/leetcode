@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/insert-interval
+// https://leetcode.cn/problems/insert-interval
 
 func insert(intervals [][]int, newInterval []int) [][]int {
 	n := len(intervals)

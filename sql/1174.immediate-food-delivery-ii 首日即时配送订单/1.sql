@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/immediate-food-delivery-ii
+# Link: https://leetcode.cn/problems/immediate-food-delivery-ii
 
 SELECT ROUND(
                    SUM(`order_date` = `customer_pref_delivery_date`) * 100 /

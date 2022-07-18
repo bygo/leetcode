@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sum-of-beauty-in-the-array
+// https://leetcode.cn/problems/sum-of-beauty-in-the-array
 
 //
 func sumOfBeauties(nums []int) int {

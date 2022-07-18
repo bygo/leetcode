@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/trapping-rain-water/
+// https://leetcode.cn/problems/trapping-rain-water/
 
 // L and R go to the highest point together
 

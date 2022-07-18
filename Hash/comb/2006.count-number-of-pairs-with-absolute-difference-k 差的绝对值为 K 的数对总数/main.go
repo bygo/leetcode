@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k
+// https://leetcode.cn/problems/count-number-of-pairs-with-absolute-difference-k
 
 // ❓ 差为K的数对总数
 

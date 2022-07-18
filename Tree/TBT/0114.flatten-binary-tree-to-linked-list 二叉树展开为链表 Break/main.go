@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+// https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/
 
 type TreeNode struct {
 	Val   int

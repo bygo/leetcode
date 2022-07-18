@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/shortest-word-distance-ii
+// https://leetcode.cn/problems/shortest-word-distance-ii
 
 // ❓ 两单词距离最小索引
 

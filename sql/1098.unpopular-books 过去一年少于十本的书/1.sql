@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/unpopular-books
+# Link: https://leetcode.cn/problems/unpopular-books
 
 
 SELECT `b`.`book_id`, `b`.`name`

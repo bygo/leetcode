@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/generate-parentheses/
+// https://leetcode.cn/problems/generate-parentheses/
 
 func generateParenthesis(n int) []string {
 	var dfs func(idx int) []string

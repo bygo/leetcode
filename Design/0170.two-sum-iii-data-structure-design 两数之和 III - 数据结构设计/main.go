@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-sum-iii-data-structure-design
+// https://leetcode.cn/problems/two-sum-iii-data-structure-design
 
 type TwoSum struct {
 	nums map[int]int

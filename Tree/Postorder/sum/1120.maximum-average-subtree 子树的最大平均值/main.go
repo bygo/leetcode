@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-average-subtree
+// https://leetcode.cn/problems/maximum-average-subtree
 
 type TreeNode struct {
 	Val   int

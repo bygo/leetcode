@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/students-report-by-geography
+# Link: https://leetcode.cn/problems/students-report-by-geography
 
 SELECT `america`, `asia`, `europe`
 FROM (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `america`

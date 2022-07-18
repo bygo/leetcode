@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-product-of-splitted-binary-tree
+// https://leetcode.cn/problems/maximum-product-of-splitted-binary-tree
 
 type TreeNode struct {
 	Val   int

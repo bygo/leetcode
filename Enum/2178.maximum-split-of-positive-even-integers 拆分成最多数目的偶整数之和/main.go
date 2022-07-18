@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-split-of-positive-even-integers
+// https://leetcode.cn/problems/maximum-split-of-positive-even-integers
 
 // ❓ 拆分成最多数目的偶整数之和
 

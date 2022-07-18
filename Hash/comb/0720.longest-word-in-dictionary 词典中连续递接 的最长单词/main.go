@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/longest-word-in-dictionary
+// https://leetcode.cn/problems/longest-word-in-dictionary
 
 // ❓ 词典中连续递接 的最长单词
 

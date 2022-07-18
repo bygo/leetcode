@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/132-pattern
+// https://leetcode.cn/problems/132-pattern
 
 // 3,1,4,2
 // i j k   i最大 k次大

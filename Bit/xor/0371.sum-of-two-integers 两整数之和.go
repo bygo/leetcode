@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sum-of-two-integers
+// https://leetcode.cn/problems/sum-of-two-integers
 
 // ❓ 两整数之和
 // ⚠️ 不使用+ - 符号

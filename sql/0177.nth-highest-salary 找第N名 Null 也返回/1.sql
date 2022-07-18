@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/nth-highest-salary
+# Link: https://leetcode.cn/problems/nth-highest-salary
 
 CREATE FUNCTION getNthHighestSalary(`n` INT) RETURNS INT
 BEGIN

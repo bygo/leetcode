@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-all-duplicates-in-an-array
+// https://leetcode.cn/problems/find-all-duplicates-in-an-array
 
 // ❓ 找出 1 <= nums[i] <= numsL 数组中出现2次的元素
 

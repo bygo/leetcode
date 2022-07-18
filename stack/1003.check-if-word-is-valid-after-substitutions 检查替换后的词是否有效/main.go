@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-if-word-is-valid-after-substitutions
+// https://leetcode.cn/problems/check-if-word-is-valid-after-substitutions
 
 func isValid(s string) bool {
 	var stack []byte

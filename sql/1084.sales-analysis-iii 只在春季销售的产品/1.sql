@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/sales-analysis-iii
+# Link: https://leetcode.cn/problems/sales-analysis-iii
 
 SELECT `p`.`product_id`, `p`.`product_name`
 FROM `product`        `p`

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/recover-binary-search-tree/
+// https://leetcode.cn/problems/recover-binary-search-tree/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/implement-trie-prefix-tree
+// https://leetcode.cn/problems/implement-trie-prefix-tree
 
 // ❓ 实现 Trie
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/palindrome-permutation
+// https://leetcode.cn/problems/palindrome-permutation
 
 // ❓ 有效回文
 

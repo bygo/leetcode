@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sum-of-unique-elements
+// https://leetcode.cn/problems/sum-of-unique-elements
 
 // ❓ 所有唯一元素的和
 

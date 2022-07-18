@@ -2,7 +2,7 @@ package main
 
 import "math/rand"
 
-// https://leetcode-cn.com/problems/implement-rand10-using-rand7
+// https://leetcode.cn/problems/implement-rand10-using-rand7
 
 func rand10() int {
 	var sum int

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/find-the-distance-value-between-two-arrays
+// https://leetcode.cn/problems/find-the-distance-value-between-two-arrays
 
 func findTheDistanceValue(arr1 []int, arr2 []int, d int) int {
 	sort.Ints(arr2)

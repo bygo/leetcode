@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/power-of-three
+// https://leetcode.cn/problems/power-of-three
 
 func isPowerOfThree(n int) bool {
 	for 1 < n && n%3 == 0 {

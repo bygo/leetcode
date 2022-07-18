@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/online-election
+// https://leetcode.cn/problems/online-election
 
 type TopVotedCandidate struct {
 	tops  []int

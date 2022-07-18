@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/even-odd-tree
+// https://leetcode.cn/problems/even-odd-tree
 
 type TreeNode struct {
 	Val   int

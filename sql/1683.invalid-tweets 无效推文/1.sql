@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/invalid-tweets
+# Link: https://leetcode.cn/problems/invalid-tweets
 
 SELECT `tweet_id`
 FROM `tweets`

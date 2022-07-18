@@ -1,6 +1,6 @@
 package bfs
 
-// https://leetcode-cn.com/problems/validate-binary-search-tree/
+// https://leetcode.cn/problems/validate-binary-search-tree/
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode

@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/valid-tic-tac-toe-state
+// https://leetcode.cn/problems/valid-tic-tac-toe-state
 
 func win(board []string, p byte) bool {
 	for i := 0; i < 3; i++ {

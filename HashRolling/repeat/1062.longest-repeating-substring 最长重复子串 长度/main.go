@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-repeating-substring
+// https://leetcode.cn/problems/longest-repeating-substring
 
 // ❓ 最长重复子串 的长度
 const base = 131

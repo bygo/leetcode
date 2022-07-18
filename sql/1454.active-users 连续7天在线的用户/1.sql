@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/active-users
+# Link: https://leetcode.cn/problems/active-users
 
 
 SELECT `t3`.`id`, `name`

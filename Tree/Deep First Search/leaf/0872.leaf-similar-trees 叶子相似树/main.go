@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/leaf-similar-trees/
+// https://leetcode.cn/problems/leaf-similar-trees/
 
 type TreeNode struct {
 	Val   int

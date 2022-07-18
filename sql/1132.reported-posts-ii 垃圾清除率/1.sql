@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/reported-posts-ii
+# Link: https://leetcode.cn/problems/reported-posts-ii
 
 SELECT ROUND(AVG(`proportion`) * 100, 2) `average_daily_percent`
 FROM (

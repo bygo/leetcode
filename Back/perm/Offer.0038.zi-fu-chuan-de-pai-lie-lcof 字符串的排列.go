@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/zi-fu-chuan-de-pai-lie-lcof/
+// https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/
 
 // 排列
 

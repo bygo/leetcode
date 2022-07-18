@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximize-sum-of-array-after-k-negations
+// https://leetcode.cn/problems/maximize-sum-of-array-after-k-negations
 
 func largestSumAfterKNegations(nums []int, k int) int {
 	var res int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number
+// https://leetcode.cn/problems/letter-combinations-of-a-phone-number
 
 func letterCombinations(digits string) []string {
 	numMpStr := map[byte]string{

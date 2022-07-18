@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/utf-8-validation
+// https://leetcode.cn/problems/utf-8-validation
 
 // ❓ UTF-8 编码验证
 

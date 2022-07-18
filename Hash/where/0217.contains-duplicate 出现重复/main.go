@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/contains-duplicate
+// https://leetcode.cn/problems/contains-duplicate
 
 // ❓ 出现重复
 

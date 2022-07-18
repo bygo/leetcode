@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-distance-in-a-binary-tree/
+// https://leetcode.cn/problems/find-distance-in-a-binary-tree/
 
 // ❓ 找到二叉树的距离
 // ⚠️ 距离 = 边的数量

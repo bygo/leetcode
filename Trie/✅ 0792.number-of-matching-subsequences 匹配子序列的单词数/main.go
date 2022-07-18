@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-matching-subsequences
+// https://leetcode.cn/problems/number-of-matching-subsequences
 
 func numMatchingSubseq(s string, words []string) int {
 	chMpNodes := [26][]*Node{}

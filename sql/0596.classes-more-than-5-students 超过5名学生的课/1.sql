@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/classes-more-than-5-students
+# Link: https://leetcode.cn/problems/classes-more-than-5-students
 
 SELECT `class`
 FROM `courses`

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-tilt/
+// https://leetcode.cn/problems/binary-tree-tilt/
 
 type TreeNode struct {
 	Val   int

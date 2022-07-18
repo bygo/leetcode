@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/permutations
+// https://leetcode.cn/problems/permutations
 
 // 插入排序
 

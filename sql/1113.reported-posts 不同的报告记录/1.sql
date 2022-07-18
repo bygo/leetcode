@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/reported-posts
+# Link: https://leetcode.cn/problems/reported-posts
 
 SELECT `extra` "report_reason", COUNT(DISTINCT `post_id`) "report_count"
 FROM `actions`

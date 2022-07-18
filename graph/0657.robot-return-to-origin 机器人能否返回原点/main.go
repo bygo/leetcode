@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/robot-return-to-origin
+// https://leetcode.cn/problems/robot-return-to-origin
 
 func judgeCircle(moves string) bool {
 	x, y := 0, 0

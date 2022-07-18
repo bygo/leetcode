@@ -2,7 +2,7 @@
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-palindromic-substring
+// https://leetcode.cn/problems/longest-palindromic-substring
 
 // f[l][r] = f[l+1][r-1]
 func longestPalindrome(s string) string {
@@ -53,7 +53,7 @@ package main
 
 // . any char
 // * pre(0~n) match
-// https://leetcode-cn.com/problems/regular-expression-matching
+// https://leetcode.cn/problems/regular-expression-matching
 
 // f[i][j] = f[i][j-2] || f[i-1][j-1]
 func isMatch(s string, p string) bool {
@@ -104,7 +104,7 @@ func dfs(s string, p string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-valid-parentheses
+// https://leetcode.cn/problems/longest-valid-parentheses
 
 // f(n) = f(n-2) + 2 || f(n-1) + 2 + f(n-f(n-1)-2)
 func longestValidParentheses(s string) int {
@@ -160,7 +160,7 @@ func longestValidParentheses(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/trapping-rain-water
+// https://leetcode.cn/problems/trapping-rain-water
 
 // pre
 // f(n) = min(leftMax,rightMax) - self
@@ -209,7 +209,7 @@ func max(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/wildcard-matching
+// https://leetcode.cn/problems/wildcard-matching
 
 // ? any one char
 // * any match
@@ -245,7 +245,7 @@ func isMatch(s string, p string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-subarray
+// https://leetcode.cn/problems/maximum-subarray
 
 // 前缀
 // f(n) = f(n) + f(n-1)
@@ -269,7 +269,7 @@ func maxSubArray(f []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/unique-paths
+// https://leetcode.cn/problems/unique-paths
 
 // 二维
 // f(i)(j) = f(i-1)(j) + f(i)(j-1)
@@ -308,7 +308,7 @@ func uniquePaths(l1, l2 int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/unique-paths-ii
+// https://leetcode.cn/problems/unique-paths-ii
 
 // 二维
 // f(i)(j) = f(i-1)(j) + f(i)(j-1)
@@ -375,7 +375,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/minimum-path-sum
+// https://leetcode.cn/problems/minimum-path-sum
 
 // 二维
 // f(i)(j) = f(i-1)(j) + f(i)(j-1)
@@ -434,7 +434,7 @@ func min(x, y int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/climbing-stairs
+// https://leetcode.cn/problems/climbing-stairs
 
 // 一维
 // f(n) = f(n-1) + f(n-2)
@@ -463,7 +463,7 @@ func climbStairs(n int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/edit-distance
+// https://leetcode.cn/problems/edit-distance
 
 // 二维
 // f(i)(j) = min( f(i-1)(j), f(i)(j-1), f(i-1)(j-1) )
@@ -544,7 +544,7 @@ func min(nums ...int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/scramble-string
+// https://leetcode.cn/problems/scramble-string
 
 // 记忆递归
 func isScramble(s1 string, s2 string) bool {
@@ -632,7 +632,7 @@ func isScramble(s1 string, s2 string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/decode-ways
+// https://leetcode.cn/problems/decode-ways
 
 // 一维
 // f(n) = f(n-1) + f(n-2)
@@ -688,7 +688,7 @@ func numDecodings(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/interleaving-string
+// https://leetcode.cn/problems/interleaving-string
 
 // 二维
 // f(i)(j) = f(i)(j-1) && s2[j-1] == p || f(i-1)(j) && s1[i-1] == p
@@ -763,7 +763,7 @@ func isInterleave(s1, s2, s3 string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/distinct-subsequences
+// https://leetcode.cn/problems/distinct-subsequences
 
 func numDistinct(s string, t string) int {
 	l1, l2 := len(s), len(t)
@@ -791,7 +791,7 @@ func numDistinct(s string, t string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/pascals-triangle
+// https://leetcode.cn/problems/pascals-triangle
 
 // 二维
 // f(i)(j) = f(i-1)(j-1) + f(i-1)(j)
@@ -815,7 +815,7 @@ func generate(numRows int) [][]int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/pascals-triangle-ii
+// https://leetcode.cn/problems/pascals-triangle-ii
 
 // 压缩
 // f(i)(j) = f(i-1)(j-1) + f(i-1)(j)
@@ -838,7 +838,7 @@ func getRow(rowIndex int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/triangle
+// https://leetcode.cn/problems/triangle
 
 // 压缩 从顶至底
 func minimumTotal(triangle [][]int) int {
@@ -891,7 +891,7 @@ func min(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock
 
 func maxProfit(prices []int) int {
 	var min, max = 1<<63 - 1, 0
@@ -912,7 +912,7 @@ func maxProfit(prices []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii
+// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii
 
 func maxProfit(prices []int) int {
 	a, b := -prices[0], 0
@@ -960,7 +960,7 @@ func max(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/word-break
+// https://leetcode.cn/problems/word-break
 
 func wordBreak(s string, wordDict []string) bool {
 	m := make(map[string]bool)
@@ -987,7 +987,7 @@ func wordBreak(s string, wordDict []string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/perfect-squares
+// https://leetcode.cn/problems/perfect-squares
 
 func numSquares(n int) int {
 	dp := make([]int, n+1)
@@ -1013,7 +1013,7 @@ func min(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/range-sum-query-immutable
+// https://leetcode.cn/problems/range-sum-query-immutable
 
 // 前缀
 type NumArray struct {
@@ -1043,7 +1043,7 @@ func (n *NumArray) SumRange(left int, right int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/coin-change
+// https://leetcode.cn/problems/coin-change
 
 func coinChange(coins []int, amount int) int {
 	dp := make([]int, amount+1)
@@ -1100,7 +1100,7 @@ func coinChange(coins []int, amount int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/ones-and-zeroes
+// https://leetcode.cn/problems/ones-and-zeroes
 
 func findMaxForm(strs []string, m, n int) int {
 	length := len(strs)
@@ -1170,7 +1170,7 @@ func max(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/fibonacci-number
+// https://leetcode.cn/problems/fibonacci-number
 
 // f(n) = f(n-1) + f(n-2)
 func climbStairs(n int) int {
@@ -1198,7 +1198,7 @@ func fib(n int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/coin-change-2
+// https://leetcode.cn/problems/coin-change-2
 
 func change(amount int, coins []int) int {
 	dp := make([]int, amount+1)
@@ -1236,7 +1236,7 @@ func wrong(amount int, coins []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/continuous-subarray-sum
+// https://leetcode.cn/problems/continuous-subarray-sum
 
 // 前缀余数
 func checkSubarraySum(nums []int, k int) bool {
@@ -1266,7 +1266,7 @@ func checkSubarraySum(nums []int, k int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/contiguous-array
+// https://leetcode.cn/problems/contiguous-array
 
 func findMaxLength(nums []int) int {
 	m := map[int]int{0: -1}
@@ -1295,7 +1295,7 @@ func findMaxLength(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/2-keys-keyboard
+// https://leetcode.cn/problems/2-keys-keyboard
 
 func minSteps(n int) int {
 	f := make([]int, n+1)
@@ -1324,7 +1324,7 @@ func min(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/stone-game
+// https://leetcode.cn/problems/stone-game
 
 func stoneGame(piles []int) bool {
 	n := len(piles)
@@ -1370,7 +1370,7 @@ func max(x, y int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/running-sum-of-1d-array
+// https://leetcode.cn/problems/running-sum-of-1d-array
 
 func runningSum(nums []int) []int {
 	for i := range nums[1:] {
@@ -1385,7 +1385,7 @@ func runningSum(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
+// https://leetcode.cn/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 
 // Pre
 func canEat(candiesCount []int, queries [][]int) []bool {
@@ -1420,7 +1420,7 @@ func canEat(candiesCount []int, queries [][]int) []bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
+// https://leetcode.cn/problems/minimum-number-of-operations-to-move-all-balls-to-each-box
 
 // Pre
 func minOperations(boxes string) []int {
@@ -1453,7 +1453,7 @@ func minOperations(boxes string) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/sum-of-beauty-in-the-array
+// https://leetcode.cn/problems/sum-of-beauty-in-the-array
 
 // Pre
 func sumOfBeauties(nums []int) int {
@@ -1495,7 +1495,7 @@ func sumOfBeauties(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-difference-between-increasing-elements
+// https://leetcode.cn/problems/maximum-difference-between-increasing-elements
 
 func maximumDifference(nums []int) int {
 	var min = 1<<63 - 1

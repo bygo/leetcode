@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/increasing-order-search-tree
+// https://leetcode.cn/problems/increasing-order-search-tree
 
 type TreeNode struct {
 	Val   int

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/median-employee-salary
+# Link: https://leetcode.cn/problems/median-employee-salary
 
 SELECT `id`, `company`, `salary`
 FROM (SELECT `id`,

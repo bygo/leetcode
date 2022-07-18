@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/recyclable-and-low-fat-products
+# Link: https://leetcode.cn/problems/recyclable-and-low-fat-products
 
 SELECT `product_id`
 FROM `products`

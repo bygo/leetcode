@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array
+// https://leetcode.cn/problems/maximum-xor-of-two-numbers-in-an-array
 
 // ❓ 数组中 两个数最大的异或值
 // O( 30*n )

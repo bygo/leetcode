@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-original-array-from-doubled-array
+// https://leetcode.cn/problems/find-original-array-from-doubled-array
 
 // ❓ 从 双倍数组（翻倍后加入原数组） 还原 原数组
 // ⚠️ 0 ~ 10^5

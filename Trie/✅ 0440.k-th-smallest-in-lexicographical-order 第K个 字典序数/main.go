@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/k-th-smallest-in-lexicographical-order
+// https://leetcode.cn/problems/k-th-smallest-in-lexicographical-order
 
 // ❓ 第K个 字典序数
 

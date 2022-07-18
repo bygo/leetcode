@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/escape-a-large-maze
+// https://leetcode.cn/problems/escape-a-large-maze
 
 var dirs = [][2]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
 

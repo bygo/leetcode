@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/intersection-of-two-arrays
+// https://leetcode.cn/problems/intersection-of-two-arrays
 
 // ❓ 相对交集 val 取唯一值
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-consecutive-sequence
+// https://leetcode.cn/problems/longest-consecutive-sequence
 
 // ❓ 最长递增序列
 

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/students-with-invalid-departments
+# Link: https://leetcode.cn/problems/students-with-invalid-departments
 
 SELECT `id`, `name`
 FROM `students`

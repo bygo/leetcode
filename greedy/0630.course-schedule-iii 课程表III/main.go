@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/course-schedule-iii
+// https://leetcode.cn/problems/course-schedule-iii
 
 func scheduleCourse(courses [][]int) int {
 	sort.Slice(courses, func(i, j int) bool {

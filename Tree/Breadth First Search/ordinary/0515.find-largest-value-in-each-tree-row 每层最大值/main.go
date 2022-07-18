@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/
+// https://leetcode.cn/problems/find-largest-value-in-each-tree-row/
 
 type TreeNode struct {
 	Val   int

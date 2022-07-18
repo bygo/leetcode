@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/concatenated-words
+// https://leetcode.cn/problems/concatenated-words
 
 // ❓ 连接词
 

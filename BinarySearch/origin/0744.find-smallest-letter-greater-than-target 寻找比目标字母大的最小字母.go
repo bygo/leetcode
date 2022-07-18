@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-smallest-letter-greater-than-target
+// https://leetcode.cn/problems/find-smallest-letter-greater-than-target
 
 func nextGreatestLetter(letters []byte, target byte) byte {
 	lo, hi := 0, len(letters)

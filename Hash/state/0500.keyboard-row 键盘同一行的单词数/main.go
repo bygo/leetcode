@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/keyboard-row
+// https://leetcode.cn/problems/keyboard-row
 
 // ❓ 在键盘同一行的单词数
 

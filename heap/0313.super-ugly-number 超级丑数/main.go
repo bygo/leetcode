@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/super-ugly-number
+// https://leetcode.cn/problems/super-ugly-number
 
 type h struct {
 	sort.IntSlice

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others
+// https://leetcode.cn/problems/largest-number-at-least-twice-of-others
 
 // ❓ 至少是其他数字两倍的最大数
 

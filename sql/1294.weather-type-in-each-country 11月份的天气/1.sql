@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/weather-type-in-each-country
+# Link: https://leetcode.cn/problems/weather-type-in-each-country
 
 SELECT `country_name`,
        IF(`weather_state_avg` <= 15, 'Cold',

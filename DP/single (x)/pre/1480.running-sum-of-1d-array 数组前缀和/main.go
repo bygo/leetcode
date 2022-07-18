@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/running-sum-of-1d-array
+// https://leetcode.cn/problems/running-sum-of-1d-array
 
 func runningSum(nums []int) []int {
 	for i := range nums[1:] {

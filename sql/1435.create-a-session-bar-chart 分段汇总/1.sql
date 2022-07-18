@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/create-a-session-bar-chart
+# Link: https://leetcode.cn/problems/create-a-session-bar-chart
 
 
 SELECT `a`.`bin`, COUNT(`b`.`bin`) `total`

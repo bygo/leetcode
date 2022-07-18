@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/contains-duplicate-ii
+// https://leetcode.cn/problems/contains-duplicate-ii
 
 // ❓ 是否存在两个重复元素距离小于等于K
 

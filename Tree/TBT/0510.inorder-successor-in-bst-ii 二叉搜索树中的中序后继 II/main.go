@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/inorder-successor-in-bst-ii/
+// https://leetcode.cn/problems/inorder-successor-in-bst-ii/
 
 type Node struct {
 	Val    int

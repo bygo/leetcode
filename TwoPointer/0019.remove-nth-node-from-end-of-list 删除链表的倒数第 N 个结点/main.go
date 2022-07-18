@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list
+// https://leetcode.cn/problems/remove-nth-node-from-end-of-list
 
 // zero->1->2->3->nil
 // 因 left 与 right 相距 n

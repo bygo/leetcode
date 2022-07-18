@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/clone-graph
+// https://leetcode.cn/problems/clone-graph
 
 type Node struct {
 	Val       int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-operations-to-obtain-zero
+// https://leetcode.cn/problems/count-operations-to-obtain-zero
 
 // ❓ 得到 0 的操作数
 

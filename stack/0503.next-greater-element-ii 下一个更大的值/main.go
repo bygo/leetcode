@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/next-greater-element-ii
+// https://leetcode.cn/problems/next-greater-element-ii
 
 func nextGreaterElements(nums []int) []int {
 	n := len(nums)

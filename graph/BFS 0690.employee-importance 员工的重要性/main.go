@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/employee-importance
+// https://leetcode.cn/problems/employee-importance
 
 type Employee struct {
 	Id           int

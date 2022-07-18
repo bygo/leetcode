@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/ads-performance
+# Link: https://leetcode.cn/problems/ads-performance
 
 SELECT `ad_id`,
        ROUND(IFNULL(SUM(`action` = 'Clicked') /

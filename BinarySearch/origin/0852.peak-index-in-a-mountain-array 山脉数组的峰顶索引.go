@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/peak-index-in-a-mountain-array
+// https://leetcode.cn/problems/peak-index-in-a-mountain-array
 
 func peakIndexInMountainArray(arr []int) int {
 	lo, hi := 0, len(arr)

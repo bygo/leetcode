@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/combine-two-tables
+# Link: https://leetcode.cn/problems/combine-two-tables
 
 SELECT `firstname`, `lastname`, `city`, `state`
 FROM `person`

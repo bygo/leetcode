@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/two-sum-less-than-k
+// https://leetcode.cn/problems/two-sum-less-than-k
 
 func twoSumLessThanK(nums []int, k int) int {
 	sort.Ints(nums)

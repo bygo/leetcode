@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/all-nodes-distance-k-in-binary-tree
+// https://leetcode.cn/problems/all-nodes-distance-k-in-binary-tree
 
 type TreeNode struct {
 	Val   int

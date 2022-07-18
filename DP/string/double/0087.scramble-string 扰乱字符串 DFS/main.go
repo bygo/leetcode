@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/scramble-string
+// https://leetcode.cn/problems/scramble-string
 
 // 记忆递归
 // 旋转后相等

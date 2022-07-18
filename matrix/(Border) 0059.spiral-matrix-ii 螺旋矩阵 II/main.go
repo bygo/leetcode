@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/spiral-matrix-ii
+// https://leetcode.cn/problems/spiral-matrix-ii
 
 func generateMatrix(n int) [][]int {
 	matrix := make([][]int, n)

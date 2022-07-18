@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/integer-replacement
+// https://leetcode.cn/problems/integer-replacement
 
 // ❓ n替换到1的次数
 // ⚠️ 1 <= n <= 1<<31 -1

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/sales-analysis-ii
+# Link: https://leetcode.cn/problems/sales-analysis-ii
 
 SELECT `buyer_id`
 FROM (SELECT `buyer_id`,

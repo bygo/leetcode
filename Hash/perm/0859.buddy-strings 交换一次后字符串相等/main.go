@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/buddy-strings
+// https://leetcode.cn/problems/buddy-strings
 
 // ❓ 交换一次后字符串相等
 

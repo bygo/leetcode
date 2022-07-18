@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/ugly-number-ii
+// https://leetcode.cn/problems/ugly-number-ii
 
 var factors = []int{2, 3, 5}
 

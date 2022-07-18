@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/reordered-power-of-2
+// https://leetcode.cn/problems/reordered-power-of-2
 
 // ❓ 重新排序得到 2 的幂
 

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/hand-of-straights
+// https://leetcode.cn/problems/hand-of-straights
 
 // ❓ 一手顺子
 

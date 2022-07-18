@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii
 
 func deleteDuplicates(head *ListNode) *ListNode {
 	zero := &ListNode{Next: head}

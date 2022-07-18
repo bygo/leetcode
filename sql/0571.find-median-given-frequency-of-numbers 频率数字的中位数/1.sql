@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-median-given-frequency-of-numbers
+# Link: https://leetcode.cn/problems/find-median-given-frequency-of-numbers
 
 
 SELECT AVG(`number`) `median`

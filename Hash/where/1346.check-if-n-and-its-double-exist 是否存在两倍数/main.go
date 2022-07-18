@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-if-n-and-its-double-exist
+// https://leetcode.cn/problems/check-if-n-and-its-double-exist
 
 // ❓ 是否存在两倍数
 

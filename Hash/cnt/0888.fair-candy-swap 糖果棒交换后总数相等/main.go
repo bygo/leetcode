@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/fair-candy-swap
+// https://leetcode.cn/problems/fair-candy-swap
 
 // ❓ 交换一个值后，总和相等
 

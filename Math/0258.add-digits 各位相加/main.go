@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/add-digits
+// https://leetcode.cn/problems/add-digits
 
 // ❓ 各位相加
 // ⚠️ 数根

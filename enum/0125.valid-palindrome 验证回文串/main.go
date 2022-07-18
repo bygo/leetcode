@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/valid-palindrome
+// https://leetcode.cn/problems/valid-palindrome
 
 func isPalindrome(s string) bool {
 	l1 := len(s)

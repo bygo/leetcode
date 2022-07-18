@@ -1,10 +1,9 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-nice-substring
+// https://leetcode.cn/problems/longest-nice-substring
 
 // ❓ 大小写成对出现的最长子串
 // ⚠️ Aa Bb... 成对
-
 
 func longestNiceSubstring(s string) string {
 	chMp := map[byte]struct{}{}

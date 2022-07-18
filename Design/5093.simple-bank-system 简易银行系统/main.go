@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/simple-bank-system
+// https://leetcode.cn/problems/simple-bank-system
 
 type Bank struct {
 	balance []int64

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/unique-binary-search-trees/
+// https://leetcode.cn/problems/unique-binary-search-trees/
 
 // ❓ 不同的二叉搜索树
 

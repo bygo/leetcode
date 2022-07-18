@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/map-sum-pairs
+// https://leetcode.cn/problems/map-sum-pairs
 
 // ❓ 前缀为 prefix 的 key 的 值的总和。
 

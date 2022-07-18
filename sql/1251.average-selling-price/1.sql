@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/average-selling-price
+# Link: https://leetcode.cn/problems/average-selling-price
 
 SELECT `product_id`,
        ROUND(SUM(`sales`) / SUM(`units`), 2) `average_price`

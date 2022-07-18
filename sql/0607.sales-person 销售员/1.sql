@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/sales-person
+# Link: https://leetcode.cn/problems/sales-person
 
 SELECT DISTINCT `name`
 FROM `salesperson`

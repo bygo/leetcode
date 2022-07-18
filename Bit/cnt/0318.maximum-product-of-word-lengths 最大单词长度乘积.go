@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-product-of-word-lengths
+// https://leetcode.cn/problems/maximum-product-of-word-lengths
 
 // ❓ 最大单词长度乘积
 // hash

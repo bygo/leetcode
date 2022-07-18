@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/top-travellers
+# Link: https://leetcode.cn/problems/top-travellers
 
 SELECT `name`, IFNULL(SUM(`distance`), 0) `travelled_distance`
 FROM `users`

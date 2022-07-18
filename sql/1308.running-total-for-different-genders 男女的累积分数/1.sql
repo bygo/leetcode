@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/running-total-for-different-genders
+# Link: https://leetcode.cn/problems/running-total-for-different-genders
 
 SELECT `gender`,
        `day`,

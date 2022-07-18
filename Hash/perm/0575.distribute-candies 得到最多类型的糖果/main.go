@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/distribute-candies
+// https://leetcode.cn/problems/distribute-candies
 
 // ❓ 得到最多类型的糖果
 

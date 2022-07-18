@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array
+// https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array
 
 // ❓ 等值数组中 消失的数
 

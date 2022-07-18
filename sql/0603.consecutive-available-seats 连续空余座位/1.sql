@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/consecutive-available-seats
+# Link: https://leetcode.cn/problems/consecutive-available-seats
 
 SELECT `seat_id`
 FROM (SELECT `seat_id`, COUNT(*) OVER (PARTITION BY `r`) `c`

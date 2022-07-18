@@ -1,6 +1,6 @@
 package bfs
 
-// https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
+// https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/
 
 type TreeNode struct {
 	Val   int
@@ -8,7 +8,7 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
-// ❓ 二叉树的锯齿形层序遍历 
+// ❓ 二叉树的锯齿形层序遍历
 // 📚 镜像遍历
 
 func zigzagLevelOrder(root *TreeNode) [][]int {

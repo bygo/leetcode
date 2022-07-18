@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/rising-temperature
+# Link: https://leetcode.cn/problems/rising-temperature
 
 SELECT `w2`.`id` `id`
 FROM `weather`          `w2`

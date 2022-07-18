@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/largest-unique-number
+// https://leetcode.cn/problems/largest-unique-number
 
 // ❓ 最大的唯一值
 

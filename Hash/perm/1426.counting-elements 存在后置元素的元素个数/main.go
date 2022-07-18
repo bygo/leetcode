@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/counting-elements
+// https://leetcode.cn/problems/counting-elements
 
 // ❓ 存在后置元素的元素个数
 

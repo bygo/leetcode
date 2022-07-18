@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-longest-consecutive-sequence/
+// https://leetcode.cn/problems/binary-tree-longest-consecutive-sequence/
 
 type TreeNode struct {
 	Val   int

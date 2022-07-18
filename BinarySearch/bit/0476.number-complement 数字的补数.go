@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-complement
+// https://leetcode.cn/problems/number-complement
 
 // ❓ 数字的补数
 // ⚠️ 补数 = 最大值 - num

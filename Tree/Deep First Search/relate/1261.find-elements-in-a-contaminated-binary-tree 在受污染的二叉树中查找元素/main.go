@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-elements-in-a-contaminated-binary-tree
+// https://leetcode.cn/problems/find-elements-in-a-contaminated-binary-tree
 
 type TreeNode struct {
 	Val   int

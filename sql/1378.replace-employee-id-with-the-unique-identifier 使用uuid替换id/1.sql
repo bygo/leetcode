@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/replace-employee-id-with-the-unique-identifier
+# Link: https://leetcode.cn/problems/replace-employee-id-with-the-unique-identifier
 
 SELECT `unique_id`, `name`
 FROM `employeeuni`

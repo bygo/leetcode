@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/new-users-daily-count
+# Link: https://leetcode.cn/problems/new-users-daily-count
 
 
 SELECT `activity_date` `login_date`, COUNT(*) `user_count`

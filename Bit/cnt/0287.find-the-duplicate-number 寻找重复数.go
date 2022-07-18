@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-the-duplicate-number
+// https://leetcode.cn/problems/find-the-duplicate-number
 
 // ❓ 寻找重复数
 // ⚠️ n = 1 ~ numsL-1

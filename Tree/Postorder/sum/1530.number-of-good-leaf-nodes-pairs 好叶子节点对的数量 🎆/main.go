@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-good-leaf-nodes-pairs
+// https://leetcode.cn/problems/number-of-good-leaf-nodes-pairs
 
 type TreeNode struct {
 	Val   int

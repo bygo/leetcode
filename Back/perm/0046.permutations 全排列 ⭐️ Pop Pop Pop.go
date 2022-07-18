@@ -4,7 +4,7 @@ import (
 	"strings"
 )
 
-// https://leetcode-cn.com/problem	s/permutations
+// https://leetcode.cn/problem	s/permutations
 
 func permute(nums []int) [][]int {
 	var que [][2]string

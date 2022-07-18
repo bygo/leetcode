@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/range-sum-of-bst
+// https://leetcode.cn/problems/range-sum-of-bst
 
 type TreeNode struct {
 	Val   int

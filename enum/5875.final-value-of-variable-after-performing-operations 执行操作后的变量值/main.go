@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/final-value-of-variable-after-performing-operations
+// https://leetcode.cn/problems/final-value-of-variable-after-performing-operations
 
 func finalValueAfterOperations(operations []string) int {
 	var res int

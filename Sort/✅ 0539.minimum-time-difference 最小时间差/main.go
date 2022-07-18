@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-time-difference
+// https://leetcode.cn/problems/minimum-time-difference
 
 func findMinDifference(timePoints []string) int {
 	if 1440 < len(timePoints) {

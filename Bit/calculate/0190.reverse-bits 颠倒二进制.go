@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/reverse-bits
+// https://leetcode.cn/problems/reverse-bits
 
 // ❓ 颠倒二进制
 

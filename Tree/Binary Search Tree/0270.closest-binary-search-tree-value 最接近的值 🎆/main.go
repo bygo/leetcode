@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/closest-binary-search-tree-value
+// https://leetcode.cn/problems/closest-binary-search-tree-value
 
 type TreeNode struct {
 	Val   int

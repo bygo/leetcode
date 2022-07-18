@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/n-queens
+// https://leetcode.cn/problems/n-queens
 
 func solveNQueens(n int) [][]string {
 	col, as1, as2 := make([]bool, n), map[int]bool{}, map[int]bool{}

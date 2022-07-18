@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/duplicate-emails
+# Link: https://leetcode.cn/problems/duplicate-emails
 
 SELECT `email`
 FROM `person`

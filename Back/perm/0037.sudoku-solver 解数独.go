@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sudoku-solver/
+// https://leetcode.cn/problems/sudoku-solver/
 
 func solveSudoku(board [][]byte) {
 	rows, cols, boxes := [9][9]bool{}, [9][9]bool{}, [9][9]bool{}

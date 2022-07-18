@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-permutation-lcci/
+// https://leetcode.cn/problems/check-permutation-lcci/
 
 func CheckPermutation(s1 string, s2 string) bool {
 	m := map[byte]int{}

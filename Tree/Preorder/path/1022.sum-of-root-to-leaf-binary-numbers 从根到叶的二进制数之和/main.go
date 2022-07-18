@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sum-of-root-to-leaf-binary-numbers/
+// https://leetcode.cn/problems/sum-of-root-to-leaf-binary-numbers/
 
 type TreeNode struct {
 	Val   int

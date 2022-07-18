@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/group-shifted-strings
+// https://leetcode.cn/problems/group-shifted-strings
 
 // ❓ 移位字符串分组
 

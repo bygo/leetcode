@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/remove-vowels-from-a-string
+// https://leetcode.cn/problems/remove-vowels-from-a-string
 
 // ❓ 移除元音字符
 

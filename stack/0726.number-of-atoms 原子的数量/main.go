@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/number-of-atoms
+// https://leetcode.cn/problems/number-of-atoms
 
 // "K4(ON(SO3)2)2"
 

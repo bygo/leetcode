@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-moves-to-equal-array-elements
+// https://leetcode.cn/problems/minimum-moves-to-equal-array-elements
 
 func minMoves(nums []int) int {
 	var min = nums[0]

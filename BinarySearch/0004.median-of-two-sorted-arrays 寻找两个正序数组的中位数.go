@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
+// https://leetcode.cn/problems/median-of-two-sorted-arrays/
 
 // 整体二分法
 

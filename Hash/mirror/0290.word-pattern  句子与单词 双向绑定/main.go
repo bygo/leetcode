@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/word-pattern
+// https://leetcode.cn/problems/word-pattern
 
 // ❓ 句子与单词 双向绑定
 

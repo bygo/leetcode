@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/split-a-string-in-balanced-strings
+// https://leetcode.cn/problems/split-a-string-in-balanced-strings
 
 func balancedStringSplit(s string) int {
 	var cnt int

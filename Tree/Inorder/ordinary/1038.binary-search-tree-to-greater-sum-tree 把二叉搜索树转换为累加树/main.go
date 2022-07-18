@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree
+// https://leetcode.cn/problems/binary-search-tree-to-greater-sum-tree
 
 type TreeNode struct {
 	Val   int
@@ -28,4 +28,4 @@ func bstToGst(root *TreeNode) *TreeNode {
 	return root
 }
 
-// 0538 https://leetcode-cn.com/problems/convert-bst-to-greater-tree/
+// 0538 https://leetcode.cn/problems/convert-bst-to-greater-tree/

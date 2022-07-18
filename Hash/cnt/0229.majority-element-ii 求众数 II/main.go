@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/majority-element-ii
+// https://leetcode.cn/problems/majority-element-ii
 
 // ❓ 超过1/n的数
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/line-reflection
+// https://leetcode.cn/problems/line-reflection
 
 // ❓ 直线镜像
 

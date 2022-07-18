@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/stream-of-characters
+// https://leetcode.cn/problems/stream-of-characters
 
 // ❓ 字符流
 

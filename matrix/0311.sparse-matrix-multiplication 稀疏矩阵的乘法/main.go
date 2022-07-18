@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sparse-matrix-multiplication
+// https://leetcode.cn/problems/sparse-matrix-multiplication
 
 func multiply(mat1 [][]int, mat2 [][]int) [][]int {
 	l1 := len(mat2)

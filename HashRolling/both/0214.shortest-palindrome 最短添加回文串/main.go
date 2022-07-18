@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/shortest-palindrome
+// https://leetcode.cn/problems/shortest-palindrome
 
 // ❓ 最短回文串
 

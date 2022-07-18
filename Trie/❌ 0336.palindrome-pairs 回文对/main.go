@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/palindrome-pairs
+// https://leetcode.cn/problems/palindrome-pairs
 
 func palindromePairs(words []string) [][]int {
 	prefix := Trie{}

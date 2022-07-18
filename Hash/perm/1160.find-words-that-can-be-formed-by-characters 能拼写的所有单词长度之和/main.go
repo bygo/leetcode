@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters
+// https://leetcode.cn/problems/find-words-that-can-be-formed-by-characters
 
 // ❓ 能拼写的所有单词长度之和
 

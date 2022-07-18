@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/shortest-completing-word
+// https://leetcode.cn/problems/shortest-completing-word
 
 // ❓ 最短补全词
 // ⚠️ step 能覆盖 s1T2p 所有字母 stp
@@ -11,9 +11,9 @@ func shortestCompletingWord(licensePlate string, words []string) string {
 	// 计算次数
 	for i := range licensePlate {
 		if 'A' <= licensePlate[i] && licensePlate[i] <= 'Z' {
-			chMpCnt[licensePlate[i]-'A'] ++
+			chMpCnt[licensePlate[i]-'A']++
 		} else if 'a' <= licensePlate[i] && licensePlate[i] <= 'z' {
-			chMpCnt[licensePlate[i]-'a'] ++
+			chMpCnt[licensePlate[i]-'a']++
 		}
 	}
 

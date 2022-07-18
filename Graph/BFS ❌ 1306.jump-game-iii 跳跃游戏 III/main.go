@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/jump-game-iii
+// https://leetcode.cn/problems/jump-game-iii
 
 // ❓ 跳跃游戏 III
 

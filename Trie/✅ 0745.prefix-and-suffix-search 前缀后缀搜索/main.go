@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/prefix-and-suffix-search
+// https://leetcode.cn/problems/prefix-and-suffix-search
 
 // ❓ 前缀后缀搜索
 

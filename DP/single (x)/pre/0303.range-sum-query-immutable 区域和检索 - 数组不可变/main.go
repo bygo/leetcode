@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/range-sum-query-immutable
+// https://leetcode.cn/problems/range-sum-query-immutable
 
 // 前缀
 

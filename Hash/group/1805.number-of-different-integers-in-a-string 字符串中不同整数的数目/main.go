@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-different-integers-in-a-string
+// https://leetcode.cn/problems/number-of-different-integers-in-a-string
 
 // ❓ 字符串中不同整数的数目
 // ⚠️ 0 01 001

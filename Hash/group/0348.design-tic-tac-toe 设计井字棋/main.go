@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-tic-tac-toe
+// https://leetcode.cn/problems/design-tic-tac-toe
 
 // ❓设计无限大井字棋 n不止3
 

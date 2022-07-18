@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/unique-email-addresses
+// https://leetcode.cn/problems/unique-email-addresses
 
 // ❓ 不同的邮件地址数
 // ⚠️ b.y+ig@gmail.com

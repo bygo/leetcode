@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/not-boring-movies
+# Link: https://leetcode.cn/problems/not-boring-movies
 
 SELECT `id`, `movie`, `description`, `rating`
 FROM `cinema`

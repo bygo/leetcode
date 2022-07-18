@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-all-anagrams-in-a-string
+// https://leetcode.cn/problems/find-all-anagrams-in-a-string
 
 // ❓ 找到字符串中所有字母异位词(重排后相等)
 

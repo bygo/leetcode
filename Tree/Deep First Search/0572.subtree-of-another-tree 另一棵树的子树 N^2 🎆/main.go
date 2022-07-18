@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/subtree-of-another-tree/
+// https://leetcode.cn/problems/subtree-of-another-tree/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-sum-iv-input-is-a-bst/
+// https://leetcode.cn/problems/two-sum-iv-input-is-a-bst/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/degree-of-an-array
+// https://leetcode.cn/problems/degree-of-an-array
 
 // ❓ 度相同的最短连续子数组
 // ⚠️ 度 指 数组 其中一元素频数的最大值。

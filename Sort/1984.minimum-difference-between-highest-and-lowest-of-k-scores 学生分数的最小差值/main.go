@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/minimum-difference-between-highest-and-lowest-of-k-scores
+// https://leetcode.cn/problems/minimum-difference-between-highest-and-lowest-of-k-scores
 
 // ❓ 学生分数的最小差值
 

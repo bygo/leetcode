@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-common-subpath
+// https://leetcode.cn/problems/longest-common-subpath
 
 // ❓ 最长公共子串
 

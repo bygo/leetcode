@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/sales-by-day-of-the-week
+# Link: https://leetcode.cn/problems/sales-by-day-of-the-week
 
 
 SELECT DISTINCT `i`.`item_category`                                         `category`,

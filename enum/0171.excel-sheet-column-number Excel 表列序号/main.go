@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/excel-sheet-column-number
+// https://leetcode.cn/problems/excel-sheet-column-number
 
 func titleToNumber(columnTitle string) int {
 	var res int

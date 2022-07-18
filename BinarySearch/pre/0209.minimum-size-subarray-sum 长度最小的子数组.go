@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/minimum-size-subarray-sum
+// https://leetcode.cn/problems/minimum-size-subarray-sum
 
 func minSubArrayLen(target int, nums []int) int {
 	numsL := len(nums)

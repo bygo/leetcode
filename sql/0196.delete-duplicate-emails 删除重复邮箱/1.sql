@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/delete-duplicate-emails
+# Link: https://leetcode.cn/problems/delete-duplicate-emails
 
 DELETE `p2`
 FROM `person`          `p1`

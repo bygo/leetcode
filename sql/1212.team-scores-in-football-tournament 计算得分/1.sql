@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/team-scores-in-football-tournament
+# Link: https://leetcode.cn/problems/team-scores-in-football-tournament
 
 
 SELECT `t`.`team_id`, `team_name`, IFNULL(SUM(`points`), 0) `num_points`

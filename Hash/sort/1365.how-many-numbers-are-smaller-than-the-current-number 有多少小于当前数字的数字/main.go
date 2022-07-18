@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+// https://leetcode.cn/problems/how-many-numbers-are-smaller-than-the-current-number/
 
 // ❓ 有多少小于当前数字的数字
 // ⚠️ 0 <= nums[i] <= 100

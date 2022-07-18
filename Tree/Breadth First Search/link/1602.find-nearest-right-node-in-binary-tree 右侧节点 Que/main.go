@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-nearest-right-node-in-binary-tree/
+// https://leetcode.cn/problems/find-nearest-right-node-in-binary-tree/
 
 type TreeNode struct {
 	Val   int

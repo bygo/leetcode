@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/monthly-transactions-i
+# Link: https://leetcode.cn/problems/monthly-transactions-i
 
 
 SELECT DATE_FORMAT(`trans_date`, '%Y-%m')         `month`,

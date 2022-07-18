@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/consecutive-numbers
+# Link: https://leetcode.cn/problems/consecutive-numbers
 
 SELECT DISTINCT `num` `consecutivenums`
 FROM (SELECT IF(@`pre` = `num`, @`count` := @`count` + 1, @`count` := 1) `counter`,

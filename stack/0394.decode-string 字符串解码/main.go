@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/decode-string
+// https://leetcode.cn/problems/decode-string
 
 func decodeString(s string) string {
 	var stack = make([][]byte, 0)

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/day-of-the-week
+// https://leetcode.cn/problems/day-of-the-week
 
 var week = []string{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}
 var monthDays = []int{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30}

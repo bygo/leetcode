@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/customers-who-bought-all-products
+# Link: https://leetcode.cn/problems/customers-who-bought-all-products
 
 SELECT `customer_id`
 FROM `customer`

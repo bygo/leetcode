@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/intersection-of-three-sorted-arrays
+// https://leetcode.cn/problems/intersection-of-three-sorted-arrays
 
 func arraysIntersection(arr1 []int, arr2 []int, arr3 []int) []int {
 	l1, l2, l3 := len(arr1), len(arr2), len(arr3)

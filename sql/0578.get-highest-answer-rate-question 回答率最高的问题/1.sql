@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/get-highest-answer-rate-question
+# Link: https://leetcode.cn/problems/get-highest-answer-rate-question
 
 SELECT `question_id` `survey_log`
 FROM `survey_log`

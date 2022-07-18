@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/set-matrix-zeroes
+// https://leetcode.cn/problems/set-matrix-zeroes
 
 func setZeroes(matrix [][]int) {
 	l1 := len(matrix)

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/
+// https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/
 
 type TreeNode struct {
 	Val   int

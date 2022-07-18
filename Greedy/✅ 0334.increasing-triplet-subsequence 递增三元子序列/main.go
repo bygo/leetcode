@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/increasing-triplet-subsequence
+// https://leetcode.cn/problems/increasing-triplet-subsequence
 
 // ❓ 递增三元子序列
 // ⚠️ 求 前置第一个最小值 与前置第二个最小值

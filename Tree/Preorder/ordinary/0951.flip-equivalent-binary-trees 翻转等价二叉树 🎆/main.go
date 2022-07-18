@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/flip-equivalent-binary-trees/
+// https://leetcode.cn/problems/flip-equivalent-binary-trees/
 
 type TreeNode struct {
 	Val   int

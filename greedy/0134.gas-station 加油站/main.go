@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/gas-station
+// https://leetcode.cn/problems/gas-station
 
 func canCompleteCircuit(gas []int, cost []int) int {
 	l := len(gas)

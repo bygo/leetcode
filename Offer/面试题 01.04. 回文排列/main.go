@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/palindrome-permutation-lcci/
+// https://leetcode.cn/problems/palindrome-permutation-lcci/
 
 func canPermutePalindrome(s string) bool {
 	m := map[byte]int{}

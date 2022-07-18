@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders
+# Link: https://leetcode.cn/problems/customer-placing-the-largest-number-of-orders
 
 SELECT `customer_number`
 FROM `orders`

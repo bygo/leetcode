@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/subsets
+// https://leetcode.cn/problems/subsets
 
 func subsets(nums []int) [][]int {
 	var subsetNums [][]int

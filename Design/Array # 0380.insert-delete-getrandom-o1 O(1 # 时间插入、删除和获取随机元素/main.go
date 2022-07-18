@@ -2,7 +2,7 @@ package main
 
 import "math/rand"
 
-// https://leetcode-cn.com/problems/insert-delete-getrandom-o1
+// https://leetcode.cn/problems/insert-delete-getrandom-o1
 
 type RandomizedSet struct {
 	m map[int]int

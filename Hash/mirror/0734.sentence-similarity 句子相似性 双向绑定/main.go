@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sentence-similarity
+// https://leetcode.cn/problems/sentence-similarity
 
 // ❓ 句子相似性 相似绑定
 // ⚠️ great 和 fine 相似 = fine 和 great 相似

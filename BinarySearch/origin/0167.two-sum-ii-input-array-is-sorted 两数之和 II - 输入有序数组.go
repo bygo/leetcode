@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted
+// https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted
 
 func twoSum(nums []int, target int) []int {
 	lo, hi := 0, len(nums)-1

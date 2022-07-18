@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-peak-element
+// https://leetcode.cn/problems/find-peak-element
 
 func findPeakElement(nums []int) int {
 	numsL := len(nums)

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/remove-sub-folders-from-the-filesystem
+// https://leetcode.cn/problems/remove-sub-folders-from-the-filesystem
 
 type trie struct {
 	pathMp map[string]*trie

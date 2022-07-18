@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-vowel-substrings-of-a-string
+// https://leetcode.cn/problems/count-vowel-substrings-of-a-string
 
 // ❓ 连续元音子串数
 

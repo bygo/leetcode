@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// https://leetcode-cn.com/problems/binary-watch
+// https://leetcode.cn/problems/binary-watch
 
 // ❓ 二进制手表
 

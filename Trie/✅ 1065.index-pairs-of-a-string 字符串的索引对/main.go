@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/index-pairs-of-a-string
+// https://leetcode.cn/problems/index-pairs-of-a-string
 // ❓ 字符串的索引对
 
 func indexPairs(text string, words []string) [][]int {

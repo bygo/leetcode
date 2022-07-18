@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/add-strings/
+// https://leetcode.cn/problems/add-strings/
 
 // 1:44
 func addStrings(num1 string, num2 string) string {

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/warehouse-manager
+# Link: https://leetcode.cn/problems/warehouse-manager
 
 
 SELECT `w`.`name`                                                   `warehouse_name`,

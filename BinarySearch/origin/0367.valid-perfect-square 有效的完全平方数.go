@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/valid-perfect-square
+// https://leetcode.cn/problems/valid-perfect-square
 
 func isPerfectSquare(num int) bool {
 	lo, hi := 0, num+1

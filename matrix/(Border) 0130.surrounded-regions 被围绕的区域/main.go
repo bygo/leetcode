@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/surrounded-regions
+// https://leetcode.cn/problems/surrounded-regions
 
 func solveDFS(board [][]byte) {
 	l1 := len(board)

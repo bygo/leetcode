@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/shortest-distance-in-a-plane
+# Link: https://leetcode.cn/problems/shortest-distance-in-a-plane
 
 SELECT ROUND(SQRT(MIN((POW(`p1`.`x` - `p2`.`x`, 2) + POW(`p1`.`y` - `p2`.`y`, 2)))), 2) `shortest`
 FROM `point_2d` `p1`

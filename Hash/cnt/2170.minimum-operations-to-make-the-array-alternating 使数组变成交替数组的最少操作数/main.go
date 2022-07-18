@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/minimum-operations-to-make-the-array-alternating
+// https://leetcode.cn/problems/minimum-operations-to-make-the-array-alternating
 
 // ❓ 使数组变成交替数组的最少操作数
 

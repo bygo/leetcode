@@ -1,7 +1,7 @@
 package main
 
 // can i jump to last point ？
-// https://leetcode-cn.com/problems/jump-game
+// https://leetcode.cn/problems/jump-game
 
 // find farthest point
 func canJump(nums []int) bool {

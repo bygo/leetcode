@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/powx-n
+// https://leetcode.cn/problems/powx-n
 
 // ❓ 实现 Pow(x, n)
 

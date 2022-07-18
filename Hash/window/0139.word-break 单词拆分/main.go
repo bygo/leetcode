@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/word-break
+// https://leetcode.cn/problems/word-break
 
 // ❓ 单词拆分
 

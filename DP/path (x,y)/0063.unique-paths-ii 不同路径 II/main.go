@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/unique-paths-ii
+// https://leetcode.cn/problems/unique-paths-ii
 
 // f(i)(j) = f(i-1)(j) + f(i)(j-1)
 

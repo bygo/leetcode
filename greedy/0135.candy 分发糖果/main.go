@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/candy
+// https://leetcode.cn/problems/candy
 
 func max(a, b int) int {
 	if a < b {

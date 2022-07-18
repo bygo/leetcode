@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/insufficient-nodes-in-root-to-leaf-paths
+// https://leetcode.cn/problems/insufficient-nodes-in-root-to-leaf-paths
 
 type TreeNode struct {
 	Val   int

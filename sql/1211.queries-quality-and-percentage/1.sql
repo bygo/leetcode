@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/queries-quality-and-percentage
+# Link: https://leetcode.cn/problems/queries-quality-and-percentage
 
 SELECT `query_name`,
        ROUND(AVG(`rating` / `position`), 2)                   `quality`,

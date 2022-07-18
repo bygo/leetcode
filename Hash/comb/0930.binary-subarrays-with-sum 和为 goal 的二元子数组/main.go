@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-subarrays-with-sum
+// https://leetcode.cn/problems/binary-subarrays-with-sum
 
 // ❓ 和为 goal 的二元子数组
 // ⚠️ 1 0 0 1 0 0 0 0 1 0 0 0 1

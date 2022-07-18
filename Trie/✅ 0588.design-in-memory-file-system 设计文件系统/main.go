@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/design-in-memory-file-system
+// https://leetcode.cn/problems/design-in-memory-file-system
 
 func main() {
 	fs := FileSystem{root: &file{files: map[string]*file{}}}

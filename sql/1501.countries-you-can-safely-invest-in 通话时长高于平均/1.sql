@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/countries-you-can-safely-invest-in
+# Link: https://leetcode.cn/problems/countries-you-can-safely-invest-in
 
 
 SELECT `country`.`name` `country`

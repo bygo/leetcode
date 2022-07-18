@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/
+// https://leetcode.cn/problems/n-ary-tree-level-order-traversal/
 
 type Node struct {
 	Val      int

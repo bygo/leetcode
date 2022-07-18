@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
+// https://leetcode.cn/problems/maximum-depth-of-binary-tree/
 
 type TreeNode struct {
 	Val   int

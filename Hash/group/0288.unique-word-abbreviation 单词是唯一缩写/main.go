@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/unique-word-abbreviation
+// https://leetcode.cn/problems/unique-word-abbreviation
 
 // ❓ 单词是唯一的缩写
 
@@ -19,7 +19,7 @@ func Constructor(dictionary []string) ValidWordAbbr {
 		if comMpStrMpCnt[com] == nil {
 			comMpStrMpCnt[com] = map[string]int{}
 		}
-		comMpStrMpCnt[com][str] ++
+		comMpStrMpCnt[com][str]++
 	}
 	return ValidWordAbbr{
 		comMpStrMpCnt: comMpStrMpCnt,

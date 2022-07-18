@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-the-missing-ids
+# Link: https://leetcode.cn/problems/find-the-missing-ids
 
 WITH RECURSIVE `num`(`n`) AS (
     SELECT 1 `a`

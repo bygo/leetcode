@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-good-nodes-in-binary-tree/
+// https://leetcode.cn/problems/count-good-nodes-in-binary-tree/
 
 type TreeNode struct {
 	Val   int

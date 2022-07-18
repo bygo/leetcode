@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/total-sales-amount-by-year
+# Link: https://leetcode.cn/problems/total-sales-amount-by-year
 
 
 SELECT `sales`.`product_id`,

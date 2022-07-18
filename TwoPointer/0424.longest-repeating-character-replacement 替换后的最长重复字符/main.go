@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-repeating-character-replacement
+// https://leetcode.cn/problems/longest-repeating-character-replacement
 
 func characterReplacement(s string, k int) int {
 	n := len(s)

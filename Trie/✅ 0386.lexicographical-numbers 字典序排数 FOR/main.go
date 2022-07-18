@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/lexicographical-numbers
+// https://leetcode.cn/problems/lexicographical-numbers
 
 //    1			 2
 //  10  11..  20

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/h-index
+// https://leetcode.cn/problems/h-index
 
 // ❓ h指数 为 篇数cnt 等于 至少引用次数quote
 
@@ -10,7 +10,7 @@ func hIndex(citations []int) (h int) {
 	quoteMpCnt := make([]int, quoteMax+1)
 	for _, quote := range citations {
 		if quoteMax <= quote {
-			quoteMpCnt[quoteMax] ++
+			quoteMpCnt[quoteMax]++
 		} else {
 			quoteMpCnt[quote]++
 		}

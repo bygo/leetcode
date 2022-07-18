@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/valid-parenthesis-string
+// https://leetcode.cn/problems/valid-parenthesis-string
 
 func checkValidString(s string) bool {
 	var left, universal []int

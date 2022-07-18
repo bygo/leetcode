@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/pancake-sorting
+// https://leetcode.cn/problems/pancake-sorting
 
 // ❓ 煎饼排序
 

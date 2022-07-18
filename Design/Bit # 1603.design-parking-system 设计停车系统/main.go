@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-parking-system
+// https://leetcode.cn/problems/design-parking-system
 
 type ParkingSystem struct {
 	Packing int

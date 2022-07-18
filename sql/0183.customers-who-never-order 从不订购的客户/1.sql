@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/customers-who-never-order
+# Link: https://leetcode.cn/problems/customers-who-never-order
 
 SELECT `customers`.`name` `customers`
 FROM `customers`

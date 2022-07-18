@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs
+// https://leetcode.cn/problems/number-of-equivalent-domino-pairs
 
 // ❓ 组合相同的数量
 // ⚠️ 一个组只有2个数字

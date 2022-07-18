@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-interview-candidates
+# Link: https://leetcode.cn/problems/find-interview-candidates
 
 WITH `a` AS
          (SELECT DISTINCT `temp1`.`name`, `mail`

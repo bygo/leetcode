@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant
+// https://leetcode.cn/problems/display-table-of-food-orders-in-a-restaurant
 
 func displayTable(orders [][]string) [][]string {
 	nameSet := map[string]struct{}{}

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/split-bst
+// https://leetcode.cn/problems/split-bst
 
 type TreeNode struct {
 	Val   int

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/game-play-analysis-v
+# Link: https://leetcode.cn/problems/game-play-analysis-v
 
 SELECT `first_day`                 `install_dt`,
        COUNT(DISTINCT `player_id`) `installs`,

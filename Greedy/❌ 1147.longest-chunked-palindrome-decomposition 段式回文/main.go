@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-chunked-palindrome-decomposition
+// https://leetcode.cn/problems/longest-chunked-palindrome-decomposition
 
 // ❓ 段式回文 段数
 

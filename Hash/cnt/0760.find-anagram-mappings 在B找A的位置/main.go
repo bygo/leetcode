@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-anagram-mappings
+// https://leetcode.cn/problems/find-anagram-mappings
 
 // ❓ 找出 A里面元素，在B里的索引值
 

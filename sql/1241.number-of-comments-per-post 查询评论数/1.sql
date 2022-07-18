@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/number-of-comments-per-post
+# Link: https://leetcode.cn/problems/number-of-comments-per-post
 
 SELECT `post_id`, COUNT(`sub_id`) `number_of_comments`
 FROM (

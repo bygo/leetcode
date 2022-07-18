@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/leetflex-banned-accounts
+# Link: https://leetcode.cn/problems/leetflex-banned-accounts
 
 SELECT DISTINCT `l1`.`account_id`
 FROM `loginfo`          `l1`

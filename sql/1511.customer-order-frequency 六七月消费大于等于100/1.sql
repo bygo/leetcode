@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/customer-order-frequency
+# Link: https://leetcode.cn/problems/customer-order-frequency
 
 SELECT `c`.`customer_id`, `c`.`name`
 FROM `customers`        `c`

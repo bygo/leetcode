@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-an-ordered-stream
+// https://leetcode.cn/problems/design-an-ordered-stream
 
 type OrderedStream struct {
 	m   []string

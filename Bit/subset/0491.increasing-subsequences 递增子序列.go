@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/increasing-subsequences
+// https://leetcode.cn/problems/increasing-subsequences
 
 // ❓ 递增子序列
 

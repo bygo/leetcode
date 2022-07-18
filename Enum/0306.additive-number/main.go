@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/additive-number
+// https://leetcode.cn/problems/additive-number
 
 func stringAdd(x, y string) string {
 	var numStr = []byte{}

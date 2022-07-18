@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-good-pairs
+// https://leetcode.cn/problems/number-of-good-pairs
 
 // ❓ 好数对的数目
 // ⚠️ i < j && nums[i] == nums[j]

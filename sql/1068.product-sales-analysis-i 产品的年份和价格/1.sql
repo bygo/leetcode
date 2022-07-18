@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/product-sales-analysis-i
+# Link: https://leetcode.cn/problems/product-sales-analysis-i
 
 SELECT `product_name`, `year`, `price`
 FROM `sales`

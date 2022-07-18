@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array
+// https://leetcode.cn/problems/check-if-a-number-is-majority-element-in-a-sorted-array
 
 func isMajorityElement(nums []int, target int) bool {
 	lo, hi := 0, len(nums)-1

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/products-price-for-each-store
+# Link: https://leetcode.cn/problems/products-price-for-each-store
 
 SELECT `product_id`,
        SUM(IF(`store` = 'store1', `price`, NULL)) `store1`,

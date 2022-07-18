@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/spiral-matrix
+// https://leetcode.cn/problems/spiral-matrix
 
 func spiralOrder(matrix [][]int) []int {
 	var (

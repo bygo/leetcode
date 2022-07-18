@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/0H97ZC/
+// https://leetcode.cn/problems/0H97ZC/
 
 func relativeSortArray(arr1 []int, arr2 []int) []int {
 	m := [1001]int{}

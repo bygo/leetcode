@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/most-frequent-subtree-sum/
+// https://leetcode.cn/problems/most-frequent-subtree-sum/
 
 type TreeNode struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-depth-of-n-ary-tree/
+// https://leetcode.cn/problems/maximum-depth-of-n-ary-tree/
 
 type Node struct {
 	Val      int

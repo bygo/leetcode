@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/missing-number
+// https://leetcode.cn/problems/missing-number
 
 // ❓ 丢失的数字
 // ⚠️ 0 ~ numsL 丢失了一个数字

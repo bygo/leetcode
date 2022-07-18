@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/repeated-dna-sequences
+// https://leetcode.cn/problems/repeated-dna-sequences
 
 // ❓ 统计重复的DNA 序
 

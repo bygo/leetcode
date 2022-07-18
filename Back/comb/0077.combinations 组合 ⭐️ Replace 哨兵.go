@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/combinations
+// https://leetcode.cn/problems/combinations
 
 // 逆向
 func combine(n int, k int) [][]int {

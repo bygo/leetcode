@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/monthly-transactions-ii
+# Link: https://leetcode.cn/problems/monthly-transactions-ii
 
 SELECT LEFT(`trans_date`, 7)                        `month`,
        `country`,

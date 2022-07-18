@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/second-largest-digit-in-a-string
+// https://leetcode.cn/problems/second-largest-digit-in-a-string
 
 func secondHighest(s string) int {
 	var first, second = -1, -1

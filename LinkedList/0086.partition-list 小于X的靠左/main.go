@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/partition-list
+// https://leetcode.cn/problems/partition-list
 
 func partition(head *ListNode, x int) *ListNode {
 	l, r := &ListNode{}, &ListNode{}

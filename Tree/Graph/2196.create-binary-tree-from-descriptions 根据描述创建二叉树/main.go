@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/create-binary-tree-from-descriptions
+// https://leetcode.cn/problems/create-binary-tree-from-descriptions
 
 type TreeNode struct {
 	Val   int

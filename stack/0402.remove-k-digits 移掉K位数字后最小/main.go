@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/remove-k-digits
+// https://leetcode.cn/problems/remove-k-digits
 
 func removeKdigits(num string, k int) string {
 	stack := []rune{}
