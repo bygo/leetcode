@@ -6,7 +6,8 @@ package main
 // ⚠️ 自身 xor 自身>>1
 func grayCode(n int) []int {
 	var nums []int
-	for num := 0; num < 1<<n; num++ {
+	numMax := 1 << n
+	for num := 0; num < numMax; num++ {
 		nums = append(nums, num^(num>>1))
 	}
 	return nums

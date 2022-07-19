@@ -8,7 +8,7 @@ import "strconv"
 
 func minAbbreviation(target string, dictionary []string) string {
 	targetL := len(target)
-	subsetBanMp := map[int]struct{}{}
+	banMp := map[int]struct{}{}
 	for _, word := range dictionary {
 		wordL := len(word)
 		// 不相等 永不相同
@@ -18,14 +18,14 @@ func minAbbreviation(target string, dictionary []string) string {
 
 		var subset int
 		for idx := 0; idx < wordL; idx++ {
-			if target[idx] == word[idx] { // 相同
+			if target[idx] == word[idx] { // 相同的位 必须加入 禁止子集
 				subset += 1 << idx
 			}
 		}
 		sub := subset
 		for {
 			// 所有禁止的子集
-			subsetBanMp[sub] = struct{}{}
+			banMp[sub] = struct{}{}
 			if sub == 0 {
 				break
 			}
@@ -36,13 +36,14 @@ func minAbbreviation(target string, dictionary []string) string {
 		}
 	}
 
-	if len(subsetBanMp) == 0 {
+	if len(banMp) == 0 {
 		return strconv.Itoa(targetL)
 	}
+
 	var strRes = target
-	subsetMax := 1<<targetL - 1 // 本身已计算
-	for subset := 0; subset < subsetMax; subset++ {
-		_, ok := subsetBanMp[subset]
+	subsetMax := 1<<targetL - 1                     // =subsetMax 为本身 已计算
+	for subset := 1; subset < subsetMax; subset++ { // =0 为全缩略，肯定不是答案，
+		_, ok := banMp[subset]
 		if ok {
 			continue
 		}
@@ -78,24 +79,24 @@ func minAbbreviation(target string, dictionary []string) string {
 
 func minAbbreviation(target string, dictionary []string) string {
 	subsetBanMp := map[string]struct{}{}
-	var targetL = len(target)
+	targetL := len(target)
 
-	for _, dict := range dictionary {
-		var dictL = len(dict)
-		if targetL != dictL {
+	for _, word := range dictionary {
+		var wordL = len(word)
+		if targetL != wordL {
 			continue
 		}
-		var numMax = 1 << dictL
-		for subset := 0; subset < numMax; subset++ {
+		var subsetMax = 1<<wordL - 1
+		for subset := 1; subset < subsetMax; subset++ {
 			var cnt int
 			var buf []byte
-			for idx := 0; idx < dictL; idx++ {
+			for idx := 0; idx < wordL; idx++ {
 				if subset>>idx&1 == 1 {
 					if 0 < cnt {
 						buf = append(buf, strconv.Itoa(cnt)...)
 						cnt = 0
 					}
-					buf = append(buf, dict[idx])
+					buf = append(buf, word[idx])
 				} else {
 					cnt++
 				}
@@ -110,17 +111,17 @@ func minAbbreviation(target string, dictionary []string) string {
 		return strconv.Itoa(targetL)
 	}
 	var strRes = target
-	var numMax = 1<<targetL - 1
-	for subset := 0; subset < numMax; subset++ {
+	var subsetMax = 1<<targetL - 1
+	for subset := 0; subset < subsetMax; subset++ {
 		var cnt int
 		var buf []byte
-		for pos := 0; pos < targetL; pos++ {
-			if subset>>pos&1 == 1 {
+		for idx := 0; idx < targetL; idx++ {
+			if subset>>idx&1 == 1 {
 				if 0 < cnt {
 					buf = append(buf, strconv.Itoa(cnt)...)
 					cnt = 0
 				}
-				buf = append(buf, target[pos])
+				buf = append(buf, target[idx])
 			} else {
 				cnt++
 			}

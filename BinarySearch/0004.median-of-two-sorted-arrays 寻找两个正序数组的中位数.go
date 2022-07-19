@@ -47,25 +47,6 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	return 0
 }
 
-func findMedianSortedArray(nums1 []int, nums2 []int) float64 {
-	l1, l2 := len(nums1), len(nums2)
-	if l2 < l1 {
-		nums1, nums2, l1, l2 = nums2, nums1, l2, l1
-	}
-	half := (l1 + l2) >> 1
-	lo, hi := 0, l1
-	for lo < hi {
-		m1 := int(uint(lo+hi) >> 1)
-		m2 := half - m1
-		if nums1[m1] < nums2[m2] {
-			lo = m1 + 1
-		} else if nums2[m2] < nums1[m1] {
-			hi = m1
-		} else {
-		}
-	}
-}
-
 func max(a, b int) int {
 	if a < b {
 		return b
@@ -92,27 +73,27 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 }
 
 func getKthElement(nums1, nums2 []int, k int) int {
-	var idxCur1, idxCur2 int
+	var idx1, idx2 int
 	l1, l2 := len(nums1), len(nums2)
 	for {
-		if idxCur1 == l1 {
-			return nums2[idxCur2-1+k]
+		if idx1 == l1 {
+			return nums2[idx2-1+k]
 		}
-		if idxCur2 == l2 {
-			return nums1[idxCur1-1+k]
+		if idx2 == l2 {
+			return nums1[idx1-1+k]
 		}
 		if k == 1 {
-			return min(nums1[idxCur1], nums2[idxCur2])
+			return min(nums1[idx1], nums2[idx2])
 		}
 		half := k / 2
-		idxJump1 := min(idxCur1+half, l1) - 1
-		idxJump2 := min(idxCur2+half, l2) - 1
+		idxJump1 := min(idx1+half, l1) - 1
+		idxJump2 := min(idx2+half, l2) - 1
 		if nums1[idxJump1] < nums2[idxJump2] {
-			k -= idxJump1 - idxCur1 + 1 // 包括当前p1 总共 pn1-p1 个
-			idxCur1 = idxJump1 + 1
+			k -= idxJump1 - idx1 + 1 // 包括当前p1 总共 pn1-p1 个
+			idx1 = idxJump1 + 1
 		} else {
-			k -= idxJump2 - idxCur2 + 1 // 包括当前p1 总共 pn1-p1 个
-			idxCur2 = idxJump2 + 1
+			k -= idxJump2 - idx2 + 1 // 包括当前p1 总共 pn1-p1 个
+			idx2 = idxJump2 + 1
 		}
 	}
 }

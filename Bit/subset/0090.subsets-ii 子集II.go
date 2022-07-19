@@ -20,7 +20,7 @@ func subsetsWithDup(nums []int) [][]int {
 				continue
 			}
 			// 是否选择
-			if 0 < idx && subset>>(idx-1)&1 == 0 && nums[idx] == nums[idx-1] {
+			if 0 < idx && subset<<(idx-1)&1 == 0 && nums[idx] == nums[idx-1] {
 				// 上一个相同的数没有选择，本次也不选择
 				break
 			}
