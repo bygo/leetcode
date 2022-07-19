@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/the-most-recent-three-orders
+# Link: https://leetcode.cn/problems/the-most-recent-three-orders
 
 
 SELECT `name` `customer_name`,

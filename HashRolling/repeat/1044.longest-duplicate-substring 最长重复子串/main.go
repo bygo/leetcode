@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-duplicate-substring
+// https://leetcode.cn/problems/longest-duplicate-substring
 
 // ❓ 最长重复子串
 

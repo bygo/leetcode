@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/split-linked-list-in-parts
+// https://leetcode.cn/problems/split-linked-list-in-parts
 
 func splitListToParts(head *ListNode, k int) []*ListNode {
 	cur := head

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/the-most-frequently-ordered-products-for-each-customer
+# Link: https://leetcode.cn/problems/the-most-frequently-ordered-products-for-each-customer
 
 SELECT `o`.`customer_id`, `o`.`product_id`, `p`.`product_name`
 FROM (

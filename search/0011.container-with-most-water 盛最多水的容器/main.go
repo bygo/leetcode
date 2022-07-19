@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/container-with-most-water/
+// https://leetcode.cn/problems/container-with-most-water/
 
 func maxArea(height []int) int {
 	var cur, max, l int

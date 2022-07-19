@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-hit-counter
+// https://leetcode.cn/problems/design-hit-counter
 
 // ❓ 敲击计数器
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/single-row-keyboard
+// https://leetcode.cn/problems/single-row-keyboard
 
 // ❓ 输入一个单词的移动长度总和
 // ⚠️ 移动长度 = abs(i - j)

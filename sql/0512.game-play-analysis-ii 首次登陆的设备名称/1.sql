@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/game-play-analysis-ii
+# Link: https://leetcode.cn/problems/game-play-analysis-ii
 
 SELECT `player_id`, `device_id`
 FROM `activity`

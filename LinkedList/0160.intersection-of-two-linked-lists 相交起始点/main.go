@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/intersection-of-two-linked-lists
+// https://leetcode.cn/problems/intersection-of-two-linked-lists
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	a, b := headA, headB

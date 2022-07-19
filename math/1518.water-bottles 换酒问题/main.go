@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/water-bottles
+// https://leetcode.cn/problems/water-bottles
 
 func numWaterBottles(numBottles int, numExchange int) int {
 	var numNew int

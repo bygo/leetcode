@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists
+// https://leetcode.cn/problems/minimum-index-sum-of-two-lists
 
 // ❓ 两数组相同值的最小索引和 集合
 // ⚠️ 没有重复

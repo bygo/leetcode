@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/employees-earning-more-than-their-managers
+# Link: https://leetcode.cn/problems/employees-earning-more-than-their-managers
 
 SELECT `e1`.`name` `employee`
 FROM `employee`               AS `e1`

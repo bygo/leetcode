@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/active-businesses
+# Link: https://leetcode.cn/problems/active-businesses
 
 SELECT `business_id`
 FROM (SELECT *,

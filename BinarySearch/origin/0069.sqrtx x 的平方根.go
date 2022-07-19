@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sqrtx
+// https://leetcode.cn/problems/sqrtx
 
 func mySqrt(x int) int {
 	//if x == 0 || x == 1 {

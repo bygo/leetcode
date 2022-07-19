@@ -2,7 +2,7 @@ package main
 
 import "container/heap"
 
-// https://leetcode-cn.com/problems/the-k-weakest-rows-in-a-matrix
+// https://leetcode.cn/problems/the-k-weakest-rows-in-a-matrix
 
 type pair struct {
 	pow int

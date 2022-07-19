@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/activity-participants
+# Link: https://leetcode.cn/problems/activity-participants
 
 
 SELECT `activity`

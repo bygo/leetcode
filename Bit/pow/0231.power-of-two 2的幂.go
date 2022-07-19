@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/power-of-two
+// https://leetcode.cn/problems/power-of-two
 
 // ❓ 2的幂
 

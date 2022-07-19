@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/managers-with-at-least-5-direct-reports
+# Link: https://leetcode.cn/problems/managers-with-at-least-5-direct-reports
 
 SELECT `name`
 FROM `employee`                                                                              `t1`

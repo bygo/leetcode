@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/path-sum/
+// https://leetcode.cn/problems/path-sum/
 
 type TreeNode struct {
 	Val   int

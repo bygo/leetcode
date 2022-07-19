@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/report-contiguous-dates
+# Link: https://leetcode.cn/problems/report-contiguous-dates
 
 
 SELECT `type` `period_state`, MIN(`date`) `start_date`, MAX(`date`) `end_date`

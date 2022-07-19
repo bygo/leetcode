@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/most-common-word
+// https://leetcode.cn/problems/most-common-word
 
 // ❓ 两数组 val 最大交集数
 

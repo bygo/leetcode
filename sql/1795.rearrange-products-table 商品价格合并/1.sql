@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/rearrange-products-table
+# Link: https://leetcode.cn/problems/rearrange-products-table
 
 SELECT `product_id`, 'store1' `store`, `store1` `price`
 FROM `products`

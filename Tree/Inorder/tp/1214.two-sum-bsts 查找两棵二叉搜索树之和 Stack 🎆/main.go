@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-sum-bsts
+// https://leetcode.cn/problems/two-sum-bsts
 
 type TreeNode struct {
 	Val   int

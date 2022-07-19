@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree/
+// https://leetcode.cn/problems/verify-preorder-sequence-in-binary-search-tree/
 
 // ❓ 验证前序遍历序列二叉搜索树
 

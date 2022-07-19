@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/game-play-analysis-iii
+# Link: https://leetcode.cn/problems/game-play-analysis-iii
 
 SELECT `a1`.`player_id`         `player_id`,
        `a1`.`event_date`        `event_date`,

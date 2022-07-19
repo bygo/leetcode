@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/fixed-point
+// https://leetcode.cn/problems/fixed-point
 
 func fixedPoint(arr []int) int {
 	lo, hi := 0, len(arr)

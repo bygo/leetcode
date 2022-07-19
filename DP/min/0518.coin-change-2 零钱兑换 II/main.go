@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/coin-change-2
+// https://leetcode.cn/problems/coin-change-2
 
 // 2 1   1 2
 // 先放入1 再放入2 再放入3

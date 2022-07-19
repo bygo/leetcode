@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/search-suggestions-system
+// https://leetcode.cn/problems/search-suggestions-system
 
 // ❓ 搜索推荐系统
 

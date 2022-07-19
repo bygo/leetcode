@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/friends-of-appropriate-ages
+// https://leetcode.cn/problems/friends-of-appropriate-ages
 
 // ❓ 适龄的朋友
 

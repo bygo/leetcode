@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sum-of-nodes-with-even-valued-grandparent/
+// https://leetcode.cn/problems/sum-of-nodes-with-even-valued-grandparent/
 
 type TreeNode struct {
 	Val   int

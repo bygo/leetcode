@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/get-the-second-most-recent-activity
+# Link: https://leetcode.cn/problems/get-the-second-most-recent-activity
 
 SELECT `username`, `activity`, `startdate`, `enddate`
 FROM (SELECT *,

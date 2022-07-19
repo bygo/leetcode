@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/construct-string-from-binary-tree/
+// https://leetcode.cn/problems/construct-string-from-binary-tree/
 
 import "strconv"
 

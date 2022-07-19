@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/hamming-distance
+// https://leetcode.cn/problems/hamming-distance
 
 // ❓ 汉明距离
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/implement-stack-using-queues
+// https://leetcode.cn/problems/implement-stack-using-queues
 
 type MyStack struct {
 	queue []int

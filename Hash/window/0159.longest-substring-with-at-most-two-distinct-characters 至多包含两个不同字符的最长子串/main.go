@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-substring-with-at-most-two-distinct-characters
+// https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters
 
 // ❓ 最多包含两个不同字符的最长子串
 

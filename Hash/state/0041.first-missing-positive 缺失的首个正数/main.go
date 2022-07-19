@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/first-missing-positive/
+// https://leetcode.cn/problems/first-missing-positive/
 
 // ❓ 缺失的首个正数
 

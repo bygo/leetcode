@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/smallest-rectangle-enclosing-black-pixels
+// https://leetcode.cn/problems/smallest-rectangle-enclosing-black-pixels
 
 func minArea(image [][]byte, y int, x int) int {
 	rowL, colL := len(image), len(image[0])

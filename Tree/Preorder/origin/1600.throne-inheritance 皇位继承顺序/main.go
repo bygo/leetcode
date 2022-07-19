@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/throne-inheritance
+// https://leetcode.cn/problems/throne-inheritance
 
 // ❓ 皇位继承顺序
 // ⚠️ 多叉树前序遍历

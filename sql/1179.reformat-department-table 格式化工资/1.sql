@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/reformat-department-table
+# Link: https://leetcode.cn/problems/reformat-department-table
 
 SELECT `id`,
        SUM(IF(`month` = 'Jan', `revenue`, NULL)) `jan_revenue`,

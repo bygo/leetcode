@@ -2,7 +2,7 @@ package main
 
 import "container/heap"
 
-// https://leetcode-cn.com/problems/top-k-frequent-elements
+// https://leetcode.cn/problems/top-k-frequent-elements
 
 type h []*e
 

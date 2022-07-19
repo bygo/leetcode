@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/valid-parentheses/
+// https://leetcode.cn/problems/valid-parentheses/
 
 func isValid(s string) bool {
 	m := map[rune]rune{

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-largest-group
+// https://leetcode.cn/problems/count-largest-group
 
 // ❓ 数位和相同为一组，含有最大数量的有多少组
 
@@ -11,7 +11,7 @@ func countLargestGroup(n int) int {
 	// 统计
 	sumMpCnt := [46]int{} // 最大99999 = 46
 	for num := 1; num <= n; num++ {
-		sumMpCnt[sum] ++
+		sumMpCnt[sum]++
 		numCur := num
 		for numCur%10 == 9 {
 			sum -= 9

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/detect-squares
+// https://leetcode.cn/problems/detect-squares
 
 // ❓ 输入的点，能形成几个正方形
 
@@ -18,7 +18,7 @@ func (ds *DetectSquares) Add(p []int) {
 	if ds.xMpYMpCnt[x] == nil {
 		ds.xMpYMpCnt[x] = map[int]int{}
 	}
-	ds.xMpYMpCnt[x][y] ++
+	ds.xMpYMpCnt[x][y]++
 }
 
 func (ds *DetectSquares) Count(p []int) int {

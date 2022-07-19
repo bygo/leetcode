@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/vertical-order-traversal-of-a-binary-tree
+// https://leetcode.cn/problems/vertical-order-traversal-of-a-binary-tree
 
 type TreeNode struct {
 	Val   int

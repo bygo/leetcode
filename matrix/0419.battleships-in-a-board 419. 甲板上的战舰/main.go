@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/battleships-in-a-board
+// https://leetcode.cn/problems/battleships-in-a-board
 
 // ❓ 矩阵上找几条直线
 // ⚠️ 1*k k*1 方式排列

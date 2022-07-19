@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/increasing-triplet-subsequence
+// https://leetcode.cn/problems/increasing-triplet-subsequence
 
 // ❓ 是否存在递增三元子序列
 

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/sort-array-by-increasing-frequency
+// https://leetcode.cn/problems/sort-array-by-increasing-frequency
 
 func frequencySort(nums []int) []int {
 	m := map[int]int{}

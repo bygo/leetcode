@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/trips-and-users
+# Link: https://leetcode.cn/problems/trips-and-users
 
 SELECT `t`.`request_at` `day`,
        ROUND(

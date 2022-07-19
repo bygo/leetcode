@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/univalued-binary-tree/
+// https://leetcode.cn/problems/univalued-binary-tree/
 
 type TreeNode struct {
 	Val   int

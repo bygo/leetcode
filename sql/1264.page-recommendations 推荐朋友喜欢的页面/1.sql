@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/page-recommendations
+# Link: https://leetcode.cn/problems/page-recommendations
 
 SELECT DISTINCT `page_id` `recommended_page`
 FROM `likes`

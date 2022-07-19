@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/verify-preorder-sequence-in-binary-search-tree
+// https://leetcode.cn/problems/verify-preorder-sequence-in-binary-search-tree
 
 func verifyPreorder(preorder []int) bool {
 	if len(preorder) < 2 {

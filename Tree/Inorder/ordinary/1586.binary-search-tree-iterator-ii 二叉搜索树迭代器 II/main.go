@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-search-tree-iterator-ii
+// https://leetcode.cn/problems/binary-search-tree-iterator-ii
 
 type TreeNode struct {
 	Val   int

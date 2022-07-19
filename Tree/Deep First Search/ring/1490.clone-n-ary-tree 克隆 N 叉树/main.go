@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/clone-n-ary-tree
+// https://leetcode.cn/problems/clone-n-ary-tree
 
 type Node struct {
 	Val      int

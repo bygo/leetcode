@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/apples-oranges
+# Link: https://leetcode.cn/problems/apples-oranges
 
 SELECT `sale_date`,
        SUM(IF(`fruit` = `apples`, `sold_num`, -`sold_num`)) `diff`

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/add-binary
+// https://leetcode.cn/problems/add-binary
 
 // ❓  二进制字符串求和
 

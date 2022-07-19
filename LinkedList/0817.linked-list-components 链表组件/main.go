@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/linked-list-components
+// https://leetcode.cn/problems/linked-list-components
 
 func numComponents(head *ListNode, G []int) int {
 	var m = map[int]struct{}{}

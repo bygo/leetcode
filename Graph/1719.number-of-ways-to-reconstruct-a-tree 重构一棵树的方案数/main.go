@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-ways-to-reconstruct-a-tree
+// https://leetcode.cn/problems/number-of-ways-to-reconstruct-a-tree
 
 // ❓ 重构一棵树的方案数
 

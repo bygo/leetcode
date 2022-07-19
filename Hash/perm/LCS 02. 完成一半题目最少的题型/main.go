@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/WqXACV/
+// https://leetcode.cn/problems/WqXACV/
 
 // ❓ 完成一半题目最少题型
 // ⚠️ 2*N 道题目

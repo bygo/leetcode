@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/human-traffic-of-stadium
+# Link: https://leetcode.cn/problems/human-traffic-of-stadium
 
 WITH `countt` AS (SELECT `id`,
                          COUNT(*) OVER (PARTITION BY `rn` ORDER BY `rn` ) `counter`

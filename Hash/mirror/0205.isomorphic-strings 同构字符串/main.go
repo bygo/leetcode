@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/isomorphic-strings
+// https://leetcode.cn/problems/isomorphic-strings
 
 // ❓ 同构字符串
 

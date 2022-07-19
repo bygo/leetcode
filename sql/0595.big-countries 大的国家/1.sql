@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/big-countries
+# Link: https://leetcode.cn/problems/big-countries
 
 SELECT `name`, `population`, `area`
 FROM `world`

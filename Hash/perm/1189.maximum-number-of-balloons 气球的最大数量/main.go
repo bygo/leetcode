@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-balloons
+// https://leetcode.cn/problems/maximum-number-of-balloons
 
 // ❓ 气球的最大数量
 

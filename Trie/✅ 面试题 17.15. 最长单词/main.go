@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-word-lcci/
+// https://leetcode.cn/problems/longest-word-lcci/
 
 // ❓ 恢复空格
 

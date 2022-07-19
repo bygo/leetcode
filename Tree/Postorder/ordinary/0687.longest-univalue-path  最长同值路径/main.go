@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-univalue-path/
+// https://leetcode.cn/problems/longest-univalue-path/
 
 type TreeNode struct {
 	Val   int

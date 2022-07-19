@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/department-highest-salary
+# Link: https://leetcode.cn/problems/department-highest-salary
 
 SELECT `d`.`name` 'department',
        `e`.`name` 'employee',

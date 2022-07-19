@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/kth-missing-positive-number
+// https://leetcode.cn/problems/kth-missing-positive-number
 
 func findKthPositive(arr []int, k int) int {
 	lo, hi := 0, len(arr)

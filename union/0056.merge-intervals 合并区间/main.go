@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/merge-intervals
+// https://leetcode.cn/problems/merge-intervals
 
 func merge(intervals [][]int) [][]int {
 	sort.Slice(intervals, func(i, j int) bool {

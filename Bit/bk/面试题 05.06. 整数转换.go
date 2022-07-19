@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/convert-integer-lcci/
+// https://leetcode.cn/problems/convert-integer-lcci/
 
 // ❓ 整数转换
 

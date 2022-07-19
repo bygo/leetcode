@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/
+// https://leetcode.cn/problems/kth-smallest-element-in-a-bst/
 
 type TreeNode struct {
 	Val   int

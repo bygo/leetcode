@@ -1,6 +1,6 @@
 # 0175.combine-two-tables 给所有人加上地址 
 ```sql
-# Link: https://leetcode-cn.com/problems/combine-two-tables
+# Link: https://leetcode.cn/problems/combine-two-tables
 
 SELECT `firstname`, `lastname`, `city`, `state`
 FROM `person`
@@ -9,7 +9,7 @@ FROM `person`
 
 # 0176.second-highest-salary 找第二名 Null 也返回 
 ```sql
-# Link: https://leetcode-cn.com/problems/second-highest-salary
+# Link: https://leetcode.cn/problems/second-highest-salary
 
 SELECT (
            SELECT DISTINCT `salary`
@@ -20,7 +20,7 @@ SELECT (
 
 # 0177.nth-highest-salary 找第N名 Null 也返回 
 ```sql
-# Link: https://leetcode-cn.com/problems/nth-highest-salary
+# Link: https://leetcode.cn/problems/nth-highest-salary
 
 CREATE FUNCTION getNthHighestSalary(`n` INT) RETURNS INT
 BEGIN
@@ -37,7 +37,7 @@ END
 
 # 0178.rank-scores 稠密排行 
 ```sql
-# Link: https://leetcode-cn.com/problems/rank-scores
+# Link: https://leetcode.cn/problems/rank-scores
 
 SELECT `score`,
        @`rank` := @`rank` + (@`pre` != (@`pre` := `score`)) `rank`
@@ -54,7 +54,7 @@ FROM `scores`
 
 # 0180.consecutive-numbers 连续出现3次的数字 
 ```sql
-# Link: https://leetcode-cn.com/problems/consecutive-numbers
+# Link: https://leetcode.cn/problems/consecutive-numbers
 
 SELECT DISTINCT `num` `consecutivenums`
 FROM (SELECT IF(@`pre` = `num`, @`count` := @`count` + 1, @`count` := 1) `counter`,
@@ -88,7 +88,7 @@ WHERE `l1`.`id` = `l2`.`id` - 1
 
 # 0181.employees-earning-more-than-their-managers 超过经理收入的员工 
 ```sql
-# Link: https://leetcode-cn.com/problems/employees-earning-more-than-their-managers
+# Link: https://leetcode.cn/problems/employees-earning-more-than-their-managers
 
 SELECT `e1`.`name` `employee`
 FROM `employee`               AS `e1`
@@ -98,7 +98,7 @@ WHERE `e2`.`salary` < `e1`.`salary`
 
 # 0182.duplicate-emails 找重复邮箱 
 ```sql
-# Link: https://leetcode-cn.com/problems/duplicate-emails
+# Link: https://leetcode.cn/problems/duplicate-emails
 
 SELECT `email`
 FROM `person`
@@ -108,7 +108,7 @@ HAVING 1 < COUNT(`email`)
 
 # 0183.customers-who-never-order 从不订购的客户 
 ```sql
-# Link: https://leetcode-cn.com/problems/customers-who-never-order
+# Link: https://leetcode.cn/problems/customers-who-never-order
 
 SELECT `customers`.`name` `customers`
 FROM `customers`
@@ -124,7 +124,7 @@ WHERE `id` NOT IN (SELECT `customerid` FROM `orders`)
 
 # 0184.department-highest-salary 部门最高工资的员工 
 ```sql
-# Link: https://leetcode-cn.com/problems/department-highest-salary
+# Link: https://leetcode.cn/problems/department-highest-salary
 
 SELECT `d`.`name` 'department',
        `e`.`name` 'employee',
@@ -157,7 +157,7 @@ WHERE `r` = 1;
 
 # 0185.department-top-three-salaries 部门工资前三高的员工 
 ```sql
-# Link: https://leetcode-cn.com/problems/department-top-three-salaries
+# Link: https://leetcode.cn/problems/department-top-three-salaries
 
 SELECT `department`, `employee`, `salary`
 FROM (SELECT `d`.`name`                                                                       `department`,
@@ -188,7 +188,7 @@ ORDER BY `salary` DESC;
 
 # 0196.delete-duplicate-emails 删除重复邮箱 
 ```sql
-# Link: https://leetcode-cn.com/problems/delete-duplicate-emails
+# Link: https://leetcode.cn/problems/delete-duplicate-emails
 
 DELETE `p2`
 FROM `person`          `p1`
@@ -199,7 +199,7 @@ WHERE `p1`.`email` = `p2`.`email`
 
 # 0197.rising-temperature 温度相比昨天是上升的 
 ```sql
-# Link: https://leetcode-cn.com/problems/rising-temperature
+# Link: https://leetcode.cn/problems/rising-temperature
 
 SELECT `w2`.`id` `id`
 FROM `weather`          `w2`
@@ -210,7 +210,7 @@ FROM `weather`          `w2`
 
 # 0262.trips-and-users 非禁止用户取消率 
 ```sql
-# Link: https://leetcode-cn.com/problems/trips-and-users
+# Link: https://leetcode.cn/problems/trips-and-users
 
 SELECT `t`.`request_at` `day`,
        ROUND(
@@ -231,7 +231,7 @@ GROUP BY `t`.`request_at`
 
 # 0511.game-play-analysis-i 首次登陆的时间 
 ```sql
-# Link: https://leetcode-cn.com/problems/game-play-analysis-i
+# Link: https://leetcode.cn/problems/game-play-analysis-i
 
 SELECT `player_id`,
        MIN(`event_date`) `first_login`
@@ -241,7 +241,7 @@ GROUP BY `player_id`
 
 # 0512.game-play-analysis-ii 首次登陆的设备名称 
 ```sql
-# Link: https://leetcode-cn.com/problems/game-play-analysis-ii
+# Link: https://leetcode.cn/problems/game-play-analysis-ii
 
 SELECT `player_id`, `device_id`
 FROM `activity`
@@ -263,7 +263,7 @@ WHERE `m` = `event_date`
 
 # 0534.game-play-analysis-iii 每人每天累积多少时长 
 ```sql
-# Link: https://leetcode-cn.com/problems/game-play-analysis-iii
+# Link: https://leetcode.cn/problems/game-play-analysis-iii
 
 SELECT `a1`.`player_id`         `player_id`,
        `a1`.`event_date`        `event_date`,
@@ -278,7 +278,7 @@ GROUP BY `a1`.`player_id`, `a1`.`event_date`
 
 # 0550.game-play-analysis-iv 首日后隔天登录玩家的比率 
 ```sql
-# Link: https://leetcode-cn.com/problems/game-play-analysis-iv
+# Link: https://leetcode.cn/problems/game-play-analysis-iv
 
 SELECT ROUND(
                COUNT(`a2`.`player_id`) / COUNT(`a1`.`player_id`),
@@ -294,7 +294,7 @@ FROM (
 
 # 0569.median-employee-salary 每个公司薪酬中位数 
 ```sql
-# Link: https://leetcode-cn.com/problems/median-employee-salary
+# Link: https://leetcode.cn/problems/median-employee-salary
 
 SELECT `id`, `company`, `salary`
 FROM (SELECT `id`,
@@ -308,7 +308,7 @@ WHERE `rank` BETWEEN `count` / 2 AND `count` / 2 + 1
 
 # 0570.managers-with-at-least-5-direct-reports 至少5名下属的经理 
 ```sql
-# Link: https://leetcode-cn.com/problems/managers-with-at-least-5-direct-reports
+# Link: https://leetcode.cn/problems/managers-with-at-least-5-direct-reports
 
 SELECT `name`
 FROM `employee`                                                                              `t1`
@@ -330,7 +330,7 @@ WHERE `id` IN (SELECT DISTINCT `managerid`
 
 # 0571.find-median-given-frequency-of-numbers 频率数字的中位数 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-median-given-frequency-of-numbers
+# Link: https://leetcode.cn/problems/find-median-given-frequency-of-numbers
 
 
 SELECT AVG(`number`) `median`
@@ -344,7 +344,7 @@ WHERE `n1` BETWEEN `n2` - `frequency` AND `n2` + `frequency`;
 
 # 0574.winning-candidate 当选者 
 ```sql
-# Link: https://leetcode-cn.com/problems/winning-candidate
+# Link: https://leetcode.cn/problems/winning-candidate
 
 SELECT `name`
 FROM (
@@ -358,7 +358,7 @@ FROM (
 
 # 0577.employee-bonus 员工奖金 
 ```sql
-# Link: https://leetcode-cn.com/problems/employee-bonus
+# Link: https://leetcode.cn/problems/employee-bonus
 
 SELECT `name`, `bonus`
 FROM `employee`
@@ -369,7 +369,7 @@ WHERE `bonus`.`bonus` < 1000
 
 # 0578.get-highest-answer-rate-question 回答率最高的问题 
 ```sql
-# Link: https://leetcode-cn.com/problems/get-highest-answer-rate-question
+# Link: https://leetcode.cn/problems/get-highest-answer-rate-question
 
 SELECT `question_id` `survey_log`
 FROM `survey_log`
@@ -380,7 +380,7 @@ LIMIT 1
 
 # 0579.find-cumulative-salary-of-an-employee 员工累积薪水 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee
+# Link: https://leetcode.cn/problems/find-cumulative-salary-of-an-employee
 
 
 SELECT `e1`.`id`,
@@ -422,7 +422,7 @@ ORDER BY `id`, `month` DESC;
 
 # 0580.count-student-number-in-departments 各专业学生人数 
 ```sql
-# Link: https://leetcode-cn.com/problems/count-student-number-in-departments
+# Link: https://leetcode.cn/problems/count-student-number-in-departments
 
 SELECT `dept_name`, COUNT(`student_id`) `student_number`
 FROM `department`            `d`
@@ -433,7 +433,7 @@ ORDER BY `student_number` DESC
 
 # 0584.find-customer-referee 用户的推荐人 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-customer-referee
+# Link: https://leetcode.cn/problems/find-customer-referee
 
 
 SELECT `name`
@@ -444,7 +444,7 @@ WHERE `referee_id` != 2
 
 # 0585.investments-in-2016 2016年的投资 
 ```sql
-# Link: https://leetcode-cn.com/problems/investments-in-2016
+# Link: https://leetcode.cn/problems/investments-in-2016
 
 SELECT ROUND(SUM(`tiv_2016`), 2) `tiv_2016`
 FROM (SELECT *,
@@ -456,7 +456,7 @@ WHERE `y` > 1 && `p` = 1
 
 # 0586.customer-placing-the-largest-number-of-orders 订单最多的客户 
 ```sql
-# Link: https://leetcode-cn.com/problems/customer-placing-the-largest-number-of-orders
+# Link: https://leetcode.cn/problems/customer-placing-the-largest-number-of-orders
 
 SELECT `customer_number`
 FROM `orders`
@@ -467,7 +467,7 @@ LIMIT 1
 
 # 0595.big-countries 大的国家 
 ```sql
-# Link: https://leetcode-cn.com/problems/big-countries
+# Link: https://leetcode.cn/problems/big-countries
 
 SELECT `name`, `population`, `area`
 FROM `world`
@@ -477,7 +477,7 @@ WHERE `area` > 3000000
 
 # 0596.classes-more-than-5-students 超过5名学生的课 
 ```sql
-# Link: https://leetcode-cn.com/problems/classes-more-than-5-students
+# Link: https://leetcode.cn/problems/classes-more-than-5-students
 
 SELECT `class`
 FROM `courses`
@@ -487,7 +487,7 @@ HAVING COUNT(DISTINCT `student`) >= 5
 
 # 0597.friend-requests-i-overall-acceptance-rate 好友申请总体通过率 
 ```sql
-# Link: https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate
+# Link: https://leetcode.cn/problems/friend-requests-i-overall-acceptance-rate
 
 SELECT ROUND(
                IFNULL(
@@ -502,7 +502,7 @@ SELECT ROUND(
 
 # 0601.human-traffic-of-stadium 人流量 
 ```sql
-# Link: https://leetcode-cn.com/problems/human-traffic-of-stadium
+# Link: https://leetcode.cn/problems/human-traffic-of-stadium
 
 WITH `countt` AS (SELECT `id`,
                          COUNT(*) OVER (PARTITION BY `rn` ORDER BY `rn` ) `counter`
@@ -520,7 +520,7 @@ ORDER BY `s`.`visit_date`;
 
 # 0602.friend-requests-ii-who-has-the-most-friends 谁有最多的好友 
 ```sql
-# Link: https://leetcode-cn.com/problems/friend-requests-ii-who-has-the-most-friends
+# Link: https://leetcode.cn/problems/friend-requests-ii-who-has-the-most-friends
 
 SELECT `id`, SUM(`n`) `num`
 FROM (SELECT `accepter_id` `id`, COUNT(*) `n`
@@ -538,7 +538,7 @@ LIMIT 1;
 
 # 0603.consecutive-available-seats 连续空余座位 
 ```sql
-# Link: https://leetcode-cn.com/problems/consecutive-available-seats
+# Link: https://leetcode.cn/problems/consecutive-available-seats
 
 SELECT `seat_id`
 FROM (SELECT `seat_id`, COUNT(*) OVER (PARTITION BY `r`) `c`
@@ -553,7 +553,7 @@ GROUP BY `seat_id`
 
 # 0607.sales-person 销售员 
 ```sql
-# Link: https://leetcode-cn.com/problems/sales-person
+# Link: https://leetcode.cn/problems/sales-person
 
 SELECT DISTINCT `name`
 FROM `salesperson`
@@ -564,7 +564,7 @@ WHERE `sales_id` NOT IN (SELECT `sales_id`
 
 # 0608.tree-node 树节点 
 ```sql
-# Link: https://leetcode-cn.com/problems/tree-node
+# Link: https://leetcode.cn/problems/tree-node
 
 SELECT DISTINCT `t1`.`id`,
                 IF(`t1`.`p_id` IS NULL, 'Root',
@@ -576,7 +576,7 @@ FROM `tree`               AS `t1`
 
 # 0610.triangle-judgement 判断三角形 
 ```sql
-# Link: https://leetcode-cn.com/problems/triangle-judgement
+# Link: https://leetcode.cn/problems/triangle-judgement
 
 SELECT *, IF(`x` + `y` > `z` AND `x` + `z` > `y` AND `y` + `z` > `x`, "yes", "no") `triangle`
 FROM `triangle`
@@ -584,7 +584,7 @@ FROM `triangle`
 
 # 0612.shortest-distance-in-a-plane 平面上的最近距离 
 ```sql
-# Link: https://leetcode-cn.com/problems/shortest-distance-in-a-plane
+# Link: https://leetcode.cn/problems/shortest-distance-in-a-plane
 
 SELECT ROUND(SQRT(MIN((POW(`p1`.`x` - `p2`.`x`, 2) + POW(`p1`.`y` - `p2`.`y`, 2)))), 2) `shortest`
 FROM `point_2d` `p1`
@@ -597,7 +597,7 @@ FROM `point_2d` `p1`
 
 # 0613.shortest-distance-in-a-line 直线上的最近距离 
 ```sql
-# Link: https://leetcode-cn.com/problems/shortest-distance-in-a-line
+# Link: https://leetcode.cn/problems/shortest-distance-in-a-line
 
 SELECT MIN(ABS(`p1`.`x` - `p2`.`x`)) `shortest`
 FROM `point`          `p1`
@@ -607,7 +607,7 @@ FROM `point`          `p1`
 
 # 0614.second-degree-follower 二级关注者 
 ```sql
-# Link: https://leetcode-cn.com/problems/second-degree-follower
+# Link: https://leetcode.cn/problems/second-degree-follower
 
 SELECT `followee`                 `follower`,
        COUNT(DISTINCT `follower`) `num`
@@ -628,7 +628,7 @@ ORDER BY `followee`
 
 # 0615.average-salary-departments-vs-company 平均工资：部门与公司比较 
 ```sql
-# Link: https://leetcode-cn.com/problems/average-salary-departments-vs-company
+# Link: https://leetcode.cn/problems/average-salary-departments-vs-company
 
 SELECT DISTINCT DATE_FORMAT(`pay_date`, '%Y-%m')                        `pay_month`,
                 `department_id`,
@@ -645,7 +645,7 @@ ORDER BY `pay_month` DESC;
 
 # 0618.students-report-by-geography 学生地理信息报告 
 ```sql
-# Link: https://leetcode-cn.com/problems/students-report-by-geography
+# Link: https://leetcode.cn/problems/students-report-by-geography
 
 SELECT `america`, `asia`, `europe`
 FROM (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `america`
@@ -661,7 +661,7 @@ FROM (SELECT `name`, ROW_NUMBER() OVER (ORDER BY `name`) `r`, `name` `america`
 
 # 0619.biggest-single-number 最出现一次的最大数字 
 ```sql
-# Link: https://leetcode-cn.com/problems/biggest-single-number
+# Link: https://leetcode.cn/problems/biggest-single-number
 
 SELECT (SELECT `num`
         FROM `my_numbers`
@@ -673,7 +673,7 @@ SELECT (SELECT `num`
 
 # 0620.not-boring-movies 有趣的电影 
 ```sql
-# Link: https://leetcode-cn.com/problems/not-boring-movies
+# Link: https://leetcode.cn/problems/not-boring-movies
 
 SELECT `id`, `movie`, `description`, `rating`
 FROM `cinema`
@@ -684,7 +684,7 @@ ORDER BY `rating` DESC
 
 # 0626.exchange-seats 换座位 
 ```sql
-# Link: https://leetcode-cn.com/problems/exchange-seats
+# Link: https://leetcode.cn/problems/exchange-seats
 
 SELECT ROW_NUMBER() OVER (ORDER BY (`id` + 1 - 2 * POWER(0, `id` % 2))) `id`,
        `student`
@@ -700,7 +700,7 @@ FROM `order` BY id ASC;
 
 # 0627.swap-salary 变更性别 
 ```sql
-# Link: https://leetcode-cn.com/problems/swap-salary
+# Link: https://leetcode.cn/problems/swap-salary
 
 UPDATE `salary`
 SET `sex` = IF(`sex` = 'f', 'm', 'f')
@@ -708,7 +708,7 @@ SET `sex` = IF(`sex` = 'f', 'm', 'f')
 
 # 1045.customers-who-bought-all-products 买下所有产品的客户 
 ```sql
-# Link: https://leetcode-cn.com/problems/customers-who-bought-all-products
+# Link: https://leetcode.cn/problems/customers-who-bought-all-products
 
 SELECT `customer_id`
 FROM `customer`
@@ -718,7 +718,7 @@ HAVING COUNT(DISTINCT `product_key`) = (SELECT COUNT(*) `cc` FROM `product`)
 
 # 1050.actors-and-directors-who-cooperated-at-least-three-times 合作至少三次的演员和导员 
 ```sql
-# Link: https://leetcode-cn.com/problems/actors-and-directors-who-cooperated-at-least-three-times
+# Link: https://leetcode.cn/problems/actors-and-directors-who-cooperated-at-least-three-times
 
 SELECT `actor_id`, `director_id`
 FROM `actordirector`
@@ -728,7 +728,7 @@ HAVING COUNT(*) >= 3
 
 # 1068.product-sales-analysis-i 产品的年份和价格 
 ```sql
-# Link: https://leetcode-cn.com/problems/product-sales-analysis-i
+# Link: https://leetcode.cn/problems/product-sales-analysis-i
 
 SELECT `product_name`, `year`, `price`
 FROM `sales`
@@ -737,7 +737,7 @@ FROM `sales`
 
 # 1069.product-sales-analysis-ii 产品的销售总额 
 ```sql
-# Link: https://leetcode-cn.com/problems/product-sales-analysis-ii
+# Link: https://leetcode.cn/problems/product-sales-analysis-ii
 
 SELECT `product_id`, SUM(`quantity`) `total_quantity`
 FROM `sales`
@@ -746,7 +746,7 @@ GROUP BY `product_id`
 
 # 1070.product-sales-analysis-iii 第一年的价格 
 ```sql
-# Link: https://leetcode-cn.com/problems/product-sales-analysis-iii
+# Link: https://leetcode.cn/problems/product-sales-analysis-iii
 
 
 SELECT `product_id`, `year` `first_year`, `quantity`, `price`
@@ -759,7 +759,7 @@ WHERE (`product_id`, `year`) IN (SELECT `product_id`, MIN(`year`)
 # 1075.project-employees-i 项目的平均年限 
 ```sql
 # Title: Project Employees I
-# Link: https://leetcode-cn.com/problems/project-employees-i
+# Link: https://leetcode.cn/problems/project-employees-i
 
 SELECT `project_id`, ROUND(AVG(`experience_years`), 2) `average_years`
 FROM `project`                 AS `p`
@@ -771,7 +771,7 @@ GROUP BY `project_id`;
 # 1076.project-employees-ii 员工最多的项目 销售额最高的销售者 
 ```sql
 # Title: Project Employees II
-# Link: https://leetcode-cn.com/problems/project-employees-ii
+# Link: https://leetcode.cn/problems/project-employees-ii
 
 WITH `tmp` AS (SELECT `project_id`, COUNT(*) `c` FROM `project` GROUP BY `project_id`)
 SELECT `project_id`
@@ -781,7 +781,7 @@ WHERE `c` = (SELECT MAX(`c`) FROM `tmp`);
 
 # 1077.project-employees-iii 项目经济最丰富的员工 
 ```sql
-# Link: https://leetcode-cn.com/problems/project-employees-iii
+# Link: https://leetcode.cn/problems/project-employees-iii
 
 SELECT `project_id`, `employee_id`
 FROM (SELECT `project_id`,
@@ -796,7 +796,7 @@ WHERE `r` = 1;
 # 1082.sales-analysis-i 销售额最高的销售者 
 ```sql
 # Title: Sales Analysis I
-# Link: https://leetcode-cn.com/problems/sales-analysis-i
+# Link: https://leetcode.cn/problems/sales-analysis-i
 
 SELECT `seller_id`
 FROM (
@@ -808,7 +808,7 @@ WHERE `n` = 1
 
 # 1083.sales-analysis-ii 买 S8 却没有 iPhone 的买家 
 ```sql
-# Link: https://leetcode-cn.com/problems/sales-analysis-ii
+# Link: https://leetcode.cn/problems/sales-analysis-ii
 
 SELECT `buyer_id`
 FROM (SELECT `buyer_id`,
@@ -823,7 +823,7 @@ HAVING 0 < SUM(`ip`)
 
 # 1084.sales-analysis-iii 只在春季销售的产品 
 ```sql
-# Link: https://leetcode-cn.com/problems/sales-analysis-iii
+# Link: https://leetcode.cn/problems/sales-analysis-iii
 
 SELECT `p`.`product_id`, `p`.`product_name`
 FROM `product`        `p`
@@ -844,7 +844,7 @@ WHERE `product_id` NOT IN
 
 # 1097.game-play-analysis-v 第二天留存率 
 ```sql
-# Link: https://leetcode-cn.com/problems/game-play-analysis-v
+# Link: https://leetcode.cn/problems/game-play-analysis-v
 
 SELECT `first_day`                 `install_dt`,
        COUNT(DISTINCT `player_id`) `installs`,
@@ -863,7 +863,7 @@ GROUP BY `first_day`
 
 # 1098.unpopular-books 过去一年少于十本的书 
 ```sql
-# Link: https://leetcode-cn.com/problems/unpopular-books
+# Link: https://leetcode.cn/problems/unpopular-books
 
 
 SELECT `b`.`book_id`, `b`.`name`
@@ -877,7 +877,7 @@ HAVING IFNULL(SUM(`o`.`quantity`), 0) < 10
 
 # 1107.new-users-daily-count 每日新用户 
 ```sql
-# Link: https://leetcode-cn.com/problems/new-users-daily-count
+# Link: https://leetcode.cn/problems/new-users-daily-count
 
 
 SELECT `activity_date` `login_date`, COUNT(*) `user_count`
@@ -892,7 +892,7 @@ GROUP BY `login_date
 
 # 1112.highest-grade-for-each-student 最高分数的学科 
 ```sql
-# Link: https://leetcode-cn.com/problems/highest-grade-for-each-student
+# Link: https://leetcode.cn/problems/highest-grade-for-each-student
 
 SELECT `student_id`, `course_id`, `grade`
 FROM (SELECT *, ROW_NUMBER() OVER (PARTITION BY `student_id` ORDER BY `grade` DESC,`course_id`) `r`
@@ -902,7 +902,7 @@ WHERE `r` = 1
 
 # 1113.reported-posts 不同的报告记录 
 ```sql
-# Link: https://leetcode-cn.com/problems/reported-posts
+# Link: https://leetcode.cn/problems/reported-posts
 
 SELECT `extra` "report_reason", COUNT(DISTINCT `post_id`) "report_count"
 FROM `actions`
@@ -914,7 +914,7 @@ GROUP BY `extra`
 
 # 1126.active-businesses 活跃的业务 
 ```sql
-# Link: https://leetcode-cn.com/problems/active-businesses
+# Link: https://leetcode.cn/problems/active-businesses
 
 SELECT `business_id`
 FROM (SELECT *,
@@ -927,7 +927,7 @@ HAVING COUNT(*) > 1
 
 # 1127.user-purchase-platform 统计单端或双端人数 
 ```sql
-# Link: https://leetcode-cn.com/problems/user-purchase-platform
+# Link: https://leetcode.cn/problems/user-purchase-platform
 
 SELECT `spend_date`,
        `t2`.`platform`,
@@ -955,7 +955,7 @@ GROUP BY `spend_date`, `platform`
 
 # 1132.reported-posts-ii 垃圾清除率 
 ```sql
-# Link: https://leetcode-cn.com/problems/reported-posts-ii
+# Link: https://leetcode.cn/problems/reported-posts-ii
 
 SELECT ROUND(AVG(`proportion`) * 100, 2) `average_daily_percent`
 FROM (
@@ -972,7 +972,7 @@ FROM (
 
 # 1141.user-activity-for-the-past-30-days-i 近30天活跃数 
 ```sql
-# Link: https://leetcode-cn.com/problems/user-activity-for-the-past-30-days-i
+# Link: https://leetcode.cn/problems/user-activity-for-the-past-30-days-i
 
 
 SELECT IFNULL(
@@ -986,14 +986,14 @@ WHERE '2019-06-27' < `activity_date`
 
 # 1142.user-activity-for-the-past-30-days-ii 平均会话次数 
 ```sql
-# Link: https://leetcode-cn.com/problems/user-activity-for-the-past-30-days-ii
+# Link: https://leetcode.cn/problems/user-activity-for-the-past-30-days-ii
 
 
 ```
 
 # 1148.article-views-i 浏览过自己文章的作者 
 ```sql
-# Link: https://leetcode-cn.com/problems/article-views-i
+# Link: https://leetcode.cn/problems/article-views-i
 
 SELECT DISTINCT `author_id` `id`
 FROM `views`
@@ -1003,7 +1003,7 @@ ORDER BY `author_id`
 
 # 1149.article-views-ii 一天浏览过两篇文章的人 
 ```sql
-# Link: https://leetcode-cn.com/problems/article-views-ii
+# Link: https://leetcode.cn/problems/article-views-ii
 
 SELECT DISTINCT `viewer_id` `id`
 FROM `views`
@@ -1014,7 +1014,7 @@ ORDER BY `id`
 
 # 1158.market-analysis-i 统计2019年订单总数 
 ```sql
-# Link: https://leetcode-cn.com/problems/market-analysis-i
+# Link: https://leetcode.cn/problems/market-analysis-i
 
 
 SELECT `u`.`user_id`     `buyer_id`,
@@ -1027,7 +1027,7 @@ GROUP BY `user_id`
 
 # 1159.market-analysis-ii 售出第二件不是喜欢的商品 
 ```sql
-# Link: https://leetcode-cn.com/problems/market-analysis-ii
+# Link: https://leetcode.cn/problems/market-analysis-ii
 
 
 SELECT `user_id`                                                                        `seller_id`,
@@ -1045,7 +1045,7 @@ FROM `users`                                                        `u`
 
 # 1164.product-price-at-a-given-date 变更后的价格 
 ```sql
-# Link: https://leetcode-cn.com/problems/product-price-at-a-given-date
+# Link: https://leetcode.cn/problems/product-price-at-a-given-date
 
 SELECT DISTINCT `product_id`, `price`
 FROM (
@@ -1077,7 +1077,7 @@ FROM `products`                                          `p`
 
 # 1173.immediate-food-delivery-i 当天配送率 
 ```sql
-# Link: https://leetcode-cn.com/problems/immediate-food-delivery-i
+# Link: https://leetcode.cn/problems/immediate-food-delivery-i
 
 SELECT ROUND(
                        SUM(IF(`order_date` = `customer_pref_delivery_date`, 1, 0)) /
@@ -1087,7 +1087,7 @@ FROM `delivery`
 
 # 1174.immediate-food-delivery-ii 首日即时配送订单 
 ```sql
-# Link: https://leetcode-cn.com/problems/immediate-food-delivery-ii
+# Link: https://leetcode.cn/problems/immediate-food-delivery-ii
 
 SELECT ROUND(
                    SUM(`order_date` = `customer_pref_delivery_date`) * 100 /
@@ -1104,7 +1104,7 @@ WHERE (`customer_id`, `order_date`) IN (
 
 # 1179.reformat-department-table 格式化工资 
 ```sql
-# Link: https://leetcode-cn.com/problems/reformat-department-table
+# Link: https://leetcode.cn/problems/reformat-department-table
 
 SELECT `id`,
        SUM(IF(`month` = 'Jan', `revenue`, NULL)) `jan_revenue`,
@@ -1126,7 +1126,7 @@ ORDER BY `id`;
 
 # 1193.monthly-transactions-i 统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/monthly-transactions-i
+# Link: https://leetcode.cn/problems/monthly-transactions-i
 
 
 SELECT DATE_FORMAT(`trans_date`, '%Y-%m')         `month`,
@@ -1141,7 +1141,7 @@ GROUP BY `month`, `country`
 
 # 1194.tournament-winners 每组的优胜者 
 ```sql
-# Link: https://leetcode-cn.com/problems/tournament-winners
+# Link: https://leetcode.cn/problems/tournament-winners
 
 SELECT `group_id`, `player_id`
 FROM (
@@ -1170,7 +1170,7 @@ ORDER BY `group_id`
 
 # 1204.last-person-to-fit-in-the-elevator 最后进入电梯 
 ```sql
-# Link: https://leetcode-cn.com/problems/last-person-to-fit-in-the-elevator
+# Link: https://leetcode.cn/problems/last-person-to-fit-in-the-elevator
 
 
 SELECT `a`.`person_name`
@@ -1187,7 +1187,7 @@ LIMIT 1
 
 # 1205.monthly-transactions-ii 交易统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/monthly-transactions-ii
+# Link: https://leetcode.cn/problems/monthly-transactions-ii
 
 SELECT LEFT(`trans_date`, 7)                        `month`,
        `country`,
@@ -1209,7 +1209,7 @@ ORDER BY `month`;
 
 # 1211.queries-quality-and-percentage 
 ```sql
-# Link: https://leetcode-cn.com/problems/queries-quality-and-percentage
+# Link: https://leetcode.cn/problems/queries-quality-and-percentage
 
 SELECT `query_name`,
        ROUND(AVG(`rating` / `position`), 2)                   `quality`,
@@ -1220,7 +1220,7 @@ GROUP BY `query_name`
 
 # 1212.team-scores-in-football-tournament 计算得分 
 ```sql
-# Link: https://leetcode-cn.com/problems/team-scores-in-football-tournament
+# Link: https://leetcode.cn/problems/team-scores-in-football-tournament
 
 
 SELECT `t`.`team_id`, `team_name`, IFNULL(SUM(`points`), 0) `num_points`
@@ -1242,7 +1242,7 @@ ORDER BY `num_points` DESC, `t`.`team_id`;
 
 # 1225.report-contiguous-dates 统计连续 
 ```sql
-# Link: https://leetcode-cn.com/problems/report-contiguous-dates
+# Link: https://leetcode.cn/problems/report-contiguous-dates
 
 
 SELECT `type` `period_state`, MIN(`date`) `start_date`, MAX(`date`) `end_date`
@@ -1263,7 +1263,7 @@ ORDER BY `start_date`
 
 # 1241.number-of-comments-per-post 查询评论数 
 ```sql
-# Link: https://leetcode-cn.com/problems/number-of-comments-per-post
+# Link: https://leetcode.cn/problems/number-of-comments-per-post
 
 SELECT `post_id`, COUNT(`sub_id`) `number_of_comments`
 FROM (
@@ -1280,7 +1280,7 @@ ORDER BY `post_id`
 
 # 1251.average-selling-price 
 ```sql
-# Link: https://leetcode-cn.com/problems/average-selling-price
+# Link: https://leetcode.cn/problems/average-selling-price
 
 SELECT `product_id`,
        ROUND(SUM(`sales`) / SUM(`units`), 2) `average_price`
@@ -1297,7 +1297,7 @@ GROUP BY `product_id`
 
 # 1264.page-recommendations 推荐朋友喜欢的页面 
 ```sql
-# Link: https://leetcode-cn.com/problems/page-recommendations
+# Link: https://leetcode.cn/problems/page-recommendations
 
 SELECT DISTINCT `page_id` `recommended_page`
 FROM `likes`
@@ -1321,7 +1321,7 @@ WHERE `user_id` IN (
 
 # 1270.all-people-report-to-the-given-manager 递归查询 
 ```sql
-# Link: https://leetcode-cn.com/problems/all-people-report-to-the-given-manager
+# Link: https://leetcode.cn/problems/all-people-report-to-the-given-manager
 
 SELECT `e1`.`employee_id`
 FROM `employees`          `e1`
@@ -1334,7 +1334,7 @@ WHERE `e1`.`employee_id` != 1
 
 # 1280.students-and-examinations 学生各科测试次数 
 ```sql
-# Link: https://leetcode-cn.com/problems/students-and-examinations
+# Link: https://leetcode.cn/problems/students-and-examinations
 
 SELECT `s1`.`student_id`, `s1`.`student_name`, `s2`.`subject_name`, COUNT(`e`.`subject_name`) `attended_exams`
 FROM `students`                   `s1`
@@ -1348,7 +1348,7 @@ ORDER BY `s1`.`student_id`, `s2`.`subject_name`;
 
 # 1285.find-the-start-and-end-number-of-continuous-ranges 区间次数 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-the-start-and-end-number-of-continuous-ranges
+# Link: https://leetcode.cn/problems/find-the-start-and-end-number-of-continuous-ranges
 
 SELECT MIN(`log_id`) `start_id`,
        MAX(`log_id`) `end_id`
@@ -1364,7 +1364,7 @@ ORDER BY `start_id`
 
 # 1294.weather-type-in-each-country 11月份的天气 
 ```sql
-# Link: https://leetcode-cn.com/problems/weather-type-in-each-country
+# Link: https://leetcode.cn/problems/weather-type-in-each-country
 
 SELECT `country_name`,
        IF(`weather_state_avg` <= 15, 'Cold',
@@ -1381,7 +1381,7 @@ FROM (
 
 # 1303.find-the-team-size 团队人数 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-the-team-size
+# Link: https://leetcode.cn/problems/find-the-team-size
 
 SELECT `employee_id`, COUNT(*) OVER (PARTITION BY `team_id`) `team_size`
 FROM `employee`
@@ -1390,7 +1390,7 @@ FROM `employee`
 
 # 1308.running-total-for-different-genders 男女的累积分数 
 ```sql
-# Link: https://leetcode-cn.com/problems/running-total-for-different-genders
+# Link: https://leetcode.cn/problems/running-total-for-different-genders
 
 SELECT `gender`,
        `day`,
@@ -1400,7 +1400,7 @@ FROM `scores`;
 
 # 1321.restaurant-growth 最近七天平均值 
 ```sql
-# Link: https://leetcode-cn.com/problems/restaurant-growth
+# Link: https://leetcode.cn/problems/restaurant-growth
 
 # Write your MySQL query statement below
 SELECT `visited_on`,
@@ -1419,7 +1419,7 @@ LIMIT 6, 18446744073709551615
 
 # 1322.ads-performance 广告效果统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/ads-performance
+# Link: https://leetcode.cn/problems/ads-performance
 
 SELECT `ad_id`,
        ROUND(IFNULL(SUM(`action` = 'Clicked') /
@@ -1431,7 +1431,7 @@ ORDER BY `ctr` DESC, `ad_id`
 
 # 1327.list-the-products-ordered-in-a-period 指定日期总数 
 ```sql
-# Link: https://leetcode-cn.com/problems/list-the-products-ordered-in-a-period
+# Link: https://leetcode.cn/problems/list-the-products-ordered-in-a-period
 
 SELECT `product_name`, SUM(`unit`) `unit`
 FROM `products`        `p`
@@ -1444,7 +1444,7 @@ HAVING SUM(`unit`) >= 100;
 
 # 1336.number-of-transactions-per-visit 每次访问的交易次数 
 ```sql
-# Link: https://leetcode-cn.com/problems/number-of-transactions-per-visit
+# Link: https://leetcode.cn/problems/number-of-transactions-per-visit
 
 WITH `cte` AS (SELECT COUNT(`amount`) `transactions_count`
                FROM `visits`                     `v`
@@ -1468,7 +1468,7 @@ HAVING `t1`.`transactions_count` <= (SELECT MAX(`transactions_count`)
 
 # 1341.movie-rating 评论数和评分数统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/movie-rating
+# Link: https://leetcode.cn/problems/movie-rating
 
 (SELECT `name` `results`
  FROM `users`                 `u`
@@ -1490,7 +1490,7 @@ UNION
 
 # 1350.students-with-invalid-departments 不存在院校的学生 
 ```sql
-# Link: https://leetcode-cn.com/problems/students-with-invalid-departments
+# Link: https://leetcode.cn/problems/students-with-invalid-departments
 
 SELECT `id`, `name`
 FROM `students`
@@ -1499,7 +1499,7 @@ WHERE `department_id` NOT IN (SELECT `id` FROM `departments`)
 
 # 1355.activity-participants 去除第一和倒数第一 
 ```sql
-# Link: https://leetcode-cn.com/problems/activity-participants
+# Link: https://leetcode.cn/problems/activity-participants
 
 
 SELECT `activity`
@@ -1514,7 +1514,7 @@ WHERE `r1` != 1
 
 # 1364.number-of-trusted-contacts-of-a-customer 互为好友的顾客 
 ```sql
-# Link: https://leetcode-cn.com/problems/number-of-trusted-contacts-of-a-customer
+# Link: https://leetcode.cn/problems/number-of-trusted-contacts-of-a-customer
 
 SELECT `invoice_id`,
        `cu1`.`customer_name`,
@@ -1531,7 +1531,7 @@ ORDER BY `i`.`invoice_id`
 
 # 1369.get-the-second-most-recent-activity 倒数第二次活动 
 ```sql
-# Link: https://leetcode-cn.com/problems/get-the-second-most-recent-activity
+# Link: https://leetcode.cn/problems/get-the-second-most-recent-activity
 
 SELECT `username`, `activity`, `startdate`, `enddate`
 FROM (SELECT *,
@@ -1546,7 +1546,7 @@ WHERE `r` = 2
 
 # 1378.replace-employee-id-with-the-unique-identifier 使用uuid替换id 
 ```sql
-# Link: https://leetcode-cn.com/problems/replace-employee-id-with-the-unique-identifier
+# Link: https://leetcode.cn/problems/replace-employee-id-with-the-unique-identifier
 
 SELECT `unique_id`, `name`
 FROM `employeeuni`
@@ -1555,7 +1555,7 @@ FROM `employeeuni`
 
 # 1384.total-sales-amount-by-year 年度统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/total-sales-amount-by-year
+# Link: https://leetcode.cn/problems/total-sales-amount-by-year
 
 
 SELECT `sales`.`product_id`,
@@ -1602,7 +1602,7 @@ ORDER BY `product_id`, `report_year`
 
 # 1393.capital-gainloss  资本损益 
 ```sql
-# Link: https://leetcode-cn.com/problems/capital-gainloss
+# Link: https://leetcode.cn/problems/capital-gainloss
 
 SELECT `stock_name`,
        SUM(IF(`operation` = 'Buy', -`price`, `price`)) `capital_gain_loss`
@@ -1612,7 +1612,7 @@ GROUP BY `stock_name`;
 
 # 1398.customers-who-bought-products-a-and-b-but-not-c 买AB不买C 
 ```sql
-# Link: https://leetcode-cn.com/problems/customers-who-bought-products-a-and-b-but-not-c
+# Link: https://leetcode.cn/problems/customers-who-bought-products-a-and-b-but-not-c
 
 SELECT `c`.`customer_id`,
        `c`.`customer_name`
@@ -1627,7 +1627,7 @@ ORDER BY `c`.`customer_id`
 
 # 1407.top-travellers 旅行距离排名 
 ```sql
-# Link: https://leetcode-cn.com/problems/top-travellers
+# Link: https://leetcode.cn/problems/top-travellers
 
 SELECT `name`, IFNULL(SUM(`distance`), 0) `travelled_distance`
 FROM `users`
@@ -1639,7 +1639,7 @@ ORDER BY `travelled_distance` DESC, `name`;
 
 # 1412.find-the-quiet-students-in-all-exams 成绩中游学生 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-the-quiet-students-in-all-exams
+# Link: https://leetcode.cn/problems/find-the-quiet-students-in-all-exams
 
 SELECT `s`.`student_id`,
        `s`.`student_name`
@@ -1672,7 +1672,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/display-table-of-food-orders-in-a-restaurant
+// https://leetcode.cn/problems/display-table-of-food-orders-in-a-restaurant
 
 func displayTable(orders [][]string) [][]string {
 	nameSet := map[string]struct{}{}
@@ -1720,7 +1720,7 @@ func displayTable(orders [][]string) [][]string {
 
 # 1421.npv-queries 连表 
 ```sql
-# Link: https://leetcode-cn.com/problems/npv-queries
+# Link: https://leetcode.cn/problems/npv-queries
 
 SELECT `q`.`id`,
        `q`.`year`,
@@ -1733,7 +1733,7 @@ FROM `queries` `q`
 
 # 1435.create-a-session-bar-chart 分段汇总 
 ```sql
-# Link: https://leetcode-cn.com/problems/create-a-session-bar-chart
+# Link: https://leetcode.cn/problems/create-a-session-bar-chart
 
 
 SELECT `a`.`bin`, COUNT(`b`.`bin`) `total`
@@ -1756,7 +1756,7 @@ GROUP BY `a`.`bin`
 
 # 1440.evaluate-boolean-expression 连表比较 
 ```sql
-# Link: https://leetcode-cn.com/problems/evaluate-boolean-expression
+# Link: https://leetcode.cn/problems/evaluate-boolean-expression
 
 SELECT `e`.`left_operand`,
        `operator`,
@@ -1775,7 +1775,7 @@ FROM `expressions`        `e`
 
 # 1445.apples-oranges 销量差 
 ```sql
-# Link: https://leetcode-cn.com/problems/apples-oranges
+# Link: https://leetcode.cn/problems/apples-oranges
 
 SELECT `sale_date`,
        SUM(IF(`fruit` = `apples`, `sold_num`, -`sold_num`)) `diff`
@@ -1786,7 +1786,7 @@ ORDER BY `sale_date`
 
 # 1454.active-users 连续7天在线的用户 
 ```sql
-# Link: https://leetcode-cn.com/problems/active-users
+# Link: https://leetcode.cn/problems/active-users
 
 
 SELECT `t3`.`id`, `name`
@@ -1810,7 +1810,7 @@ ORDER BY `id`
 
 # 1459.rectangles-area 组合成矩形 
 ```sql
-# Link: https://leetcode-cn.com/problems/rectangles-area
+# Link: https://leetcode.cn/problems/rectangles-area
 
 
 SELECT `a`.`id`                                                               `p1`,
@@ -1826,7 +1826,7 @@ ORDER BY `area` DESC, `p1`, `p2`;
 
 # 1468.calculate-salaries 扣税 
 ```sql
-# Link: https://leetcode-cn.com/problems/calculate-salaries
+# Link: https://leetcode.cn/problems/calculate-salaries
 
 
 SELECT `s`.`company_id`,
@@ -1851,7 +1851,7 @@ FROM `salaries`      `s`
 
 # 1479.sales-by-day-of-the-week 每周销量统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/sales-by-day-of-the-week
+# Link: https://leetcode.cn/problems/sales-by-day-of-the-week
 
 
 SELECT DISTINCT `i`.`item_category`                                         `category`,
@@ -1871,7 +1871,7 @@ ORDER BY `category`
 
 # 1485.group-sold-products-by-the-date group聚合 
 ```sql
-# Link: https://leetcode-cn.com/problems/group-sold-products-by-the-date
+# Link: https://leetcode.cn/problems/group-sold-products-by-the-date
 
 SELECT `sell_date`,
        COUNT(DISTINCT `product`)        `num_sold`,
@@ -1883,7 +1883,7 @@ ORDER BY `sell_date`
 
 # 1495.friendly-movies-streamed-last-month 儿童适宜的电影 
 ```sql
-# Link: https://leetcode-cn.com/problems/friendly-movies-streamed-last-month
+# Link: https://leetcode.cn/problems/friendly-movies-streamed-last-month
 
 SELECT DISTINCT `title`
 FROM `tvprogram`             `t`
@@ -1896,7 +1896,7 @@ WHERE LEFT(`t`.`program_date`, 7) = '2020-06'
 
 # 1501.countries-you-can-safely-invest-in 通话时长高于平均 
 ```sql
-# Link: https://leetcode-cn.com/problems/countries-you-can-safely-invest-in
+# Link: https://leetcode.cn/problems/countries-you-can-safely-invest-in
 
 
 SELECT `country`.`name` `country`
@@ -1914,7 +1914,7 @@ HAVING AVG(`calls`.`duration`) > (SELECT AVG(`calls`.`duration`) FROM `calls`);
 
 # 1511.customer-order-frequency 六七月消费大于等于100 
 ```sql
-# Link: https://leetcode-cn.com/problems/customer-order-frequency
+# Link: https://leetcode.cn/problems/customer-order-frequency
 
 SELECT `c`.`customer_id`, `c`.`name`
 FROM `customers`        `c`
@@ -1927,7 +1927,7 @@ HAVING SUM(IF(LEFT(`o`.`order_date`, 7) = '2020-06', `p`.`price` * `o`.`quantity
 
 # 1517.find-users-with-valid-e-mails 邮箱正则 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-users-with-valid-e-mails
+# Link: https://leetcode.cn/problems/find-users-with-valid-e-mails
 
 SELECT *
 FROM `users`
@@ -1936,7 +1936,7 @@ WHERE `mail` REGEXP '^[a-zA-Z][a-zA-Z0-9\_\.\-]*@leetcode\.com$'
 
 # 1527.patients-with-a-condition 患病患者 
 ```sql
-# Link: https://leetcode-cn.com/problems/patients-with-a-condition
+# Link: https://leetcode.cn/problems/patients-with-a-condition
 
 # Write your MySQL query statement below
 
@@ -1948,7 +1948,7 @@ WHERE `conditions` LIKE 'DIAB1%'
 
 # 1532.the-most-recent-three-orders 最近三笔订单 
 ```sql
-# Link: https://leetcode-cn.com/problems/the-most-recent-three-orders
+# Link: https://leetcode.cn/problems/the-most-recent-three-orders
 
 
 SELECT `name` `customer_name`,
@@ -1970,7 +1970,7 @@ ORDER BY `customer_name`, `customer_id`, `order_date` DESC
 
 # 1543.fix-product-name-format 格式化 
 ```sql
-# Link: https://leetcode-cn.com/problems/fix-product-name-format
+# Link: https://leetcode.cn/problems/fix-product-name-format
 
 
 SELECT LOWER(TRIM(`product_name`)) `product_name`,
@@ -1984,7 +1984,7 @@ ORDER BY LOWER(TRIM(`product_name`)), LEFT(`sale_date`, 7)
 
 # 1549.the-most-recent-orders-for-each-product 产品最新订单 
 ```sql
-# Link: https://leetcode-cn.com/problems/the-most-recent-orders-for-each-product
+# Link: https://leetcode.cn/problems/the-most-recent-orders-for-each-product
 
 SELECT `product_name`, `p`.`product_id`, `order_id`, `order_date`
 FROM `products`          `p`
@@ -2001,7 +2001,7 @@ ORDER BY `p`.`product_name`, `p`.`product_id`, `t`.`order_id`;
 
 # 1555.bank-account-summary 是否透支 
 ```sql
-# Link: https://leetcode-cn.com/problems/bank-account-summary
+# Link: https://leetcode.cn/problems/bank-account-summary
 
 
 SELECT `u`.`user_id`,
@@ -2027,7 +2027,7 @@ GROUP BY `user_id`
 
 # 1565.unique-orders-and-customers-per-month 月订单数和顾客数 
 ```sql
-# Link: https://leetcode-cn.com/problems/unique-orders-and-customers-per-month
+# Link: https://leetcode.cn/problems/unique-orders-and-customers-per-month
 
 SELECT LEFT(`o`.`order_date`, 7)     `month`,
        COUNT(`order_id`)             `order_count`,
@@ -2039,7 +2039,7 @@ GROUP BY LEFT(`o`.`order_date`, 7);
 
 # 1571.warehouse-manager 计算立方 
 ```sql
-# Link: https://leetcode-cn.com/problems/warehouse-manager
+# Link: https://leetcode.cn/problems/warehouse-manager
 
 
 SELECT `w`.`name`                                                   `warehouse_name`,
@@ -2054,7 +2054,7 @@ GROUP BY `w`.`name`;
 
 # 1581.customer-who-visited-but-did-not-make-any-transactions 进店未交易 
 ```sql
-# Link: https://leetcode-cn.com/problems/customer-who-visited-but-did-not-make-any-transactions
+# Link: https://leetcode.cn/problems/customer-who-visited-but-did-not-make-any-transactions
 
 SELECT `v`.`customer_id`,
        COUNT(DISTINCT `v`.`visit_id`) `count_no_trans`
@@ -2068,7 +2068,7 @@ GROUP BY `v`.`customer_id`
 
 # 1587.bank-account-summary-ii 余大于10000的用户 
 ```sql
-# Link: https://leetcode-cn.com/problems/bank-account-summary-ii
+# Link: https://leetcode.cn/problems/bank-account-summary-ii
 
 
 SELECT `name`,
@@ -2085,7 +2085,7 @@ HAVING SUM(`amount`) > 10000;
 
 # 1596.the-most-frequently-ordered-products-for-each-customer 经常订购的商品 
 ```sql
-# Link: https://leetcode-cn.com/problems/the-most-frequently-ordered-products-for-each-customer
+# Link: https://leetcode.cn/problems/the-most-frequently-ordered-products-for-each-customer
 
 SELECT `o`.`customer_id`, `o`.`product_id`, `p`.`product_name`
 FROM (
@@ -2104,7 +2104,7 @@ ORDER BY `customer_id`, `product_id`
 
 # 1607.sellers-with-no-sales 没有卖出产品的销售 
 ```sql
-# Link: https://leetcode-cn.com/problems/sellers-with-no-sales
+# Link: https://leetcode.cn/problems/sellers-with-no-sales
 
 
 SELECT `seller_name`
@@ -2125,7 +2125,7 @@ ORDER BY `seller_name`;
 
 # 1613.find-the-missing-ids 缺失的id 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-the-missing-ids
+# Link: https://leetcode.cn/problems/find-the-missing-ids
 
 WITH RECURSIVE `num`(`n`) AS (
     SELECT 1 `a`
@@ -2148,7 +2148,7 @@ WHERE `n` NOT IN (
 
 # 1623.all-valid-triplets-that-can-represent-a-country 三个学校组合不同的代表队 
 ```sql
-# Link: https://leetcode-cn.com/problems/all-valid-triplets-that-can-represent-a-country
+# Link: https://leetcode.cn/problems/all-valid-triplets-that-can-represent-a-country
 
 SELECT `a`.`student_name` `member_a`,
        `b`.`student_name` `member_b`,
@@ -2166,7 +2166,7 @@ WHERE `a`.`student_id` != `b`.`student_id`
 
 # 1633.percentage-of-users-attended-a-contest 注册率 
 ```sql
-# Link: https://leetcode-cn.com/problems/percentage-of-users-attended-a-contest
+# Link: https://leetcode.cn/problems/percentage-of-users-attended-a-contest
 
 
 SELECT `contest_id`,
@@ -2179,7 +2179,7 @@ ORDER BY `percentage` DESC, `contest_id`
 
 # 1635.hopper-company-queries-i 活跃数与行程数 
 ```sql
-# Link: https://leetcode-cn.com/problems/hopper-company-queries-i
+# Link: https://leetcode.cn/problems/hopper-company-queries-i
 
 WITH RECURSIVE `t1`(`month`) AS (
     SELECT 1
@@ -2212,7 +2212,7 @@ FROM `t1`
 
 # 1645.hopper-company-queries-ii 工作率 
 ```sql
-# Link: https://leetcode-cn.com/problems/hopper-company-queries-ii
+# Link: https://leetcode.cn/problems/hopper-company-queries-ii
 
 WITH RECURSIVE `t1`(`month`) AS (
     SELECT 1
@@ -2246,7 +2246,7 @@ FROM `t1`
 
 # 1651.hopper-company-queries-iii 平均距离和平均时间 
 ```sql
-# Link: https://leetcode-cn.com/problems/hopper-company-queries-iii
+# Link: https://leetcode.cn/problems/hopper-company-queries-iii
 
 WITH RECURSIVE `t1`(`month`) AS (
     SELECT 1
@@ -2280,7 +2280,7 @@ WHERE `b`.`r` <= 10
 
 # 1661.average-time-of-process-per-machine 平均运行时间 
 ```sql
-# Link: https://leetcode-cn.com/problems/average-time-of-process-per-machine
+# Link: https://leetcode.cn/problems/average-time-of-process-per-machine
 
 SELECT `machine_id`,
        ROUND(SUM(IF(`activity_type` = 'end', `timestamp`, -`timestamp`)) / COUNT(*) * 2, 3) `processing_time`
@@ -2290,7 +2290,7 @@ GROUP BY `machine_id`
 
 # 1667.fix-names-in-a-table  修复名字 
 ```sql
-# Link: https://leetcode-cn.com/problems/fix-names-in-a-table
+# Link: https://leetcode.cn/problems/fix-names-in-a-table
 
 SELECT `user_id`,
        CONCAT(UPPER(LEFT(`name`, 1)), LOWER(SUBSTR(`name`, 2))) `name`
@@ -2300,7 +2300,7 @@ ORDER BY `user_id`
 
 # 1677.products-worth-over-invoices 统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/products-worth-over-invoices
+# Link: https://leetcode.cn/problems/products-worth-over-invoices
 
 SELECT `p`.`name`                     `name`,
        IFNULL(SUM(`i`.`rest`), 0)     `rest`,
@@ -2316,7 +2316,7 @@ ORDER BY `p`.`name`
 
 # 1683.invalid-tweets 无效推文 
 ```sql
-# Link: https://leetcode-cn.com/problems/invalid-tweets
+# Link: https://leetcode.cn/problems/invalid-tweets
 
 SELECT `tweet_id`
 FROM `tweets`
@@ -2325,7 +2325,7 @@ WHERE CHAR_LENGTH(`content`) > 15
 
 # 1693.daily-leads-and-partners 统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/daily-leads-and-partners
+# Link: https://leetcode.cn/problems/daily-leads-and-partners
 
 SELECT `date_id`,
        `make_name`,
@@ -2338,7 +2338,7 @@ GROUP BY `date_id`, `make_name`
 
 # 1699.number-of-calls-between-two-persons 通话次数 
 ```sql
-# Link: https://leetcode-cn.com/problems/number-of-calls-between-two-persons
+# Link: https://leetcode.cn/problems/number-of-calls-between-two-persons
 
 SELECT `person1`, `person2`, COUNT(1) `call_count`, SUM(`duration`) `total_duration`
 FROM (
@@ -2358,7 +2358,7 @@ GROUP BY LEAST(`from_id`, `to_id`), GREATEST(`from_id`, `to_id`)
 
 # 1709.biggest-window-between-visits 日期缺失 
 ```sql
-# Link: https://leetcode-cn.com/problems/biggest-window-between-visits
+# Link: https://leetcode.cn/problems/biggest-window-between-visits
 
 
 SELECT `user_id`, MAX(`diff`) `biggest_window`
@@ -2377,7 +2377,7 @@ GROUP BY `user_id`
 
 # 1715.count-apples-and-oranges 统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/count-apples-and-oranges
+# Link: https://leetcode.cn/problems/count-apples-and-oranges
 
 
 SELECT SUM(`b`.`apple_count` + IFNULL(`c`.`apple_count`, 0))   `apple_count`,
@@ -2388,7 +2388,7 @@ FROM `boxes`                `b`
 
 # 1729.find-followers-count 关注数 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-followers-count
+# Link: https://leetcode.cn/problems/find-followers-count
 
 SELECT `user_id`, COUNT(`follower_id`) `followers_count`
 FROM `followers`
@@ -2400,7 +2400,7 @@ ORDER BY `user_id`
 
 # 1731.the-number-of-employees-which-report-to-each-employee 每位经理有多少下属 
 ```sql
-# Link: https://leetcode-cn.com/problems/the-number-of-employees-which-report-to-each-employee
+# Link: https://leetcode.cn/problems/the-number-of-employees-which-report-to-each-employee
 
 SELECT `e1`.`reports_to`        `employee_id`,
        `e2`.`name`,
@@ -2414,7 +2414,7 @@ ORDER BY `e1`.`reports_to`
 
 # 1741.find-total-time-spent-by-each-employee 员工花费时间 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-total-time-spent-by-each-employee
+# Link: https://leetcode.cn/problems/find-total-time-spent-by-each-employee
 
 SELECT `event_day` `day`, `emp_id`, SUM(`out_time` - `in_time`) `total_time`
 FROM `employees`
@@ -2423,7 +2423,7 @@ GROUP BY `day`, `emp_id`
 
 # 1747.leetflex-banned-accounts 应被禁止的账户 
 ```sql
-# Link: https://leetcode-cn.com/problems/leetflex-banned-accounts
+# Link: https://leetcode.cn/problems/leetflex-banned-accounts
 
 SELECT DISTINCT `l1`.`account_id`
 FROM `loginfo`          `l1`
@@ -2437,7 +2437,7 @@ FROM `loginfo`          `l1`
 
 # 1757.recyclable-and-low-fat-products 可回收且低脂的产品 
 ```sql
-# Link: https://leetcode-cn.com/problems/recyclable-and-low-fat-products
+# Link: https://leetcode.cn/problems/recyclable-and-low-fat-products
 
 SELECT `product_id`
 FROM `products`
@@ -2447,7 +2447,7 @@ WHERE `low_fats` = 'Y'
 
 # 1767.find-the-subtasks-that-did-not-execute 找到未执行的子任务 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-the-subtasks-that-did-not-execute
+# Link: https://leetcode.cn/problems/find-the-subtasks-that-did-not-execute
 
 WITH RECURSIVE `t`(`task_id`, `subtask_id`) AS (
     SELECT `task_id`, `subtasks_count`
@@ -2467,7 +2467,7 @@ ORDER BY `task_id`, `subtask_id`
 
 # 1777.products-price-for-each-store 每家商店价格 
 ```sql
-# Link: https://leetcode-cn.com/problems/products-price-for-each-store
+# Link: https://leetcode.cn/problems/products-price-for-each-store
 
 SELECT `product_id`,
        SUM(IF(`store` = 'store1', `price`, NULL)) `store1`,
@@ -2479,7 +2479,7 @@ GROUP BY `product_id`;
 
 # 1783.grand-slam-titles 大满贯数 
 ```sql
-# Link: https://leetcode-cn.com/problems/grand-slam-titles
+# Link: https://leetcode.cn/problems/grand-slam-titles
 
 
 WITH `t` AS (SELECT `wimbledon` `tournament`
@@ -2502,7 +2502,7 @@ GROUP BY `p`.`player_id`, `p`.`player_name`
 
 # 1789.primary-department-for-each-employee 员工的主要部门 
 ```sql
-# Link: https://leetcode-cn.com/problems/primary-department-for-each-employee
+# Link: https://leetcode.cn/problems/primary-department-for-each-employee
 
 SELECT DISTINCT `employee_id`,
                 FIRST_VALUE(`department_id`) OVER (PARTITION BY `employee_id` ORDER BY `primary_flag`) `department_id`
@@ -2511,7 +2511,7 @@ FROM `employee`
 
 # 1795.rearrange-products-table 商品价格合并 
 ```sql
-# Link: https://leetcode-cn.com/problems/rearrange-products-table
+# Link: https://leetcode.cn/problems/rearrange-products-table
 
 SELECT `product_id`, 'store1' `store`, `store1` `price`
 FROM `products`
@@ -2529,7 +2529,7 @@ WHERE `store3` IS NOT NULL
 
 # 1809.ad-free-sessions 没有展示广告的会话 
 ```sql
-# Link: https://leetcode-cn.com/problems/ad-free-sessions
+# Link: https://leetcode.cn/problems/ad-free-sessions
 
 SELECT `session_id`
 FROM `playback`
@@ -2542,7 +2542,7 @@ WHERE `session_id` NOT IN (
 
 # 1811.find-interview-candidates 统计 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-interview-candidates
+# Link: https://leetcode.cn/problems/find-interview-candidates
 
 WITH `a` AS
          (SELECT DISTINCT `temp1`.`name`, `mail`
@@ -2574,7 +2574,7 @@ HAVING COUNT(*) >= 3
 
 # 1821.find-customers-with-positive-revenue-this-year 正收入 
 ```sql
-# Link: https://leetcode-cn.com/problems/find-customers-with-positive-revenue-this-year
+# Link: https://leetcode.cn/problems/find-customers-with-positive-revenue-this-year
 
 SELECT `customer_id`
 FROM `customers`
@@ -2585,7 +2585,7 @@ HAVING SUM(`revenue`) > 0
 
 # 1831.maximum-transaction-each-day 每天最大交易 
 ```sql
-# Link: https://leetcode-cn.com/problems/maximum-transaction-each-day
+# Link: https://leetcode.cn/problems/maximum-transaction-each-day
 
 
 SELECT `transaction_id`

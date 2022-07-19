@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type
+// https://leetcode.cn/problems/maximum-number-of-words-you-can-type
 
 // ❓ 可以输入的最大单词数
 // ⚠️ hello word , w

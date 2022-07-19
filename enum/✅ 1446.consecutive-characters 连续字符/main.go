@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/consecutive-characters
+// https://leetcode.cn/problems/consecutive-characters
 
 func maxPower(s string) int {
 	l := len(s)

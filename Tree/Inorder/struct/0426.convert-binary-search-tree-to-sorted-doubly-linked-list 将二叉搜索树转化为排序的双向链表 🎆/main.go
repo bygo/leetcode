@@ -1,6 +1,6 @@
 package inorder
 
-// https://leetcode-cn.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
+// https://leetcode.cn/problems/convert-binary-search-tree-to-sorted-doubly-linked-list
 
 type Node struct {
 	Val   int

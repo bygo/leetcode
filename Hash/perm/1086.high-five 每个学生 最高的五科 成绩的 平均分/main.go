@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/high-five
+// https://leetcode.cn/problems/high-five
 
 // ❓ 每个学生 最高的五科 成绩的 平均分
 

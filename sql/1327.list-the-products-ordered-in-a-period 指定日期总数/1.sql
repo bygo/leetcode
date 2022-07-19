@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/list-the-products-ordered-in-a-period
+# Link: https://leetcode.cn/problems/list-the-products-ordered-in-a-period
 
 SELECT `product_name`, SUM(`unit`) `unit`
 FROM `products`        `p`

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/removing-minimum-number-of-magic-beans
+// https://leetcode.cn/problems/removing-minimum-number-of-magic-beans
 
 // 📚
 func minimumRemoval(beans []int) int64 {

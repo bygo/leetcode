@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/fibonacci-number
+// https://leetcode.cn/problems/fibonacci-number
 
 // f(n) = f(n-1) + f(n-2)
 func climbStairs(n int) int {

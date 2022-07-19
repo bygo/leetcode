@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/zuma-game
+// https://leetcode.cn/problems/zuma-game
 
 func findMinStep(board string, hand string) int {
 	bytesHand := []byte(hand)

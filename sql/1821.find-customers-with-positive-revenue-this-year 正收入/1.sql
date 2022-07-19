@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-customers-with-positive-revenue-this-year
+# Link: https://leetcode.cn/problems/find-customers-with-positive-revenue-this-year
 
 SELECT `customer_id`
 FROM `customers`

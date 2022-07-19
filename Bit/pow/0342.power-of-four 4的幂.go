@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/power-of-four
+// https://leetcode.cn/problems/power-of-four
 
 // ❓ 4的幂
 

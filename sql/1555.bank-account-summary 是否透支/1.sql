@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/bank-account-summary
+# Link: https://leetcode.cn/problems/bank-account-summary
 
 
 SELECT `u`.`user_id`,

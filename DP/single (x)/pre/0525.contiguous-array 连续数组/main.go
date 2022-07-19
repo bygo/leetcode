@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/contiguous-array
+// https://leetcode.cn/problems/contiguous-array
 
 func findMaxLength(nums []int) int {
 	cntMpIdx := map[int]int{0: -1}

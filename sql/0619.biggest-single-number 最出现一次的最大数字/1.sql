@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/biggest-single-number
+# Link: https://leetcode.cn/problems/biggest-single-number
 
 SELECT (SELECT `num`
         FROM `my_numbers`

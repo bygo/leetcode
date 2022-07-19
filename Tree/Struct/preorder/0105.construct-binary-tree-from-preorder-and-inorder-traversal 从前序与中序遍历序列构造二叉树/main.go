@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+// https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 type TreeNode struct {
 	Val   int

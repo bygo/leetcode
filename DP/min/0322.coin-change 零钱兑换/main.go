@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/coin-change
+// https://leetcode.cn/problems/coin-change
 
 // f[i] = f[i-coin] + 1
 func coinChange(coins []int, amount int) int {

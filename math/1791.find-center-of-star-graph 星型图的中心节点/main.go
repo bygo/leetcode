@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-center-of-star-graph
+// https://leetcode.cn/problems/find-center-of-star-graph
 
 func findCenter(edges [][]int) int {
 	if edges[0][0] == edges[1][0] {

@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/relative-ranks
+// https://leetcode.cn/problems/relative-ranks
 
 type Pair struct {
 	Score int

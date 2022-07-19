@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/patients-with-a-condition
+# Link: https://leetcode.cn/problems/patients-with-a-condition
 
 # Write your MySQL query statement below
 

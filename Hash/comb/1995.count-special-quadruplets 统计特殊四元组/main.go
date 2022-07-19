@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-special-quadruplets
+// https://leetcode.cn/problems/count-special-quadruplets
 
 // ❓ 统计特殊四元组
 

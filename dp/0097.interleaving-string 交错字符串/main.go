@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/interleaving-string
+// https://leetcode.cn/problems/interleaving-string
 
 // 二维
 // f(i)(j) = f(i)(j-1) && s2[j-1] == p || f(i-1)(j) && s1[i-1] == p

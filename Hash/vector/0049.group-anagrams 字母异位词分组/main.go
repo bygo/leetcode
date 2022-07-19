@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/group-anagrams
+// https://leetcode.cn/problems/group-anagrams
 
 // ❓ 异位词分组
 

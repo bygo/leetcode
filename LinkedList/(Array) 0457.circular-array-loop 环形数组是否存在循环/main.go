@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/circular-array-loop
+// https://leetcode.cn/problems/circular-array-loop
 
 func circularArrayLoop(nums []int) bool {
 	n := len(nums)
@@ -11,9 +11,7 @@ func circularArrayLoop(nums []int) bool {
 
 	for i, num := range nums {
 		if num != 0 {
-			for slow, fast := i, next(i);
-				0 < nums[slow]*nums[fast] && 0 < nums[slow]*nums[next(fast)];
-			slow, fast = next(slow), next(next(fast)) {
+			for slow, fast := i, next(i); 0 < nums[slow]*nums[fast] && 0 < nums[slow]*nums[next(fast)]; slow, fast = next(slow), next(next(fast)) {
 				if slow == fast {
 					if slow == next(slow) { // 步长 0
 						break

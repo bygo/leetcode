@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/arranging-coins
+// https://leetcode.cn/problems/arranging-coins
 
 func arrangeCoins(n int) int {
 	lo, hi := 0, n+1

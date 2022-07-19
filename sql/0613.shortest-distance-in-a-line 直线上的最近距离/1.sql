@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/shortest-distance-in-a-line
+# Link: https://leetcode.cn/problems/shortest-distance-in-a-line
 
 SELECT MIN(ABS(`p1`.`x` - `p2`.`x`)) `shortest`
 FROM `point`          `p1`

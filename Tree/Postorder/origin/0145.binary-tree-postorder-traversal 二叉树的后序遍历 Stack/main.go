@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-postorder-traversal/
+// https://leetcode.cn/problems/binary-tree-postorder-traversal/
 
 // ❓ 二叉树的后序遍历
 

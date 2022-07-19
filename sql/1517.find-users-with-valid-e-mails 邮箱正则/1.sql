@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-users-with-valid-e-mails
+# Link: https://leetcode.cn/problems/find-users-with-valid-e-mails
 
 SELECT *
 FROM `users`

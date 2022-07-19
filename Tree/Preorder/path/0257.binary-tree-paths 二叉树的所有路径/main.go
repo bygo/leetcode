@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-paths/
+// https://leetcode.cn/problems/binary-tree-paths/
 
 import (
 	"strconv"

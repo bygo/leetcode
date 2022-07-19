@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/swapping-nodes-in-a-linked-list
+// https://leetcode.cn/problems/swapping-nodes-in-a-linked-list
 
 func swapNodes(head *ListNode, k int) *ListNode {
 	var slow, fast, left = head, head, head

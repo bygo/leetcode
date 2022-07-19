@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// https://leetcode-cn.com/proble乘法ex-number-multiplication
+// https://leetcode.cn/proble乘法ex-number-multiplication
 
 // ❓ 复数乘法
 func parse(num string) (real, imag int) {

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/sort-an-array
+// https://leetcode.cn/problems/sort-an-array
 
 // ❓ 计数排序
 

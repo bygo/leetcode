@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/investments-in-2016
+# Link: https://leetcode.cn/problems/investments-in-2016
 
 SELECT ROUND(SUM(`tiv_2016`), 2) `tiv_2016`
 FROM (SELECT *,

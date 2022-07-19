@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/all-people-report-to-the-given-manager
+# Link: https://leetcode.cn/problems/all-people-report-to-the-given-manager
 
 SELECT `e1`.`employee_id`
 FROM `employees`          `e1`

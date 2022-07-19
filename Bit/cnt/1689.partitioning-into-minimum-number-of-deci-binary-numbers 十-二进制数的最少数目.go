@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers
+// https://leetcode.cn/problems/partitioning-into-minimum-number-of-deci-binary-numbers
 
 // ❓ 十-二进制数的最少数目
 // 123 => 111 011 001 => 3

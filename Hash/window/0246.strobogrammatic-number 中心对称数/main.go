@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/strobogrammatic-number
+// https://leetcode.cn/problems/strobogrammatic-number
 
 // ❓ 中心对称数
 

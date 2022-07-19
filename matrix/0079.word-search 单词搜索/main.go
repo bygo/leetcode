@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/word-search
+// https://leetcode.cn/problems/word-search
 
 var dirs = [4][]int{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
 

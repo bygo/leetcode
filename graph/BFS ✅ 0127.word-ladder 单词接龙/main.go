@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/word-ladder
+// https://leetcode.cn/problems/word-ladder
 
 func ladderLength(beginWord string, endWord string, wordList []string) int {
 	wordToId := map[string]int{}

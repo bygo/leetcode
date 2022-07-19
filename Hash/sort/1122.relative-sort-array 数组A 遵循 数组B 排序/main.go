@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/relative-sort-array
+// https://leetcode.cn/problems/relative-sort-array
 
 // ❓ 数组A 遵循 数组B 正序
 

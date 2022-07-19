@@ -5,7 +5,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/largest-number
+// https://leetcode.cn/problems/largest-number
 
 func largestNumber(nums []int) string {
 	sort.Slice(nums, func(i, j int) bool {

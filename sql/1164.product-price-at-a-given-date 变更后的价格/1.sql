@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/product-price-at-a-given-date
+# Link: https://leetcode.cn/problems/product-price-at-a-given-date
 
 SELECT DISTINCT `product_id`, `price`
 FROM (

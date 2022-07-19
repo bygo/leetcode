@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/trapping-rain-water
+// https://leetcode.cn/problems/trapping-rain-water
 
 // pre
 // f(i) = min(preMax,sufMax) - i

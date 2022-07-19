@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/multi-search-lcci/
+// https://leetcode.cn/problems/multi-search-lcci/
 
 // ❓ 面试题 17.17. 多次搜索
 

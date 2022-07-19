@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/special-array-with-x-elements-greater-than-or-equal-x
+// https://leetcode.cn/problems/special-array-with-x-elements-greater-than-or-equal-x
 
 func specialArray(nums []int) int {
 	sort.Ints(nums)

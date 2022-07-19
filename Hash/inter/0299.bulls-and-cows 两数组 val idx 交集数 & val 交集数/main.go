@@ -2,7 +2,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/bulls-and-cows
+// https://leetcode.cn/problems/bulls-and-cows
 
 // ❓ 公牛母牛数
 // 公牛: idx & val 交集

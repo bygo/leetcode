@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/bitwise-and-of-numbers-range
+// https://leetcode.cn/problems/bitwise-and-of-numbers-range
 
 // ❓ 数字范围按位与
 

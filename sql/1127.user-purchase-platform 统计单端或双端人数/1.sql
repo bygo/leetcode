@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/user-purchase-platform
+# Link: https://leetcode.cn/problems/user-purchase-platform
 
 SELECT `spend_date`,
        `t2`.`platform`,

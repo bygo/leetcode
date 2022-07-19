@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-inorder-traversal/
+// https://leetcode.cn/problems/binary-tree-inorder-traversal/
 
 // ❓ 二叉树的中序遍历
 

@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/delete-n-nodes-after-m-nodes-of-a-linked-list
+// https://leetcode.cn/problems/delete-n-nodes-after-m-nodes-of-a-linked-list
 
 // 直接模拟
 func deleteNodes(head *ListNode, m int, n int) *ListNode {

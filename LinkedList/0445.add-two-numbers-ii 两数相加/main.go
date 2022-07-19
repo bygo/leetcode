@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/add-two-numbers-ii
+// https://leetcode.cn/problems/add-two-numbers-ii
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	l1 = reverse(l1)

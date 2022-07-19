@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/all-possible-full-binary-trees
+// https://leetcode.cn/problems/all-possible-full-binary-trees
 
 type TreeNode struct {
 	Val   int

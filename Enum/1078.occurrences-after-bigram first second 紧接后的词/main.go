@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/occurrences-after-bigram
+// https://leetcode.cn/problems/occurrences-after-bigram
 
 // ❓ first second 紧接后的词
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
+// https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/
 
 type TreeNode struct {
 	Val   int

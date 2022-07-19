@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/clone-binary-tree-with-random-pointer
+// https://leetcode.cn/problems/clone-binary-tree-with-random-pointer
 
 type Node struct {
 	Val    int

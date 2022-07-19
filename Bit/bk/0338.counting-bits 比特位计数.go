@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/counting-bits
+// https://leetcode.cn/problems/counting-bits
 
 // ❓ 比特位计数
 // ⚠️ 0~n 有几个1

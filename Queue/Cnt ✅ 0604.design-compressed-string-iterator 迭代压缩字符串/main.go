@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-compressed-string-iterator
+// https://leetcode.cn/problems/design-compressed-string-iterator
 
 // ❓ 迭代压缩字符串
 // ⚠️ L1e2t1C1o1d1e1

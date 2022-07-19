@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/market-analysis-ii
+# Link: https://leetcode.cn/problems/market-analysis-ii
 
 
 SELECT `user_id`                                                                        `seller_id`,

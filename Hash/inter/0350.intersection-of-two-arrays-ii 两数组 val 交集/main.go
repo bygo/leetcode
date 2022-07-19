@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/intersection-of-two-arrays-ii
+// https://leetcode.cn/problems/intersection-of-two-arrays-ii
 
 // ❓ 两数组 val 交集
 

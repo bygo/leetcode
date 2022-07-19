@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/ones-and-zeroes
+// https://leetcode.cn/problems/ones-and-zeroes
 
 func findMaxForm(strs []string, m, n int) int {
 	sL := len(strs)

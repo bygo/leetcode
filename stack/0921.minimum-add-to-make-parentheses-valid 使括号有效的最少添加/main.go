@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-add-to-make-parentheses-valid
+// https://leetcode.cn/problems/minimum-add-to-make-parentheses-valid
 
 func minAddToMakeValid(s string) int {
 	var res int

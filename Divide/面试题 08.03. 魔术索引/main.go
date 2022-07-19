@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/magic-index-lcci/
+// https://leetcode.cn/problems/magic-index-lcci/
 
 func findMagicIndex(nums []int) int {
 	var dfs func(lo, hi int) int

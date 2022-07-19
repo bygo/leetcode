@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/actors-and-directors-who-cooperated-at-least-three-times
+# Link: https://leetcode.cn/problems/actors-and-directors-who-cooperated-at-least-three-times
 
 SELECT `actor_id`, `director_id`
 FROM `actordirector`

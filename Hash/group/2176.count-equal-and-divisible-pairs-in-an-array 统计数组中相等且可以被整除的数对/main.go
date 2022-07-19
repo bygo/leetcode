@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-equal-and-divisible-pairs-in-an-array
+// https://leetcode.cn/problems/count-equal-and-divisible-pairs-in-an-array
 
 // ❓ 统计数组中相等且可以被整除的数对
 

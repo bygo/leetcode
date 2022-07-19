@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/average-salary-departments-vs-company
+# Link: https://leetcode.cn/problems/average-salary-departments-vs-company
 
 SELECT DISTINCT DATE_FORMAT(`pay_date`, '%Y-%m')                        `pay_month`,
                 `department_id`,

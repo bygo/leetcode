@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-distance-between-bst-nodes/
+// https://leetcode.cn/problems/minimum-distance-between-bst-nodes/
 
 type TreeNode struct {
 	Val   int
@@ -33,4 +33,4 @@ func minDiffInBST(root *TreeNode) int {
 	return numDiff
 }
 
-// 0530 https://leetcode-cn.com/problems/minimum-absolute-difference-in-bst/
+// 0530 https://leetcode.cn/problems/minimum-absolute-difference-in-bst/

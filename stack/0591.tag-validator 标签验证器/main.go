@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/tag-validator
+// https://leetcode.cn/problems/tag-validator
 
 func isValid(code string) bool {
 	if code[0] != '<' || code[1] == '!' {

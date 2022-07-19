@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/single-number
+// https://leetcode.cn/problems/single-number
 
 // ❓ 只出现一次的数字
 // ⚠️ 其余出现两次

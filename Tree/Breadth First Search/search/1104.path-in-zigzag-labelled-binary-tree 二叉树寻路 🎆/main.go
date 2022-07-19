@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/path-in-zigzag-labelled-binary-tree
+// https://leetcode.cn/problems/path-in-zigzag-labelled-binary-tree
 
 type TreeNode struct {
 	Val   int

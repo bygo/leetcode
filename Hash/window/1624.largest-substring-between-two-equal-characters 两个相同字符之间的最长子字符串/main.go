@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/largest-substring-between-two-equal-characters
+// https://leetcode.cn/problems/largest-substring-between-two-equal-characters
 
 // ❓ 两个相同字符之间的最长子字符串
 

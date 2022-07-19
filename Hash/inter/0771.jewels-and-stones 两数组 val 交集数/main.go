@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/jewels-and-stones/
+// https://leetcode.cn/problems/jewels-and-stones/
 
 // ❓ 两数组 val 交集数
 func numJewelsInStones(j string, s string) int {

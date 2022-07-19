@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/friend-requests-i-overall-acceptance-rate
+# Link: https://leetcode.cn/problems/friend-requests-i-overall-acceptance-rate
 
 SELECT ROUND(
                IFNULL(

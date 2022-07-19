@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters
+// https://leetcode.cn/problems/smallest-subsequence-of-distinct-characters
 
 func smallestSubsequence(s string) string {
 	var m = map[byte]int{}

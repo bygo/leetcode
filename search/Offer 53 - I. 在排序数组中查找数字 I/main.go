@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/
+// https://leetcode.cn/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/
 func search(nums []int, target int) int {
 	return s(nums, target+1) - s(nums, target)
 }

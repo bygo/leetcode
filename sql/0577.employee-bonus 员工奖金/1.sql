@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/employee-bonus
+# Link: https://leetcode.cn/problems/employee-bonus
 
 SELECT `name`, `bonus`
 FROM `employee`

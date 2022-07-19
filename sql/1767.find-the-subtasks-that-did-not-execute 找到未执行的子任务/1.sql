@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-the-subtasks-that-did-not-execute
+# Link: https://leetcode.cn/problems/find-the-subtasks-that-did-not-execute
 
 WITH RECURSIVE `t`(`task_id`, `subtask_id`) AS (
     SELECT `task_id`, `subtasks_count`

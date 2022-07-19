@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/rotate-image
+// https://leetcode.cn/problems/rotate-image
 
 func rotate(matrix [][]int) {
 	n := len(matrix)

@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/products-worth-over-invoices
+# Link: https://leetcode.cn/problems/products-worth-over-invoices
 
 SELECT `p`.`name`                     `name`,
        IFNULL(SUM(`i`.`rest`), 0)     `rest`,

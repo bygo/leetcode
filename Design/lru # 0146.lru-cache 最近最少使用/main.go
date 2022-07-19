@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/lru-cache
+// https://leetcode.cn/problems/lru-cache
 
 type LRUCache struct {
 	cache      map[int]*Node

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-good-meals
+// https://leetcode.cn/problems/count-good-meals
 
 // ❓ 大餐(和为2的幂)总数
 
@@ -21,7 +21,7 @@ func countPairs(deliciousness []int) int {
 			cnt += numMpCnt[numTarget]
 		}
 		// 存入
-		numMpCnt[delicious] ++
+		numMpCnt[delicious]++
 	}
 	return cnt % (1e9 + 7)
 }

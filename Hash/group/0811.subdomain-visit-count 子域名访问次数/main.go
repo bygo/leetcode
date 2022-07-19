@@ -4,7 +4,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/subdomain-visit-count
+// https://leetcode.cn/problems/subdomain-visit-count
 
 // ❓ 子域名访问次数
 // ⚠️ 10 www.by.com

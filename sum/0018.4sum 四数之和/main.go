@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/4sum/
+// https://leetcode.cn/problems/4sum/
 
 func fourSum(nums []int, target int) [][]int {
 	if len(nums) < 4 {

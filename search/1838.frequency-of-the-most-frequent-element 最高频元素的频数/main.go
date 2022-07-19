@@ -1,11 +1,11 @@
 package main
 
-// https://leetcode-cn.com/problems/frequency-of-the-most-frequent-element
+// https://leetcode.cn/problems/frequency-of-the-most-frequent-element
 
 func maxFrequency(nums []int, k int) int {
 	var counter = make([]int, 100001)
 	for _, num := range nums {
-		counter[num] ++
+		counter[num]++
 	}
 
 	nums = []int{}

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/flip-binary-tree-to-match-preorder-traversal
+// https://leetcode.cn/problems/flip-binary-tree-to-match-preorder-traversal
 
 type TreeNode struct {
 	Val   int

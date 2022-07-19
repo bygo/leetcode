@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/distinct-subsequences
+// https://leetcode.cn/problems/distinct-subsequences
 
 // 选择或不选择
 

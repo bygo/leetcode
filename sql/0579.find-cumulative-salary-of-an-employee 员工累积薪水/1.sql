@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-cumulative-salary-of-an-employee
+# Link: https://leetcode.cn/problems/find-cumulative-salary-of-an-employee
 
 
 SELECT `e1`.`id`,

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/inorder-successor-in-bst/
+// https://leetcode.cn/problems/inorder-successor-in-bst/
 
 type TreeNode struct {
 	Val   int

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/2vYnGI/
+// https://leetcode.cn/problems/2vYnGI/
 
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)

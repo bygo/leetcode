@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/npv-queries
+# Link: https://leetcode.cn/problems/npv-queries
 
 SELECT `q`.`id`,
        `q`.`year`,

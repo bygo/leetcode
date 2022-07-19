@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/bank-account-summary-ii
+# Link: https://leetcode.cn/problems/bank-account-summary-ii
 
 
 SELECT `name`,

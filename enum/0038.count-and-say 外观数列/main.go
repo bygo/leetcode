@@ -2,7 +2,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/count-and-say/
+// https://leetcode.cn/problems/count-and-say/
 
 func countAndSay(n int) string {
 	var res = []byte("1$")

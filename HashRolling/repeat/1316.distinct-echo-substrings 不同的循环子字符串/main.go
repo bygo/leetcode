@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/distinct-echo-substrings
+// https://leetcode.cn/problems/distinct-echo-substrings
 
 // ❓ 不同的循环子字符串 总数
 

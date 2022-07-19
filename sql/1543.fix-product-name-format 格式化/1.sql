@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/fix-product-name-format
+# Link: https://leetcode.cn/problems/fix-product-name-format
 
 
 SELECT LOWER(TRIM(`product_name`)) `product_name`,

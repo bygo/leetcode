@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-increasing-path-in-a-matrix
+// https://leetcode.cn/problems/longest-increasing-path-in-a-matrix
 
 func longestIncreasingPath(matrix [][]int) int {
 	var (

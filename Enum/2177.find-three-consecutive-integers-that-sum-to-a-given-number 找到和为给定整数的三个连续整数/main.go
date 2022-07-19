@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number
+// https://leetcode.cn/problems/find-three-consecutive-integers-that-sum-to-a-given-number
 
 // ❓ 找到和为给定整数的三个连续整数
 

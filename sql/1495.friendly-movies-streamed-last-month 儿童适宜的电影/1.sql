@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/friendly-movies-streamed-last-month
+# Link: https://leetcode.cn/problems/friendly-movies-streamed-last-month
 
 SELECT DISTINCT `title`
 FROM `tvprogram`             `t`

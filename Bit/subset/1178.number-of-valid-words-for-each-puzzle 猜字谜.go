@@ -2,7 +2,7 @@ package main
 
 import "math/bits"
 
-// https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle
+// https://leetcode.cn/problems/number-of-valid-words-for-each-puzzle
 
 // ❓ 猜字谜
 // ⚠️ word 包含  puzzle 第一个字母

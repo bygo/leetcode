@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-out-of-three
+// https://leetcode.cn/problems/two-out-of-three
 
 func twoOutOfThree(nums1 []int, nums2 []int, nums3 []int) []int {
 	m := map[int]int{}

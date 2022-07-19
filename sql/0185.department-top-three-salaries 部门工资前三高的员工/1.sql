@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/department-top-three-salaries
+# Link: https://leetcode.cn/problems/department-top-three-salaries
 
 SELECT `department`, `employee`, `salary`
 FROM (SELECT `d`.`name`                                                                       `department`,

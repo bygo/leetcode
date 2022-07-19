@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/lowest-common-ancestor-of-deepest-leaves/
+// https://leetcode.cn/problems/lowest-common-ancestor-of-deepest-leaves/
 
 type TreeNode struct {
 	Val   int
@@ -32,4 +32,4 @@ func lcaDeepestLeaves(root *TreeNode) *TreeNode {
 }
 
 // 865. 具有所有最深节点的最小子树
-// https://leetcode-cn.com/problems/smallest-subtree-with-all-the-deepest-nodes/
+// https://leetcode.cn/problems/smallest-subtree-with-all-the-deepest-nodes/

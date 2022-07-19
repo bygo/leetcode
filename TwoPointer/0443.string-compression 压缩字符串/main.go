@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/string-compression
+// https://leetcode.cn/problems/string-compression
 
 func compress(chars []byte) int {
 	var cnt int

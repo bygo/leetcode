@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-length-of-repeated-subarray
+// https://leetcode.cn/problems/maximum-length-of-repeated-subarray
 
 func findLength(num1 []int, num2 []int) int {
 	l1 := len(num1)

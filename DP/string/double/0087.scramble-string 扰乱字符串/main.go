@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/scramble-string
+// https://leetcode.cn/problems/scramble-string
 
 // 三维
 // f[i][j][l] 代表 字符串s1[i:i+l] s2[j:j+l]  是否和谐

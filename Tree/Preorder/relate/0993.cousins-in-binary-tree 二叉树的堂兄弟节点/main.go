@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/cousins-in-binary-tree
+// https://leetcode.cn/problems/cousins-in-binary-tree
 
 type TreeNode struct {
 	Val   int

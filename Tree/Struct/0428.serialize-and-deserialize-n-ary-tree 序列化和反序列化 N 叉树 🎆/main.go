@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/serialize-and-deserialize-n-ary-tree/
+// https://leetcode.cn/problems/serialize-and-deserialize-n-ary-tree/
 
 import (
 	"strconv"

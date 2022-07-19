@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/customers-who-bought-products-a-and-b-but-not-c
+# Link: https://leetcode.cn/problems/customers-who-bought-products-a-and-b-but-not-c
 
 SELECT `c`.`customer_id`,
        `c`.`customer_name`

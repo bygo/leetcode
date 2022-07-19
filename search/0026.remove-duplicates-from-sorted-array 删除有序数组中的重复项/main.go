@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/submissions/
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-array/submissions/
 
 func removeDuplicates(nums []int) int {
 	l, top := 1, len(nums)-1

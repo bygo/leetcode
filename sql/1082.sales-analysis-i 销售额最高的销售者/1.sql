@@ -1,5 +1,5 @@
 # Title: Sales Analysis I
-# Link: https://leetcode-cn.com/problems/sales-analysis-i
+# Link: https://leetcode.cn/problems/sales-analysis-i
 
 SELECT `seller_id`
 FROM (

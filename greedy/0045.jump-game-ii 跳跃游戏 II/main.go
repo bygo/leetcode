@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/jump-game-ii
+// https://leetcode.cn/problems/jump-game-ii
 
 func jump(nums []int) int {
 	var steps, farthest, point int

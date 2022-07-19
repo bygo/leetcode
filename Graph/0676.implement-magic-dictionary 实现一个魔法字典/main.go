@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/implement-magic-dictionary
+// https://leetcode.cn/problems/implement-magic-dictionary
 
 // ❓ 实现一个魔法字典
 
@@ -22,7 +22,7 @@ func (md *MagicDictionary) BuildDict(dictionary []string) {
 		for i := range bufStr {
 			ch := bufStr[i]
 			bufStr[i] = '*'
-			md.virMpCnt[string(bufStr)] ++
+			md.virMpCnt[string(bufStr)]++
 			bufStr[i] = ch
 		}
 	}

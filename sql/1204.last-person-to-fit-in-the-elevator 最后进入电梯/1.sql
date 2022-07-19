@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/last-person-to-fit-in-the-elevator
+# Link: https://leetcode.cn/problems/last-person-to-fit-in-the-elevator
 
 
 SELECT `a`.`person_name`

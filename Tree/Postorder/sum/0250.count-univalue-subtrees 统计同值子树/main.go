@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/count-univalue-subtrees/
+// https://leetcode.cn/problems/count-univalue-subtrees/
 
 type TreeNode struct {
 	Val   int

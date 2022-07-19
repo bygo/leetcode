@@ -5,7 +5,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/3sum-closest/
+// https://leetcode.cn/problems/3sum-closest/
 
 func threeSumClosest(nums []int, target int) int {
 	sort.Ints(nums) //排序，保证从小到大

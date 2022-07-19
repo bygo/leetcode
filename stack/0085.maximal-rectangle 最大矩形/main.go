@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximal-rectangle
+// https://leetcode.cn/problems/maximal-rectangle
 
 func maximalRectangle(matrix [][]byte) int {
 	if 0 == len(matrix) {

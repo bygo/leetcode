@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/article-views-i
+# Link: https://leetcode.cn/problems/article-views-i
 
 SELECT DISTINCT `author_id` `id`
 FROM `views`

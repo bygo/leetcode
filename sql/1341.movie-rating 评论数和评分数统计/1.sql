@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/movie-rating
+# Link: https://leetcode.cn/problems/movie-rating
 
 (SELECT `name` `results`
  FROM `users`                 `u`

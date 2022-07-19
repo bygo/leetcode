@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/construct-binary-search-tree-from-preorder-traversal/
+// https://leetcode.cn/problems/construct-binary-search-tree-from-preorder-traversal/
 
 // ❓ 前序遍历构造二叉搜索树
 

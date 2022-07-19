@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays
+// https://leetcode.cn/problems/make-two-arrays-equal-by-reversing-sub-arrays
 
 // ❓ 无限翻转子数组 使两个数组相等
 

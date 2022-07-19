@@ -2,7 +2,7 @@ package main
 
 import "container/list"
 
-// https://leetcode-cn.com/problems/design-hashset
+// https://leetcode.cn/problems/design-hashset
 
 const base = 1024
 

@@ -1,8 +1,8 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-genetic-mutation
+// https://leetcode.cn/problems/minimum-genetic-mutation
 
-// ❓ 最小基因变化 
+// ❓ 最小基因变化
 
 func minMutation(start string, end string, bank []string) int {
 	m := make(map[string]struct{})

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/verifying-an-alien-dictionary
+// https://leetcode.cn/problems/verifying-an-alien-dictionary
 
 // ❓ 单词 遵循 词典序 正序
 

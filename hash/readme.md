@@ -54,7 +54,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/subdomain-visit-count
+// https://leetcode.cn/problems/subdomain-visit-count
 
 // ❓ 子域名访问次数
 // ⚠️ 10 www.by.com
@@ -94,7 +94,7 @@ func subdomainVisits(cpdomains []string) []string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/fair-candy-swap
+// https://leetcode.cn/problems/fair-candy-swap
 
 // ❓ 交换一个值后，总和相等
 
@@ -143,7 +143,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/longest-word-in-dictionary
+// https://leetcode.cn/problems/longest-word-in-dictionary
 
 // ❓词典中连续递接 的最长单词
 
@@ -223,7 +223,7 @@ func longestWordTrie(words []string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/two-sum/
+// https://leetcode.cn/problems/two-sum/
 
 // ❓ 两数之和
 
@@ -246,7 +246,7 @@ func twoSum(nums []int, target int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/design-tic-tac-toe
+// https://leetcode.cn/problems/design-tic-tac-toe
 
 // ❓设计无限大井字棋 n不止3
 
@@ -307,7 +307,7 @@ func (t *TicTacToe) win(i int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/keyboard-row
+// https://leetcode.cn/problems/keyboard-row
 
 // ❓ 在键盘同一行的单词数
 
@@ -351,7 +351,7 @@ func findWords(words []string) []string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs
+// https://leetcode.cn/problems/number-of-equivalent-domino-pairs
 
 // ❓ 组合相同的数量
 // ⚠️ 一个组只有2个数字
@@ -376,7 +376,7 @@ func numEquivDominoPairs(d [][]int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game
+// https://leetcode.cn/problems/find-winner-on-a-tic-tac-toe-game
 
 // ❓ 3x3 井字棋
 
@@ -429,7 +429,7 @@ func tictactoe(moves [][]int) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/number-of-good-pairs
+// https://leetcode.cn/problems/number-of-good-pairs
 
 // ❓ 好数对的数目
 // ⚠️ i < j && nums[i] == nums[j]
@@ -456,7 +456,7 @@ import (
 	"strconv"
 )
 
-// https://leetcode-cn.com/problems/unique-word-abbreviation
+// https://leetcode.cn/problems/unique-word-abbreviation
 
 // ❓ 单词是唯一的缩写
 
@@ -496,7 +496,7 @@ func Compress(str string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/x-of-a-kind-in-a-deck-of-cards
+// https://leetcode.cn/problems/x-of-a-kind-in-a-deck-of-cards
 
 // ❓存在 int(x) 把数组分为:
 // ⚠️ 每组cnt为 int(g)
@@ -534,7 +534,7 @@ func gcd(x, y int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/unique-email-addresses
+// https://leetcode.cn/problems/unique-email-addresses
 
 // ❓ 不同的邮件地址数
 // b.y+ig@gmail.com
@@ -575,7 +575,7 @@ func numUniqueEmails(emails []string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/count-largest-group
+// https://leetcode.cn/problems/count-largest-group
 
 // ❓ 数位和相同为一组，含有最大数量的有多少组
 
@@ -610,7 +610,7 @@ func countLargestGroup(n int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-balls-in-a-box
+// https://leetcode.cn/problems/maximum-number-of-balls-in-a-box
 
 // ❓ 盒子中小球的最大数量
 
@@ -650,7 +650,7 @@ func countBalls(lowLimit int, hiLimit int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/number-of-different-integers-in-a-string
+// https://leetcode.cn/problems/number-of-different-integers-in-a-string
 
 // ❓ 字符串中不同整数的数目
 // ⚠️ 0 01 001
@@ -690,7 +690,7 @@ func numDifferentIntegers(word string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/shortest-word-distance-ii
+// https://leetcode.cn/problems/shortest-word-distance-ii
 
 // ❓ 两单词距离最小索引
 
@@ -739,7 +739,7 @@ func (wd *WordDistance) Shortest(word1 string, word2 string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/minimum-index-sum-of-two-lists
+// https://leetcode.cn/problems/minimum-index-sum-of-two-lists
 
 // ❓ 两数组相同值的最小索引集合
 // ⚠️ 没有重复
@@ -776,7 +776,7 @@ func findRestaurant(list1 []string, list2 []string) []string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-anagram-mappings
+// https://leetcode.cn/problems/find-anagram-mappings
 
 // ❓ 在B找A的位置
 
@@ -800,7 +800,7 @@ func anagramMappings(A []int, B []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/single-row-keyboard
+// https://leetcode.cn/problems/single-row-keyboard
 
 // ❓ 输入一个单词的移动长度总和
 // ⚠️ 移动长度 = abs(i - j)
@@ -844,7 +844,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/bulls-and-cows
+// https://leetcode.cn/problems/bulls-and-cows
 
 // ❓ 公牛母牛数
 // 公牛: idx & val 交集
@@ -882,7 +882,7 @@ func min(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/intersection-of-two-arrays
+// https://leetcode.cn/problems/intersection-of-two-arrays
 
 // ❓ 相对交集 val 取唯一值
 
@@ -909,7 +909,7 @@ func intersection(nums1 []int, nums2 []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/intersection-of-two-arrays-ii
+// https://leetcode.cn/problems/intersection-of-two-arrays-ii
 
 // ❓ 两数组 val 交集
 
@@ -935,7 +935,7 @@ func intersect(nums1 []int, nums2 []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/jewels-and-stones/
+// https://leetcode.cn/problems/jewels-and-stones/
 
 // ❓ 两数组 val 交集数
 func numJewelsInStones(j string, s string) int {
@@ -957,7 +957,7 @@ func numJewelsInStones(j string, s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/most-common-word
+// https://leetcode.cn/problems/most-common-word
 
 // ❓ 两数组 val 最大交集数
 
@@ -1003,7 +1003,7 @@ func mostCommonWord(paragraph string, banned []string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-common-characters
+// https://leetcode.cn/problems/find-common-characters
 
 // ❓ N个字符串 公共字符
 
@@ -1044,7 +1044,7 @@ func commonChars(words []string) []string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/line-reflection
+// https://leetcode.cn/problems/line-reflection
 
 func isReflected(points [][]int) bool {
 	xMpYMpBool := map[int]map[int]bool{}
@@ -1085,7 +1085,7 @@ func isReflected(points [][]int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/count-number-of-pairs-with-absolute-difference-k
+// https://leetcode.cn/problems/count-number-of-pairs-with-absolute-difference-k
 
 func countKDifference(nums []int, k int) int {
 	m := map[int]int{}
@@ -1103,7 +1103,7 @@ func countKDifference(nums []int, k int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-original-array-from-doubled-array
+// https://leetcode.cn/problems/find-original-array-from-doubled-array
 
 func findOriginalArray(changed []int) []int {
 	if len(changed)%2 == 1 {
@@ -1142,7 +1142,7 @@ func findOriginalArray(changed []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/detect-squares
+// https://leetcode.cn/problems/detect-squares
 
 // ❓ 输入的点，能形成几个正方形
 
@@ -1192,7 +1192,7 @@ func (ds *DetectSquares) Count(p []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/majority-element
+// https://leetcode.cn/problems/majority-element
 
 // ❓ 超过一半的数
 
@@ -1219,7 +1219,7 @@ func majorityElement(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/majority-element-ii
+// https://leetcode.cn/problems/majority-element-ii
 
 // ❓ 超过1/n的数
 
@@ -1297,7 +1297,7 @@ func majorityElement(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/isomorphic-strings
+// https://leetcode.cn/problems/isomorphic-strings
 
 func isIsomorphic(s string, t string) bool {
 	ch1MpCh2 := map[byte]byte{}
@@ -1327,7 +1327,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/word-pattern
+// https://leetcode.cn/problems/word-pattern
 
 // ❓ 句子与单词 双向绑定
 
@@ -1357,7 +1357,7 @@ func wordPattern(pattern string, s string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/sentence-similarity
+// https://leetcode.cn/problems/sentence-similarity
 
 // ❓ 句子相似性 双向绑定
 // ⚠️ great 和 fine 相似 相当 fine 和 great 相似
@@ -1394,7 +1394,7 @@ func areSentencesSimilar(sentence1 []string, sentence2 []string, similarPairs []
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-consecutive-sequence
+// https://leetcode.cn/problems/longest-consecutive-sequence
 
 func longestConsecutive(nums []int) int {
 	numMpBool := map[int]bool{}
@@ -1425,7 +1425,7 @@ func longestConsecutive(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/valid-anagram
+// https://leetcode.cn/problems/valid-anagram
 
 // ❓ 有效的异位词
 func isAnagram(s string, t string) bool {
@@ -1454,7 +1454,7 @@ func isAnagram(s string, t string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/palindrome-permutation
+// https://leetcode.cn/problems/palindrome-permutation
 
 // ❓ 有效回文
 
@@ -1481,7 +1481,7 @@ func canPermutePalindrome(s string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/ransom-note
+// https://leetcode.cn/problems/ransom-note
 
 // ❓ 从magazine组合成ransomNote
 
@@ -1506,7 +1506,7 @@ func canConstruct(ransomNote string, magazine string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-palindrome
+// https://leetcode.cn/problems/longest-palindrome
 
 // ❓ 能排列为最长的回文串
 
@@ -1536,7 +1536,7 @@ func longestPalindrome(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/distribute-candies
+// https://leetcode.cn/problems/distribute-candies
 
 // ❓ 得到最多类型的糖果
 func distributeCandies(candy []int) int {
@@ -1559,7 +1559,7 @@ func distributeCandies(candy []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-harmonious-subsequence
+// https://leetcode.cn/problems/longest-harmonious-subsequence
 
 // ❓ 最长相差1 子序列
 // 二次扫描
@@ -1610,7 +1610,7 @@ func findLHSOne(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/shortest-completing-word
+// https://leetcode.cn/problems/shortest-completing-word
 
 // ❓ 最短补全词
 // ⚠️ step 能覆盖 s1T2p 所有字母 stp
@@ -1662,7 +1662,7 @@ func shortestCompletingWord(licensePlate string, words []string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/buddy-strings
+// https://leetcode.cn/problems/buddy-strings
 
 // ❓ 交换一次后字符串相等
 
@@ -1709,7 +1709,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/high-five
+// https://leetcode.cn/problems/high-five
 
 // ❓ 每个学生 最高的五科 成绩的 平均分
 
@@ -1769,7 +1769,7 @@ func highFive(items [][]int) [][]int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters
+// https://leetcode.cn/problems/find-words-that-can-be-formed-by-characters
 
 func countCharacters(words []string, chars string) int {
 	m := [26]int{}
@@ -1805,7 +1805,7 @@ func countCharacters(words []string, chars string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-balloons
+// https://leetcode.cn/problems/maximum-number-of-balloons
 
 // ❓ 气球的最大数量
 
@@ -1839,7 +1839,7 @@ func maxNumberOfBalloons(text string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/counting-elements
+// https://leetcode.cn/problems/counting-elements
 
 // 存在后置元素的元素个数
 func countElements(arr []int) int {
@@ -1862,7 +1862,7 @@ func countElements(arr []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/make-two-arrays-equal-by-reversing-sub-arrays
+// https://leetcode.cn/problems/make-two-arrays-equal-by-reversing-sub-arrays
 
 // ❓ 无限翻转子数组 使两个数组相等
 
@@ -1892,7 +1892,7 @@ func canBeEqual(target []int, arr []int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-nice-substring
+// https://leetcode.cn/problems/longest-nice-substring
 
 // ❓ 大小写成对出现的最长子串
 // ⚠️ Aa Bb... 成对
@@ -1934,7 +1934,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/WqXACV/
+// https://leetcode.cn/problems/WqXACV/
 
 // ❓ 完成一半题目最少题型
 // ⚠️ 2*N 道题目
@@ -1969,7 +1969,7 @@ func halfQuestions(questions []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/binary-subarrays-with-sum
+// https://leetcode.cn/problems/binary-subarrays-with-sum
 
 // ❓ 和为 goal 的二元子数组
 // ⚠️ 1 0 0 1 0 0 0 0 1
@@ -1992,7 +1992,7 @@ func numSubarraysWithSum(nums []int, goal int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/count-good-meals
+// https://leetcode.cn/problems/count-good-meals
 
 func countPairs(deliciousness []int) (res int) {
 	var preMax, sumMax int
@@ -2016,7 +2016,7 @@ func countPairs(deliciousness []int) (res int) {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/design-hit-counter
+// https://leetcode.cn/problems/design-hit-counter
 
 type HitCounter struct {
 	m []Counter
@@ -2061,7 +2061,7 @@ func (hc *HitCounter) GetHits(timestamp int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/first-missing-positive/
+// https://leetcode.cn/problems/first-missing-positive/
 
 func firstMissingPositive(nums []int) int {
 	l1 := len(nums)
@@ -2104,7 +2104,7 @@ func abs(a int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/first-unique-character-in-a-string
+// https://leetcode.cn/problems/first-unique-character-in-a-string
 
 func firstUniqCharBit(s string) int {
 	l1 := len(s)
@@ -2177,7 +2177,7 @@ func firstUniqCharQueue(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-all-duplicates-in-an-array
+// https://leetcode.cn/problems/find-all-duplicates-in-an-array
 
 func findDuplicates(nums []int) []int {
 	n := len(nums) + 1
@@ -2198,7 +2198,7 @@ func findDuplicates(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array
+// https://leetcode.cn/problems/find-all-numbers-disappeared-in-an-array
 
 func findDisappearedNumbers(nums []int) []int {
 	var res []int
@@ -2222,7 +2222,7 @@ func findDisappearedNumbers(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/design-compressed-string-iterator
+// https://leetcode.cn/problems/design-compressed-string-iterator
 
 type StringIterator struct {
 	q []pair
@@ -2288,7 +2288,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/sort-array-by-increasing-frequency
+// https://leetcode.cn/problems/sort-array-by-increasing-frequency
 
 func frequencySort(nums []int) []int {
 	m := map[int]int{}
@@ -2314,7 +2314,7 @@ func frequencySort(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/second-largest-digit-in-a-string
+// https://leetcode.cn/problems/second-largest-digit-in-a-string
 
 func secondHighest(s string) int {
 	var first, second = -1, -1
@@ -2338,7 +2338,7 @@ func secondHighest(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/check-if-all-characters-have-equal-number-of-occurrences
+// https://leetcode.cn/problems/check-if-all-characters-have-equal-number-of-occurrences
 
 func areOccurrencesEqual(s string) bool {
 	m := map[byte]int{}
@@ -2360,7 +2360,7 @@ func areOccurrencesEqual(s string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/two-out-of-three
+// https://leetcode.cn/problems/two-out-of-three
 
 func twoOutOfThree(nums1 []int, nums2 []int, nums3 []int) []int {
 	m := map[int]int{}
@@ -2401,7 +2401,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/sort-characters-by-frequency
+// https://leetcode.cn/problems/sort-characters-by-frequency
 
 func frequencySortBucket(s string) string {
 	var freq = map[byte]int{}
@@ -2462,7 +2462,7 @@ func frequencySortQuick(s string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/verifying-an-alien-dictionary
+// https://leetcode.cn/problems/verifying-an-alien-dictionary
 
 func isAlienSorted(words []string, order string) bool {
 	m := [26]int{}
@@ -2502,7 +2502,7 @@ func isAlienSorted(words []string, order string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/relative-sort-array
+// https://leetcode.cn/problems/relative-sort-array
 
 func relativeSortArray(arr1 []int, arr2 []int) []int {
 	m := [1001]int{}
@@ -2535,7 +2535,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/rank-transform-of-an-array
+// https://leetcode.cn/problems/rank-transform-of-an-array
 
 func arrayRankTransform(arr []int) []int {
 	sorted := make([]int, len(arr))
@@ -2563,7 +2563,7 @@ func arrayRankTransform(arr []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/
+// https://leetcode.cn/problems/how-many-numbers-are-smaller-than-the-current-number/
 
 func smallerNumbersThanCurrent(nums []int) []int {
 	var pre [101]int
@@ -2589,7 +2589,7 @@ func smallerNumbersThanCurrent(nums []int) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/increasing-decreasing-string
+// https://leetcode.cn/problems/increasing-decreasing-string
 
 func sortString(s string) string {
 	m := [26]int{}
@@ -2622,7 +2622,7 @@ func sortString(s string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/check-array-formation-through-concatenation
+// https://leetcode.cn/problems/check-array-formation-through-concatenation
 
 func canFormArray(arr []int, pieces [][]int) bool {
 	m := map[int]int{}
@@ -2647,7 +2647,7 @@ func canFormArray(arr []int, pieces [][]int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-ice-cream-bars
+// https://leetcode.cn/problems/maximum-ice-cream-bars
 
 func maxIceCream(costs []int, coins int) int {
 	var res int
@@ -2684,7 +2684,7 @@ func min(a, b int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/group-anagrams
+// https://leetcode.cn/problems/group-anagrams
 
 func groupAnagrams(strs []string) [][]string {
 	m := map[[26]int][]string{}
@@ -2708,7 +2708,7 @@ func groupAnagrams(strs []string) [][]string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/group-shifted-strings
+// https://leetcode.cn/problems/group-shifted-strings
 
 func groupStrings(strings []string) [][]string {
 	m := map[string]int{}
@@ -2742,7 +2742,7 @@ func groupStrings(strings []string) [][]string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/contains-duplicate
+// https://leetcode.cn/problems/contains-duplicate
 
 // ❓ 出现重复
 
@@ -2763,7 +2763,7 @@ func containsDuplicate(nums []int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/h-index
+// https://leetcode.cn/problems/h-index
 
 // ❓ h指数 为 篇数cnt 等于 至少引用次数quote
 
@@ -2795,7 +2795,7 @@ func hIndex(citations []int) (h int) {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/logger-rate-limiter
+// https://leetcode.cn/problems/logger-rate-limiter
 
 // ❓相同消息截流
 
@@ -2825,7 +2825,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/uncommon-words-from-two-sentences
+// https://leetcode.cn/problems/uncommon-words-from-two-sentences
 
 // ❓ 在两个数组只出现一次的单词
 
@@ -2860,7 +2860,7 @@ func uncommonFromSentences(s1 string, s2 string) []string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/remove-vowels-from-a-string
+// https://leetcode.cn/problems/remove-vowels-from-a-string
 
 // ❓ 移除元音字符
 
@@ -2884,7 +2884,7 @@ func removeVowels(s string) string {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/largest-unique-number
+// https://leetcode.cn/problems/largest-unique-number
 
 // ❓ 最大的唯一值
 
@@ -2910,7 +2910,7 @@ func largestUniqueNumber(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/check-if-n-and-its-double-exist
+// https://leetcode.cn/problems/check-if-n-and-its-double-exist
 
 // ❓是否存在两倍数
 
@@ -2936,7 +2936,7 @@ func checkIfExist(arr []int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-lucky-integer-in-an-array
+// https://leetcode.cn/problems/find-lucky-integer-in-an-array
 
 // ❓ 出现次数cnt等于值val的最大值
 
@@ -2962,7 +2962,7 @@ func findLucky(arr []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/sum-of-unique-elements
+// https://leetcode.cn/problems/sum-of-unique-elements
 
 // ❓ 所有唯一元素的和
 
@@ -2987,7 +2987,7 @@ func sumOfUnique(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-number-of-words-you-can-type
+// https://leetcode.cn/problems/maximum-number-of-words-you-can-type
 
 // ❓ 可以输入的最大单词数
 // ⚠️ hello word , w
@@ -3026,7 +3026,7 @@ func canBeTypedWords(text string, brokenLetters string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/count-vowel-substrings-of-a-string
+// https://leetcode.cn/problems/count-vowel-substrings-of-a-string
 
 // ❓ 连续元音子串数
 
@@ -3087,7 +3087,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters
+// https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters
 
 func longestSubstring(s string, k int) int {
 	var res int
@@ -3168,7 +3168,7 @@ func longestSubstringDivide(s string, k int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/find-all-anagrams-in-a-string
+// https://leetcode.cn/problems/find-all-anagrams-in-a-string
 
 func findAnagrams(s string, p string) []int {
 	l1 := len(s)
@@ -3209,7 +3209,7 @@ func findAnagrams(s string, p string) []int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+// https://leetcode.cn/problems/longest-substring-without-repeating-characters/
 
 func lengthOfLongestSubstring(s string) int {
 	var res, cur, l int
@@ -3237,7 +3237,7 @@ func lengthOfLongestSubstring(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-substring-with-at-most-two-distinct-characters
+// https://leetcode.cn/problems/longest-substring-with-at-most-two-distinct-characters
 
 func lengthOfLongestSubstringTwoDistinct(s string) int {
 	m := [128]int{}
@@ -3275,7 +3275,7 @@ func lengthOfLongestSubstringTwoDistinct(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/contains-duplicate-ii
+// https://leetcode.cn/problems/contains-duplicate-ii
 
 func containsNearbyDuplicate(nums []int, k int) bool {
 	var m = map[int]int{}
@@ -3295,7 +3295,7 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/strobogrammatic-number
+// https://leetcode.cn/problems/strobogrammatic-number
 
 func isStrobogrammatic(num string) bool {
 	m := map[byte]byte{'6': '9', '9': '6', '8': '8', '0': '0', '1': '1'}
@@ -3317,7 +3317,7 @@ func isStrobogrammatic(num string) bool {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/degree-of-an-array
+// https://leetcode.cn/problems/degree-of-an-array
 
 type e struct {
 	cnt int
@@ -3364,7 +3364,7 @@ func findShortestSubArray(nums []int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/largest-substring-between-two-equal-characters
+// https://leetcode.cn/problems/largest-substring-between-two-equal-characters
 
 func maxLengthBetweenEqualCharacters(s string) int {
 	m := map[byte]int{}
@@ -3390,7 +3390,7 @@ func maxLengthBetweenEqualCharacters(s string) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/maximum-size-subarray-sum-equals-k
+// https://leetcode.cn/problems/maximum-size-subarray-sum-equals-k
 
 func maxSubArrayLen(nums []int, k int) int {
 	m := map[int]int{0: -1}
@@ -3419,7 +3419,7 @@ func maxSubArrayLen(nums []int, k int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/longest-substring-with-at-most-k-distinct-characters
+// https://leetcode.cn/problems/longest-substring-with-at-most-k-distinct-characters
 
 func lengthOfLongestSubstringKDistinct(s string, k int) int {
 	m := map[byte]int{}
@@ -3450,7 +3450,7 @@ func lengthOfLongestSubstringKDistinct(s string, k int) int {
 ```go
 package main
 
-// https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array
+// https://leetcode.cn/problems/n-repeated-element-in-size-2n-array
 
 func repeatedNTimes(nums []int) int {
 	l1 := len(nums)

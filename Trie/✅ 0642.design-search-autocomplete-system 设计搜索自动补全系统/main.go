@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-search-autocomplete-system
+// https://leetcode.cn/problems/design-search-autocomplete-system
 
 type AutocompleteSystem struct {
 	root *trie

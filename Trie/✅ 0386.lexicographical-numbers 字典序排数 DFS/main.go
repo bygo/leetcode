@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/lexicographical-numbers
+// https://leetcode.cn/problems/lexicographical-numbers
 
 // ❓ 字典序排数
 // ⚠️ 乘以10进入下层 除以10返回上层

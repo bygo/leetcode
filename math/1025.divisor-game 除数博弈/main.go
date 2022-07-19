@@ -1,3 +1,3 @@
 package main
 
-// https://leetcode-cn.com/problems/divisor-game
+// https://leetcode.cn/problems/divisor-game

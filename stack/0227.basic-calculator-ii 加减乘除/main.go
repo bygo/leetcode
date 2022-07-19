@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/basic-calculator-ii
+// https://leetcode.cn/problems/basic-calculator-ii
 
 func calculate(s string) int {
 	var stack []int

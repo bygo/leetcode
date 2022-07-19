@@ -72,7 +72,7 @@ type Profile struct {
 const (
 	Repository = "https://github.com/bygo/leetcode"
 
-	ApiProblemsAll     = "https://leetcode-cn.com/api/problems/all/"
+	ApiProblemsAll     = "https://leetcode.cn/api/problems/all/"
 	AllJsonFile        = "all.json"
 	AllJsonUpdatedText = "update `all.json`"
 
@@ -195,7 +195,7 @@ func main() {
 	path := fmt.Sprintf("%04d.%s", i, p.Stat.QuestionTitleSlug)
 
 	problemStub = bytes.Replace(problemStub, dummyBufLinkTitle, []byte(p.Stat.QuestionTitle), 1)
-	problemStub = bytes.Replace(problemStub, dummyBufLink, []byte(fmt.Sprintf("https://leetcode-cn.com/problems/%s", p.Stat.QuestionTitleSlug)), 1)
+	problemStub = bytes.Replace(problemStub, dummyBufLink, []byte(fmt.Sprintf("https://leetcode.cn/problems/%s", p.Stat.QuestionTitleSlug)), 1)
 
 	//Check(os.Mkdir(path, os.ModePerm))
 
@@ -326,7 +326,7 @@ func buildReadme() {
 					questionDifficulty = difficulty[problem.Difficulty.Level-1]
 				}
 
-				class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode-cn.com/problems/%s) | %s | %s | [Go](%s) | %s",
+				class = append(class, fmt.Sprintf("\n [%-32s](https://leetcode.cn/problems/%s) | %s | %s | [Go](%s) | %s",
 					questionTitle,
 					questionTitleSlug,
 					questionCN,

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/image-smoother
+// https://leetcode.cn/problems/image-smoother
 
 func imageSmoother(img [][]int) [][]int {
 	rowL, colL := len(img), len(img[0])

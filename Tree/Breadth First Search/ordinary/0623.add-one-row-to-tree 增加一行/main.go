@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/add-one-row-to-tree/
+// https://leetcode.cn/problems/add-one-row-to-tree/
 
 type TreeNode struct {
 	Val   int

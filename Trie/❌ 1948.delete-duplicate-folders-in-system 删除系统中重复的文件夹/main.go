@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-// https://leetcode-cn.com/problems/delete-duplicate-folders-in-system
+// https://leetcode.cn/problems/delete-duplicate-folders-in-system
 
 type trie struct {
 	strMp map[string]*trie

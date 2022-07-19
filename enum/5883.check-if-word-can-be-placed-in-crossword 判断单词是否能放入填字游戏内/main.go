@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-if-word-can-be-placed-in-crossword
+// https://leetcode.cn/problems/check-if-word-can-be-placed-in-crossword
 
 func placeWordInCrossword(board [][]byte, word string) bool {
 	l1 := len(board)

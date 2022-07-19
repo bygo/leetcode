@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/restaurant-growth
+# Link: https://leetcode.cn/problems/restaurant-growth
 
 # Write your MySQL query statement below
 SELECT `visited_on`,

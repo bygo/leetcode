@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/merge-in-between-linked-lists
+// https://leetcode.cn/problems/merge-in-between-linked-lists
 
 // ❓ 合并两个链表
 

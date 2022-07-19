@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// https://leetcode-cn.com/problems/find-duplicate-subtrees
+// https://leetcode.cn/problems/find-duplicate-subtrees
 
 type TreeNode struct {
 	Val   int

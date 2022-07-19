@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/length-of-last-word
+// https://leetcode.cn/problems/length-of-last-word
 
 func lengthOfLastWord(s string) {
 	var res int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/set-mismatch/
+// https://leetcode.cn/problems/set-mismatch/
 
 // ❓ 错误的集合
 

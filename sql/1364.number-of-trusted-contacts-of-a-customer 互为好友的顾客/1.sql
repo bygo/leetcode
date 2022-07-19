@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/number-of-trusted-contacts-of-a-customer
+# Link: https://leetcode.cn/problems/number-of-trusted-contacts-of-a-customer
 
 SELECT `invoice_id`,
        `cu1`.`customer_name`,

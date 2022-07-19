@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-// https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters
+// https://leetcode.cn/problems/longest-substring-with-at-least-k-repeating-characters
 
 // ❓ 每一字符最少重复K次的最长子串 长度
 

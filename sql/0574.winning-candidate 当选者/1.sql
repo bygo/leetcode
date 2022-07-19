@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/winning-candidate
+# Link: https://leetcode.cn/problems/winning-candidate
 
 SELECT `name`
 FROM (

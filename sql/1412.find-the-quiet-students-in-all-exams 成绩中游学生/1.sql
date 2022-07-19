@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-the-quiet-students-in-all-exams
+# Link: https://leetcode.cn/problems/find-the-quiet-students-in-all-exams
 
 SELECT `s`.`student_id`,
        `s`.`student_name`

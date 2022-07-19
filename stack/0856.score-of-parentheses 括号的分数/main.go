@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/score-of-parentheses
+// https://leetcode.cn/problems/score-of-parentheses
 
 func scoreOfParentheses(s string) int {
 	var res, level int

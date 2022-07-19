@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/valid-anagram
+// https://leetcode.cn/problems/valid-anagram
 
 // ❓ 有效的异位词
 

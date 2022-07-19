@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-difference-between-node-and-ancestor/
+// https://leetcode.cn/problems/maximum-difference-between-node-and-ancestor/
 
 type TreeNode struct {
 	Val   int

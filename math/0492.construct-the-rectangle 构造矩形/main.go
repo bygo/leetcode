@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/construct-the-rectangle
+// https://leetcode.cn/problems/construct-the-rectangle
 
 func constructRectangle(area int) []int {
 	if area == 1 {

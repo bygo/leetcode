@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/excel-sheet-column-title
+// https://leetcode.cn/problems/excel-sheet-column-title
 
 // ❓ Excel 列名称
 

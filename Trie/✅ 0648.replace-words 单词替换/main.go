@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/replace-words
+// https://leetcode.cn/problems/replace-words
 
 // ❓ 单词替换词根
 

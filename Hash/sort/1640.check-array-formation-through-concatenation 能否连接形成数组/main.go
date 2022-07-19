@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/check-array-formation-through-concatenation
+// https://leetcode.cn/problems/check-array-formation-through-concatenation
 
 // ❓ 能否连接成数组
 

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/majority-element
+// https://leetcode.cn/problems/majority-element
 
 // ❓ 超过一半的数
 

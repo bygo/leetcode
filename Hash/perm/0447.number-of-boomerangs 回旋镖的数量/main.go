@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/number-of-boomerangs
+// https://leetcode.cn/problems/number-of-boomerangs
 
 func numberOfBoomerangs(points [][]int) int {
 	var cntRes int

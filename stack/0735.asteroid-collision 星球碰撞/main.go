@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/asteroid-collision
+// https://leetcode.cn/problems/asteroid-collision
 
 func asteroidCollision(asteroids []int) []int {
 	var stack []int

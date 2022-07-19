@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/friend-requests-ii-who-has-the-most-friends
+# Link: https://leetcode.cn/problems/friend-requests-ii-who-has-the-most-friends
 
 SELECT `id`, SUM(`n`) `num`
 FROM (SELECT `accepter_id` `id`, COUNT(*) `n`

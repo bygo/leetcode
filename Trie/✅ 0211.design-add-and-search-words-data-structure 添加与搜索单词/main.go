@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/design-add-and-search-words-data-structure
+// https://leetcode.cn/problems/design-add-and-search-words-data-structure
 
 // ❓ 添加与搜索单词
 

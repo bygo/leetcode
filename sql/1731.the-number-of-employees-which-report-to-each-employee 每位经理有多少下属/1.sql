@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/the-number-of-employees-which-report-to-each-employee
+# Link: https://leetcode.cn/problems/the-number-of-employees-which-report-to-each-employee
 
 SELECT `e1`.`reports_to`        `employee_id`,
        `e2`.`name`,

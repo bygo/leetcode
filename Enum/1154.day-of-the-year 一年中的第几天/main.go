@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/day-of-the-year
+// https://leetcode.cn/problems/day-of-the-year
 
 var monthMpDays = [12]int{
 	31,

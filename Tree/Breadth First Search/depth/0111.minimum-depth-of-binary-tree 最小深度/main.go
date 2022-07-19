@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+// https://leetcode.cn/problems/minimum-depth-of-binary-tree/
 
 type TreeNode struct {
 	Val   int

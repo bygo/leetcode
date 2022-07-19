@@ -1,7 +1,7 @@
 package main
 
 // ❓ 单词的压缩编码
-// https://leetcode-cn.com/problems/short-encoding-of-words
+// https://leetcode.cn/problems/short-encoding-of-words
 
 func minimumLengthEncoding(words []string) int {
 	root := &Trie{chMp: map[byte]*Trie{}}

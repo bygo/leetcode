@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-leaves-of-binary-tree/
+// https://leetcode.cn/problems/find-leaves-of-binary-tree/
 
 type TreeNode struct {
 	Val   int

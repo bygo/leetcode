@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node-ii/
+// https://leetcode.cn/problems/populating-next-right-pointers-in-each-node-ii/
 
 type Node struct {
 	Val   int

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/2-keys-keyboard
+// https://leetcode.cn/problems/2-keys-keyboard
 
 func minSteps(n int) int {
 	f := make([]int, n+1)

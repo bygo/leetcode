@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/game-play-analysis-iv
+# Link: https://leetcode.cn/problems/game-play-analysis-iv
 
 SELECT ROUND(
                COUNT(`a2`.`player_id`) / COUNT(`a1`.`player_id`),

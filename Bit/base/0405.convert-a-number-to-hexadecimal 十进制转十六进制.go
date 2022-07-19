@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/convert-a-number-to-hexadecimal
+// https://leetcode.cn/problems/convert-a-number-to-hexadecimal
 
 func toHex(num int) string {
 	if num == 0 {

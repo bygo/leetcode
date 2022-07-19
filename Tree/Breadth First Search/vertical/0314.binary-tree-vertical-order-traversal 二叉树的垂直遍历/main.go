@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-tree-vertical-order-traversal
+// https://leetcode.cn/problems/binary-tree-vertical-order-traversal
 
 type TreeNode struct {
 	Val   int

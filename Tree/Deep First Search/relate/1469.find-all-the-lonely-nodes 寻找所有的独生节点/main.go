@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-all-the-lonely-nodes
+// https://leetcode.cn/problems/find-all-the-lonely-nodes
 
 type TreeNode struct {
 	Val   int

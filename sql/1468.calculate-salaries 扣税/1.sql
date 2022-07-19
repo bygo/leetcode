@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/calculate-salaries
+# Link: https://leetcode.cn/problems/calculate-salaries
 
 
 SELECT `s`.`company_id`,

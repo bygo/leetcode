@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/two-sum/
+// https://leetcode.cn/problems/two-sum/
 
 // ❓ 两数之和
 

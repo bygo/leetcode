@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/average-of-levels-in-binary-tree/
+// https://leetcode.cn/problems/average-of-levels-in-binary-tree/
 
 type TreeNode struct {
 	Val   int

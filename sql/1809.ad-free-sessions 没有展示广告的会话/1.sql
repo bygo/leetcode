@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/ad-free-sessions
+# Link: https://leetcode.cn/problems/ad-free-sessions
 
 SELECT `session_id`
 FROM `playback`

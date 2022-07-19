@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/binary-number-with-alternating-bits
+// https://leetcode.cn/problems/binary-number-with-alternating-bits
 
 // ❓ 交替位二进制数
 

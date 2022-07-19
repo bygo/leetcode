@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/daily-leads-and-partners
+# Link: https://leetcode.cn/problems/daily-leads-and-partners
 
 SELECT `date_id`,
        `make_name`,

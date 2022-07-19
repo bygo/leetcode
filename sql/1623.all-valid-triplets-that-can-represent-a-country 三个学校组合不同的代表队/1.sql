@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/all-valid-triplets-that-can-represent-a-country
+# Link: https://leetcode.cn/problems/all-valid-triplets-that-can-represent-a-country
 
 SELECT `a`.`student_name` `member_a`,
        `b`.`student_name` `member_b`,

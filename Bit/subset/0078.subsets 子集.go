@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/subsets
+// https://leetcode.cn/problems/subsets
 
 // ❓ 子集
 // ⚠️ 1 <= len(nums) <= 10

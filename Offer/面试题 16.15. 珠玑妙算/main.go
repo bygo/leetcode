@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/master-mind-lcci/
+// https://leetcode.cn/problems/master-mind-lcci/
 
 func masterMind(solution string, guess string) []int {
 	var res = make([]int, 2)

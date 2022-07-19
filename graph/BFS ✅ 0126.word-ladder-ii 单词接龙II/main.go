@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-// https://leetcode-cn.com/problems/word-ladder-ii
+// https://leetcode.cn/problems/word-ladder-ii
 
 func findLadders2(beginWord string, endWord string, wordList []string) [][]string {
 	var res [][]string

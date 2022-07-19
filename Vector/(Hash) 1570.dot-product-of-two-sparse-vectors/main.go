@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/dot-product-of-two-sparse-vectors
+// https://leetcode.cn/problems/dot-product-of-two-sparse-vectors
 
 // ❓ 稀疏向量的点积
 

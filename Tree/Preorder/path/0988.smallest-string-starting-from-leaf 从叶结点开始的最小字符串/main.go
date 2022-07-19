@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/smallest-string-starting-from-leaf
+// https://leetcode.cn/problems/smallest-string-starting-from-leaf
 
 type TreeNode struct {
 	Val   int

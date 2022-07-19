@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/4sum-ii
+// https://leetcode.cn/problems/4sum-ii
 
 func fourSumCount(a, b, c, d []int) int {
 	var res int

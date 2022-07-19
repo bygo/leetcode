@@ -1,6 +1,6 @@
 package _080_remove_duplicates_from_sorted_array_ii_删除有序数组中的重复项_II
 
-// https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-array-ii
 
 func removeDuplicates(nums []int) int {
 	l1 := len(nums)

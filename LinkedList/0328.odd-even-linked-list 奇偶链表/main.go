@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/odd-even-linked-list
+// https://leetcode.cn/problems/odd-even-linked-list
 
 func oddEvenList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/linked-list-in-binary-tree
+// https://leetcode.cn/problems/linked-list-in-binary-tree
 
 type ListNode struct {
 	Val  int

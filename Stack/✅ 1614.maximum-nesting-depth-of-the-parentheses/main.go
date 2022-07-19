@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses
+// https://leetcode.cn/problems/maximum-nesting-depth-of-the-parentheses
 
 // ❓ 括号的最大嵌套深度
 

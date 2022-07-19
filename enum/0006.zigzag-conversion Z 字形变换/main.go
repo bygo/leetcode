@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/zigzag-conversion/
+// https://leetcode.cn/problems/zigzag-conversion/
 
 // 1:08
 func convert(s string, numRows int) string {

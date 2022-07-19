@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/course-schedule-ii
+// https://leetcode.cn/problems/course-schedule-ii
 
 func findOrder(numCourses int, prerequisites [][]int) []int {
 	var edges = make([][]int, numCourses)

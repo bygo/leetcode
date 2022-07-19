@@ -2,7 +2,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/print-binary-tree
+// https://leetcode.cn/problems/print-binary-tree
 
 type TreeNode struct {
 	Val   int

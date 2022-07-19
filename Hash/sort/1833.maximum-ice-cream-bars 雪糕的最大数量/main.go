@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/maximum-ice-cream-bars
+// https://leetcode.cn/problems/maximum-ice-cream-bars
 
 // ❓ 雪糕的最大数量
 

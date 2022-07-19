@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/second-degree-follower
+# Link: https://leetcode.cn/problems/second-degree-follower
 
 SELECT `followee`                 `follower`,
        COUNT(DISTINCT `follower`) `num`

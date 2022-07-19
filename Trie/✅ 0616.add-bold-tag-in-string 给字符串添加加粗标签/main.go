@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/add-bold-tag-in-string
+// https://leetcode.cn/problems/add-bold-tag-in-string
 
 // ❓ 给字符串添加加粗标签
 

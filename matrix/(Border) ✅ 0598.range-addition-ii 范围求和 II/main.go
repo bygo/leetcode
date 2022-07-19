@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/range-addition-ii
+// https://leetcode.cn/problems/range-addition-ii
 
 func maxCount(m int, n int, ops [][]int) int {
 	var x = n

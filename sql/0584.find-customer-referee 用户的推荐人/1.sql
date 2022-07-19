@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/find-customer-referee
+# Link: https://leetcode.cn/problems/find-customer-referee
 
 
 SELECT `name`

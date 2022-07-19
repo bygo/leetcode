@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/number-of-calls-between-two-persons
+# Link: https://leetcode.cn/problems/number-of-calls-between-two-persons
 
 SELECT `person1`, `person2`, COUNT(1) `call_count`, SUM(`duration`) `total_duration`
 FROM (

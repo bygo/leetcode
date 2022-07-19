@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/delete-nodes-and-return-forest
+// https://leetcode.cn/problems/delete-nodes-and-return-forest
 
 type TreeNode struct {
 	Val   int

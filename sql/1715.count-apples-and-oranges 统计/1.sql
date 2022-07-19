@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/count-apples-and-oranges
+# Link: https://leetcode.cn/problems/count-apples-and-oranges
 
 
 SELECT SUM(`b`.`apple_count` + IFNULL(`c`.`apple_count`, 0))   `apple_count`,

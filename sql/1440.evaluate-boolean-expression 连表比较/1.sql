@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/evaluate-boolean-expression
+# Link: https://leetcode.cn/problems/evaluate-boolean-expression
 
 SELECT `e`.`left_operand`,
        `operator`,

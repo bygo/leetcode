@@ -5,7 +5,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// https://leetcode-cn.com/problems/next-greater-node-in-linked-list
+// https://leetcode.cn/problems/next-greater-node-in-linked-list
 
 func nextLargerNodes(head *ListNode) []int {
 	var arr []int

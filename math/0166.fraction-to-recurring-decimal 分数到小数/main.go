@@ -2,7 +2,7 @@ package main
 
 import "strconv"
 
-// https://leetcode-cn.com/problems/fraction-to-recurring-decimal
+// https://leetcode.cn/problems/fraction-to-recurring-decimal
 
 func fractionToDecimal(x int, y int) string {
 	var res []byte

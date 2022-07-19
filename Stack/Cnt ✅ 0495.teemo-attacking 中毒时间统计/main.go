@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/teemo-attacking
+// https://leetcode.cn/problems/teemo-attacking
 
 func findPoisonedDuration(timeSeries []int, duration int) int {
 	var cntMax int

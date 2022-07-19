@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-// https://leetcode-cn.com/problems/rank-transform-of-an-array
+// https://leetcode.cn/problems/rank-transform-of-an-array
 
 // ❓ 数组序号转换
 

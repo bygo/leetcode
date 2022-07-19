@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/combinations
+// https://leetcode.cn/problems/combinations
 
 func combine(numMax int, needL int) [][]int {
 	var combNums [][]int

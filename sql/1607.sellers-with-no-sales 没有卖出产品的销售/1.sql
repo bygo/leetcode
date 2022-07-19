@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/sellers-with-no-sales
+# Link: https://leetcode.cn/problems/sellers-with-no-sales
 
 
 SELECT `seller_name`

@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/qi-wang-ge-shu-tong-ji/
+// https://leetcode.cn/problems/qi-wang-ge-shu-tong-ji/
 
 func expectNumber(scores []int) int {
 	m := map[int]struct{}{}

@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-// https://leetcode-cn.com/problems/heaters
+// https://leetcode.cn/problems/heaters
 
 // ❓ houses 能被 heaters 覆盖
 // ⚠️ 均无序

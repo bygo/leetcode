@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/find-winner-on-a-tic-tac-toe-game
+// https://leetcode.cn/problems/find-winner-on-a-tic-tac-toe-game
 
 // ❓ 3x3 井字棋
 

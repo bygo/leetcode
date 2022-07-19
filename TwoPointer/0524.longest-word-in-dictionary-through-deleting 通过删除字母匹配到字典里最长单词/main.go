@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode-cn.com/problems/longest-word-in-dictionary-through-deleting
+// https://leetcode.cn/problems/longest-word-in-dictionary-through-deleting
 
 func findLongestWord(s string, dictionary []string) string {
 	var res string

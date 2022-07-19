@@ -1,4 +1,4 @@
-# Link: https://leetcode-cn.com/problems/tournament-winners
+# Link: https://leetcode.cn/problems/tournament-winners
 
 SELECT `group_id`, `player_id`
 FROM (
