@@ -13,10 +13,12 @@ func findSubsequences(nums []int) [][]int {
 		numsCur := []int{}
 		numPre := -101
 		for idx := 0; idx < numsL; idx++ {
-			if subset>>idx&1 == 1 && numPre <= nums[idx] {
-				numsCur = append(numsCur, nums[idx])
-				numPre = nums[idx]
+			if subset>>idx&1 == 0 || nums[idx] < numPre {
+				continue
 			}
+
+			numsCur = append(numsCur, nums[idx])
+			numPre = nums[idx]
 		}
 		if len(numsCur) < 2 {
 			continue

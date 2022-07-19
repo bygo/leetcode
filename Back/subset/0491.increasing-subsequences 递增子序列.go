@@ -1,6 +1,6 @@
 package main
 
-// https://leetcode.com/problems/increasing-subsequences
+// https://leetcode.cn/problems/increasing-subsequences
 
 // ❓ 递增子序列
 
@@ -29,7 +29,7 @@ func findSubsequences(nums []int) [][]int {
 			dfs(idx+1, nums[idx])
 			numsCur = numsCur[:len(numsCur)-1]
 		}
-		// 跳过当前
+		// 跳过相等
 		if numPre != nums[idx] {
 			// 前置跳过，后置 numPre <= nums[idx] 拼接
 			dfs(idx+1, numPre)
