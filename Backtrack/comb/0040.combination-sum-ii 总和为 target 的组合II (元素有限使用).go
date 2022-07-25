@@ -36,3 +36,33 @@ func combinationSum2(nums []int, target int) [][]int {
 	dfs(target, 0)
 	return combNums
 }
+
+func combinationSum2(nums []int, target int) [][]int {
+	sort.Ints(nums)
+	cL := len(nums)
+	var combNums [][]int
+	var numsCur []int
+	var dfs func(val, start int)
+	dfs = func(val, start int) {
+		if val == 0 {
+			combNums = append(combNums, append([]int{}, numsCur...))
+			return
+		}
+
+		for i := start; i < cL; i++ {
+			if val < nums[i] {
+				break
+			}
+
+			if start < i && nums[i-1] == nums[i] {
+				continue
+			}
+			numsCur = append(numsCur, nums[i])
+			dfs(val-nums[i], i+1)
+			numsCur = numsCur[:len(numsCur)-1]
+		}
+	}
+
+	dfs(target, 0)
+	return combNums
+}

@@ -7,19 +7,20 @@ func combine(numMax int, needL int) [][]int {
 	var nums []int
 	var dfs func(num int)
 	dfs = func(num int) {
-		curL := len(nums)
-		if curL == needL {
+		numsL := len(nums)
+		if numsL == needL {
 			combNums = append(combNums, append([]int{}, nums...))
 			return
 		}
-		if numMax-num < needL-curL {
+
+		if numMax-num-1 < needL-numsL {
 			return
 		}
-		nums = append(nums, num+1)
+		nums = append(nums, num)
 		dfs(num + 1)
-		nums = nums[:curL]
+		nums = nums[:len(nums)-1]
 		dfs(num + 1)
 	}
-	dfs(0)
+	dfs(1)
 	return combNums
 }

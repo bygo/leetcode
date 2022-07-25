@@ -68,7 +68,6 @@ func findMinStep(board string, hand string) int {
 func clean(board string) string {
 	curL := len(board)
 	preL := curL + 1
-
 	buf := []byte(board)
 	for curL != preL {
 		preL = curL
@@ -84,7 +83,6 @@ func clean(board string) string {
 				}
 				cnt = 1
 			}
-
 		}
 
 		if 3 <= cnt {
