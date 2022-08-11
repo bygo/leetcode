@@ -1,0 +1,46 @@
+package main
+
+import (
+	"io/fs"
+	"io/ioutil"
+	"os"
+)
+
+func main() {
+	dirs, err := ioutil.ReadDir("./")
+	if err != nil {
+		panic(err)
+	}
+	for _, dir := range dirs {
+		dfs(dir, ".")
+		println(dir.Name())
+	}
+}
+
+func dfs(file fs.FileInfo, prefix string) {
+	filename := file.Name()
+	if filename[0] == '.' {
+		return
+	}
+	cur := prefix + "/" + file.Name()
+	if file.IsDir() {
+		dirs, err := ioutil.ReadDir(cur)
+		if err != nil {
+			panic(err)
+		}
+		for _, dir := range dirs {
+			dfs(dir, cur)
+		}
+	} else {
+		curNew := []byte{}
+		for _, ch := range cur {
+			if ch < 255 && ch != ' ' {
+				curNew = append(curNew, byte(ch))
+			}
+		}
+		err := os.Rename(cur, string(curNew))
+		if err != nil {
+			panic(err)
+		}
+	}
+}
