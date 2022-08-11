@@ -5,16 +5,17 @@ package main
 func combinationSum(candidates []int, target int) [][]int {
 	//sort.Ints(candidates)
 	var combNums [][]int
-	var dfs func(val, start int)
+	var dfs func(val, idxLeft int)
 	var nums []int
 
-	dfs = func(val, start int) {
+	dfs = func(val, idxLeft int) {
 		if val == 0 {
 			combNums = append(combNums, append([]int{}, nums...))
 			return
 		}
 
-		for idx := start; idx < len(candidates); idx++ {
+		cL := len(candidates)
+		for idx := idxLeft; idx < cL; idx++ {
 			if val < candidates[idx] {
 				continue
 				//break

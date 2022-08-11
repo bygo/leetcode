@@ -4,10 +4,10 @@ package main
 
 func generateParenthesis(n int) []string {
 	var dfs func(idx int) []string
-	var f = [9][]string{0: {""}}
+	var cache = [9][]string{0: {""}}
 	dfs = func(idx int) []string {
-		if 0 < len(f[idx]) {
-			return f[idx]
+		if 0 < len(cache[idx]) {
+			return cache[idx]
 		}
 
 		var strs []string
@@ -20,8 +20,8 @@ func generateParenthesis(n int) []string {
 				}
 			}
 		}
-		f[idx] = strs
-		return f[idx]
+		cache[idx] = strs
+		return cache[idx]
 	}
 	return dfs(n)
 }
