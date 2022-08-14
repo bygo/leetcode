@@ -13,7 +13,7 @@ func combine(numMax int, needL int) [][]int {
 			return
 		}
 
-		if numMax-num-1 < needL-numsL {
+		if numMax-num < needL-numsL-1 {
 			return
 		}
 		nums = append(nums, num)
