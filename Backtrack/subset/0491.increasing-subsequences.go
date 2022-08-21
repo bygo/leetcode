@@ -2,8 +2,6 @@ package main
 
 // https://leetcode.cn/problems/increasing-subsequences
 
-// ❓ 递增子序列
-
 func findSubsequences(nums []int) [][]int {
 	var combNums [][]int
 	var numsCur []int
@@ -23,17 +21,19 @@ func findSubsequences(nums []int) [][]int {
 		// 7,7,7
 		// 7,7
 
-		// <= 形成分支
+		// <= branch
 		if numPre <= nums[idx] {
 			numsCur = append(numsCur, nums[idx])
 			dfs(idx+1, nums[idx])
 			numsCur = numsCur[:len(numsCur)-1]
 		}
-		// 跳过相等
-		if numPre != nums[idx] {
-			// 前置跳过，后置 numPre <= nums[idx] 拼接
-			dfs(idx+1, numPre)
+		// Skip the equal
+		if numPre == nums[idx] {
+			return
 		}
+		// Ignore node
+		// Move on to the next `numPre <= nums[idx]`
+		dfs(idx+1, numPre)
 	}
 	dfs(0, -101)
 	return combNums

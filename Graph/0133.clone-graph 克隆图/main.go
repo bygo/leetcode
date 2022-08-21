@@ -29,7 +29,7 @@ func cloneGraph(node *Node) *Node {
 	return dfs(node)
 }
 
-// bfs
+// BFS
 func cloneGraph(node *Node) *Node {
 	if node == nil {
 		return nil

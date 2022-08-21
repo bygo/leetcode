@@ -2,6 +2,7 @@ package main
 
 // https://leetcode.cn/problems/generate-parentheses/
 
+// DFS & Catalan
 func generateParenthesis(n int) []string {
 	var cache = [9][]string{0: {""}}
 	var dfs func(idx int) []string
@@ -22,7 +23,9 @@ func generateParenthesis(n int) []string {
 	return dfs(n)
 }
 
+// DFS & Graph
 func generateParenthesis(n int) []string {
+	// equal length
 	var buf = make([]byte, n*2)
 	var strs []string
 	var nInt8 = int8(n)
@@ -51,6 +54,21 @@ func generateParenthesis(n int) []string {
 	}
 	dfs()
 	return strs
+}
+
+// dp & catalan
+func generateParenthesis(n int) []string {
+	var f = [9][]string{{""}, {"()"}, {"()()", "(())"}}
+	for i := 3; i <= n; i++ {
+		for j := 0; j < i; j++ {
+			for _, strLeft := range f[j] {
+				for _, strRight := range f[i-j-1] {
+					f[i] = append(f[i], "("+strLeft+")"+strRight)
+				}
+			}
+		}
+	}
+	return f[n]
 }
 
 // ff = "("+strLeft+")"

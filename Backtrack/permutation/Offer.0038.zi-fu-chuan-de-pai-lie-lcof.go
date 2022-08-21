@@ -4,15 +4,13 @@ import "sort"
 
 // https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/
 
-// 排列
-
 func permutation(s string) []string {
 	var res []string
 	raw := []byte(s)
 	sort.Slice(raw, func(i, j int) bool { return raw[i] < raw[j] })
 	l := len(raw)
 	perm := make([]byte, l)
-	vis := make([]bool, l)
+	used := make([]bool, l)
 	var dfs func(int)
 	dfs = func(i int) {
 		if i == l {
@@ -20,23 +18,24 @@ func permutation(s string) []string {
 			return
 		}
 		for j := 0; j < l; j++ {
-			// 已使用
-			// 相似路径剪枝 限定为组合
-			if vis[j] || 0 < j && !vis[j-1] && raw[j-1] == raw[j] {
+			if used[j] {
 				continue
 			}
-			vis[j] = true
+			if 0 < j && !used[j-1] && raw[j-1] == raw[j] {
+				continue
+			}
+			used[j] = true
 			perm[i] = raw[j]
 			dfs(i + 1)
-			vis[j] = false
+			used[j] = false
 		}
 	}
 	dfs(0)
 	return res
 }
 
-// 下一个更大的数
-func permutationNext(s string) []string {
+// The next bigger number
+func permutation(s string) []string {
 	var res []string
 	t := []byte(s)
 	sort.Slice(t, func(i, j int) bool { return t[i] < t[j] })
@@ -58,24 +57,24 @@ func reverse(a []byte) {
 func nextPermutation(nums []byte) bool {
 	numsL := len(nums)
 	idx := numsL - 2
-	for 0 <= idx && nums[idx+1] <= nums[idx] { // 寻找比较小的前置位
+	for 0 <= idx && nums[idx+1] <= nums[idx] { // Find for smaller number
 		idx--
 	}
 	if idx < 0 {
 		return false
 	}
 
-	// 找到比较小的前置位
+	// Found the smaller number
 
-	// 寻找第一个比目标值大的值
+	// Find the first value that is larger than the target value
 	j := numsL - 1
 	for 0 <= j && nums[j] <= nums[idx] {
 		j--
 	}
-	// 交换
+	// Exchange
 	nums[idx], nums[j] = nums[j], nums[idx]
 
-	// 后置位全部重置 回归最小位
+	// Post bits are all reset back to the minimum bit
 	reverse(nums[idx+1:])
 	return true
 }

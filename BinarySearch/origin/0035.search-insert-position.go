@@ -16,3 +16,18 @@ func searchInsert(nums []int, target int) int {
 	}
 	return lo
 }
+
+func searchInsert(nums []int, target int) int {
+	lo, hi := -1, len(nums)-1
+	for lo < hi {
+		mid := int(uint(lo+hi)>>1) + 1
+		if nums[mid] < target {
+			lo = mid
+		} else if target < nums[mid] {
+			hi = mid - 1
+		} else {
+			return mid
+		}
+	}
+	return lo + 1
+}

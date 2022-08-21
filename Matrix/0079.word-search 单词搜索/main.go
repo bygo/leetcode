@@ -8,7 +8,7 @@ func exist(board [][]byte, word string) bool {
 	l1 := len(board)
 	l2 := len(board[0])
 	top := len(word) - 1
-	vis := make([][]bool, l1)
+	used := make([][]bool, l1)
 	for i := range vis {
 		vis[i] = make([]bool, l2)
 	}

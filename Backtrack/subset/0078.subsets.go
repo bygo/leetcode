@@ -16,7 +16,7 @@ func subsets(nums []int) [][]int {
 		dfs(idx + 1) // f1
 		numsCur = numsCur[:len(numsCur)-1]
 
-		// 忽略本次 // f2
+		// Ignore node // f2
 		dfs(idx + 1)
 	}
 	dfs(0)
