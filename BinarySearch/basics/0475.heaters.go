@@ -6,9 +6,6 @@ import (
 
 // https://leetcode.cn/problems/heaters
 
-// ❓ houses 能被 heaters 覆盖
-// ⚠️ 均无序
-
 func findRadius(houses, heaters []int) int {
 	// 二分
 	sort.Ints(heaters)
@@ -25,7 +22,7 @@ func findRadius(houses, heaters []int) int {
 			}
 		}
 
-		// 左边取暖器 70*16
+		// 左边取暖器
 		left := right - 1
 		if 0 <= left {
 			distCur := house - heaters[left]
