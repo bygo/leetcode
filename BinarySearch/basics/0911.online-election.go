@@ -25,14 +25,14 @@ func (c *TopVotedCandidate) Q(t int) int {
 func Constructor(persons []int, times []int) TopVotedCandidate {
 	tL := len(times)
 	var tops []int
-	top := -1
-	pMpCnt := map[int]int{-1: 01}
-	for _, p := range persons {
-		pMpCnt[p]++
-		if pMpCnt[top] <= pMpCnt[p] {
-			top = p
+	personLead := -1
+	personMpCnt := map[int]int{personLead: 1}
+	for _, person := range persons {
+		personMpCnt[person]++
+		if personMpCnt[personLead] <= personMpCnt[person] {
+			personLead = person
 		}
-		tops = append(tops, top)
+		tops = append(tops, personLead)
 	}
 	return TopVotedCandidate{tops, times, tL}
 }

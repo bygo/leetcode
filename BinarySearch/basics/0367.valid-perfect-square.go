@@ -2,21 +2,26 @@ package main
 
 // https://leetcode.cn/problems/valid-perfect-square
 
+func main() {
+	println(isPerfectSquare(16))
+}
+
 // general
 func isPerfectSquare(num int) bool {
 	lo, hi := 0, num+1
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
 		pow := mid * mid
+		println(lo, hi, mid, pow)
 		if pow < num {
 			lo = mid + 1
 		} else if num < pow {
-			hi = mid - 1
+			hi = mid // - 1 // double down, skip a case `hi`
 		} else if num == pow {
 			return true
 		}
 	}
-	return lo*lo == num
+	return false // lo*lo == num
 }
 
 // offset
@@ -26,14 +31,14 @@ func isPerfectSquare(num int) bool {
 		mid := int(uint(lo+hi+1) >> 1)
 		pow := mid * mid
 		if pow < num {
-			lo = mid + 1
+			lo = mid //  + 1 // double up, skip a case `hi`
 		} else if num < pow {
 			hi = mid - 1
 		} else if num == pow {
 			return true
 		}
 	}
-	return lo*lo == num
+	return false // lo*lo == num
 }
 
 // equal
