@@ -2,8 +2,6 @@ package main
 
 // https://leetcode.cn/problems/excel-sheet-column-title
 
-// ❓ Excel 列名称
-
 func convertToTitle(num int) string {
 	var lo = 7
 	var buf = make([]byte, lo)

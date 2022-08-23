@@ -2,14 +2,12 @@ package main
 
 // https://leetcode.cn/problems/reordered-power-of-2
 
-// ❓ 重新排序得到 2 的幂
-
-func countDigits(n int) [10]int {
+func countDigits(numDec int) [10]int {
 	// 统计总数
 	var numMpCnt [10]int
-	for 0 < n {
-		numMpCnt[n%10]++
-		n /= 10
+	for 0 < numDec {
+		numMpCnt[numDec%10]++
+		numDec /= 10
 	}
 	return numMpCnt
 }
@@ -17,9 +15,9 @@ func countDigits(n int) [10]int {
 var vecMpBool = map[[10]int]bool{}
 
 func init() {
-	for n := 1; n <= 1e9; n <<= 1 {
+	for num := 1; num <= 1e9; num <<= 1 {
 		// 2的幂 每数位的数字总数 vector
-		vec := countDigits(n)
+		vec := countDigits(num)
 		vecMpBool[vec] = true
 	}
 }

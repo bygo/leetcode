@@ -2,9 +2,6 @@ package main
 
 // https://leetcode.cn/problems/subsets
 
-// ❓ 子集
-// ⚠️ 1 <= len(nums) <= 10
-
 func subsets(nums []int) [][]int {
 	var subsetNums [][]int
 	numsL := len(nums)
@@ -12,7 +9,7 @@ func subsets(nums []int) [][]int {
 	for subset := 0; subset < subsetMax; subset++ { // 总共 0 ~ 1<<numsL - 1 种
 		var numsCur []int
 		for idx := 0; idx < numsL; idx++ { //
-			if subset>>idx&1 == 1 { // 对应的idx 是否被使用
+			if subset>>idx&1 == 1 { // used
 				numsCur = append(numsCur, nums[idx])
 			}
 		}

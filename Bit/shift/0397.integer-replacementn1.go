@@ -2,9 +2,6 @@ package main
 
 // https://leetcode.cn/problems/integer-replacement
 
-// ❓ n替换到1的次数
-// ⚠️ 1 <= n <= 1<<31 -1
-
 func integerReplacement(n int) int {
 	var cnt int
 	for n != 1 {
@@ -20,9 +17,9 @@ func integerReplacement(n int) int {
 			cnt += 2
 		case n%4 == 3:
 			// 7 11 15 19 23 27 31
-			// ✅ 变成4的倍数必定可以折半多次
-			// ❌ 变得2的倍数折半后必定奇数
-			// 除了3 n+1 & >>1 都优于 n-1
+			// ✅ Any multiple of 4 must be able to fold in half more than once
+			// ❌ It has to be odd if it's a multiple of 2
+			// except 3, `n+1 & >>1` is better than `n-1`
 			n += 1
 			n >>= 1
 			cnt += 2

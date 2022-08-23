@@ -4,6 +4,8 @@ import "sort"
 
 // https://leetcode.cn/problems/2vYnGI/
 
+const mod = 1000000007
+
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
 	sort.Ints(staple)
@@ -26,7 +28,7 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 			cnt += find(x - num)
 		}
 	}
-	return cnt % 1000000007
+	return cnt % mod
 }
 
 // two pointer
@@ -51,6 +53,8 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 }
 
 // hash pre
+const mod = 1000000007
+
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sum := make([]int, x+1)
 
@@ -71,5 +75,5 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 			cnt += sum[x-num]
 		}
 	}
-	return cnt % 1000000007
+	return cnt % mod
 }

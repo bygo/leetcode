@@ -10,10 +10,11 @@ func isPowerOfTwo(n int) bool {
 }
 
 func isPowerOfTwo(n int) bool {
-	// BK 只有一个1
 	return 0 < n && n&(n-1) == 0
 }
 
 func isPowerOfTwo(n int) bool {
+	// 000010000
+	// 111101111 + 1
 	return 0 < n && n&-n == n
 }

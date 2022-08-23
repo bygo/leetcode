@@ -2,8 +2,8 @@ package main
 
 // https://leetcode.cn/problems/maximum-product-of-word-lengths
 
-// ❓ 最大单词长度乘积
-// hash
+// 2 <= words.length <= 1000
+// 1 <= words[i].length <= 1000
 
 func maxProduct(words []string) int {
 	hashMpLen := map[int32]int{}
@@ -15,14 +15,12 @@ func maxProduct(words []string) int {
 			hashCur |= 1 << (ch - 'a')
 		}
 
-		// 相同hash 必须更大才计算
 		if wordL <= hashMpLen[hashCur] {
 			continue
 		}
 		hashMpLen[hashCur] = wordL
 	}
 
-	// 组合乘积
 	for hashX, xL := range hashMpLen {
 		for hashY, yL := range hashMpLen {
 			if hashX&hashY != 0 {
