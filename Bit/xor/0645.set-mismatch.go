@@ -7,16 +7,15 @@ package main
 func findErrorNums(nums []int) []int {
 	numsL := len(nums)
 
-	// ⚠️ 找出区别
+	// ⚠️ ---- 找出区别
 	var numStd int
-	//numStd ^= nums[0]
-	for n := 0; n < numsL; n++ {
-		numStd ^= n
-		numStd ^= nums[n]
+	for num := 0; num < numsL; num++ { // hidden case 0
+		numStd ^= num
+		numStd ^= nums[num]
 	}
 	numStd ^= numsL
 
-	// ⚠️ 切割 2个数字, 最低位1
+	// ⚠️ ---- 切割 2个数字, 最低位1
 	numStd = numStd & -numStd
 
 	// 起始

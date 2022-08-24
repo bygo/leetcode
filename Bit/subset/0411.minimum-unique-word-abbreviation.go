@@ -4,32 +4,28 @@ import "strconv"
 
 // https://leetcode-cn.com/problems/minimum-unique-word-abbreviation
 
-// ❓ 最短独占单词缩写
-
 func minAbbreviation(target string, dictionary []string) string {
 	targetL := len(target)
-	banMp := map[int]struct{}{}
+	banMp := map[int]bool{}
 	for _, word := range dictionary {
 		wordL := len(word)
-		// 不相等 永不相同
 		if wordL != targetL {
 			continue
 		}
 
-		var subset int
+		var subsetMax int
 		for idx := 0; idx < wordL; idx++ {
-			if target[idx] == word[idx] { // 相同的位 必须加入 禁止子集
-				subset += 1 << idx
+			if target[idx] == word[idx] {
+				subsetMax += 1 << idx
 			}
 		}
-		sub := subset
+		sub := subsetMax
 		for {
-			// 所有禁止的子集
-			banMp[sub] = struct{}{}
+			banMp[sub] = true
 			if sub == 0 {
 				break
 			}
-			sub = (sub - 1) & subset
+			sub = (sub - 1) & subsetMax
 			//if subset == num {
 			//	break
 			//}
@@ -41,10 +37,9 @@ func minAbbreviation(target string, dictionary []string) string {
 	}
 
 	var strRes = target
-	subsetMax := 1<<targetL - 1                     // =subsetMax 为本身 已计算
-	for subset := 1; subset < subsetMax; subset++ { // =0 为全缩略，肯定不是答案，
-		_, ok := banMp[subset]
-		if ok {
+	subsetMax := 1<<targetL - 1                     // =subsetMax is computed for itself
+	for subset := 1; subset < subsetMax; subset++ { // =0 is the full abbreviation, which is definitely not the answer
+		if banMp[subset] {
 			continue
 		}
 
@@ -59,7 +54,6 @@ func minAbbreviation(target string, dictionary []string) string {
 				}
 				buf = append(buf, target[idx])
 			} else {
-				// 未出现的压缩
 				cnt++
 			}
 		}
@@ -78,25 +72,25 @@ func minAbbreviation(target string, dictionary []string) string {
 // ban 字符串
 
 func minAbbreviation(target string, dictionary []string) string {
-	subsetBanMp := map[string]struct{}{}
-	targetL := len(target)
+	subsetBanMp := map[string]bool{}
+	var targetL = len(target)
 
-	for _, word := range dictionary {
-		var wordL = len(word)
-		if targetL != wordL {
+	for _, dict := range dictionary {
+		var dictL = len(dict)
+		if targetL != dictL {
 			continue
 		}
-		var subsetMax = 1<<wordL - 1
-		for subset := 1; subset < subsetMax; subset++ {
+		var numMax = 1 << dictL
+		for subset := 0; subset < numMax; subset++ {
 			var cnt int
 			var buf []byte
-			for idx := 0; idx < wordL; idx++ {
+			for idx := 0; idx < dictL; idx++ {
 				if subset>>idx&1 == 1 {
 					if 0 < cnt {
 						buf = append(buf, strconv.Itoa(cnt)...)
 						cnt = 0
 					}
-					buf = append(buf, word[idx])
+					buf = append(buf, dict[idx])
 				} else {
 					cnt++
 				}
@@ -104,15 +98,15 @@ func minAbbreviation(target string, dictionary []string) string {
 			if 0 < cnt {
 				buf = append(buf, strconv.Itoa(cnt)...)
 			}
-			subsetBanMp[string(buf)] = struct{}{}
+			subsetBanMp[string(buf)] = true
 		}
 	}
 	if len(subsetBanMp) == 0 {
 		return strconv.Itoa(targetL)
 	}
 	var strRes = target
-	var subsetMax = 1<<targetL - 1
-	for subset := 0; subset < subsetMax; subset++ {
+	var numMax = 1<<targetL - 1
+	for subset := 0; subset < numMax; subset++ {
 		var cnt int
 		var buf []byte
 		for idx := 0; idx < targetL; idx++ {
@@ -130,12 +124,13 @@ func minAbbreviation(target string, dictionary []string) string {
 			buf = append(buf, strconv.Itoa(cnt)...)
 		}
 		strCur := string(buf)
-		if len(strCur) < len(strRes) {
-			_, ok := subsetBanMp[strCur]
-			if !ok {
-				strRes = strCur
-			}
+		if len(strRes) <= len(strCur) {
+			continue
 		}
+		if subsetBanMp[strCur] {
+			continue
+		}
+		strRes = strCur
 	}
 	return strRes
 }

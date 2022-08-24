@@ -8,13 +8,9 @@ func missingNumber(nums []int) int {
 	numsL := len(nums)
 	var num int
 
-	//// 起始
-	//num ^= nums[0]
-
 	for idx := 0; idx < numsL; idx++ {
 		num ^= idx
-		num ^= nums[idx]
+		num ^= nums[idx] // case: 0
 	}
-	// 尾部 numsL
 	return num ^ numsL
 }

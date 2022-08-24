@@ -4,8 +4,6 @@ import "strconv"
 
 // https://leetcode.cn/problems/generalized-abbreviation
 
-// ❓ 列举单词的全部缩写
-
 func generateAbbreviations(word string) []string {
 	wordL := len(word)
 	var subsetMax = 1 << wordL

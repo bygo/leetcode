@@ -2,8 +2,6 @@ package main
 
 // https://leetcode.cn/problems/gray-code
 
-// ❓ 格雷编码
-// ⚠️ 自身 xor 自身>>1
 func grayCode(n int) []int {
 	var nums []int
 	numMax := 1 << n
@@ -13,7 +11,7 @@ func grayCode(n int) []int {
 	return nums
 }
 
-// 映射唯一
+// Mapping the only
 // g ^ num = g ^ num>>1 = num ^ num>>1
 //
 // x^1 = x^0 , x = 1

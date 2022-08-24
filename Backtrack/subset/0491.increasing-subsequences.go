@@ -28,7 +28,7 @@ func findSubsequences(nums []int) [][]int {
 			numsCur = numsCur[:len(numsCur)-1]
 		}
 		// Skip the equal
-		if numPre == nums[idx] {
+		if numPre != nums[idx] {
 			return
 		}
 		// Ignore node
