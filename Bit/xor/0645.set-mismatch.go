@@ -7,29 +7,29 @@ package main
 func findErrorNums(nums []int) []int {
 	numsL := len(nums)
 
-	// ⚠️ ---- 找出区别
-	var numStd int
+	// ---- 找出区别
+	var numDiff int
 	for num := 0; num < numsL; num++ { // hidden case 0
-		numStd ^= num
-		numStd ^= nums[num]
+		numDiff ^= num
+		numDiff ^= nums[num]
 	}
-	numStd ^= numsL
+	numDiff ^= numsL
 
-	// ⚠️ ---- 切割 2个数字, 最低位1
-	numStd = numStd & -numStd
+	// ----
+	numDiff = numDiff & -numDiff // ⚠️  切割 2个数字, 最低位1
 
 	// 起始
 	num1, num2 := 0, 0
 	// 区间
 	for n := 0; n < numsL; n++ {
 		num := nums[n]
-		if numStd&num == 0 {
+		if numDiff&num == 0 {
 			num1 ^= num
 		} else {
 			num2 ^= num
 		}
 
-		if numStd&n == 0 {
+		if numDiff&n == 0 {
 			num1 ^= n
 		} else {
 			num2 ^= n
@@ -37,7 +37,7 @@ func findErrorNums(nums []int) []int {
 	}
 
 	// 结尾
-	if numStd&numsL == 0 {
+	if numDiff&numsL == 0 {
 		num1 ^= numsL
 	} else {
 		num2 ^= numsL

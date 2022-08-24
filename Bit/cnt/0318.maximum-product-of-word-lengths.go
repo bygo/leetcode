@@ -23,7 +23,7 @@ func maxProduct(words []string) int {
 
 	for hashX, xL := range hashMpLen {
 		for hashY, yL := range hashMpLen {
-			if hashX&hashY != 0 {
+			if hashX&hashY != 0 { // TODO
 				continue
 			}
 			numCur := xL * yL

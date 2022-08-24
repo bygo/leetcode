@@ -21,6 +21,7 @@ func minAbbreviation(target string, dictionary []string) string {
 		}
 		sub := subsetMax
 		for {
+			// TODO
 			banMp[sub] = true
 			if sub == 0 {
 				break

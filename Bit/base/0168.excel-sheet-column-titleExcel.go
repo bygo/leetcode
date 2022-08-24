@@ -4,9 +4,9 @@ package main
 
 func convertToTitle(num int) string {
 	var lo = 7
-	var buf = make([]byte, lo)
+	var buf = make([]byte, lo) // TODO
 	for 0 < num {
-		num--
+		num-- // TODO
 		lo--
 		buf[lo] = byte(num%26 + 'A')
 		num /= 26

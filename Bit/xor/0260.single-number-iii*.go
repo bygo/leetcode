@@ -6,10 +6,10 @@ package main
 // ⚠️ 2个数字出现1次
 
 func singleNumber(nums []int) []int {
-	numStd := 0
+	numDiff := 0
 	for _, num := range nums {
 		// 两两抵消
-		numStd ^= num
+		numDiff ^= num
 	}
 	// 101
 	// 110
@@ -20,10 +20,10 @@ func singleNumber(nums []int) []int {
 	// 00001111 + 1
 	// 00010000
 
-	numStd = numStd & -numStd // 数字不同 肯定会有一位不同,根据一位的不同 切分不同数字
+	numDiff = numDiff & -numDiff // 数字不同 肯定会有一位不同,根据一位的不同 切分不同数字
 	var num1, num2 int
 	for _, num := range nums {
-		if 0 < num&numStd { // 最低有效位 为1
+		if 0 < num&numDiff { // 最低有效位 为1
 			num1 ^= num
 		} else { //  最低有效位 为0
 			num2 ^= num

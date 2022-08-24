@@ -10,19 +10,20 @@ func findDuplicate(nums []int) int {
 	numsL := len(nums)
 	idxMax := 17
 	numMax := numsL - 1
-	for numMax>>idxMax == 0 {
+	for numMax>>idxMax == 0 { // TODO
 		idxMax--
 	}
 
 	numRes := 0
 	for idx := 0; idx <= idxMax; idx++ {
-		var cntNum, cntIdx int
-		for idxN, num := range nums {
-			//
+		var cntNum, cntIdx int // TODO
+		for idxNum, num := range nums {
+			// 1 ~ numsL-1
 			if 1 == num>>idx&1 {
 				cntNum++
 			}
-			if 1 == idxN>>idx&1 {
+			// 0 1 ~ numsL-1
+			if 1 == idxNum>>idx&1 {
 				cntIdx++
 			}
 		}

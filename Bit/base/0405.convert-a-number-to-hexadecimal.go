@@ -8,7 +8,7 @@ func toHex(num int) string {
 	}
 	var buf []byte
 	for idx := 7; 0 <= idx; idx-- {
-		numHex := byte(num >> (idx * 4) & 0xf)
+		numHex := byte(num >> (idx * 4) & 0xf) // TODO
 		if numHex == 0 && len(buf) == 0 {
 			continue
 		}

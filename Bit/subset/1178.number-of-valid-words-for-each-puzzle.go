@@ -28,7 +28,7 @@ func findNumOfValidWords(words []string, puzzles []string) []int {
 		}
 		sub := subset
 		for {
-			cntsPuzzle[idx] += setMpCnt[sub|first]
+			cntsPuzzle[idx] += setMpCnt[sub|first] // TODO
 			sub = (sub - 1) & subset
 			if sub == subset {
 				break
