@@ -1,4 +1,4 @@
-package main
+package string
 
 // https://leetcode.cn/problems/longest-chunked-palindrome-decomposition
 

@@ -1,9 +1,6 @@
-package main
+package array
 
 // https://leetcode.cn/problems/increasing-triplet-subsequence
-
-// ❓ 递增三元子序列
-// ⚠️ 求 前置第一个最小值 与前置第二个最小值
 
 func increasingTriplet(nums []int) bool {
 	numsL := len(nums)
@@ -20,7 +17,7 @@ func increasingTriplet(nums []int) bool {
 		} else if first < num {
 			// 比第一个大 构成 二元组
 			second = num
-		} else {
+		} else if num < first {
 			// 比第零个大 构成 一元组
 			first = num
 		}

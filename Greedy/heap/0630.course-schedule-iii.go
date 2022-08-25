@@ -1,4 +1,4 @@
-package main
+package heap
 
 import (
 	"container/heap"
@@ -13,15 +13,17 @@ func scheduleCourse(courses [][]int) int {
 	})
 
 	h := &Heap{}
-	cnt := 0
+	total := 0
 	for _, course := range courses {
-		d := course[0]
-		if cnt+d <= course[1] {
-			cnt += d
-			heap.Push(h, d)
-		} else if 0 < h.Len() && d < h.IntSlice[0] {
-			cnt += d - h.IntSlice[0]
-			h.IntSlice[0] = d
+		duration := course[0]
+		if total+duration <= course[1] {
+			// Time is enough
+			total += duration
+			heap.Push(h, duration)
+		} else if 0 < h.Len() && duration < h.IntSlice[0] {
+			// There are smaller durations
+			total += duration - h.IntSlice[0]
+			h.IntSlice[0] = duration
 			heap.Fix(h, 0)
 		}
 	}
