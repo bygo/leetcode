@@ -8,5 +8,5 @@ func isPowerOfThree(n int) bool {
 }
 
 func isPowerOfThree(n int) bool {
-	return 0 < n && 0b1000101010001101011001111011011%n == 0
+	return 0 < n && 0b1000101010001101011001111011011%n == 0 // TODO 约数
 }

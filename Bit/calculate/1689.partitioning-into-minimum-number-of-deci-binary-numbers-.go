@@ -1,4 +1,4 @@
-package main
+package add
 
 // https://leetcode.cn/problems/partitioning-into-minimum-number-of-deci-binary-numbers
 

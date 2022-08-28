@@ -16,7 +16,7 @@ func subsetsWithDup(nums []int) [][]int {
 			if subset>>idx&1 == 0 {
 				continue
 			}
-			if 0 < idx && subset>>(idx-1)&1 == 0 && nums[idx] == nums[idx-1] {
+			if 0 < idx && subset>>(idx-1)&1 == 0 && nums[idx] == nums[idx-1] { // TODO
 				break
 			}
 			numsCur = append(numsCur, nums[idx])

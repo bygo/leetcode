@@ -8,14 +8,24 @@ package main
 
 func findDuplicate(nums []int) int {
 	numsL := len(nums)
-	idxMax := 17
-	numMax := numsL - 1
-	for numMax>>idxMax == 0 { // TODO
-		idxMax--
+	lo, hi := -1, 16
+	numMax := 1<<numsL - 1
+	for lo < hi { // TODO
+		mid := int(uint(lo+hi+1) >> 1)
+		if numMax>>mid&1 == 1 {
+			lo = mid
+		} else {
+			hi = mid - 1
+		}
 	}
 
+	//hi := 17
+	//for numMax>>hi == 0 { // TODO
+	//	hi--
+	//}
+
 	numRes := 0
-	for idx := 0; idx <= idxMax; idx++ {
+	for idx := 0; idx <= hi; idx++ {
 		var cntNum, cntIdx int // TODO
 		for idxNum, num := range nums {
 			// 1 ~ numsL-1

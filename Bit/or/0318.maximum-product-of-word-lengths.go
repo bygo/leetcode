@@ -1,4 +1,4 @@
-package main
+package or
 
 // https://leetcode.cn/problems/maximum-product-of-word-lengths
 

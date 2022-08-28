@@ -16,7 +16,7 @@ func letterCombinations(digits string) []string {
 	for i := range digits {
 		digit := digits[i]
 		sL := len(strs)
-		for _, letter := range digitMpStr[digit] { // multiplication
+		for _, letter := range digitMpStr[digit] { // TODO: multiplication
 			for _, str := range strs[:sL] {
 				strs = append(strs, str+string(letter))
 			}
@@ -34,8 +34,7 @@ func letterCombinations(digits string) []string {
 	if dL == 0 {
 		return nil
 	}
-	// equal length
-	var buf = make([]byte, dL)
+	var buf = make([]byte, dL) // TODO
 	var strs []string
 	var dfs func(idx int)
 	dfs = func(idx int) {

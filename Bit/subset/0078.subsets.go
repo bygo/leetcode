@@ -8,7 +8,7 @@ func subsets(nums []int) [][]int {
 	subsetMax := 1 << numsL
 	for subset := 0; subset < subsetMax; subset++ { // 总共 0 ~ 1<<numsL - 1 种
 		var numsCur []int
-		for idx := 0; idx < numsL; idx++ { //
+		for idx := 0; idx < numsL; idx++ {
 			if subset>>idx&1 == 1 { // used
 				numsCur = append(numsCur, nums[idx])
 			}

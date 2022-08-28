@@ -1,4 +1,4 @@
-package main
+package bit
 
 // https://leetcode.cn/problems/counting-bits
 

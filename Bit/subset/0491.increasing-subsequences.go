@@ -1,6 +1,7 @@
 package main
 
 // https://leetcode.cn/problems/increasing-subsequences
+
 func findSubsequences(nums []int) [][]int {
 	var combNums [][]int
 	numsL := len(nums)
@@ -22,7 +23,7 @@ func findSubsequences(nums []int) [][]int {
 		}
 
 		h := hash(numsCur)
-		if hashMp[h] {
+		if hashMp[h] { // TODO
 			continue
 		}
 		hashMp[h] = true
