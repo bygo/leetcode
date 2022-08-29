@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -16,21 +17,17 @@ func ipToInt(ip string) int {
 	return total
 }
 func intToIP(x int) string {
-	ip := ""
-	for i := 3; 0 <= i; i-- {
-		ip += strconv.Itoa((x>>(i*8))&0xff) + "."
-	}
-	return ip[:len(ip)-1]
+	return fmt.Sprintf("%d.%d.%d.%d", x>>24&0xff, x>>16&0xff, x>>8&0xff, x&0xff)
 }
 
-func max(a, b int) int {
+func min(a, b int) int {
 	if a < b {
-		return b
+		return a
 	}
-	return a
+	return b
 }
 
-func length(x int) int {
+func lenBit(x int) int {
 	lo, hi := -1, 32
 	for lo < hi {
 		mid := int(uint(lo+hi+1) >> 1)
@@ -44,13 +41,17 @@ func length(x int) int {
 }
 
 func ipToCIDR(ip string, n int) []string {
-	start := ipToInt(ip)
 	var strs []string
+	start := ipToInt(ip)
+	if start == 0 {
+		mask := 32 - lenBit(n) // TODO
+		strs = append(strs, intToIP(start)+"/"+strconv.Itoa(mask))
+		step := 1 << (32 - mask)
+		start += step
+		n -= step
+	}
 	for 0 < n {
-		mask := max(32-length(start&-start), 32-length(n))
-		if start == 0 {
-			mask = 32 - length(n)
-		}
+		mask := 32 - min(lenBit(start&-start), lenBit(n)) // TODO
 		strs = append(strs, intToIP(start)+"/"+strconv.Itoa(mask))
 		step := 1 << (32 - mask)
 		start += step
