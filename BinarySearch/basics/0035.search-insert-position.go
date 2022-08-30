@@ -31,7 +31,7 @@ func searchInsert(nums []int, target int) int {
 			return mid
 		}
 	}
-	return lo + 1
+	return lo + 1 // TODO
 }
 
 // equal

@@ -7,7 +7,7 @@ func arrangeCoins(n int) int {
 	lo, hi := 0, n+1
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
-		cnt := mid * (mid + 1) / 2 // 等差数列
+		cnt := mid * (mid + 1) / 2 // TODO 等差数列
 		if cnt < n {
 			lo = mid + 1
 		} else if n < cnt {

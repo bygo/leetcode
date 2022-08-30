@@ -12,11 +12,10 @@ func isPerfectSquare(num int) bool {
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
 		pow := mid * mid
-		println(lo, hi, mid, pow)
 		if pow < num {
 			lo = mid + 1
 		} else if num < pow {
-			hi = mid // - 1 // double down, skip a case `hi`
+			hi = mid // - 1 // TODO skip `equal` case 4 5
 		} else if num == pow {
 			return true
 		}
@@ -31,7 +30,7 @@ func isPerfectSquare(num int) bool {
 		mid := int(uint(lo+hi+1) >> 1)
 		pow := mid * mid
 		if pow < num {
-			lo = mid //  + 1 // double up, skip a case `hi`
+			lo = mid // + 1 // TODO skip `equal` case 4 5
 		} else if num < pow {
 			hi = mid - 1
 		} else if num == pow {
