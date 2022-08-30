@@ -13,7 +13,7 @@ func fixedPoint(arr []int) int {
 			hi = mid
 		}
 	}
-	if lo < len(arr) && arr[lo] == lo {
+	if lo < len(arr) && arr[lo] == lo { // TODO
 		return lo
 	}
 	return -1

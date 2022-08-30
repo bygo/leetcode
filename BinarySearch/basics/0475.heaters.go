@@ -13,7 +13,7 @@ func findRadius(houses, heaters []int) int {
 	var distJust int
 	for _, house := range houses {
 		// 右边取暖器
-		right := sort.SearchInts(heaters, house+1)
+		right := sort.SearchInts(heaters, house+1) // TODO
 		var distMin = 1<<63 - 1
 		if right < hL {
 			distCur := heaters[right] - house
@@ -46,8 +46,8 @@ func findRadius(houses, heaters []int) int {
 	for _, house := range houses {
 		distCur := abs(house - heaters[idx]) // 当前距离
 		for idx+1 < len(heaters) {           // 是否还有下一个取暖器
-			distNext := abs(house - heaters[idx+1])
-			if distCur < distNext { // 必须更近
+			distNext := abs(house - heaters[idx+1]) // TODO
+			if distCur < distNext {                 // 必须更近
 				break
 			}
 			idx++

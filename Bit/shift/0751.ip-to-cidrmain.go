@@ -27,14 +27,14 @@ func min(a, b int) int {
 	return b
 }
 
-func lenBit(x int) int {
+func bitIdx(x int) int {
 	lo, hi := -1, 32
 	for lo < hi {
 		mid := int(uint(lo+hi+1) >> 1)
-		if x>>mid == 0 {
-			hi = mid - 1
-		} else {
+		if x>>mid != 0 {
 			lo = mid
+		} else {
+			hi = mid - 1
 		}
 	}
 	return lo
@@ -44,14 +44,14 @@ func ipToCIDR(ip string, n int) []string {
 	var strs []string
 	start := ipToInt(ip)
 	if start == 0 {
-		mask := 32 - lenBit(n) // TODO
+		mask := 32 - bitIdx(n) // TODO
 		strs = append(strs, intToIP(start)+"/"+strconv.Itoa(mask))
 		step := 1 << (32 - mask)
 		start += step
 		n -= step
 	}
 	for 0 < n {
-		mask := 32 - min(lenBit(start&-start), lenBit(n)) // TODO
+		mask := 32 - min(bitIdx(start&-start), bitIdx(n)) // TODO
 		strs = append(strs, intToIP(start)+"/"+strconv.Itoa(mask))
 		step := 1 << (32 - mask)
 		start += step

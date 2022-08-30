@@ -10,6 +10,6 @@ func isPowerOfFour(n int) bool {
 
 func isPowerOfFour(n int) bool {
 	return 0 < n && n&(n-1) == 0 && n%3 == 1 // TODO
-	// ✅ 1 4 16 64
-	// ❌ n%4==0 8 12 20
+	// ✅ 1 4 16 64 256
+	// ❌ n%4==  8 32 128 512
 }

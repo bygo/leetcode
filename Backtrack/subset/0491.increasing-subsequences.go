@@ -28,12 +28,12 @@ func findSubsequences(nums []int) [][]int {
 			numsCur = numsCur[:len(numsCur)-1]
 		}
 		// Skip the equal
-		if numPre != nums[idx] {
+		if numPre == nums[idx] {
 			return
 		}
+		dfs(idx+1, numPre)
 		// Ignore node
 		// Move on to the next `numPre <= nums[idx]`
-		dfs(idx+1, numPre)
 	}
 	dfs(0, -101)
 	return combNums

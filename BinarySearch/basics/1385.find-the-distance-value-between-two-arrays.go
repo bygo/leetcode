@@ -13,7 +13,7 @@ func findTheDistanceValue(arr1 []int, arr2 []int, d int) int {
 		for lo < hi {
 			mid := int(uint(lo+hi) >> 1)
 			cur := abs(target - arr2[mid])
-			if cur <= d {
+			if cur <= d { // TODO
 				return 0
 			}
 			if arr2[mid] <= target {

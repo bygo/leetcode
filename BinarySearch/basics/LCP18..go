@@ -4,11 +4,9 @@ import "sort"
 
 // https://leetcode.cn/problems/2vYnGI/
 
-const mod = 1000000007
-
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
-	sort.Ints(staple)
+	sort.Ints(staple) // todo
 	find := func(target int) int {
 		lo, hi := 0, sL
 		for lo < hi {
@@ -31,7 +29,7 @@ func breakfastNumber(staple []int, drinks []int, x int) int {
 	return cnt % mod
 }
 
-// two pointer
+// TODO two pointer
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
 	dL := len(drinks)

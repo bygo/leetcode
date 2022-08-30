@@ -8,7 +8,7 @@ type TopVotedCandidate struct {
 	tL    int
 }
 
-func (c *TopVotedCandidate) Q(t int) int {
+func (c *TopVotedCandidate) Q(t int) int { // TODO
 	lo, hi := 0, c.tL
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)

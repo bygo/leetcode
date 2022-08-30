@@ -34,7 +34,7 @@ func kthGrammar(n int, k int) int {
 
 // flip
 func kthGrammar(n int, k int) int {
-	return bits.OnesCount(uint(k-1)) % 2 // TODO
+	return bits.OnesCount(uint(k-1)) % 2 // TODO 0 ~ k-1
 	// 选择1：左节点为1，右节点为0
 	// 选择0：左节点为0，右节点为1
 	// 每个数字 代表第几个索引，选择了几次1
