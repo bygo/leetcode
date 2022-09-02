@@ -27,7 +27,7 @@ func minAbbreviation(target string, dictionary []string) string {
 				break
 			}
 			sub = (sub - 1) & subsetMax
-			//if subset == num {
+			//if sub == subsetMax {
 			//	break
 			//}
 		}

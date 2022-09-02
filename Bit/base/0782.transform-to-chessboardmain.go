@@ -12,7 +12,7 @@ func getMoves(mask uint, cnt, n int) int {
 			return -1
 		}
 		if ones == half {
-			// 	1为小数，1必须放在中间
+			// 1为小数，1必须放在中间
 			return ones - bits.OnesCount(mask&0xAAAAAAAA) // ...01010
 		} else { //ones == half+1
 			//  1位大数，1必须放在两边

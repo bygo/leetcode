@@ -12,7 +12,7 @@ func findDuplicate(nums []int) int {
 	numMax := 1<<numsL - 1
 	for lo < hi { // TODO
 		mid := int(uint(lo+hi+1) >> 1)
-		if numMax>>mid&1 == 1 {
+		if numMax>>mid&1 == 1 { // TODO
 			lo = mid
 		} else {
 			hi = mid - 1

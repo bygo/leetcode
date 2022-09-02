@@ -6,8 +6,6 @@ import (
 
 // https://leetcode.cn/problems/binary-watch
 
-// ❓ 二进制手表
-
 func readBinaryWatch(turnedOn int) []string {
 	var strsTime []string
 	for hour := 0; hour < 12; hour++ {

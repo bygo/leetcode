@@ -44,7 +44,7 @@ func ipToCIDR(ip string, n int) []string {
 	var strs []string
 	start := ipToInt(ip)
 	if start == 0 {
-		mask := 32 - bitIdx(n) // TODO
+		mask := 32 - bitIdx(n) // TODO 1010 0111
 		strs = append(strs, intToIP(start)+"/"+strconv.Itoa(mask))
 		step := 1 << (32 - mask)
 		start += step

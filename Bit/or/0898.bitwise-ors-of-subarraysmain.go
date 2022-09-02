@@ -8,11 +8,11 @@ func subarrayBitwiseORs(nums []int) int {
 		maskMp[num] = struct{}{}
 		mask := 0
 		for j := idx - 1; 0 <= j; j-- {
-			if mask|num == mask { // TODO
+			if mask|num == mask { // TODO 前置包含num,num 对mask 不起作用
 				break
 			}
 			mask |= nums[j]
-			maskMp[mask|num] = struct{}{}
+			maskMp[mask|num] = struct{}{} // TODO num能让mask发生变化
 		}
 	}
 	return len(maskMp)

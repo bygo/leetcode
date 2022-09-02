@@ -16,6 +16,10 @@ func subsetsWithDup(nums []int) [][]int {
 			if subset>>idx&1 == 0 {
 				continue
 			}
+			// 1
+			// 10
+			// 110 100
+			// 1110 1100 1000
 			if 0 < idx && subset>>(idx-1)&1 == 0 && nums[idx] == nums[idx-1] { // TODO
 				break
 			}

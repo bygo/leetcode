@@ -6,24 +6,24 @@ package main
 // 1 <= words[i].length <= 1000
 
 func maxProduct(words []string) int {
-	hashMpLen := map[int32]int{}
+	subMpLen := map[int32]int{}
 	var numMax int
 	for _, word := range words {
 		wordL := len(word)
-		var hashCur int32
+		var sub int32
 		for _, ch := range word {
-			hashCur |= 1 << (ch - 'a')
+			sub |= 1 << (ch - 'a') // TODO
 		}
 
-		if wordL <= hashMpLen[hashCur] {
+		if wordL <= subMpLen[sub] {
 			continue
 		}
-		hashMpLen[hashCur] = wordL
+		subMpLen[sub] = wordL
 	}
 
-	for hashX, xL := range hashMpLen {
-		for hashY, yL := range hashMpLen {
-			if hashX&hashY != 0 { // TODO
+	for subX, xL := range subMpLen {
+		for subY, yL := range subMpLen {
+			if subX&subY != 0 { // TODO
 				continue
 			}
 			numCur := xL * yL

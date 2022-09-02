@@ -12,7 +12,7 @@ func generateAbbreviations(word string) []string {
 		var buf []byte
 		var cnt int
 		for idx := 0; idx < wordL; idx++ {
-			if subset>>idx&1 == 1 {
+			if subset>>idx&1 == 1 { // or 0
 				if 0 < cnt {
 					buf = append(buf, strconv.Itoa(cnt)...)
 				}
