@@ -2,8 +2,6 @@ package main
 
 // https://leetcode.cn/problems/set-mismatch/
 
-// ❓ 错误的集合
-
 func findErrorNums(nums []int) []int {
 	numsL := len(nums)
 
@@ -15,9 +13,8 @@ func findErrorNums(nums []int) []int {
 	}
 	numDiff ^= numsL
 
-	// ----
-	numDiff = numDiff & -numDiff // ⚠️  切割 2个数字, 最低位1
-
+	// TODO ----
+	numDiff = numDiff & -numDiff // 切割 2个数字, 最低位1
 	// 起始
 	num1, num2 := 0, 0
 	// 区间

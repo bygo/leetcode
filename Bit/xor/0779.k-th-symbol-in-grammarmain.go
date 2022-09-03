@@ -15,7 +15,7 @@ func kthGrammar(n int, k int) int {
 	if n == 1 {
 		return 0
 	}
-	// 奇数原值
+	// 奇数`子节点`原值
 	// 偶数取反
 	return 1 ^ k%2 ^ kthGrammar(n-1, (k+1)/2) // TODO
 }
@@ -27,7 +27,7 @@ func kthGrammar(n int, k int) int {
 	}
 	half := 1 << (n - 2)
 	if k <= half {
-		return kthGrammar(n-1, k)
+		return kthGrammar(n-1, k) // TODO 前一半原值
 	}
 	return kthGrammar(n-1, k-half) ^ 1 // TODO 取反
 }

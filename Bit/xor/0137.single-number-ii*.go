@@ -15,7 +15,7 @@ package main
 func singleNumber(nums []int) int {
 	var lo, hi int
 	for _, num := range nums {
-		lo = (lo ^ num) &^ hi
+		lo = (lo ^ num) &^ hi // TODO
 		hi = (hi ^ num) &^ lo
 	}
 	return lo

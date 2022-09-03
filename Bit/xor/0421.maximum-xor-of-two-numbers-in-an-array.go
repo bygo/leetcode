@@ -2,7 +2,6 @@ package main
 
 // https://leetcode-cn.com/problems/maximum-xor-of-two-numbers-in-an-array
 
-// ❓ 数组中 两个数最大的异或值
 // O( 30*n )
 
 func findMaximumXOR(nums []int) int {
@@ -17,7 +16,7 @@ func findMaximumXOR(nums []int) int {
 		// 每个数移位后 与 当前最大值 异或
 		numMp := map[int]bool{}
 		for _, num := range nums {
-			// 异或结合律 寻找另一个数
+			// TODO 异或结合律 寻找另一个数 前缀
 			num >>= idx
 			numTarget := num ^ numMax
 			if numMp[numTarget] {

@@ -17,24 +17,19 @@ func letterCasePermutation(s string) []string {
 	for {
 		mask := sub
 		for idx := range s {
-			if mask>>idx&1 == 0 {
-				buf[idx] = s[idx]
-				continue
-			}
-			if s[idx] <= '9' {
-				continue
-			}
-			if 'a' <= s[idx] && s[idx] <= 'z' {
-				buf[idx] = s[idx] - 32
-			} else {
-				buf[idx] = s[idx] + 32
-			}
+			//if s[idx] <= '9' {
+			//	continue
+			//}
+			buf[idx] = s[idx] ^ byte(mask>>idx&1<<5) // TODO
 		}
 		strs = append(strs, string(buf))
-		sub = (sub - 1) & subset
-		if sub == subset {
+		if sub == 0 {
 			break
 		}
+		sub = (sub - 1) & subset
+		//if sub == subset {
+		//	break
+		//}
 	}
 	return strs
 }
