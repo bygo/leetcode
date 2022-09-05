@@ -20,7 +20,7 @@ func singleNumber(nums []int) []int {
 	// 00001111 + 1
 	// 00010000
 
-	numDiff = numDiff & -numDiff // 数字不同 肯定会有一位不同,根据一位的不同 切分不同数字
+	numDiff = numDiff & -numDiff // TODO 数字不同 肯定会有一位不同,根据一位的不同 切分不同数字
 	var num1, num2 int
 	for _, num := range nums {
 		if 0 < num&numDiff { // 最低有效位 为1

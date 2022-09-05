@@ -25,9 +25,10 @@ func subsetsWithDup(nums []int) [][]int {
 			}
 			numsCur = append(numsCur, nums[idx])
 		}
-		if idx == numsL {
-			combNums = append(combNums, numsCur)
+		if idx != numsL { // TODO
+			continue
 		}
+		combNums = append(combNums, numsCur)
 	}
 	return combNums
 }
