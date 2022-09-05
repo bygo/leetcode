@@ -8,7 +8,7 @@ func subarrayBitwiseORs(nums []int) int {
 		maskMp[num] = struct{}{}
 		mask := 0
 		for j := idx - 1; 0 <= j; j-- {
-			if mask|num == mask { // TODO 前置包含num,num 对mask 不起作用
+			if mask|num == mask { // TODO 前置已包含num  num对mask 不起作用
 				break
 			}
 			mask |= nums[j]

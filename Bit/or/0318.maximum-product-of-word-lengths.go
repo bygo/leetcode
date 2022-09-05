@@ -12,7 +12,7 @@ func maxProduct(words []string) int {
 		wordL := len(word)
 		var sub int32
 		for _, ch := range word {
-			sub |= 1 << (ch - 'a') // TODO
+			sub |= 1 << (ch - 'a') // TODO 是否存在
 		}
 
 		if wordL <= subMpLen[sub] {

@@ -13,10 +13,10 @@ func getMoves(mask uint, cnt, n int) int {
 		}
 		if ones == half {
 			// 1为小数，1必须放在中间
-			return ones - bits.OnesCount(mask&0xAAAAAAAA) // ...01010
+			return ones - bits.OnesCount(mask&0xAAAAAAAA) // TODO 取有效位 ...1010 1010
 		} else { //ones == half+1
 			//  1位大数，1必须放在两边
-			return ones - bits.OnesCount(mask&0x55555555) // ...10101
+			return ones - bits.OnesCount(mask&0x55555555) // ...0101 0101
 		}
 	} else {
 		if ones != half || cnt != half {
@@ -42,7 +42,7 @@ func movesToChessboard(board [][]int) int {
 		maskCol |= board[i][0] << i
 	}
 
-	maskRowMirror := 1<<bL - 1 ^ maskRow // TODO
+	maskRowMirror := 1<<bL - 1 ^ maskRow // TODO 镜像
 	maskColMirror := 1<<bL - 1 ^ maskCol
 	rowCnt, colCnt := 0, 0
 	for i := 0; i < bL; i++ {
