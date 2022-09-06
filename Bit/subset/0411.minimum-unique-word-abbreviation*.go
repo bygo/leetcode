@@ -38,8 +38,8 @@ func minAbbreviation(target string, dictionary []string) string {
 	}
 
 	var bufRes = []byte(target)
-	subsetMax := 1<<tL - 1                          // =subsetMax is computed for itself
-	for subset := 1; subset < subsetMax; subset++ { // =0 is the full abbreviation, which is definitely not the answer
+	subsetMax := 1<<tL - 1                          // = subsetMax is computed for itself
+	for subset := 1; subset < subsetMax; subset++ { // = 0 is the full abbreviation, which is definitely not the answer
 		if banMp[subset] {
 			continue
 		}

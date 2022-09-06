@@ -4,14 +4,15 @@ package main
 
 func xorGame(nums []int) bool {
 	if len(nums)%2 == 0 {
+		// TODO 偶数长度，必定可以挑出一个数，使之不为0
+		// 0 0 0 0  即为0 直接赢
 		// 0 0 0 1 = 1
 		// 0 1 1 1 = 1
-		// TODO 偶数长度，奇数1 必定挑出一个0，使之不为0
 		return true
 	}
 	xor := 0
-	for _, num := range nums { // TODO 整体为0，擦掉任何数都将不为0
+	for _, num := range nums {
 		xor ^= num
 	}
-	return xor == 0
+	return xor == 0 // TODO 奇数长度，整体必须为0，否则当擦掉一个数，为偶数时，对方必胜
 }
