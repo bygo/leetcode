@@ -15,8 +15,8 @@ package main
 func singleNumber(nums []int) int {
 	var lo, hi int
 	for _, num := range nums {
-		lo = (lo ^ num) &^ hi // TODO
-		hi = (hi ^ num) &^ lo
+		lo = (lo ^ num) &^ hi // TODO 第三次lo 被抑制 为0
+		hi = (hi ^ num) &^ lo // 第一次被 lo 抑制 为0，第二次没被 lo 抑制 为1，
 	}
 	return lo
 }
@@ -32,7 +32,7 @@ func singleNumber(nums []int) int {
 			total += int32(num) >> pos & 1
 		}
 		// 1 4 7 ...
-		if 0 < total%3 {
+		if 0 < total%3 { // TODO 分治
 			single |= 1 << pos
 		}
 	}

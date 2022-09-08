@@ -15,9 +15,9 @@ func kthGrammar(n int, k int) int {
 	if n == 1 {
 		return 0
 	}
-	// 奇数`子节点`原值
-	// 偶数取反
-	return 1 ^ k%2 ^ kthGrammar(n-1, (k+1)/2) // TODO
+	// 奇数`子节点`原值，即0，不改变原值
+	// 偶数取反,即1，改变原值 1^1=0 ,1^0=1
+	return (k+1)%2 ^ kthGrammar(n-1, (k+1)/2) // TODO 父节点
 }
 
 // mirror

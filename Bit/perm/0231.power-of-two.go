@@ -10,11 +10,11 @@ func isPowerOfTwo(n int) bool {
 }
 
 func isPowerOfTwo(n int) bool {
-	return 0 < n && n&(n-1) == 0 // TODO
+	return 0 < n && n&(n-1) == 0 // TODO 最后有效位
 }
 
 func isPowerOfTwo(n int) bool {
 	// 000010000
 	// 111101111 + 1
-	return 0 < n && n&-n == n // TODO
+	return 0 < n && n&-n == n // TODO 最后有效位
 }

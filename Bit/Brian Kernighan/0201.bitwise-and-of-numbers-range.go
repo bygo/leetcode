@@ -4,7 +4,7 @@ package main
 
 // 范围与
 func rangeBitwiseAnd(lo int, hi int) int {
-	for lo < hi { // TODO
+	for lo < hi { // TODO 按位与 快速缩进
 		hi &= hi - 1
 	}
 	return hi

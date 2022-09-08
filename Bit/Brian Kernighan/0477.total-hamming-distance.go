@@ -11,7 +11,7 @@ func totalHammingDistance(nums []int) int {
 		for _, num := range nums {
 			cnt += num >> idx & 1
 		}
-		cntTot += cnt * (numsL - cnt) // TODO
+		cntTot += cnt * (numsL - cnt) // TODO 组合数
 	}
 	return cntTot
 }

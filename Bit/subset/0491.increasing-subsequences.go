@@ -11,7 +11,7 @@ func findSubsequences(nums []int) [][]int {
 		numsCur := []int{}
 		numPre := -101
 		for idx := 0; idx < numsL; idx++ {
-			if subset>>idx&1 == 0 || nums[idx] < numPre { // TODO
+			if subset>>idx&1 == 0 || nums[idx] < numPre { // TODO 前置限定
 				continue
 			}
 
@@ -22,8 +22,8 @@ func findSubsequences(nums []int) [][]int {
 			continue
 		}
 
-		h := hash(numsCur)
-		if hashMp[h] { // TODO
+		h := hash(numsCur) // TODO 重复过滤
+		if hashMp[h] {
 			continue
 		}
 		hashMp[h] = true

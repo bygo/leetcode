@@ -22,6 +22,7 @@ func generateAbbreviations(word string) []string {
 				cnt++
 			}
 		}
+
 		if 0 < cnt {
 			buf = append(buf, strconv.Itoa(cnt)...)
 		}

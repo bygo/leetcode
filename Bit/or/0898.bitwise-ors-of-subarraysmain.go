@@ -9,14 +9,14 @@ func subarrayBitwiseORs(nums []int) int {
 		maskMp[num] = struct{}{}
 		mask := 0
 		for j := idx + 1; j < numsL; j++ {
-			if mask|num == mask { // TODO 后置包含num的解
+			if mask|num == mask { // TODO 后置包含num的状态
 				break
 			}
 			mask |= nums[j]
 			maskMp[mask|num] = struct{}{}
 		}
 		//for j := idx - 1; 0 <= j; j-- {
-		//	if mask|num == mask { // TODO 前置包含num的解
+		//	if mask|num == mask { // TODO 前置包含num的状态
 		//		break
 		//	}
 		//	mask |= nums[j]

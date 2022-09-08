@@ -7,9 +7,9 @@ func toHex(num int) string {
 		return "0"
 	}
 	var buf []byte
-	for idx := 7; 0 <= idx; idx-- {
-		numHex := byte(num >> (idx * 4) & 0xf) // TODO
-		if numHex == 0 && len(buf) == 0 {      // TODO
+	for idx := 28; 0 <= idx; idx -= 4 {
+		numHex := byte(num >> idx & 0xf)  // TODO 取有效位
+		if numHex == 0 && len(buf) == 0 { // TODO 为0忽略
 			continue
 		}
 		if numHex <= 9 {

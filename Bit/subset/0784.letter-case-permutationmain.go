@@ -20,7 +20,7 @@ func letterCasePermutation(s string) []string {
 			//if s[idx] <= '9' {
 			//	continue
 			//}
-			buf[idx] = s[idx] ^ byte(mask>>idx&1<<5) // TODO
+			buf[idx] = s[idx] ^ byte(mask>>idx&1<<5) // TODO 大小写互转，数字忽略
 		}
 		strs = append(strs, string(buf))
 		if sub == 0 {
