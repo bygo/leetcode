@@ -6,6 +6,7 @@ func findString(words []string, str string) int {
 	lo, hi := 0, len(words)
 	for lo < hi {
 		mid := int(uint(lo+hi) >> 1)
+		std := mid
 		for lo < mid && words[mid] == "" { // Move `mid` to the far left
 			mid--
 		}
@@ -13,7 +14,7 @@ func findString(words []string, str string) int {
 		if words[mid] == str {
 			return mid
 		} else if words[mid] < str { // Hidden case `words[mid] == ""`
-			lo = mid + 1
+			lo = std + 1
 		} else if str < words[mid] {
 			hi = mid
 		}

@@ -2,11 +2,13 @@ package main
 
 // https://leetcode.cn/problems/chalkboard-xor-game
 
+// 删除一个数值后为0 == 失败
+
 func xorGame(nums []int) bool {
 	if len(nums)%2 == 0 {
 		// 0 0 0 1 = 1
 		// 0 1 1 1 = 1
-		// TODO 偶数长度，奇数1 必定挑出一个0，使之不为0
+		// TODO 偶数长度，奇数1 必定挑出一个0，使之继续为奇数1，即不为0
 		return true
 	}
 	xor := 0

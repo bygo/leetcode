@@ -5,8 +5,8 @@ import "math/bits"
 // https://leetcode.cn/problems/k-th-symbol-in-grammar
 
 /**
-					0
-			 0   			1
+					 0
+            0   			 1
 		0       1        1       0
      0   1	  1   0	   1   0   0   1
 */

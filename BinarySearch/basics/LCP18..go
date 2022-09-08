@@ -6,7 +6,7 @@ import "sort"
 
 func breakfastNumber(staple []int, drinks []int, x int) int {
 	sL := len(staple)
-	sort.Ints(staple) // todo
+	sort.Ints(staple) // TODO
 	find := func(target int) int {
 		lo, hi := 0, sL
 		for lo < hi {
