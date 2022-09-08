@@ -23,7 +23,7 @@ func maxProduct(words []string) int {
 
 	for subX, xL := range subMpLen {
 		for subY, yL := range subMpLen {
-			if subX&subY != 0 { // TODO 数位 无交集
+			if subX&subY != 0 { // TODO 数位 有交集
 				continue
 			}
 			numCur := xL * yL
