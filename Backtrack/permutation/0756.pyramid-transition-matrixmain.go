@@ -15,10 +15,10 @@ func pyramidTransition(bottom string, allowed []string) bool {
 			return true
 		}
 		if bufL == idx+1 {
-			return dfs(buf[:bufL-1], 0) // TODO
+			return dfs(buf[:bufL-1], 0) // TODO 到达末尾 往上一层
 		}
 		str := string(buf[idx : idx+2])
-		for _, ch := range strMpBuf[str] { // TODO
+		for _, ch := range strMpBuf[str] { // TODO 可行路径
 			buf[idx] = ch
 			if dfs(buf, idx+1) {
 				return true

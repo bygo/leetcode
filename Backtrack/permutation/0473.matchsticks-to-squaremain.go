@@ -12,11 +12,12 @@ func makesquare(matchsticks []int) bool {
 	if total%4 != 0 {
 		return false
 	}
-	sort.Sort(sort.Reverse(sort.IntSlice(matchsticks)))
+
+	sort.Sort(sort.Reverse(sort.IntSlice(matchsticks))) // TODO 从大到小
 	cnt := total / 4
 
 	mL := len(matchsticks)
-	edges := [4]int{}
+	var edges [4]int
 	var dfs func(idx int) bool
 	dfs = func(idx int) bool {
 		if idx == mL {

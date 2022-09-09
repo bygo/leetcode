@@ -9,7 +9,7 @@ func countArrangement(n int) int {
 	for i := 1; i <= n; i++ {
 		for j := 1; j <= n; j++ {
 			if i%j == 0 || j%i == 0 {
-				match[i] = append(match[i], j)
+				match[i] = append(match[i], j) // TODO 预处理
 			}
 		}
 	}
@@ -21,7 +21,7 @@ func countArrangement(n int) int {
 		}
 
 		for _, num := range match[idx] {
-			if used>>num&1 == 1 {
+			if used>>num&1 == 1 { // TODO 已被选择
 				continue
 			}
 			used |= 1 << num // TODO

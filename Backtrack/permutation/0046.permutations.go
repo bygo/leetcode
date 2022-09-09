@@ -10,7 +10,7 @@ func permute(raw []int) [][]int {
 	rawL := len(raw)
 	nums := make([]int, rawL)
 	used := make([]bool, rawL)
-	var dfs func(int)
+	var dfs func(idx int)
 	dfs = func(idx int) {
 		if idx == rawL {
 			permNums = append(permNums, append([]int{}, nums...))
@@ -21,7 +21,7 @@ func permute(raw []int) [][]int {
 				continue
 			}
 			used[i] = true
-			nums[idx] = raw[i]
+			nums[idx] = raw[i] // TODO 当前放置
 			dfs(idx + 1)
 			used[i] = false
 		}

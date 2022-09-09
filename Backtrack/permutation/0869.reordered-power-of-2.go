@@ -16,7 +16,7 @@ func reorderedPowerOf2(n int) bool {
 	for _, num := range strconv.Itoa(n) {
 		nums = append(nums, int(num-'0'))
 	}
-	sort.Ints(nums)
+	sort.Ints(nums) // TODO 排序可去重判断
 	numsL := len(nums)
 	var used = make([]bool, numsL)
 	var dfs func(idx, num int) bool
@@ -30,11 +30,11 @@ func reorderedPowerOf2(n int) bool {
 				continue
 			}
 
-			if num == 0 && nums[i] == 0 {
+			if num == 0 && nums[i] == 0 { // TODO 前缀0
 				continue
 			}
 
-			if 0 < i && nums[i] == nums[i-1] && !used[i-1] {
+			if 0 < i && nums[i] == nums[i-1] && !used[i-1] { // TODO 相同路径
 				continue
 			}
 			used[i] = true

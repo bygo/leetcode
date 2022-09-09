@@ -18,9 +18,9 @@ func combinationSum(candidates []int, target int) [][]int {
 		}
 
 		cL := len(candidates)
-		for idx := idxLeft; idx < cL; idx++ {
+		for idx := idxLeft; idx < cL; idx++ { // TODO 限制重复组合
 			nums = append(nums, candidates[idx])
-			dfs(val-candidates[idx], idx) // 'idx' can be used indefinitely
+			dfs(val-candidates[idx], idx) // TODO idx可以无限使用
 			nums = nums[:len(nums)-1]
 		}
 	}

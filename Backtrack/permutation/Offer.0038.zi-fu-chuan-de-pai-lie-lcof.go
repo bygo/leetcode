@@ -5,47 +5,47 @@ import "sort"
 // https://leetcode.cn/problems/zi-fu-chuan-de-pai-lie-lcof/
 
 func permutation(s string) []string {
-	var res []string
+	var strs []string
 	raw := []byte(s)
 	sort.Slice(raw, func(i, j int) bool { return raw[i] < raw[j] })
-	l := len(raw)
-	perm := make([]byte, l)
-	used := make([]bool, l)
+	rawL := len(raw)
+	perm := make([]byte, rawL)
+	used := make([]bool, rawL)
 	var dfs func(int)
-	dfs = func(i int) {
-		if i == l {
-			res = append(res, string(perm))
+	dfs = func(idx int) {
+		if idx == rawL {
+			strs = append(strs, string(perm))
 			return
 		}
-		for j := 0; j < l; j++ {
-			if used[j] {
+		for i := 0; i < rawL; i++ {
+			if used[i] {
 				continue
 			}
-			if 0 < j && !used[j-1] && raw[j-1] == raw[j] {
+			if 0 < i && !used[i-1] && raw[i-1] == raw[i] {
 				continue
 			}
-			used[j] = true
-			perm[i] = raw[j]
-			dfs(i + 1)
-			used[j] = false
+			used[i] = true
+			perm[idx] = raw[i]
+			dfs(idx + 1)
+			used[i] = false
 		}
 	}
 	dfs(0)
-	return res
+	return strs
 }
 
 // The next bigger number
 func permutation(s string) []string {
-	var res []string
+	var strs []string
 	t := []byte(s)
 	sort.Slice(t, func(i, j int) bool { return t[i] < t[j] })
 	for {
-		res = append(res, string(t))
+		strs = append(strs, string(t))
 		if !nextPermutation(t) {
 			break
 		}
 	}
-	return res
+	return strs
 }
 
 func reverse(a []byte) {
@@ -57,21 +57,21 @@ func reverse(a []byte) {
 func nextPermutation(nums []byte) bool {
 	numsL := len(nums)
 	idx := numsL - 2
-	for 0 <= idx && nums[idx+1] <= nums[idx] { // Find for smaller number
+	for 0 <= idx && nums[idx+1] <= nums[idx] { // 寻找更小的数
 		idx--
 	}
 	if idx < 0 {
 		return false
 	}
 
-	// Found the smaller number
+	// 找到
 
-	// Find the first value that is larger than the target value
+	// 找到第一个比目标大的数
 	j := numsL - 1
 	for 0 <= j && nums[j] <= nums[idx] {
 		j--
 	}
-	// Exchange
+	// 交换
 	nums[idx], nums[j] = nums[j], nums[idx]
 
 	// Post bits are all reset back to the minimum bit
