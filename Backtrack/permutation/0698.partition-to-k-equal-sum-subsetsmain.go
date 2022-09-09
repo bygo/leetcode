@@ -12,14 +12,15 @@ func canPartitionKSubsets(nums []int, k int) bool {
 	if total%k != 0 {
 		return false
 	}
+
 	sort.Sort(sort.Reverse(sort.IntSlice(nums)))
 	cnt := total / k
 
-	mL := len(nums)
+	numsL := len(nums)
 	edges := make([]int, k)
 	var dfs func(idx int) bool
 	dfs = func(idx int) bool {
-		if idx == mL {
+		if idx == numsL {
 			return true
 		}
 

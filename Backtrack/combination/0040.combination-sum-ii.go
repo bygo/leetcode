@@ -16,16 +16,16 @@ func combinationSum2(nums []int, target int) [][]int {
 			return
 		}
 
-		for idx := idxLeft; idx < cL; idx++ { // 'idxLeft' restrict `num` to be used only once
+		for idx := idxLeft; idx < cL; idx++ {
 			if val < nums[idx] {
 				break
 			}
-			if idxLeft < idx && nums[idx-1] == nums[idx] { // restrict repeating elements
+			if idxLeft < idx && nums[idx-1] == nums[idx] { // TODO 重复判断
 				continue
 			}
 
 			numsCur = append(numsCur, nums[idx])
-			dfs(val-nums[idx], idx+1) // `idx+1` restrict `num` to be used only once
+			dfs(val-nums[idx], idx+1) // TODO idx只能使用一次
 			numsCur = numsCur[:len(numsCur)-1]
 		}
 	}
