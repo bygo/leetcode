@@ -2,7 +2,7 @@ package main
 
 // https://leetcode.cn/problems/shortest-word-distance-ii
 
-// ❓ 两单词距离最小索引
+// 两单词距离最小索引
 
 type WordDistance struct {
 	strMpIdxes map[string][]int
@@ -10,8 +10,8 @@ type WordDistance struct {
 
 func Constructor(wordsDict []string) WordDistance {
 	strMpIdxes := map[string][]int{}
-	for i, str := range wordsDict {
-		strMpIdxes[str] = append(strMpIdxes[str], i)
+	for idx, str := range wordsDict {
+		strMpIdxes[str] = append(strMpIdxes[str], idx)
 	}
 	return WordDistance{
 		strMpIdxes: strMpIdxes,

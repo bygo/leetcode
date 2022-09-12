@@ -25,6 +25,9 @@ func makesquare(matchsticks []int) bool {
 		}
 
 		for i := range edges {
+			if 0 < i && edges[i-1] == edges[i] { // TODO 剪枝
+				continue
+			}
 			edges[i] += matchsticks[idx]
 			if edges[i] <= cnt && dfs(idx+1) {
 				return true

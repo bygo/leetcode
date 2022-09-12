@@ -10,7 +10,7 @@ func isPowerOfTwo(n int) bool {
 }
 
 func isPowerOfTwo(n int) bool {
-	return 0 < n && n&(n-1) == 0 // TODO 最后有效位
+	return 0 < n && n&(n-1) == 0 // TODO 消除最低有效位
 }
 
 func isPowerOfTwo(n int) bool {

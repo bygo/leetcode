@@ -21,19 +21,18 @@ func findSubsequences(nums []int) [][]int {
 		// 7,7,7
 		// 7,7
 
-		// <= branch
+		// <= 合法分支
 		if numPre <= nums[idx] {
 			numsCur = append(numsCur, nums[idx])
 			dfs(idx+1, nums[idx])
 			numsCur = numsCur[:len(numsCur)-1]
 		}
-		// Skip the equal
+		// 去重
 		if numPre == nums[idx] {
 			return
 		}
+		// 跳过当前
 		dfs(idx+1, numPre)
-		// Ignore node
-		// Move on to the next `numPre <= nums[idx]`
 	}
 	dfs(0, -101)
 	return combNums

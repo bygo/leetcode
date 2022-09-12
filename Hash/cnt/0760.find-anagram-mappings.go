@@ -11,7 +11,7 @@ func anagramMappings(A []int, B []int) []int {
 		numMpIdx[num] = idx
 	}
 
-	// 索引值
+	// TODO 索引值
 	var idxesA []int
 	for _, num := range A {
 		idxesA = append(idxesA, numMpIdx[num])

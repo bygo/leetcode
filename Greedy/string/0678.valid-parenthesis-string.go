@@ -16,6 +16,7 @@ func checkValidString(s string) bool {
 			if max < 0 {
 				return false
 			}
+			// TODO 贪心
 		} else if ch == '*' {
 			if 0 < min {
 				min--

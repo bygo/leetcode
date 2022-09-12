@@ -57,16 +57,20 @@ func reverse(a []byte) {
 func nextPermutation(nums []byte) bool {
 	numsL := len(nums)
 	idx := numsL - 2
-	for 0 <= idx && nums[idx+1] <= nums[idx] { // 寻找更小的数
+	for 0 <= idx && nums[idx+1] <= nums[idx] { // TODO 寻找更小的数，后置单调递增
 		idx--
 	}
 	if idx < 0 {
 		return false
 	}
 
-	// 找到
+	// TODO 找到第一个比目标大的数
+	// 15432
+	// 21345
 
-	// 找到第一个比目标大的数
+	// 123
+	// 132
+
 	j := numsL - 1
 	for 0 <= j && nums[j] <= nums[idx] {
 		j--
@@ -74,7 +78,7 @@ func nextPermutation(nums []byte) bool {
 	// 交换
 	nums[idx], nums[j] = nums[j], nums[idx]
 
-	// Post bits are all reset back to the minimum bit
+	// 后置全部重置为最小位
 	reverse(nums[idx+1:])
 	return true
 }

@@ -16,12 +16,13 @@ func scheduleCourse(courses [][]int) int {
 	total := 0
 	for _, course := range courses {
 		duration := course[0]
-		if total+duration <= course[1] {
-			// Time is enough
+		deadline := course[1]
+		if total+duration <= deadline {
+			// 贪心时间足够
 			total += duration
 			heap.Push(h, duration)
 		} else if 0 < h.Len() && duration < h.IntSlice[0] {
-			// There are smaller durations
+			// 更短的时间
 			total += duration - h.IntSlice[0]
 			h.IntSlice[0] = duration
 			heap.Fix(h, 0)
@@ -35,7 +36,7 @@ type Heap struct {
 }
 
 func (h Heap) Less(i, j int) bool {
-	return h.IntSlice[i] > h.IntSlice[j]
+	return h.IntSlice[j] < h.IntSlice[i]
 }
 
 func (h *Heap) Push(x interface{}) {

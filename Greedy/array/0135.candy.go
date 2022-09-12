@@ -11,6 +11,7 @@ func max(a, b int) int {
 
 func candy(ratings []int) int {
 	rL := len(ratings)
+	// TODO 左最优
 	cntsLeft := make([]int, rL)
 	cntsLeft[0] = 1
 	for idx := 1; idx < rL; idx++ {
@@ -21,6 +22,7 @@ func candy(ratings []int) int {
 		}
 	}
 
+	// TODO 右最优
 	cntR := 1
 	cnt := max(cntsLeft[rL-1], cntR)
 	for idx := rL - 2; 0 <= idx; idx-- {
@@ -29,6 +31,7 @@ func candy(ratings []int) int {
 		} else {
 			cntR = 1
 		}
+		// TODO 贪心
 		cnt += max(cntR, cntsLeft[idx])
 	}
 	return cnt
@@ -36,23 +39,31 @@ func candy(ratings []int) int {
 
 func candy(ratings []int) int {
 	rL := len(ratings)
+
+	// TODO
 	cnt, inc, dec, pre := 1, 1, 0, 1
 	for idx := 1; idx < rL; idx++ {
+		// TODO 递增序列
 		if ratings[idx-1] <= ratings[idx] {
 			dec = 0
-			if ratings[idx] == ratings[idx-1] {
+			// 相等为1
+			if ratings[idx-1] == ratings[idx] {
 				pre = 1
 			} else {
+				// 分配1
 				pre++
 			}
+			// 总数
 			cnt += pre
+			// 前置
 			inc = pre
 		} else {
+			// TODO 递减序列长度
 			dec++
-			if dec == inc {
+			if dec == inc { // 最后一个 不够高，也需加入序列
 				dec++
 			}
-			cnt += dec
+			cnt += dec // 每次加一轮
 			pre = 1
 		}
 	}

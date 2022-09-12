@@ -5,12 +5,12 @@ package array
 func canJump(nums []int) bool {
 	var idxFar int
 	for idx := range nums {
-		if idx <= idxFar {
-			idxFar = max(idxFar, idx+nums[idx])
+		if idxFar < idx { // TODO 跳不过
+			return false
 		}
-
+		idxFar = max(idxFar, idx+nums[idx])
 	}
-	return len(nums)-1 < idxFar
+	return true
 }
 
 func max(x, y int) int {

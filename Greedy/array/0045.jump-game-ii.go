@@ -6,8 +6,8 @@ func jump(nums []int) int {
 	var steps, idxCur, idxFar int
 	top := len(nums) - 1
 	for idx := 0; idx < top; idx++ {
-		idxFar = max(idxFar, idx+nums[idx])
-		if idxCur == idx {
+		idxFar = max(idxFar, idx+nums[idx]) // TODO 最远
+		if idxCur == idx {                  // TODO 必须跳跃,最后一次不需要跳跃
 			idxCur = idxFar
 			steps++
 		}
@@ -15,39 +15,9 @@ func jump(nums []int) int {
 	return steps
 }
 
-func max(a, b int) int {
-	if a < b {
-		return b
+func max(x, y int) int {
+	if x < y {
+		return y
 	}
-	return a
-}
-
-func jump(nums []int) int {
-	var steps int
-	idxCur := len(nums) - 1
-	for 0 < idxCur {
-		for idx := 0; idx < idxCur; idx++ {
-			if idxCur <= idx+nums[idx] {
-				idxCur = idx
-				steps++
-				break
-			}
-		}
-	}
-	return steps
-}
-
-func jump(nums []int) int {
-	var steps int
-	idxCur := len(nums) - 1
-	for 0 < idxCur {
-		for idx := 0; idx < idxCur; idx++ {
-			if idxCur <= idx+nums[idx] {
-				idxCur = idx
-				steps++
-				break
-			}
-		}
-	}
-	return steps
+	return x
 }

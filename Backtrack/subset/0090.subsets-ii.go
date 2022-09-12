@@ -14,16 +14,16 @@ func subsetsWithDup(nums []int) [][]int {
 			subsetNums = append(subsetNums, append([]int{}, numsCur...))
 			return
 		}
-		// Ignore node // f2
 		dfs(idx+1, false)
 		if !hasPre && 0 < idx && nums[idx-1] == nums[idx] {
+			// 上个没使用
 			return
 		}
 
+		// TODO hasPre 保证连续相同的值 才可组成子集
 		numsCur = append(numsCur, nums[idx])
 		dfs(idx+1, true) // f1
 		numsCur = numsCur[:len(numsCur)-1]
-
 	}
 	dfs(0, false)
 	return subsetNums

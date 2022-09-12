@@ -4,7 +4,7 @@ package main
 
 func convertToTitle(num int) string {
 	var lo = 7
-	var buf = make([]byte, lo) // TODO 避免数组反转
+	var buf = make([]byte, lo) // TODO 节省反转
 	for 0 < num {
 		num-- // TODO 修正偏移
 		lo--

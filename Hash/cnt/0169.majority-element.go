@@ -2,7 +2,7 @@ package main
 
 // https://leetcode.cn/problems/majority-element
 
-// ❓ 超过一半的数
+// 超过一半的数
 
 func majorityElement(nums []int) int {
 	var numMode, cnt int
@@ -10,6 +10,7 @@ func majorityElement(nums []int) int {
 		if numMode == num {
 			cnt++
 		} else {
+			// TODO BM
 			if cnt == 0 {
 				numMode = num
 				cnt = 1

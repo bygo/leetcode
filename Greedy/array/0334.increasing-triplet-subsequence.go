@@ -12,13 +12,13 @@ func increasingTriplet(nums []int) bool {
 	for i := 1; i < numsL; i++ {
 		num := nums[i]
 		if second < num {
-			// 比第二个大 构成 三元组
+			// TODO 比第二个大 构成 三元组
 			return true
 		} else if first < num {
-			// 比第一个大 构成 二元组
+			// TODO 比第一个大 构成 二元组
 			second = num
 		} else if num < first {
-			// 比第零个大 构成 一元组
+			// TODO 比第零个大 构成 一元组
 			first = num
 		}
 	}
