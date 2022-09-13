@@ -16,7 +16,7 @@ func letterCombinations(digits string) []string {
 	for i := range digits {
 		digit := digits[i]
 		sL := len(strs)
-		for _, letter := range digitMpStr[digit] { // TODO 乘法
+		for _, letter := range digitMpStr[digit] { // TODO 笛卡尔积
 			for _, str := range strs[:sL] {
 				strs = append(strs, str+string(letter))
 			}

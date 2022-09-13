@@ -7,7 +7,7 @@ func maxArea(height []int) int {
 	lo, hi := 0, len(height)-1
 	for lo < hi {
 		dist := hi - lo
-		if height[lo] < height[hi] { // TODO
+		if height[lo] < height[hi] { // TODO 以小的为隔板
 			cur = height[lo] * dist
 			lo++
 		} else {
@@ -15,7 +15,7 @@ func maxArea(height []int) int {
 			hi--
 		}
 
-		// 贪心
+		// TODO 贪心
 		if max < cur {
 			max = cur
 		}
