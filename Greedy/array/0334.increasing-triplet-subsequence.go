@@ -1,4 +1,4 @@
-package array
+package main
 
 // https://leetcode.cn/problems/increasing-triplet-subsequence
 
