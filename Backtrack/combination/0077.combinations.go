@@ -20,7 +20,7 @@ func combine(numMax int, needL int) [][]int {
 		nums = append(nums, num)
 		dfs(num + 1)
 		nums = nums[:len(nums)-1]
-		dfs(num + 1) // TODO 丢弃
+		dfs(num + 1) // TODO 跳过
 	}
 	dfs(1)
 	return combNums
