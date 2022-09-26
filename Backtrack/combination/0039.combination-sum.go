@@ -3,7 +3,6 @@ package main
 // https://leetcode.cn/problems/combination-sum/
 
 func combinationSum(candidates []int, target int) [][]int {
-	//sort.Ints(candidates)
 	var combNums [][]int
 	var nums []int
 	var dfs func(val, idxLeft int)

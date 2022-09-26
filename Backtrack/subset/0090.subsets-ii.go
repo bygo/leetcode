@@ -28,3 +28,30 @@ func subsetsWithDup(nums []int) [][]int {
 	dfs(0, false)
 	return subsetNums
 }
+
+func subsetsWithDup(nums []int) [][]int {
+	numsL := len(nums)
+	sort.Ints(nums)
+	var subsetsNums [][]int
+	var numsCur []int
+	var dfs func(idx int, hasPre bool)
+	dfs = func(idx int, hasPre bool) {
+		if idx == numsL {
+			subsetsNums = append(subsetsNums, append([]int(nil), numsCur...))
+			return
+		}
+
+		dfs(idx+1, false)
+		if !hasPre && 0 < idx && nums[idx-1] == nums[idx] {
+			return
+		}
+
+		numsCur = append(numsCur, nums[idx])
+		dfs(idx+1, true)
+		numsCur = numsCur[:len(numsCur)-1]
+	}
+
+	dfs(0, false)
+	return subsetsNums
+
+}
