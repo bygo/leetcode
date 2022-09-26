@@ -74,20 +74,20 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 func getKthElement(nums1, nums2 []int, k int) int {
 	var idx1, idx2 int
-	l1, l2 := len(nums1), len(nums2)
+	numsL1, numsL2 := len(nums1), len(nums2)
 	for {
-		if idx1 == l1 {
+		if idx1 == numsL1 {
 			return nums2[idx2-1+k]
 		}
-		if idx2 == l2 {
+		if idx2 == numsL2 {
 			return nums1[idx1-1+k]
 		}
 		if k == 1 {
 			return min(nums1[idx1], nums2[idx2])
 		}
 		half := k / 2
-		idxJump1 := min(idx1+half, l1) - 1
-		idxJump2 := min(idx2+half, l2) - 1
+		idxJump1 := min(idx1+half, numsL1) - 1
+		idxJump2 := min(idx2+half, numsL2) - 1
 		if nums1[idxJump1] < nums2[idxJump2] {
 			k -= idxJump1 - idx1 + 1 // 包括当前p1 总共 pn1-p1 个
 			idx1 = idxJump1 + 1
